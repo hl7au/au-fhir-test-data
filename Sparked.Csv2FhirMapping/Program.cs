@@ -25,7 +25,8 @@ namespace Sparked.Csv2FhirMapping
             var mapFileInfo = new FileInfo(mapFile);
             Debug.WriteLine("Map file " + (mapFileInfo.Exists ? "exists" : "not found") + ": " + mapFileInfo.FullName); 
 
-            var csvFile = @"TestData\Patient - test IHIs.csv";
+            var csvFile = @"TestData\Patient.csv";
+            //var csvFile = @"TestData\Patient - test IHIs.csv";
             
             if (!Directory.Exists(Path.GetDirectoryName(csvFile)))
                 csvFile = @"..\..\..\" + csvFile;
