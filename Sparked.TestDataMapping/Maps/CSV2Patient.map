@@ -1,0 +1,156 @@
+map "http://example.org/StructureMap/CSV2Patient" = "CSV2Patient"
+
+uses "http://example.org/StructureDefinition/PatientCSV" as source
+uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
+
+group tutorial(source src : PatientCSV, target tgt : Patient) {
+
+  // id
+  src.id as s_id where length() > 0 -> tgt.id = s_id; // ""rule_id"";
+
+  src -> tgt.meta = create('Meta') as meta then {
+    src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient';
+  };
+
+  // extension_indigenousStatus
+  src.extension_indigenousStatus as s_indigenousStatus where length() > 0 -> tgt.extension as t_extension first then {
+    s_indigenousStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/indigenous-status',
+    t_extension.value = create('Coding') as t_value then {
+      s_indigenousStatus -> t_value.code = s_indigenousStatus,
+      t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1';
+    };
+  };
+
+  // identifier_ihi
+  src.identifier_ihi as s_ihi where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_ihi -> t_identifier.value = s_ihi, t_identifier.system = 'http://ns.electronichealth.net.au/id/hi/ihi/1.0',
+    t_identifier.type as t_type then {
+      s_ihi -> t_type.coding as t_coding first then {
+        s_ihi -> t_coding.code = 'NI', t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+      };
+    };
+  };
+
+  // identifier_medicare
+  src.identifier_medicare as s_medicare where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_medicare -> t_identifier.value = s_medicare, t_identifier.system = 'http://ns.electronichealth.net.au/id/medicare-number',
+    t_identifier.type as t_type then {
+      s_medicare -> t_type.coding as t_coding first then {
+        s_medicare -> t_coding.code = 'MC', t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+      };
+    };
+  };
+
+  // identifier_dva
+  src.identifier_dva as s_dva where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_dva -> t_identifier.value = s_dva, t_identifier.system = 'http://ns.electronichealth.net.au/id/dva',
+    t_identifier.type as t_type then {
+      s_dva -> t_type.coding as t_coding first then {
+        s_dva -> t_coding.code = 'DVAU', t_coding.system = 'http://terminology.hl7.org.au/CodeSystem/v2-0203';
+      };
+    };
+  };
+
+  // name_official_family
+  src.name_official_family as s_name_official_family -> tgt.name as t_name first then {
+    s_name_official_family -> t_name.family = s_name_official_family, 
+        t_name.use = 'official';
+
+    // name_official_given1
+    //src.name_official_given1 as s_name_official_given1 -> t_name.given as t_given first then {
+    //  s_name_official_given1 -> t_given = s_name_official_given1;
+    //};
+    src.name_official_given1 as s_name_official_given1 -> t_name.given = s_name_official_given1;
+
+    // name_official_given2
+    //src.name_official_given2 as s_name_official_given2 where length() > 0 -> t_name.given as t_given last then {
+    //  s_name_official_given2 -> t_given = s_name_official_given2;
+    //};
+    src.name_official_given2 as s_name_official_given2 where length() > 0 -> t_name.given = s_name_official_given2;
+  };
+  
+  // name_usual_given
+  src.name_usual_given as s_name_usual_given where length() > 0 -> tgt.name as t_name first then {
+    s_name_usual_given -> t_name.text = s_name_usual_given, 
+        t_name.use = 'usual';
+  };
+
+  // telecom_home_phone
+  src.telecom_home_phone as s_telecom_home_phone where length() > 0 -> tgt.telecom as t_telecom_home_phone first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_home_phone -> t_telecom_home_phone.value = s_telecom_home_phone, 
+        t_telecom_home_phone.system = 'phone',
+        t_telecom_home_phone.use = 'home';
+  };
+
+  // telecom_mobile_phone
+  src.telecom_mobile_phone as s_telecom_mobile_phone where length() > 0 -> tgt.telecom as t_telecom_mobile_phone first then {
+    //telecom_mobile_phone -> t_telecom_mobile_phone = cp('phone', telecom_mobile_phone);
+    s_telecom_mobile_phone -> t_telecom_mobile_phone.value = s_telecom_mobile_phone, 
+        t_telecom_mobile_phone.system = 'phone',
+        t_telecom_mobile_phone.use = 'mobile';
+  };
+
+  // telecom_email
+  src.telecom_email as s_telecom_email where length() > 0 -> tgt.telecom as t_telecom_email first then {
+    s_telecom_email -> t_telecom_email.value = s_telecom_email, 
+        t_telecom_email.system = 'email';
+  };
+
+  // gender
+  src.gender as gender -> tgt.gender = gender;
+  
+  // birthDate
+  src.birthDate as birthDate -> tgt.birthDate = birthDate;
+  
+  // birthDate_accurancyIndicator
+
+  // address_home_city
+  src.address_home_city as s_address_home_city where length() > 0 -> tgt.address as t_address_home first then {
+    s_address_home_city -> t_address_home.city = s_address_home_city, 
+        t_address_home.type = 'physical',
+        t_address_home.country = 'AU';
+
+    // address_home_postalCode
+    src.address_home_postalCode as s_address_home_postalCode -> t_address_home.postalCode = s_address_home_postalCode;
+
+    // address_home_state
+    src.address_home_state as s_address_home_state -> t_address_home.state = s_address_home_state;
+
+    // address_home_line1
+    src.address_home_line1 as s_address_home_line1 -> t_address_home.line = s_address_home_line1;
+    //src.address_home_line1 as s_address_home_line1 where length() > 0 -> t_address_home.line as t_address_line first then {
+    //    s_address_home_line1 -> t_address_line = s_address_home_line1;
+    //};
+  };
+
+  // address_postal_line1
+  
+  // address_postal_line2
+  
+  // address_postal_city
+  
+  // address_postal_state
+  
+  // address_postal_postalCode
+  
+  // communication1
+  src.communication1_language_code as s_communication1_language_code where length() > 0 -> tgt.communication as t_communication first then {
+    // communication1_language_code
+    //s_communication1_language_code -> t_communication.language = cc(src.communication1_language_system, s_communication1_language_code, src.communication1_language_display);
+    s_communication1_language_code -> t_communication.language = create('CodeableConcept') as t_language then {
+      s_communication1_language_code -> t_language.coding = create('Coding') as t_coding then {
+        s_communication1_language_code -> t_coding.code = s_communication1_language_code;
+
+        // communication1_language_system
+        src.communication1_language_system as s_communication1_language_system -> t_coding.system = s_communication1_language_system;
+
+        // communication1_language_display
+        src.communication1_language_display as s_communication1_language_display where length() > 0 -> t_coding.display = s_communication1_language_display;
+      };
+    };
+
+    // communication1_preferred
+    src.communication1_preferred as s_communication1_preferred where length() > 0 -> t_communication.preferred = s_communication1_preferred;
+  };
+}

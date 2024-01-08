@@ -1,0 +1,4 @@
+/.vs/*
+/Sparked.TestDataMapping/bin/*
+/Sparked.TestDataMapping/obj/*
+/Sparked.TestDataMapping/TestData/*.json
