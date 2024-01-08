@@ -1,4 +1,3 @@
 /.vs/*
 /Sparked.Csv2FhirMapping/bin/*
 /Sparked.Csv2FhirMapping/obj/*
-/Sparked.Csv2FhirMapping/TestData/*.json
