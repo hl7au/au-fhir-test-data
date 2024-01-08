@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Sparked.TestDataMapping
+namespace Sparked.Csv2FhirMapping
 {
     public class CsvReader
     {

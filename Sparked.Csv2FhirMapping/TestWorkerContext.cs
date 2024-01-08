@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using static Hl7.Fhir.MappingLanguage.StructureMapUtilitiesAnalyze;
 
-namespace Sparked.TestDataMapping
+namespace Sparked.Csv2FhirMapping
 {
     public class TestWorker : IWorkerContext
     {

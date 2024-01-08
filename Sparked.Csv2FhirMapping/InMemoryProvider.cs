@@ -4,7 +4,7 @@ using Hl7.Fhir.Specification.Source;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Sparked.TestDataMapping
+namespace Sparked.Csv2FhirMapping
 {
     public class InMemoryProvider : IAsyncResourceResolver, IResourceResolver
     {

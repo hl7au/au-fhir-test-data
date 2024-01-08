@@ -8,7 +8,7 @@ using Hl7.Fhir.MappingLanguage;
 using Hl7.Fhir.ElementModel;
 using System.Diagnostics;
 
-namespace Sparked.TestDataMapping
+namespace Sparked.Csv2FhirMapping
 {
     internal class Program
     {
