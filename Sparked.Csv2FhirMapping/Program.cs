@@ -7,6 +7,7 @@ using Hl7.Fhir.Serialization;
 using Hl7.Fhir.MappingLanguage;
 using Hl7.Fhir.ElementModel;
 using System.Diagnostics;
+using Hl7.Fhir.ElementModel.Types;
 
 namespace Sparked.Csv2FhirMapping
 {
@@ -14,27 +15,40 @@ namespace Sparked.Csv2FhirMapping
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(string.Join(" ", args));
+            //Console.WriteLine(string.Join(" ", args));
+            var appName = System.AppDomain.CurrentDomain.FriendlyName;
 
-            var program = new Program();
+            if (args.Length >= 2)
+            {
+                var argString = System.Environment.CommandLine.Substring(System.Environment.ProcessPath.Length);
+                Console.WriteLine(appName + argString);
 
-            var mapFile = @"Maps\CSV2Patient.map";
-            if (!Directory.Exists(Path.GetDirectoryName(mapFile))) 
-                mapFile = @"..\..\..\" + mapFile;
+                var program = new Program();
 
-            var mapFileInfo = new FileInfo(mapFile);
-            Debug.WriteLine("Map file " + (mapFileInfo.Exists ? "exists" : "not found") + ": " + mapFileInfo.FullName); 
+                //var mapFile = @"Maps\CSV2Patient.map";
+                var mapFile = @"Maps\" + args[1];
+                if (!Directory.Exists(Path.GetDirectoryName(mapFile)))
+                    mapFile = @"..\..\..\" + mapFile;
 
-            var csvFile = @"TestData\Patient.csv";
-            //var csvFile = @"TestData\Patient - test IHIs.csv";
-            
-            if (!Directory.Exists(Path.GetDirectoryName(csvFile)))
-                csvFile = @"..\..\..\" + csvFile;
+                var mapFileInfo = new FileInfo(mapFile);
+                Debug.WriteLine("Map file " + (mapFileInfo.Exists ? "exists" : "not found") + ": " + mapFileInfo.FullName);
 
-            var csvFileInfo = new FileInfo(csvFile);
-            Debug.WriteLine("CSV file " + (csvFileInfo.Exists ? "exists" : "not found") + ": " + csvFileInfo.FullName);
+                //var csvFile = @"TestData\Patient - test IHIs.csv";
+                var csvFile = @"TestData\" + args[0];
 
-            program.TransformCsv2Patient(mapFile, csvFile);
+                if (!Directory.Exists(Path.GetDirectoryName(csvFile)))
+                    csvFile = @"..\..\..\" + csvFile;
+
+                var csvFileInfo = new FileInfo(csvFile);
+                Debug.WriteLine("CSV file " + (csvFileInfo.Exists ? "exists" : "not found") + ": " + csvFileInfo.FullName);
+
+                program.TransformCsv2Patient(mapFile, csvFile);
+            }
+            else
+            {
+                Console.WriteLine("Usage: " + appName + " <csv-filename> <mapping-filename>");
+                Console.WriteLine("E.g. : " + appName + " \"AU Core Sample Data - Patient.csv\" CSV2Patient.map");
+            }
         }
 
         public void TransformCsv2Patient(string mapFile, string csvFile)

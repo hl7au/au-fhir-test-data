@@ -6,38 +6,44 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
     ]
   },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "4",
+        "display": "Neither Aboriginal nor Torres Strait Islander origin"
+      }
+    }
+  ],
   "identifier": [
     {
       "type": {
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MC"
+            "code": "MC",
+            "display": "Patient's Medicare Number"
           }
-        ]
+        ],
+        "text": "Medicare Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "1234567892"
-    },
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MC"
-          }
-        ]
-      },
-      "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "2024-05"
+      "value": "1234567892",
+      "period": {
+        "end": "2024-05"
+      }
     }
   ],
   "name": [
     {
-      "use": "official",
-      "family": "",
+      "use": "usual",
+      "family": "SMITH",
       "given": [
-        ""
+        "Emma"
+      ],
+      "prefix": [
+        "Ms."
       ]
     }
   ],

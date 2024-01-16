@@ -3,6 +3,8 @@ map "http://example.org/StructureMap/CSV2Patient" = "CSV2Patient"
 uses "http://example.org/StructureDefinition/PatientCSV" as source
 uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
 
+uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
+
 group tutorial(source src : PatientCSV, target tgt : Patient) {
 
   // id
@@ -12,145 +14,361 @@ group tutorial(source src : PatientCSV, target tgt : Patient) {
     src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient';
   };
 
-  // extension_indigenousStatus
-  src.extension_indigenousStatus as s_indigenousStatus where length() > 0 -> tgt.extension as t_extension first then {
+  // indigenousStatus_code
+  src.indigenousStatus_code as s_indigenousStatus where length() > 0 -> tgt.extension as t_extension first then {
     s_indigenousStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/indigenous-status',
-    t_extension.value = create('Coding') as t_value then {
-      s_indigenousStatus -> t_value.code = s_indigenousStatus,
-      t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1';
+        t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1', s_indigenousStatus) as t_value then {
+//    t_extension.value = create('Coding') as t_value then {
+//      s_indigenousStatus -> t_value.code = s_indigenousStatus,
+//      t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1';
+//
+            // indigenousStatus_display
+            src.indigenousStatus_display as s_display where length() > 0 -> t_value.display = s_display;
+        };
+  };
+
+  // identifier1
+  src.identifier1_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+
+    src.identifier1_use as s_use where length() > 0 -> t_identifier.use = s_use;
+
+    s_value -> t_identifier.value = s_value;
+    src.identifier1_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+    src.identifier1_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+        s_type -> t_type.coding as t_coding first then {
+            s_type -> t_coding.code = s_type, 
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier1_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.identifier1_type_text as s_text where length() > 0 -> t_type.text = s_text;
+
+        //s_type where (src.identifier1_type_code = 'NI') -> t_identifier as t_identifier then {
+//        s_type where identifier1_type_code = 'NI' -> t_identifier as t_identifier then {
+//            src.identifier_ihiStatus_code as s_ihiStatus where (length() > 0) -> t_identifier.extension as t_extension first then {
+//                s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+//                t_extension.value = create('Coding') as t_value then {
+//                    s_ihiStatus -> t_value.code = s_ihiStatus,
+//                    t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1';
+//                };
+//            };
+//            src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where (length() > 0) -> t_identifier.extension as t_extension first then {
+//                s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+//                t_extension.value = create('Coding') as t_value then {
+//                    s_ihiRecordStatus -> t_value.code = s_ihiRecordStatus,
+//                    t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1',
+//                    t_value.display = s_ihiRecordStatus;
+//                };
+//            };
+//        };
+    };
+
+    //src.identifier1_type_code as s_type where identifier1_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+
+    //src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 and src.identifier1_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+    src.identifier1_ihiStatus_code as s_ihiStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+        s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+            t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1', s_ihiStatus);
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiStatus -> t_value.code = s_ihiStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1';
+//        };
+    };
+
+    //src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 and src.identifier1_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+    src.identifier1_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+        s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+            t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1', s_ihiRecordStatus, s_ihiRecordStatus);
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiRecordStatus -> t_value.code = s_ihiRecordStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1',
+//            t_value.display = s_ihiRecordStatus;
+//        };
+    };
+
+    src.identifier1_period_end as s_end where length() > 0 -> t_identifier.period as t_period then {
+        s_end -> t_period.end = s_end;
+    };
+
+    src.identifier1_assigner_display as s_assigner where length() > 0 -> t_identifier.assigner as t_assigner then {
+        s_assigner -> t_assigner.display = s_assigner;
     };
   };
 
-  // identifier_ihi
-  src.identifier_ihi as s_ihi where length() > 0 -> tgt.identifier as t_identifier first then {
-    s_ihi -> t_identifier.value = s_ihi, t_identifier.system = 'http://ns.electronichealth.net.au/id/hi/ihi/1.0',
-    t_identifier.type as t_type then {
-      s_ihi -> t_type.coding as t_coding first then {
-        s_ihi -> t_coding.code = 'NI', t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
-      };
+  // identifier2
+//  src.identifier2_value as s_value where length() > 0, 
+//  src.identifier2_type_code as type_code, 
+//  src.identifier2_type_display as type_display,
+//  src.identifier2_type_text as type_text, 
+//  src.identifier2_system as system, 
+//  src.identifier2_assigner_display as assigner 
+//  -> tgt.identifier as t_identifier first then 
+//    identifier(type_code, type_display, type_text, system, s_value, assigner, '', '', t_identifier);
+
+
+//  src.identifier2_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+//      src.identifier2_type_code as s_identifier2_type_code;
+//      src.identifier2_type_display as identifier2_type_display;
+//      src.identifier2_type_text as identifier2_type_text;
+//      src.identifier2_system as identifier2_system;
+//      src.identifier2_assigner_display as identifier2_assigner_display;
+//    identifier(s_identifier2_type_code, identifier2_type_display, identifier2_type_text, identifier2_system, s_value, identifier2_assigner_display, '', '', t_identifier);
+//  }
+
+//  src.identifier_value as value where length() > 0 -> tgt.identifier as t_identifier first then 
+//    identifier(src.identifier_type_code, src.identifier_type_display, src.identifier_type_text, src.identifier_system, value, src.identifier_assigner_display, t_identifier);
+
+  // identifier2
+  src.identifier2_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_value -> t_identifier.value = s_value;
+    src.identifier2_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+    src.identifier2_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+        s_type -> t_type.coding as t_coding first then {
+            s_type -> t_coding.code = s_type, 
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier2_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.identifier2_type_text as s_text where length() > 0 -> t_type.text = s_text;
+    };
+
+//    src.identifier2_type_code as type_code2 where 'NI' log(type_code2);
+
+//    src.identifier2_type_code where (src.identifier2_type_code = 'NI') -> t_identifier as t_identifier then {
+    //src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 and src.identifier2_type_code = "NI" -> t_identifier.extension as t_extension first then {
+//    src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+//        s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiStatus -> t_value.code = s_ihiStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1';
+//        };
+//    };
+//    src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+    //src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 and src.identifier2_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+//        s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiRecordStatus -> t_value.code = s_ihiRecordStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1',
+//            t_value.display = s_ihiRecordStatus;
+//        };
+//    };
+//    };
+
+//    src.identifier2_type_code as s_type where identifier2_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+//        src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+//            s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+//            t_extension.value = create('Coding') as t_value then {
+//                s_ihiStatus -> t_value.code = s_ihiStatus,
+//                t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1';
+//            };
+//        };
+//    };
+
+//    src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 and src.identifier2_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+//    //src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+//        s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiRecordStatus -> t_value.code = s_ihiRecordStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1',
+//            t_value.display = s_ihiRecordStatus;
+//        };
+//    };
+
+    src.identifier2_assigner_display as s_assigner where length() > 0 -> t_identifier.assigner as t_assigner then {
+        s_assigner -> t_assigner.display = s_assigner;
     };
   };
 
-  // identifier_medicare
-  src.identifier_medicare as s_medicare where length() > 0 -> tgt.identifier as t_identifier first then {
-    s_medicare -> t_identifier.value = s_medicare, t_identifier.system = 'http://ns.electronichealth.net.au/id/medicare-number',
-    t_identifier.type as t_type then {
-      s_medicare -> t_type.coding as t_coding first then {
-        s_medicare -> t_coding.code = 'MC', t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
-      };
+  // identifier3
+  src.identifier3_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_value -> t_identifier.value = s_value;
+    src.identifier3_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+    src.identifier3_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+        s_type -> t_type.coding as t_coding first then {
+            s_type -> t_coding.code = s_type, 
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier3_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.identifier3_type_text as s_text where length() > 0 -> t_type.text = s_text;
+    };
+
+//    src.identifier3_type_code where (src.identifier3_type_code = 'NI') -> t_identifier as t_identifier then {
+//    src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+    //src.identifier_ihiStatus_code as s_ihiStatus where length() > 0 and src.identifier3_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+//        s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiStatus -> t_value.code = s_ihiStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1';
+//        };
+//    };
+//    src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+    //src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 and src.identifier3_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+//        s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+//        t_extension.value = create('Coding') as t_value then {
+//            s_ihiRecordStatus -> t_value.code = s_ihiRecordStatus,
+//            t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1',
+//            t_value.display = s_ihiRecordStatus;
+//        };
+//    };
+//    };
+
+    src.identifier3_assigner_display as s_assigner where length() > 0 -> t_identifier.assigner as t_assigner then {
+        s_assigner -> t_assigner.display = s_assigner;
     };
   };
 
-  // identifier_dva
-  src.identifier_dva as s_dva where length() > 0 -> tgt.identifier as t_identifier first then {
-    s_dva -> t_identifier.value = s_dva, t_identifier.system = 'http://ns.electronichealth.net.au/id/dva',
-    t_identifier.type as t_type then {
-      s_dva -> t_type.coding as t_coding first then {
-        s_dva -> t_coding.code = 'DVAU', t_coding.system = 'http://terminology.hl7.org.au/CodeSystem/v2-0203';
-      };
-    };
-  };
-
-  // name_official_family
-  src.name_official_family as s_name_official_family -> tgt.name as t_name first then {
-    s_name_official_family -> t_name.family = s_name_official_family, 
-        t_name.use = 'official';
-
-    // name_official_given1
-    //src.name_official_given1 as s_name_official_given1 -> t_name.given as t_given first then {
-    //  s_name_official_given1 -> t_given = s_name_official_given1;
-    //};
-    src.name_official_given1 as s_name_official_given1 -> t_name.given = s_name_official_given1;
-
-    // name_official_given2
-    //src.name_official_given2 as s_name_official_given2 where length() > 0 -> t_name.given as t_given last then {
-    //  s_name_official_given2 -> t_given = s_name_official_given2;
-    //};
-    src.name_official_given2 as s_name_official_given2 where length() > 0 -> t_name.given = s_name_official_given2;
+  // name1
+  src.name1_family as s_name_family where length() > 0 or src.name1_text.length() > 0 -> tgt.name as t_name first then {
+    s_name_family where length() > 0 -> t_name.family = s_name_family; 
+    src.name1_text as s_name_text where length() > 0 -> t_name.text = s_name_text;
+    src.name1_use as s_use where length() > 0 -> t_name.use = s_use;
+    src.name1_given1 as s_name_given where length() > 0 -> t_name.given = s_name_given;
+    src.name1_given2 as s_name_given2 where length() > 0 -> t_name.given = s_name_given2;
+    src.name1_prefix as s_name_prefix where length() > 0 -> t_name.prefix = s_name_prefix;
   };
   
-  // name_usual_given
-  src.name_usual_given as s_name_usual_given where length() > 0 -> tgt.name as t_name first then {
-    s_name_usual_given -> t_name.text = s_name_usual_given, 
-        t_name.use = 'usual';
+  // name2
+  src.name2_family as s_name_family where length() > 0 or src.name2_text.length() > 0 -> tgt.name as t_name first then {
+    s_name_family where length() > 0 -> t_name.family = s_name_family; 
+    src.name2_text as s_name_text where length() > 0 -> t_name.text = s_name_text;
+    src.name2_use as s_use where length() > 0 -> t_name.use = s_use;
+    src.name2_given1 as s_name_given where length() > 0 -> t_name.given = s_name_given;
+    src.name2_given2 as s_name_given2 where length() > 0 -> t_name.given = s_name_given2;
+    src.name2_prefix as s_name_prefix where length() > 0 -> t_name.prefix = s_name_prefix;
   };
 
-  // telecom_home_phone
-  src.telecom_home_phone as s_telecom_home_phone where length() > 0 -> tgt.telecom as t_telecom_home_phone first then {
+  // telecom1
+  src.telecom1_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
     //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
-    s_telecom_home_phone -> t_telecom_home_phone.value = s_telecom_home_phone, 
-        t_telecom_home_phone.system = 'phone',
-        t_telecom_home_phone.use = 'home';
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom1_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom1_system as s_system where length() > 0 -> t_telecom.system = s_system;
   };
 
-  // telecom_mobile_phone
-  src.telecom_mobile_phone as s_telecom_mobile_phone where length() > 0 -> tgt.telecom as t_telecom_mobile_phone first then {
-    //telecom_mobile_phone -> t_telecom_mobile_phone = cp('phone', telecom_mobile_phone);
-    s_telecom_mobile_phone -> t_telecom_mobile_phone.value = s_telecom_mobile_phone, 
-        t_telecom_mobile_phone.system = 'phone',
-        t_telecom_mobile_phone.use = 'mobile';
+  // telecom2
+  src.telecom2_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom2_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom2_system as s_system where length() > 0 -> t_telecom.system = s_system;
   };
 
-  // telecom_email
-  src.telecom_email as s_telecom_email where length() > 0 -> tgt.telecom as t_telecom_email first then {
-    s_telecom_email -> t_telecom_email.value = s_telecom_email, 
-        t_telecom_email.system = 'email';
+  // telecom3
+  src.telecom3_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom3_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom3_system as s_system where length() > 0 -> t_telecom.system = s_system;
   };
 
   // gender
-  src.gender as gender -> tgt.gender = gender;
+  src.gender as gender where length() > 0 -> tgt.gender = gender;
   
   // birthDate
-  src.birthDate as birthDate -> tgt.birthDate = birthDate;
-  
-  // birthDate_accurancyIndicator
+  src.birthDate as s_birthDate where length() > 0 -> tgt.birthDate = s_birthDate as t_birthDate then {
 
-  // address_home_city
-  src.address_home_city as s_address_home_city where length() > 0 -> tgt.address as t_address_home first then {
-    s_address_home_city -> t_address_home.city = s_address_home_city, 
-        t_address_home.type = 'physical',
-        t_address_home.country = 'AU';
+    // birthDate_accurancyIndicator
+    src.birthDate_accurancyIndicator_code as s_accurancyIndicator where length() > 0 -> t_birthDate.extension = create('Extension') as t_extension then {
+        s_accurancyIndicator -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/date-accuracy-indicator',
+            t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1', s_accurancyIndicator) as t_value then {
+        //s_accurancyIndicator -> t_extension.value = create('Coding') as t_value then {
+        //    s_accurancyIndicator -> t_value.code = s_accurancyIndicator,
+        //        t_value.system = 'https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1';
 
-    // address_home_postalCode
-    src.address_home_postalCode as s_address_home_postalCode -> t_address_home.postalCode = s_address_home_postalCode;
-
-    // address_home_state
-    src.address_home_state as s_address_home_state -> t_address_home.state = s_address_home_state;
-
-    // address_home_line1
-    src.address_home_line1 as s_address_home_line1 -> t_address_home.line = s_address_home_line1;
-    //src.address_home_line1 as s_address_home_line1 where length() > 0 -> t_address_home.line as t_address_line first then {
-    //    s_address_home_line1 -> t_address_line = s_address_home_line1;
-    //};
-  };
-
-  // address_postal_line1
-  
-  // address_postal_line2
-  
-  // address_postal_city
-  
-  // address_postal_state
-  
-  // address_postal_postalCode
-  
-  // communication1
-  src.communication1_language_code as s_communication1_language_code where length() > 0 -> tgt.communication as t_communication first then {
-    // communication1_language_code
-    //s_communication1_language_code -> t_communication.language = cc(src.communication1_language_system, s_communication1_language_code, src.communication1_language_display);
-    s_communication1_language_code -> t_communication.language = create('CodeableConcept') as t_language then {
-      s_communication1_language_code -> t_language.coding = create('Coding') as t_coding then {
-        s_communication1_language_code -> t_coding.code = s_communication1_language_code;
-
-        // communication1_language_system
-        src.communication1_language_system as s_communication1_language_system -> t_coding.system = s_communication1_language_system;
-
-        // communication1_language_display
-        src.communication1_language_display as s_communication1_language_display where length() > 0 -> t_coding.display = s_communication1_language_display;
-      };
+                src.birthDate_accurancyIndicator_display as s_accurancyIndicator_display where length() > 0 -> t_value then {
+                    s_accurancyIndicator_display -> t_value.display = s_accurancyIndicator_display;
+                };
+            };
     };
 
-    // communication1_preferred
-    src.communication1_preferred as s_communication1_preferred where length() > 0 -> t_communication.preferred = s_communication1_preferred;
+    // birthDate_birthTime
+    src.birthDate_birthTime as s_birthTime where length() > 0 -> t_birthDate.extension = create('Extension') as t_extension then {
+        s_birthTime -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/patient-birthTime',
+            t_extension.value = create('dateTime') as t_dateTime then {
+                s_birthTime -> t_dateTime.value = s_birthTime;
+            };
+    };
+  };    
+
+  // address1
+  src.address1_city as s_city where length() > 0 -> tgt.address as t_address first then {
+    s_city -> t_address.city = s_city;
+
+    // address use
+    src.address1_use as s_use where length() > 0 -> t_address.use = s_use;
+
+    // address lines
+    src.address1_line1 as s_line1 where length() > 0 -> t_address.line = s_line1 then {
+        src.address1_line2 as s_line2 where length() > 0 -> t_address.line = s_line2;
+    };
+
+    // address postalCode
+    src.address1_postalCode as s_postalCode where length() > 0 -> t_address.postalCode = s_postalCode;
+
+    // address state
+    src.address1_state as s_state where length() > 0 -> t_address.state = s_state;
+
+    // address country
+    src.address1_country as s_country where length() > 0 -> t_address.country = s_country;
+  };
+
+  // address2
+  src.address2_city as s_city where length() > 0 -> tgt.address as t_address first then {
+    s_city -> t_address.city = s_city;
+
+    // address use
+    src.address2_use as s_use where length() > 0 -> t_address.use = s_use;
+
+    // address lines
+    src.address2_line1 as s_line1 where length() > 0 -> t_address.line = s_line1 then {
+        src.address2_line2 as s_line2 where length() > 0 -> t_address.line = s_line2;
+    };
+
+    // address postalCode
+    src.address2_postalCode as s_postalCode where length() > 0 -> t_address.postalCode = s_postalCode;
+
+    // address state
+    src.address2_state as s_state where length() > 0 -> t_address.state = s_state;
+
+    // address country
+    src.address2_country as s_country where length() > 0 -> t_address.country = s_country;
+  };
+  
+  // communication1
+  src.communication1_language_code as s_language_code where length() > 0 -> tgt.communication as t_communication first then {
+    // communication1 language coding
+    src.communication1_language_system as s_language_system -> t_communication.language = cc(s_language_system, s_language_code) as t_language then {
+        src.communication1_language_text as s_language_text where length() > 0 -> t_language.text = s_language_text;
+    };    
+
+    // communication1 preferred
+    src.communication1_preferred as s_preferred where length() > 0 -> t_communication.preferred = s_preferred;
   };
 }
+
+
+//group identifier(source identifier_type_code, source identifier_type_display, source identifier_type_text, 
+//    source identifier_system, source identifier_value, source identifier_assigner_display, 
+//    source identifier_use, source identifier_period_end
+//    target tgt : Identifier) {
+//
+//  identifier_value as s_value where length() > 0 -> tgt as t_identifier then {
+//    identifier_use as s_use where length() > 0 -> t_identifier.use = s_use;
+//    s_value -> t_identifier.value = s_value;
+//    identifier_system as s_system where length() > 0 -> t_identifier.system = s_system;
+//
+//    identifier_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+//        s_type -> t_type.coding as t_coding first then {
+//            s_type -> t_coding.code = s_type, 
+//            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+//            identifier_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+//        };
+//        identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
+//    };
+//
+//    identifier_period_end as s_end where length() > 0 -> t_identifier.period as t_period then {
+//        s_end -> t_period.end = s_end;
+//    };
+//  };
+//}
