@@ -5,7 +5,7 @@ uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
 
 uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
 
-group tutorial(source src : PatientCSV, target tgt : Patient) {
+group ToPatient(source src : PatientCSV, target tgt : Patient) {
 
   // id
   src.id as s_id where length() > 0 -> tgt.id = s_id; // ""rule_id"";
