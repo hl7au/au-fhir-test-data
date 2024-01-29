@@ -18,7 +18,7 @@ namespace Sparked.Csv2FhirMapping
             //Console.WriteLine(string.Join(" ", args));
             var appName = System.AppDomain.CurrentDomain.FriendlyName;
 
-            if (args.Length >= 2)
+            if (args.Length >= 3)
             {
                 var argString = System.Environment.CommandLine.Substring(System.Environment.ProcessPath.Length);
                 Console.WriteLine(appName + argString);
@@ -26,7 +26,7 @@ namespace Sparked.Csv2FhirMapping
                 var program = new Program();
 
                 //var mapFile = @"Maps\CSV2Patient.map";
-                var mapFile = @"Maps\" + args[1];
+                var mapFile = @"Maps\" + args[2];
                 if (!Directory.Exists(Path.GetDirectoryName(mapFile)))
                     mapFile = @"..\..\..\" + mapFile;
 
@@ -34,7 +34,7 @@ namespace Sparked.Csv2FhirMapping
                 Debug.WriteLine("Map file " + (mapFileInfo.Exists ? "exists" : "not found") + ": " + mapFileInfo.FullName);
 
                 //var csvFile = @"TestData\Patient - test IHIs.csv";
-                var csvFile = @"TestData\" + args[0];
+                var csvFile = @"TestData\" + args[1];
 
                 if (!Directory.Exists(Path.GetDirectoryName(csvFile)))
                     csvFile = @"..\..\..\" + csvFile;
@@ -42,29 +42,32 @@ namespace Sparked.Csv2FhirMapping
                 var csvFileInfo = new FileInfo(csvFile);
                 Debug.WriteLine("CSV file " + (csvFileInfo.Exists ? "exists" : "not found") + ": " + csvFileInfo.FullName);
 
-                program.TransformCsv2Patient(mapFile, csvFile);
+                var resourceType = args[0];
+
+                program.TransformCsv2Patient(mapFile, csvFile, resourceType);
             }
             else
             {
-                Console.WriteLine("Usage: " + appName + " <csv-filename> <mapping-filename>");
-                Console.WriteLine("E.g. : " + appName + " \"AU Core Sample Data - Patient.csv\" CSV2Patient.map");
+                Console.WriteLine("Usage: " + appName + " <resource-type> <csv-filename> <mapping-filename>");
+                Console.WriteLine("E.g. : " + appName + " Patient \"AU Core Sample Data - Patient.csv\" CSV2Patient.map");
             }
         }
 
-        public void TransformCsv2Patient(string mapFile, string csvFile)
+        public void TransformCsv2Patient(string mapFile, string csvFile, string resourceType)
         {
             if (string.IsNullOrEmpty(mapFile)) throw new ArgumentNullException("mapFile");
             if (string.IsNullOrEmpty(mapFile)) throw new ArgumentNullException("csvFile");
 
             var mapText = File.ReadAllText(mapFile);
             var parser = new StructureMapUtilitiesParse();
-            var structureMap = parser.parse(mapText, "Patient");
+            var structureMap = parser.parse(mapText, resourceType);
+            var csvType = resourceType + "CSV";
 
             using (var stream = File.OpenRead(csvFile))
             {
                 using (var sr = new StreamReader(stream))
                 {
-                    CsvReader reader = new CsvReader(sr, "http://example.org/StructureDefinition/PatientCSV", "PatientCSV");
+                    CsvReader reader = new CsvReader(sr, "http://example.org/StructureDefinition/" + csvType, csvType);
                     reader.ParseHeader();
 
                     var worker = new TestWorker(reader.Source);
@@ -80,13 +83,14 @@ namespace Sparked.Csv2FhirMapping
                         var target = engine.GenerateEmptyTargetOutputStructure(structureMap);
                         engine.transform(null, node, structureMap, target);
 
-                        var output = target.ToPoco<Patient>();
+                        var output = target.ToPoco<Resource>();
+
                         var outContent = new FhirJsonSerializer(new SerializerSettings() { Pretty = true }).SerializeToString(output);
                         System.Diagnostics.Trace.WriteLine(outContent);
 
 
                         var folder = Path.GetDirectoryName(csvFile);
-                        var outFile = Path.Combine(folder, "Patient-" + output.Id + ".json");
+                        var outFile = Path.Combine(folder, resourceType + "-" + output.Id + ".json");
 
                         File.WriteAllText(outFile, outContent);
 
