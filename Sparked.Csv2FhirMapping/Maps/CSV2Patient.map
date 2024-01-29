@@ -39,6 +39,7 @@ group tutorial(source src : PatientCSV, target tgt : Patient) {
         s_type -> t_type.coding as t_coding first then {
             s_type -> t_coding.code = s_type, 
             t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier1_type_system as s_type_system where length() > 0 -> t_coding.system = s_type_system;
             src.identifier1_type_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
         src.identifier1_type_text as s_text where length() > 0 -> t_type.text = s_text;
@@ -126,7 +127,8 @@ group tutorial(source src : PatientCSV, target tgt : Patient) {
     src.identifier2_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
         s_type -> t_type.coding as t_coding first then {
             s_type -> t_coding.code = s_type, 
-            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';            
+            src.identifier2_type_system as s_type_system where length() > 0 -> t_coding.system = s_type_system;
             src.identifier2_type_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
         src.identifier2_type_text as s_text where length() > 0 -> t_type.text = s_text;
@@ -188,6 +190,7 @@ group tutorial(source src : PatientCSV, target tgt : Patient) {
         s_type -> t_type.coding as t_coding first then {
             s_type -> t_coding.code = s_type, 
             t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier3_type_system as s_type_system where length() > 0 -> t_coding.system = s_type_system;
             src.identifier3_type_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
         src.identifier3_type_text as s_text where length() > 0 -> t_type.text = s_text;
