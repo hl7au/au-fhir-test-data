@@ -3,7 +3,7 @@ map "http://example.org/StructureMap/CSV2Patient" = "CSV2Patient"
 uses "http://example.org/StructureDefinition/PatientCSV" as source
 uses "http://hl7.org/fhir/StructureDefinition/Patient" as target
 
-uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
+//uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
 
 group ToPatient(source src : PatientCSV, target tgt : Patient) {
 
