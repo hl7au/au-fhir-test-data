@@ -16,7 +16,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -40,7 +40,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -64,7 +64,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -88,7 +88,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -112,7 +112,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -136,7 +136,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -160,7 +160,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -184,7 +184,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -208,7 +208,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
@@ -241,11 +241,184 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8=",
+								"value": "{{auth-header}}",
 								"type": "text"
 							}
 						],
 						"url": "{{server}}/Patient/smith-emma"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AllergyIntolerance",
+			"item": [
+				{
+					"name": "AllergyIntolerance-dust Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"dust\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"unconfirmed\",\r\n        \"display\": \"Unconfirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"category\": [\r\n    \"environment\"\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"33008008\",\r\n        \"display\": \"Dust\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"recordedDate\": \"2023-05-11\",\r\n  \"asserter\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-egg Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"egg\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ],\r\n    \"text\": \"Active\"\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"confirmed\",\r\n        \"display\": \"Confirmed\"\r\n      }\r\n    ],\r\n    \"text\": \"Confirmed\"\r\n  },\r\n  \"type\": \"allergy\",\r\n  \"category\": [\r\n    \"food\"\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"102263004\",\r\n        \"display\": \"Eggs (edible)\"\r\n      }\r\n    ],\r\n    \"text\": \"Egg\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"onsetDateTime\": \"2023-02-12\",\r\n  \"recordedDate\": \"2023-04-24\",\r\n  \"recorder\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  },\r\n  \"asserter\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  },\r\n  \"reaction\": [\r\n    {\r\n      \"substance\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"102263004\",\r\n            \"display\": \"Eggs (edible)\"\r\n          }\r\n        ],\r\n        \"text\": \"Egg\"\r\n      },\r\n      \"manifestation\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"16932000\",\r\n              \"display\": \"Nausea and vomiting\"\r\n            }\r\n          ],\r\n          \"text\": \"Nausea and vomiting\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-lactose Validate Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"lactose\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"confirmed\",\r\n        \"display\": \"Confirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"type\": \"intolerance\",\r\n  \"category\": [\r\n    \"food\"\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"782415009\",\r\n        \"display\": \"Intolerance to lactose\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"onsetAge\": {\r\n    \"value\": 1,\r\n    \"unit\": \"year\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"a\"\r\n  },\r\n  \"recordedDate\": \"2023-03-14\",\r\n  \"recorder\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003614900041243\"\r\n    }\r\n  },\r\n  \"asserter\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  },\r\n  \"reaction\": [\r\n    {\r\n      \"substance\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"47703008\",\r\n            \"display\": \"Lactose\"\r\n          }\r\n        ]\r\n      },\r\n      \"manifestation\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"21522001\",\r\n              \"display\": \"Abdominal pain\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"116289008\",\r\n              \"display\": \"Abdominal bloating\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"62315008\",\r\n              \"display\": \"Diarrhoea\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-nkda Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"nkda\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"unconfirmed\",\r\n        \"display\": \"Unconfirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"409137002\",\r\n        \"display\": \"No known drug allergy\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"recordedDate\": \"2023-03-14\",\r\n  \"recorder\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.1\",\r\n      \"value\": \"8003614900041243\"\r\n    }\r\n  },\r\n  \"asserter\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-noneknown Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"noneknown\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"unconfirmed\",\r\n        \"display\": \"Unconfirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"716186003\",\r\n        \"display\": \"No known allergy\"\r\n      },\r\n      {\r\n        \"system\": \"http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips\",\r\n        \"code\": \"no-known-allergies\",\r\n        \"display\": \"No known allergies\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/wang-li\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"recorder\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.2\",\r\n      \"value\": \"8003614900041243\"\r\n    }\r\n  },\r\n  \"asserter\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-penicillin Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"penicillin\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"unconfirmed\",\r\n        \"display\": \"Unconfirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"category\": [\r\n    \"medication\"\r\n  ],\r\n  \"criticality\": \"high\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"764146007\",\r\n        \"display\": \"Penicillin\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"recordedDate\": \"1999-08-25\",\r\n  \"recorder\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  },\r\n  \"asserter\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"reaction\": [\r\n    {\r\n      \"substance\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"764146007\",\r\n            \"display\": \"Penicillin\"\r\n          }\r\n        ]\r\n      },\r\n      \"manifestation\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"247472004\",\r\n              \"display\": \"Hives\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "AllergyIntolerance-wasp Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"id\": \"wasp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance\"\r\n    ]\r\n  },\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"unconfirmed\",\r\n        \"display\": \"Unconfirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"category\": [\r\n    \"environment\"\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"256440004\",\r\n        \"display\": \"Wasp venom\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"recordedDate\": \"2023-09-05\",\r\n  \"asserter\": {\r\n    \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n  },\r\n  \"reaction\": [\r\n    {\r\n      \"substance\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"256440004\",\r\n            \"display\": \"Wasp venom\"\r\n          }\r\n        ]\r\n      },\r\n      \"manifestation\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"247472004\",\r\n              \"display\": \"Hives\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"418363000\",\r\n              \"display\": \"Itching of skin\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"76067001\",\r\n              \"display\": \"Sneezing\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/AllergyIntolerance/$validate"
 					},
 					"response": []
 				}
@@ -257,41 +430,6 @@
 				"method": "GET",
 				"header": [],
 				"url": "{{server}}/metadata"
-			},
-			"response": []
-		},
-		{
-			"name": "StructureDefinition AUCore",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{server}}/StructureDefinition?kind=resource&name=AUCore",
-					"host": [
-						"{{server}}"
-					],
-					"path": [
-						"StructureDefinition"
-					],
-					"query": [
-						{
-							"key": "kind",
-							"value": "resource"
-						},
-						{
-							"key": "name",
-							"value": "AUCore"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
