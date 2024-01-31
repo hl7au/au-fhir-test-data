@@ -44,19 +44,32 @@ namespace Sparked.Csv2FhirMapping
 
                 var resourceType = args[0];
 
-                program.TransformCsv2Patient(mapFile, csvFile, resourceType);
+                string outFolder = null;
+                if (args.Length >= 4)
+                    outFolder = args[3];
+
+                program.TransformCsv2(resourceType, mapFile, csvFile, outFolder);
             }
             else
             {
-                Console.WriteLine("Usage: " + appName + " <resource-type> <csv-filename> <mapping-filename>");
-                Console.WriteLine("E.g. : " + appName + " Patient \"AU Core Sample Data - Patient.csv\" CSV2Patient.map");
+                Console.WriteLine("Usage: " + appName + " <resource-type> <csv-filename> <mapping-filename> <outFolder>");
+                Console.WriteLine("E.g. : " + appName + " Patient \"AU Core Sample Data - Patient.csv\" CSV2Patient.map generated");
             }
         }
 
-        public void TransformCsv2Patient(string mapFile, string csvFile, string resourceType)
+        public void TransformCsv2(string resourceType, string mapFile, string csvFile, string outFolder)
         {
+            if (string.IsNullOrEmpty(resourceType)) throw new ArgumentNullException("resourceType");
             if (string.IsNullOrEmpty(mapFile)) throw new ArgumentNullException("mapFile");
-            if (string.IsNullOrEmpty(mapFile)) throw new ArgumentNullException("csvFile");
+            if (string.IsNullOrEmpty(csvFile)) throw new ArgumentNullException("csvFile");
+
+            var folder = Path.GetDirectoryName(csvFile);
+            if (!string.IsNullOrEmpty(outFolder))
+            {
+                folder = Path.GetFullPath(outFolder);
+                if (!Directory.Exists(folder))
+                    Directory.CreateDirectory(folder);
+            }
 
             var mapText = File.ReadAllText(mapFile);
             var parser = new StructureMapUtilitiesParse();
@@ -88,8 +101,6 @@ namespace Sparked.Csv2FhirMapping
                         var outContent = new FhirJsonSerializer(new SerializerSettings() { Pretty = true }).SerializeToString(output);
                         System.Diagnostics.Trace.WriteLine(outContent);
 
-
-                        var folder = Path.GetDirectoryName(csvFile);
                         var outFile = Path.Combine(folder, resourceType + "-" + output.Id + ".json");
 
                         File.WriteAllText(outFile, outContent);
