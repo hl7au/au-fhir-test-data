@@ -2,7 +2,7 @@
   "profiles": {
     "Sparked.Csv2FhirMapping": {
       "commandName": "Project",
-      "commandLineArgs": "Condition \"AU Core Sample Data - Condition.csv\" CSV2Condition.map ..\\..\\..\\..\\generated"
+      "commandLineArgs": "Immunization \"AU Core Sample Data - Immunization.csv\" CSV2Immunization.map ..\\..\\..\\..\\generated"
     }
   }
 }
