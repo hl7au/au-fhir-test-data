@@ -425,6 +425,251 @@
 			]
 		},
 		{
+			"name": "Encounter",
+			"item": [
+				{
+					"name": "annualvisit-1 Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "annualvisit-2 Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "covid-admin-1 Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "covid-admin-2 Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "delivery Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "discharge-1 Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "emergency Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "home-meds-review Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "nailwound Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				},
+				{
+					"name": "telehealth Validate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{auth-header}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\",\r\n            \"display\": \"Patient's Medicare number\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"1234567892\"\r\n    }\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"EI\",\r\n                \"display\": \"Employee number\"\r\n              }\r\n            ],\r\n            \"text\": \"Employee Number\"\r\n          },\r\n          \"system\": \"http://tasmedicalcenter.example.com/providers\",\r\n          \"value\": \"8223TAS\",\r\n          \"assigner\": {\r\n            \"display\": \"TAS GP Medical Center TAS\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2022-02-10T09:20:00+10:00\",\r\n    \"end\": \"2022-02-10T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"display\": \"TAS GP Medical Center TAS\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/Encounter/$validate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Capabilities",
 			"request": {
 				"method": "GET",
