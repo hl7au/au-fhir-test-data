@@ -958,6 +958,221 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "Immunization",
+					"item": [
+						{
+							"name": "air-covid-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3986\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "air-covid-2 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3987\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"occurrenceDateTime\": \"2021-08-01\",\r\n  \"primarySource\": true,\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 2\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "covid-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1525011000168107\",\r\n        \"display\": \"Comirnaty\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/covid-admin-1\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/bobrester-medical-center\"\r\n  },\r\n  \"manufacturer\": {\r\n    \"display\": \"Pfizer Australia Ltd\"\r\n  },\r\n  \"lotNumber\": \"200000000P\",\r\n  \"site\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"368208006\",\r\n        \"display\": \"Left upper arm structure\"\r\n      }\r\n    ],\r\n    \"text\": \"Left upper arm\"\r\n  },\r\n  \"route\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"78421000\",\r\n        \"display\": \"Intramuscular route\"\r\n      }\r\n    ],\r\n    \"text\": \"Intramuscular\"\r\n  },\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"NPI\",\r\n                \"display\": \"National provider identifier\"\r\n              }\r\n            ],\r\n            \"text\": \"HPI-I\"\r\n          },\r\n          \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n          \"value\": \"8003619900015717\"\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"protocolApplied\": [\r\n    {\r\n      \"series\": \"primary vaccination course 2-dose\",\r\n      \"targetDisease\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"840539006\",\r\n              \"display\": \"COVID-19\"\r\n            }\r\n          ],\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "covid-2 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"covid-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1awef1111\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1525011000168107\",\r\n        \"display\": \"Comirnaty\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/covid-admin-2\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-08-01\",\r\n  \"recorded\": \"2021-08-01\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/bobrester-medical-center\"\r\n  },\r\n  \"manufacturer\": {\r\n    \"display\": \"Pfizer Australia Ltd\"\r\n  },\r\n  \"lotNumber\": \"300000000P\",\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"NPI\",\r\n                \"display\": \"National provider identifier\"\r\n              }\r\n            ],\r\n            \"text\": \"HPI-I\"\r\n          },\r\n          \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n          \"value\": \"8003619900015717\"\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"protocolApplied\": [\r\n    {\r\n      \"series\": \"primary vaccination course 2-dose\",\r\n      \"targetDisease\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"840539006\",\r\n              \"display\": \"COVID-19\"\r\n            }\r\n          ],\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 2\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "hepb-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"hepb-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"ENGP\"\r\n      }\r\n    ],\r\n    \"text\": \"Engerix-B (paediatric)\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"occurrenceDateTime\": \"2023-01-24\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  },\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"Hepatitis B\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "zoster-notgiven Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"zoster-notgiven\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"status\": \"not-done\",\r\n  \"statusReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1620681000168106\",\r\n        \"display\": \"Patient objection\"\r\n      }\r\n    ]\r\n  },\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"830851000168105\",\r\n        \"display\": \"varicella-zoster live vaccine\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/dan-harry\",\r\n    \"display\": \"Mr. Harry DAN\"\r\n  },\r\n  \"occurrenceDateTime\": \"2017-08-15\",\r\n  \"primarySource\": true,\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"Practitioner/bobrester-bob\"\r\n      }\r\n    }\r\n  ],\r\n  \"note\": [\r\n    {\r\n      \"text\": \"Patient refused administration of Zostavax\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -1955,6 +2170,221 @@
 									""
 								]
 							}
+						}
+					]
+				},
+				{
+					"name": "Immunization",
+					"item": [
+						{
+							"name": "air-covid-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3986\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/air-covid-1"
+							},
+							"response": []
+						},
+						{
+							"name": "air-covid-2 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3987\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"occurrenceDateTime\": \"2021-08-01\",\r\n  \"primarySource\": true,\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 2\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/air-covid-2"
+							},
+							"response": []
+						},
+						{
+							"name": "covid-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1525011000168107\",\r\n        \"display\": \"Comirnaty\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/covid-admin-1\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/bobrester-medical-center\"\r\n  },\r\n  \"manufacturer\": {\r\n    \"display\": \"Pfizer Australia Ltd\"\r\n  },\r\n  \"lotNumber\": \"200000000P\",\r\n  \"site\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"368208006\",\r\n        \"display\": \"Left upper arm structure\"\r\n      }\r\n    ],\r\n    \"text\": \"Left upper arm\"\r\n  },\r\n  \"route\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"78421000\",\r\n        \"display\": \"Intramuscular route\"\r\n      }\r\n    ],\r\n    \"text\": \"Intramuscular\"\r\n  },\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"NPI\",\r\n                \"display\": \"National provider identifier\"\r\n              }\r\n            ],\r\n            \"text\": \"HPI-I\"\r\n          },\r\n          \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n          \"value\": \"8003619900015717\"\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"protocolApplied\": [\r\n    {\r\n      \"series\": \"primary vaccination course 2-dose\",\r\n      \"targetDisease\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"840539006\",\r\n              \"display\": \"COVID-19\"\r\n            }\r\n          ],\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/covid-1"
+							},
+							"response": []
+						},
+						{
+							"name": "covid-2 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"covid-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1awef1111\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1525011000168107\",\r\n        \"display\": \"Comirnaty\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\",\r\n    \"identifier\": {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\",\r\n            \"display\": \"National unique individual identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833357361\"\r\n    }\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/covid-admin-2\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-08-01\",\r\n  \"recorded\": \"2021-08-01\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/bobrester-medical-center\"\r\n  },\r\n  \"manufacturer\": {\r\n    \"display\": \"Pfizer Australia Ltd\"\r\n  },\r\n  \"lotNumber\": \"300000000P\",\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n        \"identifier\": {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                \"code\": \"NPI\",\r\n                \"display\": \"National provider identifier\"\r\n              }\r\n            ],\r\n            \"text\": \"HPI-I\"\r\n          },\r\n          \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n          \"value\": \"8003619900015717\"\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"protocolApplied\": [\r\n    {\r\n      \"series\": \"primary vaccination course 2-dose\",\r\n      \"targetDisease\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"840539006\",\r\n              \"display\": \"COVID-19\"\r\n            }\r\n          ],\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 2\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/covid-2"
+							},
+							"response": []
+						},
+						{
+							"name": "hepb-1 Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"hepb-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"ENGP\"\r\n      }\r\n    ],\r\n    \"text\": \"Engerix-B (paediatric)\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"occurrenceDateTime\": \"2023-01-24\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  },\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"Hepatitis B\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/hepb-1"
+							},
+							"response": []
+						},
+						{
+							"name": "zoster-notgiven Immunization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"zoster-notgiven\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"status\": \"not-done\",\r\n  \"statusReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1620681000168106\",\r\n        \"display\": \"Patient objection\"\r\n      }\r\n    ]\r\n  },\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"830851000168105\",\r\n        \"display\": \"varicella-zoster live vaccine\"\r\n      }\r\n    ]\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/dan-harry\",\r\n    \"display\": \"Mr. Harry DAN\"\r\n  },\r\n  \"occurrenceDateTime\": \"2017-08-15\",\r\n  \"primarySource\": true,\r\n  \"performer\": [\r\n    {\r\n      \"function\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0443\",\r\n            \"code\": \"AP\",\r\n            \"display\": \"Administering Provider\"\r\n          }\r\n        ],\r\n        \"text\": \"Administering Provider\"\r\n      },\r\n      \"actor\": {\r\n        \"reference\": \"Practitioner/bobrester-bob\"\r\n      }\r\n    }\r\n  ],\r\n  \"note\": [\r\n    {\r\n      \"text\": \"Patient refused administration of Zostavax\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Immunization/zoster-notgiven"
+							},
+							"response": []
 						}
 					]
 				}
