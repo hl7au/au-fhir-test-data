@@ -1173,6 +1173,227 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "aaaaaia-insurer Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"aaaaaia-insurer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"23964200000\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"6321\"\r\n        }\r\n      ],\r\n      \"text\": \"Health Insurance\"\r\n    }\r\n  ],\r\n  \"name\": \"AAAAAIA HI PTY LTD\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"1300 975 711\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "adv-hearing-care Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"adv-hearing-care\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\",\r\n            \"display\": \"National Organisation Identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"12345678901\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"name\": \"Audiology Advanced Hearing Care\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"info@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-medical-center Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"288565001\",\r\n          \"display\": \"Medical centre\"\r\n        }\r\n      ],\r\n      \"text\": \"Medical Centre\"\r\n    }\r\n  ],\r\n  \"name\": \"Bobrester Medical Center\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"info@bobrestermedical.example.com\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(07) 5550 2427\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"87 Western Esp\"\r\n      ],\r\n      \"city\": \"Tindal RAAF\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4655\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "dva-au Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"dva-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"23964290824\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Australian Government Department of Veterans' Affairs\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.dva.gov.au/\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "health-au Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"health-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"83605426759\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Australian Government Department of Health and Aged Care\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.health.gov.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "hospital-au Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"hospital-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"66824753003\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"8401\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\"\r\n        }\r\n      ],\r\n      \"text\": \"Hospital\"\r\n    }\r\n  ],\r\n  \"name\": \"Hospital Australia\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n      \"line\": [\r\n        \"54301 Stanley St\"\r\n      ],\r\n      \"city\": \"South Brisbane\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4101\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ],\r\n  \"partOf\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "hospital-int Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"hospital-int\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"66824753003\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"8401\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\"\r\n        }\r\n      ],\r\n      \"text\": \"Hospital\"\r\n    }\r\n  ],\r\n  \"name\": \"Hospitals International\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    },\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://international.hospitals.example.com\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacy Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"pharmacy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"4271\",\r\n          \"display\": \"Pharmaceutical, Cosmetic and Toiletry Goods Retailing\"\r\n        }\r\n      ],\r\n      \"text\": \"Retail Pharmacy\"\r\n    }\r\n  ],\r\n  \"name\": \"A Chain Retail Pharmacy\",\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"6 Macquarie St\"\r\n      ],\r\n      \"city\": \"Sydney\",\r\n      \"state\": \"NSW\",\r\n      \"postalCode\": \"2000\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "services-au Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"services-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"90794605008\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Services Australia\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.servicesaustralia.gov.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"partOf\": {\r\n    \"reference\": \"Organization/health-au\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -2383,6 +2604,227 @@
 									}
 								},
 								"url": "{{server}}/Immunization/zoster-notgiven"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "aaaaaia-insurer Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"aaaaaia-insurer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"23964200000\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"6321\"\r\n        }\r\n      ],\r\n      \"text\": \"Health Insurance\"\r\n    }\r\n  ],\r\n  \"name\": \"AAAAAIA HI PTY LTD\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"1300 975 711\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/aaaaaia-insurer"
+							},
+							"response": []
+						},
+						{
+							"name": "adv-hearing-care Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"adv-hearing-care\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\",\r\n            \"display\": \"National Organisation Identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"12345678901\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"name\": \"Audiology Advanced Hearing Care\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"info@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/adv-hearing-care"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-medical-center Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"288565001\",\r\n          \"display\": \"Medical centre\"\r\n        }\r\n      ],\r\n      \"text\": \"Medical Centre\"\r\n    }\r\n  ],\r\n  \"name\": \"Bobrester Medical Center\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"info@bobrestermedical.example.com\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(07) 5550 2427\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"87 Western Esp\"\r\n      ],\r\n      \"city\": \"Tindal RAAF\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4655\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/bobrester-medical-center"
+							},
+							"response": []
+						},
+						{
+							"name": "dva-au Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"dva-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"23964290824\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Australian Government Department of Veterans' Affairs\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.dva.gov.au/\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/dva-au"
+							},
+							"response": []
+						},
+						{
+							"name": "health-au Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"health-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"83605426759\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Australian Government Department of Health and Aged Care\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.health.gov.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/health-au"
+							},
+							"response": []
+						},
+						{
+							"name": "hospital-au Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"hospital-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"66824753003\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"8401\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\"\r\n        }\r\n      ],\r\n      \"text\": \"Hospital\"\r\n    }\r\n  ],\r\n  \"name\": \"Hospital Australia\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n      \"line\": [\r\n        \"54301 Stanley St\"\r\n      ],\r\n      \"city\": \"South Brisbane\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4101\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ],\r\n  \"partOf\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/hospital-au"
+							},
+							"response": []
+						},
+						{
+							"name": "hospital-int Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"hospital-int\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"66824753003\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"8401\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\"\r\n        }\r\n      ],\r\n      \"text\": \"Hospital\"\r\n    }\r\n  ],\r\n  \"name\": \"Hospitals International\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    },\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://international.hospitals.example.com\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/hospital-int"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacy Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"pharmacy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"4271\",\r\n          \"display\": \"Pharmaceutical, Cosmetic and Toiletry Goods Retailing\"\r\n        }\r\n      ],\r\n      \"text\": \"Retail Pharmacy\"\r\n    }\r\n  ],\r\n  \"name\": \"A Chain Retail Pharmacy\",\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"6 Macquarie St\"\r\n      ],\r\n      \"city\": \"Sydney\",\r\n      \"state\": \"NSW\",\r\n      \"postalCode\": \"2000\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/pharmacy"
+							},
+							"response": []
+						},
+						{
+							"name": "services-au Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"services-au\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"90794605008\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0\",\r\n          \"code\": \"7510\"\r\n        }\r\n      ],\r\n      \"text\": \"Commonwealth Government Entity\"\r\n    }\r\n  ],\r\n  \"name\": \"Services Australia\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"url\",\r\n      \"value\": \"https://www.servicesaustralia.gov.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"partOf\": {\r\n    \"reference\": \"Organization/health-au\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/services-au"
 							},
 							"response": []
 						}
