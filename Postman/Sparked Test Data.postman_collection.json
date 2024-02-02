@@ -1394,6 +1394,227 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Practitioner",
+					"item": [
+						{
+							"name": "bobrester-bob Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bobrester-bob\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553255\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Bobrester\",\r\n      \"given\": [\r\n        \"Bob\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"extension\": [\r\n            {\r\n              \"url\": \"ahpraProfession\",\r\n              \"valueCodeableConcept\": {\r\n                \"text\": \"Medical Practitioner\"\r\n              }\r\n            }\r\n          ],\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details\"\r\n        }\r\n      ],\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"MED0002137855\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRAProfession\"\r\n          }\r\n        ],\r\n        \"text\": \"Medical Practitioner\"\r\n      },\r\n      \"period\": {\r\n        \"start\": \"1996-02-08\"\r\n      },\r\n      \"issuer\": {\r\n        \"display\": \"Australian Health Practitioner Regulation Agency\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bradley-jill Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"active\": true,\r\n  \"name\": [\r\n    {\r\n      \"text\": \"Jill Bradley\",\r\n      \"family\": \"Bradley\",\r\n      \"given\": [\r\n        \"Jill\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491 570 006\",\r\n      \"use\": \"mobile\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "cardy-igist Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Cardy\",\r\n      \"given\": [\r\n        \"Igist\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "levin-henry Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"254567\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Levin\",\r\n      \"given\": [\r\n        \"Henry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ],\r\n      \"suffix\": [\r\n        \"VII\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "nurse-nancy Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"456789\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Nurse\",\r\n      \"given\": [\r\n        \"Nancy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"RNP\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@direct.ExampleMedicalPractice.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacist Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003611566708354\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Pharmacist\",\r\n      \"given\": [\r\n        \"Representative\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"code\": {\r\n        \"text\": \"Bachelor of Pharmacy\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "primary-peter Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"25456\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Primary\",\r\n      \"given\": [\r\n        \"Peter\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "sandyson-sandy Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"sandyson-sandy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553256\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Sandyson\",\r\n      \"given\": [\r\n        \"Sandy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Ms.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "surgeon-david Practitioner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"surgeon-david\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553299\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Surgeon\",\r\n      \"given\": [\r\n        \"David\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -2825,6 +3046,227 @@
 									}
 								},
 								"url": "{{server}}/Organization/services-au"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Practitioner",
+					"item": [
+						{
+							"name": "bobrester-bob Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bobrester-bob\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553255\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Bobrester\",\r\n      \"given\": [\r\n        \"Bob\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"extension\": [\r\n            {\r\n              \"url\": \"ahpraProfession\",\r\n              \"valueCodeableConcept\": {\r\n                \"text\": \"Medical Practitioner\"\r\n              }\r\n            }\r\n          ],\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details\"\r\n        }\r\n      ],\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"MED0002137855\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRAProfession\"\r\n          }\r\n        ],\r\n        \"text\": \"Medical Practitioner\"\r\n      },\r\n      \"period\": {\r\n        \"start\": \"1996-02-08\"\r\n      },\r\n      \"issuer\": {\r\n        \"display\": \"Australian Health Practitioner Regulation Agency\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/bobrester-bob"
+							},
+							"response": []
+						},
+						{
+							"name": "bradley-jill Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"active\": true,\r\n  \"name\": [\r\n    {\r\n      \"text\": \"Jill Bradley\",\r\n      \"family\": \"Bradley\",\r\n      \"given\": [\r\n        \"Jill\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491 570 006\",\r\n      \"use\": \"mobile\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/bradley-jill"
+							},
+							"response": []
+						},
+						{
+							"name": "cardy-igist Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Cardy\",\r\n      \"given\": [\r\n        \"Igist\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/cardy-igist"
+							},
+							"response": []
+						},
+						{
+							"name": "levin-henry Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"254567\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Levin\",\r\n      \"given\": [\r\n        \"Henry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ],\r\n      \"suffix\": [\r\n        \"VII\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/levin-henry"
+							},
+							"response": []
+						},
+						{
+							"name": "nurse-nancy Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"456789\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Nurse\",\r\n      \"given\": [\r\n        \"Nancy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"RNP\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@direct.ExampleMedicalPractice.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/nurse-nancy"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacist Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003611566708354\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Pharmacist\",\r\n      \"given\": [\r\n        \"Representative\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"code\": {\r\n        \"text\": \"Bachelor of Pharmacy\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/pharmacist"
+							},
+							"response": []
+						},
+						{
+							"name": "primary-peter Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"25456\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Primary\",\r\n      \"given\": [\r\n        \"Peter\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/primary-peter"
+							},
+							"response": []
+						},
+						{
+							"name": "sandyson-sandy Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"sandyson-sandy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553256\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Sandyson\",\r\n      \"given\": [\r\n        \"Sandy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Ms.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/sandyson-sandy"
+							},
+							"response": []
+						},
+						{
+							"name": "surgeon-david Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"surgeon-david\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900015717\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553299\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Surgeon\",\r\n      \"given\": [\r\n        \"David\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/surgeon-david"
 							},
 							"response": []
 						}
