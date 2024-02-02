@@ -1860,6 +1860,179 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "au-hospital-pharm-out Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-pharm-out\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Friends Pharmacy - AU Hospital\",\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"OUTPHARM\",\r\n          \"display\": \"outpatient pharmacy\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PHARM\",\r\n          \"display\": \"Pharmacy\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 14, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "au-hospital-sw-physio Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-sw-physio\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"value\": \"B31-S.F2\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"Physiotherapy Offices - AU Hospital\",\r\n  \"description\": \"Second floor, South Wing, Physiotherapy Offices\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 14, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"wi\",\r\n        \"display\": \"Wing\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "au-hospital Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"QLD Hospital\",\r\n  \"alias\": [\r\n    \"Queensland Hospital\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\",\r\n          \"display\": \"Hospital\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"22232009\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n    \"line\": [\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "au-jurisdiction Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-jurisdiction\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"name\": \"Jurisdiction of Australia\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"223621005\",\r\n          \"display\": \"Australia\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"jdn\",\r\n        \"display\": \"Jurisdiction\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-medical-center Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Tindal Building\",\r\n  \"alias\": [\r\n    \"Bobrester Medical Center\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"FMC\",\r\n          \"display\": \"Family medicine clinic\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"288565001\",\r\n          \"display\": \"Medical centre\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Western Esp\"\r\n    ],\r\n    \"city\": \"Tindal RAAF\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4655\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "patient-home Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"patient-home\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Patient's home\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PTRES\",\r\n          \"display\": \"Patient's Residence\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394778007\",\r\n          \"display\": \"Client's or patient's home\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"ho\",\r\n        \"display\": \"House\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacy Location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"pharmacy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PHARM\",\r\n          \"display\": \"Pharmacy\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"6 Macquarie St\"\r\n    ],\r\n    \"city\": \"Sydney\",\r\n    \"state\": \"NSW\",\r\n    \"postalCode\": \"2000\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -3757,6 +3930,179 @@
 									}
 								},
 								"url": "{{server}}/PractitionerRole/surgeon-david-surgeon"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "au-hospital-pharm-out Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-pharm-out\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Friends Pharmacy - AU Hospital\",\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"OUTPHARM\",\r\n          \"display\": \"outpatient pharmacy\"\r\n        },\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PHARM\",\r\n          \"display\": \"Pharmacy\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 14, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/au-hospital-pharm-out"
+							},
+							"response": []
+						},
+						{
+							"name": "au-hospital-sw-physio Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-sw-physio\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"value\": \"B31-S.F2\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"Physiotherapy Offices - AU Hospital\",\r\n  \"description\": \"Second floor, South Wing, Physiotherapy Offices\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 14, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"wi\",\r\n        \"display\": \"Wing\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/au-hospital-sw-physio"
+							},
+							"response": []
+						},
+						{
+							"name": "au-hospital Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"QLD Hospital\",\r\n  \"alias\": [\r\n    \"Queensland Hospital\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\",\r\n          \"display\": \"Hospital\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"22232009\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n    \"line\": [\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/au-hospital"
+							},
+							"response": []
+						},
+						{
+							"name": "au-jurisdiction Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-jurisdiction\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"name\": \"Jurisdiction of Australia\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"223621005\",\r\n          \"display\": \"Australia\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"jdn\",\r\n        \"display\": \"Jurisdiction\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/au-jurisdiction"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-medical-center Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Tindal Building\",\r\n  \"alias\": [\r\n    \"Bobrester Medical Center\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"FMC\",\r\n          \"display\": \"Family medicine clinic\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"288565001\",\r\n          \"display\": \"Medical centre\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Western Esp\"\r\n    ],\r\n    \"city\": \"Tindal RAAF\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4655\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/bobrester-medical-center"
+							},
+							"response": []
+						},
+						{
+							"name": "patient-home Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"patient-home\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Patient's home\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PTRES\",\r\n          \"display\": \"Patient's Residence\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394778007\",\r\n          \"display\": \"Client's or patient's home\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"ho\",\r\n        \"display\": \"House\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/patient-home"
+							},
+							"response": []
+						},
+						{
+							"name": "pharmacy Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"pharmacy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003621566684455\"\r\n    }\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PHARM\",\r\n          \"display\": \"Pharmacy\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"6 Macquarie St\"\r\n    ],\r\n    \"city\": \"Sydney\",\r\n    \"state\": \"NSW\",\r\n    \"postalCode\": \"2000\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/pharmacy"
 							},
 							"response": []
 						}
