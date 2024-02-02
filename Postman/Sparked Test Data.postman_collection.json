@@ -1615,6 +1615,251 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "PractitionerRole",
+					"item": [
+						{
+							"name": "audiologist-bradley-jill PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"audiologist-bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n          \"valueCode\": \"unknown\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bradley-jill\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/adv-hearing-care\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"231H00000X\",\r\n          \"display\": \"Audiologist\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309418004\",\r\n          \"display\": \"Audiologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394578005\",\r\n          \"display\": \"Audiological medicine\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jill.bradley@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-bob-gp PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"bobrester-bob-gp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"BBC-GA-001\",\r\n      \"assigner\": {\r\n        \"display\": \"Bobregster Medical Center QLD\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1234561A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bobrester-bob\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\"\r\n        }\r\n      ],\r\n      \"text\": \"General Practitioner\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/bobrester-medical-center\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491579760\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "cardiologist-cardy-igist PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"cardiologist-cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1555561A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/cardy-igist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"17561000\",\r\n          \"display\": \"Cardiologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Cardiologist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "dietician-tan-patricia PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"dietician-tan-patricia\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"display\": \"Ms Patricia Tan, Dieticians Australia\"\r\n  },\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251111\",\r\n          \"display\": \"Dietitian\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"fax\",\r\n      \"value\": \"0370102020\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "gp-primary-peter PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"gp-primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/primary-peter\",\r\n    \"display\": \"Dr Peter Primary\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"208D00000X\",\r\n          \"display\": \"General Practice Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"2083P0901X\",\r\n          \"display\": \"Public Health & General Preventive Medicine Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394814009\",\r\n          \"display\": \"General practice (specialty)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5556\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"PPP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Peter will be on extended leave during June 2022\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Peter is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "nephrologist-levin-henry PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/levin-henry\",\r\n    \"display\": \"Dr Henry Levin VII\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"207RN0300X\",\r\n          \"display\": \"Nephrology Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11911009\",\r\n          \"display\": \"Nephrologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"207RN0300X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394589003\",\r\n          \"display\": \"Nephrology\"\r\n        }\r\n      ],\r\n      \"text\": \"Allopathic Osteopathic Physicians; Internal Medicine, Nephrology\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5557\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"HLV.southern@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Adam will be on extended leave during May 2017\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Adam is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "np-nurse-nancy PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"np-nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/nurse-nancy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"363L00000X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\",\r\n          \"display\": \"Registered nurse\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"163WD0400X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"722165004\",\r\n          \"display\": \"Nursing\"\r\n        }\r\n      ],\r\n      \"text\": \"Nursing Service Providers; Registered Nurse, Diabetes Educator\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5555\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Nancy will be on extended leave during May 2022\",\r\n      \"during\": {\r\n        \"start\": \"2022-05-01\",\r\n        \"end\": \"2022-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Nancy is generally unavailable on public holidays and during Jewish Holidays\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "retail-pharmacist PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"retail-pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/pharmacist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/pharmacy\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251513\",\r\n          \"display\": \"Retail Pharmacist\"\r\n        }\r\n      ],\r\n      \"text\": \"Pharmacist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/pharmacy\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"pha@gmail.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "sandyson-sandy-nurse PractitionerRole",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"sandyson-sandy-nurse\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232379\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1234562A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/sandyson-sandy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"254499\"\r\n        }\r\n      ],\r\n      \"text\": \"Registered nurse\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "surgeon-david-surgeon PractitionerRole Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-david-surgeon\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232999\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1237762A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/surgeon-david\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"304292004\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.1\",\r\n          \"code\": \"253511\"\r\n        }\r\n      ],\r\n      \"text\": \"Surgeon\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -3267,6 +3512,251 @@
 									}
 								},
 								"url": "{{server}}/Practitioner/surgeon-david"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PractitionerRole",
+					"item": [
+						{
+							"name": "audiologist-bradley-jill PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"audiologist-bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n          \"valueCode\": \"unknown\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bradley-jill\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/adv-hearing-care\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"231H00000X\",\r\n          \"display\": \"Audiologist\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309418004\",\r\n          \"display\": \"Audiologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394578005\",\r\n          \"display\": \"Audiological medicine\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jill.bradley@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/audiologist-bradley-jill"
+							},
+							"response": []
+						},
+						{
+							"name": "bobrester-bob-gp PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"bobrester-bob-gp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"BBC-GA-001\",\r\n      \"assigner\": {\r\n        \"display\": \"Bobregster Medical Center QLD\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1234561A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bobrester-bob\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\"\r\n        }\r\n      ],\r\n      \"text\": \"General Practitioner\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/bobrester-medical-center\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491579760\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/bobrester-bob-gp"
+							},
+							"response": []
+						},
+						{
+							"name": "cardiologist-cardy-igist PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"cardiologist-cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1555561A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/cardy-igist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"17561000\",\r\n          \"display\": \"Cardiologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Cardiologist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/cardiologist-cardy-igist"
+							},
+							"response": []
+						},
+						{
+							"name": "dietician-tan-patricia PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"dietician-tan-patricia\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"display\": \"Ms Patricia Tan, Dieticians Australia\"\r\n  },\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251111\",\r\n          \"display\": \"Dietitian\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"fax\",\r\n      \"value\": \"0370102020\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/dietician-tan-patricia"
+							},
+							"response": []
+						},
+						{
+							"name": "gp-primary-peter PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"gp-primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/primary-peter\",\r\n    \"display\": \"Dr Peter Primary\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"208D00000X\",\r\n          \"display\": \"General Practice Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"2083P0901X\",\r\n          \"display\": \"Public Health & General Preventive Medicine Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394814009\",\r\n          \"display\": \"General practice (specialty)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5556\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"PPP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Peter will be on extended leave during June 2022\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Peter is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/gp-primary-peter"
+							},
+							"response": []
+						},
+						{
+							"name": "nephrologist-levin-henry PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/levin-henry\",\r\n    \"display\": \"Dr Henry Levin VII\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"207RN0300X\",\r\n          \"display\": \"Nephrology Physician\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11911009\",\r\n          \"display\": \"Nephrologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"207RN0300X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394589003\",\r\n          \"display\": \"Nephrology\"\r\n        }\r\n      ],\r\n      \"text\": \"Allopathic Osteopathic Physicians; Internal Medicine, Nephrology\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5557\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"HLV.southern@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Adam will be on extended leave during May 2017\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Adam is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/nephrologist-levin-henry"
+							},
+							"response": []
+						},
+						{
+							"name": "np-nurse-nancy PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"np-nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/SomeOrganization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/nurse-nancy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/SomeOrganization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"363L00000X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\",\r\n          \"display\": \"Registered nurse\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://nucc.org/provider-taxonomy\",\r\n          \"code\": \"163WD0400X\"\r\n        },\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"722165004\",\r\n          \"display\": \"Nursing\"\r\n        }\r\n      ],\r\n      \"text\": \"Nursing Service Providers; Registered Nurse, Diabetes Educator\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5555\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Nancy will be on extended leave during May 2022\",\r\n      \"during\": {\r\n        \"start\": \"2022-05-01\",\r\n        \"end\": \"2022-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Nancy is generally unavailable on public holidays and during Jewish Holidays\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/np-nurse-nancy"
+							},
+							"response": []
+						},
+						{
+							"name": "retail-pharmacist PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"retail-pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/pharmacist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/pharmacy\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251513\",\r\n          \"display\": \"Retail Pharmacist\"\r\n        }\r\n      ],\r\n      \"text\": \"Pharmacist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/pharmacy\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"pha@gmail.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/retail-pharmacist"
+							},
+							"response": []
+						},
+						{
+							"name": "sandyson-sandy-nurse PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"sandyson-sandy-nurse\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232379\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1234562A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/sandyson-sandy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"254499\"\r\n        }\r\n      ],\r\n      \"text\": \"Registered nurse\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/sandyson-sandy-nurse"
+							},
+							"response": []
+						},
+						{
+							"name": "surgeon-david-surgeon PractitionerRole Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-david-surgeon\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232999\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1237762A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/surgeon-david\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"304292004\"\r\n        },\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.1\",\r\n          \"code\": \"253511\"\r\n        }\r\n      ],\r\n      \"text\": \"Surgeon\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/surgeon-david-surgeon"
 							},
 							"response": []
 						}
