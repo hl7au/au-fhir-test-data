@@ -1,0 +1,37 @@
+{
+  "resourceType": "Practitioner",
+  "id": "primary-peter",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://www.acme.org/practitioners",
+      "value": "25456"
+    }
+  ],
+  "name": [
+    {
+      "family": "Primary",
+      "given": [
+        "Peter"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "line": [
+        "310 Hay St"
+      ],
+      "city": "East Perth",
+      "state": "WA",
+      "postalCode": "6004"
+    }
+  ]
+}
