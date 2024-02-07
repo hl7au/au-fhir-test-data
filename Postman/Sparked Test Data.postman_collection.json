@@ -2033,6 +2033,275 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Observation",
+					"item": [
+						{
+							"name": "bloodpressure-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bloodpressure-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"85354-9\",\r\n        \"display\": \"Blood pressure panel with all children optional\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"75367002\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood pressure systolic and diastolic\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8480-6\",\r\n            \"display\": \"Systolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271649006\"\r\n          }\r\n        ],\r\n        \"text\": \"Systolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 109,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8462-4\",\r\n            \"display\": \"Diastolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271650006\"\r\n          }\r\n        ],\r\n        \"text\": \"Diastolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 44,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bodyheight-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyheight-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8302-2\",\r\n        \"display\": \"Body height\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"50373000\"\r\n      }\r\n    ],\r\n    \"text\": \"height\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 175,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bodytemp-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 36.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "bodyweight-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 7.9,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "heartrate-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"heartrate-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\",\r\n        \"display\": \"Heart rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"364075005\",\r\n        \"display\": \"Heart rate\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 80,\r\n    \"unit\": \"beats/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-chol-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-chol-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14647-2\",\r\n        \"display\": \"Cholesterol [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Cholesterol\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 5.9,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"H\",\r\n          \"display\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"high\": {\r\n        \"value\": 5.6,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-hdl-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-hdl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14646-4\",\r\n        \"display\": \"Cholesterol in HDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"HDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.5,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 1.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 2.2,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-ldl-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-ldl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"22748-8\",\r\n        \"display\": \"Cholesterol in LDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"LDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 3.54,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"H\",\r\n          \"display\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 2.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 3.4,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-triglyceride-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-triglyceride-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14927-8\",\r\n        \"display\": \"Triglyceride [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Triglyceride\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.9,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"high\": {\r\n        \"value\": 2.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "resprate-1 Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"resprate-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-resprate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"9279-1\",\r\n        \"display\": \"Respiratory rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86290005\"\r\n      }\r\n    ],\r\n    \"text\": \"Respiratory rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 22,\r\n    \"unit\": \"breaths/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						},
+						{
+							"name": "smokingstatus-current-smoker Observation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"smokingstatus-current-smoker\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"social-history\",\r\n          \"display\": \"Social History\"\r\n        }\r\n      ],\r\n      \"text\": \"Social History\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"266918002\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"72166-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoking status\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"77176002\",\r\n        \"display\": \"Current smoker\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"LA18979-7\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoker\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/$validate"
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"event": [
@@ -4103,6 +4372,275 @@
 									}
 								},
 								"url": "{{server}}/Location/pharmacy"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Observation Copy",
+					"item": [
+						{
+							"name": "bloodpressure-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bloodpressure-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"85354-9\",\r\n        \"display\": \"Blood pressure panel with all children optional\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"75367002\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood pressure systolic and diastolic\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8480-6\",\r\n            \"display\": \"Systolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271649006\"\r\n          }\r\n        ],\r\n        \"text\": \"Systolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 109,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8462-4\",\r\n            \"display\": \"Diastolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271650006\"\r\n          }\r\n        ],\r\n        \"text\": \"Diastolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 44,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bloodpressure-1"
+							},
+							"response": []
+						},
+						{
+							"name": "bodyheight-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyheight-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8302-2\",\r\n        \"display\": \"Body height\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"50373000\"\r\n      }\r\n    ],\r\n    \"text\": \"height\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 175,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bodyheight-1"
+							},
+							"response": []
+						},
+						{
+							"name": "bodytemp-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 36.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bodytemp-1"
+							},
+							"response": []
+						},
+						{
+							"name": "bodyweight-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baby-smith-john\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 7.9,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bodyweight-1"
+							},
+							"response": []
+						},
+						{
+							"name": "heartrate-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"heartrate-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\",\r\n        \"display\": \"Heart rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"364075005\",\r\n        \"display\": \"Heart rate\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 80,\r\n    \"unit\": \"beats/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/heartrate-1"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-chol-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-chol-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14647-2\",\r\n        \"display\": \"Cholesterol [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Cholesterol\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 5.9,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"H\",\r\n          \"display\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"high\": {\r\n        \"value\": 5.6,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/lipid-chol-1"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-hdl-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-hdl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14646-4\",\r\n        \"display\": \"Cholesterol in HDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"HDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.5,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 1.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 2.2,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/lipid-hdl-1"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-ldl-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-ldl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"22748-8\",\r\n        \"display\": \"Cholesterol in LDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"LDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 3.54,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"H\",\r\n          \"display\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 2.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 3.4,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/lipid-ldl-1"
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-triglyceride-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-triglyceride-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-lipid-result\",\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14927-8\",\r\n        \"display\": \"Triglyceride [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Triglyceride\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.9,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"high\": {\r\n        \"value\": 2.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/lipid-triglyceride-1"
+							},
+							"response": []
+						},
+						{
+							"name": "resprate-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"resprate-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-resprate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"9279-1\",\r\n        \"display\": \"Respiratory rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86290005\"\r\n      }\r\n    ],\r\n    \"text\": \"Respiratory rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 22,\r\n    \"unit\": \"breaths/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/resprate-1"
+							},
+							"response": []
+						},
+						{
+							"name": "smokingstatus-current-smoker Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"smokingstatus-current-smoker\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"social-history\",\r\n          \"display\": \"Social History\"\r\n        }\r\n      ],\r\n      \"text\": \"Social History\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"266918002\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"72166-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoking status\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\",\r\n      \"identifier\": {\r\n        \"type\": {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n              \"code\": \"NPI\",\r\n              \"display\": \"National provider identifier\"\r\n            }\r\n          ],\r\n          \"text\": \"HPI-I\"\r\n        },\r\n        \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n        \"value\": \"8003614900041243\"\r\n      }\r\n    }\r\n  ],\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"77176002\",\r\n        \"display\": \"Current smoker\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"LA18979-7\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoker\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/smokingstatus-current-smoker"
 							},
 							"response": []
 						}
