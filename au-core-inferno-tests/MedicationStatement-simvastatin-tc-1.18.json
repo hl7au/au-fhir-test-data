@@ -25,13 +25,11 @@
       },
       "doseAndRate": [
         {
-          "dose": {
-            "Quantity": {
-              "code": "mg",
-              "unit": "mg",
-              "value": 40,
-              "system": "http://unitsofmeasure.org"
-            }
+          "doseQuantity": {
+            "code": "mg",
+            "unit": "mg",
+            "value": 40,
+            "system": "http://unitsofmeasure.org"
           }
         }
       ]
@@ -48,6 +46,15 @@
       ]
     }
   ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "13528B",
+        "system": "http://pbs.gov.au/code/item",
+        "display": "simvastatin 10 mg tablet, 30"
+      }
+    ]
+  },
   "statusReason": [
     {
       "coding": [
@@ -66,36 +73,20 @@
     }
   ],
   "status": "active",
-  "effective": {
-    "Period": {
-      "start": "2014"
-    }
-  },
   "id": "simvastatin-tc-1.18",
   "context": {
-    "id": "nailwound",
-    "resourceType": "Encounter"
+    "reference": "Encounter/nailwound"
   },
   "basedOn": [
     {
-      "id": "reaptan",
-      "resourceType": "MedicationRequest"
+      "reference": "MedicationRequest/reaptan"
     }
   ],
   "subject": {
-    "id": "wang-li",
-    "resourceType": "Patient"
+    "reference": "Patient/wang-li"
   },
-  "medication": {
-    "CodeableConcept": {
-      "coding": [
-        {
-          "code": "13528B",
-          "system": "http://pbs.gov.au/code/item",
-          "display": "simvastatin 10 mg tablet, 30"
-        }
-      ]
-    }
+  "effectivePeriod": {
+    "start": "2014"
   },
   "text": {
     "status": "generated",

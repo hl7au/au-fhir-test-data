@@ -1,8 +1,4 @@
 {
-  "encounter": {
-    "id": "annualvisit-2",
-    "resourceType": "Encounter"
-  },
   "category": [
     {
       "coding": [
@@ -21,19 +17,18 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation"
     ]
   },
-  "value": {
-    "Quantity": {
-      "value": 32,
-      "unit": "cm",
-      "system": "http://unitsofmeasure.org",
-      "code": "cm"
-    }
+  "encounter": {
+    "reference": "Encounter/annualvisit-2"
+  },
+  "valueQuantity": {
+    "value": 32,
+    "unit": "cm",
+    "system": "http://unitsofmeasure.org",
+    "code": "cm"
   },
   "resourceType": "Observation",
+  "effectiveDateTime": "2023-03-14",
   "status": "final",
-  "effective": {
-    "dateTime": "2023-03-14"
-  },
   "id": "waistcircum-1-1-tc-1.9",
   "code": {
     "coding": [
@@ -51,8 +46,7 @@
     "text": "Waist Circumference"
   },
   "subject": {
-    "id": "baby-smith-john",
-    "resourceType": "Patient"
+    "reference": "Patient/baby-smith-john"
   },
   "performer": [
     {
@@ -70,8 +64,7 @@
         "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
         "value": "8003614900041243"
       },
-      "id": "bobrester-bob-gp",
-      "resourceType": "PractitionerRole"
+      "reference": "PractitionerRole/bobrester-bob-gp"
     }
   ],
   "text": {

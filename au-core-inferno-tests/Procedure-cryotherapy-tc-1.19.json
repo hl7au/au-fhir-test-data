@@ -5,8 +5,7 @@
     ]
   },
   "encounter": {
-    "id": "annualvisit-2",
-    "resourceType": "Encounter"
+    "reference": "Encounter/annualvisit-2"
   },
   "reasonCode": [
     {
@@ -28,9 +27,6 @@
       }
     ]
   },
-  "performed": {
-    "dateTime": "2023-03-15T09:30:00+00:00"
-  },
   "resourceType": "Procedure",
   "note": [
     {
@@ -39,6 +35,7 @@
   ],
   "status": "completed",
   "id": "cryotherapy-tc-1.19",
+  "performedDateTime": "2023-03-15T09:30:00+00:00",
   "code": {
     "coding": [
       {
@@ -60,8 +57,7 @@
     }
   ],
   "subject": {
-    "id": "bennelong-anne",
-    "resourceType": "Patient"
+    "reference": "Patient/bennelong-anne"
   },
   "performer": [
     {

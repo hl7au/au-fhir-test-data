@@ -17,22 +17,17 @@
     ]
   },
   "encounter": {
-    "id": "nailwound",
-    "resourceType": "Encounter"
+    "reference": "Encounter/nailwound"
   },
-  "value": {
-    "Quantity": {
-      "value": 80,
-      "unit": "beats/minute",
-      "system": "http://unitsofmeasure.org",
-      "code": "/min"
-    }
+  "valueQuantity": {
+    "value": 80,
+    "unit": "beats/minute",
+    "system": "http://unitsofmeasure.org",
+    "code": "/min"
   },
   "resourceType": "Observation",
+  "effectiveDateTime": "2016-07-02",
   "status": "final",
-  "effective": {
-    "dateTime": "2016-07-02"
-  },
   "id": "heartrate-1-tc-1.8",
   "code": {
     "coding": [
@@ -50,8 +45,7 @@
     "text": "Heart rate"
   },
   "subject": {
-    "id": "wang-li",
-    "resourceType": "Patient"
+    "reference": "Patient/wang-li"
   },
   "performer": [
     {
@@ -69,8 +63,7 @@
         "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
         "value": "8003614900041243"
       },
-      "id": "bobrester-bob-gp",
-      "resourceType": "PractitionerRole"
+      "reference": "PractitionerRole/bobrester-bob-gp"
     }
   ],
   "text": {
