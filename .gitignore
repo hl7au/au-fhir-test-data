@@ -1,3 +1,4 @@
 /.vs/*
 /Sparked.Csv2FhirMapping/bin/*
 /Sparked.Csv2FhirMapping/obj/*
+/au-core-inferno-tests/au_core_inferno_*.tar.gz
