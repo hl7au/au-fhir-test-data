@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hl7.Fhir.MappingLanguage", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sparked.Csv2FhirMapping", "Sparked.Csv2FhirMapping.csproj", "{B9B45CCB-D372-4D3E-9F04-14C6C41B8D08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparked.TestDataClient", "..\Sparked.TestDataClient\Sparked.TestDataClient.csproj", "{D7AD0B90-5E6A-463A-BF40-023F4182ABEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{B9B45CCB-D372-4D3E-9F04-14C6C41B8D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9B45CCB-D372-4D3E-9F04-14C6C41B8D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9B45CCB-D372-4D3E-9F04-14C6C41B8D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AD0B90-5E6A-463A-BF40-023F4182ABEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AD0B90-5E6A-463A-BF40-023F4182ABEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AD0B90-5E6A-463A-BF40-023F4182ABEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AD0B90-5E6A-463A-BF40-023F4182ABEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

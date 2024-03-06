@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Sparked.TestDataClient": {
+      "commandName": "Project",
+      "commandLineArgs": "Patient https://hl7auconnectathon.salessbx.smiledigitalhealth.com/fhir-request Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8="
+    }
+  }
+}

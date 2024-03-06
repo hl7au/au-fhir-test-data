@@ -1,3 +1,5 @@
 /Sparked.Csv2FhirMapping/.vs/*
 /Sparked.Csv2FhirMapping/bin/*
 /Sparked.Csv2FhirMapping/obj/*
+/Sparked.TestDataClient/bin/*
+/Sparked.TestDataClient/obj/*
