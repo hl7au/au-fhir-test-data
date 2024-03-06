@@ -75,11 +75,11 @@
   "status": "active",
   "id": "simvastatin-tc-1.18",
   "context": {
-    "reference": "Encounter/nailwound"
+    "reference": "Encounter/nailwound-tc-1.15"
   },
   "basedOn": [
     {
-      "reference": "MedicationRequest/reaptan"
+      "reference": "MedicationRequest/reaptan-tc-1.17"
     }
   ],
   "subject": {

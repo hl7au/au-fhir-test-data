@@ -67,30 +67,6 @@
     "code": "AMB",
     "display": "ambulatory"
   },
-  "identifier": [
-    {
-      "use": "official",
-      "type": {
-        "text": "Medical Record Number",
-        "coding": [
-          {
-            "code": "MR",
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "display": "Medical Record Number"
-          }
-        ]
-      },
-      "value": "123456",
-      "period": {
-        "end": "2024-01-02",
-        "start": "2024-01-01"
-      },
-      "system": "http://hospital.smarthealthit.org",
-      "assigner": {
-        "display": "Smart Hospital"
-      }
-    }
-  ],
   "period": {
     "start": "2017-03-31T15:20:00+10:00",
     "end": "2017-03-31T15:40:00+10:00"

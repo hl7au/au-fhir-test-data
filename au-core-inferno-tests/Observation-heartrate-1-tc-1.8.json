@@ -17,7 +17,7 @@
     ]
   },
   "encounter": {
-    "reference": "Encounter/nailwound"
+    "reference": "Encounter/nailwound-tc-1.15"
   },
   "valueQuantity": {
     "value": 80,
