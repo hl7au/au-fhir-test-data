@@ -17,8 +17,7 @@
     ]
   },
   "encounter": {
-    "id": "discharge-1",
-    "resourceType": "Encounter"
+    "reference": "Encounter/discharge-1"
   },
   "resourceType": "Observation",
   "component": [
@@ -75,10 +74,8 @@
       }
     }
   ],
+  "effectiveDateTime": "2023-02-20T06:20:00+10:00",
   "status": "final",
-  "effective": {
-    "dateTime": "2023-02-20T06:20:00+10:00"
-  },
   "id": "bloodpressure-data-absent-tc-1.4",
   "code": {
     "coding": [
@@ -95,8 +92,7 @@
     "text": "Blood pressure systolic and diastolic"
   },
   "subject": {
-    "id": "dan-harry",
-    "resourceType": "Patient"
+    "reference": "Patient/dan-harry"
   },
   "text": {
     "status": "generated",

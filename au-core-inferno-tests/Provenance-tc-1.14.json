@@ -4,19 +4,21 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-provenance"
     ],
     "lastUpdated": "2024-02-16T08:31:38.868359Z",
-    "createdAt": "2024-02-16T08:30:46.878940Z",
-    "versionId": "43"
+    "versionId": "43",
+    "extension": [
+      {
+        "url": "ex:createdAt",
+        "valueInstant": "2024-02-16T08:30:46.878940Z"
+      }
+    ]
   },
-  "occurred": {
-    "dateTime": "2024-02-16T10:00:00Z"
-  },
+  "occurredDateTime": "2024-02-16T10:00:00Z",
   "resourceType": "Provenance",
   "recorded": "2024-02-16T10:05:00Z",
   "agent": [
     {
       "who": {
-        "id": "bobrester-bob-gp",
-        "resourceType": "PractitionerRole"
+        "reference": "PractitionerRole/bobrester-bob-gp"
       }
     }
   ],
@@ -43,8 +45,7 @@
   "id": "tc-1.14",
   "target": [
     {
-      "id": "aci",
-      "resourceType": "Condition"
+      "reference": "Condition/aci"
     }
   ]
 }

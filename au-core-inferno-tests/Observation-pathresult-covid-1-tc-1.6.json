@@ -1,4 +1,41 @@
 {
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "MB"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "text": "0-1 Normal range"
+    }
+  ],
+  "hasMember": [
+    {
+      "reference": "Observation/pathresult-covid-1"
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  },
+  "resourceType": "Observation",
   "component": [
     {
       "code": {
@@ -22,57 +59,6 @@
       }
     }
   ],
-  "referenceRange": [
-    {
-      "text": "0-1 Normal range"
-    }
-  ],
-  "hasMember": [
-    {
-      "id": "pathresult-covid-1",
-      "resourceType": "Observation"
-    }
-  ],
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code": "laboratory"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
-          "code": "MB"
-        }
-      ]
-    }
-  ],
-  "meta": {
-    "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
-    ]
-  },
-  "specimen": {
-    "id": "nasoswab",
-    "resourceType": "Specimen"
-  },
-  "value": {
-    "CodeableConcept": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "260415000",
-          "display": "Not detected"
-        }
-      ],
-      "text": "Not detected"
-    }
-  },
-  "resourceType": "Observation",
   "note": [
     {
       "text": "PATHOLOGY LAB NATA/RCPA accreditation does not cover the SARS-CoV-2 (COVID-19) PCR test."
@@ -81,10 +67,8 @@
       "text": "This test is currently under evaluation and has not been fully validated. Failure to detect organism-specific nucleic acids does not exclude the presence of disease due to this agent."
     }
   ],
+  "effectiveDateTime": "2021-02-15T12:00:00+10:00",
   "status": "final",
-  "effective": {
-    "dateTime": "2021-02-15T12:00:00+10:00"
-  },
   "id": "pathresult-covid-1-tc-1.6",
   "code": {
     "coding": [
@@ -127,17 +111,25 @@
       "value": "8328qjs"
     }
   ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260415000",
+        "display": "Not detected"
+      }
+    ],
+    "text": "Not detected"
+  },
   "subject": {
-    "id": "wang-li",
-    "resourceType": "Patient"
+    "reference": "Patient/wang-li"
   },
   "performer": [
     {
       "display": "PATHOLOGY LAB"
     },
     {
-      "id": "bobrester-bob-gp",
-      "resourceType": "PractitionerRole"
+      "reference": "PractitionerRole/bobrester-bob-gp"
     }
   ],
   "text": {

@@ -1,16 +1,4 @@
 {
-  "reasonCode": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "840539006",
-          "display": "COVID-19"
-        }
-      ],
-      "text": "COVID-19 Immunization"
-    }
-  ],
   "patient": {
     "identifier": {
       "type": {
@@ -26,8 +14,7 @@
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
       "value": "8003608833357361"
     },
-    "id": "bennelong-anne",
-    "resourceType": "Patient"
+    "reference": "Patient/bennelong-anne"
   },
   "protocolApplied": [
     {
@@ -44,9 +31,7 @@
           "text": "COVID-19"
         }
       ],
-      "doseNumber": {
-        "positiveInt": 1
-      }
+      "doseNumberPositiveInt": 1
     }
   ],
   "meta": {
@@ -65,8 +50,7 @@
     "text": "Left upper arm"
   },
   "encounter": {
-    "id": "covid-admin-1",
-    "resourceType": "Encounter"
+    "reference": "Encounter/covid-admin-1"
   },
   "vaccineCode": {
     "coding": [
@@ -82,6 +66,18 @@
     ],
     "text": "Pfizer Comirnaty"
   },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "840539006",
+          "display": "COVID-19"
+        }
+      ],
+      "text": "COVID-19 Immunization"
+    }
+  ],
   "route": {
     "coding": [
       {
@@ -102,12 +98,9 @@
     "display": "Pfizer Australia Ltd"
   },
   "location": {
-    "id": "bobrester-medical-center",
-    "resourceType": "Location"
+    "reference": "Location/bobrester-medical-center"
   },
-  "occurrence": {
-    "dateTime": "2021-06-17"
-  },
+  "occurrenceDateTime": "2021-06-17",
   "performer": [
     {
       "function": {
@@ -135,8 +128,7 @@
           "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
           "value": "8003619900015717"
         },
-        "id": "bobrester-bob-gp",
-        "resourceType": "PractitionerRole"
+        "reference": "PractitionerRole/bobrester-bob-gp"
       }
     }
   ],

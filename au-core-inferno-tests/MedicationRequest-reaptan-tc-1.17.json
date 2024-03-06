@@ -1,23 +1,4 @@
 {
-  "encounter": {
-    "id": "annualvisit-1",
-    "resourceType": "Encounter"
-  },
-  "medication": {
-    "CodeableConcept": {
-      "coding": [
-        {
-          "code": "926213011000036100",
-          "system": "http://snomed.info/sct",
-          "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10"
-        },
-        {
-          "code": "13382H",
-          "system": "http://pbs.gov.au/code/item"
-        }
-      ]
-    }
-  },
   "category": [
     {
       "coding": [
@@ -34,9 +15,10 @@
     ]
   },
   "substitution": {
-    "allowed": {
-      "boolean": true
-    }
+    "allowedBoolean": true
+  },
+  "encounter": {
+    "reference": "Encounter/annualvisit-1"
   },
   "dispenseRequest": {
     "dispenseInterval": {
@@ -68,6 +50,19 @@
       "text": "Pain management"
     }
   ],
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "926213011000036100",
+        "system": "http://snomed.info/sct",
+        "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10"
+      },
+      {
+        "code": "13382H",
+        "system": "http://pbs.gov.au/code/item"
+      }
+    ]
+  },
   "authoredOn": "2018-07-15",
   "resourceType": "MedicationRequest",
   "note": [
@@ -76,8 +71,7 @@
     }
   ],
   "requester": {
-    "id": "surgeon-david-surgeon",
-    "resourceType": "PractitionerRole"
+    "reference": "PractitionerRole/surgeon-david-surgeon"
   },
   "status": "active",
   "id": "reaptan-tc-1.17",
@@ -95,13 +89,11 @@
       },
       "doseAndRate": [
         {
-          "dose": {
-            "Quantity": {
-              "value": 1,
-              "unit": "TAB",
-              "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-              "code": "TAB"
-            }
+          "doseQuantity": {
+            "value": 1,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
           }
         }
       ],
@@ -114,9 +106,7 @@
           }
         ]
       },
-      "asNeeded": {
-        "boolean": true
-      }
+      "asNeededBoolean": true
     }
   ],
   "identifier": [
@@ -133,15 +123,13 @@
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/8003621566684455",
       "value": "53720010",
       "assigner": {
-        "id": "hospital-au",
-        "resourceType": "Organization"
+        "reference": "Organization/hospital-au"
       }
     }
   ],
   "intent": "order",
   "subject": {
-    "id": "smith-emma",
-    "resourceType": "Patient"
+    "reference": "Patient/smith-emma"
   },
   "text": {
     "status": "generated",
