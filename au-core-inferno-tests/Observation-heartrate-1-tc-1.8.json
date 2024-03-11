@@ -63,7 +63,7 @@
         "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
         "value": "8003614900041243"
       },
-      "reference": "PractitionerRole/bobrester-bob-gp"
+      "reference": "PractitionerRole/bobrester-bob-gp-tc-1.21"
     }
   ],
   "text": {

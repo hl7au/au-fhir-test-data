@@ -100,7 +100,7 @@
         "text": "Administering Provider"
       },
       "actor": {
-        "reference": "PractitionerRole/bobrester-bob-gp"
+        "reference": "PractitionerRole/bobrester-bob-gp-tc-1.21"
       }
     }
   ],

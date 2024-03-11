@@ -18,7 +18,7 @@
   "agent": [
     {
       "who": {
-        "reference": "PractitionerRole/bobrester-bob-gp"
+        "reference": "PractitionerRole/bobrester-bob-gp-tc-1.21"
       },
       "onBehalfOf": {
         "reference": "Organization/bobrester-medical-center"
