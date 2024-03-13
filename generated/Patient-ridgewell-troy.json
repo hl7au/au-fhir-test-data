@@ -40,6 +40,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "RIDGEWELL",
       "given": [
         "Troy"
@@ -72,7 +73,8 @@
       ],
       "city": "Macarthur",
       "state": "ACT",
-      "postalCode": "2904"
+      "postalCode": "2904",
+      "country": "AU"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "howell-natalia",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/howell-natalia"
+  },
+  "organization": {
+    "reference": "Organization/pine-view-pharmacy"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.85",
+          "code": "251513",
+          "display": "Pharmacist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370100469",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "natalia.howell@reception@pineviewpharmacy.example.com.au",
+      "use": "work"
+    }
+  ]
+}

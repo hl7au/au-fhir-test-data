@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "DOWNIE",
       "given": [
         "Grant"
@@ -82,7 +83,8 @@
       ],
       "city": "Calwell",
       "state": "ACT",
-      "postalCode": "2905"
+      "postalCode": "2905",
+      "country": "AU"
     }
   ]
 }

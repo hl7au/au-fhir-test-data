@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "munro-rose",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/munro-rose"
+  },
+  "organization": {
+    "reference": "Organization/mount-mitchell-private-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.47",
+          "code": "254411",
+          "display": "Nurse Practitioner"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270105704",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "rose.munro@mountmitchellph.example.com.au",
+      "use": "work"
+    }
+  ]
+}

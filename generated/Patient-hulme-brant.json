@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "HULME",
       "given": [
         "Brant"
@@ -82,7 +83,8 @@
       ],
       "city": "Erindale Centre",
       "state": "ACT",
-      "postalCode": "2903"
+      "postalCode": "2903",
+      "country": "AU"
     }
   ]
 }

@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "EWING",
       "given": [
         "Ferdinand"
@@ -82,7 +83,8 @@
       ],
       "city": "Ringwood East",
       "state": "VIC",
-      "postalCode": "3135"
+      "postalCode": "3135",
+      "country": "AU"
     }
   ]
 }

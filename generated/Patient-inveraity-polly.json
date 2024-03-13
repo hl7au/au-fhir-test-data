@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "INVERAITY",
       "given": [
         "Polly"
@@ -82,7 +83,8 @@
       ],
       "city": "Mount Doran",
       "state": "VIC",
-      "postalCode": "3334"
+      "postalCode": "3334",
+      "country": "AU"
     }
   ]
 }

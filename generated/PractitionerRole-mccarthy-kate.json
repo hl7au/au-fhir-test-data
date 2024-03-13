@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "mccarthy-kate",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/mccarthy-kate"
+  },
+  "organization": {
+    "reference": "Organization/mckenzie-creek-radiology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.94",
+          "code": "253917",
+          "display": "Diagnostic and Interventional Radiologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370108107",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "kate.mccarthy@mckenziecreekradiology.example.com.au",
+      "use": "work"
+    }
+  ]
+}

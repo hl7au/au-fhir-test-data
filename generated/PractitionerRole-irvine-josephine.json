@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "irvine-josephine",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/irvine-josephine"
+  },
+  "organization": {
+    "reference": "Organization/pine-creek-public-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.133",
+          "code": "254411",
+          "display": "Nurse Practitioner"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870109422",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "josephine.irvine@pinecreekph.example.net",
+      "use": "work"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "hart-clifton",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/hart-clifton"
+  },
+  "organization": {
+    "reference": "Organization/trentham-pathology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.84",
+          "code": "253915",
+          "display": "Pathologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370106223",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "clifton.hart@trenthampathology.example.net",
+      "use": "work"
+    }
+  ]
+}

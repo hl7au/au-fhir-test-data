@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "mitchell-frankie",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/mitchell-frankie"
+  },
+  "organization": {
+    "reference": "Organization/tarampa-emergency"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.3",
+          "code": "253912",
+          "display": "Emergency Medicine Specialist/Emergency Physician"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770104985",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "frankie.mitchell@tarampa.emergency.example.com.au",
+      "use": "work"
+    }
+  ]
+}

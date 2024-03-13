@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "SANDILANDS",
       "given": [
         "Kendall"
@@ -82,7 +83,8 @@
       ],
       "city": "Sheaoak Flat",
       "state": "SA",
-      "postalCode": "5581"
+      "postalCode": "5581",
+      "country": "AU"
     }
   ]
 }

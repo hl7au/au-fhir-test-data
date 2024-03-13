@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "gartshore-evelyn",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/gartshore-evelyn"
+  },
+  "organization": {
+    "reference": "Organization/kaltukatjara-radiology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.144",
+          "code": "253917",
+          "display": "Diagnostic and Interventional Radiologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870107521",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "evelyn.gartshore@kaltukatjararadiology.example.net",
+      "use": "work"
+    }
+  ]
+}

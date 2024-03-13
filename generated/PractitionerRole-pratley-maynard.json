@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "pratley-maynard",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/pratley-maynard"
+  },
+  "organization": {
+    "reference": "Organization/leasingham-public-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.167",
+          "code": "253511",
+          "display": "Surgeon (General)"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870108088",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "maynard.pratley@leasinghamph.example.net",
+      "use": "work"
+    }
+  ]
+}

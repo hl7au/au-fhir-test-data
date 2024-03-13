@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "haywood-byron",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/haywood-byron"
+  },
+  "organization": {
+    "reference": "Organization/barney-view-private-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.10",
+          "code": "254411",
+          "display": "Nurse Practitioner"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770107684",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "byron.haywood@barneyviewph.example.net",
+      "use": "work"
+    }
+  ]
+}

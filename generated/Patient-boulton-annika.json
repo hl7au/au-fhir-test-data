@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "BOULTON",
       "given": [
         "Annika"
@@ -82,7 +83,8 @@
       ],
       "city": "Draper",
       "state": "QLD",
-      "postalCode": "4520"
+      "postalCode": "4520",
+      "country": "AU"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "houston-katrina",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/houston-katrina"
+  },
+  "organization": {
+    "reference": "Organization/blumont-radiology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.187",
+          "code": "253917",
+          "display": "Diagnostic and Interventional Radiologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370106607",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "katrina.houston@blumontradiology.example.net",
+      "use": "work"
+    }
+  ]
+}

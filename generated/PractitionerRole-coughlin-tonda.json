@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "coughlin-tonda",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/coughlin-tonda"
+  },
+  "organization": {
+    "reference": "Organization/launching-place-pharmacy"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.86",
+          "code": "251513",
+          "display": "Pharmacist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370105078",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "tonda.coughlin@launchingplacepharmacy.example.net",
+      "use": "work"
+    }
+  ]
+}

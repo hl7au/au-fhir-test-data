@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "DAVIS",
       "given": [
         "Juan"
@@ -82,7 +83,8 @@
       ],
       "city": "Monash",
       "state": "ACT",
-      "postalCode": "2904"
+      "postalCode": "2904",
+      "country": "AU"
     }
   ]
 }

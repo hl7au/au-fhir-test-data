@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "JOHNSON",
       "given": [
         "Joyce"
@@ -82,7 +83,8 @@
       ],
       "city": "Palmvale",
       "state": "NSW",
-      "postalCode": "2484"
+      "postalCode": "2484",
+      "country": "AU"
     }
   ]
 }

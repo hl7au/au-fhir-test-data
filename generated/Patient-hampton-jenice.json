@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "HAMPTON",
       "given": [
         "Jenice"
@@ -82,7 +83,8 @@
       ],
       "city": "Capel River",
       "state": "WA",
-      "postalCode": "6271"
+      "postalCode": "6271",
+      "country": "AU"
     }
   ]
 }

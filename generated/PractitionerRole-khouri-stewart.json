@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "khouri-stewart",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/khouri-stewart"
+  },
+  "organization": {
+    "reference": "Organization/kununurra-pathology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.110",
+          "code": "253915",
+          "display": "Pathologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870100955",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "stewart.khouri@kununurrapathology.example.com.au",
+      "use": "work"
+    }
+  ]
+}

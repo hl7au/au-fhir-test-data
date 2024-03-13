@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "clare-evonne",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/clare-evonne"
+  },
+  "organization": {
+    "reference": "Organization/quinninup-medical-clinic"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.115",
+          "code": "254499",
+          "display": "Registered Nurses nec"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870104737",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "evonne.clare@quinninupmc.example.net",
+      "use": "work"
+    }
+  ]
+}

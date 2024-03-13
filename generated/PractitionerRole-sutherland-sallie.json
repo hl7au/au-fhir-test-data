@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "sutherland-sallie",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/sutherland-sallie"
+  },
+  "organization": {
+    "reference": "Organization/murrabit-public-hopsital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.74",
+          "code": "253312",
+          "display": "Cardiologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "370102880",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "sallie.sutherland@murrabitph.example.com.au",
+      "use": "work"
+    }
+  ]
+}

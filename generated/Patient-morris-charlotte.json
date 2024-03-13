@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "MORRIS",
       "given": [
         "Charlotte"
@@ -82,7 +83,8 @@
       ],
       "city": "Mountain View",
       "state": "VIC",
-      "postalCode": "3988"
+      "postalCode": "3988",
+      "country": "AU"
     }
   ]
 }

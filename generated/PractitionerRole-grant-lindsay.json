@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "grant-lindsay",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/grant-lindsay"
+  },
+  "organization": {
+    "reference": "Organization/monash-private-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.199",
+          "code": "254411",
+          "display": "Nurse Practitioner"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270109196",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "lindsay.grant@monashph.example.net",
+      "use": "work"
+    }
+  ]
+}

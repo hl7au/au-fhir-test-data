@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "BELGER",
       "given": [
         "Remedios"
@@ -82,7 +83,8 @@
       ],
       "city": "Logan Reserve",
       "state": "QLD",
-      "postalCode": "4133"
+      "postalCode": "4133",
+      "country": "AU"
     }
   ]
 }

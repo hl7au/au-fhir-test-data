@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "BARATZ",
       "given": [
         "Toni"
@@ -82,7 +83,8 @@
       ],
       "city": "Bassendean",
       "state": "WA",
-      "postalCode": "6054"
+      "postalCode": "6054",
+      "country": "AU"
     }
   ]
 }

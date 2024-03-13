@@ -50,6 +50,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "KEATON",
       "given": [
         "Jayme"
@@ -82,7 +83,8 @@
       ],
       "city": "Berowra",
       "state": "NSW",
-      "postalCode": "2081"
+      "postalCode": "2081",
+      "country": "AU"
     }
   ]
 }

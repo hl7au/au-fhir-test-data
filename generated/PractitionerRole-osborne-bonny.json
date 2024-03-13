@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "osborne-bonny",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/osborne-bonny"
+  },
+  "organization": {
+    "reference": "Organization/fishermans-reach-radiology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.60",
+          "code": "253917",
+          "display": "Diagnostic and Interventional Radiologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270101620",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "bonny.osborne@fishermansreachrd.example.com.au",
+      "use": "work"
+    }
+  ]
+}
