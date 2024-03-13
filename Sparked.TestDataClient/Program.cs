@@ -75,6 +75,11 @@ internal class Program
                                 var updatedResource = client.Update<Patient>(patient);
                                 break;
 
+                            case "Practitioner":
+                                var practitioner = JsonSerializer.Deserialize<Practitioner>(fileStream, serializerOptions);
+                                var updatedPractitioner = client.Update<Practitioner>(practitioner);
+                                break;
+
                             default:
                                 throw new ArgumentException("resourceType " + resourceType + " not supported");
                         }

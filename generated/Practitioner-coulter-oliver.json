@@ -87,8 +87,8 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
-            "code": "AUAHPRARegistration",
-            "display": "AHPRA Registration"
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
           }
         ]
       }

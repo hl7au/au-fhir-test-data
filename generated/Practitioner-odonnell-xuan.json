@@ -1,6 +1,6 @@
 {
   "resourceType": "Practitioner",
-  "id": "d'arcy-alexandra",
+  "id": "odonnell-xuan",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
@@ -18,40 +18,40 @@
         ],
         "text": "HPI-I"
       },
-      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.150",
-      "value": "8003619900052454"
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003618233385367"
     }
   ],
   "name": [
     {
-      "family": "D'ARCY",
+      "family": "O'DONNELL",
       "given": [
-        "Alexandra"
+        "Xuan"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870101063",
+      "value": "0870109559",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "alexandra.d'arcy@example.com.au"
+      "value": "xuan.o'donnell@example.net"
     }
   ],
   "address": [
     {
       "line": [
-        "62 Rome Est"
+        "186 Freedom Qy"
       ],
-      "city": "Southport",
-      "state": "NT",
-      "postalCode": "0822"
+      "city": "Minvalara",
+      "state": "SA",
+      "postalCode": "5422"
     }
   ],
-  "gender": "other",
+  "gender": "female",
   "qualification": [
     {
       "extension": [
@@ -60,7 +60,7 @@
             {
               "url": "ahpraProfession",
               "valueCodeableConcept": {
-                "text": "Physiotherapists"
+                "text": "Medical Imaging Professionals"
               }
             }
           ],
@@ -80,15 +80,15 @@
             "text": "Ahpra Registration Number"
           },
           "system": "http://hl7.org.au/id/ahpra-registration-number",
-          "value": "HAC00000000151"
+          "value": "HAC00000000174"
         }
       ],
       "code": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0510",
-            "code": "AUAHPRARegistration",
-            "display": "AHPRA Registration"
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
           }
         ]
       }

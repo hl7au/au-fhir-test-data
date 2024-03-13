@@ -1,6 +1,6 @@
 {
   "resourceType": "Practitioner",
-  "id": "o'donnell-xuan",
+  "id": "darcy-stella",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
@@ -18,37 +18,37 @@
         ],
         "text": "HPI-I"
       },
-      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.173",
-      "value": "8003618233385367"
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003619900052298"
     }
   ],
   "name": [
     {
-      "family": "O'DONNELL",
+      "family": "D'ARCY",
       "given": [
-        "Xuan"
+        "Stella"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870109559",
+      "value": "0870104566",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "xuan.o'donnell@example.net"
+      "value": "stella.d'arcy@balbarruppractice.example.net"
     }
   ],
   "address": [
     {
       "line": [
-        "186 Freedom Qy"
+        "143 Gateway Esp"
       ],
-      "city": "Minvalara",
-      "state": "SA",
-      "postalCode": "5422"
+      "city": "Balbarrup",
+      "state": "WA",
+      "postalCode": "6258"
     }
   ],
   "gender": "female",
@@ -60,7 +60,7 @@
             {
               "url": "ahpraProfession",
               "valueCodeableConcept": {
-                "text": "Medical Imaging Professionals"
+                "text": "Indigenous Health Worker"
               }
             }
           ],
@@ -80,15 +80,15 @@
             "text": "Ahpra Registration Number"
           },
           "system": "http://hl7.org.au/id/ahpra-registration-number",
-          "value": "HAC00000000174"
+          "value": "HAC00000000104"
         }
       ],
       "code": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0533",
-            "code": "AUAHPRARegistration",
-            "display": "AHPRA Registration"
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
           }
         ]
       }
