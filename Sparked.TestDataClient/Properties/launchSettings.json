@@ -2,7 +2,7 @@
   "profiles": {
     "Sparked.TestDataClient": {
       "commandName": "Project",
-      "commandLineArgs": "Patient https://hl7auconnectathon.salessbx.smiledigitalhealth.com/fhir-request Basic YnJldHQuZXNsZXI6bVhVaHJyTmI2dnF2Wm8="
+      "commandLineArgs": "Observation ..\\generated https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic aGVhdGguZnJhbmtlbDpKbmZZcExQRWY0ZEJ4Mkg="
     }
   }
 }

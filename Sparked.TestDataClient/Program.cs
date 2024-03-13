@@ -11,21 +11,33 @@ internal class Program
     {
         var appName = System.AppDomain.CurrentDomain.FriendlyName;
 
-        if (args.Length >= 2)
+        if (args.Length >= 3)
         {
             var argString = System.Environment.CommandLine.Substring(System.Environment.ProcessPath.Length);
             Console.WriteLine(appName + argString);
 
             var resourceType = args[0];
 
-            var serverUrl = args[1]; 
+            //var inputFolder = @"..\generated";
+            var inputFolder = args[1];
+            if (!Directory.Exists(Path.GetFullPath(inputFolder)))
+            {
+                inputFolder = @"..\..\..\" + inputFolder;
+                if (!Directory.Exists(Path.GetFullPath(inputFolder)))
+                {
+                    Console.WriteLine("Input folder not found: " + Path.GetFullPath(args[1]));
+                    return;
+                }
+            }
+
+            var serverUrl = args[2]; 
 
             string authScheme = null;
             string authParameter = null;
-            if (args.Length >= 2)
+            if (args.Length >= 3)
             {
-                authScheme = args[2];
-                authParameter = args[3];
+                authScheme = args[3];
+                authParameter = args[4];
             }
 
             var settings = new FhirClientSettings
@@ -78,11 +90,6 @@ internal class Program
                 };
 
                 var serializerOptions = new JsonSerializerOptions().ForFhir(ModelInfo.ModelInspector);
-
-                var inputFolder = @"..\generated";
-                if (!Directory.Exists(Path.GetFullPath(inputFolder)))
-                    inputFolder = @"..\..\..\" + inputFolder;
-
 
                 var files = Directory.GetFiles(inputFolder, resourceType + "-*.json");
 
