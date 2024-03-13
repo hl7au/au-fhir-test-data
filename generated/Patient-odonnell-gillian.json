@@ -40,6 +40,7 @@
   ],
   "name": [
     {
+      "use": "official",
       "family": "O'DONNELL",
       "given": [
         "Gillian"
@@ -72,7 +73,8 @@
       ],
       "city": "Loganlea",
       "state": "QLD",
-      "postalCode": "4131"
+      "postalCode": "4131",
+      "country": "AU"
     }
   ]
 }
