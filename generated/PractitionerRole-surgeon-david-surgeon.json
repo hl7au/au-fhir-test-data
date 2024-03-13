@@ -50,10 +50,6 @@
         {
           "system": "http://snomed.info/sct",
           "code": "304292004"
-        },
-        {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.1",
-          "code": "253511"
         }
       ],
       "text": "Surgeon"

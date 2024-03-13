@@ -50,10 +50,6 @@
         {
           "system": "http://snomed.info/sct",
           "code": "224535009"
-        },
-        {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "254499"
         }
       ],
       "text": "Registered nurse"

@@ -31,10 +31,6 @@
           "system": "http://snomed.info/sct",
           "code": "55607006",
           "display": "Problem"
-        },
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-          "code": "problem-list-item"
         }
       ]
     }
@@ -44,7 +40,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "6736007",
-        "display": "Moderate"
+        "display": "Moderate severity"
       }
     ]
   },

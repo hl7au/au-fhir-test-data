@@ -50,10 +50,6 @@
         {
           "system": "http://snomed.info/sct",
           "code": "62247001"
-        },
-        {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "253111"
         }
       ],
       "text": "General Practitioner"

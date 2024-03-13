@@ -1,35 +1,21 @@
 {
   "resourceType": "Location",
-  "id": "bobrester-medical-center",
+  "id": "mitchells-hill-audiology",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
     ]
   },
   "status": "active",
-  "name": "Tindal Building",
-  "alias": [
-    "Bobrester Medical Center"
-  ],
+  "name": "Mitchells Hill Audiology",
   "mode": "instance",
-  "type": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "code": "FMC",
-          "display": "Family medicine clinic"
-        }
-      ]
-    }
-  ],
   "address": {
     "line": [
-      "87 Western Esp"
+      "87 Freedom Pnt"
     ],
-    "city": "Tindal RAAF",
-    "state": "QLD",
-    "postalCode": "4655",
+    "city": "Mitchells Hill",
+    "state": "VIC",
+    "postalCode": "3478",
     "country": "AU"
   },
   "physicalType": {
@@ -40,5 +26,8 @@
         "display": "Building"
       }
     ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/mitchells-hill-audiology"
   }
 }

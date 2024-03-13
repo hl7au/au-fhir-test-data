@@ -8,6 +8,8 @@ using Hl7.Fhir.MappingLanguage;
 using Hl7.Fhir.ElementModel;
 using System.Diagnostics;
 using Hl7.Fhir.ElementModel.Types;
+using System.Linq;
+using Hl7.Fhir.FhirPath;
 
 namespace Sparked.Csv2FhirMapping
 {
@@ -96,25 +98,33 @@ namespace Sparked.Csv2FhirMapping
                     Console.WriteLine($">{reader.rawHeader}<");
                     var node = reader.GetNextEntry();
                     int count = 0;
+                    int skipped = 0;
                     while (node != null)
                     {
+                        var x = node.Children().FirstOrDefault();
+
                         count++;
-                        Console.WriteLine(node.ToJson());
-                        var target = engine.GenerateEmptyTargetOutputStructure(structureMap);
-                        engine.transform(null, node, structureMap, target);
+                        if (!string.IsNullOrEmpty(x.Value.ToString()) && x.Value.ToString() != "-")
+                        {
+                            Console.WriteLine(node.ToJson());
+                            var target = engine.GenerateEmptyTargetOutputStructure(structureMap);
+                            engine.transform(null, node, structureMap, target);
 
-                        var output = target.ToPoco<Resource>();
+                            var output = target.ToPoco<Resource>();
 
-                        var outContent = new FhirJsonSerializer(new SerializerSettings() { Pretty = true }).SerializeToString(output);
-                        System.Diagnostics.Trace.WriteLine(outContent);
+                            var outContent = new FhirJsonSerializer(new SerializerSettings() { Pretty = true }).SerializeToString(output);
+                            System.Diagnostics.Trace.WriteLine(outContent);
 
-                        var outFile = Path.Combine(folder, resourceType + "-" + output.Id + ".json");
+                            var outFile = Path.Combine(folder, resourceType + "-" + output.Id + ".json");
 
-                        File.WriteAllText(outFile, outContent);
+                            File.WriteAllText(outFile, outContent);
+                        }
+                        else
+                            skipped++;
 
                         node = reader.GetNextEntry();
                     }
-                    Console.WriteLine($"Total Rows: {count}");
+                    Console.WriteLine($"Total Rows: {count}, skipped: {skipped}");
                 }
             }
         }

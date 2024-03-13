@@ -64,10 +64,6 @@
         "system": "http://snomed.info/sct",
         "code": "77176002",
         "display": "Current smoker"
-      },
-      {
-        "system": "http://loinc.org",
-        "code": "LA18979-7"
       }
     ],
     "text": "Smoker"

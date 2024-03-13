@@ -18,7 +18,7 @@
         ],
         "text": "Employee Number"
       },
-      "system": "http://example.org/SomeOrganization/practitioners",
+      "system": "http://example.org/Organization/practitioners",
       "value": "23"
     }
   ],
@@ -38,17 +38,9 @@
     {
       "coding": [
         {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "208D00000X",
-          "display": "General Practice Physician"
-        },
-        {
           "system": "http://snomed.info/sct",
-          "code": "62247001"
-        },
-        {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "253111"
+          "code": "62247001",
+          "display": "General practitioner"
         }
       ]
     }
@@ -56,11 +48,6 @@
   "specialty": [
     {
       "coding": [
-        {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "2083P0901X",
-          "display": "Public Health & General Preventive Medicine Physician"
-        },
         {
           "system": "http://snomed.info/sct",
           "code": "394814009",

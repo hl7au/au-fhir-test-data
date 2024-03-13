@@ -18,7 +18,7 @@
         ],
         "text": "Employee Number"
       },
-      "system": "http://example.org/SomeOrganization/practitioners",
+      "system": "http://example.org/Organization/practitioners",
       "value": "23"
     }
   ],
@@ -37,10 +37,6 @@
     {
       "coding": [
         {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "363L00000X"
-        },
-        {
           "system": "http://snomed.info/sct",
           "code": "224535009",
           "display": "Registered nurse"
@@ -51,10 +47,6 @@
   "specialty": [
     {
       "coding": [
-        {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "163WD0400X"
-        },
         {
           "system": "http://snomed.info/sct",
           "code": "722165004",

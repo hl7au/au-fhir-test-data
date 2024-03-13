@@ -27,11 +27,6 @@
     {
       "coding": [
         {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "231H00000X",
-          "display": "Audiologist"
-        },
-        {
           "system": "http://snomed.info/sct",
           "code": "309418004",
           "display": "Audiologist"

@@ -82,10 +82,6 @@
         {
           "reference": "Procedure/dialysis",
           "display": "Patient receives regular dialysis"
-        },
-        {
-          "reference": "Observation/bun-mcc",
-          "display": "BUN is 24 mg/dL"
         }
       ]
     }

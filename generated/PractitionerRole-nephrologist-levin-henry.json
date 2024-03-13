@@ -18,7 +18,7 @@
         ],
         "text": "Employee Number"
       },
-      "system": "http://example.org/SomeOrganization/practitioners",
+      "system": "http://example.org/Organization/practitioners",
       "value": "23"
     }
   ],
@@ -38,11 +38,6 @@
     {
       "coding": [
         {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "207RN0300X",
-          "display": "Nephrology Physician"
-        },
-        {
           "system": "http://snomed.info/sct",
           "code": "11911009",
           "display": "Nephrologist"
@@ -53,10 +48,6 @@
   "specialty": [
     {
       "coding": [
-        {
-          "system": "http://nucc.org/provider-taxonomy",
-          "code": "207RN0300X"
-        },
         {
           "system": "http://snomed.info/sct",
           "code": "394589003",
