@@ -42,12 +42,36 @@ internal class Program
 
             using (var client = new FhirClient(serverUrl, settings, handler).WithStrictSerializer())
             {
+                int count = 0;
+                int created = 0;
+                int updated = 0;
+                var resourceId = "";
+                Resource updatedResource = null;
+
                 handler.OnAfterResponse += (sender, e) =>
                 {
                     Console.WriteLine(e.RawResponse.RequestMessage.Method + " " + e.RawResponse.RequestMessage.RequestUri);
                     Console.WriteLine(((int)e.RawResponse.StatusCode).ToString() + " " + e.RawResponse.StatusCode);
+
+                    if (e.RawResponse.RequestMessage.Method == HttpMethod.Post || e.RawResponse.RequestMessage.Method == HttpMethod.Put)
+                    {
+                        if (e.RawResponse.StatusCode == System.Net.HttpStatusCode.Created)
+                            created++;
+                        else if (e.RawResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                        {
+                            if (e.RawResponse.Headers.Date == e.RawResponse.Content.Headers.LastModified)
+                            {
+                                updated++;
+                                Console.WriteLine(resourceType + " " + resourceId + " updated");
+                            }
+                            else
+                                Console.WriteLine(resourceType + " " + resourceId + " unchanged");
+                        }
+                    }
+
                     Console.WriteLine("Content-Location: " + e.RawResponse.Content.Headers.ContentLocation);
                     Console.WriteLine("Last-Modified: " + e.RawResponse.Content.Headers.LastModified);
+                    Console.WriteLine("Date: " + e.RawResponse.Headers.Date);
                     Console.WriteLine("ETag: " + e.RawResponse.Headers.ETag);
                     //var list = e.RawResponse.Headers.ToList();
                 };
@@ -59,10 +83,11 @@ internal class Program
                     inputFolder = @"..\..\..\" + inputFolder;
 
 
-                var files = Directory.GetFiles(inputFolder, resourceType + "*.json");
+                var files = Directory.GetFiles(inputFolder, resourceType + "-*.json");
 
                 foreach (var file in files)
                 {
+                    count++;
                     using (var fileStream = File.OpenRead(file))
                     {
 
@@ -72,21 +97,75 @@ internal class Program
                         {
                             case "Patient":
                                 var patient = JsonSerializer.Deserialize<Patient>(fileStream, serializerOptions);
-                                var updatedResource = client.Update<Patient>(patient);
+                                updatedResource = client.Update<Patient>(patient);
                                 break;
 
                             case "Practitioner":
                                 var practitioner = JsonSerializer.Deserialize<Practitioner>(fileStream, serializerOptions);
-                                var updatedPractitioner = client.Update<Practitioner>(practitioner);
+                                resourceId = practitioner.Id;
+                                updatedResource = client.Update<Practitioner>(practitioner);
+                                break;
+
+                            case "PractitionerRole":
+                                var practitionerRole = JsonSerializer.Deserialize<PractitionerRole>(fileStream, serializerOptions);
+                                resourceId = practitionerRole.Id;
+                                updatedResource = client.Update<PractitionerRole>(practitionerRole);
+                                break;
+
+                            case "Organization":
+                                var organization = JsonSerializer.Deserialize<Organization>(fileStream, serializerOptions);
+                                resourceId = organization.Id;
+                                updatedResource = client.Update<Organization>(organization);
+                                break;
+
+                            case "Location":
+                                var location = JsonSerializer.Deserialize<Location>(fileStream, serializerOptions);
+                                resourceId = location.Id;
+                                updatedResource = client.Update<Location>(location);
+                                break;
+
+                            case "Encounter":
+                                var encounter = JsonSerializer.Deserialize<Encounter>(fileStream, serializerOptions);
+                                resourceId = encounter.Id;
+                                updatedResource = client.Update<Encounter>(encounter);
+                                break;
+
+                            case "Condition":
+                                var condition = JsonSerializer.Deserialize<Condition>(fileStream, serializerOptions);
+                                resourceId = condition.Id;
+                                updatedResource = client.Update<Condition>(condition);
+                                break;
+
+                            case "AllergyIntolerance":
+                                var allergyIntolerance = JsonSerializer.Deserialize<AllergyIntolerance>(fileStream, serializerOptions);
+                                resourceId = allergyIntolerance.Id;
+                                updatedResource = client.Update<AllergyIntolerance>(allergyIntolerance);
+                                break;
+
+                            case "Immunization":
+                                var immunization = JsonSerializer.Deserialize<Immunization>(fileStream, serializerOptions);
+                                resourceId = immunization.Id;
+                                updatedResource = client.Update<Immunization>(immunization);
+                                break;
+
+                            case "Observation":
+                                var observation = JsonSerializer.Deserialize<Observation>(fileStream, serializerOptions);
+                                resourceId = observation.Id;
+                                updatedResource = client.Update<Observation>(observation);
+                                break;
+
+                            case "Provenance":
+                                var provenance = JsonSerializer.Deserialize<Provenance>(fileStream, serializerOptions);
+                                resourceId = provenance.Id;
+                                updatedResource = client.Update<Provenance>(provenance);
                                 break;
 
                             default:
                                 throw new ArgumentException("resourceType " + resourceType + " not supported");
                         }
-
-                        //Console.WriteLine(resourceType + " " + resource.Id + " updated ");
                     }
                 }
+                Console.WriteLine($"Total resources: {count}, created: {created}, updated: {updated}");
             }
         }
         else
