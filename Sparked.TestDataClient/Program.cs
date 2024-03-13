@@ -45,6 +45,7 @@ internal class Program
                 int count = 0;
                 int created = 0;
                 int updated = 0;
+                int failed = 0;
                 var resourceId = "";
                 Resource updatedResource = null;
 
@@ -92,86 +93,95 @@ internal class Program
                     {
 
                         Console.WriteLine("File " + file + " read as " + resourceType);
-
-                        switch (resourceType)
+                        try
                         {
-                            case "Patient":
-                                var patient = JsonSerializer.Deserialize<Patient>(fileStream, serializerOptions);
-                                updatedResource = client.Update<Patient>(patient);
-                                break;
 
-                            case "Practitioner":
-                                var practitioner = JsonSerializer.Deserialize<Practitioner>(fileStream, serializerOptions);
-                                resourceId = practitioner.Id;
-                                updatedResource = client.Update<Practitioner>(practitioner);
-                                break;
+                            switch (resourceType)
+                            {
+                                case "Patient":
+                                    var patient = JsonSerializer.Deserialize<Patient>(fileStream, serializerOptions);
+                                    updatedResource = client.Update<Patient>(patient);
+                                    break;
 
-                            case "PractitionerRole":
-                                var practitionerRole = JsonSerializer.Deserialize<PractitionerRole>(fileStream, serializerOptions);
-                                resourceId = practitionerRole.Id;
-                                updatedResource = client.Update<PractitionerRole>(practitionerRole);
-                                break;
+                                case "Practitioner":
+                                    var practitioner = JsonSerializer.Deserialize<Practitioner>(fileStream, serializerOptions);
+                                    resourceId = practitioner.Id;
+                                    updatedResource = client.Update<Practitioner>(practitioner);
+                                    break;
 
-                            case "Organization":
-                                var organization = JsonSerializer.Deserialize<Organization>(fileStream, serializerOptions);
-                                resourceId = organization.Id;
-                                updatedResource = client.Update<Organization>(organization);
-                                break;
+                                case "Organization":
+                                    var organization = JsonSerializer.Deserialize<Organization>(fileStream, serializerOptions);
+                                    resourceId = organization.Id;
+                                    updatedResource = client.Update<Organization>(organization);
+                                    break;
 
-                            case "Location":
-                                var location = JsonSerializer.Deserialize<Location>(fileStream, serializerOptions);
-                                resourceId = location.Id;
-                                updatedResource = client.Update<Location>(location);
-                                break;
+                                case "Location":
+                                    var location = JsonSerializer.Deserialize<Location>(fileStream, serializerOptions);
+                                    resourceId = location.Id;
+                                    updatedResource = client.Update<Location>(location);
+                                    break;
 
-                            case "Encounter":
-                                var encounter = JsonSerializer.Deserialize<Encounter>(fileStream, serializerOptions);
-                                resourceId = encounter.Id;
-                                updatedResource = client.Update<Encounter>(encounter);
-                                break;
+                                case "PractitionerRole":
+                                    var practitionerRole = JsonSerializer.Deserialize<PractitionerRole>(fileStream, serializerOptions);
+                                    resourceId = practitionerRole.Id;
+                                    updatedResource = client.Update<PractitionerRole>(practitionerRole);
+                                    break;
 
-                            case "Condition":
-                                var condition = JsonSerializer.Deserialize<Condition>(fileStream, serializerOptions);
-                                resourceId = condition.Id;
-                                updatedResource = client.Update<Condition>(condition);
-                                break;
+                                case "Encounter":
+                                    var encounter = JsonSerializer.Deserialize<Encounter>(fileStream, serializerOptions);
+                                    resourceId = encounter.Id;
+                                    updatedResource = client.Update<Encounter>(encounter);
+                                    break;
 
-                            case "AllergyIntolerance":
-                                var allergyIntolerance = JsonSerializer.Deserialize<AllergyIntolerance>(fileStream, serializerOptions);
-                                resourceId = allergyIntolerance.Id;
-                                updatedResource = client.Update<AllergyIntolerance>(allergyIntolerance);
-                                break;
+                                case "Condition":
+                                    var condition = JsonSerializer.Deserialize<Condition>(fileStream, serializerOptions);
+                                    resourceId = condition.Id;
+                                    updatedResource = client.Update<Condition>(condition);
+                                    break;
 
-                            case "Immunization":
-                                var immunization = JsonSerializer.Deserialize<Immunization>(fileStream, serializerOptions);
-                                resourceId = immunization.Id;
-                                updatedResource = client.Update<Immunization>(immunization);
-                                break;
+                                case "AllergyIntolerance":
+                                    var allergyIntolerance = JsonSerializer.Deserialize<AllergyIntolerance>(fileStream, serializerOptions);
+                                    resourceId = allergyIntolerance.Id;
+                                    updatedResource = client.Update<AllergyIntolerance>(allergyIntolerance);
+                                    break;
 
-                            case "Observation":
-                                var observation = JsonSerializer.Deserialize<Observation>(fileStream, serializerOptions);
-                                resourceId = observation.Id;
-                                updatedResource = client.Update<Observation>(observation);
-                                break;
+                                case "Immunization":
+                                    var immunization = JsonSerializer.Deserialize<Immunization>(fileStream, serializerOptions);
+                                    resourceId = immunization.Id;
+                                    updatedResource = client.Update<Immunization>(immunization);
+                                    break;
 
-                            case "Provenance":
-                                var provenance = JsonSerializer.Deserialize<Provenance>(fileStream, serializerOptions);
-                                resourceId = provenance.Id;
-                                updatedResource = client.Update<Provenance>(provenance);
-                                break;
+                                case "Observation":
+                                    var observation = JsonSerializer.Deserialize<Observation>(fileStream, serializerOptions);
+                                    resourceId = observation.Id;
+                                    updatedResource = client.Update<Observation>(observation);
+                                    break;
 
-                            default:
-                                throw new ArgumentException("resourceType " + resourceType + " not supported");
+                                case "Provenance":
+                                    var provenance = JsonSerializer.Deserialize<Provenance>(fileStream, serializerOptions);
+                                    resourceId = provenance.Id;
+                                    updatedResource = client.Update<Provenance>(provenance);
+                                    break;
+
+                                default:
+                                    throw new ArgumentException("resourceType " + resourceType + " not supported");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            failed++;
+                            Console.WriteLine(resourceType + " " + resourceId + " failed");
+                            Console.WriteLine(ex.ToString());
                         }
                     }
                 }
-                Console.WriteLine($"Total resources: {count}, created: {created}, updated: {updated}");
+                Console.WriteLine($"Total resources: {count}, created: {created}, updated: {updated}, failed: {failed}");
             }
         }
         else
         {
             Console.WriteLine("Usage: " + appName + " <resource-type> <fhir-server> <auth-scheme> <auth-parameter>");
-            Console.WriteLine("E.g. : " + appName + " Patient https://hl7auconnectathon.salessbx.smiledigitalhealth.com/fhir-request Basic YnJldHQuZXNsZXI6bvhVaHJyTmI2dnF2Wm8=");
+            Console.WriteLine("E.g. : " + appName + " Patient https://sparked.npd.telstrahealth.com/smile/fhir Basic <token>");
         }
     }
 
