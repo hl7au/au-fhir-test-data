@@ -31,7 +31,7 @@
     "reference": "Practitioner/nurse-nancy"
   },
   "organization": {
-    "reference": "http://example.org/SomeOrganization/123"
+    "reference": "http://example.org/Organization/123"
   },
   "code": [
     {
