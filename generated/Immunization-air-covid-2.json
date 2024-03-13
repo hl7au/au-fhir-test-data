@@ -8,7 +8,7 @@
   },
   "identifier": [
     {
-      "system": "urn:ietf:rfc:3987",
+      "system": "urn:ietf:rfc:3986",
       "value": "urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d"
     }
   ],
