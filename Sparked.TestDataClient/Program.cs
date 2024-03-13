@@ -164,6 +164,24 @@ internal class Program
                                     updatedResource = client.Update<Observation>(observation);
                                     break;
 
+                                case "MedicationRequest":
+                                    var medicationRequest = JsonSerializer.Deserialize<MedicationRequest>(fileStream, serializerOptions);
+                                    resourceId = medicationRequest.Id;
+                                    updatedResource = client.Update<MedicationRequest>(medicationRequest);
+                                    break;
+
+                                case "MedicationStatement":
+                                    var medicationStatement = JsonSerializer.Deserialize<MedicationStatement>(fileStream, serializerOptions);
+                                    resourceId = medicationStatement.Id;
+                                    updatedResource = client.Update<MedicationStatement>(medicationStatement);
+                                    break;
+
+                                case "Procedure":
+                                    var procedure = JsonSerializer.Deserialize<Procedure>(fileStream, serializerOptions);
+                                    resourceId = procedure.Id;
+                                    updatedResource = client.Update<Procedure>(procedure);
+                                    break;
+
                                 case "Provenance":
                                     var provenance = JsonSerializer.Deserialize<Provenance>(fileStream, serializerOptions);
                                     resourceId = provenance.Id;
