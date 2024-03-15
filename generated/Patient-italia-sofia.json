@@ -19,23 +19,6 @@
       },
       "system": "http://hl7.org/fhir/sid/passport-ITA",
       "value": "IT1111111"
-    },
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MR",
-            "display": "Medical record number"
-          }
-        ],
-        "text": "Medical Record Number"
-      },
-      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/medicalrecord/1.0/8003626566699734",
-      "value": "2338111",
-      "assigner": {
-        "display": "Large Metropolitan Hospital"
-      }
     }
   ],
   "name": [
