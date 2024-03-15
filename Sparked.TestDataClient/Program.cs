@@ -205,8 +205,8 @@ internal class Program
         }
         else
         {
-            Console.WriteLine("Usage: " + appName + " <resource-type> <fhir-server> <auth-scheme> <auth-parameter>");
-            Console.WriteLine("E.g. : " + appName + " Patient https://sparked.npd.telstrahealth.com/smile/fhir Basic <token>");
+            Console.WriteLine("Usage: " + appName + " <resource-type> <input-folder> <fhir-server> <auth-scheme> <auth-parameter>");
+            Console.WriteLine("E.g. : " + appName + " Patient ..\\generated https://sparked.npd.telstrahealth.com/smile/fhir Basic <token>");
         }
     }
 
