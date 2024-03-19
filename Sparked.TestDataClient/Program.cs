@@ -158,6 +158,12 @@ internal class Program
                                     updatedResource = client.Update<Immunization>(immunization);
                                     break;
 
+                                case "Specimen":
+                                    var specimen = JsonSerializer.Deserialize<Specimen>(fileStream, serializerOptions);
+                                    resourceId = specimen.Id;
+                                    updatedResource = client.Update<Specimen>(specimen);
+                                    break;
+
                                 case "Observation":
                                     var observation = JsonSerializer.Deserialize<Observation>(fileStream, serializerOptions);
                                     resourceId = observation.Id;
