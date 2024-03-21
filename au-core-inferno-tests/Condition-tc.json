@@ -1,0 +1,79 @@
+{
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "encounter-diagnosis",
+                    "display": "Encounter Diagnosis"
+                }
+            ]
+        }
+    ],
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "resolved",
+                "display": "Resolved"
+            }
+        ]
+    },
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+        ]
+    },
+    "encounter": {
+        "reference": "Encounter/encounter-tc"
+    },
+    "resourceType": "Condition",
+    "asserter": {
+        "reference": "Practitioner/practitioner-tc"
+    },
+    "note": [
+        {
+            "text": "Puncture wound to sole of left foot from stepping on a rusty nail.              Wound red and swollen, no calf muscle tenderness, no coughing nor chest pain              which excludes pulmonary embolism."
+        }
+    ],
+    "id": "condition-tc",
+    "recorder": {
+        "reference": "PractitionerRole/practitionerrole-tc"
+    },
+    "severity": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "24484000",
+                "display": "Severe"
+            }
+        ]
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "283680004",
+                "display": "Nail wound of sole of foot"
+            }
+        ]
+    },
+    "onsetDateTime": "2017-03-30",
+    "abatementDateTime": "2015-02-14",
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-tc"
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"nailwound\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;nailwound&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-condition.html\">AU Core Condition</a></p></div><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Encounter Diagnosis <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#encounter-diagnosis)</span></p><p><b>code</b>: Nail wound of sole of foot <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#283680004)</span></p><p><b>subject</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><p><b>encounter</b>: <a href=\"Encounter-nailwound.html\">Encounter/nailwound</a></p><p><b>onset</b>: 2017-03-30</p><p><b>recorder</b>: <a href=\"PractitionerRole-bobrester-bob-gp.html\">PractitionerRole/bobrester-bob-gp</a></p><p><b>note</b>: Puncture wound to sole of left foot from stepping on a rusty nail.              Wound red and swollen, no calf muscle tenderness, no coughing nor chest pain              which excludes pulmonary embolism.</p></div>"
+    }
+}
