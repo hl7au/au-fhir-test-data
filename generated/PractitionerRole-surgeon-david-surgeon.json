@@ -23,19 +23,6 @@
       "assigner": {
         "display": "Hospital Australia"
       }
-    },
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
-            "code": "UPIN"
-          }
-        ],
-        "text": "Medicare Provider Number"
-      },
-      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
-      "value": "1237762A"
     }
   ],
   "practitioner": {

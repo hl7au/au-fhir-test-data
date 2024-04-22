@@ -11,15 +11,14 @@
       "type": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
-            "code": "PRES",
-            "display": "Prescriber Number"
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "EI"
           }
         ],
-        "text": "Prescriber Number"
+        "text": "Employee number"
       },
-      "system": "http://ns.electronichealth.net.au/id/medicare-prescriber-number",
-      "value": "553255"
+      "system": "http://bobrestermedical.example.com/id/employee-id",
+      "value": "567845B-1"
     }
   ],
   "name": [

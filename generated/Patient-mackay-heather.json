@@ -46,6 +46,19 @@
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
       "value": "8003608666976451"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "39513341311"
     }
   ],
   "name": [

@@ -46,6 +46,33 @@
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
       "value": "8003608000311688"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "29545406111"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "DVAU",
+            "display": "DVA Number"
+          }
+        ],
+        "text": "DVA Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/dva",
+      "value": "QX827289"
     }
   ],
   "name": [

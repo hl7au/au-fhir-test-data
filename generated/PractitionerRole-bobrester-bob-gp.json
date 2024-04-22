@@ -23,19 +23,6 @@
       "assigner": {
         "display": "Bobregster Medical Center QLD"
       }
-    },
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
-            "code": "UPIN"
-          }
-        ],
-        "text": "Medicare Provider Number"
-      },
-      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
-      "value": "1234561A"
     }
   ],
   "practitioner": {
@@ -50,6 +37,10 @@
         {
           "system": "http://snomed.info/sct",
           "code": "62247001"
+        },
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253111"
         }
       ],
       "text": "General Practitioner"
