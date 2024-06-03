@@ -9,7 +9,7 @@ IF %1.==. GOTO No1
 IF %2.==. GOTO No1
 
 set "RESOURCETYPE=%2"
-bin\Debug\net7.0\Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
+Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
 
 GOTO End1
 

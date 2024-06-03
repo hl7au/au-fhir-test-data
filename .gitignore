@@ -4,3 +4,5 @@
 /Sparked.TestDataClient/bin/*
 /Sparked.TestDataClient/obj/*
 /au-core-inferno-tests/au_core_inferno_*.tar.gz
+/Sparked.Csv2FhirMapping/*.pdb
+/Sparked.TestDataClient/*.pdb

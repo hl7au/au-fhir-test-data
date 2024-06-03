@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-    <IsPublishable>false</IsPublishable>
     <OutputType>Exe</OutputType>
     <AssemblyName>Csv2Fhir</AssemblyName>
     <StartupObject></StartupObject>

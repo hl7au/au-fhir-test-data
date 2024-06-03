@@ -6,7 +6,7 @@ IF %3.==. GOTO No1
 IF %4.==. GOTO No1
 IF %5.==. GOTO No1
 
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe %5 %4 %1 %2 %3
+Sparked.TestDataClient\TestDataClient.exe %5 %4 %1 %2 %3
 
 GOTO End1
 

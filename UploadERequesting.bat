@@ -4,13 +4,13 @@ IF %1.==. GOTO No1
 IF %2.==. GOTO No1
 IF %3.==. GOTO No1
 
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe Organization generated %1 %2 %3
+Sparked.TestDataClient\TestDataClient.exe Organization generated %1 %2 %3
 pause
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe Practitioner generated %1 %2 %3
+Sparked.TestDataClient\TestDataClient.exe Practitioner generated %1 %2 %3
 pause
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe PractitionerRole generated %1 %2 %3
+Sparked.TestDataClient\TestDataClient.exe PractitionerRole generated %1 %2 %3
 pause
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe Patient generated %1 %2 %3
+Sparked.TestDataClient\TestDataClient.exe Patient generated %1 %2 %3
 pause
 
 GOTO End1
