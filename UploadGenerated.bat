@@ -25,6 +25,8 @@ pause
 Sparked.TestDataClient\TestDataClient.exe Observation generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Procedure generated %1 %2 %3
+pause
+Sparked.TestDataClient\TestDataClient.exe Medication generated %1 %2 %3
 
 GOTO End1
 

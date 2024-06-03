@@ -170,6 +170,12 @@ internal class Program
                                     updatedResource = client.Update<Observation>(observation);
                                     break;
 
+                                case "Medication":
+                                    var medication = JsonSerializer.Deserialize<Medication>(fileStream, serializerOptions);
+                                    resourceId = medication.Id;
+                                    updatedResource = client.Update<Medication>(medication);
+                                    break;
+
                                 case "MedicationRequest":
                                     var medicationRequest = JsonSerializer.Deserialize<MedicationRequest>(fileStream, serializerOptions);
                                     resourceId = medicationRequest.Id;
