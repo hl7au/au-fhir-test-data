@@ -37,8 +37,16 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
     };
 
     // medicationReference 
-    src.medication_reference as s_reference where length() > 0 -> tgt.medication = create('Reference') as t_medication then {
-        s_reference -> t_medication.reference = s_reference;
+    src.medication_reference_id as s_reference where length() > 0 -> tgt.medication = create('Reference') as t_medication then {
+        // contained reference
+        src.contained_code_coding1_code as s_code where length() > 0 -> t_medication then {
+            s_reference -> t_medication.reference = append('#', s_reference);
+        };
+
+        // relative reference
+        src.contained_code_coding1_code as s_code where length() = 0 -> t_medication then {
+            s_reference -> t_medication.reference = append('Medication/', s_reference);
+        };
 
         src.medication_display as s_display where length() > 0 -> t_medication.display = s_display;
     };
@@ -50,6 +58,11 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
         s_reference -> t_subject.reference = append('Patient/', s_reference);
 
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
+    };
+
+    // encounter 0..1 MS
+    src.encounter_reference_id as s_reference where length() > 0 -> tgt.encounter as t_encounter then {
+        s_reference -> t_encounter.reference = append('Encounter/', s_reference);
     };
 
     // authoredOn 1..1 MS
@@ -169,4 +182,47 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
         // allowedBoolean 0..1
         s_allowed -> t_substitution.allowed = cast(s_allowed, 'boolean');
     }; 
+
+    // contained Medication
+    src.contained_code_coding1_code as s_code where length() > 0 -> tgt.contained = create('Medication') as t_medication first then {
+        
+        // contained id
+        src.medication_reference_id as s_reference where length() > 0 -> t_medication then {
+            s_reference -> t_medication.id = s_reference;
+        };
+
+        // contained meta
+        s_code -> t_medication.meta = create('Meta') as meta then {
+            src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication';
+        };
+
+        // contained code 1..1 MS
+        s_code -> t_medication.code as t_code then {
+            s_code -> t_code then {
+                src.contained_medication_code_coding1_system as s_system -> t_code.coding = c(s_system, s_code) as t_coding first then {
+                    src.contained_medication_code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+
+                    src.contained_medication_code_coding1_medicationType_code as s_medicationType_code where length() > 0 -> t_coding.extension as t_medication_type first then {
+                        s_medicationType_code -> t_medication_type.url = "http://hl7.org.au/fhir/StructureDefinition/medication-type";
+                        s_medicationType_code -> t_medication_type.value = c("http://terminology.hl7.org.au/CodeSystem/medication-type", s_medicationType_code) as t_coding then {
+                            src.contained_medication_code_coding1_medicationType_display as s_medicationType_display where length() > 0 -> t_coding.display = s_medicationType_display;
+                        };
+                    }; 
+                };
+            };
+
+            src.contained_medication_code_text as s_text where length() > 0 -> t_code.text = s_text;
+        };
+
+        // contained form 0..1 
+        src.contained_medication_form_coding1_code as s_code where length() > 0 -> t_medication.form as t_form then {
+            s_code -> t_form then {
+                src.contained_medication_form_coding1_system as s_system -> t_form.coding = c(s_system, s_code) as t_coding first then {
+                    src.contained_medication_form_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+
+            src.contained_medication_form_text as s_text where length() > 0 -> t_form.text = s_text;
+        };
+    };
 }

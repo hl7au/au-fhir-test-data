@@ -2,3 +2,7 @@
 1active-ingredient,BPD,Branded product with no strengths or form,http://snomed.info/sct,4445011000036103,Chlorsig,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 2active-ingredients,,,,,,,,,,,,Perindopril-Amlodipine,,,,,,,,,,,,,,,,,,,,,,,
 simvastatin,,,http://www.nlm.nih.gov/research/umls/rxnorm,757704,Simvastatin 40 MG Disintegrating Oral Tablet,http://www.whocc.no/atc,C10AA01,simvastatin,http://www.nlm.nih.gov/research/umls/rxnorm,1294713,Disintegrating Oral Product,Simvastatin 40 MG Disintegrating Oral Tablet,http://www.nlm.nih.gov/research/umls/rxnorm,1294713,Disintegrating Oral Product,http://standardterms.edqm.eu,10219000,Tablet,http://snomed.info/sct,263011000036100,orally disintegrating tablet,http://www.nlm.nih.gov/research/umls/rxnorm,36567,Simvastatin,http://snomed.info/sct,2588011000036100,simvastatin,40,mcg,http://unitsofmeasure.org,mg,1,tablet,http://unitsofmeasure.org,{tablet}
+metformin,,,http://snomed.info/sct,21614011000036102,metformin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+metformin-mpp,,,http://snomed.info/sct,943711000168102,"metformin hydrochloride 500 mg tablet, 10",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
+metformin-tpp,,,http://snomed.info/sct,1527511000168106,"Metformin (Apo) 500 mg tablet, 10",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
+reaptan,,,http://snomed.info/sct,926213011000036100,"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
