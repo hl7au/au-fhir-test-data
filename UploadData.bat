@@ -14,7 +14,7 @@ GOTO End1
     echo USAGE:
     echo   %~nx0 fhir-server auth-scheme auth-parameter input-folder resource-type
     echo Example:
-    echo   %~nx0 https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic Base64-encouded-userid:password generated Observation
+    echo   %~nx0 https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic Base64-encouded-userid:password generated Observation
 
 GOTO End1
 
