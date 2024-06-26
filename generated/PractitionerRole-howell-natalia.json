@@ -31,7 +31,7 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.85",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "251513",
           "display": "Pharmacist"
         }
@@ -46,7 +46,7 @@
     },
     {
       "system": "email",
-      "value": "natalia.howell@reception@pineviewpharmacy.example.com.au",
+      "value": "natalia.howell@reception.pineviewpharmacy.example.com.au",
       "use": "work"
     }
   ]

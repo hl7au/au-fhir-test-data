@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "verona-sands-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Verona Sands Pathology",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "108 Arthur Jnc"
+    ],
+    "city": "Verona Sands",
+    "state": "TAS",
+    "postalCode": "7112"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/verona-sands-pathology"
+  }
+}

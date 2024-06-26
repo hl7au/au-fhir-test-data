@@ -17,15 +17,22 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "304292004"
-        },
-        {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "253511",
-          "display": "Surgeon (General)"
+          "code": "309369000",
+          "display": "Cardiothoracic surgeon"
         }
       ],
-      "text": "Surgeon"
+      "text": "Cardiothoracic surgeon"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394603008",
+          "display": "Cardiothoracic surgery"
+        }
+      ]
     }
   ],
   "location": [

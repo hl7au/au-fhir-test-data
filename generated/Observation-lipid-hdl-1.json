@@ -72,6 +72,9 @@
         "unit": "mmol/L",
         "system": "http://unitsofmeasure.org",
         "code": "mmol/L"
+      },
+      "type": {
+        "text": "Normal Range"
       }
     }
   ]

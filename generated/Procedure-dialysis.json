@@ -20,6 +20,9 @@
   "subject": {
     "reference": "Patient/dan-harry"
   },
+  "encounter": {
+    "reference": "Encounter/renal-dialysis"
+  },
   "performedDateTime": "2012-08-05",
   "performer": [
     {

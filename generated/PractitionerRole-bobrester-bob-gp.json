@@ -36,7 +36,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "62247001"
+          "code": "62247001",
+          "display": "General practitioner"
         },
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
@@ -44,6 +45,17 @@
         }
       ],
       "text": "General Practitioner"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394814009",
+          "display": "General practice (specialty)"
+        }
+      ]
     }
   ],
   "location": [

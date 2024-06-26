@@ -56,6 +56,13 @@
   "period": {
     "end": "2022-02-10"
   },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/bobrester-medical-center"
+      }
+    }
+  ],
   "serviceProvider": {
     "reference": "Organization/bobrester-medical-center"
   }

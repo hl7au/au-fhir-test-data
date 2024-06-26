@@ -42,7 +42,7 @@
   "effectiveDateTime": "2022-02-10",
   "performer": [
     {
-      "reference": "PractitionerRole/bobrester-bob-gp"
+      "reference": "Practitioner/bobrester-bob"
     }
   ],
   "valueQuantity": {

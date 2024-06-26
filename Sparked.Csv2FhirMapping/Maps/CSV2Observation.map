@@ -10,9 +10,13 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
 
     // meta.profile
     src -> tgt.meta = create('Meta') as meta then {
-        src.profile1 as s_profile where length() = 0 -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation';
         src.profile1 as s_profile where length() > 0 -> meta.profile = s_profile;
         src.profile2 as s_profile where length() > 0 -> meta.profile = s_profile;
+    };
+
+    // partOf 0..* MS
+    src.partOf_reference_id as s_reference_id where length() > 0 -> tgt.partOf as t_partOf first then {
+        src.partOf_reference_type as s_reference_type -> t_partOf.reference = append(s_reference_type, '/', s_reference_id);
     };
 
     // status: code
@@ -118,7 +122,7 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
                 src.valueCodeableConcept_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
             };
         };
-        src.valueCodeableConcept_text as s_text -> t_codeableConcept.text = s_text;
+        src.valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
     };
 
     // dataAbsentReason 0..1 MS
@@ -138,6 +142,16 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
         s_note -> t_note.text = s_note;
     };
 
+    // bodySite 0..1
+    src.bodySite_coding1_code as s_code where length() > 0 -> tgt.bodySite as t_bodySite then {
+        s_code where length() > 0 -> t_bodySite then {
+            src.bodySite_coding1_system as s_system -> t_bodySite.coding = c(s_system, s_code) as t_coding first then {
+                src.bodySite_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+        src.bodySite_text as s_text where length() > 0 -> t_bodySite.text = s_text;
+    };
+
     // referenceRange 0..*
     src.referenceRange1_high_value as s_high_value -> tgt then {
         src.referenceRange1_low_value as s_low_value where length() > 0 -> tgt.referenceRange as t_referenceRange then {
@@ -153,6 +167,9 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
                 src.referenceRange1_high_system as s_system where length() > 0 -> t_high.system = s_system;
                 src.referenceRange1_high_code as s_code where length() > 0 -> t_high.code = s_code;
             };
+            src.referenceRange1_type_text as s_text where length() > 0 -> t_referenceRange.type as t_type then {
+                s_text -> t_type.text = s_text;
+            };
         };
         src.referenceRange1_low_value as s_low_value where length() = 0 -> tgt then {
             s_high_value where length() > 0 -> tgt.referenceRange as t_referenceRange then {
@@ -164,6 +181,14 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
                 };
             };
         };
+    };
+
+    // hasMember 0..* MS
+    src.hasMember1_reference as s_reference where length() > 0 -> tgt.hasMember as t_hasMember first then {
+        s_reference -> t_hasMember.reference = s_reference;   
+    };
+    src.hasMember2_reference as s_reference where length() > 0 -> tgt.hasMember as t_hasMember first then {
+        s_reference -> t_hasMember.reference = s_reference;   
     };
 
     // component 0..*    

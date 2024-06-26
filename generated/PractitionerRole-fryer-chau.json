@@ -31,7 +31,7 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.95",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253511",
           "display": "Surgeon (General)"
         }
@@ -41,7 +41,7 @@
   "telecom": [
     {
       "system": "phone",
-      "value": "370108625",
+      "value": "0370108625",
       "use": "work"
     },
     {

@@ -19,6 +19,11 @@
           "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
           "code": "FMC",
           "display": "Family medicine clinic"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "288565001",
+          "display": "Medical centre"
         }
       ]
     }

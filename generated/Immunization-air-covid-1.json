@@ -33,6 +33,9 @@
   },
   "occurrenceDateTime": "2021-06-17",
   "primarySource": true,
+  "location": {
+    "reference": "Location/au-hospital-pharm-out"
+  },
   "protocolApplied": [
     {
       "targetDisease": [

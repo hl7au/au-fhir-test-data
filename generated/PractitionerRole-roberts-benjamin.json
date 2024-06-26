@@ -31,7 +31,7 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.56",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "254499",
           "display": "Registered Nurses nec"
         }

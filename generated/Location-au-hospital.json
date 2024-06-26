@@ -6,6 +6,12 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
     ]
   },
+  "identifier": [
+    {
+      "system": "https://au-hospitals.example.com.au",
+      "value": "qldhhs"
+    }
+  ],
   "status": "active",
   "name": "QLD Hospital",
   "alias": [
@@ -26,7 +32,7 @@
   "telecom": [
     {
       "system": "phone",
-      "value": "(03) 5550 3333"
+      "value": "(07) 5550 3333"
     }
   ],
   "address": {

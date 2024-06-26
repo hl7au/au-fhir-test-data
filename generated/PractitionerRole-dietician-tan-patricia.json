@@ -9,6 +9,18 @@
   "practitioner": {
     "display": "Ms Patricia Tan, Dieticians Australia"
   },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "159033005",
+          "display": "Dietitian"
+        }
+      ],
+      "text": "Dietitian"
+    }
+  ],
   "specialty": [
     {
       "coding": [

@@ -48,6 +48,12 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
     };
 
+    // encounter 0..1 MS
+    src.encounter_reference_id as s_reference where length() > 0 -> tgt.encounter as t_encounter then {
+        s_reference -> t_encounter.reference = append('Encounter/', s_reference);
+        src.encounter_display as s_display where length() > 0 -> t_encounter.display = s_display;
+    };
+
     // performedDateTime 0..1 MS
     src.performedDateTime as s_performed where length() > 0 -> tgt.performed = cast(s_performed, 'dateTime');
 

@@ -36,7 +36,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "224535009"
+          "code": "224535009",
+          "display": "Registered nurse"
         }
       ],
       "text": "Registered nurse"

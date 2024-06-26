@@ -12,10 +12,10 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "926213011000036100"
+        "code": "926214011000036103"
       },
       {
-        "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10"
+        "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30"
       }
     ]
   },
@@ -28,24 +28,24 @@
   },
   "reasonCode": [
     {
-      "text": "Pain management"
-    }
-  ],
-  "note": [
-    {
-      "text": "Patient requires an administration aid."
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38341003",
+          "display": "Hypertension"
+        }
+      ],
+      "text": "Hypertension"
     }
   ],
   "dosageInstruction": [
     {
-      "text": "1-2 tablets every 4-6 hours as needed for pain",
+      "text": "1 tablet daily",
       "timing": {
         "repeat": {
           "frequency": 1,
-          "frequencyMax": 2,
-          "period": 4,
-          "periodMax": 6,
-          "periodUnit": "h"
+          "period": 1,
+          "periodUnit": "d"
         }
       },
       "asNeededBoolean": true,
@@ -70,31 +70,6 @@
       ]
     }
   ],
-  "dispenseRequest": {
-    "dispenseInterval": {
-      "value": 1,
-      "unit": "week",
-      "system": "http://unitsofmeasure.org",
-      "code": "wk"
-    },
-    "validityPeriod": {
-      "start": "2018-07-15",
-      "end": "2019-07-15"
-    },
-    "numberOfRepeatsAllowed": 2,
-    "quantity": {
-      "value": 20,
-      "unit": "Tab",
-      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-      "code": "TAB"
-    },
-    "expectedSupplyDuration": {
-      "value": 10,
-      "unit": "days",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
-    }
-  },
   "substitution": {
     "allowedBoolean": true
   }

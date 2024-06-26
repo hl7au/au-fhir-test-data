@@ -38,10 +38,11 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "224535009",
-          "display": "Registered nurse"
+          "code": "224571005",
+          "display": "Nurse practitioner"
         }
-      ]
+      ],
+      "text": "Nurse practitioner"
     }
   ],
   "specialty": [

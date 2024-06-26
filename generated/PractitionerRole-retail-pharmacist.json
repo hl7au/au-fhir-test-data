@@ -16,12 +16,12 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "251513",
-          "display": "Retail Pharmacist"
+          "system": "http://snomed.info/sct",
+          "code": "159011008",
+          "display": "Community pharmacist"
         }
       ],
-      "text": "Pharmacist"
+      "text": "Community pharmacist"
     }
   ],
   "location": [

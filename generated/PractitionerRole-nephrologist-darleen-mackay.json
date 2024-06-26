@@ -14,7 +14,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "304292004"
+          "code": "11911009",
+          "display": "Nephrologist"
         },
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",

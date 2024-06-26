@@ -36,10 +36,16 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "304292004"
+          "code": "78703002",
+          "display": "General surgeon"
+        },
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253511",
+          "display": "Surgeon (General)"
         }
       ],
-      "text": "Surgeon"
+      "text": "General surgeon"
     }
   ],
   "location": [

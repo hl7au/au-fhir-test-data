@@ -31,7 +31,7 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.74",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253312",
           "display": "Cardiologist"
         }
@@ -41,7 +41,7 @@
   "telecom": [
     {
       "system": "phone",
-      "value": "370102880",
+      "value": "0370102880",
       "use": "work"
     },
     {

@@ -19,6 +19,9 @@
   "subject": {
     "reference": "Patient/wang-li"
   },
+  "encounter": {
+    "reference": "Encounter/cardio-hospital"
+  },
   "performedDateTime": "2021-09-25",
   "performer": [
     {

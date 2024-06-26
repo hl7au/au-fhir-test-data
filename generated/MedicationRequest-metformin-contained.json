@@ -19,11 +19,11 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "943711000168102",
-            "display": "metformin hydrochloride 500 mg tablet, 10"
+            "code": "28037011000036102",
+            "display": "metformin hydrochloride 500 mg tablet, 100"
           }
         ],
-        "text": "Metformin Hydrochloride 500 mg Tablet, 10 Pack"
+        "text": "metformin hydrochloride 500 mg tablet, 100"
       },
       "form": {
         "coding": [
@@ -33,7 +33,7 @@
             "display": "tablet"
           }
         ],
-        "text": "Tablet"
+        "text": "tablet"
       }
     }
   ],
@@ -43,7 +43,7 @@
     "reference": "#medication"
   },
   "subject": {
-    "reference": "Patient/hayes-arianne"
+    "reference": "Patient/hayes-maria"
   },
   "authoredOn": "2024-06-07",
   "requester": {
