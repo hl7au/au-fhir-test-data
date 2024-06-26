@@ -1,0 +1,53 @@
+
+{
+    "resourceType" : "Observation",
+    "id" : "hearing-threshold-1",
+    "meta" :
+    {
+      "profile" : [
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult",
+        "http://hl7.org.au/fhir/StructureDefinition/au-diagnosticresult"
+      ]
+    },
+    "text" : {
+      "status" : "generated",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation </b><a name=\"hearing-threshold-1\"> </a><a name=\"hchearing-threshold-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">ResourceObservation &quot;hearing-threshold-1&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-au-core-diagnosticresult.html\">AU Core Diagnostic Result Observation</a>, <a href=\"http://hl7.org.au/fhir/4.2.1-preview/StructureDefinition-au-diagnosticresult.html\">AU Base Diagnostic Result</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Audiology <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html\">diagnosticServiceSectionId</a>#AU)</span></p><p><b>code</b>: Hearing threshold Ear - left --500 Hz <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#89024-4)</span></p><p><b>subject</b>: <a href=\"Patient-dan-harry.html\">Patient/dan-harry</a> &quot;&quot;</p><p><b>effective</b>: 2020-11-06 10:45:00-0500</p><p><b>performer</b>: <a href=\"Organization-mitchells-hill-audiology.html\">Organization/mitchells-hill-audiology</a> &quot;Mitchells Hill Audiology&quot;</p><p><b>value</b>: 45 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codedB = 'dB')</span></p></div>"
+    },
+    "status" : "final",
+    "category" : [
+      {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code" : "AU",
+            "display" : "Audiology"
+          }
+        ]
+      }
+    ],
+    "code" : {
+      "coding" : [
+        {
+          "system" : "http://loinc.org",
+          "code" : "89024-4",
+          "display" : "Hearing threshold Ear - left --500 Hz"
+        }
+      ],
+      "text" : "Hearing threshold Ear - left --500 Hz"
+    },
+    "subject" : {
+      "reference" : "Patient/dan-harry"
+    },
+    "effectiveDateTime" : "2020-11-06T10:45:00-05:00",
+    "performer" : [
+      {
+        "reference" : "Organization/mitchells-hill-audiology"
+      }
+    ],
+    "valueQuantity" : {
+      "value" : 45,
+      "unit" : "dB",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "dB"
+    }
+  }

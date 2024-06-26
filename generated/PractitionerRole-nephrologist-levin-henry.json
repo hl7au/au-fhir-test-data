@@ -31,9 +31,6 @@
     "reference": "Practitioner/levin-henry",
     "display": "Dr Henry Levin VII"
   },
-  "organization": {
-    "reference": "http://example.org/Organization/123"
-  },
   "code": [
     {
       "coding": [
@@ -56,17 +53,6 @@
         }
       ],
       "text": "Allopathic Osteopathic Physicians; Internal Medicine, Nephrology"
-    }
-  ],
-  "location": [
-    {
-      "reference": "http://example.org/Location/SouthWing",
-      "display": "South Wing, second floor"
-    }
-  ],
-  "healthcareService": [
-    {
-      "reference": "http://example.org/HealthcareService/123"
     }
   ],
   "telecom": [

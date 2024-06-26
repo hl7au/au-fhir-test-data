@@ -30,9 +30,6 @@
   "practitioner": {
     "reference": "Practitioner/nurse-nancy"
   },
-  "organization": {
-    "reference": "http://example.org/Organization/123"
-  },
   "code": [
     {
       "coding": [
@@ -55,17 +52,6 @@
         }
       ],
       "text": "Nursing Service Providers; Registered Nurse, Diabetes Educator"
-    }
-  ],
-  "location": [
-    {
-      "reference": "http://example.org/Location/SouthWing",
-      "display": "South Wing, second floor"
-    }
-  ],
-  "healthcareService": [
-    {
-      "reference": "http://example.org/HealthcareService/123"
     }
   ],
   "telecom": [
