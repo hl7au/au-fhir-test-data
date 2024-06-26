@@ -2892,7 +2892,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"dan-harry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"3\",\r\n        \"display\": \"Both Aboriginal and Torres Strait Islander origin\"\r\n      }\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"DVG\",\r\n            \"display\": \"DVA Number (Gold Card)\"\r\n          }\r\n        ],\r\n        \"text\": \"DVA Number (Gold)\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/dva\",\r\n      \"value\": \"NBUR9080\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Dan\",\r\n      \"given\": [\r\n        \"Harry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"hdan@amail.example.com\",\r\n      \"use\": \"home\"\r\n    }\r\n  ],\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"1939-08-25\",\r\n  \"address\": [\r\n    {\r\n      \"use\": \"home\",\r\n      \"line\": [\r\n        \"29 Gadsby Street\"\r\n      ],\r\n      \"city\": \"Blacktown\",\r\n      \"state\": \"NSW\",\r\n      \"postalCode\": \"2148\",\r\n      \"country\": \"Australia\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"dan-harry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"3\",\r\n        \"display\": \"Both Aboriginal and Torres Strait Islander origin\"\r\n      }\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"DVG\",\r\n            \"display\": \"DVA Number (Gold Card)\"\r\n          }\r\n        ],\r\n        \"text\": \"DVA Number (Gold)\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/dva\",\r\n      \"value\": \"NBUR9080\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"29545411314\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Dan\",\r\n      \"given\": [\r\n        \"Harry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"hdan@amail.example.com\",\r\n      \"use\": \"home\"\r\n    }\r\n  ],\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"1939-08-25\",\r\n  \"address\": [\r\n    {\r\n      \"use\": \"home\",\r\n      \"line\": [\r\n        \"29 Gadsby Street\"\r\n      ],\r\n      \"city\": \"Blacktown\",\r\n      \"state\": \"NSW\",\r\n      \"postalCode\": \"2148\",\r\n      \"country\": \"Australia\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2998,6 +2998,30 @@
 								"url": "{{server}}/Patient/wang-li"
 							},
 							"response": []
+						},
+						{
+							"name": "hayes-maria Patient",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"hayes-maria\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"4\",\r\n        \"display\": \"Neither Aboriginal nor Torres Strait Islander origin\"\r\n      }\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1\",\r\n            \"code\": \"active\"\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-record-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1\",\r\n            \"code\": \"verified\",\r\n            \"display\": \"verified\"\r\n          }\r\n        }\r\n      ],\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608833648397\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"49516513011\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"use\": \"official\",\r\n      \"family\": \"HAYES\",\r\n      \"given\": [\r\n        \"Maria\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Ms.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770101471\",\r\n      \"use\": \"home\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570157\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770104085\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\",\r\n  \"birthDate\": \"1959-07-12\",\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"198 Stone Pl\"\r\n      ],\r\n      \"city\": \"Morgan Park\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4370\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Patient/hayes-maria"
+							},
+							"response": []
 						}
 					]
 				},
@@ -3041,7 +3065,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"end\": \"2022-02-10\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"annualvisit-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"866149003\",\r\n          \"display\": \"Annual visit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"788007007\",\r\n        \"display\": \"General practice service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"end\": \"2022-02-10\"\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/bobrester-medical-center\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3049,6 +3073,30 @@
 									}
 								},
 								"url": "{{server}}/Encounter/annualvisit-2"
+							},
+							"response": []
+						},
+						{
+							"name": "cardio-hospital Encounter",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"cardio-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"415070008\",\r\n          \"display\": \"Percutaneous coronary intervention\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"310142007\",\r\n        \"display\": \"Cardiac surgery service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/cardiologist-cardy-igist\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2021-09-25T09:00:00+10:00\",\r\n    \"end\": \"2021-09-26T13:00:00+10:00\"\r\n  },\r\n  \"reasonReference\": [\r\n    {\r\n      \"reference\": \"Condition/coronary-syndrome\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/au-hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Encounter/cardio-hospital"
 							},
 							"response": []
 						},
@@ -3089,7 +3137,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"covid-admin-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"117096009\",\r\n          \"display\": \"Intramuscular injection of Vaccinia immune globulin, human\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1575161000168105\",\r\n        \"display\": \"COVID-19 vaccination service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2021-08-01T09:20:00+10:00\",\r\n    \"end\": \"2021-08-01T09:35:00+10:00\"\r\n  },\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"covid-admin-2\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"117096009\",\r\n          \"display\": \"Intramuscular injection of Vaccinia immune globulin, human\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1575161000168105\",\r\n        \"display\": \"COVID-19 vaccination service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2021-08-01T09:20:00+10:00\",\r\n    \"end\": \"2021-08-01T09:35:00+10:00\"\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/bobrester-medical-center\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3185,7 +3233,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"home-meds-review\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/encounter-description\",\r\n      \"valueString\": \"Patient has medications packed into blister packs via ABC pharmacy. Patient finds them easy to use and they promote good adherence to his regime. Patient's Bluecare nurse, Nurse B, was present for the interview. Of the medication listed on the referral, he is not currently taking Aldara 5% cream and Chloramphenicol ointment. In addition to the medication listed on the referral, he is also taking coQ10 150mg tab - 1 nocte. Patient reports occasional dizziness if changing position quickly, and reports falling outside in the garden; Patient wears a falls alarm buzzer. Patient reports that they only experiences chest pain when they become stressed (doesn�t like paperwork). Patient blood pressure at the time of the interview was 158 /76.\"\r\n    }\r\n  ],\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"HH\",\r\n    \"display\": \"home health\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"1348931000168107\",\r\n          \"display\": \"Home medicines review\"\r\n        }\r\n      ],\r\n      \"text\": \"Home medicines review\"\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"182836005\",\r\n        \"display\": \"Review of medication\"\r\n      }\r\n    ],\r\n    \"text\": \"Medicines review\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/retail-pharmacist\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2019-02-05T10:00:00+10:00\",\r\n    \"end\": \"2019-02-05T11:15:00+10:00\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"home-meds-review\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/encounter-description\",\r\n      \"valueString\": \"Patient has medications packed into blister packs via ABC pharmacy. Patient finds them easy to use and they promote good adherence to his regime. Patient's Bluecare nurse, Nurse B, was present for the interview. Of the medication listed on the referral, he is not currently taking Aldara 5% cream and Chloramphenicol ointment. In addition to the medication listed on the referral, he is also taking coQ10 150mg tab - 1 nocte. Patient reports occasional dizziness if changing position quickly, and reports falling outside in the garden; Patient wears a falls alarm buzzer. Patient reports that they only experiences chest pain when they become stressed (doesn’t like paperwork). Patient blood pressure at the time of the interview was 158 /76.\"\r\n    }\r\n  ],\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"HH\",\r\n    \"display\": \"home health\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"1348931000168107\",\r\n          \"display\": \"Home medicines review\"\r\n        }\r\n      ],\r\n      \"text\": \"Home medicines review\"\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"182836005\",\r\n        \"display\": \"Review of medication\"\r\n      }\r\n    ],\r\n    \"text\": \"Medicines review\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/retail-pharmacist\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2019-02-05T10:00:00+10:00\",\r\n    \"end\": \"2019-02-05T11:15:00+10:00\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3193,6 +3241,30 @@
 									}
 								},
 								"url": "{{server}}/Encounter/home-meds-review"
+							},
+							"response": []
+						},
+						{
+							"name": "renal-dialysis Encounter",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"renal-dialysis\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter\"\r\n    ]\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n    \"code\": \"AMB\",\r\n    \"display\": \"ambulatory\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"302497006\",\r\n          \"display\": \"Haemodialysis\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"serviceType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1244951000168104\",\r\n        \"display\": \"Renal dialysis service\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"participant\": [\r\n    {\r\n      \"type\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ParticipationType\",\r\n              \"code\": \"PPRF\",\r\n              \"display\": \"primary performer\"\r\n            }\r\n          ]\r\n        }\r\n      ],\r\n      \"individual\": {\r\n        \"reference\": \"PractitionerRole/np-nurse-nancy\"\r\n      }\r\n    }\r\n  ],\r\n  \"period\": {\r\n    \"start\": \"2012-08-05T09:00:00+10:00\",\r\n    \"end\": \"2012-08-05T13:00:00+10:00\"\r\n  },\r\n  \"reasonReference\": [\r\n    {\r\n      \"reference\": \"Condition/ckd\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/renal-dialysis-unit\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Encounter/renal-dialysis"
 							},
 							"response": []
 						},
@@ -3831,7 +3903,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3986\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Immunization\",\r\n  \"id\": \"air-covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number\",\r\n      \"valueString\": \"vNo1111\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"urn:ietf:rfc:3986\",\r\n      \"value\": \"urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d\"\r\n    }\r\n  ],\r\n  \"status\": \"completed\",\r\n  \"vaccineCode\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats\",\r\n        \"code\": \"COMIRN\"\r\n      }\r\n    ],\r\n    \"text\": \"Pfizer Comirnaty\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"occurrenceDateTime\": \"2021-06-17\",\r\n  \"primarySource\": true,\r\n  \"location\": {\r\n    \"reference\": \"Location/au-hospital-pharm-out\"\r\n  },\r\n  \"protocolApplied\": [\r\n    {\r\n      \"targetDisease\": [\r\n        {\r\n          \"text\": \"COVID-19\"\r\n        }\r\n      ],\r\n      \"doseNumberPositiveInt\": 1\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4230,7 +4302,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"mitchells-hill-audiology\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003626566707032\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"81129842694\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.45\",\r\n          \"code\": \"8539\",\r\n          \"display\": \"Other Allied Health Services\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"name\": \"Mitchells Hill Audiology\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"355503095\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"reception@mitchellshillaudiology.example.com.au\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"87 Freedom Pnt\"\r\n      ],\r\n      \"city\": \"Mitchells Hill\",\r\n      \"state\": \"VIC\",\r\n      \"postalCode\": \"3478\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"mitchells-hill-audiology\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003626566707032\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"81129842694\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.45\",\r\n          \"code\": \"8539\",\r\n          \"display\": \"Other Allied Health Services\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"name\": \"Mitchells Hill Audiology\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0355503095\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"reception@mitchellshillaudiology.example.com.au\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"87 Freedom Pnt\"\r\n      ],\r\n      \"city\": \"Mitchells Hill\",\r\n      \"state\": \"VIC\",\r\n      \"postalCode\": \"3478\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4262,6 +4334,30 @@
 									}
 								},
 								"url": "{{server}}/Organization/murrabit-hospital"
+							},
+							"response": []
+						},
+						{
+							"name": "murrabit-public-hopsital Organization",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Organization\",\r\n  \"id\": \"murrabit-public-hopsital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"NOI\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-O\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpio/1.0\",\r\n      \"value\": \"8003626566706976\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"XX\"\r\n          }\r\n        ],\r\n        \"text\": \"ABN\"\r\n      },\r\n      \"system\": \"http://hl7.org.au/id/abn\",\r\n      \"value\": \"81156473823\"\r\n    }\r\n  ],\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.33\",\r\n          \"code\": \"8401\",\r\n          \"display\": \"Hospitals (except Psychiatric Hospitals)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"name\": \"Murrabit Public Hopsital\",\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0355509111\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"reception@murrabitph.example.com.au\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"144 Central Gdns\"\r\n      ],\r\n      \"city\": \"Murrabit\",\r\n      \"state\": \"VIC\",\r\n      \"postalCode\": \"3579\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Organization/murrabit-public-hopsital"
 							},
 							"response": []
 						},
@@ -4331,7 +4427,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bobrester-bob\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee number\"\r\n      },\r\n      \"system\": \"http://bobrestermedical.example.com/id/employee-id\",\r\n      \"value\": \"567845B-1\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Bobrester\",\r\n      \"given\": [\r\n        \"Bob\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"extension\": [\r\n            {\r\n              \"url\": \"ahpraProfession\",\r\n              \"valueCodeableConcept\": {\r\n                \"text\": \"Medical Practitioner\"\r\n              }\r\n            }\r\n          ],\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details\"\r\n        }\r\n      ],\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"MED0002137855\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRAProfession\"\r\n          }\r\n        ],\r\n        \"text\": \"Medical Practitioner\"\r\n      },\r\n      \"period\": {\r\n        \"start\": \"1996-02-08\"\r\n      },\r\n      \"issuer\": {\r\n        \"display\": \"Australian Health Practitioner Regulation Agency\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bobrester-bob\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee number\"\r\n      },\r\n      \"system\": \"http://bobrestermedical.example.com/id/employee-id\",\r\n      \"value\": \"567845B-1\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003613233385384\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Bobrester\",\r\n      \"given\": [\r\n        \"Bob\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"extension\": [\r\n            {\r\n              \"url\": \"ahpraProfession\",\r\n              \"valueCodeableConcept\": {\r\n                \"text\": \"Medical Practitioner\"\r\n              }\r\n            }\r\n          ],\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details\"\r\n        }\r\n      ],\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"MED0002137855\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRAProfession\"\r\n          }\r\n        ],\r\n        \"text\": \"Medical Practitioner\"\r\n      },\r\n      \"period\": {\r\n        \"start\": \"1996-02-08\"\r\n      },\r\n      \"issuer\": {\r\n        \"display\": \"Australian Health Practitioner Regulation Agency\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4355,7 +4451,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"active\": true,\r\n  \"name\": [\r\n    {\r\n      \"text\": \"Jill Bradley\",\r\n      \"family\": \"Bradley\",\r\n      \"given\": [\r\n        \"Jill\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491 570 006\",\r\n      \"use\": \"mobile\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\"\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003616566719368\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"name\": [\r\n    {\r\n      \"text\": \"Jill Bradley\",\r\n      \"family\": \"Bradley\",\r\n      \"given\": [\r\n        \"Jill\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491 570 006\",\r\n      \"use\": \"mobile\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4379,7 +4475,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Cardy\",\r\n      \"given\": [\r\n        \"Igist\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"cardy-igist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003616566719384\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Cardy\",\r\n      \"given\": [\r\n        \"Igist\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(02) 5550 4444\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4403,7 +4499,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"chau-fryer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Fryer\",\r\n      \"given\": [\r\n        \"Chau\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491572665\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"chau.fryer@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"HAC0000000096\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRARegistration\",\r\n            \"display\": \"AHPRA Registration\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"chau-fryer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900052702\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Fryer\",\r\n      \"given\": [\r\n        \"Chau\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491572665\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"chau.fryer@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"identifier\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n                \"code\": \"AHPRA\",\r\n                \"display\": \"Australian Health Practitioner Regulation Agency Registration Number\"\r\n              }\r\n            ],\r\n            \"text\": \"Ahpra Registration Number\"\r\n          },\r\n          \"system\": \"http://hl7.org.au/id/ahpra-registration-number\",\r\n          \"value\": \"HAC0000000096\"\r\n        }\r\n      ],\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0360\",\r\n            \"code\": \"AUAHPRARegistration\",\r\n            \"display\": \"AHPRA Registration\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4427,7 +4523,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"darleen-mackay\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee number\"\r\n      },\r\n      \"system\": \"http://nephrologyclinic.org.example.com/employee-id\",\r\n      \"value\": \"N765009-mackay-darleen\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"MACKAY\",\r\n      \"given\": [\r\n        \"Darleen\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 8018\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"darleen.mackay@example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"darleen-mackay\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee number\"\r\n      },\r\n      \"system\": \"http://nephrologyclinic.org.example.com/employee-id\",\r\n      \"value\": \"N765009-mackay-darleen\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003613233385392\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"MACKAY\",\r\n      \"given\": [\r\n        \"Darleen\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 8018\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"darleen.mackay@example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4475,7 +4571,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"254567\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Levin\",\r\n      \"given\": [\r\n        \"Henry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ],\r\n      \"suffix\": [\r\n        \"VII\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"254567\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003611566719047\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Levin\",\r\n      \"given\": [\r\n        \"Henry\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ],\r\n      \"suffix\": [\r\n        \"VII\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4499,7 +4595,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"456789\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Nurse\",\r\n      \"given\": [\r\n        \"Nancy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"RNP\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@direct.ExampleMedicalPractice.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"456789\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003616566719392\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Nurse\",\r\n      \"given\": [\r\n        \"Nancy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"RNP\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@direct.ExampleMedicalPractice.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4523,7 +4619,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Pharmacist\",\r\n      \"given\": [\r\n        \"Representative\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"code\": {\r\n        \"text\": \"Bachelor of Pharmacy\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003614900051861\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Pharmacist\",\r\n      \"given\": [\r\n        \"Representative\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"qualification\": [\r\n    {\r\n      \"code\": {\r\n        \"text\": \"Bachelor of Pharmacy\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4547,7 +4643,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"25456\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Primary\",\r\n      \"given\": [\r\n        \"Peter\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"http://www.acme.org/practitioners\",\r\n      \"value\": \"25456\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003618233385516\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Primary\",\r\n      \"given\": [\r\n        \"Peter\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"310 Hay St\"\r\n      ],\r\n      \"city\": \"East Perth\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6004\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4555,6 +4651,30 @@
 									}
 								},
 								"url": "{{server}}/Practitioner/primary-peter"
+							},
+							"response": []
+						},
+						{
+							"name": "sallie-sutherland Practitioner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"sallie-sutherland\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003616566719418\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Sutherland\",\r\n      \"given\": [\r\n        \"Sallie\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Dr.\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570158\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"sallie.sutherland@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"address\": [\r\n    {\r\n      \"use\": \"work\",\r\n      \"line\": [\r\n        \"112 Law Ct\"\r\n      ],\r\n      \"city\": \"Murrabit\",\r\n      \"state\": \"VIC\",\r\n      \"postalCode\": \"3579\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Practitioner/sallie-sutherland"
 							},
 							"response": []
 						},
@@ -4571,7 +4691,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"sandyson-sandy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553256\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Sandyson\",\r\n      \"given\": [\r\n        \"Sandy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Ms.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Practitioner\",\r\n  \"id\": \"sandyson-sandy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"PRES\",\r\n            \"display\": \"Prescriber Number\"\r\n          }\r\n        ],\r\n        \"text\": \"Prescriber Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-prescriber-number\",\r\n      \"value\": \"553256\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NPI\",\r\n            \"display\": \"National provider identifier\"\r\n          }\r\n        ],\r\n        \"text\": \"HPI-I\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/hpii/1.0\",\r\n      \"value\": \"8003619900052728\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"family\": \"Sandyson\",\r\n      \"given\": [\r\n        \"Sandy\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Ms.\"\r\n      ]\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4624,7 +4744,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"audiologist-bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n          \"valueCode\": \"unknown\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bradley-jill\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/adv-hearing-care\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309418004\",\r\n          \"display\": \"Audiologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394578005\",\r\n          \"display\": \"Audiological medicine\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jill.bradley@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"audiologist-bradley-jill\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n          \"valueCode\": \"unknown\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bradley-jill\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/adv-hearing-care\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309418004\",\r\n          \"display\": \"Audiologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Audiologist\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394578005\",\r\n          \"display\": \"Audiological medicine\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jill.bradley@ahc.example.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4648,7 +4768,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"bobrester-bob-gp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"BBC-GA-001\",\r\n      \"assigner\": {\r\n        \"display\": \"Bobregster Medical Center QLD\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bobrester-bob\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\"\r\n        }\r\n      ],\r\n      \"text\": \"General Practitioner\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/bobrester-medical-center\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491579760\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"bobrester-bob-gp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"BBC-GA-001\",\r\n      \"assigner\": {\r\n        \"display\": \"Bobregster Medical Center QLD\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/bobrester-bob\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/bobrester-medical-center\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\",\r\n          \"display\": \"General practitioner\"\r\n        }\r\n      ],\r\n      \"text\": \"General Practitioner\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394814009\",\r\n          \"display\": \"General practice (specialty)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/bobrester-medical-center\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491579760\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"drbob@bobrestermedical.example.com\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4684,6 +4804,30 @@
 							"response": []
 						},
 						{
+							"name": "cardiologist-sallie-sutherland PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"cardiologist-sallie-sutherland\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"1555561A\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/sallie-sutherland\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/murrabit-hospital\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"17561000\",\r\n          \"display\": \"Cardiologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Cardiologist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/murrabit-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0370102880\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"sallie.sutherland@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/cardiologist-sallie-sutherland"
+							},
+							"response": []
+						},
+						{
 							"name": "dietician-tan-patricia PractitionerRole",
 							"request": {
 								"method": "PUT",
@@ -4696,7 +4840,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"dietician-tan-patricia\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"display\": \"Ms Patricia Tan, Dieticians Australia\"\r\n  },\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251111\",\r\n          \"display\": \"Dietitian\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"fax\",\r\n      \"value\": \"0370102020\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"dietician-tan-patricia\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"display\": \"Ms Patricia Tan, Dieticians Australia\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"159033005\",\r\n          \"display\": \"Dietitian\"\r\n        }\r\n      ],\r\n      \"text\": \"Dietitian\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251111\",\r\n          \"display\": \"Dietitian\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"fax\",\r\n      \"value\": \"0370102020\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4720,7 +4864,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"gp-primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/primary-peter\",\r\n    \"display\": \"Dr Peter Primary\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\",\r\n          \"display\": \"General practitioner\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394814009\",\r\n          \"display\": \"General practice (specialty)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5556\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"PPP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Peter will be on extended leave during June 2022\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Peter is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"gp-primary-peter\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/primary-peter\",\r\n    \"display\": \"Dr Peter Primary\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"62247001\",\r\n          \"display\": \"General practitioner\"\r\n        }\r\n      ],\r\n      \"text\": \"General Practitioner\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394814009\",\r\n          \"display\": \"General practice (specialty)\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5556\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"PPP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Peter will be on extended leave during June 2022\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Peter is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4728,6 +4872,30 @@
 									}
 								},
 								"url": "{{server}}/PractitionerRole/gp-primary-peter"
+							},
+							"response": []
+						},
+						{
+							"name": "midwife-dallas PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"midwife-dallas\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448331J\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/kendall-dallas\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309453006\",\r\n          \"display\": \"Registered midwife\"\r\n        }\r\n      ],\r\n      \"text\": \"Midwife\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"1287784006\",\r\n          \"display\": \"Obstetric nursing\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770102627\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"dallas.kendall@example.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/midwife-dallas"
 							},
 							"response": []
 						},
@@ -4744,7 +4912,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"guthridge-jarred\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448301T\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/guthridge-jarred\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/elimbah-medical-centre\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.4\",\r\n          \"code\": \"253111\",\r\n          \"display\": \"General Practitioner\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770109540\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jarred.guthridge@elimbahmedicalcentre.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"guthridge-jarred\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448301T\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/guthridge-jarred\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/elimbah-medical-centre\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\",\r\n          \"display\": \"General Practitioner\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770109540\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jarred.guthridge@elimbahmedicalcentre.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4768,7 +4936,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-darleen-mackay\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/darleen-mackay\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"304292004\"\r\n        }\r\n      ],\r\n      \"text\": \"Nephrologist\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 7010 8625\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-darleen-mackay\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/darleen-mackay\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11911009\",\r\n          \"display\": \"Nephrologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Nephrologist\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 7010 8625\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4792,7 +4960,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/levin-henry\",\r\n    \"display\": \"Dr Henry Levin VII\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11911009\",\r\n          \"display\": \"Nephrologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394589003\",\r\n          \"display\": \"Nephrology\"\r\n        }\r\n      ],\r\n      \"text\": \"Allopathic Osteopathic Physicians; Internal Medicine, Nephrology\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5557\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"HLV.southern@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Adam will be on extended leave during May 2017\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Adam is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"nephrologist-levin-henry\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/levin-henry\",\r\n    \"display\": \"Dr Henry Levin VII\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"11911009\",\r\n          \"display\": \"Nephrologist\"\r\n        }\r\n      ],\r\n      \"text\": \"Nephrologist\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394589003\",\r\n          \"display\": \"Nephrology\"\r\n        }\r\n      ],\r\n      \"text\": \"Allopathic Osteopathic Physicians; Internal Medicine, Nephrology\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5557\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"HLV.southern@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Adam will be on extended leave during May 2017\",\r\n      \"during\": {\r\n        \"start\": \"2017-05-01\",\r\n        \"end\": \"2017-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Adam is generally unavailable on public holidays and during the Christmas/New Year break\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4816,7 +4984,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"np-nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/nurse-nancy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\",\r\n          \"display\": \"Registered nurse\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"722165004\",\r\n          \"display\": \"Nursing\"\r\n        }\r\n      ],\r\n      \"text\": \"Nursing Service Providers; Registered Nurse, Diabetes Educator\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5555\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Nancy will be on extended leave during May 2022\",\r\n      \"during\": {\r\n        \"start\": \"2022-05-01\",\r\n        \"end\": \"2022-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Nancy is generally unavailable on public holidays and during Jewish Holidays\"\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"np-nurse-nancy\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://example.org/Organization/practitioners\",\r\n      \"value\": \"23\"\r\n    }\r\n  ],\r\n  \"active\": true,\r\n  \"period\": {\r\n    \"start\": \"2012-01-01\",\r\n    \"end\": \"2012-03-31\"\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/nurse-nancy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"http://example.org/Organization/123\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224571005\",\r\n          \"display\": \"Nurse practitioner\"\r\n        }\r\n      ],\r\n      \"text\": \"Nurse practitioner\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"722165004\",\r\n          \"display\": \"Nursing\"\r\n        }\r\n      ],\r\n      \"text\": \"Nursing Service Providers; Registered Nurse, Diabetes Educator\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"http://example.org/Location/SouthWing\",\r\n      \"display\": \"South Wing, second floor\"\r\n    }\r\n  ],\r\n  \"healthcareService\": [\r\n    {\r\n      \"reference\": \"http://example.org/HealthcareService/123\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(08) 7010 5555\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"NNNP@example.org\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"availableTime\": [\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"mon\",\r\n        \"tue\",\r\n        \"wed\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"16:30:00\"\r\n    },\r\n    {\r\n      \"daysOfWeek\": [\r\n        \"thu\",\r\n        \"fri\"\r\n      ],\r\n      \"availableStartTime\": \"09:00:00\",\r\n      \"availableEndTime\": \"12:00:00\"\r\n    }\r\n  ],\r\n  \"notAvailable\": [\r\n    {\r\n      \"description\": \"Nancy will be on extended leave during May 2022\",\r\n      \"during\": {\r\n        \"start\": \"2022-05-01\",\r\n        \"end\": \"2022-05-20\"\r\n      }\r\n    }\r\n  ],\r\n  \"availabilityExceptions\": \"Nancy is generally unavailable on public holidays and during Jewish Holidays\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4840,7 +5008,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"retail-pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/pharmacist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/pharmacy\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"251513\",\r\n          \"display\": \"Retail Pharmacist\"\r\n        }\r\n      ],\r\n      \"text\": \"Pharmacist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/pharmacy\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"pha@gmail.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"retail-pharmacist\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/pharmacist\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/pharmacy\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"159011008\",\r\n          \"display\": \"Community pharmacist\"\r\n        }\r\n      ],\r\n      \"text\": \"Community pharmacist\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/pharmacy\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"pha@gmail.com\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4864,7 +5032,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"sandyson-sandy-nurse\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232379\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/sandyson-sandy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\"\r\n        }\r\n      ],\r\n      \"text\": \"Registered nurse\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"sandyson-sandy-nurse\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232379\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/sandyson-sandy\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"224535009\",\r\n          \"display\": \"Registered nurse\"\r\n        }\r\n      ],\r\n      \"text\": \"Registered nurse\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4888,7 +5056,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-chau-fryer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/chau-fryer\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/murrabit-hospital\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"304292004\"\r\n        }\r\n      ],\r\n      \"text\": \"Surgeon\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/murrabit-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 7010 8625\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"chau.fryer@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-chau-fryer\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/chau-fryer\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/murrabit-hospital\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309369000\",\r\n          \"display\": \"Cardiothoracic surgeon\"\r\n        }\r\n      ],\r\n      \"text\": \"Cardiothoracic surgeon\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394603008\",\r\n          \"display\": \"Cardiothoracic surgery\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/murrabit-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 7010 8625\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"chau.fryer@murrabitph.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4912,7 +5080,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-david-surgeon\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232999\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/surgeon-david\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"304292004\"\r\n        }\r\n      ],\r\n      \"text\": \"Surgeon\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"surgeon-david-surgeon\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455\",\r\n      \"value\": \"EMP79232999\",\r\n      \"assigner\": {\r\n        \"display\": \"Hospital Australia\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/surgeon-david\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"78703002\",\r\n          \"display\": \"General surgeon\"\r\n        }\r\n      ],\r\n      \"text\": \"General surgeon\"\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4920,6 +5088,30 @@
 									}
 								},
 								"url": "{{server}}/PractitionerRole/surgeon-david-surgeon"
+							},
+							"response": []
+						},
+						{
+							"name": "midwife-dallas PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"midwife-dallas\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448331J\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/kendall-dallas\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"309453006\",\r\n          \"display\": \"Registered midwife\"\r\n        }\r\n      ],\r\n      \"text\": \"Midwife\"\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"1287784006\",\r\n          \"display\": \"Obstetric nursing\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/au-hospital\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770102627\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"dallas.kendall@example.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/PractitionerRole/midwife-dallas"
 							},
 							"response": []
 						}
@@ -4965,7 +5157,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-sw-physio\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"value\": \"B31-S.F2\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"Physiotherapy Offices - AU Hospital\",\r\n  \"description\": \"Second floor, South Wing, Physiotherapy Offices\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 14, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"wi\",\r\n        \"display\": \"Wing\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital-sw-physio\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"value\": \"B31-S.F2\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"Physiotherapy Offices - AU Hospital\",\r\n  \"description\": \"Second floor, South Wing, Physiotherapy Offices\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 15, Building 31\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"wi\",\r\n        \"display\": \"Wing\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  },\r\n  \"partOf\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4989,7 +5181,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"QLD Hospital\",\r\n  \"alias\": [\r\n    \"Queensland Hospital\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n    \"line\": [\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"au-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"https://au-hospitals.example.com.au\",\r\n      \"value\": \"qldhhs\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"QLD Hospital\",\r\n  \"alias\": [\r\n    \"Queensland Hospital\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(07) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"text\": \"54301 Stanley St, South Brisbane QLD 4101\",\r\n    \"line\": [\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-au\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5037,7 +5229,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Tindal Building\",\r\n  \"alias\": [\r\n    \"Bobrester Medical Center\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"FMC\",\r\n          \"display\": \"Family medicine clinic\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Western Esp\"\r\n    ],\r\n    \"city\": \"Tindal RAAF\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4655\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"bobrester-medical-center\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Tindal Building\",\r\n  \"alias\": [\r\n    \"Bobrester Medical Center\"\r\n  ],\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"288565001\",\r\n          \"display\": \"Medical centre\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Western Esp\"\r\n    ],\r\n    \"city\": \"Tindal RAAF\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4655\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5061,7 +5253,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"mitchells-hill-audiology\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Mitchells Hill Audiology\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Freedom Pnt\"\r\n    ],\r\n    \"city\": \"Mitchells Hill\",\r\n    \"state\": \"VIC\",\r\n    \"postalCode\": \"3478\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/mitchells-hill-audiology\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"mitchells-hill-audiology\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"name\": \"Mitchells Hill Audiology\",\r\n  \"mode\": \"instance\",\r\n  \"address\": {\r\n    \"line\": [\r\n      \"87 Freedom Pnt\"\r\n    ],\r\n    \"city\": \"Mitchells Hill\",\r\n    \"state\": \"VIC\",\r\n    \"postalCode\": \"3478\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/mitchells-hill-audiology\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5085,7 +5277,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"murrabit-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"name\": \"Murrabit Public Hospital\",\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HOSP\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"144 Central Gdns\"\r\n    ],\r\n    \"city\": \"Murrabit\",\r\n    \"state\": \"VIC\",\r\n    \"postalCode\": \"3579\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"murrabit-hospital\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"name\": \"Murrabit Public Hospital\",\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"22232009\",\r\n          \"display\": \"Hospital\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(03) 5550 3333\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"144 Central Gdns\"\r\n    ],\r\n    \"city\": \"Murrabit\",\r\n    \"state\": \"VIC\",\r\n    \"postalCode\": \"3579\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"si\",\r\n        \"display\": \"Site\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5109,7 +5301,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"patient-home\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Patient's home\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"PTRES\",\r\n          \"display\": \"Patient's Residence\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"ho\",\r\n        \"display\": \"House\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"patient-home\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"name\": \"Patient's home\",\r\n  \"mode\": \"kind\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394778007\",\r\n          \"display\": \"Client's or patient's home\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"ho\",\r\n        \"display\": \"House\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5143,6 +5335,30 @@
 								"url": "{{server}}/Location/pharmacy"
 							},
 							"response": []
+						},
+						{
+							"name": "renal-dialysis-unit Location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Location\",\r\n  \"id\": \"renal-dialysis-unit\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-location\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"system\": \"https://au-hospitals.example.com.au\",\r\n      \"value\": \"qldhhs-rdu\"\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"name\": \"Renal Dialysis Unit QLD Hospital\",\r\n  \"mode\": \"instance\",\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-RoleCode\",\r\n          \"code\": \"HD\",\r\n          \"display\": \"Hemodialysis unit\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"(07) 5550 3335\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"line\": [\r\n      \"Suite 1, Building 18\",\r\n      \"54301 Stanley St\"\r\n    ],\r\n    \"city\": \"South Brisbane\",\r\n    \"state\": \"QLD\",\r\n    \"postalCode\": \"4101\",\r\n    \"country\": \"AU\"\r\n  },\r\n  \"physicalType\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/location-physical-type\",\r\n        \"code\": \"bu\",\r\n        \"display\": \"Building\"\r\n      }\r\n    ]\r\n  },\r\n  \"managingOrganization\": {\r\n    \"reference\": \"Organization/hospital-int\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Location/renal-dialysis-unit"
+							},
+							"response": []
 						}
 					]
 				},
@@ -5170,6 +5386,126 @@
 									}
 								},
 								"url": "{{server}}/Observation/bloodpressure-1"
+							},
+							"response": []
+						},
+						{
+							"name": "blood-group Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"blood-group\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"883-9\",\r\n        \"display\": \"ABO group [Type] in Blood\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood Group\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"112144000\",\r\n        \"display\": \"Blood group A (finding)\"\r\n      }\r\n    ],\r\n    \"text\": \"A\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/blood-group"
+							},
+							"response": []
+						},
+						{
+							"name": "rh-status Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"rh-status\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"88027-8\",\r\n        \"display\": \"Rh group Ag [Type] on Red Blood Cells\"\r\n      }\r\n    ],\r\n    \"text\": \"Rh\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"165747007\",\r\n        \"display\": \"RhD positive (finding)\"\r\n      }\r\n    ],\r\n    \"text\": \"RhD positive\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/rh-status"
+							},
+							"response": []
+						},
+						{
+							"name": "blood-group-panel Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"blood-group-panel\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"34532-2\",\r\n        \"display\": \"Blood type and Indirect antibody screen panel - Blood\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood type and Indirect antibody screen panel - Blood\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"hasMember\": [\r\n    {\r\n      \"reference\": \"Observation/blood-group\"\r\n    },\r\n    {\r\n      \"reference\": \"Observation/rh-status\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/blood-group-panel"
+							},
+							"response": []
+						},
+						{
+							"name": "bmd Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bmd\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"imaging\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"24701-5\",\r\n        \"display\": \"DXA Femur [Mass/Area] Bone density\"\r\n      }\r\n    ],\r\n    \"text\": \"BMD - Left femur\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"valueQuantity\": {\r\n    \"value\": 0.887,\r\n    \"unit\": \"g/cm²\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"g/cm-2\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bmd"
+							},
+							"response": []
+						},
+						{
+							"name": "bonedensity Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bonedensity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"imaging\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"24701-5\",\r\n        \"display\": \"DXA Femur [Mass/Area] Bone density\"\r\n      }\r\n    ],\r\n    \"text\": \"BMD - Left femur\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"hasMember\": [\r\n    {\r\n      \"reference\": \"Observation/bmd\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/bonedensity"
 							},
 							"response": []
 						},
@@ -5306,7 +5642,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-3\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 77.3,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-3\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Practitioner/bobrester-bob\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 77.3,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5402,7 +5738,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-hdl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14646-4\",\r\n        \"display\": \"Cholesterol in HDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"HDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.5,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 1.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 2.2,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-hdl-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14646-4\",\r\n        \"display\": \"Cholesterol in HDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"HDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.5,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 1.0,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 2.2,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      },\r\n      \"type\": {\r\n        \"text\": \"Normal Range\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5462,6 +5798,30 @@
 							"response": []
 						},
 						{
+							"name": "pathresult-covid-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-covid-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test is currently under evaluation and has not been fully validated. Failure to detect organism-specific nucleic acids does not exclude the presence of disease due to this agent.\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/pathresult-covid-1"
+							},
+							"response": []
+						},
+						{
 							"name": "resprate-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -5486,6 +5846,30 @@
 							"response": []
 						},
 						{
+							"name": "satO2 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"satO2\",\r\n  \"partOf\": [\r\n    {\r\n      \"reference\": \"Procedure/obstetric\"\r\n    }\r\n  ],\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"2708-6\",\r\n        \"display\": \"Oxygen saturation in Arterial blood\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"59408-5\",\r\n        \"display\": \"Oxygen saturation in Arterial blood by Pulse oximetry\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/delivery\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-09-14T09:30:10+01:00\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/midwife-dallas\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 95,\r\n    \"unit\": \"%\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"%\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 90,\r\n        \"unit\": \"%\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"%\"\r\n      },\r\n      \"high\": {\r\n        \"value\": 99,\r\n        \"unit\": \"%\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"%\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/satO2"
+							},
+							"response": []
+						},
+						{
 							"name": "smokingstatus-current-smoker Observation",
 							"request": {
 								"method": "PUT",
@@ -5498,7 +5882,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"smokingstatus-current-smoker\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"social-history\",\r\n          \"display\": \"Social History\"\r\n        }\r\n      ],\r\n      \"text\": \"Social History\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"266918002\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"72166-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoking status\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n    }\r\n  ],\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"77176002\",\r\n        \"display\": \"Current smoker\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoker\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"smokingstatus-current-smoker\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"social-history\",\r\n          \"display\": \"Social History\"\r\n        }\r\n      ],\r\n      \"text\": \"Social History\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1747861000168109\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"72166-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoking status\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/bobrester-bob-gp\"\r\n    }\r\n  ],\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"77176002\",\r\n        \"display\": \"Current smoker\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoker\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5506,6 +5890,30 @@
 									}
 								},
 								"url": "{{server}}/Observation/smokingstatus-current-smoker"
+							},
+							"response": []
+						},
+						{
+							"name": "visualacuity Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"visualacuity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"exam\"\r\n        }\r\n      ],\r\n      \"text\": \"Vision\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"251739003\"\r\n      }\r\n    ],\r\n    \"text\": \"Distance visual acuity\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/bennelong-anne\"\r\n  },\r\n  \"effectiveDateTime\": \"2024-05-23\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"422256009\",\r\n        \"display\": \"Counts fingers - distance vision\"\r\n      }\r\n    ]\r\n  },\r\n  \"bodySite\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"362503005\"\r\n      }\r\n    ],\r\n    \"text\": \"Entire left eye\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Observation/visualacuity"
 							},
 							"response": []
 						}
@@ -5563,6 +5971,30 @@
 							"response": []
 						},
 						{
+							"name": "metformin-mp Medication",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin-mp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"21614011000036102\",\r\n        \"display\": \"metformin\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Medication/metformin-mp"
+							},
+							"response": []
+						},
+						{
 							"name": "metformin-mpp Medication",
 							"request": {
 								"method": "PUT",
@@ -5575,7 +6007,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin-mpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"943711000168102\",\r\n        \"display\": \"metformin hydrochloride 500 mg tablet, 10\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin-mpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"28037011000036102\",\r\n        \"display\": \"metformin hydrochloride 500 mg tablet, 100\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5599,7 +6031,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin-tpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1527511000168106\",\r\n        \"display\": \"Metformin (Apo) 500 mg tablet, 10\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin-tpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"929529011000036109\",\r\n        \"display\": \"Metformin (Apo) 500 mg tablet, 100\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5611,7 +6043,7 @@
 							"response": []
 						},
 						{
-							"name": "metformin Medication",
+							"name": "perindopril-amlodipine-mpp Medication",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -5623,19 +6055,19 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"metformin\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"21614011000036102\",\r\n        \"display\": \"metformin\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"perindopril-amlodipine-mpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86430011000036105\",\r\n        \"display\": \"perindopril arginine 10 mg + amlodipine 10 mg tablet, 30\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{server}}/Medication/metformin"
+								"url": "{{server}}/Medication/perindopril-amlodipine-mpp"
 							},
 							"response": []
 						},
 						{
-							"name": "reaptan Medication",
+							"name": "reaptan-tpp Medication",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -5647,14 +6079,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"reaptan\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"926213011000036100\",\r\n        \"display\": \"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Medication\",\r\n  \"id\": \"reaptan-tpp\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"926214011000036103\",\r\n        \"display\": \"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30\"\r\n      }\r\n    ]\r\n  },\r\n  \"form\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"154011000036109\",\r\n        \"display\": \"tablet\"\r\n      }\r\n    ]\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{server}}/Medication/reaptan"
+								"url": "{{server}}/Medication/reaptan-tpp"
 							},
 							"response": []
 						},
@@ -5700,7 +6132,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"metformin-contained\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"contained\": [\r\n    {\r\n      \"resourceType\": \"Medication\",\r\n      \"id\": \"medication\",\r\n      \"meta\": {\r\n        \"profile\": [\r\n          \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n        ]\r\n      },\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"943711000168102\",\r\n            \"display\": \"metformin hydrochloride 500 mg tablet, 10\"\r\n          }\r\n        ],\r\n        \"text\": \"Metformin Hydrochloride 500 mg Tablet, 10 Pack\"\r\n      },\r\n      \"form\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"154011000036109\",\r\n            \"display\": \"tablet\"\r\n          }\r\n        ],\r\n        \"text\": \"Tablet\"\r\n      }\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationReference\": {\r\n    \"reference\": \"#medication\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/hayes-arianne\"\r\n  },\r\n  \"authoredOn\": \"2024-06-07\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/guthridge-jarred\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"44054006\",\r\n          \"display\": \"Type 2 diabetes mellitus\"\r\n        }\r\n      ],\r\n      \"text\": \"Diabetes mellitus type 2\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"metformin-contained\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"contained\": [\r\n    {\r\n      \"resourceType\": \"Medication\",\r\n      \"id\": \"medication\",\r\n      \"meta\": {\r\n        \"profile\": [\r\n          \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication\"\r\n        ]\r\n      },\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"28037011000036102\",\r\n            \"display\": \"metformin hydrochloride 500 mg tablet, 100\"\r\n          }\r\n        ],\r\n        \"text\": \"metformin hydrochloride 500 mg tablet, 100\"\r\n      },\r\n      \"form\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"154011000036109\",\r\n            \"display\": \"tablet\"\r\n          }\r\n        ],\r\n        \"text\": \"tablet\"\r\n      }\r\n    }\r\n  ],\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationReference\": {\r\n    \"reference\": \"#medication\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/hayes-maria\"\r\n  },\r\n  \"authoredOn\": \"2024-06-07\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/guthridge-jarred\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"44054006\",\r\n          \"display\": \"Type 2 diabetes mellitus\"\r\n        }\r\n      ],\r\n      \"text\": \"Diabetes mellitus type 2\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5748,7 +6180,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"reaptan-reference\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationReference\": {\r\n    \"reference\": \"Medication/reaptan\",\r\n    \"display\": \"Reaptan 10 mg/10 mg tablet\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"authoredOn\": \"2018-07-15\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"text\": \"Pain management\"\r\n    }\r\n  ],\r\n  \"note\": [\r\n    {\r\n      \"text\": \"Patient requires an administration aid.\"\r\n    }\r\n  ],\r\n  \"dosageInstruction\": [\r\n    {\r\n      \"text\": \"1-2 tablets every 4-6 hours as needed for pain\",\r\n      \"timing\": {\r\n        \"repeat\": {\r\n          \"frequency\": 1,\r\n          \"frequencyMax\": 2,\r\n          \"period\": 4,\r\n          \"periodMax\": 6,\r\n          \"periodUnit\": \"h\"\r\n        }\r\n      },\r\n      \"asNeededBoolean\": true,\r\n      \"route\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"26643006\",\r\n            \"display\": \"Oral route\"\r\n          }\r\n        ]\r\n      },\r\n      \"doseAndRate\": [\r\n        {\r\n          \"doseQuantity\": {\r\n            \"value\": 1,\r\n            \"unit\": \"TAB\",\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n            \"code\": \"TAB\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"dispenseRequest\": {\r\n    \"dispenseInterval\": {\r\n      \"value\": 1,\r\n      \"unit\": \"week\",\r\n      \"system\": \"http://unitsofmeasure.org\",\r\n      \"code\": \"wk\"\r\n    },\r\n    \"validityPeriod\": {\r\n      \"start\": \"2018-07-15\",\r\n      \"end\": \"2019-07-15\"\r\n    },\r\n    \"numberOfRepeatsAllowed\": 2,\r\n    \"quantity\": {\r\n      \"value\": 20,\r\n      \"unit\": \"Tab\",\r\n      \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n      \"code\": \"TAB\"\r\n    },\r\n    \"expectedSupplyDuration\": {\r\n      \"value\": 10,\r\n      \"unit\": \"days\",\r\n      \"system\": \"http://unitsofmeasure.org\",\r\n      \"code\": \"d\"\r\n    }\r\n  },\r\n  \"substitution\": {\r\n    \"allowedBoolean\": true\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"reaptan-reference\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationReference\": {\r\n    \"reference\": \"Medication/reaptan-tpp\",\r\n    \"display\": \"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"authoredOn\": \"2018-07-15\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"38341003\",\r\n          \"display\": \"Hypertension\"\r\n        }\r\n      ],\r\n      \"text\": \"Hypertension\"\r\n    }\r\n  ],\r\n  \"dosageInstruction\": [\r\n    {\r\n      \"text\": \"1 tablet daily\",\r\n      \"timing\": {\r\n        \"repeat\": {\r\n          \"frequency\": 1,\r\n          \"period\": 1,\r\n          \"periodUnit\": \"d\"\r\n        }\r\n      },\r\n      \"asNeededBoolean\": true,\r\n      \"route\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"26643006\",\r\n            \"display\": \"Oral route\"\r\n          }\r\n        ]\r\n      },\r\n      \"doseAndRate\": [\r\n        {\r\n          \"doseQuantity\": {\r\n            \"value\": 1,\r\n            \"unit\": \"TAB\",\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n            \"code\": \"TAB\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"substitution\": {\r\n    \"allowedBoolean\": true\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5772,7 +6204,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"reaptan\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"926213011000036100\"\r\n      },\r\n      {\r\n        \"display\": \"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"authoredOn\": \"2018-07-15\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"text\": \"Pain management\"\r\n    }\r\n  ],\r\n  \"note\": [\r\n    {\r\n      \"text\": \"Patient requires an administration aid.\"\r\n    }\r\n  ],\r\n  \"dosageInstruction\": [\r\n    {\r\n      \"text\": \"1-2 tablets every 4-6 hours as needed for pain\",\r\n      \"timing\": {\r\n        \"repeat\": {\r\n          \"frequency\": 1,\r\n          \"frequencyMax\": 2,\r\n          \"period\": 4,\r\n          \"periodMax\": 6,\r\n          \"periodUnit\": \"h\"\r\n        }\r\n      },\r\n      \"asNeededBoolean\": true,\r\n      \"route\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"26643006\",\r\n            \"display\": \"Oral route\"\r\n          }\r\n        ]\r\n      },\r\n      \"doseAndRate\": [\r\n        {\r\n          \"doseQuantity\": {\r\n            \"value\": 1,\r\n            \"unit\": \"TAB\",\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n            \"code\": \"TAB\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"dispenseRequest\": {\r\n    \"dispenseInterval\": {\r\n      \"value\": 1,\r\n      \"unit\": \"week\",\r\n      \"system\": \"http://unitsofmeasure.org\",\r\n      \"code\": \"wk\"\r\n    },\r\n    \"validityPeriod\": {\r\n      \"start\": \"2018-07-15\",\r\n      \"end\": \"2019-07-15\"\r\n    },\r\n    \"numberOfRepeatsAllowed\": 2,\r\n    \"quantity\": {\r\n      \"value\": 20,\r\n      \"unit\": \"Tab\",\r\n      \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n      \"code\": \"TAB\"\r\n    },\r\n    \"expectedSupplyDuration\": {\r\n      \"value\": 10,\r\n      \"unit\": \"days\",\r\n      \"system\": \"http://unitsofmeasure.org\",\r\n      \"code\": \"d\"\r\n    }\r\n  },\r\n  \"substitution\": {\r\n    \"allowedBoolean\": true\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"id\": \"reaptan\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest\"\r\n    ]\r\n  },\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"medicationCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"926214011000036103\"\r\n      },\r\n      {\r\n        \"display\": \"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"authoredOn\": \"2018-07-15\",\r\n  \"requester\": {\r\n    \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"38341003\",\r\n          \"display\": \"Hypertension\"\r\n        }\r\n      ],\r\n      \"text\": \"Hypertension\"\r\n    }\r\n  ],\r\n  \"dosageInstruction\": [\r\n    {\r\n      \"text\": \"1 tablet daily\",\r\n      \"timing\": {\r\n        \"repeat\": {\r\n          \"frequency\": 1,\r\n          \"period\": 1,\r\n          \"periodUnit\": \"d\"\r\n        }\r\n      },\r\n      \"asNeededBoolean\": true,\r\n      \"route\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"26643006\",\r\n            \"display\": \"Oral route\"\r\n          }\r\n        ]\r\n      },\r\n      \"doseAndRate\": [\r\n        {\r\n          \"doseQuantity\": {\r\n            \"value\": 1,\r\n            \"unit\": \"TAB\",\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm\",\r\n            \"code\": \"TAB\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"substitution\": {\r\n    \"allowedBoolean\": true\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5801,7 +6233,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"dialysis\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"302497006\",\r\n        \"display\": \"Haemodialysis\"\r\n      }\r\n    ],\r\n    \"text\": \"Hemodialysis\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"performedDateTime\": \"2012-08-05\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/nephrologist-darleen-mackay\"\r\n      }\r\n    }\r\n  ],\r\n  \"reasonReference\": [\r\n    {\r\n      \"reference\": \"Condition/ckd\",\r\n      \"display\": \"Chronic Kidney Disease\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"dialysis\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"302497006\",\r\n        \"display\": \"Haemodialysis\"\r\n      }\r\n    ],\r\n    \"text\": \"Hemodialysis\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/dan-harry\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/renal-dialysis\"\r\n  },\r\n  \"performedDateTime\": \"2012-08-05\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/nephrologist-darleen-mackay\"\r\n      }\r\n    }\r\n  ],\r\n  \"reasonReference\": [\r\n    {\r\n      \"reference\": \"Condition/ckd\",\r\n      \"display\": \"Chronic Kidney Disease\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5825,7 +6257,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"stentinsertion\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"36969009\",\r\n        \"display\": \"Placement of stent in coronary artery\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"performedDateTime\": \"2021-09-25\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n      }\r\n    }\r\n  ],\r\n  \"location\": {\r\n    \"reference\": \"Location/murrabit-hospital\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"876856005\",\r\n          \"display\": \"Stenosis of right coronary artery\"\r\n        }\r\n      ],\r\n      \"text\": \"Occlusion of right coronary artery\"\r\n    }\r\n  ],\r\n  \"focalDevice\": [\r\n    {\r\n      \"action\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"425362007\",\r\n            \"display\": \"Surgical insertion - action\"\r\n          }\r\n        ]\r\n      },\r\n      \"manipulated\": {\r\n        \"display\": \"coronary stent\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"stentinsertion\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"36969009\",\r\n        \"display\": \"Placement of stent in coronary artery\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/wang-li\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/cardio-hospital\"\r\n  },\r\n  \"performedDateTime\": \"2021-09-25\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/surgeon-chau-fryer\"\r\n      }\r\n    }\r\n  ],\r\n  \"location\": {\r\n    \"reference\": \"Location/murrabit-hospital\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"876856005\",\r\n          \"display\": \"Stenosis of right coronary artery\"\r\n        }\r\n      ],\r\n      \"text\": \"Occlusion of right coronary artery\"\r\n    }\r\n  ],\r\n  \"focalDevice\": [\r\n    {\r\n      \"action\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"425362007\",\r\n            \"display\": \"Surgical insertion - action\"\r\n          }\r\n        ]\r\n      },\r\n      \"manipulated\": {\r\n        \"display\": \"coronary stent\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5833,6 +6265,30 @@
 									}
 								},
 								"url": "{{server}}/Procedure/stentinsertion"
+							},
+							"response": []
+						},
+						{
+							"name": "obstetric Procedure",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"obstetric\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"category\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386637004\",\r\n        \"display\": \"Obstetric procedure (procedure)\"\r\n      }\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"22633006\",\r\n        \"display\": \"Vaginal delivery, medical personnel present (procedure)\"\r\n      }\r\n    ],\r\n    \"text\": \"Vaginal delivery\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/smith-emma\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/delivery\"\r\n  },\r\n  \"performedDateTime\": \"2022-09-14T09:30:10+01:00\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/midwife-dallas\"\r\n      }\r\n    }\r\n  ],\r\n  \"location\": {\r\n    \"reference\": \"Location/au-hospital\"\r\n  },\r\n  \"reasonCode\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"87527008\",\r\n          \"display\": \"Term pregnancy\"\r\n        }\r\n      ],\r\n      \"text\": \"term pregnancy, active labor\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{server}}/Procedure/obstetric"
 							},
 							"response": []
 						}
