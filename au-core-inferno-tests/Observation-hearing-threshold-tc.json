@@ -1,0 +1,101 @@
+{
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                    "code": "AU",
+                    "display": "Audiology"
+                }
+            ]
+        }
+    ],
+    "referenceRange": [
+        {
+            "low": {
+                "value": 0,
+                "unit": "dB",
+                "system": "http://unitsofmeasure.org",
+                "code": "dB"
+            },
+            "high": {
+                "value": 20,
+                "unit": "dB",
+                "system": "http://unitsofmeasure.org",
+                "code": "dB"
+            },
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+                        "code": "treatment",
+                        "display": "Treatment Range"
+                    }
+                ],
+                "text": "Treatment Range"
+            }
+        }
+    ],
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult",
+            "http://hl7.org.au/fhir/StructureDefinition/au-diagnosticresult"
+        ]
+    },
+    "interpretation": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                    "code": "HU",
+                    "display": "Significantly high"
+                }
+            ]
+        }
+    ],
+    "valueQuantity": {
+        "value": 45,
+        "unit": "dB",
+        "system": "http://unitsofmeasure.org",
+        "code": "dB"
+    },
+    "resourceType": "Observation",
+    "effectiveDateTime": "2020-11-06T10:45:00-05:00",
+    "status": "final",
+    "id": "hearing-threshold-tc",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "89024-4",
+                "display": "Hearing threshold Ear - left --500 Hz"
+            }
+        ],
+        "text": "Hearing threshold Ear - left --500 Hz"
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "117590005",
+                "display": "Ear structure (body structure)"
+            }
+        ],
+        "text": "Ear structure (body structure)"
+    },
+    "subject": {
+        "reference": "Patient/patient-tc"
+    },
+    "performer": [
+        {
+            "reference": "PractitionerRole/practitionerrole-tc"
+        },
+        {
+            "reference": "Organization/organization-medical-center-tc"
+        }
+    ],
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"hearing-threshold-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;hearing-threshold-1&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-au-core-diagnosticresult.html\">AU Core Diagnostic Result Observation</a>, <a href=\"https://build.fhir.org/ig/hl7au/au-fhir-base//StructureDefinition-au-diagnosticresult.html\">AU Base Diagnostic Result</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Audiology <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v2-0074.html\">diagnosticServiceSectionId</a>#AU)</span></p><p><b>code</b>: Hearing threshold Ear - left --500 Hz <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#89024-4)</span></p><p><b>subject</b>: <a href=\"Patient-dan-harry.html\">Patient/dan-harry</a> &quot; DAN&quot;</p><p><b>effective</b>: 2020-11-06 10:45:00-0500</p><p><b>performer</b>: </p><ul><li><a href=\"PractitionerRole-audiologist-bradley-jill.html\">PractitionerRole/audiologist-bradley-jill</a></li><li><a href=\"Organization-adv-hearing-care.html\">Organization/adv-hearing-care</a> &quot;Audiology Advanced Hearing Care&quot;</li></ul><p><b>value</b>: 45 dB<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code dB = 'dB')</span></p></div>"
+    }
+}

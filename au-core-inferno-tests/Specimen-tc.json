@@ -1,0 +1,38 @@
+{
+    "resourceType": "Specimen",
+    "id": "specimen-tc",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"nasoswab\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;nasoswab&quot; </p></div><p><b>type</b>: Swab <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#257261003)</span></p><p><b>subject</b>: <a href=\"Patient-wang-li.html\">Patient/wang-li</a> &quot; WANG&quot;</p><h3>Collections</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Collected[x]</b></td><td><b>BodySite</b></td></tr><tr><td style=\"display: none\">*</td><td>2021-02-15 12:00:00+1000</td><td>Nasopharyngeal <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#71836000 &quot;Nasopharyngeal structure&quot;)</span></td></tr></table><p><b>note</b>: Collection Setting COVID HSC Assessment Clinic</p></div>"
+    },
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "257261003",
+                "display": "Swab"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/patient-tc"
+    },
+    "collection": {
+        "bodySite": {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "71836000",
+                    "display": "Nasopharyngeal structure"
+                }
+            ],
+            "text": "Nasopharyngeal"
+        },
+        "collectedDateTime": "2021-02-15T12:00:00+10:00"
+    },
+    "note": [
+        {
+            "text": "Collection Setting COVID HSC Assessment Clinic"
+        }
+    ]
+}

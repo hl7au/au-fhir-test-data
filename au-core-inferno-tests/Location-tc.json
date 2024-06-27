@@ -1,0 +1,53 @@
+{
+    "address": {
+        "line": [
+            "87 Western Esp"
+        ],
+        "city": "Tindal RAAF",
+        "state": "QLD",
+        "postalCode": "4655",
+        "country": "AU"
+    },
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+        ]
+    },
+    "name": "Tindal Building",
+    "mode": "instance",
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                    "code": "FMC",
+                    "display": "Family medicine clinic"
+                },
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "288565001",
+                    "display": "Medical centre"
+                }
+            ]
+        }
+    ],
+    "resourceType": "Location",
+    "alias": [
+        "Bobrester Medical Center"
+    ],
+    "status": "active",
+    "id": "location-tc",
+    "physicalType": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                "code": "bu",
+                "display": "Building"
+            }
+        ]
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"bobrester-medical-center\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;bobrester-medical-center&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-location.html\">AU Core Location</a></p></div><p><b>status</b>: active</p><p><b>name</b>: Tindal Building</p><p><b>alias</b>: Bobrester Medical Center</p><p><b>mode</b>: instance</p><p><b>type</b>: Family medicine clinic <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-v3-RoleCode.html\">RoleCode</a>#FMC; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#288565001 &quot;Medical centre&quot;)</span></p><p><b>address</b>: 87 Western Esp Tindal RAAF QLD 4655 AU </p><p><b>physicalType</b>: Building <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-location-physical-type.html\">Location type</a>#bu)</span></p></div>"
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "address": [
+        {
+            "line": [
+                "87 Western Esp"
+            ],
+            "city": "Tindal RAAF",
+            "state": "QLD",
+            "postalCode": "4655",
+            "country": "AU"
+        }
+    ],
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+        ]
+    },
+    "name": "Bobrester Medical Center",
+    "type": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "288565001",
+                    "display": "Medical centre"
+                }
+            ],
+            "text": "Medical Center"
+        }
+    ],
+    "resourceType": "Organization",
+    "alias": [
+        "Medical Center"
+    ],
+    "id": "organization-medical-center-tc",
+    "identifier": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                        "code": "NOI"
+                    }
+                ],
+                "text": "HPI-O"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+            "value": "8003621566684455"
+        }
+    ],
+    "telecom": [
+        {
+            "system": "email",
+            "value": "info@bobrestermedical.example.com",
+            "use": "work"
+        },
+        {
+            "system": "phone",
+            "value": "(07) 5550 2427",
+            "use": "work"
+        }
+    ],
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"bobrester-medical-center\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;bobrester-medical-center&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-organization.html\">AU Core Organization</a></p></div><p><b>identifier</b>: HPI-O/8003621566684455</p><p><b>type</b>: Medical Center <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#288565001 &quot;Medical centre&quot;)</span></p><p><b>name</b>: Bobrester Medical Center</p><p><b>telecom</b>: <a href=\"mailto:info@bobrestermedical.example.com\">info@bobrestermedical.example.com</a>, ph: (07) 5550 2427(WORK)</p><p><b>address</b>: 87 Western Esp Tindal RAAF QLD 4655 AU </p></div>"
+    }
+}
