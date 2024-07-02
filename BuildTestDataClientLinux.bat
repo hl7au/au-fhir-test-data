@@ -1,0 +1,1 @@
+dotnet publish Sparked.TestDataClient\Sparked.TestDataClient.csproj -r linux-x64 -c Release -p:PublishSingleFile=true --self-contained true  --output "Sparked.TestDataClient"

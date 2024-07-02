@@ -1,0 +1,1 @@
+dotnet publish Sparked.Csv2FhirMapping\Sparked.Csv2FhirMapping.csproj -r linux-x64 -c Release -p:PublishSingleFile=true --self-contained true  --output "Sparked.Csv2FhirMapping"
