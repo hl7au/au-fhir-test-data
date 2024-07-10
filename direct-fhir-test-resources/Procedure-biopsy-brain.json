@@ -1,0 +1,79 @@
+{
+    "resourceType": "Procedure",
+    "id": "biopsy-brain",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+      ]
+    },
+    "text": {
+      "status": "generated",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Biopsy of brain tissue in the frontal lobe to diagnose Large Diffuse B-Cell Lymphoma</div>"
+    },
+    "status": "completed",
+    "category": {
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "103693007",
+        "display": "Diagnostic procedure (procedure)"
+      }],
+      "text": "Diagnostic procedure"
+    },
+    "code": {
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "18946008",
+        "display": "Brain biopsy"
+      }],
+      "text": "Biopsy of brain tissue"
+    },
+    "subject": {
+      "reference": "Patient/howe-deangelo",
+      "display": "Deangelo Howe"
+    },
+    "encounter": {
+      "reference": "Encounter/biopsy-inpatient",
+      "display": "Inpatient"
+    },
+    "performedPeriod": {
+        "start": "2021-01-28T08:00:00+10:00",
+        "end": "2021-01-28T10:00:00+10:00"
+      },
+    "performer": [{
+      "actor": {
+        "reference": "PractitionerRole/marchant-ricki",
+        "display": "Dr. Ricki MARCHANT"
+      }
+    }],
+    "reasonCode": [{
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "109979007",
+        "display": "B-cell lymphoma"
+      }],
+      "text": "Suspected Large Diffuse B-Cell Lymphoma of the brain"
+    }],
+    "bodySite": [{
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "27949001",
+        "display": "Frontal lobe structure"
+      }],
+      "text": "Frontal lobe"
+    }],
+    "complication": [{
+      "coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "116223007",
+        "display": "Cerebral edema (disorder)"
+      }],
+      "text": "Cerebral edema"
+    }],
+    "followUp": [{
+      "text": "Review in oncology clinic"
+    }],
+    "note": [{
+      "text": "Standard brain biopsy procedure performed without complications."
+    }]
+  }
+  
