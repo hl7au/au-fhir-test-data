@@ -39,7 +39,7 @@
     "performer": [{
       "actor": {
         "reference": "PractitionerRole/marchant-ricki",
-        "display": "Dr. Ricki MARCHANT"
+        "display": "Dr. Ricki Marchant"
       }
     }],
     "reasonCode": [{
