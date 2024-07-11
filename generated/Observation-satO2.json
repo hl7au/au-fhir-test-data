@@ -34,7 +34,7 @@
     ]
   },
   "subject": {
-    "reference": "Patient/smith-emma"
+    "reference": "Patient/banks-mia-leanne"
   },
   "encounter": {
     "reference": "Encounter/delivery"
@@ -42,7 +42,7 @@
   "effectiveDateTime": "2022-09-14T09:30:10+01:00",
   "performer": [
     {
-      "reference": "PractitionerRole/midwife-dallas"
+      "reference": "PractitionerRole/midwife-kendall-dallas"
     }
   ],
   "valueQuantity": {

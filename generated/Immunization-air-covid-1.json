@@ -29,7 +29,7 @@
     "text": "Pfizer Comirnaty"
   },
   "patient": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "occurrenceDateTime": "2021-06-17",
   "primarySource": true,

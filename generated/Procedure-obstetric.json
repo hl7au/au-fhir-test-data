@@ -27,7 +27,7 @@
     "text": "Vaginal delivery"
   },
   "subject": {
-    "reference": "Patient/smith-emma"
+    "reference": "Patient/banks-mia-leanne"
   },
   "encounter": {
     "reference": "Encounter/delivery"
@@ -36,12 +36,12 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/midwife-dallas"
+        "reference": "PractitionerRole/midwife-kendall-dallas"
       }
     }
   ],
   "location": {
-    "reference": "Location/au-hospital"
+    "reference": "Location/barney-view-private-hospital"
   },
   "reasonCode": [
     {

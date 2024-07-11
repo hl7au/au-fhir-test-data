@@ -25,7 +25,7 @@
     }
   ],
   "subject": {
-    "reference": "Patient/smith-emma"
+    "reference": "Patient/banks-mia-leanne"
   },
   "period": {
     "end": "2023-01-24"
@@ -33,11 +33,11 @@
   "location": [
     {
       "location": {
-        "reference": "Location/au-hospital"
+        "reference": "Location/barney-view-private-hospital"
       }
     }
   ],
   "serviceProvider": {
-    "reference": "Organization/hospital-au"
+    "reference": "Organization/barney-view-private-hospital"
   }
 }

@@ -61,10 +61,10 @@
   "onsetDateTime": "2023-10-01",
   "recordedDate": "2023-10-02",
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "note": [
     {

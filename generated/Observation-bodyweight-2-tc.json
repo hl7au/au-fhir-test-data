@@ -34,12 +34,12 @@
     "text": "weight"
   },
   "subject": {
-    "reference": "Patient/baby-smith-john"
+    "reference": "Patient/baby-banks-john"
   },
   "effectiveDateTime": "2023-03-14",
   "performer": [
     {
-      "reference": "RelatedPerson/smith-emma-john"
+      "reference": "RelatedPerson/banks-mia-leanne"
     }
   ],
   "valueQuantity": {

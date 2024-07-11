@@ -45,14 +45,14 @@
     ]
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "onsetDateTime": "2015-02-12T12:00:00+00:00",
   "recordedDate": "2015-02-12",
   "recorder": {
-    "reference": "Practitioner/bobrester-bob"
+    "reference": "Practitioner/guthridge-jarred"
   },
   "asserter": {
-    "reference": "Practitioner/bobrester-bob"
+    "reference": "Practitioner/guthridge-jarred"
   }
 }

@@ -34,7 +34,7 @@
     "text": "weight"
   },
   "subject": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "encounter": {
     "display": "GP Visit"

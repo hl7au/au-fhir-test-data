@@ -7,7 +7,7 @@
     ]
   },
   "status": "active",
-  "name": "Friends Pharmacy - AU Hospital",
+  "name": "Friends Pharmacy - Barney View Private Hospital",
   "mode": "instance",
   "type": [
     {
@@ -28,12 +28,11 @@
   "address": {
     "line": [
       "Suite 14, Building 31",
-      "54301 Stanley St"
+      "195 Maple Cct"
     ],
-    "city": "South Brisbane",
+    "city": "Barney View",
     "state": "QLD",
-    "postalCode": "4101",
-    "country": "AU"
+    "postalCode": "4287"
   },
   "physicalType": {
     "coding": [
@@ -45,9 +44,9 @@
     ]
   },
   "managingOrganization": {
-    "reference": "Organization/hospital-int"
+    "reference": "Organization/barney-view-private-hospital"
   },
   "partOf": {
-    "reference": "Location/au-hospital"
+    "reference": "Location/barney-view-private-hospital"
   }
 }

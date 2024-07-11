@@ -28,7 +28,7 @@
     "text": "Distance visual acuity"
   },
   "subject": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2024-05-23",
   "valueCodeableConcept": {

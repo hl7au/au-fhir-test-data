@@ -99,5 +99,18 @@
       "postalCode": "6054",
       "country": "AU"
     }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "yub"
+          }
+        ],
+        "text": "Yugambal"
+      }
+    }
   ]
 }

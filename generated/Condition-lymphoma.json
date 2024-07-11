@@ -39,13 +39,13 @@
     "text": "Large diffuse B-cell lymphoma of the brain"
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "recordedDate": "2021-02-01",
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   }
 }

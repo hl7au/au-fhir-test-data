@@ -34,7 +34,7 @@
     "text": "height"
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "encounter": {
     "display": "GP Visit"
@@ -42,7 +42,7 @@
   "effectiveDateTime": "2016-07-02",
   "performer": [
     {
-      "reference": "PractitionerRole/bobrester-bob-gp"
+      "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
     }
   ],
   "valueQuantity": {

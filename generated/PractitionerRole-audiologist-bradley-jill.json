@@ -6,16 +6,6 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
     ]
   },
-  "identifier": [
-    {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-          "valueCode": "unknown"
-        }
-      ]
-    }
-  ],
   "active": true,
   "practitioner": {
     "reference": "Practitioner/bradley-jill"
