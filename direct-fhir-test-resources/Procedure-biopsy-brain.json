@@ -22,8 +22,8 @@
     "code": {
       "coding": [{
         "system": "http://snomed.info/sct",
-        "code": "18946008",
-        "display": "Brain biopsy"
+        "code": "230842002",
+        "display": "Biopsy of brain tissue"
       }],
       "text": "Biopsy of brain tissue"
     },
@@ -36,12 +36,12 @@
       "display": "Inpatient"
     },
     "performedPeriod": {
-        "start": "2021-01-28T08:00:00+10:00",
-        "end": "2021-01-28T10:00:00+10:00"
+        "start": "2021-01-30T08:00:00+10:00",
+        "end": "2021-01-30T10:00:00+10:00"
       },
     "performer": [{
       "actor": {
-        "reference": "PractitionerRole/marchant-ricki",
+        "reference": "PractitionerRole/surgeongeneral-marchant-ricki",
         "display": "Dr. Ricki MARCHANT"
       }
     }],
@@ -56,24 +56,16 @@
     "bodySite": [{
       "coding": [{
         "system": "http://snomed.info/sct",
-        "code": "27949001",
+        "code": "83251001",
         "display": "Frontal lobe structure"
       }],
-      "text": "Frontal lobe"
-    }],
-    "complication": [{
-      "coding": [{
-        "system": "http://snomed.info/sct",
-        "code": "116223007",
-        "display": "Cerebral edema (disorder)"
-      }],
-      "text": "Cerebral edema"
+      "text": "Frontal lobe structure"
     }],
     "followUp": [{
       "text": "Review in oncology clinic"
     }],
     "note": [{
-      "text": "Standard brain biopsy procedure performed without complications."
+      "text": "Brain biopsy of the frontal lobe to diagnose suspected Large Diffuse B-Cell Lymphoma was performed under general anesthesia and without complications."
     }]
   }
   

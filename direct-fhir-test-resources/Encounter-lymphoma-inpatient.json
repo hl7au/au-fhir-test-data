@@ -21,11 +21,11 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "103693007",
-            "display": "Diagnostic procedure (procedure)"
+            "code": "399210005",
+            "display": "Neurological investigation"
           }
         ],
-        "text": "Diagnostic procedure"
+        "text": "Neurological investigation"
       }
     ],
     "subject": {
@@ -35,7 +35,7 @@
     "participant": [
       {
         "individual": {
-          "reference": "PractitionerRole/marchant-ricki",
+          "reference": "PractitionerRole/surgeongeneral-marchant-ricki",
           "display": "Dr. Ricki MARCHANT"
         }
       }
