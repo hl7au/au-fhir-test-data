@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "pharmacist-ford-dean",
+  "id": "retailpharmacist-ford-dean",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -33,7 +33,7 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "251513",
-          "display": "Pharmacist"
+          "display": "Retail Pharmacist"
         }
       ]
     }

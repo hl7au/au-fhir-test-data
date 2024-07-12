@@ -13,11 +13,6 @@
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "code": "PTRES",
-          "display": "Patient's Residence"
-        },
-        {
           "system": "http://snomed.info/sct",
           "code": "394778007",
           "display": "Client's or patient's home"

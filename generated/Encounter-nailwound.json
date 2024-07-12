@@ -67,10 +67,5 @@
         }
       ]
     }
-  ],
-  "reasonReference": [
-    {
-      "reference": "Condition/nailwound"
-    }
   ]
 }

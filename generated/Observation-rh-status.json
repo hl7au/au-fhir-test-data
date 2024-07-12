@@ -23,7 +23,7 @@
       {
         "system": "http://loinc.org",
         "code": "890-4",
-        "display": "Blood group antibody screen [Presence] in Serum or Plasma`"
+        "display": "Blood group antibody screen [Presence] in Serum or Plasma"
       }
     ],
     "text": "Blood Group Antibody Screen"

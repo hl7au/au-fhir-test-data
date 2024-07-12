@@ -40,7 +40,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "6736007",
-        "display": "Moderate"
+        "display": "Moderate severity"
       }
     ]
   },
@@ -64,26 +64,5 @@
   },
   "asserter": {
     "reference": "PractitionerRole/registerednurses-sinclair-forrest"
-  },
-  "evidence": [
-    {
-      "code": [
-        {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "258710007",
-              "display": "degrees C"
-            }
-          ]
-        }
-      ],
-      "detail": [
-        {
-          "reference": "Observation/bodytemp-fever",
-          "display": "Temperature"
-        }
-      ]
-    }
-  ]
+  }
 }
