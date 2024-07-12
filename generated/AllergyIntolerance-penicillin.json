@@ -68,7 +68,8 @@
             }
           ]
         }
-      ]
+      ],
+      "severity": "severe"
     }
   ]
 }

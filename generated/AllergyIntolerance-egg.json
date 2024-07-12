@@ -74,7 +74,8 @@
           ],
           "text": "Nausea and vomiting"
         }
-      ]
+      ],
+      "severity": "moderate"
     }
   ]
 }

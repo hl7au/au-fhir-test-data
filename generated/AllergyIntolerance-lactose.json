@@ -92,7 +92,8 @@
             }
           ]
         }
-      ]
+      ],
+      "severity": "moderate"
     }
   ]
 }
