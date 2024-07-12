@@ -32,7 +32,7 @@
     "display": "Deangelo Howe"
   },
   "encounter": {
-    "reference": "Encounter/lymphoma-inpatient",
+    "reference": "Encounter/biopsy-inpatient",
     "display": "Inpatient"
   },
   "performedDateTime": "2021-01-27T14:00:00+10:00",
