@@ -27,6 +27,13 @@ Test FHIR JSON files are located in:
 
 This repository also contains source code for the command line utilities used to generate the FHIR JSON files and upload them to a FHIR Server. These utilities have been developed using DotNet. For further details see [Test Data Command Line Utilities](#test-data-command-line-utilities) below.
 
+## Sparked AU Core Testing
+We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json).
+
+This collection contains all resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders.
+
+If you intend to upload the Sparked Test Data set to your FHIR server, use the UploadGenerated.bat and UploadDirect.bat batch files. Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data).
+
 ## Did you find an error?
 Search the Issues list in [GitHub](https://github.com/hl7au/au-fhir-test-data/issues) to ensure the error was not already reported.
 
