@@ -67,64 +67,54 @@ $ git submodule update --init
 After executing the submodule update command, the `fhir-net-mappinglanguage` will no longer be empty.
 
 ### Building Sparked.Csv2FhirMapping
-After initialising the submodule, use the Sparked.Csv2FhirMapping.sln to build Sparked.Csv2FhirMapping project.
 
-### Using Sparked.Csv2FhirMapping
-Using a Command Prompt change to the  Sparked.Csv2FhirMapping folder and execute the command as follows:
+0. Install the dotnet framework in the appropriate version.
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `BuildCsvFhirMapping.bat`. This will execute a batch file that builds.
 
-```
-bin\Debug\net7.0\Csv2Fhir.exe resource-type csv-file output-folder
-```
 
-For example:
-```
-bin\Debug\net7.0\Csv2Fhir.exe Patient "..\testdata-csv\AU Core Sample Data - Patient.csv" ..\generated
-```
+### Generate data
 
-Alternatively, you can use the GenerateData.bat and GenerateAll.bat batch files as described below.
-#### GenerateData.bat
-The GenerateData.bat command generates test data to the specified output-folder for the specified resource-type using assocaited CSV file located in the testdata-csv folder.
+#### Generate Specific Data
+
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `GenerateData.bat ` followed by an output directory and resource type. This will execute a batch file that generates.
 
 Usage:
 ```
 GenerateData.bat output-folder resource-type
 ```
 
-Example: 
+Example with local directory `generated` and resource type `Patient`: 
 ```
 GenerateData.bat generated Patient
 ```
 
-#### GenerateAll.bat
-The GenerateAll.bat command generates test data for all CSV files located in the testdata-csv folder and creates the JSON files in the `generated` folder.
+#### Generate All Data
+
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `GenerateAll.bat `. This will execute a batch file that generates all.
 
 Usage:
 ```
 GenerateAll.bat
 ```
 
-## Sparked.TestDataClient
+## Upload Data
 The Sparked.TestDataClient is a command line utility that uploads a batch of FHIR JSON files to a FHIR Server.
 
 ### Building Sparked.TestDataClient
-Use the Sparked.Csv2FhirMapping.sln located in the Sparked.Csv2FhirMapping folder to build the Sparked.TestDataClient project.
 
-### Using Sparked.TestDataClient
-Using a Command Prompt terminal execute the following command from the repository root folder:
+0. Install the dotnet framework in the appropriate version.
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `BuildTestDataClient.bat`. This will execute a batch file that builds.
 
-```
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe resource-type input-folder fhir-server auth-scheme auth-parameter
-```
+### Uploading
 
-For example:
-```
-Sparked.TestDataClient\bin\Debug\net7.0\Sparked.TestDataClient.exe Observation generated https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
-```
+#### Upload specific data
 
-Alternatively, you can use the UploadData.bat, UploadGenerated.bat or UploadERequesting.bat batch files as described below.
-
-#### UploadData.bat
-The UploadData.bat command uploads test data to the fhir-server of the specified resource-type located in the input-folder. The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `UploadData.bat `. This will execute a batch file that uploads all to the fhir-server of the specified resource-type located in the input-folder. The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
 
 Usage:
 ```
@@ -136,8 +126,9 @@ Example:
 UploadData.bat https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}} generated Patient
 ```
 
-#### UploadGenerated.bat
-The UploadGenerated.bat command uploads all the test data located in the `generated` folder to the fhir-server. The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
+#### Upload all generated data
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `UploadGenerated.bat `. This will execute a batch file that uploads all to the fhir-server all data located in the folder `generated`. The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
 
 Usage:
 ```
@@ -149,10 +140,9 @@ Example:
 UploadGenerated.bat https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic {{base64-encouded-userid:password}}
 ```
 
-#### UploadERequestiong.bat
-The UploadERequestiong.bat command uploads test data located in the `generated` folder to the fhir-server required for ERequesting. This inbcludes resource types Patient, Organization, Pactitioner and PractitionerRole.
-The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
-The ERequesting 
+#### Upload all generated eRequesting data
+1. Open a Command Prompt `cmd` ([advice](https://www.digitalcitizen.life/open-cmd/))
+2. Type `UploadERequesting.bat `. This will execute a batch file that uploads all to the fhir-server all eRequesting data located in the folder `generated`. The FHIR server request's Authorization header is generated using the  auth-scheme and auth-parameter arguments.
 
 Usage:
 ```
