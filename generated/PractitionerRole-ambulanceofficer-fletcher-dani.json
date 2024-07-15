@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "pharmacist-mclennan-miguel",
+  "id": "ambulanceofficer-fletcher-dani",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -18,40 +18,32 @@
         "text": "Medicare Provider Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
-      "value": "2449371T"
+      "value": "2450201A"
     }
   ],
   "practitioner": {
-    "reference": "Practitioner/mclennan-miguel"
-  },
-  "organization": {
-    "reference": "Organization/mcbeath-pharmacy"
+    "reference": "Practitioner/fletcher-dani"
   },
   "code": [
     {
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "251513",
-          "display": "Pharmacist"
+          "code": "411111",
+          "display": "Ambulance Officer"
         }
       ]
-    }
-  ],
-  "location": [
-    {
-      "reference": "Location/mcbeath-pharmacy"
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870101653",
+      "value": "0370105425",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "miguel.mclennan@mcbeathpharmacy.example.net",
+      "value": "dani.fletcher@example.com",
       "use": "work"
     }
   ]

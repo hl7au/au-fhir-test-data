@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "counsellor-polglase-belen",
+  "id": "retailpharmacist-lees-noreen",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -18,32 +18,40 @@
         "text": "Medicare Provider Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
-      "value": "2449731H"
+      "value": "2450281H"
     }
   ],
   "practitioner": {
-    "reference": "Practitioner/polglase-belen"
+    "reference": "Practitioner/lees-noreen"
+  },
+  "organization": {
+    "reference": "Organization/ginninderra-pharmacy"
   },
   "code": [
     {
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "272199",
-          "display": "Counsellor"
+          "code": "251513",
+          "display": "Retail Pharmacist"
         }
       ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/ginninderra-pharmacy"
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870102934",
+      "value": "0270105171",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "belen.polglase@example.com.au",
+      "value": "noreen.lees@ginninderrapharmacy.example.com.au",
       "use": "work"
     }
   ]

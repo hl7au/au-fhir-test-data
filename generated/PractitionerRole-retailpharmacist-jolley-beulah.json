@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "pharmacist-coughlin-tonda",
+  "id": "retailpharmacist-jolley-beulah",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -18,14 +18,14 @@
         "text": "Medicare Provider Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
-      "value": "2449121K"
+      "value": "2450081T"
     }
   ],
   "practitioner": {
-    "reference": "Practitioner/coughlin-tonda"
+    "reference": "Practitioner/jolley-beulah"
   },
   "organization": {
-    "reference": "Organization/launching-place-pharmacy"
+    "reference": "Organization/launceston-pharmacy"
   },
   "code": [
     {
@@ -33,30 +33,25 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "251513",
-          "display": "Pharmacist"
-        },
-        {
-          "system": "http://snomed.info/sct",
-          "code": "159011008",
-          "display": "Community pharmacist"
+          "display": "Retail Pharmacist"
         }
       ]
     }
   ],
   "location": [
     {
-      "reference": "Location/launching-place-pharmacy"
+      "reference": "Location/launceston-pharmacy"
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0370105078",
+      "value": "0370108601",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "tonda.coughlin@launchingplacepharmacy.example.net",
+      "value": "beulah.jolley@launcestonpharmacy.example.net",
       "use": "work"
     }
   ]
