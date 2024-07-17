@@ -7435,6 +7435,44 @@
 							"response": []
 						},
 						{
+							"name": "bonedensity Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bonedensity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"imaging\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"24701-5\",\r\n        \"display\": \"DXA Femur [Mass/Area] Bone density\"\r\n      }\r\n    ],\r\n    \"text\": \"BMD - Left femur\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"hasMember\": [\r\n    {\r\n      \"reference\": \"Observation/bmd\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bonedensity",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bonedensity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "bodyheight-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -7695,44 +7733,6 @@
 									"path": [
 										"Observation",
 										"bodyweight-mcc"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "bonedensity Observation",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth-header}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/fhir+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bonedensity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"imaging\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"24701-5\",\r\n        \"display\": \"DXA Femur [Mass/Area] Bone density\"\r\n      }\r\n    ],\r\n    \"text\": \"BMD - Left femur\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"hasMember\": [\r\n    {\r\n      \"reference\": \"Observation/bmd\"\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{server}}/Observation/bonedensity",
-									"host": [
-										"{{server}}"
-									],
-									"path": [
-										"Observation",
-										"bonedensity"
 									]
 								}
 							},
@@ -8119,7 +8119,7 @@
 							"response": []
 						},
 						{
-							"name": "suppressed Observation Copy",
+							"name": "suppressed Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -8777,190 +8777,2926 @@
 			"name": "SearchAndRead",
 			"item": [
 				{
-					"name": "Patient Search by _id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Patient?_id=bennelong-anne&_",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Patient"
-							],
-							"query": [
-								{
-									"key": "_id",
-									"value": "bennelong-anne"
+					"name": "Patient",
+					"item": [
+						{
+							"name": "Read Patient",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient/banks-mia-leanne",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient",
+										"banks-mia-leanne"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id Search Patient",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?_id=baratz-toni",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "baratz-toni"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identifier Search Patient",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?identifier=http://ns.electronichealth.net.au/id/medicare-number%7C69518252411",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C69518252411"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "birthdate+family Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "_",
-									"value": null
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?birthdate=1978-06-16&family=baratz",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "birthdate",
+											"value": "1978-06-16"
+										},
+										{
+											"key": "family",
+											"value": "baratz"
+										}
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patient Search",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Patient",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Patient"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "smith-emma Patient Read",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Patient/smith-emma",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Patient",
-								"smith-emma"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Encounter Search",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Encounter",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Encounter"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Organization Search",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Organization",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Organization"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Hospital Australia",
-									"disabled": true
+							},
+							"response": []
+						},
+						{
+							"name": "birthdate+name Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?birthdate=1978-06-16&name=toni",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "birthdate",
+											"value": "1978-06-16"
+										},
+										{
+											"key": "name",
+											"value": "toni"
+										}
+									]
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Location Search",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Location",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Location"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Hospital Australia",
-									"disabled": true
+							},
+							"response": []
+						},
+						{
+							"name": "family+gender Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?family=baratz&gender=female",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "family",
+											"value": "baratz"
+										},
+										{
+											"key": "gender",
+											"value": "female"
+										}
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "gender+name Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?gender=female&name=toni",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "gender",
+											"value": "female"
+										},
+										{
+											"key": "name",
+											"value": "toni"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "birthdate (ge-lt) Search Patient",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?birthdate=ge1978-01-01&birthdate=le1978-12-31",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "birthdate",
+											"value": "ge1978-01-01"
+										},
+										{
+											"key": "birthdate",
+											"value": "le1978-12-31"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "indigenous-status Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?indigenous-status=1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "indigenous-status",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "gender-identity Search Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Patient?gender-identity=http://snomed.info/sct%7C446141000124107",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "gender-identity",
+											"value": "http://snomed.info/sct%7C446141000124107"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Procedure Search",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{auth-header}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{server}}/Procedure",
-							"host": [
-								"{{server}}"
-							],
-							"path": [
-								"Procedure"
-							]
+					"name": "Encounter",
+					"item": [
+						{
+							"name": "Read Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter/annualvisit-1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter",
+										"annualvisit-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C29545407011",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C29545407011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne&date=2022-02-10T09:20:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										},
+										{
+											"key": "date",
+											"value": "2022-02-10T09:20:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date (ge-lt) Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne&date=ge2022-02-10T00:00:00+10:00&date=lt2022-02-11T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										},
+										{
+											"key": "date",
+											"value": "ge2022-02-10T00:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "lt2022-02-11T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+class Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne&class=AMB",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										},
+										{
+											"key": "class",
+											"value": "AMB"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+location Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne&location=barney-view-private-hospital",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										},
+										{
+											"key": "location",
+											"value": "barney-view-private-hospital"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+status Search Encounter",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Encounter?patient=banks-mia-leanne&status=finished",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Encounter"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "banks-mia-leanne"
+										},
+										{
+											"key": "status",
+											"value": "finished"
+										}
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "AllergyIntolerance",
+					"item": [
+						{
+							"name": "Read AllergyIntolerance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/AllergyIntolerance/egg",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"AllergyIntolerance",
+										"egg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search AllergyIntolerance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/AllergyIntolerance?patient=irvine-ronny-lawrence",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"AllergyIntolerance"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search AllergyIntolerance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/AllergyIntolerance?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C29545407011",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"AllergyIntolerance"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C29545407011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+clinical-status Search AllergyIntolerance",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/AllergyIntolerance?patient=irvine-ronny-lawrence&clinical-status=active",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"AllergyIntolerance"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "clinical-status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Condition",
+					"item": [
+						{
+							"name": "Read Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition/ckd",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition",
+										"ckd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=irvine-ronny-lawrence",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "code",
+											"value": "700379002",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C29545407011",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C29545407011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=irvine-ronny-lawrence&category=problem-list-item",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "category",
+											"value": "problem-list-item"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+clinical-status Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=irvine-ronny-lawrence&clinical-status=active",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "clinical-status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category+clinical-status Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=irvine-ronny-lawrence&category=problem-list-item&clinical-status=active",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "category",
+											"value": "problem-list-item"
+										},
+										{
+											"key": "clinical-status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+code Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=irvine-ronny-lawrence&code=700379002",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "irvine-ronny-lawrence"
+										},
+										{
+											"key": "code",
+											"value": "700379002"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+onset-date Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=howe-deangelo&onset-date=2018-05-12T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "onset-date",
+											"value": "2018-05-12T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+onset-date (ge-lt) Search Condition",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Condition?patient=howe-deangelo&onset-date=ge2018-05-12T00:00:00+10:00&onset-date=lt2018-05-13T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Condition"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "onset-date",
+											"value": "ge2018-05-12T00:00:00+10:00"
+										},
+										{
+											"key": "onset-date",
+											"value": "lt2018-05-13T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Immunization",
+					"item": [
+						{
+							"name": "Read Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization/covid-1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization",
+										"covid-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient=baratz-toni",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "baratz-toni"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C69518252411",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C69518252411"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient=baratz-toni&date=2021-06-17T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "baratz-toni"
+										},
+										{
+											"key": "date",
+											"value": "2021-06-17T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date (ge-lt) Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient=baratz-toni&date=ge2021-06-17T00:00:00+10:00&date=lt2021-06-18T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "baratz-toni"
+										},
+										{
+											"key": "date",
+											"value": "ge2021-06-17T00:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "lt2021-06-18T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+status Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient=baratz-toni&status=completed",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "baratz-toni"
+										},
+										{
+											"key": "status",
+											"value": "completed"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+vaccine-code Search Immunization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Immunization?patient=baratz-toni&vaccine-code=http://snomed.info/sct%7C1525011000168107",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Immunization"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "baratz-toni"
+										},
+										{
+											"key": "vaccine-code",
+											"value": "http://snomed.info/sct%7C1525011000168107"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "Read Organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Organization/elimbah-medical-centre",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Organization",
+										"elimbah-medical-centre"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id Search Organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Organization?_id=elimbah-medical-centre",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Organization"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "elimbah-medical-centre"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "name Search Organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Organization?name=Elimbah Medical",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Organization"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Elimbah Medical"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "address Search Organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Organization?address=199 Copper",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Organization"
+									],
+									"query": [
+										{
+											"key": "address",
+											"value": "199 Copper"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identifier Search Organization",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Organization?identifier=http://ns.electronichealth.net.au/id/hi/hpio/1.0%7C8003629900040359",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Organization"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://ns.electronichealth.net.au/id/hi/hpio/1.0%7C8003629900040359"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Practitioner",
+					"item": [
+						{
+							"name": "Read Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Practitioner/guthridge-jarred",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Practitioner",
+										"guthridge-jarred"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id Search Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Practitioner?_id=guthridge-jarred",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Practitioner"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "guthridge-jarred"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "name Search Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Practitioner?name=guthridge",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Practitioner"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "guthridge"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identifier Search Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Practitioner?identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0%7C8003611566718288",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Practitioner"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://ns.electronichealth.net.au/id/hi/hpii/1.0%7C8003611566718288"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PractitionerRole",
+					"item": [
+						{
+							"name": "Read PractitionerRole",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole/generalpractitioner-guthridge-jarred",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole",
+										"generalpractitioner-guthridge-jarred"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identifier Search Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?identifier=http://ns.electronichealth.net.au/id/medicare-provider-number%7C2448301T",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-provider-number%7C2448301T"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "practitioner Search PractitionerRole",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?practitioner=guthridge-jarred",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "practitioner",
+											"value": "guthridge-jarred"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "practitioner.identifier Search Practitioner",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?practitioner.identifier=http://ns.electronichealth.net.au/id/hi/hpii/1.0%7C8003611566718288",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "practitioner.identifier",
+											"value": "http://ns.electronichealth.net.au/id/hi/hpii/1.0%7C8003611566718288"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id Search PractitionerRole",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?_id=generalpractitioner-guthridge-jarred&_include=PractitionerRole:practitioner",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "generalpractitioner-guthridge-jarred"
+										},
+										{
+											"key": "_include",
+											"value": "PractitionerRole:practitioner"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "specialty Search PractitionerRole",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?specialty=http://snomed.info/sct%7C408443003",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "specialty",
+											"value": "http://snomed.info/sct%7C408443003"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "organization Search PractitionerRole",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/PractitionerRole?organization=elimbah-medical-centre",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole"
+									],
+									"query": [
+										{
+											"key": "organization",
+											"value": "elimbah-medical-centre"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "Read Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location/barney-view-private-hospital",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location",
+										"barney-view-private-hospital"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "name Search Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?name=Barney View Private",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Barney View Private"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "address Search Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?address=195 Maple",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "address",
+											"value": "195 Maple"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "address-city Search Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?address-city=Barney View",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "address-city",
+											"value": "Barney View"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "address-state Search Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?address-state=QLD",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "address-state",
+											"value": "QLD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "address-postalcode Search Location",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?address-postalcode=4287",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "address-postalcode",
+											"value": "4287"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "identifier Search Location Copy",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Location?identifier=http://barneyviewph.example.net/Identifier/units%7Crdu",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Location"
+									],
+									"query": [
+										{
+											"key": "identifier",
+											"value": "http://barneyviewph.example.net/Identifier/units%7Crdu"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Observation",
+					"item": [
+						{
+							"name": "Read Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation/blood-group",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"blood-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C49516512111",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C49516512111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&category=vital-signs",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "category",
+											"value": "vital-signs"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category+date Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&category=vital-signs&date=2016-07-02T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "category",
+											"value": "vital-signs"
+										},
+										{
+											"key": "date",
+											"value": "2016-07-02T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category+date (ge-lt) Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&category=vital-signs&date=ge2016-07-02T00:00:00+10:00&date=lt2016-07-03T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "category",
+											"value": "vital-signs"
+										},
+										{
+											"key": "date",
+											"value": "ge2016-07-02T00:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "lt2016-07-03T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+category+status Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&category=vital-signs&status=final",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "category",
+											"value": "vital-signs"
+										},
+										{
+											"key": "status",
+											"value": "final"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+code Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&code=http://snomed.info/sct%7C1747861000168109",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "code",
+											"value": "http://snomed.info/sct%7C1747861000168109"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+code+date Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&code=http://snomed.info/sct%7C1747861000168109&date=2016-07-02T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "code",
+											"value": "http://snomed.info/sct%7C1747861000168109"
+										},
+										{
+											"key": "date",
+											"value": "2016-07-02T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+code+date (ge-lt) Search Observation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Observation?patient=howe-deangelo&code=http://snomed.info/sct%7C1747861000168109&date=ge2016-07-02T00:00:00+10:00&date=lt2016-07-03T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "code",
+											"value": "http://snomed.info/sct%7C1747861000168109"
+										},
+										{
+											"key": "date",
+											"value": "ge2016-07-02T00:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "lt2016-07-03T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Medication",
+					"item": [
+						{
+							"name": "Read Medication",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Medication/metformin-mp",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Medication",
+										"metformin-mp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MedicationRequest",
+					"item": [
+						{
+							"name": "Read MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest/reaptan",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest",
+										"reaptan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id Search MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?_id=reaptan",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "reaptan"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "_id+_include Search MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?_id=reaptan-reference&_include=MedicationRequest:medication",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "reaptan-reference"
+										},
+										{
+											"key": "_include",
+											"value": "MedicationRequest:medication"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search MedicationRequest",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?patient=howe-deangelo",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C49516512111",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C49516512111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+intent Search MedicationRequest",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?patient=howe-deangelo&intent=order",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "intent",
+											"value": "order"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+intent+authoredon Search MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?intent=order&patient=howe-deangelo&authoredon=2018-07-15T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "intent",
+											"value": "order"
+										},
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "authoredon",
+											"value": "2018-07-15T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+intent+authoredon (ge-lt) Search MedicationRequest",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?patient=howe-deangelo&intent=order&authoredon=ge2018-07-15T00:00:00+10:00&authoredon=lt2018-07-16T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "intent",
+											"value": "order"
+										},
+										{
+											"key": "authoredon",
+											"value": "ge2018-07-15T00:00:00+10:00"
+										},
+										{
+											"key": "authoredon",
+											"value": "lt2018-07-16T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+intent+status Search MedicationRequest",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "JnfYpLPEf4dBx2H",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "heath.frankel",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/MedicationRequest?patient=howe-deangelo&intent=order&status=active",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"MedicationRequest"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "intent",
+											"value": "order"
+										},
+										{
+											"key": "status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Procedure",
+					"item": [
+						{
+							"name": "Read Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure/biopsy-brain",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure",
+										"biopsy-brain"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient=howe-deangelo",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient.identifier Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient.identifier=http://ns.electronichealth.net.au/id/medicare-number%7C49516512111",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient.identifier",
+											"value": "http://ns.electronichealth.net.au/id/medicare-number%7C49516512111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient=howe-deangelo&date=2021-01-30T08:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "date",
+											"value": "2021-01-30T08:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "2021-09-25T00:00:00+00:00",
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": "2021-09-25",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+date (ge-lt) Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient=howe-deangelo&date=ge2021-01-30T00:00:00+10:00&date=lt2021-01-31T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "date",
+											"value": "ge2021-01-30T00:00:00+10:00"
+										},
+										{
+											"key": "date",
+											"value": "lt2021-01-31T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+code+date (ge) Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient=howe-deangelo&code=http://snomed.info/sct%7C230842002&date=ge2021-01-30T00:00:00+10:00",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "code",
+											"value": "http://snomed.info/sct%7C230842002"
+										},
+										{
+											"key": "date",
+											"value": "ge2021-01-30T00:00:00+10:00"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "patient+status Search Procedure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{server}}/Procedure?patient=howe-deangelo&status=completed",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure"
+									],
+									"query": [
+										{
+											"key": "patient",
+											"value": "howe-deangelo"
+										},
+										{
+											"key": "status",
+											"value": "completed"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
