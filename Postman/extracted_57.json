@@ -1,0 +1,44 @@
+{
+  "resourceType": "Practitioner",
+  "id": "nurse-nancy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://www.acme.org/practitioners",
+      "value": "456789"
+    }
+  ],
+  "name": [
+    {
+      "family": "Nurse",
+      "given": [
+        "Nancy"
+      ],
+      "prefix": [
+        "RNP"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "NNNP@direct.ExampleMedicalPractice.net",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "line": [
+        "310 Hay St"
+      ],
+      "city": "East Perth",
+      "state": "WA",
+      "postalCode": "6004"
+    }
+  ]
+}

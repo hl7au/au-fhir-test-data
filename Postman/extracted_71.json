@@ -1,0 +1,56 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "surgeon-david-surgeon",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "EI",
+            "display": "Employee number"
+          }
+        ],
+        "text": "Employee Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455",
+      "value": "EMP79232999",
+      "assigner": {
+        "display": "Hospital Australia"
+      }
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/surgeon-david"
+  },
+  "organization": {
+    "reference": "Organization/hospital-au"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "304292004"
+        }
+      ],
+      "text": "Surgeon"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/au-hospital"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(03) 5550 3333"
+    }
+  ]
+}
