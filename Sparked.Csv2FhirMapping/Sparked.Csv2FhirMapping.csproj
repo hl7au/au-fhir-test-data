@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\fhir-net-mappinglanguage\Hl7.Fhir.MappingLanguage\Hl7.Fhir.MappingLanguage.csproj" />
+    <ProjectReference Include="..\fhir-net-mappinglanguage\Hl7.Fhir.MappingLanguage\Hl7.Fhir.MappingLanguage.csproj" />
   </ItemGroup>
 
 
