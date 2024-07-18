@@ -24,7 +24,10 @@ jobs:
         dotnet-version: 8.0.x
 #    - name: Restore dependencies
 #      run: dotnet restore Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln
-    - name: Build
+    - name: Build Windows
       run: dotnet publish Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.csproj --runtime win-x64 --configuration Release -p:PublishSingleFile=True --framework net70 --self-contained true --output "Sparked.Csv2FhirMappingOutput"
+    - name: Build Linux
+      run: dotnet publish Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.csproj --runtime linux-x64 --configuration Release -p:PublishSingleFile=True --framework net70 --self-contained true --output "Sparked.Csv2FhirMappingOutput"
+
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
