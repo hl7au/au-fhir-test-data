@@ -18,11 +18,11 @@ internal class Program
 
             var resourceType = args[0];
 
-            //var inputFolder = @"..\generated";
+            //var inputFolder = @"../generated";
             var inputFolder = args[1];
             if (!Directory.Exists(Path.GetFullPath(inputFolder)))
             {
-                inputFolder = @"..\..\..\" + inputFolder;
+                inputFolder = @"../../../" + inputFolder;
                 if (!Directory.Exists(Path.GetFullPath(inputFolder)))
                 {
                     Console.WriteLine("Input folder not found: " + Path.GetFullPath(args[1]));
