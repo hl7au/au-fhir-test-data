@@ -17,12 +17,12 @@
     "text": "Engerix-B (paediatric)"
   },
   "patient": {
-    "reference": "Patient/baby-smith-john"
+    "reference": "Patient/baby-banks-john"
   },
   "occurrenceDateTime": "2023-01-24",
   "primarySource": true,
   "location": {
-    "reference": "Location/au-hospital"
+    "reference": "Location/barney-view-private-hospital"
   },
   "protocolApplied": [
     {

@@ -157,5 +157,9 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
             };
             src.reaction_manifestation3_text as s_text where length() > 0 -> t_manifestation.text = s_text;
         };
+
+        // reaction.severity 0..1 MS
+        src.reaction_severity as s_severity where length() > 0 -> t_reaction.severity = s_severity;
+
     };
 }

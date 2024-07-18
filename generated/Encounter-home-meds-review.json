@@ -41,7 +41,7 @@
     "text": "Medicines review"
   },
   "subject": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "participant": [
     {
@@ -57,7 +57,7 @@
         }
       ],
       "individual": {
-        "reference": "PractitionerRole/retail-pharmacist"
+        "reference": "PractitionerRole/retailpharmacist-ford-dean"
       }
     }
   ],

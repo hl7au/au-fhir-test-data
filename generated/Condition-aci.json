@@ -40,10 +40,10 @@
     ]
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "onsetDateTime": "2014",
   "asserter": {
-    "reference": "Practitioner/bobrester-bob"
+    "reference": "Practitioner/guthridge-jarred"
   }
 }

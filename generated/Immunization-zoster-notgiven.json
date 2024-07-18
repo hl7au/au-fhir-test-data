@@ -26,8 +26,8 @@
     ]
   },
   "patient": {
-    "reference": "Patient/dan-harry",
-    "display": "Mr. Harry DAN"
+    "reference": "Patient/irvine-ronny-lawrence",
+    "display": "Ronny LAWRENCE IRVINE"
   },
   "occurrenceDateTime": "2017-08-15",
   "primarySource": true,
@@ -44,7 +44,7 @@
         "text": "Administering Provider"
       },
       "actor": {
-        "reference": "Practitioner/bobrester-bob"
+        "reference": "Practitioner/guthridge-jarred"
       }
     }
   ],

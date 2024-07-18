@@ -1,0 +1,50 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "dentaltherapist-street-dorian",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448901L"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/street-dorian"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "411214",
+          "display": "Dental Therapist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270109572",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "dorian.street@example.com.au",
+      "use": "work"
+    }
+  ]
+}

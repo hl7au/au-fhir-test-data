@@ -17,7 +17,7 @@
     ]
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "encounter": {
     "reference": "Encounter/cardio-hospital"
@@ -26,12 +26,12 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/surgeon-chau-fryer"
+        "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
       }
     }
   ],
   "location": {
-    "reference": "Location/murrabit-hospital"
+    "reference": "Location/murrabit-public-hopsital"
   },
   "reasonCode": [
     {

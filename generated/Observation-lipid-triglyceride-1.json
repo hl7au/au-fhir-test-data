@@ -39,7 +39,7 @@
     "text": "Triglyceride"
   },
   "subject": {
-    "reference": "Patient/smith-emma"
+    "reference": "Patient/banks-mia-leanne"
   },
   "effectiveDateTime": "2023-01-17",
   "valueQuantity": {

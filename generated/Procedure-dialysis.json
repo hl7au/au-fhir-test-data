@@ -18,7 +18,7 @@
     "text": "Hemodialysis"
   },
   "subject": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "encounter": {
     "reference": "Encounter/renal-dialysis"
@@ -27,7 +27,7 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/nephrologist-darleen-mackay"
+        "reference": "PractitionerRole/renalmedicine-mackay-darleen"
       }
     }
   ],

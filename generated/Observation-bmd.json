@@ -28,13 +28,13 @@
     "text": "BMD - Left femur"
   },
   "subject": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "effectiveDateTime": "2022-02-10",
   "valueQuantity": {
     "value": 0.887,
     "unit": "g/cm²",
     "system": "http://unitsofmeasure.org",
-    "code": "g/cm-2"
+    "code": "g/cm2"
   }
 }

@@ -54,36 +54,15 @@
     ]
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "onsetDateTime": "2015-02-11",
   "abatementDateTime": "2015-02-14",
   "recordedDate": "2015-02-12",
   "recorder": {
-    "reference": "PractitionerRole/sandyson-sandy-nurse"
+    "reference": "PractitionerRole/registerednurses-sinclair-forrest"
   },
   "asserter": {
-    "reference": "PractitionerRole/sandyson-sandy-nurse"
-  },
-  "evidence": [
-    {
-      "code": [
-        {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "258710007",
-              "display": "degrees C"
-            }
-          ]
-        }
-      ],
-      "detail": [
-        {
-          "reference": "Observation/bodytemp-fever",
-          "display": "Temperature"
-        }
-      ]
-    }
-  ]
+    "reference": "PractitionerRole/registerednurses-sinclair-forrest"
+  }
 }

@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "renalmedicine-mackay-darleen",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2449581F"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/mackay-darleen"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253322",
+          "display": "Renal Medicine Specialist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394589003",
+          "display": "Nephrology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870108018",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "darleen.mackay@example.com.au",
+      "use": "work"
+    }
+  ]
+}

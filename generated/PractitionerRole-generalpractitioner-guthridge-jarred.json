@@ -1,0 +1,86 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "generalpractitioner-guthridge-jarred",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448301T"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "EI",
+            "display": "Employee number"
+          }
+        ],
+        "text": "Employee Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003629900040359",
+      "value": "BBC-GA-001",
+      "assigner": {
+        "display": "Elimbah Medical Centre"
+      }
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/guthridge-jarred"
+  },
+  "organization": {
+    "reference": "Organization/elimbah-medical-centre"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253111",
+          "display": "General Practitioner"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408443003",
+          "display": "General medical practice"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/elimbah-medical-centre"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770109540",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "jarred.guthridge@elimbahmedicalcentre.example.com.au",
+      "use": "work"
+    }
+  ]
+}

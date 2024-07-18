@@ -8,12 +8,12 @@
   },
   "identifier": [
     {
-      "system": "https://au-hospitals.example.com.au",
-      "value": "qldhhs-rdu"
+      "system": "http://barneyviewph.example.net/Identifier/units",
+      "value": "rdu"
     }
   ],
   "status": "active",
-  "name": "Renal Dialysis Unit QLD Hospital",
+  "name": "Renal Dialysis Unit  - Barney View Private Hospital",
   "mode": "instance",
   "type": [
     {
@@ -34,24 +34,26 @@
   ],
   "address": {
     "line": [
-      "Suite 1, Building 18",
-      "54301 Stanley St"
+      "Building 18",
+      "195 Maple Cct"
     ],
-    "city": "South Brisbane",
+    "city": "Barney View",
     "state": "QLD",
-    "postalCode": "4101",
-    "country": "AU"
+    "postalCode": "4287"
   },
   "physicalType": {
     "coding": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-        "code": "bu",
-        "display": "Building"
+        "code": "wi",
+        "display": "Wing"
       }
     ]
   },
   "managingOrganization": {
-    "reference": "Organization/hospital-int"
+    "reference": "Organization/barney-view-private-hospital"
+  },
+  "partOf": {
+    "reference": "Location/barney-view-private-hospital"
   }
 }

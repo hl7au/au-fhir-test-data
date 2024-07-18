@@ -14,6 +14,69 @@
         "code": "2",
         "display": "Torres Strait Islander but not Aboriginal origin"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "33791000087105",
+                "display": "Identifies as nonbinary gender"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA29520-6",
+                "display": "they/them/their/theirs/themselves"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+    },
+    {
+      "extension": [
+        {
+          "url": "type",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1515311000168102",
+                "display": "Biological sex at birth"
+              }
+            ]
+          }
+        },
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
     }
   ],
   "identifier": [

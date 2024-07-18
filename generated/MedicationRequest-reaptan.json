@@ -20,11 +20,11 @@
     ]
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "authoredOn": "2018-07-15",
   "requester": {
-    "reference": "PractitionerRole/surgeon-chau-fryer"
+    "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
   },
   "reasonCode": [
     {

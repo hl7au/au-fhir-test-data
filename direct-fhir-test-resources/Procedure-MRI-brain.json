@@ -1,0 +1,57 @@
+{
+  "resourceType": "Procedure",
+  "id": "mri-brain",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">MRI of brain to evaluate Large Diffuse B-Cell Lymphoma</div>"
+  },
+  "status": "completed",
+  "code": {
+    "coding": [{
+      "system": "http://snomed.info/sct",
+      "code": "816077007",
+      "display": "MRI of brain"
+    }],
+    "text": "Magnetic resonance imaging of brain (procedure)"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo",
+    "display": "Deangelo Howe"
+  },
+  "encounter": {
+    "reference": "Encounter/biopsy-inpatient",
+    "display": "Inpatient"
+  },
+  "performedDateTime": "2021-01-27T14:00:00+10:00",
+  "performer": [{
+    "actor": {
+      "reference": "PractitionerRole/surgeongeneral-marchant-ricki",
+      "display": "Dr. Ricki MARCHANT"
+    }
+  }],
+  "reasonCode": [{
+    "coding": [{
+      "system": "http://snomed.info/sct",
+      "code": "109979007",
+      "display": "B-cell lymphoma"
+    }],
+    "text": "Large Diffuse B-Cell Lymphoma of the brain"
+  }],
+  "bodySite": [{
+    "coding": [{
+      "system": "http://snomed.info/sct",
+      "code": "12738006",
+      "display": "Brain structure"
+    }],
+    "text": "Brain structure"
+  }],
+  "note": [{
+    "text": "MRI performed to evaluate the extent of Large Diffuse B-Cell Lymphoma in the brain."
+  }]
+}
+  
