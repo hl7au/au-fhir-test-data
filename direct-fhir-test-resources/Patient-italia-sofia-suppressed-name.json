@@ -1,0 +1,48 @@
+{
+  "resourceType": "Patient",
+  "id": "italia-sofia-suppressed-name",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PPN"
+          }
+        ],
+        "text": "Passport Number"
+      },
+      "system": "http://hl7.org/fhir/sid/passport-ITA",
+      "value": "IT1111111"
+    }
+  ],
+  "name": [
+    {
+      "extension" : [
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "masked"
+        }
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1989-05-07",
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "Piazza del Colosseo"
+      ],
+      "city": "Rome",
+      "state": "Lazio",
+      "postalCode": "00184",
+      "country": "ITA"
+    }
+  ]
+}

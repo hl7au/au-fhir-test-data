@@ -1,9 +1,9 @@
-## HL7 AU FHIR Test Data
+# HL7 AU FHIR Test Data
 HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs. 
 
 This repository also contains 'test' data for some HL7 AU IGs, used to test fail cases. This data not conform to HL7 AU FHIR Implementation Guides. 
 
-### Synthetic Data Properties
+## Synthetic Data Properties
 - Patients, Practitioners, PractitionerRoles, Organizations are not generated from a real world set. Any correspondence to real people is entirely accidental.
 - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
 - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works.
@@ -30,9 +30,26 @@ This repository also contains source code for the command line utilities used to
 ## Sparked AU Core Testing
 We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json).
 
-This collection contains all resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders.
+This collection contains a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders.
 
-If you intend to upload the Sparked Test Data set to your FHIR server, use the UploadGenerated.bat and UploadDirect.bat batch files. Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data).
+If you would like to upload all the Sparked Test Data set to your FHIR server, use the UploadGenerated.bat and UploadDirect.bat batch files. Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data).
+
+## Significant Test Data Test Cases
+The following test data files within the direct-fhir-test-resources folder support testing of significant test cases including missing and suppressed data.
+
+File Name | Resource Id | Test Case | Expected Outcome 
+--- | --- | --- | ---
+Patient-italia-sofia-suppressed-birthDate.json | italia-sofia-suppressed-birthDate | Patient with a suppressed birthDate | A Responder SHALL correctly populate a Data Absent Reason extension within a primitate data type extension and a Requester SHALL accept this extension without error. 
+Patient-italia-sofia-suppressed-gender.json | italia-sofia-suppressed-gender | Patient with a suppressed gender | A Responder SHALL correctly populate using value of 'unknown' and a Requester SHALL accept the 'unknown' value without error.
+Patient-italia-sofia-suppressed-identifier.json | italia-sofia-suppressed-identifier | Patient with suppressed identifiers | A Responder SHALL correctly populate a Data Absent Reason extension within Identifier.extension and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rule au-core-pat-01.**
+Patient-italia-sofia-suppressed-name.json | italia-sofia-suppressed-name | Patient with suppressed names | A Responder SHALL correctly populate a Data Absent Reason extension within HumanName.extension and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rules au-core-pat-02 and au-core-pat-04.**
+Observation-pathresult-missing-effective.json | pathresult-missing-effective | Pathology Result Observation with missing effectiveDateTime | A Responder SHALL correctly populate a Data Absent Reason extension represented using a primitate data type extension, and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rule Rule au-core-obs-01.**
+Observation-pathresult-missing-status.json | pathresult-missing-status | Pathology Result Observation with missing status | A Responder SHALL correctly populate using value of 'unknown', and a Requester SHALL accept this value without error.
+Observation-pathresult-suppressed-code.json | pathresult-suppressed-code | Pathology Result Observation with suppressed code | A Responder SHALL correctly populate the coding using a code (masked or unknown) from the Data Absent Reason value set, and a Requester SHALL accept this coding without error. 
+Observation-pathresult-suppressed-dataAbsentReason.json | pathresult-suppressed-dataAbsentReason | Pathology Result Observation with suppressed value using dataAbsentReason | Using dataAbsentReason is NOT the recommended representation of a suppressed test result value in AU Core. 
+Observation-pathresult-suppressed-subject.json | pathresult-suppressed-subject | Pathology Result Observation with suppressed subject | A Responder SHALL correctly populate a Data Absent Reason extension within Reference.extension and a Requester SHALL accept this extension without error.
+Observation-pathresult-suppressed-valueCodeableConcept.json | pathresult-suppressed-valueCodeableConcept | Pathology Result Observation with suppressed codeable value | A Responder SHALL correctly populate the coding with a code (masked or unknown) from the Data Absent Reason value set, and a Requester SHALL accept this coding without error. 
+Observation-pathresult-suppressed-valueQuantity.json | pathresult-suppressed-valueQuantity | Pathology Result Observation with suppressed non-coded value (complex data types) | A Responder SHALL correctly populate a Data Absent Reason extension within the value[x].extension and a Requester SHALL accept this extension without error. 
 
 ## Did you find an error?
 Search the Issues list in [GitHub](https://github.com/hl7au/au-fhir-test-data/issues) to ensure the error was not already reported.
