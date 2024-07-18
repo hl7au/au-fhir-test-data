@@ -19,7 +19,8 @@
   ],
   "referenceRange": [
     {
-      "text": "0-1 Normal range"
+      "text": "0-1 Normal range",
+      "type" : "normal"
     }
   ],
   "meta": {
