@@ -25,6 +25,6 @@ jobs:
 #    - name: Restore dependencies
 #      run: dotnet restore Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln
     - name: Build
-      run: dotnet publish Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln -r win-x64 -c Release -p:PublishSingleFile=True --framework net7.0 --self-contained false
+      run: dotnet publish Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln -r win-x64 -c Release -p:PublishSingleFile=True --framework netstandard2.0 --self-contained false
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal
