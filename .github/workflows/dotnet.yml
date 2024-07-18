@@ -14,8 +14,7 @@ jobs:
     strategy:
       matrix:
         program: [Csv2FhirMapping, TestDataClient]
-        runtime: [win-x64, linux-x64]
-        
+        os: [win, linux]
     runs-on: ubuntu-latest
 
     steps:
@@ -28,15 +27,15 @@ jobs:
         dotnet-version: 8.0.x
 #    - name: Restore dependencies
 #      run: dotnet restore Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln
-    - name: Build ${{ matrix.program }} on ${{ matrix.runtime }}
+    - name: Build ${{ matrix.program }} on ${{ matrix.os }}
       run: | 
-        dotnet publish Sparked.${{ matrix.program }}/Sparked.${{ matrix.program }}.csproj --runtime ${{ matrix.runtime }} --configuration Release -p:PublishSingleFile=True --framework net70 --self-contained true --output "Sparked.${{ matrix.program }}-${{ matrix.runtime }}Output"
+        dotnet publish Sparked.${{ matrix.program }}/Sparked.${{ matrix.program }}.csproj --arch x64 --os ${{ matrix.os }} --configuration Release -p:PublishSingleFile=True --framework net70 --self-contained true --output "Sparked.${{ matrix.program }}-${{ matrix.os }}Output"
     - name: Archive production artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ matrix.program }}-${{ matrix.runtime }}-binaries
+        name: ${{ matrix.program }}-${{ matrix.os }}-binaries
         path: |
-          Sparked.${{ matrix.program }}-${{ matrix.runtime }}Output
+          Sparked.${{ matrix.program }}-${{ matrix.os }}Output
 
 #    - name: Test
 #      run: dotnet test --no-build --verbosity normal

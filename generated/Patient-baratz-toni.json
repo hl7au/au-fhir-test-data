@@ -16,6 +16,7 @@
       }
     },
     {
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity",
       "extension": [
         {
           "url": "value",
@@ -29,10 +30,10 @@
             ]
           }
         }
-      ],
-      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+      ]
     },
     {
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns",
       "extension": [
         {
           "url": "value",
@@ -46,10 +47,10 @@
             ]
           }
         }
-      ],
-      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+      ]
     },
     {
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender",
       "extension": [
         {
           "url": "type",
@@ -75,8 +76,7 @@
             ]
           }
         }
-      ],
-      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+      ]
     }
   ],
   "identifier": [
