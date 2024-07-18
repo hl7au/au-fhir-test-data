@@ -10,7 +10,7 @@ on:
     branches: [ "27-add-linux-build-files" ]
 
 jobs:
-  example_matrix:
+  product_matrix:
     strategy:
       matrix:
         program: [Csv2FhirMapping, TestDataClient]
