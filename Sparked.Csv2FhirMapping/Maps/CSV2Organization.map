@@ -64,8 +64,15 @@ group ToOrganization(source src : OrganizationCSV, target tgt : Organization) {
     };
 
     // name 1..1 MS
-    src.name as s_name -> tgt.name = s_name;
+    src.name as s_name where length() > 0 -> tgt.name = s_name;
   
+    src.name where length() = 0 -> tgt.name as t_name then {
+        src -> t_name.extension as t_extension first then {
+            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
+    };
+
     // alias 0..* MS
     src.alias as s_alias where length() > 0 -> tgt.alias = s_alias;
 
