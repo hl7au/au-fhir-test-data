@@ -1,0 +1,63 @@
+{
+  "resourceType": "Immunization",
+  "id": "zoster-missing-occurrence",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+    ]
+  },
+  "status": "not-done",
+  "statusReason": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1620681000168106",
+        "display": "Patient objection"
+      }
+    ]
+  },
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "830851000168105",
+        "display": "varicella-zoster live vaccine"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/irvine-ronny-lawrence",
+    "display": "Ronny LAWRENCE IRVINE"
+  },
+  "_occurrenceDateTime": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "unknown"
+      }
+    ]
+  },
+  "primarySource": true,
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "AP",
+            "display": "Administering Provider"
+          }
+        ],
+        "text": "Administering Provider"
+      },
+      "actor": {
+        "reference": "Practitioner/guthridge-jarred"
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient refused administration of Zostavax"
+    }
+  ]
+}
