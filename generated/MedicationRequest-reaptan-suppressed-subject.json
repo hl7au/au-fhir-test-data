@@ -1,0 +1,74 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "reaptan-suppressed-subject",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationReference": {
+    "reference": "Medication/reaptan-tpp",
+    "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet"
+  },
+  "subject": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "masked"
+      }
+    ]
+  },
+  "authoredOn": "2018-07-15",
+  "requester": {
+    "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38341003",
+          "display": "Hypertension"
+        }
+      ],
+      "text": "Hypertension"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "text": "1 tablet daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "asNeededBoolean": true,
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ],
+  "substitution": {
+    "allowedBoolean": true
+  }
+}

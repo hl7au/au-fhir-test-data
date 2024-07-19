@@ -15,6 +15,8 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
 
     // status: code
     src.status as s_status where length() > 0 -> tgt.status = s_status;
+    // missing status
+    src.status as s_status where length() = 0 -> tgt.status = 'unknown';
 
     // intent: code
     src.intent as s_intent where length() > 0 -> tgt.intent = s_intent;
@@ -51,13 +53,27 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
         src.medication_display as s_display where length() > 0 -> t_medication.display = s_display;
     };
 
+    src.medication_reference_id where length() = 0 -> tgt then {
+        src.medication_coding1_code where length() = 0 -> tgt then {
+            src -> tgt.medication = cc('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+        };
+    };
+
     // subject 1..1 MS
-    src.subject_reference_id as s_reference -> tgt.subject as t_subject then {
+    src.subject_reference_id as s_reference where length() > 0 -> tgt.subject as t_subject then {
         //src.subject_reference_type as s_type where length() > 0 -> t_subject.reference = append(s_type, '/', s_reference);
         //src.subject_reference_type where length() = 0 -> t_subject.reference = append('Patient/', s_reference);
         s_reference -> t_subject.reference = append('Patient/', s_reference);
 
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
+    };
+
+    // subject suppressed
+    src.subject_reference_id as s_reference where length() = 0 -> tgt.subject as t_subject then {
+        s_reference -> t_subject.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
     };
 
     // encounter 0..1 MS
@@ -67,6 +83,14 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
 
     // authoredOn 1..1 MS
     src.authoredOn as s_authoredOn where length() > 0 -> tgt.authoredOn = cast(s_authoredOn, 'dateTime');
+    // missing authoredOn
+    src.authoredOn as s_authoredOn where length() = 0 -> tgt.authoredOn = create('dateTime') as t_authoredOn then {
+        s_authoredOn -> t_authoredOn.extension as t_extension first then {
+            s_authoredOn -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
+    };
+
 
     // requester 1..1 MS
     src.requester_reference as s_requester where length() > 0 -> tgt.requester as t_requester then {
@@ -82,6 +106,14 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
                 src.requester_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
             };
         };
+    };
+
+    // requester suppressed
+    src.requester_reference as s_reference where length() = 0 -> tgt.requester as t_requester then {
+        s_reference -> t_requester.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
     };
 
     // reasonCode 0..* MS
