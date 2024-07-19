@@ -7,3 +7,4 @@ metformin-mpp,,,http://snomed.info/sct,28037011000036102,"metformin hydrochlorid
 metformin-tpp,,,http://snomed.info/sct,929529011000036109,"Metformin (Apo) 500 mg tablet, 100",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
 perindopril-amlodipine-mpp,,,http://snomed.info/sct,86430011000036105,"perindopril arginine 10 mg + amlodipine 10 mg tablet, 30",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
 reaptan-tpp,,,http://snomed.info/sct,926214011000036103,"Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30",,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,
+reaptan-missing-code,,,,,,,,,,,,,http://snomed.info/sct,154011000036109,tablet,,,,,,,,,,,,,,,,,,,,

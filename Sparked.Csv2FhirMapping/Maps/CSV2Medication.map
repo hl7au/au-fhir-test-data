@@ -14,7 +14,7 @@ group ToMedication(source src : MedicationCSV, target tgt : Medication) {
     };
 
     // code 1..1 MS
-    src.code_coding1_code as s_coding1 -> tgt.code as t_code then {
+    src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
         s_coding1 where length() > 0 -> t_code then {
             src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
                 src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -42,6 +42,14 @@ group ToMedication(source src : MedicationCSV, target tgt : Medication) {
         };
 
         src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+    };
+
+    // code coding missing
+    src.code_coding1_code as s_coding1 where length() = 0 -> tgt.code as t_code then {
+        // text only 
+        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+        // code missing
+        src.code_text as s_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
     };
 
     // form 0..1 
