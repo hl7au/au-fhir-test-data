@@ -13,15 +13,20 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
         src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter';
     };
 
-    // status: code
+    // status: code 1..1 MS
     src.status as s_status where length() > 0 -> tgt.status = s_status;
+    // missing status
+    src.status as s_status where length() = 0 -> tgt.status = 'unknown';
 
-    // class: Coding
+    // class: Coding 1..1 MS
     src.class_code as s_class where length() > 0 -> tgt.class as t_class then {
         s_class -> t_class.code = s_class;
         src.class_system as s_system -> t_class.system = s_system;
         src.class_display as s_display where length() > 0 -> t_class.display = s_display;
     };
+
+    // missing class
+    src.class_code as s_class where length() = 0 -> tgt.class = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
 
     // type
     src.type_code as s_type where length() > 0 -> tgt.type as t_type then {
@@ -40,7 +45,7 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
     };
 
     // subject
-    src.subject_reference_id as s_subject_id -> tgt.subject as t_subject then {
+    src.subject_reference_id as s_subject_id where length() > 0 -> tgt.subject as t_subject then {
         src.subject_reference_type as s_subject_type where length() > 0 -> t_subject.reference = append(s_subject_type, '/', s_subject_id);
         src.subject_reference_type as s_subject_type where length() = 0 -> t_subject.reference = append('Patient/', s_subject_id);
 
@@ -54,6 +59,14 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
                 src.subject_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
             };
         };
+    };
+
+    // subject suppressed
+    src.subject_reference_id as s_reference where length() = 0 -> tgt.subject as t_subject then {
+        s_reference -> t_subject.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
     };
 
     // participant
