@@ -71,9 +71,17 @@ group ToPractitionerRole(source src : PractitionerRoleCSV, target tgt : Practiti
 
 
     // practitioner 1..1 MS
-    src.practitioner_reference_id as s_reference_id -> tgt.practitioner as t_practitioner then {
+    src.practitioner_reference_id as s_reference_id where length() > 0 -> tgt.practitioner as t_practitioner then {
         s_reference_id where length() > 0 -> t_practitioner.reference = append('Practitioner/', s_reference_id);
         src.practitioner_display as s_display where length() > 0 -> t_practitioner.display = s_display;
+    };
+
+    // practitioner missing
+    src.practitioner_reference_id where length() = 0 -> tgt.practitioner as t_practitioner then {
+        src -> t_practitioner.extension as t_extension first then {
+            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
     };
 
     // organization 0..1 MS
