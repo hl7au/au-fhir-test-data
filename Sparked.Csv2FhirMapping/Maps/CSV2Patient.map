@@ -315,9 +315,9 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
   };    
 
   // missing birthDate
-  src.birthDate as s_birthDate where length() = 0 -> tgt.birthDate = create('dateTime') as t_birthDate then {
-    s_birthDate -> t_birthDate.extension as t_extension first then {
-        s_birthDate -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+  src.birthDate where length() = 0 -> tgt.birthDate = create('dateTime') as t_birthDate then {
+    src -> t_birthDate.extension as t_extension first then {
+        src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
         t_extension.value = cast('unknown', 'code');
     };
   };
