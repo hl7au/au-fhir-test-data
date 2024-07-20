@@ -58,6 +58,7 @@ group ToPractitioner(source src : PractitionerCSV, target tgt : Practitioner) {
         src.name1_suffix1 as s_name_suffix where length() > 0 -> t_name.suffix = s_name_suffix;
     };
 
+    // missing name (family)
     src.name1_family as s_name_family where length() = 0 and src.name1_text.length() = 1 -> tgt.name as t_name first then {
         src -> t_name.family as t_family then { 
             src -> t_family.extension as t_extension first then {

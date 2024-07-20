@@ -96,6 +96,14 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
     };
   };
 
+  // missing identifier
+  src.identifier1_value where length() = 0 -> tgt.identifier as t_identifier first then {
+    src -> t_identifier.extension as t_extension first then {
+      src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+      t_extension.value = cast('unknown', 'code');
+    };
+  };
+
   // identifier2
 //  src.identifier2_value as s_value where length() > 0, 
 //  src.identifier2_type_code as type_code, 
@@ -230,7 +238,16 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
     src.name1_given2 as s_name_given2 where length() > 0 -> t_name.given = s_name_given2;
     src.name1_prefix as s_name_prefix where length() > 0 -> t_name.prefix = s_name_prefix;
   };
-  
+
+  src.name1_family as s_name_family where length() = 0 and src.name1_text.length() = 1 -> tgt.name as t_name first then {
+      src -> t_name.family as t_family then { 
+          src -> t_family.extension as t_extension first then {
+              src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+              t_extension.value = cast('unknown', 'code');
+          };
+      };
+  };
+
   // name2
   src.name2_family as s_name_family where length() > 0 or src.name2_text.length() > 0 -> tgt.name as t_name first then {
     s_name_family where length() > 0 -> t_name.family = s_name_family; 
@@ -268,6 +285,9 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
   // gender
   src.gender as gender where length() > 0 -> tgt.gender = gender;
   
+  // missing gender
+  src.gender where length() = 0 -> tgt.gender = 'unknown';
+
   // birthDate
   src.birthDate as s_birthDate where length() > 0 -> tgt.birthDate = s_birthDate as t_birthDate then {
 
@@ -293,6 +313,14 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
             };
     };
   };    
+
+  // missing birthDate
+  src.birthDate as s_birthDate where length() = 0 -> tgt.birthDate = create('dateTime') as t_birthDate then {
+    s_birthDate -> t_birthDate.extension as t_extension first then {
+        s_birthDate -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+        t_extension.value = cast('unknown', 'code');
+    };
+  };
 
   // address1
   src.address1_city as s_city where length() > 0 -> tgt.address as t_address first then {
