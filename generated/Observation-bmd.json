@@ -34,7 +34,6 @@
   "valueQuantity": {
     "value": 0.887,
     "unit": "g/cm²",
-    "system": "http://unitsofmeasure.org",
-    "code": "g/cm-2"
+    "system": "http://unitsofmeasure.org"
   }
 }
