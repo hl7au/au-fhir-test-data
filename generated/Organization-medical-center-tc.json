@@ -1,0 +1,15 @@
+{
+    "resourceType": "Organization",
+    "id": "organization-medical-center-tc",
+    "name": "Medical Center TC",
+    "address": [
+      {
+        "line": ["123 Medical Center Drive"],
+        "city": "Townsville",
+        "state": "TS",
+        "postalCode": "12345",
+        "country": "USA"
+      }
+    ]
+  }
+  
