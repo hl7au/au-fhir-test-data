@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394603008",
+          "display": "Cardiothoracic surgery"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

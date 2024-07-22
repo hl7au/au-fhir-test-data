@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394583002",
+          "display": "Endocrinology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

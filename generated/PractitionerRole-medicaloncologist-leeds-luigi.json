@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394593009",
+          "display": "Medical oncology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

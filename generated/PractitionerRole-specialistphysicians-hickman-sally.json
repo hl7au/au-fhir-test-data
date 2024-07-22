@@ -33,7 +33,18 @@
           "display": "Specialist Physicians nec"
         }
       ],
-      "text": "Sleep medicine service"
+      "text": "Sleep Medicine Specialist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1136421000168109",
+          "display": "Sleep medicine service"
+        }
+      ]
     }
   ],
   "telecom": [

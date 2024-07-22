@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394594003",
+          "display": "Ophthalmology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

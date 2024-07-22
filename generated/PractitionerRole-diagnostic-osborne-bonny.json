@@ -38,6 +38,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408455009",
+          "display": "Interventional radiology - speciality"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/fishermans-reach-radiology"

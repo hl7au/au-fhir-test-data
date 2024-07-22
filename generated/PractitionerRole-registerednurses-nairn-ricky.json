@@ -38,6 +38,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722165004",
+          "display": "Nursing"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/ngunnawal-medical-practice"

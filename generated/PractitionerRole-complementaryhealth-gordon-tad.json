@@ -33,7 +33,18 @@
           "display": "Complementary Health Therapists nec"
         }
       ],
-      "text": "Exercise physiology service"
+      "text": "Exercise Physiologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1240761000168106",
+          "display": "Exercise physiology service"
+        }
+      ]
     }
   ],
   "telecom": [

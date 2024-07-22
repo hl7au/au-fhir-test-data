@@ -38,6 +38,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394609007",
+          "display": "General surgery"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/leasingham-public-hospital"

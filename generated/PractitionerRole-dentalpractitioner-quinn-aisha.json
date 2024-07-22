@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722163006",
+          "display": "Dentistry"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

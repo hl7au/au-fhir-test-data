@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394587001",
+          "display": "Psychiatry"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

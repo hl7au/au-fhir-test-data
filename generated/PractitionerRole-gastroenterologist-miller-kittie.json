@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394584008",
+          "display": "Gastroenterology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

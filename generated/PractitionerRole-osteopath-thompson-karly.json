@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "416304004",
+          "display": "Osteopathic manipulative medicine"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

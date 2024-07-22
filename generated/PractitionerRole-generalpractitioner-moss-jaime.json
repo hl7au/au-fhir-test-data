@@ -38,6 +38,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408443003",
+          "display": "General medical practice"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/milnes-bridge-medical-centre"

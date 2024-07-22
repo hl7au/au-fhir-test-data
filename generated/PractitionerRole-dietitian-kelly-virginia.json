@@ -40,6 +40,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722164000",
+          "display": "Dietetics and nutrition"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

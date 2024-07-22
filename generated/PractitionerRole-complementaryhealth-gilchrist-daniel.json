@@ -33,7 +33,18 @@
           "display": "Complementary Health Therapists nec"
         }
       ],
-      "text": "Myotherapy service"
+      "text": "Myotherapist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1240771000168100",
+          "display": "Myotherapy service"
+        }
+      ]
     }
   ],
   "telecom": [

@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722138006",
+          "display": "Physiotherapy"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

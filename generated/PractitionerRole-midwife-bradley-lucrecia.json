@@ -40,6 +40,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1287784006",
+          "display": "Obstetric nursing"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

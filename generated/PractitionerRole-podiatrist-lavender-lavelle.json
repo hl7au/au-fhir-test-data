@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722166003",
+          "display": "Podiatry"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

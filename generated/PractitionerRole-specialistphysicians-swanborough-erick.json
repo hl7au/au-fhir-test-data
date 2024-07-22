@@ -33,7 +33,18 @@
           "display": "Specialist Physicians nec"
         }
       ],
-      "text": "Clinical immunology"
+      "text": "Clinical Immunologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408480009",
+          "display": "Clinical immunology"
+        }
+      ]
     }
   ],
   "telecom": [

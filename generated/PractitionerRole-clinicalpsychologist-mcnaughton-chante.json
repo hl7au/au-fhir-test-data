@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1255918004",
+          "display": "Clinical psychology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

@@ -38,6 +38,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394595002",
+          "display": "Pathology"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/carrington-pathology"

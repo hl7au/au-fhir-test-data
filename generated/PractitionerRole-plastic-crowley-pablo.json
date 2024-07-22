@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394611003",
+          "display": "Plastic surgery - speciality"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

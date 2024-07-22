@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "24251000087109",
+          "display": "General paediatric specialty"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "419815003",
+          "display": "Radiation oncology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",

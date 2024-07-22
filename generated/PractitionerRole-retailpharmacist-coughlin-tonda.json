@@ -43,6 +43,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1268907002",
+          "display": "Community pharmacy"
+        }
+      ]
+    }
+  ],
   "location": [
     {
       "reference": "Location/launching-place-pharmacy"

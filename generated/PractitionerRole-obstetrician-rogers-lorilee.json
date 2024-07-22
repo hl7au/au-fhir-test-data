@@ -35,6 +35,17 @@
       ]
     }
   ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394585009",
+          "display": "Obstetrics and gynaecology"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",
