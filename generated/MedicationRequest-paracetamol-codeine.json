@@ -38,6 +38,11 @@
       "text": "Pain management"
     }
   ],
+  "reasonReference": [
+    {
+      "reference": "Condition/pain-management"
+    }
+  ],
   "note": [
     {
       "text": "Patient requires an administration aid."

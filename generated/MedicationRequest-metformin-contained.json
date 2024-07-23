@@ -61,4 +61,9 @@
       "text": "Diabetes mellitus type 2"
     }
   ]
+  , "reasonReference": [
+    {
+      "reference": "Condition/diabetes"
+    }
+  ]
 }
