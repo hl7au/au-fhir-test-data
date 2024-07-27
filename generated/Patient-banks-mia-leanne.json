@@ -6,14 +6,73 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
     ]
   },
-  "extension": [
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Mia Leanne Banks </b> female, DoB: 1983-08-25 ( IHI/8003608333647261)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 0270102724(WORK)</li><li>ph: 0491574632(MOBILE)</li><li>ph: 0270107520(HOME)</li><li><a href=\"mailto:mia.banks@myownpersonaldomain.com\">mia.banks@myownpersonaldomain.com</a></li><li>ph: 270107520(HOME)</li><li>50 Sebastien St Minjary NSW 2720 AU </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The pronouns to use when referring to an individual in verbal or written communication.\">Individual Pronouns:</td><td colspan=\"3\"><ul><li>value: <span title=\"Codes:{http://loinc.org LA29519-8}\">she/her/her/hers/herself</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Recorded sex or gender (RSG) information includes the various sex and gender concepts that are often used in existing systems but are known NOT to represent a gender identity, sex parameter for clinical use, or attributes related to sexuality, such as sexual orientation, sexual activity, or sexual attraction. Examples of recorded sex or gender concepts include administrative gender, administrative sex, and sex assigned at birth.  When exchanging this concept, refer to the guidance in the [Gender Harmony Implementation Guide](http://hl7.org/xprod/ig/uv/gender-harmony/).\">Person Recorded Sex Or Gender:</td><td colspan=\"3\"><ul><li>value: <span title=\"Codes:{http://snomed.info/sct 248152002}\">Female</span></li><li>type: <span title=\"Codes:{http://snomed.info/sct 1515311000168102}\">Sex at Birth</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"An individual's personal sense of being a man, woman, boy, girl, nonbinary, or something else. This represents an individual’s identity, ascertained by asking them what that identity is. \n In the case where the gender identity is communicated by a third party, for example, if a spouse indicates the gender identity of their partner on an intake form, a Provenance resource can be used with a Provenance.target referring to the Patient, with a targetElement extension identifying the gender identity extension as the target element within the Patient resource.  When exchanging this concept, refer to the guidance in the [Gender Harmony Implementation Guide](http://hl7.org/xprod/ig/uv/gender-harmony/).\">Individual Gender Identity:</td><td colspan=\"3\"><ul><li>value: <span title=\"Codes:{http://snomed.info/sct 446141000124107}\">Identifies as female gender (finding)</span></li></ul></td></tr></table></div>"
+  },
+  "extension" : [
     {
-      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
-      "valueCoding": {
-        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
-        "code": "9",
-        "display": "Not stated/inadequately described"
-      }
+      "url" : "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity",
+      "extension" : [
+        {
+          "url" : "value",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "446141000124107",
+                "display" : "Identifies as female gender (finding)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/individual-pronouns",
+      "extension" : [
+        {
+          "url" : "value",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://loinc.org",
+                "code" : "LA29519-8",
+                "display" : "she/her/her/hers/herself"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender",
+      "extension" : [
+        {
+          "url" : "value",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "248152002"
+              }
+            ],
+            "text" : "Female"
+          }
+        },
+        {
+          "url" : "type",
+          "valueCodeableConcept" : {
+            "coding" : [
+              {
+                "system" : "http://snomed.info/sct",
+                "code" : "1515311000168102"
+              }
+            ],
+            "text": "Sex at Birth"
+          }
+        }
+      ]
     }
   ],
   "identifier": [
@@ -46,36 +105,23 @@
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
       "value": "8003608333647261"
-    },
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MC"
-          }
-        ],
-        "text": "Medicare Number"
-      },
-      "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "29545410412"
     }
   ],
   "name": [
     {
-      "use": "official",
-      "family": "BANKS",
+      "use": "usual",
+      "family": "Banks",
       "given": [
         "Mia",
-        "LEANNE"
+        "Leanne"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0270107520",
-      "use": "home"
+      "value": "0270102724",
+      "use": "work"
     },
     {
       "system": "phone",
@@ -84,8 +130,17 @@
     },
     {
       "system": "phone",
-      "value": "0270102724",
-      "use": "work"
+      "value": "0270107520",
+      "use": "home"
+    },
+    {
+      "system" : "email",
+      "value" : "mia.banks@myownpersonaldomain.com"
+    },
+    {
+      "system" : "phone",
+      "value" : "270107520",
+      "use" : "home"
     }
   ],
   "gender": "female",
