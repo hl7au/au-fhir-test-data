@@ -12,13 +12,17 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "PPN"
+            "code": "MC",
+            "display": "Patient's Medicare number"
           }
         ],
-        "text": "Passport Number"
+        "text": "Medicare Number"
       },
-      "system": "http://hl7.org/fhir/sid/passport-ITA",
-      "value": "IT1111111"
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "1234567892",
+      "period": {
+        "end": "2024-05"
+      }
     }
   ],
   "name": [
