@@ -35,5 +35,75 @@
     {
       "reference": "Observation/bmd"
     }
+  ],
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://hospital.smarthealthit.org",
+      "value": "654321"
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/baldwin-chi"
+    }
+  ],
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "N",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Bone density test performed on left femur."
+    }
+  ],
+  "referenceRange": [
+    {
+      "low": {
+        "value": 0.5,
+        "unit": "g/cm²",
+        "system": "http://unitsofmeasure.org"
+      },
+      "high": {
+        "value": 1.5,
+        "unit": "g/cm²",
+        "system": "http://unitsofmeasure.org"
+      },
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+            "code": "normal",
+            "display": "Normal Range"
+          }
+        ]
+      },
+      "text": "Normal bone density range for left femur."
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "24701-5",
+            "display": "DXA Femur [Mass/Area] Bone density"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1.1,
+        "unit": "g/cm²",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
   ]
 }

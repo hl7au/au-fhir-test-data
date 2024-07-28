@@ -31,16 +31,16 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "278414003",
-          "display": "Pain management"
+          "code": "386661006",
+          "display": "Fever"
         }
       ],
-      "text": "Pain management"
+      "text": "Fever"
     }
   ],
   "reasonReference": [
     {
-      "reference": "Condition/pain-management"
+      "reference": "Condition/fever"
     }
   ],
   "note": [
