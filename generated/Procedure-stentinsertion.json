@@ -45,6 +45,18 @@
       "text": "Occlusion of right coronary artery"
     }
   ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "13647002",
+          "display": "Right coronary artery structure"
+        }
+      ],
+      "text": "Right coronary artery"
+    }
+  ],
   "focalDevice": [
     {
       "action": {

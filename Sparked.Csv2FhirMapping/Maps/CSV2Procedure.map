@@ -134,6 +134,15 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.reasonCode1_text as s_text where length() > 0 -> t_reasonCode.text = s_text;
     };
 
+    // bodySite 0..* MS 
+    src.bodySite1_coding1_code as s_bodySite where length() > 0 -> tgt.bodySite as t_bodySite then {
+        src.bodySite1_coding1_system as s_system -> t_bodySite.coding = c(s_system, s_bodySite) as t_coding first then {
+            src.bodySite1_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.bodySite1_text as s_text where length() > 0 -> t_bodySite.text = s_text;
+    };
+
+
     // reasonReference 0..* MS
     src.reasonReference1_reference_id as s_reference where length() > 0 -> tgt.reasonReference as t_reasonReference first then {
         src.reasonReference1_reference_type as s_type where length() > 0 -> t_reasonReference.reference = append(s_type, '/', s_reference);
