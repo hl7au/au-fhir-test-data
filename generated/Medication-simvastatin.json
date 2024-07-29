@@ -9,35 +9,15 @@
   "code": {
     "coding": [
       {
-        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-        "code": "757704",
-        "display": "Simvastatin 40 MG Disintegrating Oral Tablet"
-      },
-      {
-        "system": "http://www.whocc.no/atc",
-        "code": "C10AA01",
-        "display": "simvastatin"
-      },
-      {
-        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-        "code": "1294713",
-        "display": "Disintegrating Oral Product"
+        "system": "http://snomed.info/sct",
+        "code": "320000009",
+        "display": "Simvastatin 40 mg oral tablet"
       }
     ],
     "text": "Simvastatin 40 MG Disintegrating Oral Tablet"
   },
   "form": {
     "coding": [
-      {
-        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-        "code": "1294713",
-        "display": "Disintegrating Oral Product"
-      },
-      {
-        "system": "http://standardterms.edqm.eu",
-        "code": "10219000",
-        "display": "Tablet"
-      },
       {
         "system": "http://snomed.info/sct",
         "code": "263011000036100",
@@ -50,13 +30,8 @@
       "itemCodeableConcept": {
         "coding": [
           {
-            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-            "code": "36567",
-            "display": "Simvastatin"
-          },
-          {
             "system": "http://snomed.info/sct",
-            "code": "2588011000036100",
+            "code": "2588011000036103",
             "display": "simvastatin"
           }
         ]
@@ -64,7 +39,7 @@
       "strength": {
         "numerator": {
           "value": 40,
-          "unit": "mcg",
+          "unit": "mg",
           "system": "http://unitsofmeasure.org",
           "code": "mg"
         },

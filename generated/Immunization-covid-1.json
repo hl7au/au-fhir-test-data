@@ -6,12 +6,6 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
     ]
   },
-  "extension": [
-    {
-      "url": "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
-      "valueString": "vNo1111"
-    }
-  ],
   "status": "completed",
   "vaccineCode": {
     "coding": [
@@ -51,16 +45,6 @@
       }
     ],
     "text": "Left upper arm"
-  },
-  "route": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "78421000",
-        "display": "Intramuscular route"
-      }
-    ],
-    "text": "Intramuscular"
   },
   "performer": [
     {

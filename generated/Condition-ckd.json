@@ -49,8 +49,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "700379002",
-        "display": "Chronic kidney disease stage 3B (disorder)"
+        "code": "709044004",
+        "display": "Chronic kidney disease"
       }
     ]
   },

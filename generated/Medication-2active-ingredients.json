@@ -7,6 +7,13 @@
     ]
   },
   "code": {
-    "text": "Perindopril-Amlodipine"
+    "coding": [
+      {
+        "system": "http://pbs.gov.au/code/item",
+        "code": "13382H",
+        "display": "PERINDOPRIL + AMLODIPINE"
+      }
+    ],
+    "text": "perindopril arginine 10 mg + amlodipine 10 mg tablet, 30"
   }
 }

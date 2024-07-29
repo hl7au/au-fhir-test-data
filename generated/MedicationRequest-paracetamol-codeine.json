@@ -6,7 +6,7 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
     ]
   },
-  "status": "active",
+  "status": "unknown",
   "intent": "order",
   "medicationCodeableConcept": {
     "coding": [
@@ -24,7 +24,12 @@
   },
   "authoredOn": "2018-07-15",
   "requester": {
-    "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "unknown"
+      }
+    ]
   },
   "reasonCode": [
     {
