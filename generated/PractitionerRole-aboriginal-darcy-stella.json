@@ -34,6 +34,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "411511",
           "display": "Aboriginal and Torres Strait Islander Health Worker"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "826241000168109",
+          "display": "Aboriginal and Torres Strait Islander health worker"
         }
       ]
     }

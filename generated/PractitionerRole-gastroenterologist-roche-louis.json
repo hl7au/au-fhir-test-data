@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253316",
           "display": "Gastroenterologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "71838004",
+          "display": "Gastroenterologist"
         }
       ]
     }

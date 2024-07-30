@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253517",
           "display": "Plastic and Reconstructive Surgeon"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "8724009",
+          "display": "Plastic surgeon"
         }
       ]
     }

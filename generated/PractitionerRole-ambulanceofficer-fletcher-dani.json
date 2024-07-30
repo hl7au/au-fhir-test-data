@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "411111",
           "display": "Ambulance Officer"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "397897005",
+          "display": "Paramedic"
         }
       ]
     }

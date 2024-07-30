@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "251213",
           "display": "Nuclear Medicine Technologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1256114007",
+          "display": "Nuclear medicine technologist"
         }
       ]
     }

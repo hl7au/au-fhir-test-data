@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253411",
           "display": "Psychiatrist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "80584001",
+          "display": "Psychiatrist"
         }
       ]
     }

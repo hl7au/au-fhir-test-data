@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253911",
           "display": "Dermatologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "18803008",
+          "display": "Dermatologist"
         }
       ]
     }

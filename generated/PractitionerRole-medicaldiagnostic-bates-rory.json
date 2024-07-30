@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "251211",
           "display": "Medical Diagnostic Radiographer"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "159017007",
+          "display": "Diagnostic radiographer"
         }
       ]
     }

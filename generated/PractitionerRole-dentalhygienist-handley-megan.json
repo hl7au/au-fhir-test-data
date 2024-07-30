@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "411211",
           "display": "Dental Hygienist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "26042002",
+          "display": "Dental hygienist"
         }
       ]
     }

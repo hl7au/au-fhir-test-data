@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "411214",
           "display": "Dental Therapist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1032061000168104",
+          "display": "Dental therapist"
         }
       ]
     }

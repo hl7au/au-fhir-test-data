@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "252312",
           "display": "Dental Practitioner"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "106289002",
+          "display": "Dentist"
         }
       ]
     }

@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "272199",
           "display": "Counsellors nec"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "224595007",
+          "display": "Professional counsellor"
         }
       ]
     }

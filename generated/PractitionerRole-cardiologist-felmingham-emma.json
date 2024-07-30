@@ -31,6 +31,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253312",
           "display": "Cardiologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "17561000",
+          "display": "Cardiologist"
         }
       ]
     }
