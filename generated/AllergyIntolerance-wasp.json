@@ -37,11 +37,11 @@
     ]
   },
   "patient": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "recordedDate": "2023-09-05",
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "reaction": [
     {
@@ -82,7 +82,8 @@
             }
           ]
         }
-      ]
+      ],
+      "severity": "moderate"
     }
   ]
 }

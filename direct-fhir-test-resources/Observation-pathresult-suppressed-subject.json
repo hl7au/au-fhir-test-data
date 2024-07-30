@@ -1,0 +1,62 @@
+{
+  "resourceType": "Observation",
+  "id": "pathresult-suppressed-subject",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "MB"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94309-2"
+      }
+    ],
+    "text": "2019-Novel Coronavirus PCR"
+  },
+  "subject": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "masked"
+      }
+    ]
+  },
+  "effectiveDateTime": "2021-02-15T12:00:00+10:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260415000",
+        "display": "Not detected"
+      }
+    ],
+    "text": "Not detected"
+  },
+  "note": [
+    {
+      "text": "This test result subject is suppressed"
+    }
+  ]
+}

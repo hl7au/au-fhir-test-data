@@ -20,11 +20,11 @@
     ]
   },
   "subject": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "authoredOn": "2018-07-15",
   "requester": {
-    "reference": "PractitionerRole/surgeon-chau-fryer"
+    "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
   },
   "reasonCode": [
     {

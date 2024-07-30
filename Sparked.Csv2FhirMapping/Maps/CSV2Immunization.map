@@ -50,7 +50,7 @@ group ToImmunization(source src : ImmunizationCSV, target tgt : Immunization) {
     };
 
     // vaccineCode 1..1 MS
-    src.vaccineCode_coding1_code as s_coding1 -> tgt.vaccineCode as t_vaccineCode then {
+    src.vaccineCode_coding1_code as s_coding1 where length() > 0 -> tgt.vaccineCode as t_vaccineCode then {
         src.vaccineCode_coding1_system as coding1_system -> t_vaccineCode.coding = c(coding1_system, s_coding1) as t_coding first then {
             src.vaccineCode_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
@@ -64,8 +64,17 @@ group ToImmunization(source src : ImmunizationCSV, target tgt : Immunization) {
         src.vaccineCode_text as s_text where length() > 0 -> t_vaccineCode.text = s_text;
     };
 
+    // vaccineCode free text or missing data
+    src.vaccineCode_coding1_code as s_coding1 where length() = 0 -> tgt.vaccineCode as t_code then {
+        // text only 
+        src.vaccineCode_text as s_text where length() > 0 -> t_code.text = s_text;
+        // code missing
+        src.vaccineCode_text as s_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+    };
+
+
     // patient 1..1 MS
-    src.patient_reference_id as s_patient_id -> tgt.patient as t_patient then {
+    src.patient_reference_id as s_patient_id where length() > 0 -> tgt.patient as t_patient then {
         s_patient_id -> t_patient.reference = append('Patient/', s_patient_id);
 
         src.patient_identifier_value as s_identifier where length() > 0 -> t_patient.identifier as t_identifier then {
@@ -81,14 +90,30 @@ group ToImmunization(source src : ImmunizationCSV, target tgt : Immunization) {
         src.patient_display as s_patient_display where length() > 0 -> t_patient.display = s_patient_display;
     };
 
+    // patient suppressed
+    src.patient_reference_id as s_reference where length() = 0 -> tgt.patient as t_patient then {
+        s_reference -> t_patient.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
+    };
+
     // encounter 0..1 MS
     src.encounter_reference_id as s_reference where length() > 0 -> tgt.encounter as t_encounter then {
         s_reference -> t_encounter.reference = append('Encounter/', s_reference);
     };
 
-    // occurrence 0..1 MS
+    // occurrence 1..1 MS
     // occurrenceDateTime
     src.occurrenceDateTime as s_occurrence where length() > 0 -> tgt.occurrence = cast(s_occurrence, 'dateTime');
+
+    // missing occurrence
+    src.occurrenceDateTime as s_occurrence where length() = 0 -> tgt.occurrence = create('dateTime') as t_occurrence then {
+        s_occurrence -> t_occurrence.extension as t_extension first then {
+            s_occurrence -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
+    };
 
     // recorded 0..1
     src.recorded as s_recorded where length() > 0 -> tgt.recorded = s_recorded;

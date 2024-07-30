@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "cardiologist-felmingham-emma",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2450181K"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/felmingham-emma"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253312",
+          "display": "Cardiologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394579002",
+          "display": "Cardiology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370100277",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "emma.felmingham@example.com.au",
+      "use": "work"
+    }
+  ]
+}

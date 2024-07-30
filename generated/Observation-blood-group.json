@@ -22,14 +22,14 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "883-9",
-        "display": "ABO group [Type] in Blood"
+        "code": "882-1",
+        "display": "ABO and Rh group [Type] in Blood"
       }
     ],
     "text": "Blood Group"
   },
   "subject": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2015-06-12",
   "valueCodeableConcept": {

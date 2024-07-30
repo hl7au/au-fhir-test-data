@@ -28,7 +28,7 @@
     "text": "Pfizer Comirnaty"
   },
   "patient": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "encounter": {
     "reference": "Encounter/covid-admin-1"
@@ -36,7 +36,7 @@
   "occurrenceDateTime": "2021-06-17",
   "primarySource": true,
   "location": {
-    "reference": "Location/bobrester-medical-center"
+    "reference": "Location/elimbah-medical-centre"
   },
   "manufacturer": {
     "display": "Pfizer Australia Ltd"
@@ -75,7 +75,7 @@
         "text": "Administering Provider"
       },
       "actor": {
-        "reference": "PractitionerRole/bobrester-bob-gp"
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
       }
     }
   ],

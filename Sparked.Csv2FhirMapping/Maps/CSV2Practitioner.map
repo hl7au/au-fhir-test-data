@@ -57,6 +57,16 @@ group ToPractitioner(source src : PractitionerCSV, target tgt : Practitioner) {
         src.name1_prefix1 as s_name_prefix where length() > 0 -> t_name.prefix = s_name_prefix;
         src.name1_suffix1 as s_name_suffix where length() > 0 -> t_name.suffix = s_name_suffix;
     };
+
+    // missing name (family)
+    src.name1_family as s_name_family where length() = 0 and src.name1_text.length() = 1 -> tgt.name as t_name first then {
+        src -> t_name.family as t_family then { 
+            src -> t_family.extension as t_extension first then {
+                src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+                t_extension.value = cast('masked', 'code');
+            };
+        };
+    };
   
     // telecom 0..* MS
     src.telecom1_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {

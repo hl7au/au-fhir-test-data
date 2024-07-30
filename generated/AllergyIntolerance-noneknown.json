@@ -34,15 +34,15 @@
     ]
   },
   "patient": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "encounter": {
     "display": "GP Visit"
   },
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   }
 }

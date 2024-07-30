@@ -41,15 +41,15 @@
     "text": "Egg"
   },
   "patient": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "onsetDateTime": "2023-02-12",
   "recordedDate": "2023-04-24",
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "reaction": [
     {
@@ -74,7 +74,8 @@
           ],
           "text": "Nausea and vomiting"
         }
-      ]
+      ],
+      "severity": "moderate"
     }
   ]
 }

@@ -37,11 +37,11 @@
     ]
   },
   "patient": {
-    "reference": "Patient/smith-emma"
+    "reference": "Patient/banks-mia-leanne"
   },
   "recordedDate": "2023-05-11",
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "reaction": [
     {

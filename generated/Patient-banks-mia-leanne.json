@@ -12,33 +12,40 @@
   },
   "extension" : [
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity",
-      "extension" : [
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "9",
+        "display": "Not stated/inadequately described"
+      }
+    },
+    {
+      "extension": [
         {
-          "url" : "value",
-          "valueCodeableConcept" : {
-            "coding" : [
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
               {
-                "system" : "http://snomed.info/sct",
-                "code" : "446141000124107",
-                "display" : "Identifies as female gender (finding)"
+                "system": "http://snomed.info/sct",
+                "code": "446141000124107",
+                "display": "Identifies as female gender"
               }
             ]
           }
         }
-      ]
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
     },
     {
-      "url" : "http://hl7.org/fhir/StructureDefinition/individual-pronouns",
-      "extension" : [
+      "extension": [
         {
-          "url" : "value",
-          "valueCodeableConcept" : {
-            "coding" : [
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
               {
-                "system" : "http://loinc.org",
-                "code" : "LA29519-8",
-                "display" : "she/her/her/hers/herself"
+                "system": "http://loinc.org",
+                "code": "LA29519-8",
+                "display": "she/her/her/hers/herself"
               }
             ]
           }

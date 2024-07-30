@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "medicaloncologist-leeds-luigi",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448321K"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/leeds-luigi"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253314",
+          "display": "Medical Oncologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394593009",
+          "display": "Medical oncology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770100952",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "luigi.leeds@example.com.au",
+      "use": "work"
+    }
+  ]
+}

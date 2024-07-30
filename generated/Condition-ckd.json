@@ -6,14 +6,6 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
     ]
   },
-  "extension": [
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/resource-pertainsToGoal",
-      "valueReference": {
-        "reference": "Goal/hpt-wnl"
-      }
-    }
-  ],
   "clinicalStatus": {
     "coding": [
       {
@@ -63,7 +55,7 @@
     ]
   },
   "subject": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "onsetAge": {
     "value": 52,
@@ -71,19 +63,5 @@
     "system": "http://unitsofmeasure.org",
     "code": "a"
   },
-  "recordedDate": "2018-12-01",
-  "evidence": [
-    {
-      "detail": [
-        {
-          "reference": "FamilyMemberHistory/father",
-          "display": "Father had Chronic Kidney disease"
-        },
-        {
-          "reference": "Procedure/dialysis",
-          "display": "Patient receives regular dialysis"
-        }
-      ]
-    }
-  ]
+  "recordedDate": "2018-12-01"
 }

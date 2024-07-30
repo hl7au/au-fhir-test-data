@@ -43,11 +43,11 @@
     "reference": "#medication"
   },
   "subject": {
-    "reference": "Patient/hayes-maria"
+    "reference": "Patient/hayes-arianne"
   },
   "authoredOn": "2024-06-07",
   "requester": {
-    "reference": "PractitionerRole/guthridge-jarred"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "reasonCode": [
     {

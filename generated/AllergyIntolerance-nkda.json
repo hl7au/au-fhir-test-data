@@ -34,13 +34,13 @@
     ]
   },
   "patient": {
-    "reference": "Patient/baby-smith-john"
+    "reference": "Patient/baby-banks-john"
   },
   "recordedDate": "2023-03-14",
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   }
 }

@@ -1,0 +1,58 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "aboriginal-coulter-oliver",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448261H"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/coulter-oliver"
+  },
+  "organization": {
+    "reference": "Organization/southedge-practice"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "411511",
+          "display": "Aboriginal and Torres Strait Islander Health Worker"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/southedge-practice"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770102471",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "oliver.c@southedgepractice.example.com.au",
+      "use": "work"
+    }
+  ]
+}

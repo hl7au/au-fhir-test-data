@@ -15,6 +15,8 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
 
     // status: code
     src.status as s_status where length() > 0 -> tgt.status = s_status;
+    // missing status
+    src.status where length() = 0 -> tgt.status = 'unknown';
 
     // category 0..1 MS
     src.category_coding1_code as s_category1 where length() > 0 -> tgt.category as t_category then {
@@ -25,7 +27,7 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
     };
 
     // code 1..1 MS
-    src.code_coding1_code as s_coding1 -> tgt.code as t_code then {
+    src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
         s_coding1 where length() > 0 -> t_code then {
             src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
                 src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -40,12 +42,28 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.code_text as s_text where length() > 0 -> t_code.text = s_text;
     };
 
+    // code coding missing
+    src.code_coding1_code as s_coding1 where length() = 0 -> tgt.code as t_code then {
+        // text only 
+        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+        // code missing
+        src.code_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+    };
+
     // subject 1..1 MS
-    src.subject_reference_id as s_reference -> tgt.subject as t_subject then {
+    src.subject_reference_id as s_reference where length() > 0 -> tgt.subject as t_subject then {
         src.subject_reference_type as s_type where length() > 0 -> t_subject.reference = append(s_type, '/', s_reference);
         src.subject_reference_type where length() = 0 -> t_subject.reference = append('Patient/', s_reference);
 
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
+    };
+
+    // subject suppressed
+    src.subject_reference_id where length() = 0 -> tgt.subject as t_subject then {
+        src -> t_subject.extension as t_extension first then {
+            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
     };
 
     // encounter 0..1 MS

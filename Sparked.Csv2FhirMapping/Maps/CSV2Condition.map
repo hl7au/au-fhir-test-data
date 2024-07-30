@@ -13,13 +13,16 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
         src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition';
     };
 
-    // clinicalStatus 0..1 MS
+    // clinicalStatus 0..1 MS (SHALL be populated if verificationStatus is not 'entered-in-error')
     src.clinicalStatus_code as s_clinicalStatus where length() > 0 -> tgt.clinicalStatus as t_clinicalStatus then {
         s_clinicalStatus -> t_clinicalStatus.coding = c('http://terminology.hl7.org/CodeSystem/condition-clinical', s_clinicalStatus) as t_coding first then {
             src.clinicalStatus_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
         src.clinicalStatus_text as s_text where length() > 0 -> t_clinicalStatus.text = s_text;
     };
+
+    // clinicalStatus missing
+    src.clinicalStatus_code where length() = 0 -> tgt.clinicalStatus = cc('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
 
     // verificationStatus 0..1 MS
     src.verificationStatus_code as s_verificationStatus where length() > 0 -> tgt.verificationStatus as t_verificationStatus then {
@@ -30,7 +33,7 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
     };
 
     // category 1..* MS
-    src.category1_code as s_category1 -> tgt.category as t_category then {
+    src.category1_code as s_category1 where length() > 0 -> tgt.category as t_category then {
         src.category1_system as s_system -> t_category.coding = c(s_system, s_category1) as t_coding first then {
             src.category1_display as s_display where length() > 0 -> t_coding.display = s_display;
         };
@@ -42,6 +45,9 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
         src.category_text as s_text where length() > 0 -> t_category.text = s_text;
     };
 
+    // category missing
+    src.category1_code where length() = 0 -> tgt.category = cc('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+
     // severity 0..1 MS 
     src.severity_code as s_severity where length() > 0 -> tgt.severity as t_severity then {
         src.severity_system as s_system -> t_severity.coding = c(s_system, s_severity) as t_coding first then {
@@ -52,7 +58,7 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
 
 
     // code 1..1 MS
-    src.code_coding1_code as s_coding1 -> tgt.code as t_code then {
+    src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
         s_coding1 where length() > 0 -> t_code then {
             src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
                 src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -68,6 +74,14 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
         src.code_text as s_text where length() > 0 -> t_code.text = s_text;
     };
 
+    // code coding missing
+    src.code_coding1_code as s_coding1 where length() = 0 -> tgt.code as t_code then {
+        // text only 
+        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+        // code missing
+        src.code_text as s_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+    };
+
     // bodySite 0..* MS 
     src.bodySite_code as s_bodySite where length() > 0 -> tgt.bodySite as t_bodySite then {
         src.bodySite_system as s_system -> t_bodySite.coding = c(s_system, s_bodySite) as t_coding first then {
@@ -77,7 +91,7 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
     };
 
     // subject 1..1 MS
-    src.subject_reference_id as s_reference -> tgt.subject as t_subject then {
+    src.subject_reference_id as s_reference where length() > 0 -> tgt.subject as t_subject then {
         s_reference -> t_subject.reference = append('Patient/', s_reference);
 
         src.subject_identifier_value as s_identifier where length() > 0 -> t_subject.identifier as t_identifier then {
@@ -91,6 +105,14 @@ group ToCondition(source src : ConditionCSV, target tgt : Condition) {
             };
         };
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
+    };
+
+    // subject suppressed
+    src.subject_reference_id as s_reference where length() = 0 -> tgt.subject as t_subject then {
+        s_reference -> t_subject.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
     };
 
     // encounter 0..1 MS

@@ -1,0 +1,55 @@
+{
+  "resourceType": "Observation",
+  "id": "pathresult-missing-value",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "MB"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94309-2"
+      }
+    ],
+    "text": "2019-Novel Coronavirus PCR"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "effectiveDateTime": "2021-02-15T12:00:00+10:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code": "unknown"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "This codeable test result is missing"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "nursepractitioner-haywood-byron",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448361B"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/haywood-byron"
+  },
+  "organization": {
+    "reference": "Organization/barney-view-private-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "254411",
+          "display": "Nurse Practitioner"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "224571005",
+          "display": "Nurse practitioner"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722165004",
+          "display": "Nursing"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/barney-view-private-hospital"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770107684",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "byron.haywood@barneyviewph.example.net",
+      "use": "work"
+    }
+  ]
+}

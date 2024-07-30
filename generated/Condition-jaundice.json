@@ -44,7 +44,7 @@
     "text": "Neonatal jaundice"
   },
   "subject": {
-    "reference": "Patient/baby-smith-john"
+    "reference": "Patient/baby-banks-john"
   },
   "onsetDateTime": "2022-09-16T13:05:00+10:00",
   "recordedDate": "2022-09-16T13:05:00+10:00"

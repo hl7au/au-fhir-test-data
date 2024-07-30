@@ -1,0 +1,90 @@
+{
+    "resourceType": "Encounter",
+    "id": "biopsy-inpatient",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+      ]
+    },
+    "text": {
+      "status": "generated",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Inpatient encounter for biopsy of brain tissue in the frontal lobe to diagnose Large Diffuse B-Cell Lymphoma</div>"
+    },
+    "status": "finished",
+    "class": {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code": "IMP",
+      "display": "inpatient encounter"
+    },
+    "type": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "399210005",
+            "display": "Neurological investigation"
+          }
+        ],
+        "text": "Neurological investigation"
+      }
+    ],
+    "subject": {
+      "reference": "Patient/howe-deangelo",
+      "display": "Deangelo Howe"
+    },
+    "participant": [
+      {
+        "individual": {
+          "reference": "PractitionerRole/surgeongeneral-marchant-ricki",
+          "display": "Dr. Ricki MARCHANT"
+        }
+      }
+    ],
+    "period": {
+      "start": "2021-01-28T08:00:00+10:00",
+      "end": "2021-01-28T10:00:00+10:00"
+    },
+    "reasonCode": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "109979007",
+            "display": "B-cell lymphoma"
+          }
+        ],
+        "text": "Suspected Large Diffuse B-Cell Lymphoma of the brain"
+      }
+    ],
+    "diagnosis": [
+      {
+        "condition": {
+          "reference": "Condition/lymphoma",
+          "display": "Large Diffuse B-Cell Lymphoma of the brain"
+        },
+        "use": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+              "code": "AD",
+              "display": "Admission diagnosis"
+            }
+          ]
+        }
+      }
+    ],
+    "location": [
+      {
+        "location": {
+          "reference": "Location/glennie-heights-public-hospital",
+          "display": "Glennie Heights Public Hospital - Neurology Ward"
+        },
+        "status": "completed"
+      }
+    ],
+    "serviceProvider": {
+      "reference": "Organization/glennie-heights-public-hospital",
+      "display": "Glennie Heights Public Hospital"
+    }
+  }
+  

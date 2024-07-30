@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "satO2",
+  "partOf": [
+    {
+      "reference": "Procedure/obstetric"
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        }
+      ],
+      "text": "Vital Signs"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "2708-6",
+        "display": "Oxygen saturation in Arterial blood"
+      },
+      {
+        "system": "http://loinc.org",
+        "code": "59408-5",
+        "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "encounter": {
+    "reference": "Encounter/delivery"
+  },
+  "effectiveDateTime": "2022-09-14T09:30:10+01:00",
+  "performer": [
+    {
+      "reference": "PractitionerRole/midwife-kendall-dallas"
+    }
+  ],
+  "valueQuantity": {
+    "value": 95,
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "N",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "referenceRange": [
+    {
+      "low": {
+        "value": 90,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      },
+      "high": {
+        "value": 99,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      }
+    }
+  ]
+}

@@ -22,22 +22,22 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "88027-8",
-        "display": "Rh group Ag [Type] on Red Blood Cells"
+        "code": "890-4",
+        "display": "Blood group antibody screen [Presence] in Serum or Plasma"
       }
     ],
-    "text": "Rh"
+    "text": "Blood Group Antibody Screen"
   },
   "subject": {
-    "reference": "Patient/bennelong-anne"
+    "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2015-06-12",
   "valueCodeableConcept": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "165747007",
-        "display": "RhD positive (finding)"
+        "code": "260385009",
+        "display": "Negative"
       }
     ],
     "text": "RhD positive"

@@ -36,7 +36,7 @@
     "text": "2019-Novel Coronavirus PCR"
   },
   "subject": {
-    "reference": "Patient/wang-li"
+    "reference": "Patient/howe-deangelo"
   },
   "effectiveDateTime": "2021-02-15T12:00:00+10:00",
   "valueCodeableConcept": {

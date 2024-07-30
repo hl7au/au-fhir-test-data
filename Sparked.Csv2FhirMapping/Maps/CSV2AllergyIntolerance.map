@@ -14,7 +14,7 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
         src -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance';
     };
 
-    // clinicalStatus
+    // clinicalStatus (SHALL exist when verificationStatus is not 'entered-in-error' - unknown missing data code not supported)
     src.clinicalStatus_code as s_clinicalStatus where length() > 0 -> tgt.clinicalStatus as t_clinicalStatus then {
         s_clinicalStatus -> t_clinicalStatus.coding = c('http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical', s_clinicalStatus) as t_coding first then {
             src.clinicalStatus_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -40,7 +40,7 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
     src.criticality as s_criticality where length() > 0 -> tgt.criticality = s_criticality;
 
 
-    // code
+    // code 1..1 MS
     src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
         src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
             src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -56,8 +56,11 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
         src.code_text as s_text where length() > 0 -> t_code.text = s_text;
     };
 
-    // patient
-    src.patient_reference_id as s_reference -> tgt.patient as t_patient then {
+    // code missing data
+    src.code_coding1_code where length() = 0 -> tgt.code = cc('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+
+    // patient 1..1 MS
+    src.patient_reference_id as s_reference where length() > 0 -> tgt.patient as t_patient then {
         s_reference -> t_patient.reference = append('Patient/', s_reference);
 
         src.patient_identifier_value as s_identifier where length() > 0 -> t_patient.identifier as t_identifier then {
@@ -70,6 +73,14 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
                 src.patient_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
             };
         };
+    };
+
+    // patient suppressed
+    src.patient_reference_id as s_reference where length() = 0 -> tgt.patient as t_patient then {
+        s_reference -> t_patient.extension as t_extension first then {
+            s_reference -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
     };
 
     // encounter
@@ -157,5 +168,9 @@ group ToAllergyIntolerance(source src : AllergyIntoleranceCSV, target tgt : Alle
             };
             src.reaction_manifestation3_text as s_text where length() > 0 -> t_manifestation.text = s_text;
         };
+
+        // reaction.severity 0..1 MS
+        src.reaction_severity as s_severity where length() > 0 -> t_reaction.severity = s_severity;
+
     };
 }

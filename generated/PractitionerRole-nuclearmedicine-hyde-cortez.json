@@ -1,0 +1,50 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "nuclearmedicine-hyde-cortez",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2450001J"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/hyde-cortez"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "251213",
+          "display": "Nuclear Medicine Technologist"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870105630",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "cortez.hyde@example.com",
+      "use": "work"
+    }
+  ]
+}

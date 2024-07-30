@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "clinicalpsychologist-fleming-helga",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2449771Y"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/fleming-helga"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "272311",
+          "display": "Clinical Psychologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1255918004",
+          "display": "Clinical psychology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870102094",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "helga.fleming@example.net",
+      "use": "work"
+    }
+  ]
+}

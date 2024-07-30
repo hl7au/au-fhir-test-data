@@ -38,14 +38,14 @@
     ]
   },
   "patient": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "recordedDate": "1999-08-25",
   "recorder": {
-    "reference": "PractitionerRole/bobrester-bob-gp"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
   "asserter": {
-    "reference": "Patient/dan-harry"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
   "reaction": [
     {
@@ -68,7 +68,8 @@
             }
           ]
         }
-      ]
+      ],
+      "severity": "severe"
     }
   ]
 }
