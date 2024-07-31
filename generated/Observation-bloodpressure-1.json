@@ -66,6 +66,15 @@
         "unit": "mmHg",
         "system": "http://unitsofmeasure.org",
         "code": "mm[Hg]"
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "not-asked",
+            "display": "Not Asked"
+          }
+        ]
       }
     },
     {
@@ -88,7 +97,25 @@
         "unit": "mmHg",
         "system": "http://unitsofmeasure.org",
         "code": "mm[Hg]"
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "not-asked",
+            "display": "Not Asked"
+          }
+        ]
       }
     }
-  ]
+  ],
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code": "not-asked",
+        "display": "Not Asked"
+      }
+    ]
+  }
 }

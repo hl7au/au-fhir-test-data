@@ -15,14 +15,7 @@
   "subject": {
     "reference": "Patient/howe-deangelo"
   },
-  "_authoredOn": {
-    "extension": [
-      {
-        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode": "unknown"
-      }
-    ]
-  },
+  "authoredOn": "2024-06-07",
   "requester": {
     "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
   },

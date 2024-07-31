@@ -38,14 +38,7 @@
   "subject": {
     "reference": "Patient/howe-deangelo"
   },
-  "_effectiveDateTime": {
-    "extension": [
-      {
-        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode": "unknown"
-      }
-    ]
-  },
+  "effectiveDateTime": "2021-02-15T12:00:00+10:00",
   "valueCodeableConcept": {
     "coding": [
       {
