@@ -31,8 +31,7 @@
   },
   "effectiveDateTime" : "2023-03-14",
   "performer" : [{
-    "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred
-"
+    "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred"
   }],
   "valueQuantity" : {
     "value" : 78.6,
