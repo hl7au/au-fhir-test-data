@@ -48,6 +48,7 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
     src.subject_reference_id as s_subject_id where length() > 0 -> tgt.subject as t_subject then {
         src.subject_reference_type as s_subject_type where length() > 0 -> t_subject.reference = append(s_subject_type, '/', s_subject_id);
         src.subject_reference_type as s_subject_type where length() = 0 -> t_subject.reference = append('Patient/', s_subject_id);
+        src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
 
         src.subject_identifier_value as s_identifier where length() > 0 -> t_subject.identifier as t_identifier then {
             s_identifier -> t_identifier.value = s_identifier;
@@ -70,18 +71,17 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
     };
 
     // participant
-    src.participant1_type_code as s_participant_type where length() > 0 -> tgt.participant as t_participant then {
+    src.participant1_type_code as s_participant_type where length() > 0 or src.participant1_individual_reference_id.length() > 0 -> tgt.participant as t_participant then {
         
-        s_participant_type -> t_participant.type as t_type then {
+        s_participant_type where length() > 0 -> t_participant.type as t_type then {
             src.participant1_type_system as s_system -> t_type.coding = c(s_system, s_participant_type) as t_coding first then {
                 src.participant1_type_display as s_display where length() > 0 -> t_coding.display = s_display;
             };
         };
 
-        s_participant_type -> t_participant.individual as t_individual then {
-            src.participant1_individual_reference_id as s_individual_id where length() > 0 -> t_individual then {
-                src.participant1_individual_reference_type as s_individual_type where length() > 0 -> t_individual.reference = append(s_individual_type, '/', s_individual_id);
-            };
+        src.participant1_individual_reference_id as s_individual_id where length() > 0 or src.participant1_individual_identifier_value.length() > 0 -> t_participant.individual as t_individual then {
+            src.participant1_individual_reference_type as s_individual_type where length() > 0 -> t_individual.reference = append(s_individual_type, '/', s_individual_id);
+            src.participant1_individual_display as s_display where length() > 0 -> t_individual.display = s_display;
 
             src.participant1_individual_identifier_value as s_identifier where length() > 0 -> t_individual.identifier as t_identifier then {
                 s_identifier -> t_identifier.value = s_identifier;
@@ -107,10 +107,8 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
             };
         };
 
-        s_participant_type -> t_participant.individual as t_individual then {
-            src.participant2_individual_reference_id as s_individual_id where length() > 0 -> t_individual then {
-                src.participant2_individual_reference_type as s_individual_type where length() > 0 -> t_individual.reference = append(s_individual_type, '/', s_individual_id);
-            };
+        src.participant2_individual_reference_id as s_individual_id where length() > 0 or src.participant2_individual_identifier_value.length() > 0 -> t_participant.individual as t_individual then {
+            src.participant2_individual_reference_type as s_individual_type where length() > 0 -> t_individual.reference = append(s_individual_type, '/', s_individual_id);
 
             src.participant2_individual_identifier_value as s_identifier where length() > 0 -> t_individual.identifier as t_identifier then {
                 s_identifier -> t_identifier.value = s_identifier;
@@ -147,6 +145,19 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
         src.reasonReference_reference_type as s_reference_type -> t_reason.reference = append(s_reference_type, '/', s_reason_id);
     };
 
+    // diagnosis
+    src.diagnosis_condition_reference_id as s_reference_id where length() > 0 -> tgt.diagnosis as t_diagnosis first then {
+        src.diagnosis_condition_reference_type as s_reference_type -> t_diagnosis.condition as t_condition then {
+            s_reference_type -> t_condition.reference = append(s_reference_type, '/', s_reference_id);
+            src.diagnosis_condition_display as s_display where length() > 0 -> t_condition.display = s_display;
+        };
+        src.diagnosis_use_coding1_code as s_use_code where length() > 0 -> t_diagnosis.use as t_use then {
+            src.diagnosis_use_coding1_system as s_system where length() > 0 -> t_use.coding = c(s_system, s_use_code) as t_coding first then {
+                src.diagnosis_use_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+    };
+
     // dischargeDisposition
     src.dischargeDisposition_coding1_code as s_dischargeDisposition where length() > 0 -> tgt.hospitalization as t_hospitalization then {
         s_dischargeDisposition -> t_hospitalization.dischargeDisposition as t_dischargeDisposition then {
@@ -167,16 +178,22 @@ group ToEncounter(source src : EncounterCSV, target tgt : Encounter) {
     src.location_reference_id as s_location_id where length() > 0 -> tgt.location as t_locations first then {
         src.location_reference_type as s_reference_type -> t_locations.location as t_location then {
             s_reference_type -> t_location.reference = append(s_reference_type, '/', s_location_id);
+            src.location_reference_display as s_display where length() > 0 -> t_location.display = s_display;
         };
+        src.location_status as s_status where length() > 0 -> t_locations.status = s_status;
     };
 
     // serviceProvider
     src.serviceProvider_reference_id as s_serviceProvider_id where length() > 0 -> tgt.serviceProvider as t_serviceProvider then {
         src.serviceProvider_reference_type as s_reference_type -> t_serviceProvider.reference = append(s_reference_type, '/', s_serviceProvider_id);
+
+        src.serviceProvider_display as s_serviceProvider_display where length() > 0 -> t_serviceProvider.display = s_serviceProvider_display;
     };
-    // TODO: support when serviceProvider has reference and display
-    src.serviceProvider_display as s_serviceProvider_display where length() > 0 -> tgt.serviceProvider as t_serviceProvider then {
-        s_serviceProvider_display -> t_serviceProvider.display = s_serviceProvider_display;
+    // serviceProvider has display only
+    src.serviceProvider_reference_id where length() = 0 -> tgt then {
+        src.serviceProvider_display as s_serviceProvider_display where length() > 0 -> tgt.serviceProvider as t_serviceProvider then {
+            s_serviceProvider_display -> t_serviceProvider.display = s_serviceProvider_display;
+        };
     };
 
     // description
