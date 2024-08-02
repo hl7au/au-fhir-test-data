@@ -75,6 +75,12 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
     // performedDateTime 0..1 MS
     src.performedDateTime as s_performed where length() > 0 -> tgt.performed = cast(s_performed, 'dateTime');
 
+    // performedPeriod 0..1 MS
+    src.performedPeriod_start as s_start where length() > 0 -> tgt.performed = create('Period') as t_period then {
+        s_start -> t_period.start = s_start;
+        src.performedPeriod_end as s_end where length() > 0 -> t_period.end = s_end;
+    };
+
     // recorder 0..1 MS
     src.recorder_reference_id as s_recorder where length() > 0 -> tgt.recorder as t_recorder then {
         src.recorder_reference_type as s_reference_type -> t_recorder.reference = append(s_reference_type, '/', s_recorder);
@@ -114,6 +120,7 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
             s_actor_id where length() > 0 -> t_actor then {
                 src.performer1_actor_reference_type as s_actor_type where length() > 0 -> t_actor.reference = append(s_actor_type, '/', s_actor_id);
             };
+            src.performer1_actor_display as s_display where length() > 0 -> t_actor.display = s_display;
         };
     };
 
@@ -148,6 +155,16 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.reasonReference1_reference_type as s_type where length() > 0 -> t_reasonReference.reference = append(s_type, '/', s_reference);
 
         src.reasonReference1_display as s_display where length() > 0 -> t_reasonReference.display = s_display;
+    };
+
+    // followUp 0..*
+    src.followUp_text as s_text where length() > 0 -> tgt.followUp as t_followUp first then {
+        s_text -> t_followUp.text = s_text;
+    };
+
+    // note 0..*
+    src.note_text as s_text where length() > 0 -> tgt.note as t_note first then {
+        s_text -> t_note.text = s_text;
     };
 
     // focalDevice 0..*
