@@ -12,9 +12,7 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "79115011000036100"
-      },
-      {
+        "code": "79115011000036100",
         "display": "paracetamol 500 mg + codeine phosphate hemihydrate 30 mg tablet"
       }
     ]

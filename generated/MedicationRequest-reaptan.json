@@ -12,9 +12,7 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "926214011000036103"
-      },
-      {
+        "code": "926214011000036103",
         "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30"
       }
     ]
@@ -70,6 +68,25 @@
       ]
     }
   ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2018-07-15",
+      "end": "2019-07-15"
+    },
+    "numberOfRepeatsAllowed": 5,
+    "quantity": {
+      "value": 30,
+      "unit": "Tab",
+      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+      "code": "TAB"
+    },
+    "expectedSupplyDuration": {
+      "value": 30,
+      "unit": "days",
+      "system": "http://unitsofmeasure.org",
+      "code": "d"
+    }
+  },
   "substitution": {
     "allowedBoolean": true
   }

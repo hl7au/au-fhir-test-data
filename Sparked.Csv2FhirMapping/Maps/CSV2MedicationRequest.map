@@ -24,8 +24,8 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
     // medication[x] 1..1 MS
     // medicationCodableConcept
     src.medication_coding1_code as s_code where length() > 0 -> tgt then {
-        src.medication_coding1_system as s_system -> tgt.medication = cc(s_system, s_code) as t_medication then {
-            src.medication_coding1_display as s_display where length() > 0 -> t_medication.coding as t_coding first then {
+        src.medication_coding1_system as s_system -> tgt.medication = create('CodeableConcept') as t_medication then {
+            src.medication_coding1_display as s_display where length() > 0 -> t_medication.coding = c(s_system, s_code) as t_coding first then {
                 s_display -> t_coding.display = s_display;
             };
 
@@ -34,8 +34,8 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
                     src.medication_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
                 };
             };
+            src.medication_text as s_text where length() > 0 -> t_medication.text = s_text;
         };
-        src.medication_text as s_text where length() > 0 -> t_medication.text = s_text;
     };
 
     // medicationReference 
@@ -106,6 +106,8 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
                 src.requester_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
             };
         };
+
+        src.requester_display as s_display where length() > 0 -> t_requester.display = s_display;
     };
 
     // requester suppressed
@@ -174,9 +176,9 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
     };
 
     // dispenseRequest 0..1 
-    src.dispenseRequest_dispenseInterval_value as s_value where length() > 0 -> tgt.dispenseRequest as t_dispenseRequest then {
+    src.dispenseRequest_dispenseInterval_value as s_value where length() > 0 or src.dispenseRequest_numberOfRepeatsAllowed.length() > 0 -> tgt.dispenseRequest as t_dispenseRequest then {
         // dispenseInterval 0..1 
-        s_value -> t_dispenseRequest.dispenseInterval as t_dispenseInterval then {
+        s_value where length() > 0 -> t_dispenseRequest.dispenseInterval as t_dispenseInterval then {
             s_value -> t_dispenseInterval.value = s_value;
             src.dispenseRequest_dispenseInterval_unit as s_unit where length() > 0 -> t_dispenseInterval.unit = s_unit;
             src.dispenseRequest_dispenseInterval_system as s_system where length() > 0 -> t_dispenseInterval.system = s_system;
