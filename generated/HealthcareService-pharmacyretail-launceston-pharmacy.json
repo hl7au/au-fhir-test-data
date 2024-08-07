@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "pharmacyretail-launceston-pharmacy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003624900039360"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/launceston-pharmacy"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310080006",
+          "display": "Pharmacy service"
+        }
+      ],
+      "text": "Pharmacy, retail, operation"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/launceston-pharmacy"
+    }
+  ],
+  "name": "Launceston Pharmacy",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0355504846",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@launcestonpharmacy.example.net"
+    }
+  ]
+}

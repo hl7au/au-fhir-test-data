@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "generalmedical-mossy-point-medical-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003629900040425"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/mossy-point-medical-centre"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700232004",
+          "display": "General medical service"
+        }
+      ],
+      "text": "General medical practitioner service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/mossy-point-medical-centre"
+    }
+  ],
+  "name": "Mossy Point Medical Centre",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0255509415",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@mossypointmc.example.net"
+    }
+  ]
+}

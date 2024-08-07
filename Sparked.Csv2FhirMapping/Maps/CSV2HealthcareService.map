@@ -1,0 +1,109 @@
+map "http://example.org/StructureMap/CSV2HealthcareService" = "CSV2HealthcareService"
+
+uses "http://example.org/StructureDefinition/HealthcareServiceCSV" as source
+uses "http://hl7.org/fhir/StructureDefinition/HealthcareService" as target
+
+//uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
+
+group ToHealthcareService(source src : HealthcareServiceCSV, target tgt : HealthcareService) {
+
+    // id
+    src.id as s_id where length() > 0 -> tgt.id = s_id; // ""rule_id"";
+
+    src -> tgt.meta = create('Meta') as meta then {
+        src -> meta.profile = 'http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice';
+    };
+
+    // identifier 0..* MS
+    src.identifier1_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+        s_value -> t_identifier.value = s_value;
+        src.identifier1_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+        src.identifier1_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+            s_type -> t_type.coding as t_coding first then {
+                s_type -> t_coding.code = s_type, 
+                    t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+                s_type where $this = 'NOI' -> t_coding.system = 'http://terminology.hl7.org.au/CodeSystem/v2-0203';
+                src.identifier1_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.identifier1_type_text as s_text where length() > 0 -> t_type.text = s_text;
+        };
+    };
+
+    src.identifier2_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+        s_value -> t_identifier.value = s_value;
+        src.identifier2_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+        src.identifier2_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+            s_type -> t_type.coding as t_coding first then {
+                s_type -> t_coding.code = s_type, 
+                    t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';            
+                s_type where $this = 'NOI' -> t_coding.system = 'http://terminology.hl7.org.au/CodeSystem/v2-0203';
+                src.identifier2_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.identifier2_type_text as s_text where length() > 0 -> t_type.text = s_text;
+        };
+    };
+
+    // active
+    src.active as s_active where length() > 0 -> tgt.active = s_active;
+
+    // providedBy 1..1 MS
+    src.providedBy_reference_id as s_providedBy where length() > 0 -> tgt.providedBy as t_providedBy then {
+        s_providedBy -> t_providedBy.reference = append('Organization/', s_providedBy);
+    };
+
+    // type 0..* MS
+    src.type_coding1_code as s_type where length() > 0 -> tgt.type as t_type then {
+        src.type_coding1_system as s_type_system -> t_type.coding = c(s_type_system, s_type) as t_coding first then { 
+            src.type_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.type_coding2_code as s_type where length() > 0 -> t_type then {
+            src.type_coding2_system as s_type_system -> t_type.coding = c(s_type_system, s_type) as t_coding first then { 
+                src.type_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+        src.type_text as s_text where length() > 0 -> t_type.text = s_text;
+    };
+
+    // specialty 0..* MS
+    src.specialty_coding1_code as s_specialty where length() > 0 or src.specialty_text > 0 -> tgt.specialty as t_specialty then {
+        src.specialty_coding1_system as s_specialty_system where length() > 0 -> t_specialty.coding = c(s_specialty_system, s_specialty) as t_coding first then { 
+            src.specialty_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.specialty_coding2_code as s_specialty where length() > 0 -> t_specialty then {
+            src.specialty_coding2_system as s_specialty_system -> t_specialty.coding = c(s_specialty_system, s_specialty) as t_coding first then { 
+                src.specialty_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+        src.specialty_text as s_text where length() > 0 -> t_specialty.text = s_text;
+    };
+
+    // location 1..1 MS
+    src.location_reference_id as s_location where length() > 0 -> tgt.location as t_location then {
+        s_location -> t_location.reference = append('Location/', s_location);
+    };
+
+    // name 1..1 MS
+    src.name as s_name where length() > 0 -> tgt.name = s_name;
+  
+    src.name where length() = 0 -> tgt.name as t_name then {
+        src -> t_name.extension as t_extension first then {
+            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('unknown', 'code');
+      };
+    };
+
+    // telecom 0..* MS
+    src.telecom1_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+        s_telecom_value -> t_telecom.value = s_telecom_value; 
+        src.telecom1_use as s_use where length() > 0 -> t_telecom.use = s_use;
+        src.telecom1_system as s_system where length() > 0 -> t_telecom.system = s_system;
+    };
+
+    src.telecom2_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+        s_telecom_value -> t_telecom.value = s_telecom_value; 
+        src.telecom2_use as s_use where length() > 0 -> t_telecom.use = s_use;
+        src.telecom2_system as s_system where length() > 0 -> t_telecom.system = s_system;
+    };
+};

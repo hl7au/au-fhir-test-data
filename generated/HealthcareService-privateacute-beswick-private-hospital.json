@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "privateacute-beswick-private-hospital",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003628233373230"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/beswick-private-hospital"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "2421000175108",
+          "display": "Acute care inpatient service"
+        }
+      ],
+      "text": "Private acute care Hospital"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/beswick-private-hospital"
+    }
+  ],
+  "name": "Beswick Private Hospital",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0855507024",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@beswickph.example.com.au"
+    }
+  ]
+}

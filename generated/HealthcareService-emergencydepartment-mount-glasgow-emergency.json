@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "emergencydepartment-mount-glasgow-emergency",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003621566706076"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/mount-glasgow-emergency"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310000008",
+          "display": "Emergency department service"
+        }
+      ],
+      "text": "Emergency Department Services"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/mount-glasgow-emergency"
+    }
+  ],
+  "name": "Mount Glasgow Emergency",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0355504383",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@mountglasgowemergency.example.com.au"
+    }
+  ]
+}
