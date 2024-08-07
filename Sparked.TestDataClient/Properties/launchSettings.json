@@ -2,7 +2,7 @@
   "profiles": {
     "Sparked.TestDataClient": {
       "commandName": "Project",
-      "commandLineArgs": "Observation ..\\generated https://sparked.npd.telstrahealth.com/smile/fhir/DEFAULT Basic aGVhdGguZnJhbmtlbDpKbmZZcExQRWY0ZEJ4Mkg="
+      "commandLineArgs": "Observation ..\\generated https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic <token>"
     }
   }
 }
