@@ -188,6 +188,11 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
         src.bodySite_text as s_text where length() > 0 -> t_bodySite.text = s_text;
     };
 
+    // specimen 0..1 MS
+    src.specimen_reference_id as s_reference_id where length() > 0 -> tgt.specimen as t_specimen then {
+        s_reference_id -> t_specimen.reference = append('Specimen/', s_reference_id);
+    };
+
     // referenceRange 0..*
     src.referenceRange1_high_value as s_high_value -> tgt then {
         src.referenceRange1_low_value as s_low_value where length() > 0 -> tgt.referenceRange as t_referenceRange then {

@@ -58,5 +58,8 @@
     {
       "text": "This test result subject is suppressed"
     }
-  ]
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  }
 }

@@ -53,5 +53,8 @@
     {
       "text": "This test is currently under evaluation and has not been fully validated. Failure to detect organism-specific nucleic acids does not exclude the presence of disease due to this agent."
     }
-  ]
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  }
 }

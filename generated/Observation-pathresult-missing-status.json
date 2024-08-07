@@ -53,5 +53,8 @@
     {
       "text": "This test result has a missing (unknown) status"
     }
-  ]
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  }
 }

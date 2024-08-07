@@ -51,5 +51,8 @@
     {
       "text": "This codeable test result is missing"
     }
-  ]
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  }
 }

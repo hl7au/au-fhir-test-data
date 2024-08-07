@@ -60,5 +60,8 @@
     {
       "text": "This test result has a missing (unknown) date of collection"
     }
-  ]
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  }
 }
