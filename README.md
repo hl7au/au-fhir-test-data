@@ -4,7 +4,7 @@ HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and t
 This repository also contains 'test' data for some HL7 AU IGs, used to test fail cases. This data not conform to HL7 AU FHIR Implementation Guides. 
 
 ## Synthetic Data Properties
-- Patients, Practitioners, PractitionerRoles, Organizations are not generated from a real world set. Any correspondence to real people is entirely accidental.
+- Patients, Practitioners, PractitionerRoles, Organizations, and Healthcare Services are not generated from a real world set. Any correspondence to real entities is entirely accidental.
 - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
 - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works.
 - Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'.
@@ -28,8 +28,10 @@ This repository also contains source code for the command line utilities used to
 ## Sparked AU Core Testing
 We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json) which contains:
 * For all AU Core Profiles, a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders, including resource instances with missing data and suppressed data.
-* AU Base Coverage resources.
-* AU Base Specimen resource(s).
+* AU Base Coverage resources. (coming soon)
+* AU Base Healthcare Service resources. (coming soon)
+* AU Base Related Person resource(s). (coming soon)
+* AU Base Specimen resource(s). (coming soon)
 * Currently, this Postman collection does not contain non-conformant resources for negative testing.
 
 If you would like to upload all the Sparked Test Data set to your FHIR server, use the UploadGenerated.bat and UploadDirect.bat batch files. Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data).

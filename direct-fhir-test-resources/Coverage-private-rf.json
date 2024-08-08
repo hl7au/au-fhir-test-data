@@ -41,6 +41,7 @@
     "start" : "2020-12-19"
   },
   "payor" : [{
+    "type" : "Organization",
     "display" : "HCF PTY LTD"
   }],
   "class" : [{
@@ -51,7 +52,7 @@
         "display" : "Plan"
       }]
     },
-    "value" : "Bronze",
+    "value" : "Hospital Bronze Plus",
     "name" : "HCF Hospital Bronze Plus"
   }]
 }
