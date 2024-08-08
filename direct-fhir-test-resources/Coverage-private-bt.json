@@ -1,0 +1,58 @@
+{
+  "resourceType" : "Coverage",
+  "id" : "private-bt",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/StructureDefinition/au-coverage"]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MB",
+        "display" : "Member Number"
+      }]
+    },
+    "system" : "http://hcf.example.com/member/memberid",
+    "value" : "9999114",
+    "assigner" : {
+      "display" : "HCF PTY LTD"
+    }
+  }],
+  "status" : "active",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "EHCPOL",
+      "display" : "extended healthcare"
+    }]
+  },
+  "beneficiary" : {
+    "reference" : "Patient/baratz-toni",
+    "display" : "Toni BARATZ"
+  },
+  "relationship" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+      "code" : "self"
+    }],
+    "text" : "Self"
+  },
+  "period" : {
+    "start" : "2020-12-19"
+  },
+  "payor" : [{
+    "type" : "Organization",
+    "display" : "HCF PTY LTD"
+  }],
+  "class" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/coverage-class",
+        "code" : "plan",
+        "display" : "Plan"
+      }]
+    },
+    "value" : "Hospital Bronze Plus",
+    "name" : "HCF Hospital Bronze Plus"
+  }]
+}
