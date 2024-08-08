@@ -1,0 +1,46 @@
+{
+  "resourceType" : "Coverage",
+  "id" : "medicare-rf",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/StructureDefinition/au-coverage"]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MC",
+        "display" : "Patient's Medicare number"
+      }],
+      "text" : "Medicare Card Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/medicare-number",
+    "value" : "49516514911"
+  }],
+  "status" : "active",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code" : "PUBLICPOL",
+      "display" : "public healthcare"
+    }],
+    "text" : "Bulk Billed"
+  },
+  "beneficiary" : {
+    "reference" : "Patient/roberts-fred",
+    "display" : "Fred ROBERTS"
+  },
+  "relationship" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+      "code" : "self"
+    }],
+    "text" : "Self"
+  },
+  "period" : {
+    "start" : "2020-01-01"
+  },
+  "payor" : [{
+    "type" : "Organization",
+    "display" : "Services Australia - Medicare"
+  }]
+}
