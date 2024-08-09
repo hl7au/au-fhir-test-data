@@ -6,6 +6,8 @@ IF %3.==. GOTO No1
 
 Sparked.TestDataClient\TestDataClient.exe Organization generated %1 %2 %3
 pause
+Sparked.TestDataClient\TestDataClient.exe Location generated %1 %2 %3
+pause
 Sparked.TestDataClient\TestDataClient.exe Practitioner generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe PractitionerRole generated %1 %2 %3
