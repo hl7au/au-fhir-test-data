@@ -5,11 +5,20 @@ IF %2.==. GOTO No1
 IF %3.==. GOTO No1
 
 Sparked.TestDataClient\TestDataClient.exe Encounter direct-fhir-test-resources %1 %2 %3
+@REM pause
+
+Sparked.TestDataClient\TestDataClient.exe Coverage direct-fhir-test-resources %1 %2 %3
 pause
+
+Sparked.TestDataClient\TestDataClient.exe Specimen direct-fhir-test-resources %1 %2 %3
+pause
+
 Sparked.TestDataClient\TestDataClient.exe Observation direct-fhir-test-resources %1 %2 %3
 pause
+
 Sparked.TestDataClient\TestDataClient.exe Procedure direct-fhir-test-resources %1 %2 %3
-pause
+@REM pause
+
 Sparked.TestDataClient\TestDataClient.exe MedicationRequest direct-fhir-test-resources %1 %2 %3
 
 GOTO End1
