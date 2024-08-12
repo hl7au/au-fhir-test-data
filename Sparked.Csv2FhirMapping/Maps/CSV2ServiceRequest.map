@@ -1,0 +1,179 @@
+﻿map "http://example.org/StructureMap/CSV2ServiceRequest" = "CSV2ServiceRequest"
+
+uses "http://example.org/StructureDefinition/ServiceRequestCSV" as source
+uses "http://hl7.org/fhir/StructureDefinition/ServiceRequest" as target
+
+group ToServiceRequest(source src : ServiceRequestCSV, target tgt : ServiceRequest) {
+
+    // id
+    src.id as s_id where length() > 0 -> tgt.id = s_id; 
+
+    // meta.profile
+    src -> tgt.meta = create('Meta') as meta then {
+        src.category1_coding1_code as s_categoryCode -> meta then {
+            s_categoryCode where $this = "108252007" -> meta.profile = 'http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path';
+            s_categoryCode where $this = "363679005" -> meta.profile = 'http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag';
+            s_categoryCode where length() = 0 -> meta.profile = 'http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest';
+        };
+    };
+
+    // identifier 0..* MS
+    src.identifier1_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+        s_value -> t_identifier.value = s_value;
+        src.identifier1_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+        src.identifier1_type_coding_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+            s_type -> t_type.coding as t_coding first then {
+                s_type -> t_coding.code = s_type, 
+                    t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+                src.identifier1_type_coding_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.identifier1_type_text as s_text where length() > 0 -> t_type.text = s_text;
+        };
+
+        src.identifier1_assigner_display as s_assigner where length() > 0 or src.identifier1_assigner_reference_id.length() > 0 -> t_identifier.assigner as t_assigner then {
+            s_assigner where length() > 0 -> t_assigner.display = s_assigner;
+
+            src.identifier1_assigner_reference_id as s_reference_id where length() > 0 -> t_assigner then {
+                src.identifier1_assigner_reference_type as s_reference_type where length() > 0 -> t_assigner.reference = append(s_reference_type, '/', s_reference_id);
+            };
+        };
+    };
+
+    // requisition 1..1 MS
+    src.requisition_value as s_value where length() > 0 -> tgt.requisition as t_requisition then {
+        s_value -> t_requisition.value = s_value;
+        src.requisition_system as s_system where length() > 0 -> t_requisition.system = s_system;
+
+        src.requisition_type_coding_code as s_type where length() > 0 -> t_requisition.type as t_type then {
+            s_type -> t_type.coding as t_coding first then {
+                s_type -> t_coding.code = s_type, 
+                    t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+                src.requisition_type_coding_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.requisition_type_text as s_text where length() > 0 -> t_type.text = s_text;
+        };
+
+        src.requisition_assigner_display as s_assigner where length() > 0 or src.requisition_assigner_reference_id.length() > 0 -> t_requisition.assigner as t_assigner then {
+            s_assigner where length() > 0 -> t_assigner.display = s_assigner;
+
+            src.requisition_assigner_reference_id as s_reference_id where length() > 0 -> t_assigner then {
+                src.requisition_assigner_reference_type as s_reference_type where length() > 0 -> t_assigner.reference = append(s_reference_type, '/', s_reference_id);
+            };
+        };
+    };
+
+    // status: code
+    src.status as s_status where length() > 0 -> tgt.status = s_status;
+    // missing status
+    src.status where length() = 0 -> tgt.status = 'unknown';
+
+    // intent: code
+    src.intent as s_intent where length() > 0 -> tgt.intent = s_intent;
+
+    // category 1..* MS
+    src.category1_coding1_code as s_categoryCode where length() > 0 -> tgt.category as t_category first then {
+        src.category1_coding1_system as s_system -> t_category.coding = c(s_system, s_categoryCode) as t_coding first then {
+            src.category1_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.category1_text as s_text where length() > 0 -> t_category.text = s_text;
+    };
+
+    // code 1..1 MS
+    src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
+        s_coding1 where length() > 0 -> t_code then {
+            src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
+                src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+
+            src.code_coding2_code as s_coding2 where length() > 0 -> t_code then {
+                src.code_coding2_system as coding2_system -> t_code.coding = c(coding2_system, s_coding2) as t_coding first then {
+                    src.code_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+        };
+        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+    };
+
+    // code coding missing
+    src.code_coding1_code as s_coding1 where length() = 0 -> tgt.code as t_code then {
+        // text only 
+        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
+        // code missing
+        src.code_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+    };
+
+    // subject 1..1 MS
+    src.subject_reference_id as s_reference where length() > 0 -> tgt.subject as t_subject then {
+        //src.subject_reference_type as s_type where length() > 0 -> t_subject.reference = append(s_type, '/', s_reference);
+        //src.subject_reference_type where length() = 0 -> t_subject.reference = append('Patient/', s_reference);
+        s_reference -> t_subject.reference = append('Patient/', s_reference);
+
+        src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
+    };
+
+    // subject suppressed
+    src.subject_reference_id where length() = 0 -> tgt.subject as t_subject then {
+        src -> t_subject.extension as t_extension first then {
+            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+            t_extension.value = cast('masked', 'code');
+      };
+    };
+
+    // encounter 0..1 MS
+    src.encounter_reference_id as s_reference where length() > 0 -> tgt.encounter as t_encounter then {
+        s_reference -> t_encounter.reference = append('Encounter/', s_reference);
+        src.encounter_display as s_display where length() > 0 -> t_encounter.display = s_display;
+    };
+
+    // authoredOn 1..1 MS
+    src.authoredOn as s_authoredOn where length() > 0 -> tgt.authoredOn = cast(s_authoredOn, 'dateTime');
+
+    // requester 1..1 MS
+    src.requester_reference_id as s_requester where length() > 0 -> tgt.requester as t_requester then {
+        src.requester_reference_type as s_reference_type -> t_requester.reference = append(s_reference_type, '/', s_requester);
+
+        src.requester_identifier_value as s_identifier where length() > 0 -> t_requester.identifier as t_identifier then {
+            s_identifier -> t_identifier.value = s_identifier;
+            src.requester_identifier_system as s_system where length() > 0 -> t_identifier.system = s_system;
+            src.requester_identifier_type as s_type where length() > 0 -> t_identifier.type as t_type then {
+                s_type -> t_type.coding = c('http://terminology.hl7.org/CodeSystem/v2-0203', s_type) as t_coding first then {
+                    src.requester_identifier_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+                src.requester_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
+            };
+        };
+    };
+
+    // reasonCode 0..* MS
+    src.reasonCode1_coding1_code as s_reasonCode1 -> tgt.reasonCode as t_reasonCode first then {
+        s_reasonCode1 where length() > 0 -> t_reasonCode then {
+            src.reasonCode1_coding1_system as coding1_system -> t_reasonCode.coding = c(coding1_system, s_reasonCode1) as t_coding first then {
+                src.reasonCode1_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+        src.reasonCode1_text as s_text where length() > 0 -> t_reasonCode.text = s_text;
+    };
+
+    // insurance 0..* MS
+    src.insurance1_reference_id as s_reference_id where length() > 0 -> tgt.insurance as t_insurance first then {
+        s_reference_id -> t_insurance.reference = append('Coverage/', s_reference_id);
+
+        src.insurance1_display as s_display where length() > 0 -> t_insurance.display = s_display;
+    };
+
+    // bodySite 0..* MS 
+    src.bodySite1_coding1_code as s_bodySite where length() > 0 -> tgt.bodySite as t_bodySite first then {
+        src.bodySite1_coding1_system as s_system -> t_bodySite.coding = c(s_system, s_bodySite) as t_coding first then {
+            src.bodySite1_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.bodySite1_text as s_text where length() > 0 -> t_bodySite.text = s_text;
+    };
+
+
+    // note 0..*
+    src.note1_text as s_text where length() > 0 -> tgt.note as t_note first then {
+        s_text -> t_note.text = s_text;
+    };
+
+}

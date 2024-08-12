@@ -1,0 +1,89 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "path-scenario-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PLAC",
+            "display": "Placer Identifier"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+      "value": "path-order-1-1",
+      "assigner": {
+        "reference": "Organization/elimbah-medical-centre",
+        "display": "Elimbah Medical Centre"
+      }
+    }
+  ],
+  "requisition": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "PGN",
+          "display": "Placer Group Number"
+        }
+      ]
+    },
+    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value": "path-order-1",
+    "assigner": {
+      "reference": "Organization/elimbah-medical-centre",
+      "display": "Elimbah Medical Centre"
+    }
+  },
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "12199005",
+        "display": "Vitamin D"
+      }
+    ],
+    "text": "Vitamin D"
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "encounter": {
+    "reference": "Encounter/annualvisit-2"
+  },
+  "authoredOn": "2024-08-21",
+  "requester": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "225885004",
+          "display": "Health assessment"
+        }
+      ]
+    }
+  ]
+}
