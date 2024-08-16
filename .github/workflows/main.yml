@@ -32,3 +32,8 @@ jobs:
       - run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
       - run: chmod +x quarantine_errors.sh
       - run: ./quarantine_errors.sh
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-result
+          path: g_validation.*ml
