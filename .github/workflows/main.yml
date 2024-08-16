@@ -19,13 +19,14 @@ jobs:
       - name: Cache apt-install
       # You may pin to the exact commit or the version.
       # uses: daaku/gh-action-apt-install@92eea4f84f90c895b544aaec6ae21839127c84e5
-        uses: daaku/gh-action-apt-install@v4
+        uses: awalsh128/cache-apt-pkgs-action@latest
         with:
          # Packages to install.
          packages:
            wget
            default-jdk
            xsltproc
+         execute_install_scripts: true
       - run: xsltproc extract_error_files.xsl m_validation.xml > quarantine_errors.sh
       - run: chmod +x quarantine_errors.sh
       - run: ./quarantine_errors.sh
