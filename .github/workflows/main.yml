@@ -2,7 +2,7 @@ name: Run Validator
 run-name: ${{ github.actor }} is validating FHIR resources 🔥
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Install-And-Run:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
