@@ -1,5 +1,5 @@
 name: Run FHIR Resource Upload Tool
-run-name: ${{ github.actor }} is generating FHIR resources 🔥
+run-name: ${{ github.actor }} is uploading FHIR resources 🔥
 on: [push]
 jobs:
   Install-And-Run:
@@ -30,8 +30,10 @@ jobs:
            libicu-dev 
          execute_install_scripts: true
       - run: |
+         export FHIR_USER_ID=user
+         export FHIR_USER_PASSWORD=password
          export CREDENTIALS=`echo ${FHIR_USER_ID}:${FHIR_USER_PASSWORD} | base64`
          cd linux
          chmod +x UploadAll.sh
          ./UploadAll.sh
-         ./compiledUploadScript.sh http://localhost:${{ job.services.hapi.ports['8080'] }} ${CREDENTIALS} # ${TARGET_FHIR_SERVER} ${CREDENTIALS}
+         ./compiledUploadScript.sh http://localhost:${{ job.services.hapi.ports['8080'] }}/fhir ${CREDENTIALS} # ${TARGET_FHIR_SERVER} ${CREDENTIALS}
