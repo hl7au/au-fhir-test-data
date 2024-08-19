@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "karkoo-chiropractic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Karkoo Chiropractic",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "54 Toby Rvr"
+    ],
+    "city": "Karkoo",
+    "state": "SA",
+    "postalCode": "5607"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/karkoo-chiropractic"
+  }
+}

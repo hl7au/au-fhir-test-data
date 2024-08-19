@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "kioma-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Kioma Pathology",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "15 Hazlett Est"
+    ],
+    "city": "Kioma",
+    "state": "QLD",
+    "postalCode": "4498"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/kioma-pathology"
+  }
+}

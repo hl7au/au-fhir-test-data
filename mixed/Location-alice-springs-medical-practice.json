@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "alice-springs-medical-practice",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Alice Springs Medical Practice",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "148 Glider Esp"
+    ],
+    "city": "Alice Springs",
+    "state": "NT",
+    "postalCode": "0872"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/alice-springs-medical-practice"
+  }
+}

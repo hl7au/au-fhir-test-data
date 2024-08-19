@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "rh-status",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "88027-8",
+        "display": "Rh group Ag [Type] on Red Blood Cells"
+      }
+    ],
+    "text": "Rh"
+  },
+  "subject": {
+    "reference": "Patient/bennelong-anne"
+  },
+  "effectiveDateTime": "2015-06-12",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "165747007",
+        "display": "RhD positive (finding)"
+      }
+    ],
+    "text": "RhD positive"
+  }
+}

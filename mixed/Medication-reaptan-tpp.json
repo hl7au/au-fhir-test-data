@@ -1,0 +1,27 @@
+{
+  "resourceType": "Medication",
+  "id": "reaptan-tpp",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "926214011000036103",
+        "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 30"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "154011000036109",
+        "display": "tablet"
+      }
+    ]
+  }
+}
