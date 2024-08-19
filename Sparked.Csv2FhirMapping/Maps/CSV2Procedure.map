@@ -15,8 +15,6 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
 
     // status: code
     src.status as s_status where length() > 0 -> tgt.status = s_status;
-    // missing status
-    src.status where length() = 0 -> tgt.status = 'unknown';
 
     // category 0..1 MS
     src.category_coding1_code as s_category1 where length() > 0 -> tgt.category as t_category then {
@@ -27,7 +25,7 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
     };
 
     // code 1..1 MS
-    src.code_coding1_code as s_coding1 where length() > 0 -> tgt.code as t_code then {
+    src.code_coding1_code as s_coding1 -> tgt.code as t_code then {
         s_coding1 where length() > 0 -> t_code then {
             src.code_coding1_system as coding1_system -> t_code.coding = c(coding1_system, s_coding1) as t_coding first then {
                 src.code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
@@ -42,28 +40,12 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.code_text as s_text where length() > 0 -> t_code.text = s_text;
     };
 
-    // code coding missing
-    src.code_coding1_code as s_coding1 where length() = 0 -> tgt.code as t_code then {
-        // text only 
-        src.code_text as s_text where length() > 0 -> t_code.text = s_text;
-        // code missing
-        src.code_text where length() = 0 -> t_code.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
-    };
-
     // subject 1..1 MS
-    src.subject_reference_id as s_reference where length() > 0 -> tgt.subject as t_subject then {
+    src.subject_reference_id as s_reference -> tgt.subject as t_subject then {
         src.subject_reference_type as s_type where length() > 0 -> t_subject.reference = append(s_type, '/', s_reference);
         src.subject_reference_type where length() = 0 -> t_subject.reference = append('Patient/', s_reference);
 
         src.subject_display as s_display where length() > 0 -> t_subject.display = s_display;
-    };
-
-    // subject suppressed
-    src.subject_reference_id where length() = 0 -> tgt.subject as t_subject then {
-        src -> t_subject.extension as t_extension first then {
-            src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
-            t_extension.value = cast('masked', 'code');
-      };
     };
 
     // encounter 0..1 MS
@@ -74,12 +56,6 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
 
     // performedDateTime 0..1 MS
     src.performedDateTime as s_performed where length() > 0 -> tgt.performed = cast(s_performed, 'dateTime');
-
-    // performedPeriod 0..1 MS
-    src.performedPeriod_start as s_start where length() > 0 -> tgt.performed = create('Period') as t_period then {
-        s_start -> t_period.start = s_start;
-        src.performedPeriod_end as s_end where length() > 0 -> t_period.end = s_end;
-    };
 
     // recorder 0..1 MS
     src.recorder_reference_id as s_recorder where length() > 0 -> tgt.recorder as t_recorder then {
@@ -120,7 +96,6 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
             s_actor_id where length() > 0 -> t_actor then {
                 src.performer1_actor_reference_type as s_actor_type where length() > 0 -> t_actor.reference = append(s_actor_type, '/', s_actor_id);
             };
-            src.performer1_actor_display as s_display where length() > 0 -> t_actor.display = s_display;
         };
     };
 
@@ -141,30 +116,11 @@ group ToProcedure(source src : ProcedureCSV, target tgt : Procedure) {
         src.reasonCode1_text as s_text where length() > 0 -> t_reasonCode.text = s_text;
     };
 
-    // bodySite 0..* MS 
-    src.bodySite1_coding1_code as s_bodySite where length() > 0 -> tgt.bodySite as t_bodySite then {
-        src.bodySite1_coding1_system as s_system -> t_bodySite.coding = c(s_system, s_bodySite) as t_coding first then {
-            src.bodySite1_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
-        };
-        src.bodySite1_text as s_text where length() > 0 -> t_bodySite.text = s_text;
-    };
-
-
     // reasonReference 0..* MS
     src.reasonReference1_reference_id as s_reference where length() > 0 -> tgt.reasonReference as t_reasonReference first then {
         src.reasonReference1_reference_type as s_type where length() > 0 -> t_reasonReference.reference = append(s_type, '/', s_reference);
 
         src.reasonReference1_display as s_display where length() > 0 -> t_reasonReference.display = s_display;
-    };
-
-    // followUp 0..*
-    src.followUp_text as s_text where length() > 0 -> tgt.followUp as t_followUp first then {
-        s_text -> t_followUp.text = s_text;
-    };
-
-    // note 0..*
-    src.note_text as s_text where length() > 0 -> tgt.note as t_note first then {
-        s_text -> t_note.text = s_text;
     };
 
     // focalDevice 0..*
