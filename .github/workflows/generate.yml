@@ -25,12 +25,13 @@ jobs:
          packages:
            libicu-dev 
          execute_install_scripts: true
-      - run: mkdir generated
-      - run: pushd .
-      - run: cd linux
-      - run: chmod +x GenerateAll.sh
-      - run: ./GenerateAll.sh
-      - run: popd
+      - run: |
+         mkdir generated
+         pushd .
+         cd linux
+         chmod +x GenerateAll.sh
+         ./GenerateAll.sh
+         popd
       - name: Archive generated results results
         uses: actions/upload-artifact@v4
         with:
