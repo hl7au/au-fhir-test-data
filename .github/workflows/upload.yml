@@ -1,4 +1,4 @@
-name: Run FHIR Mapping Language Resource Generator
+name: Run FHIR Resource Upload Tool
 run-name: ${{ github.actor }} is generating FHIR resources 🔥
 on: [push]
 jobs:
