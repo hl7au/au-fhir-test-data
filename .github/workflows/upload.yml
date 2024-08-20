@@ -2,7 +2,7 @@ name: Run FHIR Resource Upload Tool
 run-name: ${{ github.actor }} is uploading FHIR resources 🔥
 on: [push]
 jobs:
-  Install-And-Run:
+  Upload:
     runs-on: ubuntu-latest
     services:
       # Label used to access the service container
