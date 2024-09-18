@@ -13,6 +13,9 @@ Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv
 set "RESOURCETYPE=Location"
 Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
 
+set "RESOURCETYPE=HealthcareService"
+Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
+
 set "RESOURCETYPE=Practitioner"
 Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
 
