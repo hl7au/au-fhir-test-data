@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.14",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
           "display": "General Practice"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "413294000",
+          "display": "Community health services"
         }
-      ]
+      ],
+      "text": "Community Health Care"
     }
   ],
   "name": "Southedge Practice",

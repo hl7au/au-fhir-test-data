@@ -41,8 +41,14 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8512",
           "display": "Specialist Medical Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310000008",
+          "display": "Emergency department service"
         }
-      ]
+      ],
+      "text": "Emergency Department Services"
     }
   ],
   "name": "Tarampa Emergency",

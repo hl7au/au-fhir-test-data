@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.58",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8520",
           "display": "Pathology and Diagnostic Imaging Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "708175003",
+          "display": "Diagnostic imaging service"
         }
-      ]
+      ],
+      "text": "Diagnostic Radiology"
     }
   ],
   "name": "Kaltukatjara Radiology",

@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.47",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8401",
           "display": "Hospitals (except Psychiatric Hospitals)"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "2421000175108",
+          "display": "Acute care inpatient service"
         }
-      ]
+      ],
+      "text": "Private acute care Hospital"
     }
   ],
   "name": "Morgantown Private Hospital",

@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.72",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8534",
           "display": "Chiropractic and Osteopathic Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722170006",
+          "display": "Chiropractic service"
         }
-      ]
+      ],
+      "text": "Chiropractic"
     }
   ],
   "name": "Karkoo Chiropractic",

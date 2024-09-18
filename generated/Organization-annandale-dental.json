@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.13",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8531",
           "display": "Dental Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310144008",
+          "display": "General dental practice service"
         }
-      ]
+      ],
+      "text": "Dental practice service"
     }
   ],
   "name": "Annandale Dental",

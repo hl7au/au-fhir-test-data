@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.28",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8533",
           "display": "Physiotherapy Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722140001",
+          "display": "Physiotherapy service"
         }
-      ]
+      ],
+      "text": "Physiotherapy Services"
     }
   ],
   "name": "Canton Beach Physiotherapy",

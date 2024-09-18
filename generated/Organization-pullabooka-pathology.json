@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.21",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8520",
           "display": "Pathology and Diagnostic Imaging Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310074003",
+          "display": "Pathology service"
         }
-      ]
+      ],
+      "text": "Pathology laboratory service"
     }
   ],
   "name": "Pullabooka Pathology",

@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.16",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8512",
           "display": "Specialist Medical Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310138009",
+          "display": "Surgical service"
         }
-      ]
+      ],
+      "text": "Endocrinology Services"
     }
   ],
   "name": "Gangat Endocrinology Clinic",

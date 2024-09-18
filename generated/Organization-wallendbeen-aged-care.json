@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.27",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8601",
           "display": "Aged Care Residential Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1120991000168102",
+          "display": "Aged care residential service"
         }
-      ]
+      ],
+      "text": "Residential care for the aged operation"
     }
   ],
   "name": "Wallendbeen Aged Care",

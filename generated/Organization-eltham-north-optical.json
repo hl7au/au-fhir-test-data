@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.44",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8532",
           "display": "Optometry and Optical Dispensing"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310105000",
+          "display": "Optometry service"
         }
-      ]
+      ],
+      "text": "Optical dispensing"
     }
   ],
   "name": "Eltham North Optical",

@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.70",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "4271",
           "display": "Retail Pharmacy"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310080006",
+          "display": "Pharmacy service"
         }
-      ]
+      ],
+      "text": "Pharmacy, retail, operation"
     }
   ],
   "name": "Edwardstown Pharmacy",

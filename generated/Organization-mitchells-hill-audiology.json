@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.45",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8539",
           "display": "Other Allied Health Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310004004",
+          "display": "Hearing clinic service"
         }
-      ]
+      ],
+      "text": "Audiology service"
     }
   ],
   "name": "Mitchells Hill Audiology",

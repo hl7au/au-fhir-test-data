@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.78",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
           "display": "General Practice"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700232004",
+          "display": "General medical service"
         }
-      ]
+      ],
+      "text": "General medical practitioner service"
     }
   ],
   "name": "Southport Medical Practice",

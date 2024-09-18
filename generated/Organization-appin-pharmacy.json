@@ -38,11 +38,17 @@
     {
       "coding": [
         {
-          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.24",
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "4271",
           "display": "Retail Pharmacy"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310080006",
+          "display": "Pharmacy service"
         }
-      ]
+      ],
+      "text": "Community Pharmacy"
     }
   ],
   "name": "Appin Pharmacy",
