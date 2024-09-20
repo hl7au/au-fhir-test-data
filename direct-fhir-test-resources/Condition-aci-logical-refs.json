@@ -1,0 +1,76 @@
+{
+    "resourceType": "Condition",
+    "id": "aci-logical-refs",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "problem-list-item"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "54329005",
+                "display": "Acute myocardial infarction of anterior wall"
+            },
+            {
+                "system": "http://id.who.int/icd/release/11/mms",
+                "code": "BA41.Z&XA7RE3",
+                "display": "Acute myocardial infarction, unspecified [Anterior wall of heart]"
+            }
+        ]
+    },
+    "subject": {
+        "type": "Patient",
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MC"
+                    }
+                ],
+                "text": "Medicare Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-number",
+            "value": "49516512111"
+        }
+    },
+    "onsetDateTime": "2014",
+    "asserter": {
+        "type": "Practitioner",
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "NPI",
+                        "display": "National provider identifier"
+                    }
+                ],
+                "text": "HPI-I"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+            "value": "8003611566718288"
+        }
+    }
+}
