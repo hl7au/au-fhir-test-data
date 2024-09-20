@@ -1,0 +1,72 @@
+{
+    "resourceType": "AllergyIntolerance",
+    "id": "dust-logical-refs",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+        ]
+    },
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        ]
+    },
+    "verificationStatus": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                "code": "unconfirmed",
+                "display": "Unconfirmed"
+            }
+        ]
+    },
+    "category": [
+        "environment"
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "33008008",
+                "display": "Dust"
+            }
+        ]
+    },
+    "patient": {
+        "type": "Patient",
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MC"
+                    }
+                ],
+                "text": "Medicare Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-number",
+            "value": "29545410412"
+        }
+    },
+    "recordedDate": "2023-05-11",
+    "asserter": {
+        "type": "PractitionerRole",
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                        "code": "UPIN"
+                    }
+                ],
+                "text": "Medicare Provider Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+            "value": "2448301T"
+        }
+    }
+}
