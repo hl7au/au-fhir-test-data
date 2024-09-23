@@ -60,7 +60,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "12199005",
-        "display": "Vitamin D"
+        "display": "Vitamin D, 25-hydroxy measurement"
       }
     ],
     "text": "Vitamin D"
@@ -84,6 +84,11 @@
           "display": "Health assessment"
         }
       ]
+    }
+  ],
+  "insurance": [
+    {
+      "reference": "Coverage/medicare-bt"
     }
   ]
 }
