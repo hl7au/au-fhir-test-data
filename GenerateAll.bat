@@ -7,6 +7,9 @@ CD Sparked.Csv2FhirMapping
 set "RESOURCETYPE=Patient"
 Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
 
+set "RESOURCETYPE=RelatedPerson"
+Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
+
 set "RESOURCETYPE=Organization"
 Csv2Fhir.exe %RESOURCETYPE% "%INFOLDER%\AU Core Sample Data - %RESOURCETYPE%.csv" %OUTFOLDER%
 
