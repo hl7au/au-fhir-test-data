@@ -41,11 +41,6 @@
       "text": "Pain management"
     }
   ],
-  "note": [
-    {
-      "text": "Patient requires an administration aid."
-    }
-  ],
   "dosageInstruction": [
     {
       "text": "1-2 tablets every 4-6 hours as needed for pain",
@@ -79,33 +74,5 @@
         }
       ]
     }
-  ],
-  "dispenseRequest": {
-    "dispenseInterval": {
-      "value": 1,
-      "unit": "week",
-      "system": "http://unitsofmeasure.org",
-      "code": "wk"
-    },
-    "validityPeriod": {
-      "start": "2018-07-15",
-      "end": "2019-07-15"
-    },
-    "numberOfRepeatsAllowed": 2,
-    "quantity": {
-      "value": 20,
-      "unit": "Tab",
-      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-      "code": "TAB"
-    },
-    "expectedSupplyDuration": {
-      "value": 10,
-      "unit": "days",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
-    }
-  },
-  "substitution": {
-    "allowedBoolean": true
-  }
+  ]
 }

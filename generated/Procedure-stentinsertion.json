@@ -14,13 +14,11 @@
         "code": "36969009",
         "display": "Placement of stent in coronary artery"
       }
-    ]
+    ],
+    "text": "Placement of stent in right coronary artery"
   },
   "subject": {
     "reference": "Patient/howe-deangelo"
-  },
-  "encounter": {
-    "reference": "Encounter/cardio-hospital"
   },
   "performedDateTime": "2021-09-25",
   "performer": [
