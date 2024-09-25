@@ -390,6 +390,17 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
         };
   };
 
+  // individual_genderIdentity_value_text
+  src.individual_genderIdentity_value_text as s_text where length() > 0 and src.individual_genderIdentity_value_code.length() = 0 -> tgt.extension as t_extension first then {
+    s_text -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-genderIdentity',
+        t_extension.extension as t_ext_value first then {
+            s_text -> t_ext_value.url = 'value',
+            t_ext_value.value = create('CodeableConcept') as t_value then {
+                s_text -> t_value.text = s_text;
+            };
+        };
+  };
+
   // individual_pronouns_value_code
   src.individual_pronouns_value_code as s_individual_pronouns where length() > 0 -> tgt.extension as t_extension first then {
     s_individual_pronouns -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-pronouns',
@@ -399,6 +410,17 @@ group ToPatient(source src : PatientCSV, target tgt : Patient) {
                 s_individual_pronouns -> t_value.coding = c('http://loinc.org', s_individual_pronouns) as t_coding then {
                   src.individual_pronouns_value_display as s_display where length() > 0 -> t_coding.display = s_display;
                 };
+            };
+        };
+  };
+
+  // individual_pronouns_value_text : TODO
+  src.individual_pronouns_value_text as s_text where length() > 0 and src.individual_pronouns_value_code.length() = 0 -> tgt.extension as t_extension first then {
+    s_text -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-pronouns',
+        t_extension.extension as t_ext_value first then {
+            s_text -> t_ext_value.url = 'value',
+            t_ext_value.value = create('CodeableConcept') as t_value then {
+                s_text -> t_value.text = s_text;
             };
         };
   };

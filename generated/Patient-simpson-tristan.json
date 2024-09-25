@@ -48,6 +48,17 @@
         }
       ],
       "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "text": "ze/zir/zirs"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
     }
   ],
   "identifier": [
