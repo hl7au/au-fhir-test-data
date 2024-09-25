@@ -256,6 +256,19 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             src.component1_valueQuantity_code as s_code where length() > 0 -> t_quantity.code = s_code;
         };
 
+        // valueCodeableConcept
+        src.component1_valueCodeableConcept_coding1_code as s_code where length() > 0 -> t_component.value = create('CodeableConcept') as t_codeableConcept then {
+            src.component1_valueCodeableConcept_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component1_valueCodeableConcept_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component1_valueCodeableConcept_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component1_valueCodeableConcept_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component1_valueCodeableConcept_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component1_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
+
     };
     
     src.component2_code_coding1_code as s_component_code where length() > 0 -> tgt.component as t_component first then {
@@ -279,6 +292,57 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             src.component2_valueQuantity_unit as s_unit where length() > 0 -> t_quantity.unit = s_unit;
             src.component2_valueQuantity_system as s_system where length() > 0 -> t_quantity.system = s_system;
             src.component2_valueQuantity_code as s_code where length() > 0 -> t_quantity.code = s_code;
+        };
+
+        // valueCodeableConcept
+        src.component2_valueCodeableConcept_coding1_code as s_code where length() > 0 -> t_component.value = create('CodeableConcept') as t_codeableConcept then {
+            src.component2_valueCodeableConcept_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component2_valueCodeableConcept_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component2_valueCodeableConcept_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component2_valueCodeableConcept_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component2_valueCodeableConcept_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component2_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
+
+    };
+
+    src.component3_code_coding1_code as s_component_code where length() > 0 -> tgt.component as t_component first then {
+        // code 1..1
+        src.component3_code_coding1_system as s_system -> t_component.code as t_code then {
+            s_system -> t_code.coding = c(s_system, s_component_code) as t_coding first then {
+                src.component3_code_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component3_code_coding2_code as s_code where length() > 0 -> t_component then {
+                src.component3_code_coding2_system as s_system -> t_code.coding = c(s_system, s_code) as t_coding first then {
+                    src.component3_code_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component3_code_text as s_text where length() > 0 -> t_code.text = s_text;
+        };
+
+        // value 0..1
+        // valueQuantity
+        src.component3_valueQuantity_value as s_value where length() > 0 -> t_component.value = create('Quantity') as t_quantity then {
+            s_value -> t_quantity.value = s_value;
+            src.component3_valueQuantity_unit as s_unit where length() > 0 -> t_quantity.unit = s_unit;
+            src.component3_valueQuantity_system as s_system where length() > 0 -> t_quantity.system = s_system;
+            src.component3_valueQuantity_code as s_code where length() > 0 -> t_quantity.code = s_code;
+        };
+
+        // valueCodeableConcept
+        src.component3_valueCodeableConcept_coding1_code as s_code where length() > 0 -> t_component.value = create('CodeableConcept') as t_codeableConcept then {
+            src.component3_valueCodeableConcept_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component3_valueCodeableConcept_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component3_valueCodeableConcept_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component3_valueCodeableConcept_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component3_valueCodeableConcept_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component3_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
 
     };
