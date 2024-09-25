@@ -14,6 +14,23 @@
         "code": "9",
         "display": "Not stated/inadequately described"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA29518-0",
+                "display": "he/him/his/his/himself"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
     }
   ],
   "identifier": [

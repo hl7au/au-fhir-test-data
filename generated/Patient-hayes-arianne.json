@@ -14,6 +14,23 @@
         "code": "4",
         "display": "Neither Aboriginal nor Torres Strait Islander origin"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "446141000124107",
+                "display": "Identifies as female gender (finding)"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
     }
   ],
   "identifier": [
