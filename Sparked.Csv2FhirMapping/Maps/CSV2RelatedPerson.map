@@ -1,0 +1,219 @@
+map "http://example.org/StructureMap/CSV2RelatedPerson" = "CSV2RelatedPerson"
+
+uses "http://example.org/StructureDefinition/RelatedPersonCSV" as source
+uses "http://hl7.org/fhir/StructureDefinition/RelatedPerson" as target
+
+//uses "http://hl7.org/fhir/StructureDefinition/Identifier" as target
+
+group ToRelatedPerson(source src : RelatedPersonCSV, target tgt : RelatedPerson) {
+
+  // id
+  src.id as s_id where length() > 0 -> tgt.id = s_id; 
+
+  src -> tgt.meta = create('Meta') as meta then {
+    src -> meta.profile = 'http://hl7.org.au/fhir/StructureDefinition/au-relatedperson';
+  };
+
+  // identifier1
+  src.identifier1_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+
+    src.identifier1_use as s_use where length() > 0 -> t_identifier.use = s_use;
+
+    s_value -> t_identifier.value = s_value;
+    src.identifier1_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+    src.identifier1_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+        s_type -> t_type.coding as t_coding first then {
+            s_type -> t_coding.code = s_type, 
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';
+            src.identifier1_type_system as s_type_system where length() > 0 -> t_coding.system = s_type_system;
+            src.identifier1_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.identifier1_type_text as s_text where length() > 0 -> t_type.text = s_text;
+    };
+
+    src.identifier1_ihiStatus_code as s_ihiStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+        s_ihiStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-status',
+            t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1', s_ihiStatus);
+    };
+
+    //src.identifier_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 and src.identifier1_type_code = 'NI' -> t_identifier.extension as t_extension first then {
+    src.identifier1_ihiRecordStatus_code as s_ihiRecordStatus where length() > 0 -> t_identifier.extension as t_extension first then {
+        s_ihiRecordStatus -> t_extension.url = 'http://hl7.org.au/fhir/StructureDefinition/ihi-record-status',
+            t_extension.value = c('https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1', s_ihiRecordStatus, s_ihiRecordStatus);
+    };
+
+    src.identifier1_period_end as s_end where length() > 0 -> t_identifier.period as t_period then {
+        s_end -> t_period.end = s_end;
+    };
+
+    src.identifier1_assigner_display as s_assigner where length() > 0 -> t_identifier.assigner as t_assigner then {
+        s_assigner -> t_assigner.display = s_assigner;
+    };
+  };
+
+  // missing identifier
+  src.identifier1_value where length() = 0 -> tgt.identifier as t_identifier first then {
+    src -> t_identifier.extension as t_extension first then {
+      src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+      t_extension.value = cast('unknown', 'code');
+    };
+  };
+
+  // identifier2
+  src.identifier2_value as s_value where length() > 0 -> tgt.identifier as t_identifier first then {
+    s_value -> t_identifier.value = s_value;
+    src.identifier2_system as s_system where length() > 0 -> t_identifier.system = s_system;
+
+    src.identifier2_type_code as s_type where length() > 0 -> t_identifier.type as t_type then {
+        s_type -> t_type.coding as t_coding first then {
+            s_type -> t_coding.code = s_type, 
+            t_coding.system = 'http://terminology.hl7.org/CodeSystem/v2-0203';            
+            src.identifier2_type_system as s_type_system where length() > 0 -> t_coding.system = s_type_system;
+            src.identifier2_type_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.identifier2_type_text as s_text where length() > 0 -> t_type.text = s_text;
+    };
+
+    src.identifier2_assigner_display as s_assigner where length() > 0 -> t_identifier.assigner as t_assigner then {
+        s_assigner -> t_assigner.display = s_assigner;
+    };
+  };
+
+  // patient 1..1 MS
+  src.patient_reference_id as s_reference where length() > 0 -> tgt.patient as t_patient then {
+      s_reference -> t_patient.reference = append('Patient/', s_reference);
+  };
+
+  // relationship 1..1 MS
+  src.relationship_coding1_code as s_coding1 where length() > 0 -> tgt.relationship as t_relationship then {
+      s_coding1 where length() > 0 -> t_relationship then {
+          src.relationship_coding1_system as coding1_system -> t_relationship.coding = c(coding1_system, s_coding1) as t_coding first then {
+              src.relationship_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+          };
+      };
+      src.relationship_text as s_text where length() > 0 -> t_relationship.text = s_text;
+  };
+
+  // name1
+  src.name1_family as s_name_family where length() > 0 or src.name1_text.length() > 0 -> tgt.name as t_name first then {
+    s_name_family where length() > 0 -> t_name.family = s_name_family; 
+    src.name1_text as s_name_text where length() > 0 -> t_name.text = s_name_text;
+    src.name1_use as s_use where length() > 0 -> t_name.use = s_use;
+    src.name1_given1 as s_name_given where length() > 0 -> t_name.given = s_name_given;
+    src.name1_given2 as s_name_given2 where length() > 0 -> t_name.given = s_name_given2;
+    src.name1_prefix as s_name_prefix where length() > 0 -> t_name.prefix = s_name_prefix;
+  };
+
+  src.name1_family as s_name_family where length() = 0 and src.name1_text.length() = 1 -> tgt.name as t_name first then {
+      src -> t_name.family as t_family then { 
+          src -> t_family.extension as t_extension first then {
+              src -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+              t_extension.value = cast('unknown', 'code');
+          };
+      };
+  };
+
+  // telecom1
+  src.telecom1_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom1_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom1_system as s_system where length() > 0 -> t_telecom.system = s_system;
+  };
+
+  // telecom2
+  src.telecom2_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom2_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom2_system as s_system where length() > 0 -> t_telecom.system = s_system;
+  };
+
+  // telecom3
+  src.telecom3_value as s_telecom_value where length() > 0 -> tgt.telecom as t_telecom first then {
+    //telecom_home_phone -> cp('phone', telecom_home_phone, 'home');
+    s_telecom_value -> t_telecom.value = s_telecom_value; 
+    src.telecom3_use as s_use where length() > 0 -> t_telecom.use = s_use;
+    src.telecom3_system as s_system where length() > 0 -> t_telecom.system = s_system;
+  };
+
+  // gender
+  src.gender as gender where length() > 0 -> tgt.gender = gender;
+  
+  // missing gender
+  src.gender where length() = 0 -> tgt.gender = 'unknown';
+
+  // birthDate
+  src.birthDate as s_birthDate where length() > 0 -> tgt.birthDate = s_birthDate;
+
+  // address1
+  src.address1_city as s_city where length() > 0 -> tgt.address as t_address first then {
+    s_city -> t_address.city = s_city;
+
+    // address use
+    src.address1_use as s_use where length() > 0 -> t_address.use = s_use;
+
+    // address lines
+    src.address1_line1 as s_line1 where length() > 0 -> t_address.line = s_line1 then {
+        src.address1_line2 as s_line2 where length() > 0 -> t_address.line = s_line2;
+    };
+
+    // address postalCode
+    src.address1_postalCode as s_postalCode where length() > 0 -> t_address.postalCode = s_postalCode;
+
+    // address state
+    src.address1_state as s_state where length() > 0 -> t_address.state = s_state;
+
+    // address country
+    src.address1_country as s_country where length() > 0 -> t_address.country = s_country;
+  };
+
+  // individual_genderIdentity_value_code
+  src.individual_genderIdentity_value_code as s_individual_genderIdentity where length() > 0 -> tgt.extension as t_extension first then {
+    s_individual_genderIdentity -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-genderIdentity',
+        t_extension.extension as t_ext_value first then {
+            s_individual_genderIdentity -> t_ext_value.url = 'value',
+            t_ext_value.value = create('CodeableConcept') as t_value then {
+                s_individual_genderIdentity -> t_value.coding = c('http://snomed.info/sct', s_individual_genderIdentity) as t_coding then {
+                  src.individual_genderIdentity_value_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+        };
+  };
+
+  // individual_pronouns_value_code
+  src.individual_pronouns_value_code as s_individual_pronouns where length() > 0 -> tgt.extension as t_extension first then {
+    s_individual_pronouns -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-pronouns',
+        t_extension.extension as t_ext_value first then {
+            s_individual_pronouns -> t_ext_value.url = 'value',
+            t_ext_value.value = create('CodeableConcept') as t_value then {
+                s_individual_pronouns -> t_value.coding = c('http://loinc.org', s_individual_pronouns) as t_coding then {
+                  src.individual_pronouns_value_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+        };
+  };
+
+  // individual_recordedSexOrGender_type_code
+  src.individual_recordedSexOrGender_type_code as s_recordedSexOrGender_type where length() > 0 -> tgt.extension as t_extension first then {
+    s_recordedSexOrGender_type -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender',
+        t_extension.extension as t_ext_type first then {
+            s_recordedSexOrGender_type -> t_ext_type.url = 'type',
+            t_ext_type.value = create('CodeableConcept') as t_value then {
+                s_recordedSexOrGender_type -> t_value.coding = c('http://snomed.info/sct', s_recordedSexOrGender_type) as t_coding then {
+                  src.individual_recordedSexOrGender_type_text as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+        };
+    
+        src.individual_recordedSexOrGender_value_code as s_recordedSexOrGender_value where length() > 0 -> t_extension.extension as t_ext_value first then {
+            s_recordedSexOrGender_value -> t_ext_value.url = 'value',
+            t_ext_value.value = create('CodeableConcept') as t_value then {
+                s_recordedSexOrGender_value -> t_value.coding = c('http://snomed.info/sct', s_recordedSexOrGender_value) as t_coding then {
+                  src.individual_recordedSexOrGender_value_text as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+        };
+  };
+}

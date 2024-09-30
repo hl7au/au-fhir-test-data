@@ -16,6 +16,8 @@ Sparked.TestDataClient\TestDataClient.exe PractitionerRole generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe Patient generated %1 %2 %3
 pause
+Sparked.TestDataClient\TestDataClient.exe RelatedPerson generated %1 %2 %3
+pause
 Sparked.TestDataClient\TestDataClient.exe Encounter generated %1 %2 %3
 pause
 Sparked.TestDataClient\TestDataClient.exe AllergyIntolerance generated %1 %2 %3
