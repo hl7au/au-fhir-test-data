@@ -6,6 +6,19 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
     ]
   },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "text": "transgender"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+    }
+  ],
   "identifier": [
     {
       "extension": [

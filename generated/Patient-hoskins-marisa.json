@@ -6,6 +6,19 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
     ]
   },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "text": "xe/xir/xirs"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+    }
+  ],
   "identifier": [
     {
       "extension": [

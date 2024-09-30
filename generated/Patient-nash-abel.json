@@ -14,6 +14,17 @@
         "code": "3",
         "display": "Both Aboriginal and Torres Strait Islander origin"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "text": "agender"
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
     }
   ],
   "identifier": [

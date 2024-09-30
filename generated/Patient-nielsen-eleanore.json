@@ -6,6 +6,37 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
     ]
   },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "type",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1515311000168102",
+                "display": "Biological sex at birth"
+              }
+            ]
+          }
+        },
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32570691000036108",
+                "display": "Intersex"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+    }
+  ],
   "identifier": [
     {
       "extension": [

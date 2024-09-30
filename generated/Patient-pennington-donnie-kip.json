@@ -14,6 +14,35 @@
         "code": "9",
         "display": "Not stated/inadequately described"
       }
+    },
+    {
+      "extension": [
+        {
+          "url": "type",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76689-9",
+                "display": "Sex Assigned At Birth"
+              }
+            ]
+          }
+        },
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "male",
+                "display": "Male"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
     }
   ],
   "identifier": [
