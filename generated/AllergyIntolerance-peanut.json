@@ -1,0 +1,77 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "peanut",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active"
+      }
+    ],
+    "text": "Active"
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "confirmed"
+      }
+    ],
+    "text": "Confirmed"
+  },
+  "type": "allergy",
+  "category": [
+    "food"
+  ],
+  "criticality": "high",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "91935009"
+      }
+    ],
+    "text": "Peanut Allergy"
+  },
+  "patient": {
+    "reference": "Patient/baratz-toni"
+  },
+  "onsetDateTime": "1987-06-16",
+  "recordedDate": "1987-06-24",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  },
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "762952008"
+          }
+        ],
+        "text": "Peanut"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "247324004"
+            }
+          ],
+          "text": "Tightening of the throat"
+        }
+      ],
+      "severity": "severe"
+    }
+  ]
+}
