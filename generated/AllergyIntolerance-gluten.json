@@ -1,0 +1,63 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "gluten",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active"
+      }
+    ],
+    "text": "Active"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1269424006"
+      }
+    ],
+    "text": "Gluten intolerance"
+  },
+  "patient": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "onsetDateTime": "1999",
+  "recordedDate": "2023-01-12",
+  "recorder": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "asserter": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "89811004"
+          }
+        ],
+        "text": "Gluten"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84229001"
+            }
+          ],
+          "text": "Fatigue"
+        }
+      ],
+      "severity": "mild"
+    }
+  ]
+}

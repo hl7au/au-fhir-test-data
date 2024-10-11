@@ -1,0 +1,74 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "penicillin2",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "active"
+      }
+    ],
+    "text": "Active"
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "unconfirmed"
+      }
+    ],
+    "text": "Unconfirmed"
+  },
+  "category": [
+    "medication"
+  ],
+  "criticality": "high",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "764146007"
+      }
+    ],
+    "text": "Penicillin"
+  },
+  "patient": {
+    "reference": "Patient/italia-sofia"
+  },
+  "onsetAge": {
+    "value": 17,
+    "unit": "year",
+    "system": "http://unitsofmeasure.org",
+    "code": "a"
+  },
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "764146007"
+          }
+        ],
+        "text": "Penicillin"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "278528006"
+            }
+          ],
+          "text": "Facial swelling"
+        }
+      ],
+      "severity": "mild"
+    }
+  ]
+}
