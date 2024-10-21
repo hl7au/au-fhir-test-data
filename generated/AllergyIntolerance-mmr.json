@@ -26,7 +26,7 @@
         "code": "831021000168104"
       }
     ],
-    "text": "measles/mumps/rubella [MMR]"
+    "text": "measles/mumps/rubella [MMR] vaccine"
   },
   "patient": {
     "reference": "Patient/baratz-toni"
