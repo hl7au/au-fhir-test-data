@@ -59,8 +59,8 @@ jobs:
          chmod +x GenerateAll.sh
          ./GenerateAll.sh
          popd
-     - name: Archive generated resources
-       uses: actions/upload-artifact@v4
-       with:
-         name: generated-resources
-         path: generated
+    - name: Archive generated resources
+      uses: actions/upload-artifact@v4
+      with:
+        name: generated-resources
+        path: generated
