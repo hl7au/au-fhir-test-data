@@ -29,20 +29,20 @@ namespace Sparked.Csv2FhirMapping
 
                 var resourceType = args[0];
 
-                //var mapFile = @"Maps\" + args[2];
-                var mapFile = @"Maps\CSV2" + resourceType + ".map";
+                //var mapFile = @"Maps/" + args[2];
+                var mapFile = @"Maps/CSV2" + resourceType + ".map";
                 
                 if (!Directory.Exists(Path.GetDirectoryName(mapFile)))
-                    mapFile = @"..\..\..\" + mapFile;
+                    mapFile = @"../../../" + mapFile;
 
                 var mapFileInfo = new FileInfo(mapFile);
                 Debug.WriteLine("Map file " + (mapFileInfo.Exists ? "exists" : "not found") + ": " + mapFileInfo.FullName);
 
-                //var csvFile = @"TestData\Patient - test IHIs.csv";
+                //var csvFile = @"TestData/Patient - test IHIs.csv";
                 var csvFile = args[1];
 
                 if (!Directory.Exists(Path.GetDirectoryName(csvFile)))
-                    csvFile = @"..\..\..\" + csvFile;
+                    csvFile = @"../../../" + csvFile;
 
                 var csvFileInfo = new FileInfo(csvFile);
                 Debug.WriteLine("CSV file " + (csvFileInfo.Exists ? "exists" : "not found") + ": " + csvFileInfo.FullName);
@@ -52,7 +52,7 @@ namespace Sparked.Csv2FhirMapping
                 {
                     outFolder = args[2];
                     if (!Directory.Exists(Path.GetFullPath(outFolder)))
-                        outFolder = @"..\..\..\" + outFolder;
+                        outFolder = @"../../../" + outFolder;
                 }
 
                 program.TransformCsv2(resourceType, mapFile, csvFile, outFolder);
@@ -60,7 +60,7 @@ namespace Sparked.Csv2FhirMapping
             else
             {
                 //Console.WriteLine("Usage: " + appName + " <resource-type> <csv-filename> <mapping-filename> <outFolder>");
-                //Console.WriteLine("E.g. : " + appName + " Patient \"AU Core Sample Data - Patient.csv\" CSV2Patient.map generated");
+                //Console.WriteLine("E.g. : " + appName + " Patient /"AU Core Sample Data - Patient.csv/" CSV2Patient.map generated");
                 Console.WriteLine("Usage: " + appName + " <resource-type> <csv-filename> <outFolder>");
                 Console.WriteLine("E.g. : " + appName + " Patient \"..\\testdata-csv\\AU Core Sample Data - Patient.csv\" ..\\generated");
             }
