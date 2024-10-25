@@ -38,6 +38,7 @@ declare -a resources=(
 
 rm ${SCRIPT}
 
+echo set -e >> ${SCRIPT}
 echo mkdir --parent ${TARGET} >> ${SCRIPT}
 echo pushd . >> ${SCRIPT}
 echo cd ${DIST}/Sparked.Csv2FhirMapping >> ${SCRIPT}
