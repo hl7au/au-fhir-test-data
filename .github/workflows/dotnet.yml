@@ -55,7 +55,6 @@ jobs:
          mkdir generated
          pushd .
          cd linux
-         chmod +x GenerateAll.sh
          ./GenerateAll.sh
          popd
     - name: Archive generated resources

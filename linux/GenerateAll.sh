@@ -36,8 +36,6 @@ declare -a resources=(
 "MedicationRequest"
 )
 
-rm ${SCRIPT}
-
 echo set -e >> ${SCRIPT}
 echo mkdir --parent ${TARGET} >> ${SCRIPT}
 echo pushd . >> ${SCRIPT}
