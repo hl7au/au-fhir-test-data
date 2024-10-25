@@ -32,6 +32,7 @@ jobs:
         path: |
           Sparked.${{ matrix.program }}-${{ matrix.os }}Output
   Generate:
+    needs: Build
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -51,7 +52,7 @@ jobs:
         packages:
           libicu-dev
         execute_install_scripts: true
-     - run: |
+    - run: |
          mkdir generated
          pushd .
          cd linux
