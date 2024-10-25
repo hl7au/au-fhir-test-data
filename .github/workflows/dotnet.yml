@@ -8,13 +8,12 @@ on:
     branches: [ "ci-cd" ]
 
 jobs:
-  product_matrix:
+  Build:
     strategy:
       matrix:
         program: [Csv2FhirMapping, TestDataClient]
         os: [win, linux]
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
       with:
@@ -23,8 +22,6 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-#    - name: Restore dependencies
-#      run: dotnet restore Sparked.Csv2FhirMapping/Sparked.Csv2FhirMapping.sln
     - name: Build ${{ matrix.program }} on ${{ matrix.os }}
       run: |
         dotnet publish Sparked.${{ matrix.program }}/Sparked.${{ matrix.program }}.csproj --arch x64 --os ${{ matrix.os }} --configuration Release -p:PublishSingleFile=True --framework net70 --self-contained true --output "Sparked.${{ matrix.program }}-${{ matrix.os }}Output"
@@ -34,7 +31,34 @@ jobs:
         name: ${{ matrix.program }}-${{ matrix.os }}-binaries
         path: |
           Sparked.${{ matrix.program }}-${{ matrix.os }}Output
-
-#    - name: Test
-#      run: dotnet test --no-build --verbosity normal
- 
+  Generate:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Check out repository code
+       uses: actions/checkout@v4
+     - name: Download Csv2FhirMapping
+       uses: actions/download-artifact@v4
+       with:
+         name: Csv2FhirMapping-linux-binaries
+     - run: ls -la
+     - name: Generate resources
+      # You may pin to the exact commit or the version.
+      # uses: daaku/gh-action-apt-install@92eea4f84f90c895b544aaec6ae21839127c84e5
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+         # Packages to install.
+         packages:
+           libicu-dev
+         execute_install_scripts: true
+      - run: |
+         mkdir generated
+         pushd .
+         cd linux
+         chmod +x GenerateAll.sh
+         ./GenerateAll.sh
+         popd
+      - name: Archive generated resources
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-resources
+          path: generated
