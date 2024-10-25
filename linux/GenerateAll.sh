@@ -53,5 +53,4 @@ done
 echo popd >> ${SCRIPT}
 
 chmod +x ${SCRIPT}
-cat ${SCRIPT}
 ./${SCRIPT}
