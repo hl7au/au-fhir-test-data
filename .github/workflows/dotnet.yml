@@ -50,6 +50,9 @@ jobs:
         # Packages to install.
         packages:
           libicu-dev
+          wget
+          default-jdk
+          xsltproc
         execute_install_scripts: true
     - run: |
          mkdir generated
@@ -57,6 +60,21 @@ jobs:
          cd linux
          ./GenerateAll.sh
          popd
+    - run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+    - run: |
+        java -jar validator_cli.jar generated/*.json \
+             -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
+             -ig hl7.fhir.au.core#0.4.0-preview  -sct au \
+             -level errors -jurisdiction au \
+             -html-output g_validation.html -output g_validation.xml
+    - run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
+    - run: chmod +x quarantine_errors.sh
+    - run: ./quarantine_errors.sh
+    - name: Archive quarantine result
+      uses: actions/upload-artifact@v4
+      with:
+        name: validation-result
+        path: g_validation.*ml
     - name: Archive generated resources
       uses: actions/upload-artifact@v4
       with:
