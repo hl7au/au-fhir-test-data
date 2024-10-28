@@ -3,9 +3,7 @@
 
 name: .NET
 
-on:
-  push:
-    branches: [ "ci-cd" ]
+on: push
 
 jobs:
   Build:
@@ -80,3 +78,8 @@ jobs:
       with:
         name: generated-resources
         path: generated
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: generated
