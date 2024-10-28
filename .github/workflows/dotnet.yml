@@ -78,8 +78,10 @@ jobs:
       with:
         name: generated-resources
         path: generated
+    - run: zip -r testdata.zip generated
+      if: startsWith(github.ref, 'refs/tags/')
     - name: Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: generated
+        files: testdata.zip
