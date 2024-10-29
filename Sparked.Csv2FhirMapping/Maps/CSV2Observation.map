@@ -152,17 +152,30 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
     };
 
     src.valueQuantity_value where length() = 0 -> tgt then {
-        src.hasMember1_reference where length() = 0 -> tgt then {
-            src.component1_code_coding1_code where length() = 0 -> tgt then {
-                src.valueCodeableConcept_coding1_code where length() = 0 -> tgt.value = create('CodeableConcept') as t_codeableConcept then {
-                    src -> t_codeableConcept.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+        src.dataAbsentReason_coding1_code where length() = 0 -> tgt then {
+            src.hasMember1_reference where length() = 0 -> tgt then {
+                src.component1_code_coding1_code where length() = 0 -> tgt then {
+                    src.valueCodeableConcept_coding1_code where length() = 0 -> tgt.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+                        src -> t_codeableConcept.coding = c('http://terminology.hl7.org/CodeSystem/data-absent-reason', 'unknown');
+                    };
                 };
             };
         };
-    };
+    }; 
 
     // dataAbsentReason 0..1 MS
-    // TODO
+    // dataAbsentReason
+    src.dataAbsentReason_coding1_code as s_code where length() > 0 -> tgt.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+        src.dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+            src.dataAbsentReason_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+        };
+        src.dataAbsentReason_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+            src.dataAbsentReason_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.dataAbsentReason_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+        };
+        src.dataAbsentReason_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+    };
 
     // interpretation 0..*
     src.interpretation1_coding1_code as s_code where length() > 0 -> tgt.interpretation as t_codeableConcept then {
@@ -268,6 +281,18 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             };
             src.component1_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
+        // dataAbsentReason
+        src.component1_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+            src.component1_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component1_dataAbsentReason_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component1_dataAbsentReason_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component1_dataAbsentReason_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component1_dataAbsentReason_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component1_dataAbsentReason_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
 
     };
     
@@ -306,7 +331,18 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             };
             src.component2_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
-
+        // dataAbsentReason
+        src.component2_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+            src.component2_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component2_dataAbsentReason_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component2_dataAbsentReason_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component2_dataAbsentReason_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component2_dataAbsentReason_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component2_dataAbsentReason_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
     };
 
     src.component3_code_coding1_code as s_component_code where length() > 0 -> tgt.component as t_component first then {
@@ -344,6 +380,17 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             };
             src.component3_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
-
+        // dataAbsentReason
+        src.component3_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+            src.component3_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component3_dataAbsentReason_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component3_dataAbsentReason_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component3_dataAbsentReason_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component3_dataAbsentReason_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component3_dataAbsentReason_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
     };
 }
