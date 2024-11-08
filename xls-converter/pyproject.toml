@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "xls-converter"
+version = "0.0.1"
+description = ""
+authors = ["Ilya Beda <ir4y.ix@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pandas = "^2.2.3"
+ipython = "^8.29.0"
+openpyxl = "^3.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
