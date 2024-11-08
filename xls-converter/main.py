@@ -33,4 +33,4 @@ if __name__ == '__main__':
     xlsx = pd.ExcelFile(args.filename)
     for sheet in sheets:
         df = xlsx.parse(sheet)
-        df.to_csv(f"../testdata-csv/AU Core Sample Data - {sheet}.csv",index = None , header=True)
+        df.to_csv(f"./testdata-csv/AU Core Sample Data - {sheet}.csv",index = None , header=True)
