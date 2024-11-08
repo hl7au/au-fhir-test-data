@@ -16,7 +16,7 @@ sheets =  [
     'Location',
     'MedicationRequest',
     'Medication',
-    'Specimen',
+    #'Specimen',
     'RelatedPerson',
     'ServiceRequest',
 ];
