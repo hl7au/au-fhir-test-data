@@ -20,8 +20,6 @@ jobs:
         pip install xls_converter* &&\
         rm -rf xls_converter* xls-converter.zip
     - run: python -m xls_converter.main ${{ github.event.inputs.xlsFile }} testdata-csv
-    - uses: GrantBirki/git-diff-action@v2.6.1
-      id: git-diff-action
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
