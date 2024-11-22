@@ -1,0 +1,18 @@
+name: Convert
+
+on: push
+
+jobs:
+  LoadNewCSV:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+    - run: |
+        cd tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/xls-converter.zip &&\
+        unzip xls-converter.zip &&\
+        pip install xls_converter* &&\
+        rm -rf xls_converter* xls-converter.zip
+    - run: python -m xls_converter.main https://assets.beda.software/AU%20Core%20Test%20Data_copy.xlsx testdata-csv
+    - run: git diff
