@@ -19,7 +19,7 @@ jobs:
         unzip xls-converter.zip &&\
         pip install xls_converter* &&\
         rm -rf xls_converter* xls-converter.zip
-    - run: python -m xls_converter.main ${{ github.event.inputs.logLevel }} testdata-csv
+    - run: python -m xls_converter.main ${{ github.event.inputs.xlsFile }} testdata-csv
     - uses: GrantBirki/git-diff-action@v2.6.1
       id: git-diff-action
     - name: Create Pull Request
@@ -29,6 +29,6 @@ jobs:
           delete-branch: true
           commit-message: Update test data
           title: Update test data
-          body: New updates from ${{ github.event.inputs.logLevel }} 
+          body: New updates from ${{ github.event.inputs.xlsFile }}
           labels: automated-pr
           base: master
