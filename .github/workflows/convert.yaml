@@ -1,6 +1,11 @@
 name: Convert
 
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      xlsFile:
+        description: 'XLS file with test data'
+        required: true
 
 jobs:
   LoadNewCSV:
@@ -14,5 +19,16 @@ jobs:
         unzip xls-converter.zip &&\
         pip install xls_converter* &&\
         rm -rf xls_converter* xls-converter.zip
-    - run: python -m xls_converter.main https://assets.beda.software/AU%20Core%20Test%20Data_copy.xlsx testdata-csv
-    - run: git diff
+    - run: python -m xls_converter.main ${{ github.event.inputs.logLevel }} testdata-csv
+    - uses: GrantBirki/git-diff-action@v2.6.1
+      id: git-diff-action
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          delete-branch: true
+          commit-message: Update test data
+          title: Update test data
+          body: New updates from ${{ github.event.inputs.logLevel }} 
+          labels: automated-pr
+          base: master
