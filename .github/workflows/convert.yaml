@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
     - run: |
-        cd tmp &&\
+        cd /tmp &&\
         wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/xls-converter.zip &&\
         unzip xls-converter.zip &&\
         pip install xls_converter* &&\
