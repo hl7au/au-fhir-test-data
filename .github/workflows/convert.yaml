@@ -1,0 +1,64 @@
+name: Convert
+
+on:
+  workflow_dispatch:
+    inputs:
+      xlsFile:
+        description: 'XLS file with test data'
+        required: true
+
+jobs:
+  LoadNewCSV:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+    - run: |
+        cd /tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/xls-converter.zip &&\
+        unzip xls-converter.zip &&\
+        pip install xls_converter* &&\
+        rm -rf xls_converter* xls-converter.zip
+    - run: python -m xls_converter.main ${{ github.event.inputs.xlsFile }} testdata-csv
+    - name: Install .net deps
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages:
+          libicu-dev
+          unzip
+        execute_install_scripts: true
+    - run: |
+        cd /tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-x64.zip &&\
+        unzip Csv2FhirMapping-linux-x64.zip &&\
+        chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
+    - run: |
+        cd Sparked.Csv2FhirMapping/ &&
+        declare resources=(
+          "Patient"
+          "Organization"
+          "Location"
+          "Practitioner"
+          "PractitionerRole"
+          "Encounter"
+          "AllergyIntolerance"
+          "Condition"
+          "Immunization"
+          "Observation"
+          "Procedure"
+          "Medication"
+          "MedicationRequest") &&\
+        for resource in "${resources[@]}"
+        do
+        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
+        done
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          delete-branch: true
+          commit-message: Update test data
+          title: Update test data
+          body: New updates from ${{ github.event.inputs.xlsFile }}
+          labels: automated-pr
+          base: master
