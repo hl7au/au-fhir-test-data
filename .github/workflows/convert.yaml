@@ -48,7 +48,7 @@ jobs:
           "Procedure"
           "Medication"
           "MedicationRequest") &&\
-        for resource in $resources
+        for resource in "${resources[@]}"
         do
         echo $resource
         done
