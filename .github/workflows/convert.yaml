@@ -35,18 +35,18 @@ jobs:
     - run: |
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(\
-          "Patient"\
-          "Organization"\
-          "Location"\
-          "Practitioner"\
-          "PractitionerRole"\
-          "Encounter"\
-          "AllergyIntolerance"\
-          "Condition"\
-          "Immunization"\
-          "Observation"\
-          "Procedure"\
-          "Medication"\
+          "Patient" \
+          "Organization" \
+          "Location" \
+          "Practitioner" \
+          "PractitionerRole" \
+          "Encounter" \
+          "AllergyIntolerance" \
+          "Condition" \
+          "Immunization" \
+          "Observation" \
+          "Procedure" \
+          "Medication" \
           "MedicationRequest") &&\
         for resource in $resources
         do
