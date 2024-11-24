@@ -29,7 +29,7 @@ jobs:
         execute_install_scripts: true
     - run: |
         cd /tmp &&\
-        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-arm64.zip &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-x64.zip &&\
         unzip Csv2FhirMapping-linux-arm64.zip &&\
         chmod +x Csv2FhirMapping-linux-arm64-binaries/Csv2Fhir
     - run: |
