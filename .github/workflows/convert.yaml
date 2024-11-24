@@ -52,13 +52,13 @@ jobs:
         do
         echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
         done
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
-      with:
-          token: ${{ secrets.GITHUB_TOKEN  }}
-          delete-branch: true
-          commit-message: Update test data
-          title: Update test data
-          body: New updates from ${{ github.event.inputs.xlsFile }}
-          labels: automated-pr
-          base: master
+    #- name: Create Pull Request
+    #  uses: peter-evans/create-pull-request@v6
+    #  with:
+    #      token: ${{ secrets.GITHUB_TOKEN  }}
+    #      delete-branch: true
+    #      commit-message: Update test data
+    #      title: Update test data
+    #      body: New updates from ${{ github.event.inputs.xlsFile }}
+    #      labels: automated-pr
+    #      base: master
