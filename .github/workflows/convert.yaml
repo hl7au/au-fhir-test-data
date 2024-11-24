@@ -34,19 +34,19 @@ jobs:
         chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
     - run: |
         cd Sparked.Csv2FhirMapping/ &&
-        declare resources=(\
-          "Patient" \
-          "Organization" \
-          "Location" \
-          "Practitioner" \
-          "PractitionerRole" \
-          "Encounter" \
-          "AllergyIntolerance" \
-          "Condition" \
-          "Immunization" \
-          "Observation" \
-          "Procedure" \
-          "Medication" \
+        declare resources=(
+          "Patient"
+          "Organization"
+          "Location"
+          "Practitioner"
+          "PractitionerRole"
+          "Encounter"
+          "AllergyIntolerance"
+          "Condition"
+          "Immunization"
+          "Observation"
+          "Procedure"
+          "Medication"
           "MedicationRequest") &&\
         for resource in $resources
         do
