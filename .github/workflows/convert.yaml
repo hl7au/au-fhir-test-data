@@ -33,7 +33,8 @@ jobs:
         unzip Csv2FhirMapping-linux-arm64.zip &&\
         chmod +x Csv2FhirMapping-linux-arm64-binaries/Csv2Fhir
     - run: |
-        resources=(\
+        cd Sparked.Csv2FhirMapping/ &&
+        declare resources=(\
           "Patient"\
           "Organization"\
           "Location"\
@@ -47,10 +48,9 @@ jobs:
           "Procedure"\
           "Medication"\
           "MedicationRequest") &&\
-        for resource in $resources\
-        do\
-        echo $resource &&\
-        /tmp/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/ \
+        for resource in $resources
+        do
+        echo $resource && /tmp/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
         done
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
