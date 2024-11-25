@@ -6,6 +6,9 @@ on:
       xlsFile:
         description: 'XLS file with test data'
         required: true
+      branch:
+        description: 'Branch to commit updated files'
+        default: 'new-data'
 
 jobs:
   LoadNewCSV:
@@ -62,3 +65,4 @@ jobs:
           body: New updates from ${{ github.event.inputs.xlsFile }}
           labels: automated-pr
           base: master
+          branch: ${{ github.event.inputs.branch }}
