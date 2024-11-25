@@ -1,19 +1,19 @@
 {
   "resourceType": "MedicationRequest",
-  "id": "atorvastatin",
+  "id": "atorvastatin-instance",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
     ]
   },
   "status": "active",
-  "intent": "original-order",
+  "intent": "instance-order",
   "medicationCodeableConcept": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "27437011000036101",
-        "display": "atorvastatin 20 mg tablet, 30"
+        "code": "22784011000036109",
+        "display": "atorvastatin 20 mg tablet"
       }
     ]
   },
@@ -62,5 +62,13 @@
         }
       ]
     }
-  ]
+  ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2021-09-26"
+    },
+    "performer": {
+      "reference": "Organization/barney-view-private-hospital"
+    }
+  }
 }
