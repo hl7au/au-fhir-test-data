@@ -120,7 +120,7 @@ jobs:
             repo: context.repo.repo,
             body: comment
           })
-    - name: Show validation results
+    - name: Show validation errors
       if: steps.has-validation-errors.outputs.errors != '0'
       uses: actions/github-script@v7
       with:
@@ -136,5 +136,6 @@ jobs:
             repo: context.repo.repo,
             body: comment
           })
-    - if: steps.has-validation-errors.outputs.errors != '0'
+    - name: Fail in case of validation errors
+      if: steps.has-validation-errors.outputs.errors != '0'
       run: exit -1
