@@ -49,6 +49,8 @@ jobs:
       id: git-diff-action
     - if: steps.git-diff-action.outputs.raw-diff != ''
       uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Update generated files
     - run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - run: |
         java -jar validator_cli.jar generated/*.json \
