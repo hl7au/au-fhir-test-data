@@ -1,0 +1,46 @@
+name: Validate
+
+on:
+  pull_request
+
+
+jobs:
+  Convert:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install .net deps
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages:
+          libicu-dev
+          unzip
+        execute_install_scripts: true
+    - run: |
+        cd /tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-x64.zip &&\
+        unzip Csv2FhirMapping-linux-x64.zip &&\
+        chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
+    - run: |
+        cd Sparked.Csv2FhirMapping/ &&
+        declare resources=(
+          "Patient"
+          "Organization"
+          "Location"
+          "Practitioner"
+          "PractitionerRole"
+          "Encounter"
+          "AllergyIntolerance"
+          "Condition"
+          "Immunization"
+          "Observation"
+          "Procedure"
+          "Medication"
+          "MedicationRequest") &&\
+        for resource in "${resources[@]}"
+        do
+        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
+        done
+    - uses: GrantBirki/git-diff-action@v2.6.1
+      id: git-diff-action
+ 
