@@ -29,6 +29,9 @@ jobs:
         packages:
           libicu-dev
           unzip
+          default-jdk
+          xsltproc
+          unzip
         execute_install_scripts: true
     - run: |
         cd /tmp &&\
