@@ -209,6 +209,13 @@ group ToMedicationRequest(source src : MedicationRequestCSV, target tgt : Medica
             src.dispenseRequest_expectedSupplyDuration_system as s_system where length() > 0 -> t_duration.system = s_system;
             src.dispenseRequest_expectedSupplyDuration_code as s_code where length() > 0 -> t_duration.code = s_code;
         };
+        
+        // performer 0..1 
+        src.dispenseRequest_performer_reference_id as s_reference where length() > 0 -> t_dispenseRequest.performer as t_performer first then {
+        s_reference -> t_performer.reference = append('Organization/', s_reference);
+
+        src.dispenseRequest_performer_display as s_display where length() > 0 -> t_performer.display = s_display;
+        };
     };
 
     // substitution 0..1 

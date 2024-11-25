@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationRequest",
-  "id": "atorvastatin",
+  "id": "fluclox",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
@@ -9,45 +9,43 @@
   "status": "active",
   "intent": "original-order",
   "medicationCodeableConcept": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "27437011000036101",
-        "display": "atorvastatin 20 mg tablet, 30"
-      }
-    ]
+    "text": "flucloxacillin 500mg capsule"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/baratz-toni"
   },
   "encounter": {
-    "reference": "Encounter/cardio-hospital"
+    "reference": "Encounter/annualvisit-2"
   },
-  "authoredOn": "2021-09-26",
+  "authoredOn": "2022-02-10T14:14:00+10:00",
   "requester": {
-    "reference": "PractitionerRole/cardiologist-felmingham-emma"
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
+  "reasonCode": [
+    {
+      "text": "Signs of cellulitis, right knee, with low-grade fever"
+    }
+  ],
   "reasonReference": [
     {
-      "reference": "Condition/aci"
+      "reference": "Observation/bodytemp-1"
     }
   ],
   "dosageInstruction": [
     {
-      "text": "1 tablet daily",
+      "text": "1 6-hourly for 5 days",
       "timing": {
         "repeat": {
           "frequency": 1,
-          "period": 1,
-          "periodUnit": "d"
+          "period": 8,
+          "periodUnit": "h"
         }
       },
       "route": {
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "26643006",
-            "display": "Oral route"
+            "code": "26643006"
           }
         ]
       },
@@ -55,12 +53,20 @@
         {
           "doseQuantity": {
             "value": 1,
-            "unit": "TAB",
+            "unit": "capsule",
             "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
-            "code": "TAB"
+            "code": "CAP"
           }
         }
       ]
     }
-  ]
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 24,
+      "unit": "capsule",
+      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+      "code": "CAP"
+    }
+  }
 }
