@@ -128,7 +128,7 @@ jobs:
           const comment = `
             ❌ ${{ steps.has-validation-errors.outputs.errors }} errors found:
             Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }}).
-            Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}] (${{ steps.quarantined-result.outputs.artifact-url }}
+            Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}] (${{ steps.quarantined-result.outputs.artifact-url }})
           `;
           github.rest.issues.createComment({
             issue_number: context.issue.number,
