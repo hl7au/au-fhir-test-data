@@ -47,11 +47,9 @@ jobs:
         do
         echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
         done
-    - uses: GrantBirki/git-diff-action@v2.6.1
-      id: git-diff-action
-      with:
-        base_branch: ${{ github.head_ref || github.ref_name }}
-    - if: steps.git-diff-action.outputs.raw-diff != ''
+    - id: git-diff-action
+      run: echo "changed=$(git status --porcelain=v1 2>/dev/null | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+    - if: steps.git-diff-action.outputs.changed != '0'
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Update generated files
