@@ -50,7 +50,7 @@ jobs:
     - uses: GrantBirki/git-diff-action@v2.6.1
       id: git-diff-action
       with:
-        base_branch: ${{ github.ref_name }}
+        base_branch: ${{ github.head_ref || github.ref_name }}
     - if: steps.git-diff-action.outputs.raw-diff != ''
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
