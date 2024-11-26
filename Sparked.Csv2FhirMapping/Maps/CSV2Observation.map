@@ -224,6 +224,9 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             src.referenceRange1_type_text as s_text where length() > 0 -> t_referenceRange.type as t_type then {
                 s_text -> t_type.text = s_text;
             };
+            src.referenceRange1_text as s_text where length() > 0 -> t_referenceRange then {
+                s_text -> t_referenceRange.text = s_text;
+            };
         };
         src.referenceRange1_low_value as s_low_value where length() = 0 -> tgt then {
             s_high_value where length() > 0 -> tgt.referenceRange as t_referenceRange then {
@@ -233,6 +236,12 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
                     src.referenceRange1_high_system as s_system where length() > 0 -> t_high.system = s_system;
                     src.referenceRange1_high_code as s_code where length() > 0 -> t_high.code = s_code;
                 };
+                src.referenceRange1_text as s_text where length() > 0 -> t_referenceRange then {
+                    s_text -> t_referenceRange.text = s_text;
+                };
+            };
+            src.referenceRange1_text as s_text where length() > 0 and src.referenceRange1_high_value.length() = 0 -> tgt.referenceRange as t_referenceRange then {
+                s_text -> t_referenceRange.text = s_text;
             };
         };
     };
