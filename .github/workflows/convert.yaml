@@ -24,9 +24,9 @@ jobs:
         rm -rf xls_converter* xls-converter.zip
     - run: python -m xls_converter.main ${{ github.event.inputs.xlsFile }} testdata-csv
     - name: Install deps
-      uses: ./.github/workflows/deps.yaml
+      uses: ./.github/deps
     - name: Convert to json
-      uses: ./.github/workflows/fhirpath.yaml
+      uses: ./.github/fhirpath
     - name: Create Pull Request
       id: create-pull-request
       uses: peter-evans/create-pull-request@v6
@@ -40,6 +40,6 @@ jobs:
           base: master
           branch: ${{ github.event.inputs.branch }}
     - name: Report
-      uses: ./.github/workflows/report.yml
+      uses: ./.github/report
       with:
         issue: ${{ steps.create-pull-request.outputs.pull-request-number }}

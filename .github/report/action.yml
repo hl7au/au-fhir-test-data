@@ -1,10 +1,11 @@
-on:
-  workflow_call:
-    inputs:
-      issue:
-        description: "An issue that will be used for reporting"
-        default: context.issue.number
-jobs:
+name: Report to pull request
+inputs:
+  issue:
+    description: "An issue that will be used for reporting"
+    default: context.issue.number
+runs:
+  using: 'composite'
+  steps:
     - run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - run: |
         java -jar validator_cli.jar generated/*.json \

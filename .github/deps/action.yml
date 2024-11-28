@@ -1,7 +1,8 @@
-on:
-  workflow_call
+name: Install deps
 
-jobs:
+runs:
+  using: 'composite'
+  steps:
     - name: Install deps
       uses: awalsh128/cache-apt-pkgs-action@latest
       with:

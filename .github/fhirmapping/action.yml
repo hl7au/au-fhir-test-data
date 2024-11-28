@@ -1,7 +1,8 @@
-on:
-  workflow_call
+name: Convert to json
 
-jobs:
+runs:
+  using: 'composite'
+  steps:
     - run: |
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(

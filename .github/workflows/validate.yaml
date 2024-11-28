@@ -11,9 +11,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Install deps
-      uses: ./.github/workflows/deps.yaml
+      uses: ./.github/deps
     - name: Convert to json
-      uses: ./.github/workflows/fhirpath.yaml
+      uses: ./.github/fhirpath
     - id: git-diff-action
       run: echo "changed=$(git status --porcelain=v1 2>/dev/null | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
     - if: steps.git-diff-action.outputs.changed != '0'
@@ -21,4 +21,4 @@ jobs:
       with:
         commit_message: Update generated files
     - name: Report
-      uses: ./.github/workflows/report.yml
+      uses: ./.github/report
