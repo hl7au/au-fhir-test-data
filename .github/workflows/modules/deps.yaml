@@ -1,0 +1,14 @@
+on:
+  workflow_call
+
+jobs:
+    - name: Install deps
+      uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages:
+          libicu-dev
+          unzip
+          default-jdk
+          xsltproc
+          unzip
+        execute_install_scripts: true
