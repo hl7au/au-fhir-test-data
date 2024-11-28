@@ -15,10 +15,12 @@ runs:
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(
           "Patient"
+          "HealthcareService"
           "Organization"
           "Location"
           "Practitioner"
           "PractitionerRole"
+          "RelatedPerson"
           "Encounter"
           "AllergyIntolerance"
           "Condition"
