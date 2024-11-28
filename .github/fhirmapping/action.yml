@@ -4,6 +4,7 @@ runs:
   using: 'composite'
   steps:
     - run: |
+    - shell: bash
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(
           "Patient"
@@ -23,4 +24,3 @@ runs:
         do
         echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
         done
- 
