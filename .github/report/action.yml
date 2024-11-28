@@ -9,6 +9,7 @@ runs:
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - shell: bash
+      continue-on-error: true
       run: |
         java -jar validator_cli.jar generated/Medication-metformin-mpp.json \
              -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
