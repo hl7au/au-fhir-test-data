@@ -77,7 +77,7 @@ runs:
             Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }})
           `;
           github.rest.issues.createComment({
-            issue_number: ${{ inputs.issue }}
+            issue_number: ${{ inputs.issue }},
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: comment
@@ -93,7 +93,7 @@ runs:
             Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}](${{ steps.quarantined-result.outputs.artifact-url }})
           `;
           github.rest.issues.createComment({
-            issue_number: ${{ github.event.inputs.issue }},
+            issue_number: ${{ inputs.issue }},
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: comment
