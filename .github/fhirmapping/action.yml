@@ -11,6 +11,7 @@ runs:
         chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
     - shell: bash
       run: |
+        rm generated/* &&\
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(
           "Patient"
