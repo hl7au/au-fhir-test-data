@@ -1,0 +1,35 @@
+name: Convert to json
+
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: |
+        cd /tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-x64.zip &&\
+        unzip Csv2FhirMapping-linux-x64.zip &&\
+        chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
+    - shell: bash
+      run: |
+        rm generated/* &&\
+        cd Sparked.Csv2FhirMapping/ &&
+        declare resources=(
+          "Patient"
+          "HealthcareService"
+          "Organization"
+          "Location"
+          "Practitioner"
+          "PractitionerRole"
+          "RelatedPerson"
+          "Encounter"
+          "AllergyIntolerance"
+          "Condition"
+          "Immunization"
+          "Observation"
+          "Procedure"
+          "Medication"
+          "MedicationRequest") &&\
+        for resource in "${resources[@]}"
+        do
+        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
+        done

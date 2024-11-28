@@ -1,0 +1,104 @@
+name: Report to pull request
+inputs:
+  issue:
+    description: "An issue that will be used for reporting"
+    default: context.issue.number
+runs:
+  using: 'composite'
+  steps:
+    - shell: bash
+      run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+    - shell: bash
+      continue-on-error: true
+      run: |
+        java -jar validator_cli.jar generated/*.json \
+             -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
+             -ig hl7.fhir.au.core#1.0.0-ballot  -sct au \
+             -level errors -jurisdiction au \
+             -html-output g_validation.html -output g_validation.xml
+    - id: validation-result
+      name: Archive validation result
+      uses: actions/upload-artifact@v4
+      with:
+        name: validation-result
+        path: g_validation.html
+    - shell: bash
+      name: Generate extract_error_files.xsl
+      run: |
+        cat <<EOF > extract_error_files.xsl
+        <?xml version="1.0" encoding="UTF-8"?>
+        <xsl:stylesheet version="1.0"
+          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+          xmlns:fhir="http://hl7.org/fhir"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+
+          <xsl:template match="/fhir:Bundle">
+            <xsl:text>mkdir quarantined&#xA;</xsl:text>
+            <xsl:apply-templates/>
+          </xsl:template>
+
+          <xsl:template
+            match="/fhir:Bundle/fhir:entry/fhir:resource/fhir:OperationOutcome[fhir:text/html:div/html:table/html:tr/html:td='error']/fhir:extension[@url = 'http://hl7.org/fhir/StructureDefinition/operationoutcome-file']/fhir:valueString">
+            <xsl:text>mv </xsl:text>
+            <xsl:value-of select="./@value" />
+            <xsl:text> quarantined</xsl:text>
+            <xsl:text>&#xA;</xsl:text>
+          </xsl:template>
+
+          <xsl:template match="text()" />
+
+          <xsl:output method="text" encoding="utf-8"
+            media-type="string" />
+        </xsl:stylesheet>
+        EOF
+    - shell: bash
+      run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
+    - shell: bash
+      run: chmod +x quarantine_errors.sh
+    - shell: bash
+      run: ./quarantine_errors.sh
+    - shell: bash
+      id: has-validation-errors
+      run: echo "errors=$(ls -1q ./quarantined | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+    - id: quarantined-result
+      name: Archive quarantined resources
+      if: steps.has-validation-errors.outputs.errors != '0'
+      uses: actions/upload-artifact@v4
+      with:
+        name: quarantine
+        path: quarantined
+    - name: Show validation results
+      if: steps.has-validation-errors.outputs.errors == '0'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const comment = `
+            ✅  No errors found
+            Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }})
+          `;
+          github.rest.issues.createComment({
+            issue_number: ${{ inputs.issue }},
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          })
+    - name: Show validation errors
+      if: steps.has-validation-errors.outputs.errors != '0'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const comment = `
+            ❌ ${{ steps.has-validation-errors.outputs.errors }} errors found:
+            Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }}).
+            Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}](${{ steps.quarantined-result.outputs.artifact-url }})
+          `;
+          github.rest.issues.createComment({
+            issue_number: ${{ inputs.issue }},
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          })
+    - shell: bash
+      name: Fail in case of validation errors
+      if: steps.has-validation-errors.outputs.errors != '0'
+      run: exit -1

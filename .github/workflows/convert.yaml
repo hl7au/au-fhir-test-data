@@ -6,6 +6,9 @@ on:
       xlsFile:
         description: 'XLS file with test data'
         required: true
+      branch:
+        description: 'Branch to commit updated files'
+        default: 'new-data'
 
 jobs:
   LoadNewCSV:
@@ -20,39 +23,12 @@ jobs:
         pip install xls_converter* &&\
         rm -rf xls_converter* xls-converter.zip
     - run: python -m xls_converter.main ${{ github.event.inputs.xlsFile }} testdata-csv
-    - name: Install .net deps
-      uses: awalsh128/cache-apt-pkgs-action@latest
-      with:
-        packages:
-          libicu-dev
-          unzip
-        execute_install_scripts: true
-    - run: |
-        cd /tmp &&\
-        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/Csv2FhirMapping-linux-x64.zip &&\
-        unzip Csv2FhirMapping-linux-x64.zip &&\
-        chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
-    - run: |
-        cd Sparked.Csv2FhirMapping/ &&
-        declare resources=(
-          "Patient"
-          "Organization"
-          "Location"
-          "Practitioner"
-          "PractitionerRole"
-          "Encounter"
-          "AllergyIntolerance"
-          "Condition"
-          "Immunization"
-          "Observation"
-          "Procedure"
-          "Medication"
-          "MedicationRequest") &&\
-        for resource in "${resources[@]}"
-        do
-        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
-        done
+    - name: Install deps
+      uses: ./.github/deps
+    - name: Convert to json
+      uses: ./.github/fhirmapping
     - name: Create Pull Request
+      id: create-pull-request
       uses: peter-evans/create-pull-request@v6
       with:
           token: ${{ secrets.GITHUB_TOKEN  }}
@@ -62,3 +38,8 @@ jobs:
           body: New updates from ${{ github.event.inputs.xlsFile }}
           labels: automated-pr
           base: master
+          branch: ${{ github.event.inputs.branch }}
+    - name: Report
+      uses: ./.github/report
+      with:
+        issue: ${{ steps.create-pull-request.outputs.pull-request-number }}
