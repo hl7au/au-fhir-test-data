@@ -13,7 +13,7 @@ jobs:
     - name: Install deps
       uses: ./.github/deps
     - name: Convert to json
-      uses: ./.github/fhirpath
+      uses: ./.github/fhirmapping
     - id: git-diff-action
       run: echo "changed=$(git status --porcelain=v1 2>/dev/null | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
     - if: steps.git-diff-action.outputs.changed != '0'

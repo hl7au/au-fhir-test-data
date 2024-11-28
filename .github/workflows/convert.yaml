@@ -26,7 +26,7 @@ jobs:
     - name: Install deps
       uses: ./.github/deps
     - name: Convert to json
-      uses: ./.github/fhirpath
+      uses: ./.github/fhirmapping
     - name: Create Pull Request
       id: create-pull-request
       uses: peter-evans/create-pull-request@v6
