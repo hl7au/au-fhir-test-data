@@ -11,7 +11,7 @@ runs:
     - shell: bash
       continue-on-error: true
       run: |
-        java -jar validator_cli.jar generated/Medication-metformin-mpp.json \
+        java -jar validator_cli.jar generated/*.json \
              -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
              -ig hl7.fhir.au.core#0.4.0-preview  -sct au \
              -level errors -jurisdiction au \
