@@ -290,6 +290,7 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             };
             src.component1_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
+        
         // dataAbsentReason
         src.component1_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
             src.component1_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
@@ -340,6 +341,11 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
             };
             src.component2_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
+        // Map valueCodeableConcept.text if present
+        src.component2_valueCodeableConcept_text as s_text where length() > 0 -> t_component.value = create('CodeableConcept') as t_codeableConcept then {
+            src.component2_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
+        
         // dataAbsentReason
         src.component2_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
             src.component2_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
@@ -388,6 +394,26 @@ group ToObservation(source src : ObservationCSV, target tgt : Observation) {
                 };
             };
             src.component3_valueCodeableConcept_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
+        
+        // dataAbsentReason
+        src.component3_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
+            src.component3_dataAbsentReason_coding1_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                src.component3_dataAbsentReason_coding1_display as s_display where length() > 0 -> t_coding.display = s_display;
+            };
+            src.component3_dataAbsentReason_coding2_code as s_code where length() > 0 -> t_codeableConcept then {
+                src.component3_dataAbsentReason_coding2_system as s_system -> t_codeableConcept.coding = c(s_system, s_code) as t_coding first then {
+                    src.component3_dataAbsentReason_coding2_display as s_display where length() > 0 -> t_coding.display = s_display;
+                };
+            };
+            src.component3_dataAbsentReason_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
+        };
+    };
+    
+    // Map component.code.text if present
+    src.component3_code_text as s_text where length() > 0 -> tgt.component as t_component first then {
+        src.component3_code_text as s_text where length() > 0 -> t_component.code = create('CodeableConcept') as t_codeableConcept then {
+            src.component3_code_text as s_text where length() > 0 -> t_codeableConcept.text = s_text;
         };
         // dataAbsentReason
         src.component3_dataAbsentReason_coding1_code as s_code where length() > 0 -> t_component.dataAbsentReason = create('CodeableConcept') as t_codeableConcept then {
