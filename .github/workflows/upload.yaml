@@ -1,0 +1,46 @@
+name: Upload
+
+on:
+  push:
+    branches:
+      - master
+
+Jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Install deps
+      uses: ./.github/deps
+    - shell: bash
+      run: |
+        cd /tmp &&\
+        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/TestDataClient-linux-x64.zip &&\
+        unzip TestDataClient-linux-x64.zip &&\
+        chmod +x TestDataClient-linux-x64-binaries/Csv2Fhir
+    - shell: bash
+      env:
+        AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+      run: |
+        declare resources=(
+          "Patient"
+          "HealthcareService"
+          "Organization"
+          "Location"
+          "Practitioner"
+          "PractitionerRole"
+          "RelatedPerson"
+          "Encounter"
+          "AllergyIntolerance"
+          "Condition"
+          "Immunization"
+          "Observation"
+          "Procedure"
+          "Medication"
+          "MedicationRequest") &&\
+        for resource in "${resources[@]}"
+        do
+        /tmp/TestDataClient-linux-x64-binaries/Csv2Fhir $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
+        done
+
