@@ -18,7 +18,7 @@ jobs:
         cd /tmp &&\
         wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/TestDataClient-linux-x64.zip &&\
         unzip TestDataClient-linux-x64.zip &&\
-        chmod +x TestDataClient-linux-x64-binaries/Csv2Fhir
+        chmod +x TestDataClient-linux-x64-binaries/TestDataClient
     - shell: bash
       env:
         AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
@@ -41,6 +41,6 @@ jobs:
           "MedicationRequest") &&\
         for resource in "${resources[@]}"
         do
-        /tmp/TestDataClient-linux-x64-binaries/Csv2Fhir $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
+        /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
         done
 
