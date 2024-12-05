@@ -1,0 +1,77 @@
+{
+  "resourceType": "Observation",
+  "id": "heartrate-1-exercise-missing",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        }
+      ],
+      "text": "Vital Signs"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "8867-4",
+        "display": "Heart rate"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "364075005",
+        "display": "Heart rate"
+      }
+    ],
+    "text": "Heart rate"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "encounter": {
+    "display": "GP Visit"
+  },
+  "effectiveDateTime": "2016-07-02",
+  "performer": [
+    {
+      "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+    }
+  ],
+  "valueQuantity": {
+    "value": 80,
+    "unit": "beats/minute",
+    "system": "http://unitsofmeasure.org",
+    "code": "/min"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "74008-4",
+            "display": "Exercise intensity"
+          }
+        ]
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "temp-unknown"
+          }
+        ],
+        "text": "Temporarily Unknown"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "resourceType": "Observation",
+  "id": "bodyheight-1-device-missing",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "vital-signs",
+          "display": "Vital Signs"
+        }
+      ],
+      "text": "Vital Signs"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "8302-2",
+        "display": "Body height"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "50373000"
+      }
+    ],
+    "text": "height"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "encounter": {
+    "display": "GP Visit"
+  },
+  "effectiveDateTime": "2016-07-02",
+  "performer": [
+    {
+      "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+    }
+  ],
+  "valueQuantity": {
+    "value": 175,
+    "unit": "cm",
+    "system": "http://unitsofmeasure.org",
+    "code": "cm"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "1259000006",
+            "display": "Body height measurement device"
+          }
+        ]
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "unknown"
+          }
+        ],
+        "text": "Unknown"
+      }
+    }
+  ]
+}
