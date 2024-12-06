@@ -1,0 +1,36 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "docref-ps-01",
+  "status" : "current",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://loinc.org",
+        "code" : "60591-5"
+      }
+    ]
+  },
+  "category" : [{
+      "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "60591-5"
+      }]
+  }],
+  "subject" : {
+    "reference" : "Patient/howe-deangelo"
+  },
+  "date" : "2019-09-17T09:00:00+10:00",
+  "author" : [{
+      "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred"
+  }],
+  "content" : [
+    {
+      "attachment" : {
+        "contentType" : "application/fhir+json",
+        "url" : "Bundle/ps-01",
+        "title" : "Patient Summary",
+        "creation" : "2020-02-02T23:50:50-05:00"
+      }
+    }
+  ]
+}
