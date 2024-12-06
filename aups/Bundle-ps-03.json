@@ -1,0 +1,778 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "ps-03",
+  "meta" : {
+    "lastUpdated" : "2019-09-17T09:01:00+10:00"
+  },
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:uuid:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8"
+  },
+  "type" : "document",
+  "timestamp" : "2019-09-17T09:01:00+10:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:472d2cd8-cb3f-4450-854a-fae62130324c",
+    "resource" : {
+      "resourceType" : "Composition",
+      "id" : "472d2cd8-cb3f-4450-854a-fae62130324c",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/aups/StructureDefinition/au-ps-composition"]
+      },
+      "language" : "en-AU",
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\"><a name=\"Composition_472d2cd8-cb3f-4450-854a-fae62130324c\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition 472d2cd8-cb3f-4450-854a-fae62130324c</b></p><a name=\"472d2cd8-cb3f-4450-854a-fae62130324c\"> </a><a name=\"hc472d2cd8-cb3f-4450-854a-fae62130324c\"> </a><a name=\"472d2cd8-cb3f-4450-854a-fae62130324c-en-AU\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en-AU</p><p style=\"margin-bottom: 0px\">Profile: <code>http://hl7.org.au/fhir/aups/StructureDefinition/au-ps-composition</code></p></div><p><b>Information Recipient</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.0.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">URI</a>/urn:uuid:0407733f-398c-4109-a35d-4dc16d3e47d1</p><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>category</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>date</b>: 2019-09-17 09:00:00+1000</p><p><b>author</b>: <a href=\"Bundle-ps-03.html#urn-uuid-c2f13b02-23fa-4a14-a95e-8ecc811454f6\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>title</b>: Patient Summary</p><h3>Attesters</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td style=\"display: none\">*</td><td>Legal</td><td>2019-09-17 09:00:00+1000</td><td><a href=\"Bundle-ps-03.html#urn-uuid-c2f13b02-23fa-4a14-a95e-8ecc811454f6\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></td></tr></table><p><b>custodian</b>: <a href=\"Bundle-ps-03.html#urn-uuid-113f3887-9b92-4b4e-be67-73f11bb9fed9\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/information-recipient",
+        "valueReference" : {
+          "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018"
+        }
+      }],
+      "identifier" : {
+        "system" : "urn:ietf:rfc:3986",
+        "value" : "urn:uuid:0407733f-398c-4109-a35d-4dc16d3e47d1"
+      },
+      "status" : "final",
+      "type" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5"
+        }]
+      }],
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018"
+      },
+      "date" : "2019-09-17T09:00:00+10:00",
+      "author" : [{
+        "reference" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6"
+      }],
+      "title" : "Patient Summary",
+      "attester" : [{
+        "mode" : "legal",
+        "time" : "2019-09-17T09:00:00+10:00",
+        "party" : {
+          "reference" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6"
+        }
+      }],
+      "custodian" : {
+        "reference" : "urn:uuid:113f3887-9b92-4b4e-be67-73f11bb9fed9"
+      },
+      "section" : [{
+        "title" : "Medicines",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10160-0"
+          }]
+        },
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-AU\">\n                            <table border=\"5\">\n                                <caption>Medicines</caption>\n                                <thead>\n                                    <tr>\n                                        <th>Medication</th>\n                                        <th>Dose</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr>\n                                        <td>Candesartan 32mg</td>\n                                        <td>1 tablet daily</td>\n                                    </tr>\n                                    <tr>\n                                        <td>Metformin 500mg</td>\n                                        <td>1 tablet twice daily</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:374e5ac9-9262-42ce-8400-63afb0ae7170"
+        },
+        {
+          "reference" : "urn:uuid:a214910f-1067-49ef-bd01-4f1eb7f6646a"
+        }]
+      },
+      {
+        "title" : "Allergies and Adverse Reactions",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "48765-2",
+            "display" : "Allergies and adverse reactions Document"
+          }]
+        },
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-AU\">\n                            <p>No available information.</p>\n                        </div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }]
+        }
+      },
+      {
+        "title" : "Medical History",
+        "code" : {
+          "coding" : [{
+            "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/nctis-data-components-1",
+            "code" : "101.16117",
+            "display" : "Medical History"
+          }]
+        },
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n                            <table border=\"5\">\n                                <caption>Problems and Diagnoses</caption>\n                                <thead>\n                                    <tr>\n                                        <th>Condition</th>\n                                        <th>Onset</th>\n                                        <th>Abatement / Resolution</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr>\n                                        <td>Atrial fibrillation</td>\n                                        <td>2019</td>\n                                        <td>-</td>\n                                    </tr>\n                                    <tr>\n                                        <td>Right lower zone pneumonia</td>\n                                        <td>March 2019</td>\n                                        <td>April 2019</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                            <table border=\"5\">\n                                <caption>Procedures</caption>\n                                <thead>\n                                    <tr>\n                                        <th>Procedure</th>\n                                        <th>Date</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr>\n                                        <td>Total replacement of left knee joint</td>\n                                        <td>27 February 2019</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:13556c94-ee02-4232-b19f-d0b60a61f7cd"
+        },
+        {
+          "reference" : "urn:uuid:23ff740b-51d2-44c3-ae5a-af69dfbcd11f"
+        },
+        {
+          "reference" : "urn:uuid:e7773724-eef0-4a8e-ab20-f5d25e3efeab"
+        }]
+      },
+      {
+        "title" : "Immunisations",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11369-6",
+            "display" : "History of Immunization Narrative"
+          }]
+        },
+        "text" : {
+          "status" : "additional",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-AU\">\n                            <table border=\"5\">\n                                <caption>Immunisations</caption>\n                                <thead>\n                                    <tr>\n                                        <th>Vaccine</th>\n                                        <th>Date administered</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr>\n                                        <td>diphtheria + tetanus</td>\n                                        <td>15 APR 2018</td>\n                                        <td/>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:92a2bebf-ada8-445b-b87b-f1c3022604a5"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "36298f0d-9a50-48f5-a739-851d8bc8f018",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_36298f0d-9a50-48f5-a739-851d8bc8f018\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 36298f0d-9a50-48f5-a739-851d8bc8f018</b></p><a name=\"36298f0d-9a50-48f5-a739-851d8bc8f018\"> </a><a name=\"hc36298f0d-9a50-48f5-a739-851d8bc8f018\"> </a><a name=\"36298f0d-9a50-48f5-a739-851d8bc8f018-en-AU\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Li Wang  Male, DoB: 1975-05-03 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833357361)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>Medicare Number/29533070322</li><li>Medical Record Number/2338189</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\">29 Gadsby Street Blacktown NSW 2148 AU (home)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Language spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes:{urn:ietf:bcp:47 yue}\">Cantonese</span> (preferred)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: unrelated friend\">unrelated friend:</td><td colspan=\"3\"><ul><li>Peter Rabbit Rabbit </li><li>29 Gadsby Street Blacktown NSW 2148 AU (home)</li><li>ph: 07 853 9191(Home)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements.\"><a href=\"http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-patient-birthPlace.html\">Patient Birth Place</a></td><td colspan=\"3\">China</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This extension applies to the Patient, RelatedPerson, and Practitioner resources and is used to represent a person's date of arrival in an Australian context (see [Australian Bureau of Statistics](https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/1200.0.55.007Main+Features12014,%20Version%201.5?OpenDocument) for further information). The date of arrival is when a person (born outside of Australia) first arrived in Australia, from another country, with the intention of living in Australia for one year or more. This date is recorded once for a person and is not subsequently updated with subsequent arrivals. This element is a part of Cultural and Linguistic Diversity (CALD) data set. It is an important indicator of cultural identity, and provides further information about a person's cultural values and practices which can be significant in determining service type, support required, and possible needs.\"><a href=\"https://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-date-of-arrival.html\">Date of Arrival in Australia</a></td><td colspan=\"3\">2015</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This extension applies to the Patient, Person, and RelatedPerson resources and is used to indicate whether a person identifies as being of Aboriginal or Torres Strait Islander origin.\"><a href=\"https://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-indigenous-status.html\">Australian Indigenous Status</a></td><td colspan=\"3\">australian-indigenous-status-1 4: Neither Aboriginal nor Torres Strait Islander origin</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This Patient requires an interpreter to communicate healthcare information to the practitioner.\"><a href=\"http://hl7.org/fhir/extensions/5.1.0/StructureDefinition-patient-interpreterRequired.html\">Patient Interpreter Required</a></td><td colspan=\"3\">true</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+        "valueAddress" : {
+          "text" : "China",
+          "country" : "CHN"
+        }
+      },
+      {
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+        "valueCoding" : {
+          "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+          "code" : "4",
+          "display" : "Neither Aboriginal nor Torres Strait Islander origin"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/patient-interpreterRequired",
+        "valueBoolean" : true
+      },
+      {
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/date-of-arrival",
+        "valueDate" : "2015"
+      }],
+      "identifier" : [{
+        "extension" : [{
+          "url" : "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+          "valueCoding" : {
+            "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+            "code" : "active"
+          }
+        },
+        {
+          "url" : "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+          "valueCoding" : {
+            "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+            "code" : "verified",
+            "display" : "verified"
+          }
+        }],
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI"
+          }],
+          "text" : "IHI"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+        "value" : "8003608833357361"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MC"
+          }],
+          "text" : "Medicare Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-number",
+        "value" : "29533070322"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MR",
+            "display" : "Medical record number"
+          }],
+          "text" : "Medical Record Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/medicalrecord/1.0/8003621566684455",
+        "value" : "2338189",
+        "assigner" : {
+          "display" : "Large Metropolitan Hospital"
+        }
+      }],
+      "name" : [{
+        "family" : "Wang",
+        "given" : ["Li"],
+        "prefix" : ["Mr"]
+      }],
+      "gender" : "male",
+      "birthDate" : "1975-05-03",
+      "_birthDate" : {
+        "extension" : [{
+          "url" : "http://hl7.org.au/fhir/StructureDefinition/date-accuracy-indicator",
+          "valueCoding" : {
+            "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1",
+            "code" : "AAA",
+            "display" : "Day, month and year are accurate"
+          }
+        }]
+      },
+      "address" : [{
+        "use" : "home",
+        "line" : ["29 Gadsby Street"],
+        "city" : "Blacktown",
+        "state" : "NSW",
+        "postalCode" : "2148",
+        "country" : "AU"
+      }],
+      "contact" : [{
+        "relationship" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "code" : "FRND",
+            "display" : "unrelated friend"
+          },
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "code" : "C",
+            "display" : "Emergency Contact"
+          }]
+        }],
+        "name" : {
+          "use" : "usual",
+          "family" : "Rabbit",
+          "given" : ["Peter",
+          "Rabbit"]
+        },
+        "telecom" : [{
+          "system" : "phone",
+          "value" : "07 853 9191",
+          "use" : "home"
+        }],
+        "address" : {
+          "use" : "home",
+          "line" : ["29 Gadsby Street"],
+          "city" : "Blacktown",
+          "state" : "NSW",
+          "postalCode" : "2148",
+          "country" : "AU"
+        }
+      }],
+      "communication" : [{
+        "language" : {
+          "coding" : [{
+            "system" : "urn:ietf:bcp:47",
+            "code" : "yue"
+          }],
+          "text" : "Cantonese"
+        },
+        "preferred" : true
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "c2f13b02-23fa-4a14-a95e-8ecc811454f6",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_c2f13b02-23fa-4a14-a95e-8ecc811454f6\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole c2f13b02-23fa-4a14-a95e-8ecc811454f6</b></p><a name=\"c2f13b02-23fa-4a14-a95e-8ecc811454f6\"> </a><a name=\"hcc2f13b02-23fa-4a14-a95e-8ecc811454f6\"> </a><a name=\"c2f13b02-23fa-4a14-a95e-8ecc811454f6-en-AU\"> </a><p><b>identifier</b>: Employee Number/BBC-GA-001, HPI-I/8003619900015717</p><p><b>practitioner</b>: <a href=\"Bundle-ps-03.html#urn-uuid-64af843a-685d-4383-b013-cfaf4eb4f627\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>organization</b>: <a href=\"Bundle-ps-03.html#urn-uuid-113f3887-9b92-4b4e-be67-73f11bb9fed9\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 62247001}, {http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0 253111}\">General Practitioner</span></p><p><b>telecom</b>: ph: 0491579760, <a href=\"mailto:drbob@bobrestermedical.example.com\">drbob@bobrestermedical.example.com</a></p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "EI",
+            "display" : "Employee number"
+          }],
+          "text" : "Employee Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003621566684455",
+        "value" : "BBC-GA-001",
+        "assigner" : {
+          "display" : "Bobregster Medical Center QLD"
+        }
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NPI",
+            "display" : "National provider identifier"
+          }],
+          "text" : "HPI-I"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+        "value" : "8003619900015717"
+      }],
+      "practitioner" : {
+        "reference" : "urn:uuid:64af843a-685d-4383-b013-cfaf4eb4f627"
+      },
+      "organization" : {
+        "reference" : "urn:uuid:113f3887-9b92-4b4e-be67-73f11bb9fed9"
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "62247001"
+        },
+        {
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code" : "253111"
+        }],
+        "text" : "General Practitioner"
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0491579760"
+      },
+      {
+        "system" : "email",
+        "value" : "drbob@bobrestermedical.example.com"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:64af843a-685d-4383-b013-cfaf4eb4f627",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "64af843a-685d-4383-b013-cfaf4eb4f627",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_64af843a-685d-4383-b013-cfaf4eb4f627\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner 64af843a-685d-4383-b013-cfaf4eb4f627</b></p><a name=\"64af843a-685d-4383-b013-cfaf4eb4f627\"> </a><a name=\"hc64af843a-685d-4383-b013-cfaf4eb4f627\"> </a><a name=\"64af843a-685d-4383-b013-cfaf4eb4f627-en-AU\"> </a><p><b>identifier</b>: Medicare Provider Number/1234561A, Prescriber Number/553255</p><p><b>name</b>: Bob Bobrester </p><p><b>telecom</b>: <a href=\"mailto:drbob@bobrestermedical.example.com\">drbob@bobrestermedical.example.com</a></p><h3>Qualifications</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Identifier</b></td><td><b>Code</b></td><td><b>Period</b></td><td><b>Issuer</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>Ahpra Registration Number/MED0002137855</td><td><span title=\"Codes:{http://terminology.hl7.org.au/CodeSystem/v2-0360 AUAHPRAProfession}\">Medical Practitioner</span></td><td>1996-02-08 --&gt; (ongoing)</td><td>Australian Health Practitioner Regulation Agency</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "UPIN"
+          }],
+          "text" : "Medicare Provider Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-provider-number",
+        "value" : "1234561A"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "PRES",
+            "display" : "Prescriber Number"
+          }],
+          "text" : "Prescriber Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-prescriber-number",
+        "value" : "553255"
+      }],
+      "name" : [{
+        "family" : "Bobrester",
+        "given" : ["Bob"],
+        "prefix" : ["Dr."]
+      }],
+      "telecom" : [{
+        "system" : "email",
+        "value" : "drbob@bobrestermedical.example.com"
+      }],
+      "qualification" : [{
+        "extension" : [{
+          "url" : "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details",
+          "extension" : [{
+            "url" : "ahpraProfession",
+            "valueCodeableConcept" : {
+              "text" : "Medical Practitioner"
+            }
+          }]
+        }],
+        "identifier" : [{
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+              "code" : "AHPRA",
+              "display" : "Australian Health Practitioner Regulation Agency Registration Number"
+            }],
+            "text" : "Ahpra Registration Number"
+          },
+          "system" : "http://hl7.org.au/id/ahpra-registration-number",
+          "value" : "MED0002137855"
+        }],
+        "code" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code" : "AUAHPRAProfession"
+          }],
+          "text" : "Medical Practitioner"
+        },
+        "period" : {
+          "start" : "1996-02-08"
+        },
+        "issuer" : {
+          "display" : "Australian Health Practitioner Regulation Agency"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:113f3887-9b92-4b4e-be67-73f11bb9fed9",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "113f3887-9b92-4b4e-be67-73f11bb9fed9",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_113f3887-9b92-4b4e-be67-73f11bb9fed9\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization 113f3887-9b92-4b4e-be67-73f11bb9fed9</b></p><a name=\"113f3887-9b92-4b4e-be67-73f11bb9fed9\"> </a><a name=\"hc113f3887-9b92-4b4e-be67-73f11bb9fed9\"> </a><a name=\"113f3887-9b92-4b4e-be67-73f11bb9fed9-en-AU\"> </a><p><b>identifier</b>: HPI-O/8003621566684455</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 288565001}\">Medical Center</span></p><p><b>name</b>: Bobrester Medical Center</p><p><b>telecom</b>: <a href=\"mailto:info@bobrestermedical.example.com\">info@bobrestermedical.example.com</a>, ph: (07) 5550 2427(Work)</p><p><b>address</b>: 87 Western Esp Tindal RAAF QLD 4655 AU </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "NOI"
+          }],
+          "text" : "HPI-O"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+        "value" : "8003621566684455"
+      }],
+      "type" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "288565001",
+          "display" : "Medical centre"
+        }],
+        "text" : "Medical Center"
+      }],
+      "name" : "Bobrester Medical Center",
+      "telecom" : [{
+        "system" : "email",
+        "value" : "info@bobrestermedical.example.com",
+        "use" : "work"
+      },
+      {
+        "system" : "phone",
+        "value" : "(07) 5550 2427",
+        "use" : "work"
+      }],
+      "address" : [{
+        "line" : ["87 Western Esp"],
+        "city" : "Tindal RAAF",
+        "state" : "QLD",
+        "postalCode" : "4655",
+        "country" : "AU"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:374e5ac9-9262-42ce-8400-63afb0ae7170",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "374e5ac9-9262-42ce-8400-63afb0ae7170",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_374e5ac9-9262-42ce-8400-63afb0ae7170\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 374e5ac9-9262-42ce-8400-63afb0ae7170</b></p><a name=\"374e5ac9-9262-42ce-8400-63afb0ae7170\"> </a><a name=\"hc374e5ac9-9262-42ce-8400-63afb0ae7170\"> </a><a name=\"374e5ac9-9262-42ce-8400-63afb0ae7170-en-AU\"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{http://snomed.info/sct 22087011000036100}\">Candesartan 32mg</span></p><p><b>subject</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><blockquote><p><b>dosage</b></p><p><b>text</b>: 1 tablet daily</p><p><b>timing</b>: Once per 1 days</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1 tablet<span style=\"background: LightGoldenRodYellow\"> (Details: SNOMED CT  code63011000036109 = 'tablet')</span></td></tr></table></blockquote></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "22087011000036100",
+          "display" : "candesartan cilexetil 32 mg tablet"
+        }],
+        "text" : "Candesartan 32mg"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+        "identifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "NI",
+              "display" : "National unique individual identifier"
+            }],
+            "text" : "IHI"
+          },
+          "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+          "value" : "8003608833357361"
+        }
+      },
+      "dosage" : [{
+        "text" : "1 tablet daily",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 1,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 1,
+            "unit" : "tablet",
+            "system" : "http://snomed.info/sct",
+            "code" : "63011000036109"
+          }
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:a214910f-1067-49ef-bd01-4f1eb7f6646a",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "a214910f-1067-49ef-bd01-4f1eb7f6646a",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_a214910f-1067-49ef-bd01-4f1eb7f6646a\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement a214910f-1067-49ef-bd01-4f1eb7f6646a</b></p><a name=\"a214910f-1067-49ef-bd01-4f1eb7f6646a\"> </a><a name=\"hca214910f-1067-49ef-bd01-4f1eb7f6646a\"> </a><a name=\"a214910f-1067-49ef-bd01-4f1eb7f6646a-en-AU\"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:{http://snomed.info/sct 23358011000036102}\">Metformin 500mg</span></p><p><b>subject</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><blockquote><p><b>dosage</b></p><p><b>text</b>: 1 bd</p><p><b>timing</b>: 2 per 1 days</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1 tablet<span style=\"background: LightGoldenRodYellow\"> (Details: SNOMED CT  code63011000036109 = 'tablet')</span></td></tr></table></blockquote></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "23358011000036102",
+          "display" : "metformin hydrochloride 500 mg tablet"
+        }],
+        "text" : "Metformin 500mg"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+        "identifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "NI",
+              "display" : "National unique individual identifier"
+            }],
+            "text" : "IHI"
+          },
+          "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+          "value" : "8003608833357361"
+        }
+      },
+      "dosage" : [{
+        "text" : "1 bd",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 2,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 1,
+            "unit" : "tablet",
+            "system" : "http://snomed.info/sct",
+            "code" : "63011000036109"
+          }
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:13556c94-ee02-4232-b19f-d0b60a61f7cd",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "13556c94-ee02-4232-b19f-d0b60a61f7cd",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_13556c94-ee02-4232-b19f-d0b60a61f7cd\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 13556c94-ee02-4232-b19f-d0b60a61f7cd</b></p><a name=\"13556c94-ee02-4232-b19f-d0b60a61f7cd\"> </a><a name=\"hc13556c94-ee02-4232-b19f-d0b60a61f7cd\"> </a><a name=\"13556c94-ee02-4232-b19f-d0b60a61f7cd-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 301001009}\">Right lower zone pneumonia</span></p><p><b>subject</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>onset</b>: 2019-03</p><p><b>abatement</b>: 2019-04-03</p><p><b>recorder</b>: <a href=\"Bundle-ps-03.html#urn-uuid-c2f13b02-23fa-4a14-a95e-8ecc811454f6\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved",
+          "display" : "Resolved"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "301001009",
+          "display" : "Right lower zone pneumonia"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+        "identifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "NI",
+              "display" : "National unique individual identifier"
+            }],
+            "text" : "IHI"
+          },
+          "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+          "value" : "8003608833357361"
+        }
+      },
+      "onsetDateTime" : "2019-03",
+      "abatementDateTime" : "2019-04-03",
+      "recorder" : {
+        "reference" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:23ff740b-51d2-44c3-ae5a-af69dfbcd11f",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "23ff740b-51d2-44c3-ae5a-af69dfbcd11f",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_23ff740b-51d2-44c3-ae5a-af69dfbcd11f\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 23ff740b-51d2-44c3-ae5a-af69dfbcd11f</b></p><a name=\"23ff740b-51d2-44c3-ae5a-af69dfbcd11f\"> </a><a name=\"hc23ff740b-51d2-44c3-ae5a-af69dfbcd11f\"> </a><a name=\"23ff740b-51d2-44c3-ae5a-af69dfbcd11f-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 49436004}\">Atrial fibrillation</span></p><p><b>subject</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>onset</b>: 2017</p><p><b>recorder</b>: <a href=\"Bundle-ps-03.html#urn-uuid-c2f13b02-23fa-4a14-a95e-8ecc811454f6\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "49436004",
+          "display" : "Atrial fibrillation"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+        "identifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "NI",
+              "display" : "National unique individual identifier"
+            }],
+            "text" : "IHI"
+          },
+          "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+          "value" : "8003608833357361"
+        }
+      },
+      "onsetDateTime" : "2017",
+      "recorder" : {
+        "reference" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:e7773724-eef0-4a8e-ab20-f5d25e3efeab",
+    "resource" : {
+      "resourceType" : "Procedure",
+      "id" : "e7773724-eef0-4a8e-ab20-f5d25e3efeab",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Procedure_e7773724-eef0-4a8e-ab20-f5d25e3efeab\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Procedure e7773724-eef0-4a8e-ab20-f5d25e3efeab</b></p><a name=\"e7773724-eef0-4a8e-ab20-f5d25e3efeab\"> </a><a name=\"hce7773724-eef0-4a8e-ab20-f5d25e3efeab\"> </a><a name=\"e7773724-eef0-4a8e-ab20-f5d25e3efeab-en-AU\"> </a><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 7922000}\">General treatment</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 443681002}\">Total replacement of left knee joint</span></p><p><b>subject</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>performed</b>: 2019-02-27</p><p><b>recorder</b>: <a href=\"Bundle-ps-03.html#urn-uuid-c2f13b02-23fa-4a14-a95e-8ecc811454f6\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 735263003}\">Entire left knee joint</span></p></div>"
+      },
+      "status" : "completed",
+      "category" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "7922000",
+          "display" : "General treatment"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "443681002",
+          "display" : "Total replacement of left knee joint"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018",
+        "identifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "NI",
+              "display" : "National unique individual identifier"
+            }],
+            "text" : "IHI"
+          },
+          "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+          "value" : "8003608833357361"
+        }
+      },
+      "performedDateTime" : "2019-02-27",
+      "recorder" : {
+        "reference" : "urn:uuid:c2f13b02-23fa-4a14-a95e-8ecc811454f6"
+      },
+      "bodySite" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "735263003",
+          "display" : "Entire left knee joint"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:92a2bebf-ada8-445b-b87b-f1c3022604a5",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "id" : "92a2bebf-ada8-445b-b87b-f1c3022604a5",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_92a2bebf-ada8-445b-b87b-f1c3022604a5\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization 92a2bebf-ada8-445b-b87b-f1c3022604a5</b></p><a name=\"92a2bebf-ada8-445b-b87b-f1c3022604a5\"> </a><a name=\"hc92a2bebf-ada8-445b-b87b-f1c3022604a5\"> </a><a name=\"92a2bebf-ada8-445b-b87b-f1c3022604a5-en-AU\"> </a><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{http://snomed.info/sct 837281000168100}\">diphtheria 2 units + tetanus 20 units vaccine injection, 0.5 mL syringe</span></p><p><b>patient</b>: <a href=\"Bundle-ps-03.html#urn-uuid-36298f0d-9a50-48f5-a739-851d8bc8f018\">Bundle: identifier = UUID:fe178cb8-19ea-41e5-80ef-88bdb8e6f8f8; type = document; timestamp = 2019-09-17 09:01:00+1000</a></p><p><b>occurrence</b>: 2018-04-15</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "837281000168100",
+          "display" : "diphtheria 2 units + tetanus 20 units vaccine injection, 0.5 mL syringe"
+        }]
+      },
+      "patient" : {
+        "reference" : "urn:uuid:36298f0d-9a50-48f5-a739-851d8bc8f018"
+      },
+      "occurrenceDateTime" : "2018-04-15",
+      "primarySource" : true
+    }
+  }]
+}
