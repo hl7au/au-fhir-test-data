@@ -66,10 +66,10 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-            "code": "not-asked"
+            "code": "unknown"
           }
         ],
-        "text": "Not Asked"
+        "text": "Unknown"
       }
     }
   ]
