@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1534b720-e5b2-425e-916e-4aca7f0920c8",
+		"_postman_id": "ddc234a8-f86c-4d80-b218-6aaff26fb44b",
 		"name": "Sparked AUCore Test Data",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20009717"
+		"_exporter_id": "33541760"
 	},
 	"item": [
 		{
@@ -3985,7 +3985,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"baratz-toni\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"1\",\r\n        \"display\": \"Aboriginal but not Torres Strait Islander origin\"\r\n      }\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"446141000124107\",\r\n                \"display\": \"Identifies as female gender\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-genderIdentity\"\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"LA29519-8\",\r\n                \"display\": \"she/her/her/hers/herself\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-pronouns\"\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"type\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"1515311000168102\",\r\n                \"display\": \"Biological sex at birth\"\r\n              }\r\n            ]\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"248152002\",\r\n                \"display\": \"Female\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1\",\r\n            \"code\": \"active\"\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-record-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1\",\r\n            \"code\": \"verified\",\r\n            \"display\": \"verified\"\r\n          }\r\n        }\r\n      ],\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608000311662\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"69518252411\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"use\": \"official\",\r\n      \"family\": \"BARATZ\",\r\n      \"given\": [\r\n        \"Toni\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0870101270\",\r\n      \"use\": \"home\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570156\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0870108006\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\",\r\n  \"birthDate\": \"1978-06-16\",\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"24 Law Cir\"\r\n      ],\r\n      \"city\": \"Bassendean\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6054\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ],\r\n  \"communication\": [\r\n    {\r\n      \"language\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"urn:ietf:bcp:47\",\r\n            \"code\": \"yub\"\r\n          }\r\n        ],\r\n        \"text\": \"Yugambal\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"baratz-toni\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"1\",\r\n        \"display\": \"Aboriginal but not Torres Strait Islander origin\"\r\n      }\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"446141000124107\",\r\n                \"display\": \"Identifies as female gender\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-genderIdentity\"\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"LA29519-8\",\r\n                \"display\": \"she/her/her/hers/herself\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-pronouns\"\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"type\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"1515311000168102\",\r\n                \"display\": \"Biological sex at birth\"\r\n              }\r\n            ]\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://snomed.info/sct\",\r\n                \"code\": \"248152002\",\r\n                \"display\": \"Female\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1\",\r\n            \"code\": \"active\"\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-record-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1\",\r\n            \"code\": \"verified\",\r\n            \"display\": \"verified\"\r\n          }\r\n        }\r\n      ],\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608000311662\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"69518252411\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"use\": \"official\",\r\n      \"family\": \"BARATZ\",\r\n      \"given\": [\r\n        \"Toni\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0870101270\",\r\n      \"use\": \"home\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570156\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0870108006\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"gender\": \"female\",\r\n  \"birthDate\": \"1978-06-16\",\r\n  \"address\": [\r\n    {\r\n      \"line\": [\r\n        \"24 Law Cir\"\r\n      ],\r\n      \"city\": \"Bassendean\",\r\n      \"state\": \"WA\",\r\n      \"postalCode\": \"6054\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4327,7 +4327,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"howe-deangelo\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"4\",\r\n        \"display\": \"Neither Aboriginal nor Torres Strait Islander origin\"\r\n      }\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1\",\r\n            \"code\": \"active\"\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-record-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1\",\r\n            \"code\": \"verified\",\r\n            \"display\": \"verified\"\r\n          }\r\n        }\r\n      ],\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608000311621\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"49516512111\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"use\": \"official\",\r\n      \"family\": \"HOWE\",\r\n      \"given\": [\r\n        \"Deangelo\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770109269\",\r\n      \"use\": \"home\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570156\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770105770\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"1975-06-21\",\r\n  \"_birthDate\": {\r\n    \"extension\": [\r\n      {\r\n        \"url\": \"http://hl7.org.au/fhir/StructureDefinition/date-accuracy-indicator\",\r\n        \"valueCoding\": {\r\n          \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1\",\r\n          \"code\": \"AAA\",\r\n          \"display\": \"Day, month and year are accurate\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"address\": [\r\n    {\r\n      \"use\": \"home\",\r\n      \"line\": [\r\n        \"134 Copper Hts\"\r\n      ],\r\n      \"city\": \"Curra\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4570\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ],\r\n  \"communication\": [\r\n    {\r\n      \"language\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"urn:ietf:bcp:47\",\r\n            \"code\": \"el\"\r\n          }\r\n        ],\r\n        \"text\": \"Greek\"\r\n      },\r\n      \"preferred\": true\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Patient\",\r\n  \"id\": \"howe-deangelo\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient\"\r\n    ]\r\n  },\r\n  \"extension\": [\r\n    {\r\n      \"url\": \"http://hl7.org.au/fhir/StructureDefinition/indigenous-status\",\r\n      \"valueCoding\": {\r\n        \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1\",\r\n        \"code\": \"4\",\r\n        \"display\": \"Neither Aboriginal nor Torres Strait Islander origin\"\r\n      }\r\n    },\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"value\",\r\n          \"valueCodeableConcept\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://loinc.org\",\r\n                \"code\": \"LA29520-6\",\r\n                \"display\": \"they/them/their/theirs/themselves\"\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      ],\r\n      \"url\": \"http://hl7.org/fhir/StructureDefinition/individual-pronouns\"\r\n    }\r\n  ],\r\n  \"identifier\": [\r\n    {\r\n      \"extension\": [\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1\",\r\n            \"code\": \"active\"\r\n          }\r\n        },\r\n        {\r\n          \"url\": \"http://hl7.org.au/fhir/StructureDefinition/ihi-record-status\",\r\n          \"valueCoding\": {\r\n            \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1\",\r\n            \"code\": \"verified\",\r\n            \"display\": \"verified\"\r\n          }\r\n        }\r\n      ],\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"NI\"\r\n          }\r\n        ],\r\n        \"text\": \"IHI\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hi/ihi/1.0\",\r\n      \"value\": \"8003608000311621\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"MC\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-number\",\r\n      \"value\": \"49516512111\"\r\n    }\r\n  ],\r\n  \"name\": [\r\n    {\r\n      \"use\": \"official\",\r\n      \"family\": \"HOWE\",\r\n      \"given\": [\r\n        \"Deangelo\"\r\n      ],\r\n      \"prefix\": [\r\n        \"Mr\"\r\n      ]\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770109269\",\r\n      \"use\": \"home\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0491570156\",\r\n      \"use\": \"mobile\"\r\n    },\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770105770\",\r\n      \"use\": \"work\"\r\n    }\r\n  ],\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"1975-06-21\",\r\n  \"_birthDate\": {\r\n    \"extension\": [\r\n      {\r\n        \"url\": \"http://hl7.org.au/fhir/StructureDefinition/date-accuracy-indicator\",\r\n        \"valueCoding\": {\r\n          \"system\": \"https://healthterminologies.gov.au/fhir/CodeSystem/date-accuracy-indicator-1\",\r\n          \"code\": \"AAA\",\r\n          \"display\": \"Day, month and year are accurate\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"address\": [\r\n    {\r\n      \"use\": \"home\",\r\n      \"line\": [\r\n        \"134 Copper Hts\"\r\n      ],\r\n      \"city\": \"Curra\",\r\n      \"state\": \"QLD\",\r\n      \"postalCode\": \"4570\",\r\n      \"country\": \"AU\"\r\n    }\r\n  ],\r\n  \"communication\": [\r\n    {\r\n      \"language\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"urn:ietf:bcp:47\",\r\n            \"code\": \"el\"\r\n          }\r\n        ],\r\n        \"text\": \"Greek\"\r\n      },\r\n      \"preferred\": true\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6741,6 +6741,44 @@
 							"response": []
 						},
 						{
+							"name": "generalpractitioner-burrows-ginger PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"generalpractitioner-guthridge-jarred\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448301T\"\r\n    },\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n            \"code\": \"EI\",\r\n            \"display\": \"Employee number\"\r\n          }\r\n        ],\r\n        \"text\": \"Employee Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003629900040359\",\r\n      \"value\": \"BBC-GA-001\",\r\n      \"assigner\": {\r\n        \"display\": \"Elimbah Medical Centre\"\r\n      }\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/guthridge-jarred\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/elimbah-medical-centre\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253111\",\r\n          \"display\": \"General Practitioner\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"408443003\",\r\n          \"display\": \"General medical practice\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/elimbah-medical-centre\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770109540\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"jarred.guthridge@elimbahmedicalcentre.example.com.au\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/PractitionerRole/generalpractitioner-guthridge-jarred",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole",
+										"generalpractitioner-guthridge-jarred"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "cardiologist-felmingham-emma PractitionerRole",
 							"request": {
 								"method": "PUT",
@@ -7119,6 +7157,44 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "pathologist-herbert-aimee PractitionerRole",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"PractitionerRole\",\r\n  \"id\": \"pathologist-herbert-aimee\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole\"\r\n    ]\r\n  },\r\n  \"identifier\": [\r\n    {\r\n      \"type\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org.au/CodeSystem/v2-0203\",\r\n            \"code\": \"UPIN\"\r\n          }\r\n        ],\r\n        \"text\": \"Medicare Provider Number\"\r\n      },\r\n      \"system\": \"http://ns.electronichealth.net.au/id/medicare-provider-number\",\r\n      \"value\": \"2448391X\"\r\n    }\r\n  ],\r\n  \"practitioner\": {\r\n    \"reference\": \"Practitioner/herbert-aimee\"\r\n  },\r\n  \"organization\": {\r\n    \"reference\": \"Organization/kioma-pathology\"\r\n  },\r\n  \"code\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0\",\r\n          \"code\": \"253915\",\r\n          \"display\": \"Pathologist\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"specialty\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"394595002\",\r\n          \"display\": \"Pathology\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"location\": [\r\n    {\r\n      \"reference\": \"Location/kioma-pathology\"\r\n    }\r\n  ],\r\n  \"telecom\": [\r\n    {\r\n      \"system\": \"phone\",\r\n      \"value\": \"0770103753\",\r\n      \"use\": \"work\"\r\n    },\r\n    {\r\n      \"system\": \"email\",\r\n      \"value\": \"aimee.herbert@kiomapathology.example.net\",\r\n      \"use\": \"work\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/PractitionerRole/pathologist-herbert-aimee",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"PractitionerRole",
+										"pathologist-herbert-aimee"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -7435,7 +7511,7 @@
 					"name": "Observation",
 					"item": [
 						{
-							"name": "blood-group Observation",
+							"name": "blood-group-panel-cancelled Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -7452,7 +7528,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"blood-group\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"882-1\",\r\n        \"display\": \"ABO and Rh group [Type] in Blood\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood Group\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"112144000\",\r\n        \"display\": \"Blood group A (finding)\"\r\n      }\r\n    ],\r\n    \"text\": \"A\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"blood-group-panel-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\",\r\n      \"http://hl7.org.au/fhir/StructureDefinition/au-pathologyresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"34532-2\",\r\n        \"display\": \"Blood type and Indirect antibody screen panel - Blood\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood type and Indirect antibody screen panel - Blood\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-05-12\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7460,51 +7536,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/blood-group",
+									"raw": "{{server}}/Observation/blood-group-panel-cancelled",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"blood-group"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "rh-status Observation",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth-header}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/fhir+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"rh-status\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"890-4\",\r\n        \"display\": \"Blood group antibody screen [Presence] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood Group Antibody Screen\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260385009\",\r\n        \"display\": \"Negative\"\r\n      }\r\n    ],\r\n    \"text\": \"RhD positive\"\r\n  }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{server}}/Observation/rh-status",
-									"host": [
-										"{{server}}"
-									],
-									"path": [
-										"Observation",
-										"rh-status"
+										"blood-group-panel-cancelled"
 									]
 								}
 							},
@@ -7549,6 +7587,44 @@
 							"response": []
 						},
 						{
+							"name": "blood-group Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"blood-group\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"882-1\",\r\n        \"display\": \"ABO and Rh group [Type] in Blood\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood Group\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"112144000\",\r\n        \"display\": \"Blood group A (finding)\"\r\n      }\r\n    ],\r\n    \"text\": \"A\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/blood-group",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"blood-group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "bloodpressure-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -7581,6 +7657,120 @@
 									"path": [
 										"Observation",
 										"bloodpressure-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bloodpressure-diastolic-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bloodpressure-diastolic-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"85354-9\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"75367002\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood pressure systolic and diastolic\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2024-02-03\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-burrows-ginger\"\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8480-6\",\r\n            \"display\": \"Systolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271649006\"\r\n          }\r\n        ],\r\n        \"text\": \"Systolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 110,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8462-4\",\r\n            \"display\": \"Diastolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271650006\"\r\n          }\r\n        ],\r\n        \"text\": \"Diastolic blood pressure\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bloodpressure-diastolic-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bloodpressure-diastolic-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bloodpressure-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bloodpressure-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"85354-9\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"75367002\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood pressure systolic and diastolic\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-02-03\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-burrows-ginger\"\r\n    }\r\n  ],\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"error\"\r\n      }\r\n    ],\r\n    \"text\": \"Error\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8480-6\",\r\n            \"display\": \"Systolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271649006\"\r\n          }\r\n        ],\r\n        \"text\": \"Systolic blood pressure\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8462-4\",\r\n            \"display\": \"Diastolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271650006\"\r\n          }\r\n        ],\r\n        \"text\": \"Diastolic blood pressure\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bloodpressure-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bloodpressure-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bloodpressure-systolic-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bloodpressure-systolic-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"85354-9\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"75367002\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood pressure systolic and diastolic\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-02-03\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-burrows-ginger\"\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8480-6\",\r\n            \"display\": \"Systolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271649006\"\r\n          }\r\n        ],\r\n        \"text\": \"Systolic blood pressure\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8462-4\",\r\n            \"display\": \"Diastolic blood pressure\"\r\n          },\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"271650006\"\r\n          }\r\n        ],\r\n        \"text\": \"Diastolic blood pressure\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 60,\r\n        \"unit\": \"mmHg\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mm[Hg]\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bloodpressure-systolic-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bloodpressure-systolic-missing"
 									]
 								}
 							},
@@ -7663,6 +7853,82 @@
 							"response": []
 						},
 						{
+							"name": "bodyheight-1-device-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyheight-1-device-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8302-2\",\r\n        \"display\": \"Body height\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"50373000\"\r\n      }\r\n    ],\r\n    \"text\": \"height\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 175,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"1259000006\",\r\n            \"display\": \"Body height measurement device\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyheight-1-device-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyheight-1-device-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodyheight-1-device Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyheight-1-device\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8302-2\",\r\n        \"display\": \"Body height\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"50373000\"\r\n      }\r\n    ],\r\n    \"text\": \"height\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 175,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"1259000006\",\r\n            \"display\": \"Body height measurement device\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"102304005\",\r\n            \"display\": \"Measuring ruler, device\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyheight-1-device",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyheight-1-device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "bodyheight-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -7701,6 +7967,120 @@
 							"response": []
 						},
 						{
+							"name": "bodyheight-cancelled Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyheight-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8302-2\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"50373000\"\r\n      }\r\n    ],\r\n    \"text\": \"height\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyheight-cancelled",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyheight-cancelled"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodytemp-1-device-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1-device-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 37.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8326-1\",\r\n            \"display\": \"Type of Body temperature device\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodytemp-1-device-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodytemp-1-device-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodytemp-1-device Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1-device\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 37.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8326-1\",\r\n            \"display\": \"Type of Body temperature device\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"467862000\",\r\n            \"display\": \"Capillary patient thermometer, mercury\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodytemp-1-device",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodytemp-1-device"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "bodytemp-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -7718,7 +8098,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 36.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\",\r\n        \"display\": \"Body temperature\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 37.5,\r\n    \"unit\": \"C\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"Cel\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7733,6 +8113,44 @@
 									"path": [
 										"Observation",
 										"bodytemp-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodytemp-cancelled Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodytemp-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8310-5\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"386725007\"\r\n      }\r\n    ],\r\n    \"text\": \"Body temperature\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodytemp-cancelled",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodytemp-cancelled"
 									]
 								}
 							},
@@ -7853,6 +8271,82 @@
 							"response": []
 						},
 						{
+							"name": "bodyweight-3-clothing-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-3-clothing-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Practitioner/guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 75.0,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8352-7\",\r\n            \"display\": \"Clothing worn during measure\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyweight-3-clothing-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyweight-3-clothing-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodyweight-3-clothing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-3-clothing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\",\r\n        \"display\": \"Body weight\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/annualvisit-2\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Practitioner/guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 75.0,\r\n    \"unit\": \"kg\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"kg\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8352-7\",\r\n            \"display\": \"Clothing worn during measure\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"248160001\",\r\n            \"display\": \"Undressed\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyweight-3-clothing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyweight-3-clothing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "bodyweight-3 Observation",
 							"request": {
 								"method": "PUT",
@@ -7885,6 +8379,44 @@
 									"path": [
 										"Observation",
 										"bodyweight-3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "bodyweight-cancelled Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bodyweight-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"29463-7\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"27113001\"\r\n      }\r\n    ],\r\n    \"text\": \"weight\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bodyweight-cancelled",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bodyweight-cancelled"
 									]
 								}
 							},
@@ -7929,6 +8461,348 @@
 							"response": []
 						},
 						{
+							"name": "bonedensity Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"bonedensity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"imaging\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"24701-5\",\r\n        \"display\": \"DXA Femur [Mass/Area] Bone density\"\r\n      }\r\n    ],\r\n    \"text\": \"BMD - Left femur\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-10\",\r\n  \"hasMember\": [\r\n    {\r\n      \"reference\": \"Observation/bmd\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/bonedensity",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"bonedensity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "creatinine-clearance Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"creatinine-clearance\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"2164-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Creatinine clearance, estimated\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2024-12-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Practitioner/patrick-manual\"\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"442407001\"\r\n          },\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"50381-3\"\r\n          }\r\n        ],\r\n        \"text\": \"Creatinine renal clearance/1.73 sq M.predicted among males by Cockcroft-Gault formula, BSA formula\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"not-performed\"\r\n          }\r\n        ],\r\n        \"text\": \"Calculation not performed due to the subject's actual weight being unavailable.\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"442407001\"\r\n          }\r\n        ],\r\n        \"text\": \"Creatinine renal clearance/1.73 sq M.predicted among males by Cockcroft-Gault formula, IBW formula\"\r\n      },\r\n      \"valueQuantity\": {\r\n        \"value\": 45,\r\n        \"unit\": \"mL/min/1.73m2\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mL/min/{1.73_m2}\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/creatinine-clearance",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"creatinine-clearance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "glasgow-coma-scale-motor-not-performed Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"glasgow-coma-scale-motor-not-performed\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"exam\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"248241002\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-08-08T13:30:00.000Z\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"unknown\"\r\n      }\r\n    ],\r\n    \"text\": \"Unknown\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9268-4\",\r\n            \"display\": \"Glasgow coma score motor\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"not-performed\"\r\n          }\r\n        ],\r\n        \"text\": \"Not Performed\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9270-0\",\r\n            \"display\": \"Glasgow coma score verbal\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"LA6560-2\",\r\n            \"display\": \"Confused\"\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9267-6\",\r\n            \"display\": \"Glasgow coma score eye opening\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"LA6556-0\",\r\n            \"display\": \"Eyes open spontaneously\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/glasgow-coma-scale-motor-not-performed",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"glasgow-coma-scale-motor-not-performed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "glasgow-coma-scale Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"glasgow-coma-scale\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"exam\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"248241002\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-08-08T13:30:00.000Z\",\r\n  \"valueQuantity\": {\r\n    \"value\": 13,\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"{score}\"\r\n  },\r\n  \"referenceRange\": [\r\n    {\r\n      \"low\": {\r\n        \"value\": 13,\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"{score}\"\r\n      },\r\n      \"type\": {\r\n        \"text\": \"Mild TBI\"\r\n      }\r\n    }\r\n  ],\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9268-4\",\r\n            \"display\": \"Glasgow coma score motor\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"LA6566-9\",\r\n            \"display\": \"Localizing pain\"\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9270-0\",\r\n            \"display\": \"Glasgow coma score verbal\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"LA6560-2\",\r\n            \"display\": \"Confused\"\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"9267-6\",\r\n            \"display\": \"Glasgow coma score eye opening\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"LA6556-0\",\r\n            \"display\": \"Eyes open spontaneously\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/glasgow-coma-scale",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"glasgow-coma-scale"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "gram-stain Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"gram-stain\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\"\r\n        }\r\n      ],\r\n      \"text\": \"Laboratory\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"664-3\"\r\n      }\r\n    ],\r\n    \"text\": \"Microscopic observation [Identifier] in Specimen by Gram stain\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/pathologist-herbert-aimee\"\r\n    }\r\n  ],\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"61609004\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"70003006\"\r\n      }\r\n    ],\r\n    \"text\": \"Gram-positive cocci in chains and clusters\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"Pathology result observation instance using Observation.component, intended for testing purposes. This test data instance does not intend to demostrate how to represent clinial data in FHIR.\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"708061008\"\r\n          }\r\n        ],\r\n        \"text\": \"Gram stain\"\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"10828004\"\r\n          }\r\n        ],\r\n        \"text\": \"Gram-positive\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"723198002\"\r\n          }\r\n        ],\r\n        \"text\": \"morphology (shape)\"\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"text\": \"cocci\"\r\n      }\r\n    },\r\n    {\r\n      \"code\": {\r\n        \"text\": \"arrangement\"\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"asked-declined\"\r\n          }\r\n        ],\r\n        \"text\": \"asked but declined\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/gram-stain",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"gram-stain"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hearing-threshold-1 Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"hearing-threshold-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\",\r\n      \"http://hl7.org.au/fhir/StructureDefinition/au-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"AU\",\r\n          \"display\": \"Audiology\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"89024-4\",\r\n        \"display\": \"Hearing threshold Ear - left --500 Hz\"\r\n      }\r\n    ],\r\n    \"text\": \"Hearing threshold Ear - left --500 Hz\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2020-11-06T10:45:00-05:00\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Organization/mitchells-hill-audiology\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 45,\r\n    \"unit\": \"dB\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"dB\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/hearing-threshold-1",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"hearing-threshold-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "hearing-threshold-cancelled Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"hearing-threshold-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult\",\r\n      \"http://hl7.org.au/fhir/StructureDefinition/au-diagnosticresult\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"AU\",\r\n          \"display\": \"Audiology\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"89024-4\",\r\n        \"display\": \"Hearing threshold Ear - left --500 Hz\"\r\n      }\r\n    ],\r\n    \"text\": \"Hearing threshold Ear - left --500 Hz\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"effectiveDateTime\": \"2020-11-01T10:45:00-05:00\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Organization/mitchells-hill-audiology\"\r\n    }\r\n  ],\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/hearing-threshold-cancelled",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"hearing-threshold-cancelled"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "heartrate-1-exercise-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"heartrate-1-exercise-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\",\r\n        \"display\": \"Heart rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"364075005\",\r\n        \"display\": \"Heart rate\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 80,\r\n    \"unit\": \"beats/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"74008-4\",\r\n            \"display\": \"Exercise intensity\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"temp-unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Temporarily Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/heartrate-1-exercise-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"heartrate-1-exercise-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "heartrate-1-exercise Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"heartrate-1-exercise\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\",\r\n        \"display\": \"Heart rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"364075005\",\r\n        \"display\": \"Heart rate\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"encounter\": {\r\n    \"display\": \"GP Visit\"\r\n  },\r\n  \"effectiveDateTime\": \"2016-07-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 80,\r\n    \"unit\": \"beats/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"74008-4\",\r\n            \"display\": \"Exercise intensity\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"263678003\",\r\n            \"display\": \"At rest\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/heartrate-1-exercise",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"heartrate-1-exercise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "heartrate-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -7967,7 +8841,7 @@
 							"response": []
 						},
 						{
-							"name": "waistcircum-1 Observation",
+							"name": "heartrate-cancelled Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -7984,7 +8858,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"waistcircum-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8280-0\",\r\n        \"display\": \"Waist Circumference at umbilicus by Tape measure\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"276361009\",\r\n        \"display\": \"Waist circumference\"\r\n      }\r\n    ],\r\n    \"text\": \"Waist Circumference\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 78.6,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"heartrate-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8867-4\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"364075005\"\r\n      }\r\n    ],\r\n    \"text\": \"Heart rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7992,13 +8866,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/waistcircum-1",
+									"raw": "{{server}}/Observation/heartrate-cancelled",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"waistcircum-1"
+										"heartrate-cancelled"
 									]
 								}
 							},
@@ -8037,6 +8911,44 @@
 									"path": [
 										"Observation",
 										"lipid-chol-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lipid-hdl-1-referenceRange-text Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"lipid-hdl-1-referenceRange-text\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14646-4\",\r\n        \"display\": \"Cholesterol in HDL [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"HDL\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 1.5,\r\n    \"unit\": \"mmol/L\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"mmol/L\"\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"N\",\r\n          \"display\": \"Normal\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"text\": \"1.0 - 2.2\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/lipid-hdl-1-referenceRange-text",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"lipid-hdl-1-referenceRange-text"
 									]
 								}
 							},
@@ -8195,6 +9107,272 @@
 							"response": []
 						},
 						{
+							"name": "pathresult-missing-code Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-code\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"unknown\"\r\n      }\r\n    ]\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result code is missing\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/pathresult-missing-code",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"pathresult-missing-code"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pathresult-missing-effective Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-effective\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"_effectiveDateTime\": {\r\n    \"extension\": [\r\n      {\r\n        \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n        \"valueCode\": \"unknown\"\r\n      }\r\n    ]\r\n  },\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result has a missing (unknown) date of collection\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/pathresult-missing-effective",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"pathresult-missing-effective"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pathresult-missing-status Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-status\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"unknown\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result has a missing (unknown) status\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/pathresult-missing-status",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"pathresult-missing-status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pathresult-missing-value Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-value\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"unknown\"\r\n      }\r\n    ]\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This codeable test result is missing\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/pathresult-missing-value",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"pathresult-missing-value"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pathresult-suppressed-subject Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-subject\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"MB\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"extension\": [\r\n      {\r\n        \"url\": \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n        \"valueCode\": \"masked\"\r\n      }\r\n    ]\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result subject is suppressed\"\r\n    }\r\n  ],\r\n  \"specimen\": {\r\n    \"reference\": \"Specimen/nasoswab\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/pathresult-suppressed-subject",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"pathresult-suppressed-subject"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resprate-1-exercise-missing Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"resprate-1-exercise-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-resprate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"9279-1\",\r\n        \"display\": \"Respiratory rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86290005\"\r\n      }\r\n    ],\r\n    \"text\": \"Respiratory rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 22,\r\n    \"unit\": \"breaths/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"74008-4\",\r\n            \"display\": \"Exercise intensity\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"temp-unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Temporarily Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/rresprate-1-exercise-missing",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"rresprate-1-exercise-missing"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resprate-1-exercise Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"resprate-1-exercise\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-resprate\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"9279-1\",\r\n        \"display\": \"Respiratory rate\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86290005\"\r\n      }\r\n    ],\r\n    \"text\": \"Respiratory rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-02-17\",\r\n  \"valueQuantity\": {\r\n    \"value\": 22,\r\n    \"unit\": \"breaths/minute\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"/min\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"74008-4\",\r\n            \"display\": \"Exercise intensity\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"263678003\",\r\n            \"display\": \"At rest\"\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/resprate-1-exercise",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"resprate-1-exercise"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "resprate-1 Observation",
 							"request": {
 								"method": "PUT",
@@ -8227,6 +9405,82 @@
 									"path": [
 										"Observation",
 										"resprate-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resprate-cancelled Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"resprate-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-resprate\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"9279-1\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"86290005\"\r\n      }\r\n    ],\r\n    \"text\": \"Respiratory rate\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/resprate-cancelled",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"resprate-cancelled"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rh-status Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"rh-status\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"890-4\",\r\n        \"display\": \"Blood group antibody screen [Presence] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Blood Group Antibody Screen\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/baratz-toni\"\r\n  },\r\n  \"effectiveDateTime\": \"2015-06-12\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260385009\",\r\n        \"display\": \"Negative\"\r\n      }\r\n    ],\r\n    \"text\": \"RhD positive\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/rh-status",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"rh-status"
 									]
 								}
 							},
@@ -8309,6 +9563,44 @@
 							"response": []
 						},
 						{
+							"name": "smokingstatus-notasked Observation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"smokingstatus-notasked\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-smokingstatus\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"social-history\"\r\n        }\r\n      ],\r\n      \"text\": \"Social History\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"1747861000168109\"\r\n      },\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"72166-2\"\r\n      }\r\n    ],\r\n    \"text\": \"Smoking status\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2022-06-02\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/midwife-browne-wilfred\"\r\n    }\r\n  ],\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-asked\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Asked\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Observation/smokingstatus-notasked",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Observation",
+										"smokingstatus-notasked"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "visualacuity Observation",
 							"request": {
 								"method": "PUT",
@@ -8347,7 +9639,7 @@
 							"response": []
 						},
 						{
-							"name": "missing-effective Observation",
+							"name": "waistcircum-1-position-missing Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -8364,7 +9656,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-effective\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"_effectiveDateTime\": {\r\n    \"extension\" : [\r\n      {\r\n        \"url\" : \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n        \"valueCode\" : \"unknown\"\r\n      }\r\n    ]\r\n  },\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result has a missing (unknown) date of collection\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"waistcircum-1-position-missing\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8280-0\",\r\n        \"display\": \"Waist Circumference at umbilicus by Tape measure\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"276361009\",\r\n        \"display\": \"Waist circumference\"\r\n      }\r\n    ],\r\n    \"text\": \"Waist Circumference\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 78.6,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8361-8\",\r\n            \"display\": \"Body position with respect to gravity\"\r\n          }\r\n        ]\r\n      },\r\n      \"dataAbsentReason\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n            \"code\": \"unknown\"\r\n          }\r\n        ],\r\n        \"text\": \"Unknown\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8372,20 +9664,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/pathresult-missing-effective",
+									"raw": "{{server}}/Observation/waistcircum-1-position-missing",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"pathresult-missing-effective"
+										"waistcircum-1-position-missing"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "missing-status Observation",
+							"name": "waistcircum-1-position Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -8402,7 +9694,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-missing-status\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"unknown\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result has a missing (unknown) date of collection\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"waistcircum-1-position\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8280-0\",\r\n        \"display\": \"Waist Circumference at umbilicus by Tape measure\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"276361009\",\r\n        \"display\": \"Waist circumference\"\r\n      }\r\n    ],\r\n    \"text\": \"Waist Circumference\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 78.6,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  },\r\n  \"component\": [\r\n    {\r\n      \"code\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://loinc.org\",\r\n            \"code\": \"8361-8\",\r\n            \"display\": \"Body position with respect to gravity\"\r\n          }\r\n        ]\r\n      },\r\n      \"valueCodeableConcept\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"10904000\",\r\n            \"display\": \"Orthostatic body position\"\r\n          }\r\n        ],\r\n        \"text\": \"Standing\"\r\n      }\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8410,20 +9702,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/pathresult-missing-status",
+									"raw": "{{server}}/Observation/waistcircum-1-position",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"pathresult-missing-status"
+										"waistcircum-1-position"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "suppressed-code Observation",
+							"name": "waistcircum-1 Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -8440,7 +9732,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-code\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\" : \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\" : \"masked\",\r\n        \"display\" : \"Masked\"\r\n      }\r\n    ],\r\n    \"text\": \"Masked\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result code is suppressed\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"waistcircum-1\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\",\r\n          \"display\": \"Vital Signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8280-0\",\r\n        \"display\": \"Waist Circumference at umbilicus by Tape measure\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"276361009\",\r\n        \"display\": \"Waist circumference\"\r\n      }\r\n    ],\r\n    \"text\": \"Waist Circumference\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-03-14\",\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"PractitionerRole/generalpractitioner-guthridge-jarred\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 78.6,\r\n    \"unit\": \"cm\",\r\n    \"system\": \"http://unitsofmeasure.org\",\r\n    \"code\": \"cm\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8448,20 +9740,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/pathresult-suppressed-code",
+									"raw": "{{server}}/Observation/waistcircum-1",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"pathresult-suppressed-code"
+										"waistcircum-1"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "suppressed-dataAbsentReason Observation",
+							"name": "waistcircum-cancelled Observation",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -8478,7 +9770,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-dataAbsentReason\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\" : \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\" : \"masked\",\r\n        \"display\" : \"Masked\"\r\n      }\r\n    ],\r\n    \"text\": \"Masked\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result is suppressed using dataAbsentReason - not recommended AU Core representation of suppressed data\"\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"waistcircum-cancelled\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-waistcircum\"\r\n    ]\r\n  },\r\n  \"status\": \"cancelled\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"vital-signs\"\r\n        }\r\n      ],\r\n      \"text\": \"Vital Signs\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"8280-0\"\r\n      },\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"276361009\"\r\n      }\r\n    ],\r\n    \"text\": \"Waist Circumference\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"1999-12-03\",\r\n  \"dataAbsentReason\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\": \"not-performed\"\r\n      }\r\n    ],\r\n    \"text\": \"Not Performed\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8486,127 +9778,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{server}}/Observation/pathresult-suppressed-dataAbsentReason",
+									"raw": "{{server}}/Observation/waistcircum-cancelled",
 									"host": [
 										"{{server}}"
 									],
 									"path": [
 										"Observation",
-										"pathresult-suppressed-dataAbsentReason"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "suppressed-subject Observation",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth-header}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/fhir+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-subject\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"extension\" : [\r\n      {\r\n        \"url\" : \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n        \"valueCode\" : \"masked\"\r\n      }\r\n    ]\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"260415000\",\r\n        \"display\": \"Not detected\"\r\n      }\r\n    ],\r\n    \"text\": \"Not detected\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This test result subject is suppressed\"\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{server}}/Observation/pathresult-suppressed-subject",
-									"host": [
-										"{{server}}"
-									],
-									"path": [
-										"Observation",
-										"pathresult-suppressed-subject"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "suppressed-valueCodeableConcept Observation",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth-header}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/fhir+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-valueCodeableConcept\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"94309-2\"\r\n      }\r\n    ],\r\n    \"text\": \"2019-Novel Coronavirus PCR\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/howe-deangelo\"\r\n  },\r\n  \"effectiveDateTime\": \"2021-02-15T12:00:00+10:00\",\r\n  \"valueCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\" : \"http://terminology.hl7.org/CodeSystem/data-absent-reason\",\r\n        \"code\" : \"masked\",\r\n        \"display\" : \"Masked\"\r\n      }\r\n    ],\r\n    \"text\": \"Masked\"\r\n  },\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This codeable test result is suppressed\"\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{server}}/Observation/pathresult-suppressed-valueCodeableConcept",
-									"host": [
-										"{{server}}"
-									],
-									"path": [
-										"Observation",
-										"pathresult-suppressed-valueCodeableConcept"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "suppressed-valueQuantity Observation",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{auth-header}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/fhir+json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"pathresult-suppressed-valueQuantity\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path\"\r\n    ]\r\n  },\r\n  \"status\": \"final\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/observation-category\",\r\n          \"code\": \"laboratory\",\r\n          \"display\": \"Laboratory\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0074\",\r\n          \"code\": \"CH\",\r\n          \"display\": \"Chemistry\"\r\n        }\r\n      ],\r\n      \"text\": \"Chemistry\"\r\n    }\r\n  ],\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://loinc.org\",\r\n        \"code\": \"14647-2\",\r\n        \"display\": \"Cholesterol [Moles/volume] in Serum or Plasma\"\r\n      }\r\n    ],\r\n    \"text\": \"Cholesterol\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/banks-mia-leanne\"\r\n  },\r\n  \"effectiveDateTime\": \"2023-01-17\",\r\n  \"valueQuantity\" : {\r\n     \"extension\" : [\r\n       {\r\n         \"url\" : \"http://hl7.org/fhir/StructureDefinition/data-absent-reason\",\r\n         \"valueCode\" : \"masked\"\r\n       }\r\n     ]\r\n  },\r\n  \"interpretation\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation\",\r\n          \"code\": \"H\",\r\n          \"display\": \"High\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"referenceRange\": [\r\n    {\r\n      \"high\": {\r\n        \"value\": 5.6,\r\n        \"unit\": \"mmol/L\",\r\n        \"system\": \"http://unitsofmeasure.org\",\r\n        \"code\": \"mmol/L\"\r\n      }\r\n    }\r\n  ],\r\n  \"note\": [\r\n    {\r\n      \"text\": \"This quantity test result is suppressed\"\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{server}}/Observation/pathresult-suppressed-valueQuantity",
-									"host": [
-										"{{server}}"
-									],
-									"path": [
-										"Observation",
-										"pathresult-suppressed-valueQuantity"
+										"waistcircum-cancelled"
 									]
 								}
 							},
@@ -9238,11 +10416,50 @@
 					]
 				},
 				{
-					"name": "Coverage",
-					"item": []
+					"name": "Specimen",
+					"item": [
+						{
+							"name": "nasoswab Specimen",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{auth-header}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/fhir+json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"resourceType\": \"Procedure\",\r\n  \"id\": \"dialysis\",\r\n  \"meta\": {\r\n    \"profile\": [\r\n      \"http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure\"\r\n    ]\r\n  },\r\n  \"status\": \"completed\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"302497006\",\r\n        \"display\": \"Haemodialysis\"\r\n      }\r\n    ],\r\n    \"text\": \"Hemodialysis\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/irvine-ronny-lawrence\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/renal-dialysis\"\r\n  },\r\n  \"performedDateTime\": \"2012-08-05\",\r\n  \"performer\": [\r\n    {\r\n      \"actor\": {\r\n        \"reference\": \"PractitionerRole/renalmedicine-mackay-darleen\"\r\n      }\r\n    }\r\n  ],\r\n  \"reasonReference\": [\r\n    {\r\n      \"reference\": \"Condition/ckd\",\r\n      \"display\": \"Chronic Kidney Disease\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server}}/Procedure/dialysis",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"Procedure",
+										"dialysis"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
-					"name": "Specimen",
+					"name": "Coverage",
 					"item": []
 				},
 				{
