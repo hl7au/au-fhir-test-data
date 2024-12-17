@@ -36,10 +36,10 @@ This repository also contains source code for the command line utilities used to
 ## Sparked AU Core Testing
 We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json) which contains:
 * AU Core profiles, a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) folders, including resource instances with missing data and suppressed data.
-* AU Base Coverage resources. (coming soon)
-* AU Base Healthcare Service resources. (coming soon)
-* AU Base Related Person resource(s). (coming soon)
-* AU Base Specimen resource(s). (coming soon)
+* AU Base Coverage resources.
+* AU Base Healthcare Service resources.
+* AU Base Related Person resources.
+* AU Base Specimen resource(s).
 
 Currently, this Postman collection does not contain non-conformant resources for negative testing.
 
@@ -62,24 +62,51 @@ Observation-pathresult-suppressed-subject.json | pathresult-suppressed-subject |
 Observation-pathresult-suppressed-valueCodeableConcept.json | pathresult-suppressed-valueCodeableConcept | Pathology Result Observation with suppressed codeable value | A Responder SHALL correctly populate the coding with a code (masked or unknown) from the Data Absent Reason value set, and a Requester SHALL accept this coding without error. 
 Observation-pathresult-suppressed-valueQuantity.json | pathresult-suppressed-valueQuantity | Pathology Result Observation with suppressed non-coded value (complex data types) | A Responder SHALL correctly populate a Data Absent Reason extension within the value[x].extension and a Requester SHALL accept this extension without error. 
 
+---
+
 ## Did you find an error?
-Search the Issues list in [GitHub](https://github.com/hl7au/au-fhir-test-data/issues) to ensure the error was not already reported.
+We appreciate your contributions to improving au-fhir-test-data. **If you encounter any bugs or defects, please follow the steps below to report them**:
 
-If you're unable to find an open bug addressing the problem, please create a bug report or issue in this project. 
+### 1. Search for Existing Issues
+Before submitting a new issue, please search the GitHub [Issues list](https://github.com/hl7au/au-fhir-test-data/issues) to check if your issue has already been reported. If you find an existing issue, you can add your comments or additional information to it.
 
-## Contributing to HL7 AU Test Data
+### 2. Open a New Issue
+If you do not find a similar issue, you can open a [new one](https://github.com/hl7au/au-fhir-test-data/issues). Click on the New Issue button and provide the following details:
 
-### 1. Discuss an issue in chat.fhir.org
+```
+Title: A brief and descriptive title for the issue.
+Description: A detailed description of the issue, including:
+1. Steps to reproduce the issue.
+2. Expected and actual behaviour.
+3. Screenshots or another related information (if applicable).
+```
 
-If you have a question, feature request, or proposed change, the best place to start is Zulip i.e. the https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data topic. 
+### 3. Labelling
+Help us categorise the issue by adding relevant labels (e.g., bug). This helps us prioritise and address the issues more efficiently.
 
-### 2. Log an issue in GitHub
+### Questions?
+If you have a question, the best place to start is Zulip e.g. the https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data topic
 
-Search the Issues list in [GitHub](https://github.com/hl7au/au-fhir-test-data/issues) to check if this has already been reported. 
+---
 
-If you're unable to find an open request, please create a [GitHub](https://github.com/hl7au/au-fhir-test-data/issues) to:
-- contribute test data to the repository: state your details and the nature of the test data to be contributed
-- suggest improvements or enhancements to the synthetic or test data set 
+## How to Contribute to HL7 AU Test Data
+We value contributions to **au-fhir-test-data**. Here’s how you can help:
+
+### 1. Communicate Before You Start
+- Open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans to help avoid duplication of effort, align and prioritise your contributions based on the scope of the project - refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf).
+- Join the fortnightly HL7 AU Infrastructure and Tooling Community Meetings ([register here](https://confluence.hl7.org/display/HAFWG/Infrastructure+and+Tooling+Contact+List)) where we discuss and triage issues. Feel free to add your issue to the [meeting agenda](https://confluence.hl7.org/pages/viewpage.action?pageId=265492851#CommunityMeetingAgendaandMinutes-MeetingDetails) and we'll aim to discuss your issue/ proposed contribution when you are present at the meeting.
+- Use Zulip to connect with the team and community asynchronously: 
+  - Specific topic for the HL7 AU Test Data project: [AU FHIR Test Data](https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data)
+  - General: [Australia Stream](https://chat.fhir.org/#narrow/stream/179173-australia)
+
+### 2. Contribute Code
+1. Fork this repository.
+2. Create a branch and use the GitHub issue number followed by a meaningful description as the branch name for your test data contribution, sticking to lowercase and hyphens to separate words. For example, the following is a branch for GitHub issue #123 for adding resources with logical references: `123-logical-refs`
+3. Make your contributions/ changes.
+4. Submit a pull request (PR) for review.
+5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the main branch.
+
+---
 
 # Test Data Command Line Utilities
 There are two command line utilities to generate the FHIR JSON files and upload the generated test data to a FHIR Server. These utilites are developed using DotNet.
