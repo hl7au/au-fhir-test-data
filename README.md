@@ -45,7 +45,10 @@ Currently, this Postman collection does not contain non-conformant resources for
 
 If you would like to upload the Sparked generated or addition test data sets into your FHIR server by using the FHIR REST updateCreate (PUT) interaction, use the UploadGenerated.bat and UploadDirect.bat batch files (.sh files coming). Refer to the instructions below in the section [Upload Data](https://github.com/hl7au/au-fhir-test-data/blob/master/README.md#upload-data) below.
 
-## Significant Test Data Test Cases
+### AU Core Test Data Coverage
+For Release 1 of the HL7 FHIR AU Test Data community project, the test data coverage of the Must Support elements in AU Core profiles and extensions is reported in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
+
+### Significant Test Data Test Cases
 The following test data files within the direct-fhir-test-resources folder support testing of significant test cases including missing and suppressed data.
 
 File Name | Resource Id | Test Case | Expected Outcome 
