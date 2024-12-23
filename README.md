@@ -87,6 +87,9 @@ Description: A detailed description of the issue, including:
 ### 3. Labelling
 Help us categorise the issue by adding relevant labels (e.g., bug). This helps us prioritise and address the issues more efficiently.
 
+### Resolving Issues
+To support effective issue resolution, reporters may be engaged in the review process to help confirm that resolutions address their concerns. This can involve notifying the reporter when a fix is implemented and inviting them to validate the solution or provide feedback before the issue is formally closed.
+
 ### Questions?
 If you have a question, the best place to start is Zulip e.g. the https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data topic
 
