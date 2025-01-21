@@ -115,7 +115,8 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 ---
 
 # Test Data Command Line Utilities
-There are two command line utilities to generate the FHIR JSON files and upload the generated test data to a FHIR Server. These utilites are developed using DotNet.
+There are two command line utilities to generate the FHIR JSON files and upload the generated test data to a FHIR Server. These utilites are developed using DotNet.  
+Note: The test data utilities are being transitioned from [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) to [`hl7au / au-fhir-test-data-utils`](https://github.com/hl7au/au-fhir-test-data-utils) to separate the tools for generating and managing FHIR test data from the repository containing the data itself. This transition includes integrating the new utilities into the GitHub Actions workflows of `hl7au / au-fhir-test-data` to streamline automation and test data management.
 
 ## Sparked.Csv2FhirMapping
 The Sparked.Csv2FhirMapping is a utility that maps the CSV files located in the testdata-csv folder and generates the FHIR JSON files. 

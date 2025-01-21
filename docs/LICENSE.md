@@ -17,7 +17,7 @@ By accessing or using HL7 Australia content, Users agree to indemnify and hold h
 
 ## Licensing Overeview
 
-This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) is licensed under the Apache License, Version 2.0.
+This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) is licensed under the [Apache License, Version 2.0](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/LICENSE.md#apache-license).
 
 ## Third-Party Licensing
 
@@ -25,14 +25,15 @@ The HL7 AU FHIR Test Data repository references intellectual property owned by t
 
 The following is a non-exhaustive list of third-party components used in this repository that may require a separate licence:
 
-| **Component**              | **Statement**                                                                                                                                     |
+| **Component**              | **Notes/ License**                                                                                                                                     |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **[fhir-net-mappinglanguage](https://github.com/brianpos/fhir-net-mappinglanguage)** | The fhir-net-mappinglanguage project is a library for authoring FHIR mapping language. It is licensed under the [BSD 3-Clause License](https://github.com/brianpos/fhir-net-mappinglanguage/blob/main/LICENSE). |
+| **[HL7 Fhir Mapping Language Engine](https://www.nuget.org/packages/brianpos.Fhir.R4B.MappingLanguage)** | The Sparked.Csv2FhirMapping utility has a dependency on the Hl7.Fhir.R4B.MappingLanguage library. It is licensed under the [BSD 3-Clause License](https://github.com/brianpos/fhir-net-mappinglanguage/blob/main/LICENSE).  
+| **[Firely's SDK for working with HL7 FHIR R4B](https://www.nuget.org/packages/Hl7.Fhir.R4B)** | The Sparked.Csv2FhirMapping and Sparked.TestDataClient utilities have a dependency on the Hl7.Fhir.R4B project. It is licensed under the [BSD 3-Clause License](https://github.com/FirelyTeam/firely-net-sdk/blob/develop/LICENSE).  
 
 ---
 
 # Apache License
-Apache License
+Apache License,
 Version 2.0, January 2004  
 http://www.apache.org/licenses/  
 
