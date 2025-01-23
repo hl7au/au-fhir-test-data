@@ -1,0 +1,483 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "status": "in-progress",
+  "questionnaire": "https://smartforms.csiro.au/ig/Questionnaire/AUPatientSummary",
+  "subject": {
+    "reference": "Patient/pat-sf",
+    "type": "Patient",
+    "display": "Mrs. Smart Form"
+  },
+  "author": {
+    "reference": "Practitioner/bradley-jill",
+    "type": "Practitioner",
+    "display": "Jill Bradley"
+  },
+  "item": [
+    {
+      "linkId": "tab-container",
+      "text": "Patient Summary Test Data",
+      "item": [
+        {
+          "linkId": "problems",
+          "text": "Problems",
+          "item": [
+            {
+              "linkId": "problems-problemdiagnosissummary",
+              "text": "Problem/Diagnosis summary",
+              "item": [
+                {
+                  "linkId": "problems-problemdiagnosissummary-name",
+                  "text": "Name",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "46635009",
+                        "display": "Type 1 diabetes mellitus"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "problems-problemdiagnosissummary-bodysite",
+                  "text": "Body site",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "77568009",
+                        "display": "Structure of back of trunk"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "problems-problemdiagnosissummary-status",
+                  "text": "Clinical status",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                        "code": "active",
+                        "display": "Active"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "problems-problemdiagnosissummary-comment",
+                  "text": "Comment",
+                  "answer": [
+                    {
+                      "valueString": "comment"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "allergyintolerances",
+          "text": "Allergies and intolerances",
+          "item": [
+            {
+              "linkId": "allergyintolerances-adversereactionrisksummary",
+              "text": "Adverse reaction risk summary",
+              "item": [
+                {
+                  "linkId": "allergyintolerances-adversereactionrisksummary-substance",
+                  "text": "Substance",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "412583005",
+                        "display": "Bee pollen"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "allergyintolerances-adversereactionrisksummary-manifestation",
+                  "text": "Manifestation",
+                  "answer": [
+                    {
+                      "id": "allergyintolerances-adversereactionrisksummary-manifestation-repeat-b9EQd0KeKFbF_haUZPso5",
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "271807003",
+                        "display": "Rash"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "allergyintolerances-adversereactionrisksummary-comment",
+                  "text": "Comment",
+                  "answer": [
+                    {
+                      "valueString": "comment"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "medicationsummary",
+          "text": "Medication summary",
+          "item": [
+            {
+              "linkId": "medicationsummary-medicationusestatement",
+              "text": "Medication use statement",
+              "item": [
+                {
+                  "linkId": "medicationsummary-medicationusestatement-name",
+                  "text": "Name",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "3738011000036101",
+                        "display": "Amoxil"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-form",
+                  "text": "Form",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "421026006",
+                        "display": "Tablet"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-strength",
+                  "text": "Strength",
+                  "answer": [
+                    {
+                      "valueDecimal": 30
+                    }
+                  ],
+                  "item": [
+                    {
+                      "linkId": "medicationsummary-medicationusestatement-strength-unit",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-route",
+                  "text": "Route of adminsitration",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "26643006",
+                        "display": "Oral route"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-doseamount",
+                  "text": "Dose amount",
+                  "answer": [
+                    {
+                      "valueDecimal": 30
+                    }
+                  ],
+                  "item": [
+                    {
+                      "linkId": "medicationsummary-medicationusestatement-doseamount-unit",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-dosetiming",
+                  "text": "Dose timing",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+                            "valueString": "Every 2 hours at institution specified times"
+                          }
+                        ],
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+                        "version": "2018-08-12",
+                        "code": "Q2H",
+                        "display": "every 2 hours"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-reasoncode",
+                  "text": "Clinical indication",
+                  "answer": [
+                    {
+                      "id": "medicationsummary-medicationusestatement-reasoncode-repeat-rwgx-2YL6gZKI1j1HHaIR",
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "444780001",
+                        "display": "Glucose in blood specimen above reference range"
+                      }
+                    },
+                                        {
+                      "id": "medicationsummary-medicationusestatement-reasoncode-repeat-rwgx-2YL6gZKI1j1HHaIR",
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "444780001",
+                        "display": "Glucose in blood specimen above reference range"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-comment",
+                  "text": "Comment",
+                  "answer": [
+                    {
+                      "valueString": "comment"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "medicationsummary-prescribedmedication",
+              "text": "Prescribed medications",
+              "item": [
+                {
+                  "linkId": "medicationsummary-prescribedmedication-date",
+                  "text": "Date of prescription",
+                  "answer": [
+                    {
+                      "valueDateTime": "2025-01-15"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-name",
+                  "text": "Name",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "3738011000036101",
+                        "display": "Amoxil"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-form",
+                  "text": "Form",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "421026006",
+                        "display": "Tablet"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-strength",
+                  "text": "Strength",
+                  "answer": [
+                    {
+                      "valueDecimal": 30
+                    }
+                  ],
+                  "item": [
+                    {
+                      "linkId": "medicationsummary-prescribedmedication-strength-unit",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-route",
+                  "text": "Route of adminsitration",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "26643006",
+                        "display": "Oral route"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-doseamount",
+                  "text": "Dose amount",
+                  "answer": [
+                    {
+                      "valueDecimal": 30
+                    }
+                  ],
+                  "item": [
+                    {
+                      "linkId": "medicationsummary-prescribedmedication-doseamount-unit",
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-dosetiming",
+                  "text": "Dose timing",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "extension": [
+                          {
+                            "url": "http://hl7.org/fhir/StructureDefinition/valueset-concept-definition",
+                            "valueString": "Every 2 hours at institution specified times"
+                          }
+                        ],
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+                        "version": "2018-08-12",
+                        "code": "Q2H",
+                        "display": "every 2 hours"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-reasoncode",
+                  "text": "Clinical indication",
+                  "answer": [
+                    {
+                      "id": "medicationsummary-prescribedmedication-reasoncode-repeat-rwgx-2YL6gZKI1j1HHaIR",
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "444780001",
+                        "display": "Glucose in blood specimen above reference range"
+                      }
+                    },
+                                        {
+                      "id": "medicationsummary-prescribedmedication-reasoncode-repeat-rwgx-2YL6gZKI1j1HHaIR",
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "444780001",
+                        "display": "Glucose in blood specimen above reference range"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-comment",
+                  "text": "Comment",
+                  "answer": [
+                    {
+                      "valueString": "comment"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "immunizations",
+          "text": "Immunizations",
+          "item": [
+            {
+              "linkId": "immunizations-vaccinationadministeredevent",
+              "text": "Vaccination administered event",
+              "item": [
+                {
+                  "linkId": "immunizations-vaccinationadministeredevent-name",
+                  "text": "Name",
+                  "answer": [
+                    {
+                      "valueCoding": {
+                        "system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+                        "version": "20240207",
+                        "code": "COVAST",
+                        "display": "AstraZeneca Vaxzevria"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "immunizations-vaccinationadministeredevent-sequence",
+                  "text": "Sequence",
+                  "answer": [
+                    {
+                      "valueString": "2"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "immunizations-vaccinationadministeredevent-administrationDate",
+                  "text": "Date of administration",
+                  "answer": [
+                    {
+                      "valueDateTime": "2025-01-15"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "immunizations-vaccinationadministeredevent-comment",
+                  "text": "Comment",
+                  "answer": [
+                    {
+                      "valueString": "comment"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

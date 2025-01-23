@@ -1,0 +1,434 @@
+map "https://smartforms.csiro.au/ig/StructureMap/AUPatientSummaryExtract" = AUPatientSummaryExtract
+
+uses "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" as source
+uses "http://hl7.org/fhir/StructureDefinition/Bundle" as target
+
+group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
+    src.item -> bundle.type = 'transaction';
+    src.item as tabContainer then {
+    
+        // Problems
+        tabContainer.item as problemsItem where (linkId = 'problems') then {
+        problemsItem.item as problemdiagnosissummaryItem where (linkId = 'problems-problemdiagnosissummary') -> bundle.entry as entry then {
+
+            problemsItem where (item.where(linkId = 'problems-problemdiagnosissummary-id').exists().not()) ->  entry.request as request then {
+                problemdiagnosissummaryItem -> entry.fullUrl = uuid() as uuid, // need to assign the uuid before it can be used in append
+                    entry.fullUrl = append('urn:uuid:', uuid), 
+                    request.method = 'POST';
+                
+                problemdiagnosissummaryItem -> entry.resource = create('Condition') as condition then {
+
+                    problemdiagnosissummaryItem -> condition.meta as meta then {
+                        problemdiagnosissummaryItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition';
+                    };
+                    
+                    problemdiagnosissummaryItem.item as problemNameItem where (linkId = 'problems-problemdiagnosissummary-name') then {
+                        problemNameItem.answer first as answer -> condition.code as code then {
+                            answer -> code.coding = (%answer.value);
+                            answer -> code.text = (%answer.value.display);
+                        };
+                    };
+                
+                    problemdiagnosissummaryItem.item as problemBodysiteItem where (linkId = 'problems-problemdiagnosissummary-bodysite') then {
+                        problemBodysiteItem.answer first as answer -> condition.bodySite as bodySite then {
+                            answer -> bodySite.coding = (%answer.value);
+                            answer -> bodySite.text = (%answer.value.display);
+                        };
+                    };
+                
+                    problemdiagnosissummaryItem.item as problemStatusItem where (linkId = 'problems-problemdiagnosissummary-status') then {
+                        problemStatusItem.answer first as answer -> condition.clinicalStatus as clinicalStatus then {
+                            answer -> clinicalStatus.coding = (%answer.value);
+                            answer -> clinicalStatus.text = (%answer.value.display);
+                        };
+                    };
+                
+                    problemdiagnosissummaryItem.item as problemCommentItem where (linkId = 'problems-problemdiagnosissummary-comment') then {
+                        problemCommentItem.answer first as answer -> condition.note as note then {
+                            answer -> note.text = (%answer.value);
+                        };
+                    };
+                    
+                    problemdiagnosissummaryItem -> condition.category = cc('http://terminology.hl7.org/CodeSystem/condition-category', 'problem-list-item') as category then {
+                        problemdiagnosissummaryItem -> category.text = 'Problem';
+                    };
+                        
+                    src.subject as subject -> condition.subject = subject;
+                };
+            };
+        };
+        };
+        
+        // Allergies and Intolerances
+        tabContainer.item as allergyintolerancesItem where (linkId = 'allergyintolerances') then {
+        allergyintolerancesItem.item as adverseReactionItem where (linkId = 'allergyintolerances-adversereactionrisksummary') -> bundle.entry as entry then {
+            adverseReactionItem where (item.where(linkId = 'allergyintolerances-adversereactionrisksummary-id').exists().not()) -> entry.request as request then {
+                adverseReactionItem -> entry.fullUrl = uuid() as uuid, // need to assign the uuid before it can be used in append
+                    entry.fullUrl = append('urn:uuid:', uuid), 
+                    request.method = 'POST';
+            
+                adverseReactionItem -> entry.resource = create('AllergyIntolerance') as allergy then {
+                adverseReactionItem -> allergy.meta as meta then {
+                        adverseReactionItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance';
+                    };
+            
+                    adverseReactionItem.item as substanceItem where (linkId = 'allergyintolerances-adversereactionrisksummary-substance') then {
+                        substanceItem.answer -> allergy.code as code then {
+                            substanceItem.answer -> code.coding = (%substanceItem.answer.value);
+                            substanceItem.answer -> code.text = (%substanceItem.answer.value.display);
+                        };
+                    };
+                    adverseReactionItem.item as manifestationItem where (linkId = 'allergyintolerances-adversereactionrisksummary-manifestation') -> allergy.reaction as reaction then {
+                        manifestationItem.answer as manifestationItemAnswer -> reaction.manifestation as manifestation then {
+                            manifestationItemAnswer.value as manifestationItemAnswerValue -> manifestation.coding = manifestationItemAnswerValue then {
+                                manifestationItemAnswerValue.display as manifestationItemAnswerValueDisplay -> manifestation.text = manifestationItemAnswerValueDisplay;
+                            };
+                        };
+                    };   
+                    adverseReactionItem.item as comment where (linkId = 'allergyintolerances-adversereactionrisksummary-comment') -> allergy.note as note then {
+                        comment.answer -> note.text = (%comment.answer.value);
+                    };
+                    
+                    adverseReactionItem -> allergy.clinicalStatus = cc('http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical', 'active');
+                    
+                    src.subject -> allergy.patient = (%src.subject);
+                };
+            };
+        };
+        };
+        
+        // Medication Summary
+        tabContainer.item as medicationsummaryItem where (linkId = 'medicationsummary') then {
+            medicationsummaryItem.item as medicationusestatementItem where (linkId = 'medicationsummary-medicationusestatement') -> bundle.entry as entry then {
+                medicationusestatementItem where (item.where(linkId = 'medicationsummary-medicationusestatement-id').exists().not()) -> entry.request as request then {
+                    medicationusestatementItem -> entry.fullUrl = uuid() as uuid, // need to assign the uuid before it can be used in append
+                        entry.fullUrl = append('urn:uuid:', uuid), 
+                        request.method = 'POST';
+            
+                    medicationusestatementItem -> entry.resource = create('MedicationStatement') as medicationstatement then {
+                        medicationusestatementItem -> medicationstatement.meta as meta then {
+                            medicationusestatementItem -> meta.profile = 'http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement';
+                        };
+
+                        // contained:medication
+                        medicationusestatementItem -> medicationstatement.contained = create('Medication') as medication then {
+                            
+                            medicationusestatementItem -> medication.id = 'medication',
+                                medication.meta as meta then {
+                                medicationusestatementItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication';
+                            };
+                            
+                            // name -> MedicationStatement.contained:medication.code
+                            medicationusestatementItem.item as nameItem where (linkId = 'medicationsummary-medicationusestatement-name') then {
+                                nameItem.answer as answer -> medication.code as code then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> code.coding as coding first then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            code.text = (%valueCoding.display);
+                                    };                                    
+                                };
+                            };
+                    
+                            // form -> MedicationStatement.contained:medication.form
+                            medicationusestatementItem.item as formItem where (linkId = 'medicationsummary-medicationusestatement-form') then {
+                                formItem.answer as answer -> medication.form as form then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> form.coding as coding first then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            form.text = (%valueCoding.display);
+                                    };
+                                };
+                            };                    
+                            // strength -> MedicationStatement.contained:medication.ingredient.strength
+                            medicationusestatementItem.item as strengthItem where (linkId = 'medicationsummary-medicationusestatement-strength') then {
+                                strengthItem.answer as answer -> medication.ingredient as ingredient then {
+                                
+                                    medicationusestatementItem.item as nameItem where (linkId = 'medicationsummary-medicationusestatement-name') then {
+                                        nameItem.answer as answer -> ingredient.item = create('CodeableConcept') as item then {
+                                            answer.value as valueCoding where (ofType(Coding).exists()) -> item.coding as coding first then { 
+                                                valueCoding -> coding.system = (%valueCoding.system),
+                                                    coding.code = (%valueCoding.code),
+                                                    coding.display = (%valueCoding.display),
+                                                    item.text = (%valueCoding.display);
+                                            };                                    
+                                        };
+                                    };
+                                
+                                
+                                    answer -> ingredient.strength as strength then {
+                                        answer -> strength.numerator as numerator then {
+                                            answer -> numerator.value = (%answer.value);
+                                            strengthItem.item as strengthunitItem where (linkId = 'medicationsummary-medicationusestatement-strength-unit') then {
+                                                strengthunitItem.answer as unitAnswer -> 
+                                                    numerator.code = (%unitAnswer.value.code),
+                                                    numerator.system = (%unitAnswer.value.system),
+                                                    numerator.unit = (%unitAnswer.value.display);
+                                            };
+                                        };
+                                    };
+                                };
+                            };
+                        };
+                        medicationusestatementItem -> medicationstatement.medication = create('Reference') as medicationReference then { 
+                            medicationusestatementItem -> medicationReference.reference = '#medication';
+                        };
+                        
+                        // dosage
+                        medicationusestatementItem ->  medicationstatement.dosage as dosage then {
+                    
+                            // route -> MedicationStatement.dosage.route
+                            medicationusestatementItem.item as route where (linkId = 'medicationsummary-medicationusestatement-route') -> medicationstatement then {
+                                route.answer as answer -> dosage.route as route then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> route.coding as coding then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            route.text = (%valueCoding.display);
+                                    };
+                                };
+                            };
+
+                            // dose amount -> MedicationStatement.dosage.doseAndRate
+                            medicationusestatementItem.item as doseItem where (linkId = 'medicationsummary-medicationusestatement-doseamount') -> medicationstatement then {
+                                doseItem.answer as answer -> dosage.doseAndRate as doseAndRate first then {
+                                    answer -> doseAndRate.dose = create('Quantity') as doseQuantity then {
+                                        answer -> doseQuantity.value = (%answer.value);
+                                        doseItem.item as doseunitItem where (linkId = 'medicationsummary-medicationusestatement-doseamount-unit') then {
+                                            doseunitItem.answer as unitAnswer -> 
+                                                doseQuantity.code = (%unitAnswer.value.code),
+                                                doseQuantity.system = (%unitAnswer.value.system),
+                                                doseQuantity.unit = (%unitAnswer.value.display);
+                                        };
+                                    };
+                                };
+                            };
+                            
+                            // dose timing -> MedicationStatement.dosage.timing.code
+                            medicationusestatementItem.item as dosetiming where (linkId = 'medicationsummary-medicationusestatement-dosetiming') -> medicationstatement then {
+                                dosetiming.answer as answer -> dosage.timing as timing then {
+                                    answer -> timing.code as code then {
+                                        answer.value as valueCoding where (ofType(Coding).exists()) -> code.coding as codeCoding then { 
+                                            valueCoding -> codeCoding.system = (%valueCoding.system),
+                                                codeCoding.code = (%valueCoding.code),
+                                                codeCoding.display = (%valueCoding.display),
+                                                code.text = (%valueCoding.display);
+                                        };
+                                        answer.value as valueString where (ofType(String).exists()) -> code.text = valueString;
+                                    };
+                                };
+                            };
+                        };
+                    
+                        // clinical indication -> MedicationStatement.reasonCode 
+                        medicationusestatementItem.item as indication where (linkId = 'medicationsummary-medicationusestatement-reasoncode') -> medicationstatement then {
+                            indication.answer as answer -> medicationstatement.reasonCode as reasoncode then {
+                                answer.value as value -> reasoncode.coding as coding then {
+                                    value -> coding.system = (%value.system), 
+                                    coding.code = (%value.code), 
+                                    coding.display = (%value.display),
+                                    reasoncode.text = (%value.display);
+                                };
+                            };
+                        };
+                        
+                        // comment -> MedicationStatement.note
+                        medicationusestatementItem.item as comment where (linkId = 'medicationsummary-medicationusestatement-comment') -> medicationstatement.note as note then {
+                            comment.answer -> note.text = (%comment.answer.value);
+                        };
+                    
+                        medicationusestatementItem -> medicationstatement.status = 'completed';
+
+                        src.subject -> medicationstatement.subject = (%src.subject);
+                    };    
+                };
+            };
+            
+            
+            
+            
+            
+            // Prescribed medication
+            
+            medicationsummaryItem.item as prescribedmedicationItem where (linkId = 'medicationsummary-prescribedmedication') -> bundle.entry as entry then {
+                prescribedmedicationItem where (item.where(linkId = 'medicationsummary-prescribedmedication-id').exists().not()) -> entry.request as request then {
+                    prescribedmedicationItem -> entry.fullUrl = uuid() as uuid, // need to assign the uuid before it can be used in append
+                        entry.fullUrl = append('urn:uuid:', uuid), 
+                        request.method = 'POST';
+            
+                    prescribedmedicationItem -> entry.resource = create('MedicationRequest') as medicationrequest then {
+                        prescribedmedicationItem -> medicationrequest.meta as meta then {
+                            prescribedmedicationItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest';
+                        };
+
+                        // contained:medication
+                        prescribedmedicationItem -> medicationrequest.contained = create('Medication') as medication then {
+                            
+                            prescribedmedicationItem -> medication.id = 'medication',
+                                medication.meta as meta then {
+                                prescribedmedicationItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication';
+                            };
+                            
+                            // name -> MedicationRequest.contained:medication.code
+                            prescribedmedicationItem.item as nameItem where (linkId = 'medicationsummary-prescribedmedication-name') then {
+                                nameItem.answer as answer -> medication.code as code then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> code.coding as coding first then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            code.text = (%valueCoding.display);
+                                            
+                        // medicationReference
+                        prescribedmedicationItem -> medicationrequest.medication = create('Reference') as medicationReference then { 
+                            prescribedmedicationItem -> medicationReference.reference = '#medication',
+                                medicationReference.display = (%valueCoding.display);
+                        };
+                                            
+                                    };                                    
+                                };
+
+                            };
+                    
+                            // form -> MedicationRequest.contained:medication.form
+                            prescribedmedicationItem.item as formItem where (linkId = 'medicationsummary-prescribedmedication-form') then {
+                                formItem.answer as answer -> medication.form as form then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> form.coding as coding first then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            form.text = (%valueCoding.display);
+                                    };
+                                };
+                            };                    
+                        };
+                        
+                        // dosage
+                        prescribedmedicationItem ->  medicationrequest.dosageInstruction as dosage then {
+                    
+                            // route -> MedicationRequest.dosageInstruction.route
+                            prescribedmedicationItem.item as route where (linkId = 'medicationsummary-prescribedmedication-route') -> medicationrequest then {
+                                route.answer as answer -> dosage.route as route then {
+                                    answer.value as valueCoding where (ofType(Coding).exists()) -> route.coding as coding then { 
+                                        valueCoding -> coding.system = (%valueCoding.system),
+                                            coding.code = (%valueCoding.code),
+                                            coding.display = (%valueCoding.display),
+                                            route.text = (%valueCoding.display);
+                                    };
+                                };
+                            };
+
+                            // dose amount -> MedicationRequest.dosageInstruction.doseAndRate
+                            prescribedmedicationItem.item as doseItem where (linkId = 'medicationsummary-prescribedmedication-doseamount') -> medicationrequest then {
+                                doseItem.answer as answer -> dosage.doseAndRate as doseAndRate first then {
+                                    answer -> doseAndRate.dose = create('Quantity') as doseQuantity then {
+                                        answer -> doseQuantity.value = (%answer.value);
+                                        doseItem.item as doseunitItem where (linkId = 'medicationsummary-prescribedmedication-doseamount-unit') then {
+                                            doseunitItem.answer as unitAnswer -> 
+                                                doseQuantity.code = (%unitAnswer.value.code),
+                                                doseQuantity.system = (%unitAnswer.value.system),
+                                                doseQuantity.unit = (%unitAnswer.value.display);
+                                        };
+                                    };
+                                };
+                            };
+                            
+                            // dose timing -> MedicationRequest.dosageInstruction.timing.code
+                            prescribedmedicationItem.item as dosetiming where (linkId = 'medicationsummary-prescribedmedication-dosetiming') -> medicationrequest then {
+                                dosetiming.answer as answer -> dosage.timing as timing then {
+                                    answer -> timing.code as code then {
+                                        answer.value as valueCoding where (ofType(Coding).exists()) -> code.coding as codeCoding then { 
+                                            valueCoding -> codeCoding.system = (%valueCoding.system),
+                                                codeCoding.code = (%valueCoding.code),
+                                                codeCoding.display = (%valueCoding.display),
+                                                code.text = (%valueCoding.display);
+                                        };
+                                        answer.value as valueString where (ofType(String).exists()) -> code.text = valueString;
+                                    };
+                                };
+                            };
+                        };
+                    
+                        // clinical indication -> MedicationRequest.reasonCode 
+                        prescribedmedicationItem.item as indication where (linkId = 'medicationsummary-prescribedmedication-reasoncode') -> medicationrequest then {
+                            indication.answer as answer -> medicationrequest.reasonCode as reasoncode then {
+                                answer.value as value -> reasoncode.coding as coding then {
+                                    value -> coding.system = (%value.system), 
+                                    coding.code = (%value.code), 
+                                    coding.display = (%value.display),
+                                    reasoncode.text = (%value.display);
+                                };
+                            };
+                        };
+                        
+                        // comment -> MedicationRequest.note
+                        prescribedmedicationItem.item as comment where (linkId = 'medicationsummary-prescribedmedication-comment') -> medicationrequest.note as note then {
+                            comment.answer -> note.text = (%comment.answer.value);
+                        };
+
+                        // prescriptionDate -> MedicationRequest.authoredOn
+                        prescribedmedicationItem.item as prescriptionDate where (linkId = 'medicationsummary-prescribedmedication-date') then {
+                            prescriptionDate.answer as answer then {
+                                answer.value as adate where (ofType(dateTime).exists()) -> medicationrequest.authoredOn = adate;  
+                            };
+                        };
+                    
+                        prescribedmedicationItem -> medicationrequest.status = 'completed', 
+                            medicationrequest.intent = 'order';
+
+                        src.subject -> medicationrequest.subject = (%src.subject);
+                        
+                        // requester
+                        src.author as author -> medicationrequest.requester = (%author);
+                    };    
+                };
+            };            
+        };
+        
+        // Immunizations
+        tabContainer.item as immunizationsItem where (linkId = 'immunizations') then {
+            immunizationsItem.item as vaccinationadministeredeventItem where (linkId = 'immunizations-vaccinationadministeredevent') -> bundle.entry as entry then {
+                vaccinationadministeredeventItem where (item.where(linkId = 'immunizations-vaccinationadministeredevent-id').exists().not()) -> entry.request as request then {
+                    vaccinationadministeredeventItem -> 
+                        entry.fullUrl = uuid() as uuid, // need to assign the uuid before it can be used in append
+                        entry.fullUrl = append('urn:uuid:', uuid), 
+                        request.method = 'POST',
+                        entry.resource = create('Immunization') as immunization then {
+                        vaccinationadministeredeventItem -> immunization.meta as meta then {
+                            vaccinationadministeredeventItem -> meta.profile = 'http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization';
+                        };
+                        
+                        vaccinationadministeredeventItem.item as nameItem where (linkId = 'immunizations-vaccinationadministeredevent-name') then {
+                            nameItem.answer -> immunization.vaccineCode as code then {
+                                nameItem.answer as answer -> code.coding = (%answer.value);
+                                nameItem.answer as answer -> code.text = (%answer.value.display);
+                            };
+                        };
+
+                        // immunizations-vaccinationadministeredevent-sequence
+                        vaccinationadministeredeventItem.item as sequenceItem where (linkId = 'immunizations-vaccinationadministeredevent-sequence') -> immunization.protocolApplied as protocolApplied then {
+                            sequenceItem.answer as answer -> protocolApplied.doseNumber = (%answer.value);
+                        };   
+                        
+                        vaccinationadministeredeventItem.item as administrationDate where (linkId = 'immunizations-vaccinationadministeredevent-administrationDate') then {
+                            administrationDate.answer as answer then {
+                                // this causes an error in Smart Forms $extract
+                                answer.value as adate where (ofType(date).exists()) -> immunization.occurrence = cast(adate, 'dateTime');  
+                                // changed questionnaire to use dateTime rather than date
+                                answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;  
+                            };
+                        };
+                        
+                        vaccinationadministeredeventItem.item as comment where (linkId = 'immunizations-vaccinationadministeredevent-comment') -> immunization.note as note then {
+                            comment.answer as answer -> note.text = (%answer.value);
+                        };
+                        
+                        vaccinationadministeredeventItem -> immunization.status = 'completed';
+                    
+                        src.subject -> immunization.patient = (%src.subject);
+                    };
+                };
+            };
+        };    
+    };
+}
