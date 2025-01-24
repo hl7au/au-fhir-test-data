@@ -105,4 +105,4 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 
 ## Development Process
 
-There is basic [documentation for the development process and tooling here](PROCESS).
+There is basic [documentation for the development process and tooling here](https://confluence.hl7.org/display/HAFWG/Process%3A+Test+Data+-+iterative+development).
