@@ -1,0 +1,658 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "AUPatientSummary",
+  "meta": {
+    "versionId": "10",
+    "lastUpdated": "2025-01-15T02:37:04.123+00:00",
+    "source": "#IgBo6YQ7QrE2Ak9L",
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-pop-exp",
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-render"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+            "code": "patient"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Patient"
+        },
+        {
+          "url": "description",
+          "valueString": "The patient that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+            "code": "user"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Practitioner"
+        },
+        {
+          "url": "description",
+          "valueString": "The practitioner user that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+      "extension": [
+        {
+          "url": "name",
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext",
+            "code": "encounter"
+          }
+        },
+        {
+          "url": "type",
+          "valueCode": "Encounter"
+        },
+        {
+          "url": "description",
+          "valueString": "The encounter that is to be used to pre-populate the form"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-targetStructureMap",
+      "valueCanonical": "https://smartforms.csiro.au/ig/StructureMap/AUPatientSummaryExtract"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "PractitionerRole",
+        "language": "application/x-fhir-query",
+        "expression": "PractitionerRole?practitioner={{%user.id}}"
+      }
+    }
+  ],
+  "url": "https://smartforms.csiro.au/ig/Questionnaire/AUPatientSummary",
+  "name": "AUPatientSummary",
+  "title": "AU Patient Summary Test Data",
+  "status": "draft",
+  "experimental": true,
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2025-01-14",
+  "description": "AU Patient Summary Test Data",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "AU"
+        }
+      ]
+    }
+  ],
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "version": "1.0.0",
+                "code": "tab-container"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "tab-container",
+      "text": "Patient Summary Test Data",
+      "type": "group",
+      "repeats": false,
+      "item": [
+        {
+          "linkId": "problems",
+          "text": "Problems",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "problems-problemdiagnosissummary",
+              "text": "Problem/Diagnosis summary",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "problems-problemdiagnosissummary-name",
+                  "text": "Name",
+                  "type": "open-choice",
+                  "required": true,
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/clinical-condition-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "problems-problemdiagnosissummary-bodysite",
+                  "text": "Body site",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/body-site-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "drop-down"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "problems-problemdiagnosissummary-status",
+                  "text": "Clinical status",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/condition-clinical"
+                },
+                {
+                  "linkId": "problems-problemdiagnosissummary-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "allergyintolerances",
+          "text": "Allergies and intolerances",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "allergyintolerances-adversereactionrisksummary",
+              "text": "Adverse reaction risk summary",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergyintolerances-adversereactionrisksummary-substance",
+                  "text": "Substance",
+                  "type": "open-choice",
+                  "required": true,
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/adverse-reaction-agent-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "allergyintolerances-adversereactionrisksummary-manifestation",
+                  "text": "Manifestation",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "http://snomed.info/sct/32506021000036107?fhir_vs=refset/142341000036103"
+                },
+                {
+                  "linkId": "allergyintolerances-adversereactionrisksummary-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "medicationsummary",
+          "text": "Medication summary",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "medicationsummary-medicationusestatement",
+              "text": "Medication use statement",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-medicationusestatement-name",
+                  "text": "Name",
+                  "type": "open-choice",
+                  "required": true,
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-medicationusestatement-form",
+                  "text": "Form",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-form-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-medicationusestatement-route",
+                  "text": "Route of adminsitration",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/route-of-administration-1"
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-doseamount",
+                  "text": "Dose amount",
+                  "type": "decimal",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "medicationsummary-medicationusestatement-doseamount-unit",
+                      "type": "choice",
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        },                
+                        {
+                          "valueCoding": {
+                            "code": "ml",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "ml"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "drop-down"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-medicationusestatement-dosetiming",
+                  "text": "Dose timing",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-medicationusestatement-reasoncode",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
+                },
+                {
+                  "linkId": "medicationsummary-medicationusestatement-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "medicationsummary-prescribedmedication",
+              "text": "Prescribed medications",
+              "type": "group",
+              "repeats": true,
+              "item": [
+                {
+                  "linkId": "medicationsummary-prescribedmedication-date",
+                  "text": "Date of prescription",
+                  "required": true,
+                  "type": "dateTime",
+                  "repeats": false
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-prescribedmedication-name",
+                  "text": "Name",
+                  "type": "open-choice",
+                  "required": true,
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-medication-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-prescribedmedication-form",
+                  "text": "Form",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-form-1"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-prescribedmedication-route",
+                  "text": "Route of adminsitration",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/route-of-administration-1"
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-doseamount",
+                  "text": "Dose amount",
+                  "type": "decimal",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "code": "unit",
+                                "system": "http://hl7.org/fhir/questionnaire-item-control"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "linkId": "medicationsummary-prescribedmedication-doseamount-unit",
+                      "type": "choice",
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "code": "mg",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "mg"
+                          }
+                        },                
+                        {
+                          "valueCoding": {
+                            "code": "ml",
+                            "system": "http://unitsofmeasure.org",
+                            "display": "ml"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "drop-down"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-prescribedmedication-dosetiming",
+                  "text": "Dose timing",
+                  "type": "open-choice",
+                  "repeats": false,
+                  "answerValueSet": "http://hl7.org/fhir/ValueSet/timing-abbreviation"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "autocomplete"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "linkId": "medicationsummary-prescribedmedication-reasoncode",
+                  "text": "Clinical indication",
+                  "type": "open-choice",
+                  "repeats": true,
+                  "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/medication-reason-taken-1"
+                },
+                {
+                  "linkId": "medicationsummary-prescribedmedication-comment",
+                  "text": "Comment",
+                  "type": "string",
+                  "repeats": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "immunizations",
+          "text": "Immunizations",
+          "type": "group",
+          "repeats": false,
+          "item": [
+          {
+          "linkId": "immunizations-vaccinationadministeredevent",
+          "text": "Vaccination administered event",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "autocomplete"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "immunizations-vaccinationadministeredevent-name",
+              "text": "Name",
+              "type": "open-choice",
+              "required": true,
+              "repeats": false,
+              "answerValueSet": "https://healthterminologies.gov.au/fhir/ValueSet/australian-vaccine-2"
+            },
+            {
+              "linkId": "immunizations-vaccinationadministeredevent-sequence",
+              "text": "Sequence",
+              "type": "string",
+              "repeats": false
+            },
+            {
+              "linkId": "immunizations-vaccinationadministeredevent-administrationDate",
+              "text": "Date of administration",
+              "type": "dateTime",
+              "repeats": false
+            },
+            {
+              "linkId": "immunizations-vaccinationadministeredevent-comment",
+              "text": "Comment",
+              "type": "string",
+              "repeats": false
+            }
+          ]
+          }]
+        }
+      ]
+    }
+  ]
+}
