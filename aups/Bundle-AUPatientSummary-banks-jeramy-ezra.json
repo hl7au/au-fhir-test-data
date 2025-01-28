@@ -1,0 +1,1199 @@
+{
+	"resourceType": "Bundle",
+	"meta": {
+		"profile": [
+			"http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips"
+		]
+	},
+	"identifier": {
+		"system": "urn:ietf:rfc:4122",
+		"value": "13198fd5-d07a-4250-9475-20cfcbc66579"
+	},
+	"type": "document",
+	"timestamp": "2025-01-28T20:27:06.904+10:30",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0",
+			"resource": {
+				"resourceType": "Composition",
+				"meta": {
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"
+					]
+				},
+				"text": {
+					"status": "generated",
+					"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>International Patient Summary Document</h1></div>"
+				},
+				"status": "final",
+				"type": {
+					"coding": [
+						{
+							"system": "http://loinc.org",
+							"code": "60591-5",
+							"display": "Patient Summary Document"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra"
+				},
+				"date": "2025-01-28T20:27:06.190+10:30",
+				"author": [
+					{
+						"reference": "urn:uuid:57f0d7eb-7e55-4750-9541-1a36055c1139"
+					}
+				],
+				"title": "Patient Summary as of 01/28/2025",
+				"confidentiality": "N",
+				"section": [
+					{
+						"title": "Allergies and Intolerances",
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "48765-2",
+									"display": "Allergies and adverse reactions Document"
+								}
+							]
+						},
+						"text": {
+							"status": "generated",
+							"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Allergies And Intolerances</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Allergen</th><th>Status</th><th>Category</th><th>Reaction</th><th>Severity</th><th>Comments</th><th>Onset</th></tr></thead><tbody><tr id=\"AllergyIntolerance-https://proxy.smartforms.io/v/r4/fhir/AllergyIntolerance/666/_history/1\"><td> No known allergy </td><td> active </td><td/><td/><td/><td/><td/></tr></tbody></table></div>"
+						},
+						"entry": [
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/AllergyIntolerance/666"
+							}
+						]
+					},
+					{
+						"title": "Medication List",
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "10160-0",
+									"display": "History of Medication use Narrative"
+								}
+							]
+						},
+						"text": {
+							"status": "generated",
+							"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Medication Summary: Medication Requests</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Medication</th><th>Status</th><th>Route</th><th>Sig</th><th>Comments</th><th>Authored Date</th></tr></thead><tbody><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/641/_history/2\"><td/><td>Active</td><td> Oral route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/642/_history/2\"><td/><td>Active</td><td> Oral route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/643/_history/2\"><td/><td>Active</td><td> Oral route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/644/_history/2\"><td/><td>Active</td><td> Oral route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/645/_history/2\"><td/><td>Active</td><td> Oral route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/646/_history/2\"><td/><td>Active</td><td> Respiratory tract route </td><td/><td/><td/></tr><tr id=\"MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/647/_history/2\"><td/><td>Active</td><td> Respiratory tract route </td><td/><td/><td/></tr></tbody></table></div>"
+						},
+						"entry": [
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/641"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/642"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/643"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/644"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/645"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/646"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/647"
+							}
+						]
+					},
+					{
+						"title": "Problem List",
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "11450-4",
+									"display": "Problem list - Reported"
+								}
+							]
+						},
+						"text": {
+							"status": "generated",
+							"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Problem List</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Medical Problems</th><th>Status</th><th>Comments</th><th>Onset Date</th></tr></thead><tbody><tr id=\"Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/624/_history/1\"><td> Hypertension </td><td/><td/><td/></tr><tr id=\"Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/625/_history/1\"><td> Type 2 diabetes mellitus </td><td/><td/><td/></tr><tr id=\"Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/627/_history/1\"><td> COPD </td><td/><td/><td/></tr><tr id=\"Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/628/_history/1\"><td> Hypercholesterolaemia </td><td/><td/><td/></tr></tbody></table></div>"
+						},
+						"entry": [
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Condition/624"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Condition/625"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Condition/627"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Condition/628"
+							}
+						]
+					},
+					{
+						"title": "History of Immunizations",
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "11369-6",
+									"display": "History of Immunization Narrative"
+								}
+							]
+						},
+						"text": {
+							"status": "generated",
+							"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Immunizations</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Immunization</th><th>Status</th><th>Dose Number</th><th>Manufacturer</th><th>Lot Number</th><th>Comments</th><th>Date</th></tr></thead><tbody><tr id=\"Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/637/_history/1\"><td> M-M-R II </td><td>COMPLETED</td><td/><td/><td/><td/><td/></tr><tr id=\"Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/638/_history/1\"><td> Boostrix </td><td>COMPLETED</td><td/><td/><td/><td/><td/></tr><tr id=\"Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/639/_history/1\"><td> AstraZeneca Vaxzevria </td><td>COMPLETED</td><td/><td/><td/><td/><td/></tr></tbody></table></div>"
+						},
+						"entry": [
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Immunization/637"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Immunization/638"
+							},
+							{
+								"reference": "https://proxy.smartforms.io/v/r4/fhir/Immunization/639"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "banks-jeramy-ezra",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-14T05:05:07.497+00:00",
+					"source": "#1xPmR4toyzjCpKgv",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"
+					]
+				},
+				"text": {
+					"status": "generated",
+					"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Jeramy EZRA <b>BANKS </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>8003608166980417</td></tr><tr><td>Address</td><td><span>50 Sebastien St </span><br/><span>Minjary </span><span>NSW </span><span>AU </span></td></tr><tr><td>Birth date</td><td><span>14 May 1971</span></td></tr></tbody></table></div>"
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+						"valueCoding": {
+							"system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+							"code": "4",
+							"display": "Neither Aboriginal nor Torres Strait Islander origin"
+						}
+					}
+				],
+				"identifier": [
+					{
+						"extension": [
+							{
+								"url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+								"valueCoding": {
+									"system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+									"code": "active"
+								}
+							},
+							{
+								"url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+								"valueCoding": {
+									"system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+									"code": "verified",
+									"display": "verified"
+								}
+							}
+						],
+						"type": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+									"code": "NI"
+								}
+							],
+							"text": "IHI"
+						},
+						"system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+						"value": "8003608166980417"
+					},
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+									"code": "MC"
+								}
+							],
+							"text": "Medicare Number"
+						},
+						"system": "http://ns.electronichealth.net.au/id/medicare-number",
+						"value": "29545410411"
+					}
+				],
+				"name": [
+					{
+						"use": "official",
+						"family": "BANKS",
+						"given": [
+							"Jeramy",
+							"EZRA"
+						]
+					}
+				],
+				"telecom": [
+					{
+						"system": "phone",
+						"value": "0270107520",
+						"use": "home"
+					},
+					{
+						"system": "phone",
+						"value": "0491574118",
+						"use": "mobile"
+					},
+					{
+						"system": "phone",
+						"value": "0270101153",
+						"use": "work"
+					}
+				],
+				"gender": "male",
+				"birthDate": "1971-05-14",
+				"address": [
+					{
+						"line": [
+							"50 Sebastien St"
+						],
+						"city": "Minjary",
+						"state": "NSW",
+						"postalCode": "2720",
+						"country": "AU"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/AllergyIntolerance/666",
+			"resource": {
+				"resourceType": "AllergyIntolerance",
+				"id": "666",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-28T06:58:35.087+00:00",
+					"source": "#fSlk2fkNaTThcySF",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#AllergyIntolerance-https://proxy.smartforms.io/v/r4/fhir/AllergyIntolerance/666/_history/1"
+					}
+				],
+				"clinicalStatus": {
+					"coding": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+							"code": "active"
+						}
+					]
+				},
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "716186003",
+							"display": "No known allergy"
+						}
+					],
+					"text": "No known allergy"
+				},
+				"patient": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/641",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "641",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:36:03.393+00:00",
+					"source": "#sdNG15a9bmG7QRxS",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "929413011000036109",
+									"display": "Metformin (Apo) 500 mg tablet"
+								}
+							],
+							"text": "Metformin (Apo) 500 mg tablet"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/641/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Metformin (Apo) 500 mg tablet"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "26643006",
+									"display": "Oral route"
+								}
+							],
+							"text": "Oral route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/642",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "642",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:36:45.755+00:00",
+					"source": "#gUZZbrsiLziG3o9O",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "175151000036106",
+									"display": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+								}
+							],
+							"text": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+						},
+						"form": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "421026006",
+									"display": "Tablet"
+								}
+							],
+							"text": "Tablet"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/642/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "26643006",
+									"display": "Oral route"
+								}
+							],
+							"text": "Oral route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/643",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "643",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:37:13.207+00:00",
+					"source": "#hUQi97mfAZkxPYD5",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "23173011000036104",
+									"display": "Aspirin 100 mg tablet"
+								}
+							],
+							"text": "Aspirin 100 mg tablet"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/643/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Aspirin 100 mg tablet"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "26643006",
+									"display": "Oral route"
+								}
+							],
+							"text": "Oral route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/644",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "644",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:38:32.540+00:00",
+					"source": "#8ToVgbMEyisHgPMg",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "22969011000036102",
+									"display": "Telmisartan 80 mg tablet"
+								}
+							],
+							"text": "Telmisartan 80 mg tablet"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/644/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+					"reference": "#medication",
+                    "display": "Telmisartan 80 mg tablet"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "26643006",
+									"display": "Oral route"
+								}
+							],
+							"text": "Oral route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/645",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "645",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:38:59.064+00:00",
+					"source": "#yOBH5bAg37q0oQGf",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "11404011000036102",
+									"display": "Zyloprim 100 mg tablet, 200"
+								}
+							],
+							"text": "Zyloprim 100 mg tablet, 200"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/645/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Zyloprim 100 mg tablet, 200"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "26643006",
+									"display": "Oral route"
+								}
+							],
+							"text": "Oral route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/646",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "646",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:39:26.113+00:00",
+					"source": "#oFmWhsU4jwX5pKGj",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "13029011000036109",
+									"display": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+								}
+							],
+							"text": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/646/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "447694001",
+									"display": "Respiratory tract route"
+								}
+							],
+							"text": "Respiratory tract route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 2
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/647",
+			"resource": {
+				"resourceType": "MedicationRequest",
+				"id": "647",
+				"meta": {
+					"versionId": "2",
+					"lastUpdated": "2025-01-28T06:39:54.941+00:00",
+					"source": "#yt4J2IGD2j5J8PNe",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationRequest-uv-ips"
+					]
+				},
+				"contained": [
+					{
+						"resourceType": "Medication",
+						"id": "medication",
+						"meta": {
+							"profile": [
+								"http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"
+							]
+						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "13826011000036104",
+									"display": "Spiriva 18 microgram powder for inhalation, 30 capsules"
+								}
+							],
+							"text": "Spiriva 18 microgram powder for inhalation, 30 capsules"
+						}
+					}
+				],
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#MedicationRequest-https://proxy.smartforms.io/v/r4/fhir/MedicationRequest/647/_history/2"
+					}
+				],
+				"status": "active",
+				"intent": "order",
+				"medicationReference": {
+                    "reference": "#medication",
+					"display": "Spiriva 18 microgram powder for inhalation, 30 capsules"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				},
+				"requester": {
+					"type": "Practitioner",
+					"display": "Abe LOWE"
+				},
+				"dosageInstruction": [
+					{
+						"route": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "447694001",
+									"display": "Respiratory tract route"
+								}
+							],
+							"text": "Respiratory tract route"
+						},
+						"doseAndRate": [
+							{
+								"doseQuantity": {
+									"value": 1
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Condition/624",
+			"resource": {
+				"resourceType": "Condition",
+				"id": "624",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/624/_history/1"
+					}
+				],
+				"category": [
+					{
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+								"code": "problem-list-item"
+							}
+						],
+						"text": "Problem"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "38341003",
+							"display": "Hypertension"
+						}
+					],
+					"text": "Hypertension"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Condition/625",
+			"resource": {
+				"resourceType": "Condition",
+				"id": "625",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/625/_history/1"
+					}
+				],
+				"category": [
+					{
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+								"code": "problem-list-item"
+							}
+						],
+						"text": "Problem"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "44054006",
+							"display": "Type 2 diabetes mellitus"
+						}
+					],
+					"text": "Type 2 diabetes mellitus"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Condition/627",
+			"resource": {
+				"resourceType": "Condition",
+				"id": "627",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/627/_history/1"
+					}
+				],
+				"category": [
+					{
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+								"code": "problem-list-item"
+							}
+						],
+						"text": "Problem"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "13645005",
+							"display": "COPD"
+						}
+					],
+					"text": "COPD"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Condition/628",
+			"resource": {
+				"resourceType": "Condition",
+				"id": "628",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Condition-https://proxy.smartforms.io/v/r4/fhir/Condition/628/_history/1"
+					}
+				],
+				"category": [
+					{
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+								"code": "problem-list-item"
+							}
+						],
+						"text": "Problem"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "13644009",
+							"display": "Hypercholesterolaemia"
+						}
+					],
+					"text": "Hypercholesterolaemia"
+				},
+				"subject": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Immunization/637",
+			"resource": {
+				"resourceType": "Immunization",
+				"id": "637",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/637/_history/1"
+					}
+				],
+				"status": "completed",
+				"vaccineCode": {
+					"coding": [
+						{
+							"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+							"version": "20240207",
+							"code": "MMRCSL",
+							"display": "M-M-R II"
+						}
+					],
+					"text": "M-M-R II"
+				},
+				"patient": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Immunization/638",
+			"resource": {
+				"resourceType": "Immunization",
+				"id": "638",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/638/_history/1"
+					}
+				],
+				"status": "completed",
+				"vaccineCode": {
+					"coding": [
+						{
+							"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+							"version": "20240207",
+							"code": "BOOST",
+							"display": "Boostrix"
+						}
+					],
+					"text": "Boostrix"
+				},
+				"patient": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://proxy.smartforms.io/v/r4/fhir/Immunization/639",
+			"resource": {
+				"resourceType": "Immunization",
+				"id": "639",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-01-21T05:25:21.369+00:00",
+					"source": "#4AJcfi3xNVWQPifP",
+					"profile": [
+						"http://hl7.org/fhir/uv/ips/StructureDefinition/Immunization-uv-ips"
+					]
+				},
+				"extension": [
+					{
+						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+						"valueUrl": "urn:uuid:dab245d1-66d4-48b3-82f2-3c2cecdd95a0#Immunization-https://proxy.smartforms.io/v/r4/fhir/Immunization/639/_history/1"
+					}
+				],
+				"status": "completed",
+				"vaccineCode": {
+					"coding": [
+						{
+							"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+							"version": "20240207",
+							"code": "COVAST",
+							"display": "AstraZeneca Vaxzevria"
+						}
+					],
+					"text": "AstraZeneca Vaxzevria"
+				},
+				"patient": {
+					"reference": "https://proxy.smartforms.io/v/r4/fhir/Patient/banks-jeramy-ezra",
+					"type": "Patient",
+					"display": "Jeramy BANKS"
+				}
+			}
+		},
+		{
+			"fullUrl": "urn:uuid:57f0d7eb-7e55-4750-9541-1a36055c1139",
+			"resource": {
+				"resourceType": "Device",
+				"deviceName": [
+					{
+						"name": "AU Patient Summary generator",
+						"type": "manufacturer-name"
+					}
+				]
+			}
+		}
+	]
+}
