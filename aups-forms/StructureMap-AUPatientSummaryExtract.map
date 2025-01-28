@@ -373,7 +373,7 @@ group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
                             };
                         };
                     
-                        prescribedmedicationItem -> medicationrequest.status = 'completed', 
+                        prescribedmedicationItem -> medicationrequest.status = 'active', 
                             medicationrequest.intent = 'order';
 
                         src.subject -> medicationrequest.subject = (%src.subject);
