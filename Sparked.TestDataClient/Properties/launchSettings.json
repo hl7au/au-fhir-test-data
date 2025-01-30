@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Sparked.TestDataClient": {
-      "commandName": "Project",
-      "commandLineArgs": "Observation ..\\generated https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic <token>"
-    }
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Sparked.Csv2FhirMapping": {
-      "commandName": "Project",
-      "commandLineArgs": "Patient \"..\\testdata-csv\\AU Core Sample Data - Patient.csv\" ..\\generated"
-    }
-  }
-}

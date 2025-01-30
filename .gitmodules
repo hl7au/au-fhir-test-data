@@ -1,4 +1,0 @@
-[submodule "fhir-net-mappinglanguage"]
-	path = fhir-net-mappinglanguage
-	url = https://github.com/heathfrankel/fhir-net-mappinglanguage.git
-	branch = develop-r4b
