@@ -416,6 +416,11 @@ group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
                                 answer.value as adate where (ofType(date).exists()) -> immunization.occurrence = cast(adate, 'dateTime');  
                                 // changed questionnaire to use dateTime rather than date
                                 answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;  
+                                // Handle missing data using Data Absent Reason extension
+                                check administrationDate.answer.empty() then {
+                                immunization.occurrence.extension.url = "http://hl7.org/fhir/StructureDefinition/data-absent-reason";
+                                immunization.occurrence.extension.valueCode = "unknown";
+                                };
                             };
                         };
                         
