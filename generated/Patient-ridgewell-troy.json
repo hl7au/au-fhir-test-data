@@ -16,7 +16,7 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "446151000124109",
-                "display": "Identifies as male gender"
+                "display": "Male gender identity"
               }
             ]
           }
@@ -48,7 +48,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://loinc.org",
                 "code": "76689-9",
                 "display": "Sex Assigned At Birth"
               }
@@ -60,7 +60,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "unknown",
                 "display": "Unknown"
               }

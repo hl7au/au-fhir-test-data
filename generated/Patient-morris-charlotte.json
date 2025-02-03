@@ -22,7 +22,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://loinc.org",
                 "code": "76689-9",
                 "display": "Sex Assigned At Birth"
               }
@@ -34,7 +34,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "female",
                 "display": "Female"
               }

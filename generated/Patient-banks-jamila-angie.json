@@ -24,7 +24,7 @@
               {
                 "system": "http://snomed.info/sct",
                 "code": "33791000087105",
-                "display": "Identifies as gender nonbinary"
+                "display": "Non-binary gender identity"
               }
             ]
           }
@@ -56,7 +56,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://loinc.org",
                 "code": "76689-9",
                 "display": "Sex Assigned At Birth"
               }
@@ -68,7 +68,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://hl7.org/fhir/administrative-gender",
                 "code": "female",
                 "display": "Female"
               }
