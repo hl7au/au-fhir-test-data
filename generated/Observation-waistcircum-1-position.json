@@ -65,7 +65,7 @@
           {
             "system": "http://snomed.info/sct",
             "code": "10904000",
-            "display": "Orthostatic body position"
+            "display": "Orthostatic body position"
           }
         ],
         "text": "Standing"
