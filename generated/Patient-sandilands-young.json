@@ -14,7 +14,7 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://snomed.info/sct",
+                "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
                 "code": "asked-declined",
                 "display": "Asked But Declined"
               }
