@@ -415,7 +415,18 @@ group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
                                 // this causes an error in Smart Forms $extract
                                 answer.value as adate where (ofType(date).exists()) -> immunization.occurrence = cast(adate, 'dateTime');  
                                 // changed questionnaire to use dateTime rather than date
-                                answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;  
+                                answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;
+                                
+                                // missing occurrence
+                                //tried answer.value as adate where (answer.empty())
+                                //tried answer.value as adate where length() = 0
+                                //reference: https://github.com/hl7au/au-fhir-test-data/blob/fix-terminology-discrepancy/Sparked.Csv2FhirMapping/Maps/CSV2Immunization.map#L110C1-L116C7
+                                answer.value as adate where (answer.exists().not) -> immunization.occurrence = create('dateTime') as t_occurrence then {
+                                    adate -> t_occurrence.extension as t_extension first then {
+                                        adate -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+                                        t_extension.value = cast('unknown', 'code');
+                                    };
+                                };
                             };
                         };
                         
