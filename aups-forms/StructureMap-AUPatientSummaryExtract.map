@@ -415,7 +415,17 @@ group bundleMap(source src : QuestionnaireResponse, target bundle : Bundle) {
                                 // this causes an error in Smart Forms $extract
                                 answer.value as adate where (ofType(date).exists()) -> immunization.occurrence = cast(adate, 'dateTime');  
                                 // changed questionnaire to use dateTime rather than date
-                                answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;  
+                                answer.value as adate where (ofType(dateTime).exists()) -> immunization.occurrence = adate;
+                                
+                                // missing occurrence
+                                vaccinationadministeredeventItem where (item.exists(linkId = 'immunizations-vaccinationadministeredevent-administrationDate').not()) then {
+                                    vaccinationadministeredeventItem -> immunization.occurrence = create('dateTime') as t_occurrence then {
+                                            vaccinationadministeredeventItem -> t_occurrence.extension as t_extension first then {
+                                                vaccinationadministeredeventItem -> t_extension.url = 'http://hl7.org/fhir/StructureDefinition/data-absent-reason',
+                                                t_extension.value = cast('unknown', 'code');
+                                            };
+                                        };
+                                };
                             };
                         };
                         

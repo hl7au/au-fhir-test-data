@@ -3989,6 +3989,98 @@
                                                                                 }
                                                                             ],
                                                                             "documentation": "changed questionnaire to use dateTime rather than date"
+                                                                        },
+                                                                        {
+                                                                            "name": "6146d67097cd480eafa0a2ea0438eb87",
+                                                                            "source": [
+                                                                                {
+                                                                                    "context": "vaccinationadministeredeventItem",
+                                                                                    "condition": "(item.exists(linkId = 'immunizations-vaccinationadministeredevent-administrationDate').not())"
+                                                                                }
+                                                                            ],
+                                                                            "rule": [
+                                                                                {
+                                                                                    "name": "c1cd08c7347e42e2b23f6da56e9f8111",
+                                                                                    "source": [
+                                                                                        {
+                                                                                            "context": "vaccinationadministeredeventItem"
+                                                                                        }
+                                                                                    ],
+                                                                                    "target": [
+                                                                                        {
+                                                                                            "context": "immunization",
+                                                                                            "contextType": "variable",
+                                                                                            "element": "occurrence",
+                                                                                            "variable": "t_occurrence",
+                                                                                            "transform": "create",
+                                                                                            "parameter": [
+                                                                                                {
+                                                                                                    "valueString": "dateTime"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ],
+                                                                                    "rule": [
+                                                                                        {
+                                                                                            "name": "f6268fb056a849d887d3951e9156adcb",
+                                                                                            "source": [
+                                                                                                {
+                                                                                                    "context": "vaccinationadministeredeventItem"
+                                                                                                }
+                                                                                            ],
+                                                                                            "target": [
+                                                                                                {
+                                                                                                    "context": "t_occurrence",
+                                                                                                    "contextType": "variable",
+                                                                                                    "element": "extension",
+                                                                                                    "variable": "t_extension",
+                                                                                                    "listMode": [
+                                                                                                        "first"
+                                                                                                    ]
+                                                                                                }
+                                                                                            ],
+                                                                                            "rule": [
+                                                                                                {
+                                                                                                    "name": "9f541825fb0b4d0da6f4e6111cff14f5",
+                                                                                                    "source": [
+                                                                                                        {
+                                                                                                            "context": "vaccinationadministeredeventItem"
+                                                                                                        }
+                                                                                                    ],
+                                                                                                    "target": [
+                                                                                                        {
+                                                                                                            "context": "t_extension",
+                                                                                                            "contextType": "variable",
+                                                                                                            "element": "url",
+                                                                                                            "transform": "copy",
+                                                                                                            "parameter": [
+                                                                                                                {
+                                                                                                                    "valueString": "http://hl7.org/fhir/StructureDefinition/data-absent-reason"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "context": "t_extension",
+                                                                                                            "contextType": "variable",
+                                                                                                            "element": "value",
+                                                                                                            "transform": "cast",
+                                                                                                            "parameter": [
+                                                                                                                {
+                                                                                                                    "valueString": "unknown"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "valueString": "code"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ],
+                                                                            "documentation": "missing occurrence"
                                                                         }
                                                                     ]
                                                                 }
