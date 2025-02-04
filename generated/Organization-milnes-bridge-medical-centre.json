@@ -40,7 +40,7 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
-          "display": "General Practice"
+          "display": "General Practice Medical Services"
         },
         {
           "system": "http://snomed.info/sct",

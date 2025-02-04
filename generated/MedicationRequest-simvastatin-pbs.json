@@ -12,13 +12,13 @@
     "coding": [
       {
         "system": "http://pbs.gov.au/code/item",
-        "code": "8731E",
+        "code": "8173E",
         "display": "simvastatin 40 mg tablet, 30"
       },
       {
         "system": "http://snomed.info/sct",
         "code": "28213011000036109",
-        "display": "simvastatin 40 mg tablet, 30"
+        "display": "Simvastatin 40 mg tablet, 30"
       }
     ],
     "text": "simvastatin 40 mg tablet, 30 tablets"
