@@ -1,0 +1,1139 @@
+{
+	"resourceType": "Bundle",
+	"meta": {
+	  "profile": [ "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle" ]
+	},
+	"identifier": {
+	  "system": "urn:ietf:rfc:4122",
+	  "value": "50878242-f1da-4615-89ee-c36aa683876c"
+	},
+	"type": "document",
+	"timestamp": "2025-02-06T15:21:02.243+11:00",
+	"entry": [ {
+	  "fullUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef",
+	  "resource": {
+		"resourceType": "Composition",
+		"text": {
+		  "status": "generated",
+		  "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Australian Patient Summary Document</h1></div>"
+		},
+		"status": "final",
+		"type": {
+		  "coding": [ {
+			"system": "http://loinc.org",
+			"code": "60591-5",
+			"display": "Patient summary Document"
+		  } ]
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra"
+		},
+		"date": "2025-02-06T15:21:01.847+11:00",
+		"author": [ {
+		  "reference": "urn:uuid:dda390f2-6de3-4c2f-b511-880099019ea9"
+		} ],
+		"title": "Patient Summary as of 02/06/2025",
+		"confidentiality": "N",
+		"section": [ {
+		  "title": "Adverse reaction risk summary",
+		  "code": {
+			"coding": [ {
+			  "system": "http://loinc.org",
+			  "code": "48765-2",
+			  "display": "Adverse reaction risk summary"
+			} ]
+		  },
+		  "text": {
+			"status": "generated",
+			"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Allergies And Intolerances</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Substance name</th><th>Manifestation</th><th>Comments</th></tr></thead><tbody><tr id=\"AllergyIntolerance-http://localhost:8080/fhir/AllergyIntolerance/52/_history/1\"><td> No known allergy </td><td> Rash , Rash 2 </td><td> comment </td></tr></tbody></table></div>"
+		  },
+		  "entry": [ {
+			"reference": "AllergyIntolerance/52"
+		  } ]
+		}, {
+		  "title": "Medication use statement",
+		  "code": {
+			"coding": [ {
+			  "system": "http://loinc.org",
+			  "code": "10160-0",
+			  "display": "Medication use statement"
+			} ]
+		  },
+		  "text": {
+			"status": "generated",
+			"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Medication use statement</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Medication name</th><th>Clinical indication</th><th>Strength</th><th>Form</th><th>Route of administration</th><th>Dose Timing</th><th>Comments</th></tr></thead><tbody><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m641/_history/2\"><td> Metformin (Apo) 500 mg tablet </td><td/><td>Strength</td><td>Form</td><td> Oral route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m642/_history/2\"><td> Ezetimibe 10 mg tablet [30] (&amp;) rosuvastatin 40 mg tablet [30], 60 </td><td/><td>Strength</td><td>Form</td><td> Oral route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m643/_history/2\"><td> Aspirin 100 mg tablet </td><td/><td>Strength</td><td>Form</td><td> Oral route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m644/_history/2\"><td> Telmisartan 80 mg tablet </td><td/><td>Strength</td><td>Form</td><td> Oral route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m645/_history/4\"><td> Zyloprim 100 mg tablet, 200 </td><td/><td>Strength</td><td>Form</td><td> Oral route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m646/_history/3\"><td> Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations </td><td> Asthma </td><td>Strength</td><td>Form</td><td> Respiratory tract route </td><td/></tr><tr id=\"MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m647/_history/5\"><td> Spiriva 18 microgram powder for inhalation, 30 capsules </td><td/><td>Nah</td><td>Nah</td><td> Respiratory tract route </td><td/></tr></tbody></table></div>"
+		  },
+		  "entry": [ {
+			//the following MedicationRequests are planned to be changed to MedicationStatements 
+			"reference": "MedicationRequest/m641"
+		  }, {
+			"reference": "MedicationRequest/m642"
+		  }, {
+			"reference": "MedicationRequest/m643"
+		  }, {
+			"reference": "MedicationRequest/m644"
+		  }, {
+			"reference": "MedicationRequest/m645"
+		  }, {
+			"reference": "MedicationRequest/m646"
+		  }, {
+			"reference": "MedicationRequest/m647"
+		  } ]
+		}, {
+		  "title": "Problem/Diagnosis summary",
+		  "code": {
+			"coding": [ {
+			  "system": "http://loinc.org",
+			  "code": "11450-4",
+			  "display": "Problem/Diagnosis summary"
+			} ]
+		  },
+		  "text": {
+			"status": "generated",
+			"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Problem/Diagnosis summary</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Problem / Diagnosis name</th><th>Body site/laterality</th><th>Status</th><th>Comments</th></tr></thead><tbody><tr id=\"Condition-http://localhost:8080/fhir/Condition/condition-624/_history/1\"><td> Hypertension </td><td/><td/><td/></tr><tr id=\"Condition-http://localhost:8080/fhir/Condition/condition-625/_history/1\"><td> Type 2 diabetes mellitus </td><td/><td/><td/></tr><tr id=\"Condition-http://localhost:8080/fhir/Condition/c627/_history/1\"><td> COPD </td><td/><td/><td/></tr><tr id=\"Condition-http://localhost:8080/fhir/Condition/c628/_history/4\"><td> Hypercholesterolaemia </td><td> Left arm </td><td> Active </td><td> comment </td></tr></tbody></table></div>"
+		  },
+		  "entry": [ {
+			"reference": "Condition/condition-624"
+		  }, {
+			"reference": "Condition/condition-625"
+		  }, {
+			"reference": "Condition/c627"
+		  }, {
+			"reference": "Condition/c628"
+		  } ]
+		}, {
+		  "title": "Vaccination administered event",
+		  "code": {
+			"coding": [ {
+			  "system": "http://loinc.org",
+			  "code": "11369-6",
+			  "display": "Vaccination administered event"
+			} ]
+		  },
+		  "text": {
+			"status": "generated",
+			"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h5>Vaccination administered event</h5><table class=\"hapiPropertyTable\"><thead><tr><th>Vaccine name</th><th>Sequence Number</th><th>Date of administration</th><th>Comments</th></tr></thead><tbody><tr id=\"Immunization-http://localhost:8080/fhir/Immunization/i637/_history/1\"><td> M-M-R II </td><td/><td>2025-01-15</td><td/></tr><tr id=\"Immunization-http://localhost:8080/fhir/Immunization/i638/_history/3\"><td> Boostrix </td><td> 2 </td><td/><td> comment </td></tr><tr id=\"Immunization-http://localhost:8080/fhir/Immunization/i639/_history/1\"><td> AstraZeneca Vaxzevria </td><td/><td/></tr></tbody></table></div>"
+		  },
+		  "entry": [ {
+			"reference": "Immunization/i637"
+		  }, {
+			"reference": "Immunization/i638"
+		  }, {
+			"reference": "Immunization/i639"
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Patient/banks-jeramy-ezra",
+	  "resource": {
+		"resourceType": "Patient",
+		"id": "banks-jeramy-ezra",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:24:50.423+11:00",
+		  "source": "#3ZxervUx6mOfR8Eo",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+		  "valueCoding": {
+			"system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+			"code": "4",
+			"display": "Neither Aboriginal nor Torres Strait Islander origin"
+		  }
+		} ],
+		"identifier": [ {
+		  "extension": [ {
+			"url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+			"valueCoding": {
+			  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+			  "code": "active"
+			}
+		  }, {
+			"url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+			"valueCoding": {
+			  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+			  "code": "verified",
+			  "display": "verified"
+			}
+		  } ],
+		  "type": {
+			"coding": [ {
+			  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+			  "code": "NI"
+			} ],
+			"text": "IHI"
+		  },
+		  "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+		  "value": "8003608166980417"
+		}, {
+		  "type": {
+			"coding": [ {
+			  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+			  "code": "MC"
+			} ],
+			"text": "Medicare Number"
+		  },
+		  "system": "http://ns.electronichealth.net.au/id/medicare-number",
+		  "value": "29545410411"
+		} ],
+		"name": [ {
+		  "use": "official",
+		  "family": "BANKS",
+		  "given": [ "Jeramy", "EZRA" ]
+		} ],
+		"telecom": [ {
+		  "system": "phone",
+		  "value": "0270107520",
+		  "use": "home"
+		}, {
+		  "system": "phone",
+		  "value": "0491574118",
+		  "use": "mobile"
+		}, {
+		  "system": "phone",
+		  "value": "0270101153",
+		  "use": "work"
+		} ],
+		"gender": "male",
+		"birthDate": "1971-05-14",
+		"address": [ {
+		  "line": [ "50 Sebastien St" ],
+		  "city": "Minjary",
+		  "state": "NSW",
+		  "postalCode": "2720",
+		  "country": "AU"
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/AllergyIntolerance/52",
+	  "resource": {
+		"resourceType": "AllergyIntolerance",
+		"id": "52",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-02-06T15:04:04.954+11:00",
+		  "source": "#1DtxPB5rvDWO76YY",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#AllergyIntolerance-http://localhost:8080/fhir/AllergyIntolerance/52/_history/1"
+		} ],
+		"clinicalStatus": {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+			"code": "active"
+		  } ]
+		},
+		"code": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "716186003",
+			"display": "No known allergy"
+		  } ],
+		  "text": "Nil Known Allergies"
+		},
+		"patient": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient"
+		},
+		"note": [ {
+		  //example: comments may go here
+		  "text": "comment"
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m641",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m641",
+		"meta": {
+		  "versionId": "2",
+		  "lastUpdated": "2025-01-30T13:44:07.050+11:00",
+		  "source": "#htWjERSXZZmffhCz",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medicationfor641",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "929413011000036109",
+			  "display": "Metformin (Apo) 500 mg tablet"
+			} ],
+			"text": "Metformin (Apo) 500 mg tablet"
+		  }
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m641/_history/2"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medicationfor641",
+		  "display": "Metformin (Apo) 500 mg tablet"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"dosageInstruction": [ {
+		  "text" : "500mg twice daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 2,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "26643006",
+			  "display": "Oral route"
+			} ],
+			"text": "Oral route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m642",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m642",
+		"meta": {
+		  "versionId": "2",
+		  "lastUpdated": "2025-01-30T13:44:38.833+11:00",
+		  "source": "#eUSt38qmG7cLWdmL",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medicationfor642",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "175151000036106",
+			  "display": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+			} ],
+			"text": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+		  },
+		  "form": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "421026006",
+			  "display": "Tablet"
+			} ],
+			"text": "Tablet"
+		  }
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m642/_history/2"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medicationfor642",
+		  "display": "Ezetimibe 10 mg tablet [30] (&) rosuvastatin 40 mg tablet [30], 60"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"dosageInstruction": [ {
+		  "text" : "1 tablet daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 1,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "26643006",
+			  "display": "Oral route"
+			} ],
+			"text": "Oral route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m643",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m643",
+		"meta": {
+		  "versionId": "2",
+		  "lastUpdated": "2025-01-30T13:45:12.162+11:00",
+		  "source": "#tHPCFObgwYhG0jr1",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medicationfor643",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "23173011000036104",
+			  "display": "Aspirin 100 mg tablet"
+			} ],
+			"text": "Aspirin 100 mg tablet"
+		  }
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m643/_history/2"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medicationfor643",
+		  "display": "Aspirin 100 mg tablet"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"dosageInstruction": [ {
+		  "text" : "100mg once daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 1,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "26643006",
+			  "display": "Oral route"
+			} ],
+			"text": "Oral route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m644",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m644",
+		"meta": {
+		  "versionId": "2",
+		  "lastUpdated": "2025-01-30T13:50:40.837+11:00",
+		  "source": "#HXCSuEdIofY3pRZy",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medicationfor644",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "22969011000036102",
+			  "display": "Telmisartan 80 mg tablet"
+			} ],
+			"text": "Telmisartan 80 mg tablet"
+		  },
+		  "form": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "385055001",
+			  "display": "Tablet"
+			} ]
+		  },
+		  "ingredient": [ {
+			"itemCodeableConcept": {
+			  "coding": [ {
+				"system": "http://snomed.info/sct",
+				"code": "387069000",
+				"display": "Telmisartan"
+			  } ],
+			  "text": "Telmisartan"
+			},
+			"strength": {
+			  "numerator": {
+				"value": 80,
+				"system": "http://unitsofmeasure.org",
+				"code": "mg"
+			  },
+			  "denominator": {
+				"value": 1,
+				"system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+				"code": "TAB"
+			  }
+			}
+		  } ]
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m644/_history/2"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medicationfor644",
+		  "display": "Telmisartan 80 mg tablet"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"dosageInstruction": [ {
+		  "text" : "80mg once daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 1,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "26643006",
+			  "display": "Oral route"
+			} ],
+			"text": "Oral route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m645",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m645",
+		"meta": {
+		  "versionId": "4",
+		  "lastUpdated": "2025-01-29T15:06:52.195+11:00",
+		  "source": "#o84gbvdAnyiM76ix",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medication12345",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "11404011000036102",
+			  "display": "Zyloprim 100 mg tablet, 200"
+			} ],
+			"text": "Zyloprim 100 mg tablet, 200"
+		  }
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m645/_history/4"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medication12345",
+		  "display": "Zyloprim 100 mg tablet, 200"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"dosageInstruction": [ {
+		  "text" : "300mg daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 1,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "26643006",
+			  "display": "Oral route"
+			} ],
+			"text": "Oral route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m646",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m646",
+		"meta": {
+		  "versionId": "3",
+		  "lastUpdated": "2025-02-06T15:11:41.633+11:00",
+		  "source": "#fKOXsnczYeETKCR9",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"contained": [ {
+		  "resourceType": "Medication",
+		  "id": "medicationfor646",
+		  "meta": {
+			"profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication" ]
+		  },
+		  "code": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "13029011000036109",
+			  "display": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+			} ],
+			"text": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+		  }
+		} ],
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m646/_history/3"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationReference": {
+		  "reference": "#medicationfor646",
+		  "display": "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		"reasonCode": [ {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "195967001",
+			"display": "Asthma"
+		  } ],
+		  "text": "Asthma"
+		} ],
+		//check dosage conversion to FHIR
+		"dosageInstruction": [ {
+		  "text" : "2 puffs, 4 times per day, and as needed",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 4,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "asNeededBoolean": true,
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "447694001",
+			  "display": "Respiratory tract route"
+			} ],
+			"text": "Respiratory tract route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 2,
+			  "unit": "puff",
+			  "system": "http://snomed.info/sct",
+			  "code": "415215001"
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/MedicationRequest/m647",
+	  "resource": {
+		"resourceType": "MedicationRequest",
+		"id": "m647",
+		"meta": {
+		  "versionId": "5",
+		  "lastUpdated": "2025-01-29T11:20:35.900+11:00",
+		  "source": "#JxhA78WwllnbKWRp",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#MedicationRequest-http://localhost:8080/fhir/MedicationRequest/m647/_history/5"
+		} ],
+		"status": "completed",
+		"intent": "order",
+		"medicationCodeableConcept": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "13826011000036104",
+			"display": "Spiriva 18 microgram powder for inhalation, 30 capsules"
+		  } ],
+		  "text": "Spiriva 18 microgram powder for inhalation, 30 capsules"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"requester": {
+		  "reference": "Practitioner/lowe-abe",
+		  "type": "Practitioner",
+		  "display": "Abe LOWE"
+		},
+		//check dosage conversion to FHIR
+		"dosageInstruction": [ {
+		  "text" : "Inhale 1 capsule (18 mcg) via inhalation once daily",
+		  "timing" : {
+			"repeat" : {
+			  "frequency" : 1,
+			  "period" : 1,
+			  "periodUnit" : "d"
+			}
+		  },
+		  "route": {
+			"coding": [ {
+			  "system": "http://snomed.info/sct",
+			  "code": "447694001",
+			  "display": "Respiratory tract route"
+			} ],
+			"text": "Respiratory tract route"
+		  },
+		  "doseAndRate": [ {
+			"doseQuantity": {
+			  "value": 1,
+			  "unit": "capsule",
+			  "system": "http://snomed.info/sct",
+			  "code": "999001031000168105"
+			}
+		  } ]
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Practitioner/lowe-abe",
+	  "resource": {
+		"resourceType": "Practitioner",
+		"id": "lowe-abe",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:31:10.390+11:00",
+		  "source": "#66SXcSc7LPcrvMfL",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner" ]
+		},
+		"identifier": [ {
+		  "type": {
+			"coding": [ {
+			  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+			  "code": "NPI",
+			  "display": "National provider identifier"
+			} ],
+			"text": "HPI-I"
+		  },
+		  "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+		  "value": "8003616566718832"
+		}, {
+		  "type": {
+			"coding": [ {
+			  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+			  "code": "PRES",
+			  "display": "Prescriber Number"
+			} ]
+		  },
+		  "system": "http://ns.electronichealth.net.au/id/medicare-prescriber-number",
+		  "value": "8017196"
+		} ],
+		"name": [ {
+		  "family": "LOWE",
+		  "given": [ "Abe" ]
+		} ],
+		"telecom": [ {
+		  "system": "phone",
+		  "value": "0270102315",
+		  "use": "work"
+		}, {
+		  "system": "email",
+		  "value": "abe.lowe@mossypointmc.example.net"
+		} ],
+		"address": [ {
+		  "line": [ "158 Warrego Cl" ],
+		  "city": "Mossy Point",
+		  "state": "NSW",
+		  "postalCode": "2537"
+		} ],
+		"gender": "male",
+		"qualification": [ {
+		  "extension": [ {
+			"url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details",
+			"extension": [ {
+			  "url": "ahpraProfession",
+			  "valueCodeableConcept": {
+				"text": "Medical Practitioner"
+			  }
+			} ]
+		  } ],
+		  "identifier": [ {
+			"type": {
+			  "coding": [ {
+				"system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+				"code": "AHPRA",
+				"display": "Australian Health Practitioner Regulation Agency Registration Number"
+			  } ],
+			  "text": "Ahpra Registration Number"
+			},
+			"system": "http://hl7.org.au/id/ahpra-registration-number",
+			"value": "HAC0000000042"
+		  } ],
+		  "code": {
+			"coding": [ {
+			  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+			  "code": "AUAHPRAProfession",
+			  "display": "AHPRA Profession"
+			} ]
+		  }
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Condition/condition-624",
+	  "resource": {
+		"resourceType": "Condition",
+		"id": "condition-624",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:28:04.977+11:00",
+		  "source": "#2xdFGHfrgB3RbHmj",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Condition-http://localhost:8080/fhir/Condition/condition-624/_history/1"
+		} ],
+		"category": [ {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+			"code": "problem-list-item"
+		  } ],
+		  "text": "Problem"
+		} ],
+		"code": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "38341003",
+			"display": "Hypertension"
+		  } ],
+		  "text": "Hypertension"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		}
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Condition/condition-625",
+	  "resource": {
+		"resourceType": "Condition",
+		"id": "condition-625",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:28:28.547+11:00",
+		  "source": "#maFyuv88WriN2Vt7",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Condition-http://localhost:8080/fhir/Condition/condition-625/_history/1"
+		} ],
+		"category": [ {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+			"code": "problem-list-item"
+		  } ],
+		  "text": "Problem"
+		} ],
+		"code": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "44054006",
+			"display": "Type 2 diabetes mellitus"
+		  } ],
+		  "text": "Type 2 diabetes mellitus"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		}
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Condition/c627",
+	  "resource": {
+		"resourceType": "Condition",
+		"id": "c627",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:29:49.708+11:00",
+		  "source": "#zAyfc2Vjyo9nLCav",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Condition-http://localhost:8080/fhir/Condition/c627/_history/1"
+		} ],
+		"category": [ {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+			"code": "problem-list-item"
+		  } ],
+		  "text": "Problem"
+		} ],
+		"code": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "13645005",
+			"display": "COPD"
+		  } ],
+		  "text": "COPD"
+		},
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		}
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Condition/c628",
+	  "resource": {
+		"resourceType": "Condition",
+		"id": "c628",
+		"meta": {
+		  "versionId": "4",
+		  "lastUpdated": "2025-02-06T14:52:51.174+11:00",
+		  "source": "#8jC2BdHWxaZbMs7P",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Condition-http://localhost:8080/fhir/Condition/c628/_history/4"
+		} ],
+		"clinicalStatus": {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+			"code": "active",
+			"display": "Active"
+		  } ],
+		  "text": "Active"
+		},
+		"category": [ {
+		  "coding": [ {
+			"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+			"code": "problem-list-item"
+		  } ],
+		  "text": "Problem"
+		} ],
+		"code": {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "13644009",
+			"display": "Hypercholesterolaemia"
+		  } ],
+		  "text": "Hypercholesterolaemia"
+		},
+		"bodySite": [ {
+		  "coding": [ {
+			"system": "http://snomed.info/sct",
+			"code": "13644009",
+			"display": "Left arm"
+		  } ]
+		} ],
+		"subject": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"note": [ {
+		  "text": "comment"
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Immunization/i637",
+	  "resource": {
+		"resourceType": "Immunization",
+		"id": "i637",
+		"meta": {
+		  "versionId": "2",
+		  "lastUpdated": "2025-02-05T10:09:58.468+11:00",
+		  "source": "#n3TEDa0SopJt4eLG",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:305b1dbe-6389-41b9-9044-186f634a3ce8#Immunization-http://localhost:8080/fhir/Immunization/i637/_history/1"
+		} ],
+		"status": "completed",
+		"vaccineCode": {
+		  "coding": [ {
+			"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+			"version": "20240207",
+			"code": "MMRCSL",
+			"display": "M-M-R II"
+		  } ],
+		  "text": "M-M-R II"
+		},
+		"patient": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"occurrenceDateTime": "2025-01-15"
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Immunization/i638",
+	  "resource": {
+		"resourceType": "Immunization",
+		"id": "i638",
+		"meta": {
+		  "versionId": "3",
+		  "lastUpdated": "2025-02-05T10:12:49.864+11:00",
+		  "source": "#O7RD52yLSFpWMdgj",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Immunization-http://localhost:8080/fhir/Immunization/i638/_history/3"
+		} ],
+		"status": "completed",
+		"vaccineCode": {
+		  "coding": [ {
+			"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+			"version": "20240207",
+			"code": "BOOST",
+			"display": "Boostrix"
+		  } ],
+		  "text": "Boostrix"
+		},
+		"patient": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		},
+		"_occurrenceDateTime": {
+		  "extension": [ {
+			"url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+			"valueCode": "unknown"
+		  } ]
+		},
+		"note": [ {
+		  "text": "comment"
+		} ],
+		"protocolApplied": [ {
+		  "doseNumberString": "2"
+		} ]
+	  }
+	}, {
+	  "fullUrl": "http://localhost:8080/fhir/Immunization/i639",
+	  "resource": {
+		"resourceType": "Immunization",
+		"id": "i639",
+		"meta": {
+		  "versionId": "1",
+		  "lastUpdated": "2025-01-24T15:37:33.304+11:00",
+		  "source": "#bLi2nDV9bugPG7Ac",
+		  "profile": [ "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization" ]
+		},
+		"extension": [ {
+		  "url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
+		  "valueUrl": "urn:uuid:418c3e71-eeb0-4eed-bab8-2d302b4fc6ef#Immunization-http://localhost:8080/fhir/Immunization/i639/_history/1"
+		} ],
+		"status": "completed",
+		"vaccineCode": {
+		  "coding": [ {
+			"system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+			"version": "20240207",
+			"code": "COVAST",
+			"display": "AstraZeneca Vaxzevria"
+		  } ],
+		  "text": "AstraZeneca Vaxzevria"
+		},
+		"patient": {
+		  "reference": "Patient/banks-jeramy-ezra",
+		  "type": "Patient",
+		  "display": "Jeramy BANKS"
+		}
+	  }
+	}, {
+	  "fullUrl": "urn:uuid:dda390f2-6de3-4c2f-b511-880099019ea9",
+	  "resource": {
+		"resourceType": "Device",
+		"deviceName": [ {
+		  "name": "AU Patient Summary generator"
+		} ]
+	  }
+	} ]
+  }
