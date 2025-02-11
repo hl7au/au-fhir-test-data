@@ -39,6 +39,9 @@ jobs:
           labels: automated-pr
           base: master
           branch: ${{ github.event.inputs.branch }}
+    - name: Validate
+      uses: ./.github/validate
+      continue-on-error: true
     - name: Report
       uses: ./.github/report
       with:
