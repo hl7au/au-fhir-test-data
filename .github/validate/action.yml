@@ -19,5 +19,4 @@ runs:
              -html-output g_validation.html -output g_validation.xml
     - name: Restore skipped files
       shell: bash
-      run: mv -v ${{ runner.temp }}/quarantine ./generated
-
+      run: mv -v ${{ runner.temp }}/quarantine/* ./generated
