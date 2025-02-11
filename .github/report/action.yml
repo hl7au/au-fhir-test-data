@@ -6,19 +6,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Don't validate quarantine files
-      shell: bash
-      run: rm -v `cat ./quarantine`
-    - shell: bash
-      run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
-    - shell: bash
-      continue-on-error: true
-      run: |
-        java -jar validator_cli.jar generated/*.json \
-             -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
-             -ig hl7.fhir.au.core#1.0.0  -sct au \
-             -level errors -jurisdiction au \
-             -html-output g_validation.html -output g_validation.xml
     - id: validation-result
       name: Archive validation result
       uses: actions/upload-artifact@v4
