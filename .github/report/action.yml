@@ -100,7 +100,7 @@ runs:
             repo: context.repo.repo,
             body: comment
           })
-    # - shell: bash
-    #   name: Fail in case of validation errors
-    #   if: steps.has-validation-errors.outputs.errors != '0'
-    #   run: exit -1
+    - shell: bash
+      name: Fail in case of validation errors
+      if: steps.has-validation-errors.outputs.errors != '0'
+      run: exit -1
