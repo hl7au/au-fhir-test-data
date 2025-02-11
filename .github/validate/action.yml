@@ -1,8 +1,4 @@
 name: Validate generated files
-inputs:
-  continue-on-error:
-    description: "Continue on error"
-    default: false
 runs:
   using: 'composite'
   steps:
@@ -15,7 +11,6 @@ runs:
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
       shell: bash
-      continue-on-error: {{ inputs.continue-on-error }}
       run: |
         java -jar validator_cli.jar generated/*.json \
              -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \

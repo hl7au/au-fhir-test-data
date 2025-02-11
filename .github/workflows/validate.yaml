@@ -22,7 +22,5 @@ jobs:
         commit_message: Update generated files
     - name: Validate
       uses: ./.github/validate
-      with:
-        continue-on-error: true
     - name: Report
       uses: ./.github/report
