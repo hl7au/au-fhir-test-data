@@ -7,6 +7,7 @@ runs:
   using: 'composite'
   steps:
     - name: Don't validate cranteened files
+      shell: bash
       run: rm -v `cat ./caranteen`
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
