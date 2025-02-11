@@ -6,6 +6,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Don't validate cranteened files
+      shell: bash
+      run: rm -v `cat ./caranteen`
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - shell: bash
@@ -98,7 +101,7 @@ runs:
             repo: context.repo.repo,
             body: comment
           })
-    # - shell: bash
-    #   name: Fail in case of validation errors
-    #   if: steps.has-validation-errors.outputs.errors != '0'
-    #   run: exit -1
+    - shell: bash
+      name: Fail in case of validation errors
+      if: steps.has-validation-errors.outputs.errors != '0'
+      run: exit -1
