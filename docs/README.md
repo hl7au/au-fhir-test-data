@@ -1,25 +1,33 @@
 # HL7 AU FHIR Test Data
-HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs. 
-This repository also contains 'test' data for some HL7 AU IGs, used to test fail cases. This data not conform to HL7 AU FHIR Implementation Guides. 
+HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs.
 
 ## Synthetic Data Properties
-- Patients, Practitioners, PractitionerRoles, Organizations, and Healthcare Services are not generated from a real world set. Any correspondence to real entities is entirely accidental.
-- Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
-- Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works.
-- Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'.
-- Addresses are valid addresses based on publically available address data from Australia Post.
-- Names are randomly generated.
-- IHIs, HPI-Os, HPI-Is are provided by Services Australia for test purposes and will pass Luhn check.
-- Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
-- Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
-- ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
-- Data in clinical resources e.g. AllergyIntolerance are not generated from a real world set.
+
+- **Conformance**: The synthetic data generated aims to conform to the structures and constraints defined in the corresponding HL7 AU FHIR Implementation Guides, as indicated. Some data may be intentionally non-conformant to support negaitve testing scenarios.
+
+- **Anonymity and Realism**: All data is synthetic, containing no personally identifiable information (PII) or protected health information (PHI). It is generated to approximate real-world properties and relationships found in actual healthcare data to support testing and development. The dataset includes Patients, Practitioners, PractitionerRoles, Organizations, Healthcare Services, and clinical resources such as *AllergyIntolerance*. Any resemblance to real entities is purely coincidental. Specifically,
+  - Names are randomly generated.
+  - Addresses are valid addresses based on publicly available address data from Australia Post.
+  - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works. 
+  - Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'. 
+  - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
+  - IHIs, HPI-Os, HPI-Is are provided by Services Australia for test purposes and will pass Luhn check. 
+  - Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
+  - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
+  - ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
+
+- **Unbiased**: The dataset is intended to avoid biases in data representation.
+
+- **Consistency**: Relationships between different entities are maintained as accurately as possible. For example, *PractitionerRoles* are appropriately linked to *Practitioners* and *Organizations*, mirroring real-world associations.
+
+- **Coverage of an Implementation Guide (IG)**: The test dataset aims to provide comprehensive coverage of IG profiles and extensions. For [AU Core Test Data Coverage](https://github.com/hl7au/au-fhir-test-data?tab=readme-ov-file#au-core-test-data-coverage) this means coverage of the *Must Support* elements of AU Core profiles and extensions.
 
 ## How to navigate this repository
 Synthetic FHIR test data (JSON) files are located in: 
 * [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) directory
 * [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) directory
-* coming soon for AU eRequesting
+* [erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/erequesting) directory (stub - to be expanded)
+* [aups](https://github.com/hl7au/au-fhir-test-data/tree/master/aups) directory (stub - to be expanded)
 
 Postman collection import files containing a selection of AU Core and AU eRequesting Test Data are located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory
 * [Sparked AUCore Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_collection.json)
@@ -41,10 +49,10 @@ We suggest using the [Sparked Test Data Postman collection](https://github.com/h
 Currently, this Postman collection does not contain non-conformant resources for negative testing.
 
 ### AU Core Test Data Coverage
-For Release 1 of the HL7 FHIR AU Test Data community project, the test data coverage of the Must Support elements in AU Core profiles and extensions is reported in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
+For Release v1.0.0 of the HL7 FHIR AU Test Data community project, the test data coverage of the Must Support elements in AU Core profiles and extensions is reported in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
 
 ### Significant Test Data Test Cases
-The following test data files within the direct-fhir-test-resources directory support testing of significant test cases including missing and suppressed data.
+The following test data files within the [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) directory support testing of significant test cases including missing and suppressed data.
 
 File Name | Resource Id | Test Case | Expected Outcome 
 --- | --- | --- | ---
