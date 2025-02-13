@@ -21,9 +21,9 @@ This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-t
 
 ## Third-Party Licensing
 
-The HL7 AU FHIR Test Data repository references intellectual property owned by third parties (“Third Party IP”). Acceptance of these License Terms does not grant any rights with respect to Third Party IP. The licensee alone is responsible for identifying and obtaining any necessary licences or authorisations to utilise Third Party IP in connection with this repository or otherwise.
+The HL7 AU FHIR Test Data repository references intellectual property owned by third parties (“Third Party IP”). Acceptance of these License Terms does not grant any rights with respect to Third Party IP. The licensee alone is responsible for identifying and obtaining any necessary licences or authorisations to utilise Third Party IP in connection with this repository, any of its dependencies, or otherwise.
 
-The following is a non-exhaustive list of third-party components used in this repository that may require a separate licence:
+The following is a non-exhaustive list of third-party components used in this repository and its dependencies, such as [`hl7au / au-fhir-test-data-utils`](https://github.com/hl7au/au-fhir-test-data-utils), that may require a separate licence:
 
 | **Component**              | **Notes/ License**                                                                                                                                     |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
