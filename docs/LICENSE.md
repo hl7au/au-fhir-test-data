@@ -15,7 +15,7 @@ HL7 Australia provides HL7 Australia content for informational and reference pur
 
 By accessing or using HL7 Australia content, Users agree to indemnify and hold harmless HL7 Australia, its officers, directors, employees, agents, and contributors of HL7 Australia content from any claims, damages, losses, liabilities, costs, or expenses (including legal fees) arising out of or in connection with the User’s use of or reliance on HL7 Australia content.
 
-## Licensing Overeview
+## Licensing Overview
 
 This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) is licensed under the [Apache License, Version 2.0](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/LICENSE.md#apache-license).
 
