@@ -6,7 +6,7 @@ runs:
       shell: bash
       run: |
         mkdir ${{ runner.temp }}/quarantine &&\
-        mv -v `cat ./quarantine` ${{ runner.temp }}/quarantine
+        mv -v `grep -v '^#' ./quarantine` ${{ runner.temp }}/quarantine
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
