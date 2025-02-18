@@ -27,14 +27,7 @@ Synthetic FHIR test data (JSON) files are available in the following directories
 * [erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/erequesting) _(stub - to be expanded)_,
 * [aups](https://github.com/hl7au/au-fhir-test-data/tree/master/aups) _(stub - to be expanded)_.
 
-Postman collection import files containing a selection of AU Core and AU eRequesting Test Data are located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory
-* [Sparked AUCore Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_collection.json)
-* [Sparked AUeRequesting Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUeRequesting%20Test%20Data.postman_collection.json)
-
-Sample Postman environment import files are also located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory:
-* [Sparked AUCore Test Data.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_environment.json)
-* [Sparked eReq FHIR Server Filler.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Filler.postman_environment.json)
-* [Sparked eReq FHIR Server Placer.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Placer.postman_environment.json)
+To support HL7 AU Connectathons, Postman collection import files containing a selection of AU Core and AU eRequesting Test Data, along with sample Postman environment import files, are available in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory.
 
 ### Test Data Coverage of HL7 AU FHIR Implementation Guides
 The test dataset is developed on a best-effort basis, aiming to provide broad coverage of HL7 AU IG profiles and extensions. The extent of coverage evolves iteratively, shaped by the maturity of the IGs, shifting priorities of HL7 AU projects, available resources, and community contributions. For example, in the case of the AU Core IG, the dataset includes coverage of Must Support elements within AU Core profiles and extensions. The current coverage is documented in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
@@ -69,7 +62,16 @@ If you have a question, the best place to start is Zulip e.g. the https://chat.f
 We value contributions to **au-fhir-test-data**. Here’s how you can help:
 
 ### 1. Communicate Before You Start
-- Open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans to help avoid duplication of effort, align and prioritise your contributions based on the scope of the project - refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf).
+- Before contributing, open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans. This helps *avoid duplication of effort, align with project priorities, and ensure your contributions fit within the project's scope. Refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf) for guidance.  
+- **Some test data instances are linked to Services Australia–provided data** and cannot be modified without governance oversight.  
+  - The following resource types require consultation with the HL7 FHIR Test Data project team before making changes:  
+    - Patient 
+    - Practitioner
+    - PractitionerRole 
+    - Organization 
+    - HealthcareService 
+    - Location
+- Changes to **quarantined files** also require careful review.  
 - Join the fortnightly HL7 AU Infrastructure and Tooling Community Meetings ([register here](https://confluence.hl7.org/display/HAFWG/Infrastructure+and+Tooling+Contact+List)) where we discuss and triage issues. Feel free to add your issue to the [meeting agenda](https://confluence.hl7.org/pages/viewpage.action?pageId=265492851#CommunityMeetingAgendaandMinutes-MeetingDetails) and we'll aim to discuss your issue/ proposed contribution when you are present at the meeting.
 - Use Zulip to connect with the team and community asynchronously: 
   - Specific topic for the HL7 AU Test Data project: [AU FHIR Test Data](https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data)
@@ -81,10 +83,3 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 3. Make your contributions/ changes.
 4. Submit a pull request (PR) for review.
 5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the main branch.
-
-## Development Process
-
-[Documentation for the development process and tooling here](https://confluence.hl7.org/display/HAFWG/Process%3A+Test+Data+-+iterative+development).
-
-**_include info on what source data - resource types, fields etc. are linked/derived from Service Australia provided data and therefore are protected / cannot be changed with governance controls/reviews. Other commits involving changes to quarantined files also require careful review. 
-Explain the what, why and how in relation to the quarantine files. i.e. process is that reported validator errors that can be explained i.e. not actual test data errors and related to tooling etc. are moved to quarantine directory and not included in the validate workflows._**
