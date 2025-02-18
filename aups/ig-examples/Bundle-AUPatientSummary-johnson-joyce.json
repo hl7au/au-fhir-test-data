@@ -16,6 +16,11 @@
 			"fullUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368",
 			"resource": {
 				"resourceType": "Composition",
+				"meta": {
+					"profile": [
+						"http://hl7.org.au.draft/fhir/aups/StructureDefinition/au-ps-composition"
+					]
+				},
 				"text": {
 					"status": "generated",
 					"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Australian Patient Summary Document</h1></div>"
@@ -308,12 +313,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#AllergyIntolerance-http://localhost:8080/fhir/AllergyIntolerance/7/_history/1"
-					}
-				],
 				"clinicalStatus": {
 					"coding": [
 						{
@@ -381,12 +380,6 @@
 							],
 							"text": "Tablet"
 						}
-					}
-				],
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#MedicationStatement-http://localhost:8080/fhir/MedicationStatement/8/_history/1"
 					}
 				],
 				"status": "completed",
@@ -463,12 +456,6 @@
 							],
 							"text": "Injection"
 						}
-					}
-				],
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#MedicationStatement-http://localhost:8080/fhir/MedicationStatement/9/_history/1"
 					}
 				],
 				"status": "completed",
@@ -552,12 +539,6 @@
 						}
 					}
 				],
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#MedicationStatement-http://localhost:8080/fhir/MedicationStatement/10/_history/1"
-					}
-				],
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#medication"
@@ -617,6 +598,16 @@
 								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
 							]
 						},
+						"code": {
+							"coding": [
+								{
+									"system": "http://snomed.info/sct",
+									"code": "372567009",
+									"display": "Metformin"
+								}
+							],
+							"text": "Metformin"
+						},
 						"form": {
 							"coding": [
 								{
@@ -627,12 +618,6 @@
 							],
 							"text": "Tablet"
 						}
-					}
-				],
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#MedicationStatement-http://localhost:8080/fhir/MedicationStatement/11/_history/1"
 					}
 				],
 				"status": "completed",
@@ -683,12 +668,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Condition-http://localhost:8080/fhir/Condition/2/_history/1"
-					}
-				],
 				"category": [
 					{
 						"coding": [
@@ -735,12 +714,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Condition-http://localhost:8080/fhir/Condition/3/_history/1"
-					}
-				],
 				"category": [
 					{
 						"coding": [
@@ -782,12 +755,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Condition-http://localhost:8080/fhir/Condition/4/_history/1"
-					}
-				],
 				"category": [
 					{
 						"coding": [
@@ -829,12 +796,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Condition-http://localhost:8080/fhir/Condition/5/_history/1"
-					}
-				],
 				"category": [
 					{
 						"coding": [
@@ -893,12 +854,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Condition-http://localhost:8080/fhir/Condition/6/_history/1"
-					}
-				],
 				"category": [
 					{
 						"coding": [
@@ -940,12 +895,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/12/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -979,12 +928,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/13/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -1018,12 +961,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/14/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -1057,12 +994,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/15/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -1101,12 +1032,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/16/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -1140,12 +1065,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Immunization-http://localhost:8080/fhir/Immunization/17/_history/1"
-					}
-				],
 				"status": "completed",
 				"vaccineCode": {
 					"coding": [
@@ -1185,12 +1104,6 @@
 						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-pregnancystatus"
 					]
 				},
-				"extension": [
-					{
-						"url": "http://hl7.org/fhir/StructureDefinition/narrativeLink",
-						"valueUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368#Observation-http://localhost:8080/fhir/Observation/18/_history/1"
-					}
-				],
 				"status": "final",
 				"category": [
 					{
@@ -1239,7 +1152,8 @@
 				"resourceType": "Device",
 				"deviceName": [
 					{
-						"name": "AU Patient Summary generator"
+						"name": "AU Patient Summary generator",
+						"type": "manufacturer-name"
 					}
 				]
 			}
