@@ -29,14 +29,16 @@ Additionally, tags may be used to mark repository states, such as for HL7 AU Con
   - Achieving sufficient test data coverage for a formally balloted and published HL7 AU IG.
   - Implementing significant feature enhancements or fixes to test data sets or supporting tooling.
 
-### 3.4 Preparing the Release 
+### 3.3 Preparing the Release 
 - Perform final testing and apply necessary fixes before proceeding with the release.
-- Create a **Git tag** (e.g., `v1.0.0`) from `main` to mark the release.
 - Assign a release version based on the **versioning strategy** outlined above.  
-- Generate **release artifacts** (e.g., FHIR test data sets, QA reports, and documentation) from `main`.
+- Create a **Git tag** (e.g., `v1.0.0`) from `main` to mark the release based on the assigned version.
+- Generate **release artifacts** (e.g., FHIR test data sets, QA/validation reports, and documentation) from the tagged commit.
 - Attach generated artifacts to the release in GitHub.
-- NPM Package Consideration: No NPM package is published at this stage, but releases are tagged, and artifacts are stored in GitHub. This approach may be revised as the project evolves.
-- Release Branching: A dedicated release branch is not required at this stage. However, release branches may be introduced in the future if needed.  
+- Notes:
+  - Release artifacts: Releases do not include tools, maps, Postman collections, or intermediary data formats that were used in the process of generating the final FHIR resources in JSON format; however, these remain in the repository to support test data generation.
+  - NPM package consideration: No NPM package is published at this stage, but releases are tagged, and artifacts are stored in GitHub. This approach may be revised as the project evolves.
+  - Release branching: A dedicated release branch is not required at this stage. However, release branches may be introduced in the future if needed.  
 - Finalise **release notes** which may include:
   - A summary of features, updates, and fixes.
   - A QA/validation report summarizing test data conformance status.
@@ -48,9 +50,9 @@ Additionally, tags may be used to mark repository states, such as for HL7 AU Con
       - Contributors and reviewers verify that validation parameters are appropriate and up to date.
     - Comparison with previous validation workflow runs helps detect regressions and new issues and may assist in identifying the cause of errors.
     - **Quarantine process** for test data instances that are assessed as valid but report errors that can be justified (e.g., tooling-related errors, terminology service errors). These instances are quarantined to avoid confounding future QA/validation report reviews. These justifications are documented via inline comments to clarify the reasoning.
-  - The HL7 AU FHIR Test Data Project Lead should review the QA report and verify the reasoning behind quarantined instances prior to release.
+  - The HL7 AU FHIR Test Data Project Lead should review the QA/validation report and verify the reasoning behind quarantined instances prior to release.
 
-### 3.5 Post-Release Development and Community Involvement 
+### 3.4 Post-Release Development and Community Involvement 
 - Announce the release e.g., via HL7 AU Infrastructure and Tooling calls and chat.fhir.org.
 - Further development continues on `main`, preparing for the next release cycle.  
 - Community contributions via GitHub issues.

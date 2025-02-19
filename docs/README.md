@@ -23,7 +23,7 @@ HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and t
 ## How to navigate this repository
 Synthetic FHIR test data (JSON) files are available in the following directories: 
 * [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) – contains test data generated from other source formats (e.g., XLS/CSV, QuestionnaireResponse) using tooling that includes mappings and utilities for conversion and validation,
-* [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) - includes test data for verifying missing data and suppressed data test cases (for details see ),
+* [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) - includes test data for verifying missing data and suppressed data test cases (for details see [MissingAndSuppressedData_TestData.md](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/MissingAndSuppressedData_TestData.md)),
 * [erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/erequesting) _(stub - to be expanded)_,
 * [aups](https://github.com/hl7au/au-fhir-test-data/tree/master/aups) _(stub - to be expanded)_.
 
