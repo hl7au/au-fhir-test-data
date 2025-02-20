@@ -26,7 +26,17 @@
                 "code": "446151000124109",
                 "display": "Identifies as male gender (finding)"
               }
-            ],
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
             "text": "Male identity"
           }
         }
