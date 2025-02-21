@@ -31,7 +31,7 @@
 						{
 							"system": "http://loinc.org",
 							"code": "60591-5",
-							"display": "Patient Summary Document"
+							"display": "Patient summary Document"
 						}
 					]
 				},
@@ -54,7 +54,7 @@
 								{
 									"system": "http://loinc.org",
 									"code": "48765-2",
-									"display": "Adverse reaction risk summary"
+									"display": "Allergies and adverse reactions Document"
 								}
 							]
 						},
@@ -75,7 +75,7 @@
 								{
 									"system": "http://loinc.org",
 									"code": "10160-0",
-									"display": "Medication use statement"
+									"display": "History of Medication use Narrative"
 								}
 							]
 						},
@@ -105,7 +105,7 @@
 								{
 									"system": "http://loinc.org",
 									"code": "11450-4",
-									"display": "Problem/Diagnosis summary"
+									"display": "Problem list Reported"
 								}
 							]
 						},
@@ -138,7 +138,7 @@
 								{
 									"system": "http://loinc.org",
 									"code": "11369-6",
-									"display": "Vaccination administered event"
+									"display": "History of Immunization Narrative"
 								}
 							]
 						},
@@ -876,7 +876,7 @@
 					"text": "Appendicitis"
 				},
 				"subject": {
-					"reference": "Patient/johnson-joyce",
+					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				}
@@ -908,7 +908,7 @@
 					"text": "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
 				},
 				"patient": {
-					"reference": "Patient/johnson-joyce",
+					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
@@ -941,7 +941,7 @@
 					"text": "Influenza quadrivalent vaccine 2024"
 				},
 				"patient": {
-					"reference": "Patient/johnson-joyce",
+					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
