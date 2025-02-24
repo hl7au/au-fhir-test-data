@@ -19,6 +19,7 @@ runs:
       run: |
         mkdir ${{ runner.temp }}/quarantine &&\
         mv -v `grep -v '^#' ./quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
+      continue-on-error: true
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
