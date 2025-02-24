@@ -45,4 +45,5 @@ jobs:
     - name: Report
       uses: ./.github/report
       with:
+        title: AU Core
         issue: ${{ steps.create-pull-request.outputs.pull-request-number }}

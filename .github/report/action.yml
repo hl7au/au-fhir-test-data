@@ -3,6 +3,8 @@ inputs:
   issue:
     description: "An issue that will be used for reporting"
     default: context.issue.number
+  title:
+    description: "Report title, is used in github comment"
 runs:
   using: 'composite'
   steps:
@@ -10,7 +12,7 @@ runs:
       name: Archive validation result
       uses: actions/upload-artifact@v4
       with:
-        name: validation-result
+        name: "${{ inputs.title}} validation result"
         path: g_validation.html
     - shell: bash
       name: Generate extract_error_files.xsl
@@ -55,7 +57,7 @@ runs:
       if: steps.has-validation-errors.outputs.errors != '0'
       uses: actions/upload-artifact@v4
       with:
-        name: quarantine
+        name: "${{ inputs.title }} quarantine"
         path: quarantined
     - name: Show validation results
       if: steps.has-validation-errors.outputs.errors == '0'
@@ -63,7 +65,7 @@ runs:
       with:
         script: |
           const comment = `
-            ✅  No errors found
+            ✅  No errors found at ${{ inputs.title }}
             Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }})
           `;
           github.rest.issues.createComment({
@@ -78,7 +80,7 @@ runs:
       with:
         script: |
           const comment = `
-            ❌ ${{ steps.has-validation-errors.outputs.errors }} errors found:
+            ❌ ${{ steps.has-validation-errors.outputs.errors }} errors found at ${{ inputs.title }} :
             Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }}).
             Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}](${{ steps.quarantined-result.outputs.artifact-url }})
           `;

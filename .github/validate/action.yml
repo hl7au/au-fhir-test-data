@@ -1,4 +1,16 @@
 name: Validate generated files
+inputs:
+  path:
+    description: "Directory to validate"
+    default: 'generated'
+  ig:
+    description: "Implementation guide used to validate"
+    default: 'hl7.fhir.au.core#1.0.0'
+  tx:
+    description: "Terminology server"
+    default: "https://tx.dev.hl7.org.au/fhir"
+
+
 runs:
   using: 'composite'
   steps:
@@ -6,17 +18,19 @@ runs:
       shell: bash
       run: |
         mkdir ${{ runner.temp }}/quarantine &&\
-        mv -v `grep -v '^#' ./quarantine` ${{ runner.temp }}/quarantine
+        mv -v `grep -v '^#' ./quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
+      continue-on-error: true
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
       shell: bash
       run: |
-        java -jar validator_cli.jar generated/*.json \
-             -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir \
-             -ig hl7.fhir.au.core#1.0.0  -sct au \
+        java -jar validator_cli.jar ${{ inputs.path }}/*.json \
+             -version 4.0.1 -tx ${{ inputs.tx }} \
+             -ig ${{ inputs.ig }} -sct au \
              -level errors -jurisdiction au \
              -html-output g_validation.html -output g_validation.xml
     - name: Restore skipped files
       shell: bash
-      run: mv -v ${{ runner.temp }}/quarantine/* ./generated
+      run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
+      continue-on-error: true
