@@ -27,10 +27,24 @@ Synthetic FHIR test data (JSON) files are available in the following directories
 * [erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/erequesting) _(stub - to be expanded)_,
 * [aups](https://github.com/hl7au/au-fhir-test-data/tree/master/aups) _(stub - to be expanded)_.
 
+Documentation on Confluence for the HL7 FHIR Test Data project details the [development process](https://confluence.hl7.org/spaces/HAFWG/pages/265093726/Process+Test+Data+-+iterative+development). It outlines the role of CSV-to-FHIR mappings located in the [Sparked.Csv2FhirMapping/Maps](https://github.com/hl7au/au-fhir-test-data/tree/master/Sparked.Csv2FhirMapping/Maps) directory, and GitHub workflows found in the [.github](https://github.com/hl7au/au-fhir-test-data/tree/master/.github) directory, some of which depend on utilities from the [hl7au/au-fhir-test-data-utils repository](https://github.com/hl7au/au-fhir-test-data-utils). These workflows are part of a CI pipeline that validates FHIR data, supporting contributors and reviewers in identifying and resolving validation errors before merging changes, and can automate the upload of test data to a target server.
+The documentation also explains the approach to managing quarantined instances — test data instances that are assessed as valid but report errors that can be justified (such as tooling or terminology service issues). These instances are listed in the [quarantine](https://github.com/hl7au/au-fhir-test-data/blob/master/quarantine) directory to avoid confounding subsequent QA/validation report reviews, with justifications provided via inline comments.
+
 To support HL7 AU Connectathons, Postman collection import files containing a selection of AU Core and AU eRequesting Test Data, along with sample Postman environment import files, are available in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory.
 
-### Test Data Coverage of HL7 AU FHIR Implementation Guides
+## Test Data Coverage of HL7 AU FHIR Implementation Guides
 The test dataset is developed on a best-effort basis, aiming to provide broad coverage of HL7 AU IG profiles and extensions. The extent of coverage evolves iteratively, shaped by the maturity of the IGs, shifting priorities of HL7 AU projects, available resources, and community contributions. For example, in the case of the AU Core IG, the dataset includes coverage of Must Support elements within AU Core profiles and extensions. The current coverage is documented in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
+
+## Versioning
+The versioning approach follows **a modified Semantic Versioning (semver) strategy** aligned with HL7 AU conventions:
+
+### **Version Format: `MAJOR.MINOR.PATCH`**
+- **MAJOR** (`X.0.0`) – Indicates a major milestone or significant changes, often aligning with a HL7 AU FHIR Test Data Project Release.
+- **MINOR** (`X.Y.0`) – Used for incremental releases within a major version.
+- **PATCH** (`X.Y.Z`) – Represents small fixes, technical corrections, and refinements to existing test data without introducing breaking changes.
+- **Pre-release** (`X.Y.0-beta`) may be used for testing purposes before an official release.
+
+Tags are used to mark releases, and repository states such as for HL7 AU Connectathons and Sparked Test Events, supporting consistency across testing environments and the reproducibility of test results.
 
 ## Did you find an error?
 We appreciate your contributions to improving au-fhir-test-data. **If you encounter any bugs or defects, please follow the steps below to report them**:
