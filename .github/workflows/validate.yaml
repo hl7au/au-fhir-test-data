@@ -24,6 +24,8 @@ jobs:
       uses: ./.github/validate
     - name: Report
       uses: ./.github/report
+      with:
+        title: AU Core
   ValidateERequesting:
     runs-on: ubuntu-latest
     steps:
@@ -38,3 +40,5 @@ jobs:
         ig: "hl7.fhir.au.ereq#0.2.0-preview"
     - name: Report
       uses: ./.github/report
+      with:
+        title: eRequesting
