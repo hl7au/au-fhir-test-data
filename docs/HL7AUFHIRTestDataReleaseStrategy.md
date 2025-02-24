@@ -28,8 +28,8 @@ Each release is also marked with a Git tag using the format `v<MAJOR>.<MINOR>.<P
 - Perform final testing and apply necessary fixes before proceeding with the release.
 - Assign a release version based on the **versioning strategy** outlined above.  
 - Create a **Git tag** (e.g., `v1.0.0`) from `main` to mark the release based on the assigned version.
-- Generate **release artifacts** (e.g., FHIR test data sets and documentation) from the tagged commit.
-- Attach generated artifacts to the release in GitHub.
+- Generate and package **release artifacts** (e.g., FHIR test data sets and documentation) directly from the tagged commit.
+- Attach these packaged artifacts to the corresponding GitHub release.
 - Notes:
   - Release artifacts: Releases do not include tools, maps, Postman collections, or intermediary data formats that were used in the process of generating the final FHIR resources in JSON format; however, these remain in the repository to support test data generation.
   - NPM package consideration: No NPM package is published at this stage, but releases are tagged, and artifacts are stored in GitHub. This approach may be revised as the project evolves.
