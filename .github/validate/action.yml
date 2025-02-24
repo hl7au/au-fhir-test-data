@@ -33,3 +33,4 @@ runs:
     - name: Restore skipped files
       shell: bash
       run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
+      continue-on-error: true
