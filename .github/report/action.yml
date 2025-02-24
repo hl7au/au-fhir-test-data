@@ -12,7 +12,7 @@ runs:
       name: Archive validation result
       uses: actions/upload-artifact@v4
       with:
-        name: validation-result
+        name: "${{ inputs.title}} validation result"
         path: g_validation.html
     - shell: bash
       name: Generate extract_error_files.xsl
@@ -57,7 +57,7 @@ runs:
       if: steps.has-validation-errors.outputs.errors != '0'
       uses: actions/upload-artifact@v4
       with:
-        name: quarantine
+        name: "${{ input.title }} quarantine"
         path: quarantined
     - name: Show validation results
       if: steps.has-validation-errors.outputs.errors == '0'
