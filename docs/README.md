@@ -96,4 +96,4 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 2. Create a branch and use the GitHub issue number followed by a meaningful description as the branch name for your test data contribution, sticking to lowercase and hyphens to separate words. For example, the following is a branch for GitHub issue #123 for adding resources with logical references: `123-logical-refs`
 3. Make your contributions/ changes.
 4. Submit a pull request (PR) for review.
-5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the main branch.
+5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the master branch.
