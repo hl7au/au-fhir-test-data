@@ -18,7 +18,9 @@ HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and t
 
 - **Unbiased**: The dataset is intended to avoid biases in data representation.
 
-- **Consistency**: Relationships between different entities are maintained as accurately as possible. For example, *PractitionerRoles* are appropriately linked to *Practitioners* and *Organizations*, mirroring real-world associations.
+- **Variation**: The dataset aims to exhibit sufficient variation to effectively test different aspects of HL7 AU FHIR IGs, helping to validate a range of expected behaviours and constraints.
+
+- **Data Integrity**: Relationships between different entities are maintained as accurately as possible. For example, *PractitionerRoles* are appropriately linked to *Practitioners* and *Organizations*, reflecting real-world associations.
 
 ## How to navigate this repository
 Synthetic FHIR test data (JSON) files are available in the following directories: 
