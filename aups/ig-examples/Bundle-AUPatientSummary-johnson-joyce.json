@@ -7,18 +7,18 @@
 	},
 	"identifier": {
 		"system": "urn:ietf:rfc:4122",
-		"value": "2973b56e-c8d2-4436-944b-20e20e29dad8"
+		"value": "2aea30ee-9c7c-4c2a-b6e7-9422d63b1df9"
 	},
 	"type": "document",
-	"timestamp": "2025-02-17T12:26:44.484+11:00",
+	"timestamp": "2025-02-27T11:57:11.269+11:00",
 	"entry": [
 		{
-			"fullUrl": "urn:uuid:c1513c44-c4ea-4859-805c-ff031126d368",
+			"fullUrl": "urn:uuid:6a726988-c0a9-4b05-97d2-967aeeef1c36",
 			"resource": {
 				"resourceType": "Composition",
 				"meta": {
 					"profile": [
-						"http://hl7.org.au.draft/fhir/aups/StructureDefinition/au-ps-composition"
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-composition"
 					]
 				},
 				"text": {
@@ -36,19 +36,36 @@
 					]
 				},
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce"
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
 				},
-				"date": "2025-02-17T12:26:44.229+11:00",
+				"date": "2025-02-27T11:57:10.868+11:00",
 				"author": [
 					{
-						"reference": "urn:uuid:56ba9400-fb12-402e-bf76-2cd1db8fd0b2"
+						"reference": "urn:uuid:88c8abc8-9480-4688-8d80-069578184dc4"
 					}
 				],
-				"title": "Patient Summary as of 02/17/2025",
+				"title": "Patient Summary as of 27 Feb 2025",
 				"confidentiality": "N",
+				"event": [
+					{
+						"code": [
+							{
+								"coding": [
+									{
+										"system": "http://terminology.hl7.org/CodeSystem/v3-ActClass",
+										"code": "PCPR"
+									}
+								]
+							}
+						],
+						"period": {
+							"end": "2025-02-27T11:57:10+11:00"
+						}
+					}
+				],
 				"section": [
 					{
-						"title": "Adverse reaction risk summary",
+						"title": "Allergies and Intolerances",
 						"code": {
 							"coding": [
 								{
@@ -64,12 +81,12 @@
 						},
 						"entry": [
 							{
-								"reference": "http://localhost:8080/fhir/AllergyIntolerance/7"
+								"reference": "urn:uuid:0baac8a9-69b8-4e99-9460-03df08f92c98"
 							}
 						]
 					},
 					{
-						"title": "Medication use statement",
+						"title": "Medication List",
 						"code": {
 							"coding": [
 								{
@@ -85,21 +102,12 @@
 						},
 						"entry": [
 							{
-								"reference": "http://localhost:8080/fhir/MedicationStatement/8"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/MedicationStatement/9"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/MedicationStatement/10"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/MedicationStatement/11"
+								"reference": "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da"
 							}
 						]
 					},
 					{
-						"title": "Problem/Diagnosis summary",
+						"title": "Problem list",
 						"code": {
 							"coding": [
 								{
@@ -115,24 +123,24 @@
 						},
 						"entry": [
 							{
-								"reference": "http://localhost:8080/fhir/Condition/2"
+								"reference": "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
 							},
 							{
-								"reference": "http://localhost:8080/fhir/Condition/3"
+								"reference": "urn:uuid:d591e623-e032-4473-9db2-8a1de4fd8b70"
 							},
 							{
-								"reference": "http://localhost:8080/fhir/Condition/4"
+								"reference": "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63"
 							},
 							{
-								"reference": "http://localhost:8080/fhir/Condition/5"
+								"reference": "urn:uuid:919c2c59-ba0c-495e-9d9d-80e59fb119bc"
 							},
 							{
-								"reference": "http://localhost:8080/fhir/Condition/6"
+								"reference": "urn:uuid:be5e2ebf-5842-4533-b989-46cf96d26aac"
 							}
 						]
 					},
 					{
-						"title": "Vaccination administered event",
+						"title": "History of Immunizations",
 						"code": {
 							"coding": [
 								{
@@ -148,33 +156,18 @@
 						},
 						"entry": [
 							{
-								"reference": "http://localhost:8080/fhir/Immunization/12"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/Immunization/13"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/Immunization/14"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/Immunization/15"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/Immunization/16"
-							},
-							{
-								"reference": "http://localhost:8080/fhir/Immunization/17"
+								"reference": "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c"
 							}
 						]
 					},
 					{
-						"title": "Pregnancy status",
+						"title": "Pregnancy Information",
 						"code": {
 							"coding": [
 								{
 									"system": "http://loinc.org",
-									"code": "82810-3",
-									"display": "Pregnancy status"
+									"code": "10162-6",
+									"display": "History of pregnancies Narrative"
 								}
 							]
 						},
@@ -184,7 +177,28 @@
 						},
 						"entry": [
 							{
-								"reference": "http://localhost:8080/fhir/Observation/18"
+								"reference": "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9"
+							}
+						]
+					},
+					{
+						"title": "Social History",
+						"code": {
+							"coding": [
+								{
+									"system": "http://loinc.org",
+									"code": "29762-2",
+									"display": "Social history Narrative"
+								}
+							]
+						},
+						"text": {
+							"status": "generated",
+							"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">TBD</div>"
+						},
+						"entry": [
+							{
+								"reference": "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9"
 							}
 						]
 					}
@@ -192,16 +206,16 @@
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Patient/johnson-joyce",
+			"fullUrl": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 			"resource": {
 				"resourceType": "Patient",
-				"id": "johnson-joyce",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:57:41.484+11:00",
-					"source": "#AB0e0r2ffF9qgZCD",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-patient"
 					]
 				},
 				"extension": [
@@ -301,16 +315,16 @@
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/AllergyIntolerance/7",
+			"fullUrl": "urn:uuid:0baac8a9-69b8-4e99-9460-03df08f92c98",
 			"resource": {
 				"resourceType": "AllergyIntolerance",
-				"id": "7",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-allergyintolerance"
 					]
 				},
 				"clinicalStatus": {
@@ -332,23 +346,23 @@
 					"text": "No known allergy"
 				},
 				"patient": {
-					"reference": "Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				}
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/MedicationStatement/8",
+			"fullUrl": "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da",
 			"resource": {
 				"resourceType": "MedicationStatement",
-				"id": "8",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement"
+						"http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"
 					]
 				},
 				"contained": [
@@ -357,252 +371,15 @@
 						"id": "medication",
 						"meta": {
 							"profile": [
-								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication",
+								"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medication"
 							]
 						},
 						"code": {
 							"coding": [
 								{
 									"system": "http://snomed.info/sct",
-									"code": "61571000168101",
-									"display": "Elevit"
-								}
-							],
-							"text": "Elevit"
-						},
-						"form": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "385055001",
-									"display": "Tablet"
-								}
-							],
-							"text": "Tablet"
-						}
-					}
-				],
-				"status": "completed",
-				"medicationReference": {
-					"reference": "#medication"
-				},
-				"subject": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"dosage": [
-					{
-						"route": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "26643006",
-									"display": "Oral route"
-								}
-							],
-							"text": "Oral route"
-						},
-						"doseAndRate": [
-							{
-								"doseQuantity": {
-									"value": 1
-								}
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/MedicationStatement/9",
-			"resource": {
-				"resourceType": "MedicationStatement",
-				"id": "9",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement"
-					]
-				},
-				"contained": [
-					{
-						"resourceType": "Medication",
-						"id": "medication",
-						"meta": {
-							"profile": [
-								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
-							]
-						},
-						"code": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "10931000168100",
-									"display": "Humulin NPH Isophane"
-								}
-							],
-							"text": "Humulin NPH Isophane"
-						},
-						"form": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "129011000036109",
-									"display": "Injection"
-								}
-							],
-							"text": "Injection"
-						}
-					}
-				],
-				"status": "completed",
-				"medicationReference": {
-					"reference": "#medication"
-				},
-				"subject": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"note": [
-					{
-						"text": "*Tooling note: need to add IU to units; also change dose timing to AM and PM"
-					}
-				],
-				"dosage": [
-					{
-						"route": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "34206005",
-									"display": "Subcutaneous route"
-								}
-							],
-							"text": "Subcutaneous route"
-						},
-						"doseAndRate": [
-							{
-								"doseQuantity": {
-									"value": 10
-								}
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/MedicationStatement/10",
-			"resource": {
-				"resourceType": "MedicationStatement",
-				"id": "10",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement"
-					]
-				},
-				"contained": [
-					{
-						"resourceType": "Medication",
-						"id": "medication",
-						"meta": {
-							"profile": [
-								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
-							]
-						},
-						"code": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "17171000168104",
-									"display": "Humulin R Regular"
-								}
-							],
-							"text": "Humulin R Regular"
-						},
-						"form": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "129011000036109",
-									"display": "Injection"
-								}
-							],
-							"text": "Injection"
-						}
-					}
-				],
-				"status": "completed",
-				"medicationReference": {
-					"reference": "#medication"
-				},
-				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"note": [
-					{
-						"text": "*Tooling note: need to add IU to units; also change dose timing to before each meal; change dose timing value set"
-					}
-				],
-				"dosage": [
-					{
-						"route": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "34206005",
-									"display": "Subcutaneous route"
-								}
-							],
-							"text": "Subcutaneous route"
-						},
-						"doseAndRate": [
-							{
-								"doseQuantity": {
-									"value": 5
-								}
-							}
-						]
-					}
-				]
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/MedicationStatement/11",
-			"resource": {
-				"resourceType": "MedicationStatement",
-				"id": "11",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/StructureDefinition/au-medicationstatement"
-					]
-				},
-				"contained": [
-					{
-						"resourceType": "Medication",
-						"id": "medication",
-						"meta": {
-							"profile": [
-								"http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
-							]
-						},
-						"code": {
-							"coding": [
-								{
-									"system": "http://snomed.info/sct",
-									"code": "372567009",
+									"code": "109081006",
 									"display": "Metformin"
 								}
 							],
@@ -625,12 +402,24 @@
 					"reference": "#medication"
 				},
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
 				"dosage": [
 					{
+						"timing": {
+							"code": {
+								"coding": [
+									{
+										"system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+										"code": "BID",
+										"display": "BID"
+									}
+								],
+								"text": "BID"
+							}
+						},
 						"route": {
 							"coding": [
 								{
@@ -640,32 +429,22 @@
 								}
 							],
 							"text": "Oral route"
-						},
-						"doseAndRate": [
-							{
-								"doseQuantity": {
-									"value": 500,
-									"unit": "mg",
-									"system": "http://unitsofmeasure.org",
-									"code": "mg"
-								}
-							}
-						]
+						}
 					}
 				]
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Condition/2",
+			"fullUrl": "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83",
 			"resource": {
 				"resourceType": "Condition",
-				"id": "2",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
 					]
 				},
 				"category": [
@@ -690,7 +469,7 @@
 					"text": "Gestational diabetes mellitus"
 				},
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
@@ -702,16 +481,57 @@
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Condition/3",
+			"fullUrl": "urn:uuid:d591e623-e032-4473-9db2-8a1de4fd8b70",
 			"resource": {
 				"resourceType": "Condition",
-				"id": "3",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
+					]
+				},
+				"category": [
+					{
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
+								"code": "problem-list-item"
+							}
+						],
+						"text": "Problem"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "http://snomed.info/sct",
+							"code": "74400008",
+							"display": "Appendicitis"
+						}
+					],
+					"text": "Appendicitis"
+				},
+				"subject": {
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
+					"type": "Patient",
+					"display": "Joyce JOHNSON"
+				}
+			}
+		},
+		{
+			"fullUrl": "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63",
+			"resource": {
+				"resourceType": "Condition",
+				"meta": {
+					"versionId": "1",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
+					"profile": [
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
 					]
 				},
 				"category": [
@@ -736,64 +556,23 @@
 					"text": "Anaemia"
 				},
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				}
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Condition/4",
+			"fullUrl": "urn:uuid:919c2c59-ba0c-495e-9d9d-80e59fb119bc",
 			"resource": {
 				"resourceType": "Condition",
-				"id": "4",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
-					]
-				},
-				"category": [
-					{
-						"coding": [
-							{
-								"system": "http://terminology.hl7.org/CodeSystem/condition-category",
-								"code": "problem-list-item"
-							}
-						],
-						"text": "Problem"
-					}
-				],
-				"code": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"code": "54150009",
-							"display": "Upper respiratory tract infection"
-						}
-					],
-					"text": "Upper respiratory tract infection"
-				},
-				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				}
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Condition/5",
-			"resource": {
-				"resourceType": "Condition",
-				"id": "5",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
 					]
 				},
 				"category": [
@@ -822,15 +601,15 @@
 						"coding": [
 							{
 								"system": "http://snomed.info/sct",
-								"code": "35549004",
-								"display": "Upper back structure"
+								"code": "16982005",
+								"display": "Shoulder region structure"
 							}
 						],
-						"text": "Upper back structure"
+						"text": "Shoulder region structure"
 					}
 				],
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
@@ -842,16 +621,16 @@
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Condition/6",
+			"fullUrl": "urn:uuid:be5e2ebf-5842-4533-b989-46cf96d26aac",
 			"resource": {
 				"resourceType": "Condition",
-				"id": "6",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
 					]
 				},
 				"category": [
@@ -869,30 +648,30 @@
 					"coding": [
 						{
 							"system": "http://snomed.info/sct",
-							"code": "74400008",
-							"display": "Appendicitis"
+							"code": "54150009",
+							"display": "Upper respiratory tract infection"
 						}
 					],
-					"text": "Appendicitis"
+					"text": "Upper respiratory tract infection"
 				},
 				"subject": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				}
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/12",
+			"fullUrl": "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c",
 			"resource": {
 				"resourceType": "Immunization",
-				"id": "12",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
+					"lastUpdated": "2025-02-25T11:26:48.714+11:00",
+					"source": "#h7UVliMIr3RgPe8t",
 					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization",
+						"http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"
 					]
 				},
 				"status": "completed",
@@ -901,14 +680,14 @@
 						{
 							"system": "http://snomed.info/sct",
 							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1789191000168109",
+							"code": "1789171000168108",
 							"display": "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
 						}
 					],
 					"text": "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
 				},
 				"patient": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
 					"type": "Patient",
 					"display": "Joyce JOHNSON"
 				},
@@ -916,193 +695,13 @@
 			}
 		},
 		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/13",
-			"resource": {
-				"resourceType": "Immunization",
-				"id": "13",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-					]
-				},
-				"status": "completed",
-				"vaccineCode": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1731151000168108",
-							"display": "Influenza quadrivalent vaccine 2024"
-						}
-					],
-					"text": "Influenza quadrivalent vaccine 2024"
-				},
-				"patient": {
-					"reference": "http://localhost:8080/fhir/Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"occurrenceDateTime": "2024-05-05"
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/14",
-			"resource": {
-				"resourceType": "Immunization",
-				"id": "14",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-					]
-				},
-				"status": "completed",
-				"vaccineCode": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1653851000168105",
-							"display": "Influenza quadrivalent vaccine 2023"
-						}
-					],
-					"text": "Influenza quadrivalent vaccine 2023"
-				},
-				"patient": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"occurrenceDateTime": "2023-05-15"
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/15",
-			"resource": {
-				"resourceType": "Immunization",
-				"id": "15",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-					]
-				},
-				"status": "completed",
-				"vaccineCode": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1632631000168108",
-							"display": "Spikevax Bivalent Original/Omicron"
-						}
-					],
-					"text": "Spikevax Bivalent Original/Omicron"
-				},
-				"patient": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"occurrenceDateTime": "2023-05-15",
-				"note": [
-					{
-						"text": "*tooling note - change to COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe"
-					}
-				]
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/16",
-			"resource": {
-				"resourceType": "Immunization",
-				"id": "16",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-					]
-				},
-				"status": "completed",
-				"vaccineCode": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1602211000168109",
-							"display": "Influenza quadrivalent vaccine 2022"
-						}
-					],
-					"text": "Influenza quadrivalent vaccine 2022"
-				},
-				"patient": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"occurrenceDateTime": "2022-06-01"
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Immunization/17",
-			"resource": {
-				"resourceType": "Immunization",
-				"id": "17",
-				"meta": {
-					"versionId": "1",
-					"lastUpdated": "2025-02-17T11:58:24.702+11:00",
-					"source": "#EAYJ5xny7JgigC8S",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
-					]
-				},
-				"status": "completed",
-				"vaccineCode": {
-					"coding": [
-						{
-							"system": "http://snomed.info/sct",
-							"version": "http://snomed.info/sct/32506021000036107/version/20250131",
-							"code": "1525011000168107",
-							"display": "Comirnaty"
-						}
-					],
-					"text": "Comirnaty"
-				},
-				"patient": {
-					"reference": "Patient/johnson-joyce",
-					"type": "Patient",
-					"display": "Joyce JOHNSON"
-				},
-				"occurrenceDateTime": "2022-02-02",
-				"note": [
-					{
-						"text": "*tooling note - change to Covid vaccine - Pfizer"
-					}
-				]
-			}
-		},
-		{
-			"fullUrl": "http://localhost:8080/fhir/Observation/18",
+			"fullUrl": "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9",
 			"resource": {
 				"resourceType": "Observation",
-				"id": "18",
 				"meta": {
 					"versionId": "1",
-					"lastUpdated": "2025-02-17T12:20:57.481+11:00",
-					"source": "#WGO9BMJz9pWEb9Kd",
-					"profile": [
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-observation",
-						"http://hl7.org.au/fhir/core/StructureDefinition/au-core-pregnancystatus"
-					]
+					"lastUpdated": "2025-02-25T17:07:44.289+11:00",
+					"source": "#E6JiRxpi5nfE9JkO"
 				},
 				"status": "final",
 				"category": [
@@ -1126,7 +725,7 @@
 					]
 				},
 				"subject": {
-					"reference": "Patient/johnson-joyce"
+					"reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
 				},
 				"effectiveDateTime": "2022-06-06T09:30:10+10:00",
 				"valueCodeableConcept": {
@@ -1147,7 +746,7 @@
 			}
 		},
 		{
-			"fullUrl": "urn:uuid:56ba9400-fb12-402e-bf76-2cd1db8fd0b2",
+			"fullUrl": "urn:uuid:88c8abc8-9480-4688-8d80-069578184dc4",
 			"resource": {
 				"resourceType": "Device",
 				"deviceName": [
