@@ -1,64 +1,52 @@
 # HL7 AU FHIR Test Data
-HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs. 
-This repository also contains 'test' data for some HL7 AU IGs, used to test fail cases. This data not conform to HL7 AU FHIR Implementation Guides. 
+HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs.
 
 ## Synthetic Data Properties
-- Patients, Practitioners, PractitionerRoles, Organizations, and Healthcare Services are not generated from a real world set. Any correspondence to real entities is entirely accidental.
-- Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
-- Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works.
-- Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'.
-- Addresses are valid addresses based on publically available address data from Australia Post.
-- Names are randomly generated.
-- IHIs, HPI-Os, HPI-Is are provided by Services Australia for test purposes and will pass Luhn check.
-- Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
-- Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
-- ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
-- Data in clinical resources e.g. AllergyIntolerance are not generated from a real world set.
+
+- **Conformance**: The synthetic data generated aims to conform to the structures and constraints defined in the corresponding HL7 AU FHIR Implementation Guides, as indicated. Some data may be intentionally non-conformant to support negaitve testing scenarios.
+
+- **Anonymity and Realism**: All data is synthetic, containing no personally identifiable information (PII) or protected health information (PHI). It is generated to approximate real-world properties and relationships found in actual healthcare data to support testing and development. The dataset includes Patients, Practitioners, PractitionerRoles, Organizations, Healthcare Services, and clinical resources such as *AllergyIntolerance*. Any resemblance to real entities is purely coincidental. Specifically,
+  - Names are randomly generated.
+  - Addresses are valid addresses based on publicly available address data from Australia Post.
+  - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works. 
+  - Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'. 
+  - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
+  - IHIs, HPI-Os, HPI-Is are provided by Services Australia for test purposes and will pass Luhn check. 
+  - Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
+  - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
+  - ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
+
+- **Unbiased**: The dataset is intended to avoid biases in data representation.
+
+- **Variation**: The dataset aims to exhibit sufficient variation to effectively test different aspects of HL7 AU FHIR IGs, helping to validate a range of expected behaviours and constraints.
+
+- **Data Integrity**: Relationships between different entities are maintained as accurately as possible. For example, *PractitionerRoles* are appropriately linked to *Practitioners* and *Organizations*, reflecting real-world associations.
 
 ## How to navigate this repository
-Synthetic FHIR test data (JSON) files are located in: 
-* [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) directory
-* [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) directory
-* coming soon for AU eRequesting
+Synthetic FHIR test data (JSON) files are available in the following directories: 
+* [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) – contains test data generated from other source formats (e.g., XLS/CSV, QuestionnaireResponse) using tooling that includes mappings and utilities for conversion and validation,
+* [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) - includes test data for verifying missing data and suppressed data test cases (for details see [MissingAndSuppressedData_TestData.md](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/MissingAndSuppressedData_TestData.md)),
+* [erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/erequesting) _(stub - to be expanded)_,
+* [aups](https://github.com/hl7au/au-fhir-test-data/tree/master/aups) _(stub - to be expanded)_.
 
-Postman collection import files containing a selection of AU Core and AU eRequesting Test Data are located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory
-* [Sparked AUCore Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_collection.json)
-* [Sparked AUeRequesting Test Data.postman_collection.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUeRequesting%20Test%20Data.postman_collection.json)
+Documentation on Confluence for the HL7 FHIR Test Data project details the [development process](https://confluence.hl7.org/spaces/HAFWG/pages/265093726/Process+Test+Data+-+iterative+development). It outlines the role of CSV-to-FHIR mappings located in the [Sparked.Csv2FhirMapping/Maps](https://github.com/hl7au/au-fhir-test-data/tree/master/Sparked.Csv2FhirMapping/Maps) directory, and GitHub workflows found in the [.github](https://github.com/hl7au/au-fhir-test-data/tree/master/.github) directory, some of which depend on utilities from the [hl7au/au-fhir-test-data-utils repository](https://github.com/hl7au/au-fhir-test-data-utils). These workflows are part of a CI pipeline that validates FHIR data, supporting contributors and reviewers in identifying and resolving validation errors before merging changes, and can automate the upload of test data to a target server.
+The documentation also explains the approach to managing quarantined instances — test data instances that are assessed as valid but report errors that can be justified (such as tooling or terminology service issues). These instances are listed in the [quarantine](https://github.com/hl7au/au-fhir-test-data/blob/master/quarantine) directory to avoid confounding subsequent QA/validation report reviews, with justifications provided via inline comments.
 
-Sample Postman environment import files are also located in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory:
-* [Sparked AUCore Test Data.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20AUCore%20Test%20Data.postman_environment.json)
-* [Sparked eReq FHIR Server Filler.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Filler.postman_environment.json)
-* [Sparked eReq FHIR Server Placer.postman_environment.json](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman/Sparked%20eReq%20FHIR%20Server%20Placer.postman_environment.json)
+To support HL7 AU Connectathons, Postman collection import files containing a selection of AU Core and AU eRequesting Test Data, along with sample Postman environment import files, are available in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory.
 
-## Sparked AU Core Testing
-We suggest using the [Sparked Test Data Postman collection](https://github.com/hl7au/au-fhir-test-data/blob/master/Postman/Sparked%20Test%20Data.postman_collection.json) which contains:
-* AU Core profiles, a selection of resources from the [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) directorys, including resource instances with missing data and suppressed data.
-* AU Base Coverage resources.
-* AU Base Healthcare Service resources.
-* AU Base Related Person resources.
-* AU Base Specimen resource(s).
+## Test Data Coverage of HL7 AU FHIR Implementation Guides
+The test dataset is developed on a best-effort basis, aiming to provide broad coverage of HL7 AU IG profiles and extensions. The extent of coverage evolves iteratively, shaped by the maturity of the IGs, shifting priorities of HL7 AU projects, available resources, and community contributions. For example, in the case of the AU Core IG, the dataset includes coverage of Must Support elements within AU Core profiles and extensions. The current coverage is documented in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
 
-Currently, this Postman collection does not contain non-conformant resources for negative testing.
+## Versioning
+The versioning approach follows **a modified Semantic Versioning (semver) strategy** aligned with HL7 AU conventions:
 
-### AU Core Test Data Coverage
-For Release 1 of the HL7 FHIR AU Test Data community project, the test data coverage of the Must Support elements in AU Core profiles and extensions is reported in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
+### **Version Format: `MAJOR.MINOR.PATCH`**
+- **MAJOR** (`X.0.0`) – Indicates a major milestone or significant changes, often aligning with a HL7 AU FHIR Test Data Project Release.
+- **MINOR** (`X.Y.0`) – Used for incremental releases within a major version.
+- **PATCH** (`X.Y.Z`) – Represents small fixes, technical corrections, and refinements to existing test data without introducing breaking changes.
+- **Pre-release** (`X.Y.0-beta`) may be used for testing purposes before an official release.
 
-### Significant Test Data Test Cases
-The following test data files within the direct-fhir-test-resources directory support testing of significant test cases including missing and suppressed data.
-
-File Name | Resource Id | Test Case | Expected Outcome 
---- | --- | --- | ---
-Patient-italia-sofia-suppressed-birthDate.json | italia-sofia-suppressed-birthDate | Patient with a suppressed birthDate | A Responder SHALL correctly populate a Data Absent Reason extension within a primitate data type extension and a Requester SHALL accept this extension without error. 
-Patient-italia-sofia-suppressed-gender.json | italia-sofia-suppressed-gender | Patient with a suppressed gender | A Responder SHALL correctly populate using value of 'unknown' and a Requester SHALL accept the 'unknown' value without error.
-Patient-italia-sofia-suppressed-identifier.json | italia-sofia-suppressed-identifier | Patient with suppressed identifiers | A Responder SHALL correctly populate a Data Absent Reason extension within Identifier.extension and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rule au-core-pat-01.**
-Patient-italia-sofia-suppressed-name.json | italia-sofia-suppressed-name | Patient with suppressed names | A Responder SHALL correctly populate a Data Absent Reason extension within HumanName.extension and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rules au-core-pat-02 and au-core-pat-04.**
-Observation-pathresult-missing-effective.json | pathresult-missing-effective | Pathology Result Observation with missing effectiveDateTime | A Responder SHALL correctly populate a Data Absent Reason extension represented using a primitate data type extension, and a Requester SHALL accept this extension without error. **Currently validation using the Sparked Reference FHIR Server rejects this instance due to rule Rule au-core-obs-01.**
-Observation-pathresult-missing-status.json | pathresult-missing-status | Pathology Result Observation with missing status | A Responder SHALL correctly populate using value of 'unknown', and a Requester SHALL accept this value without error.
-Observation-pathresult-suppressed-code.json | pathresult-suppressed-code | Pathology Result Observation with suppressed code | A Responder SHALL correctly populate the coding using a code (masked or unknown) from the Data Absent Reason value set, and a Requester SHALL accept this coding without error. 
-Observation-pathresult-suppressed-dataAbsentReason.json | pathresult-suppressed-dataAbsentReason | Pathology Result Observation with suppressed value using dataAbsentReason | Using dataAbsentReason is NOT the recommended representation of a suppressed test result value in AU Core. 
-Observation-pathresult-suppressed-subject.json | pathresult-suppressed-subject | Pathology Result Observation with suppressed subject | A Responder SHALL correctly populate a Data Absent Reason extension within Reference.extension and a Requester SHALL accept this extension without error.
-Observation-pathresult-suppressed-valueCodeableConcept.json | pathresult-suppressed-valueCodeableConcept | Pathology Result Observation with suppressed codeable value | A Responder SHALL correctly populate the coding with a code (masked or unknown) from the Data Absent Reason value set, and a Requester SHALL accept this coding without error. 
-Observation-pathresult-suppressed-valueQuantity.json | pathresult-suppressed-valueQuantity | Pathology Result Observation with suppressed non-coded value (complex data types) | A Responder SHALL correctly populate a Data Absent Reason extension within the value[x].extension and a Requester SHALL accept this extension without error. 
+Tags are used to mark releases, and repository states such as for HL7 AU Connectathons and Sparked Test Events, supporting consistency across testing environments and the reproducibility of test results.
 
 ## Did you find an error?
 We appreciate your contributions to improving au-fhir-test-data. **If you encounter any bugs or defects, please follow the steps below to report them**:
@@ -90,7 +78,16 @@ If you have a question, the best place to start is Zulip e.g. the https://chat.f
 We value contributions to **au-fhir-test-data**. Here’s how you can help:
 
 ### 1. Communicate Before You Start
-- Open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans to help avoid duplication of effort, align and prioritise your contributions based on the scope of the project - refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf).
+- Before contributing, open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans. This helps *avoid duplication of effort, align with project priorities, and ensure your contributions fit within the project's scope. Refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf) for guidance.  
+- **Some test data instances are linked to Services Australia–provided data** and cannot be modified without governance oversight.  
+  - The following resource types require consultation with the HL7 FHIR Test Data project team before making changes:  
+    - Patient 
+    - Practitioner
+    - PractitionerRole 
+    - Organization 
+    - HealthcareService 
+    - Location
+- Changes to **quarantined files** also require careful review.  
 - Join the fortnightly HL7 AU Infrastructure and Tooling Community Meetings ([register here](https://confluence.hl7.org/display/HAFWG/Infrastructure+and+Tooling+Contact+List)) where we discuss and triage issues. Feel free to add your issue to the [meeting agenda](https://confluence.hl7.org/pages/viewpage.action?pageId=265492851#CommunityMeetingAgendaandMinutes-MeetingDetails) and we'll aim to discuss your issue/ proposed contribution when you are present at the meeting.
 - Use Zulip to connect with the team and community asynchronously: 
   - Specific topic for the HL7 AU Test Data project: [AU FHIR Test Data](https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data)
@@ -101,8 +98,4 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 2. Create a branch and use the GitHub issue number followed by a meaningful description as the branch name for your test data contribution, sticking to lowercase and hyphens to separate words. For example, the following is a branch for GitHub issue #123 for adding resources with logical references: `123-logical-refs`
 3. Make your contributions/ changes.
 4. Submit a pull request (PR) for review.
-5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the main branch.
-
-## Development Process
-
-There is basic [documentation for the development process and tooling here](https://confluence.hl7.org/display/HAFWG/Process%3A+Test+Data+-+iterative+development).
+5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the master branch.
