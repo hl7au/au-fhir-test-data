@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationStatement",
-  "id": "reaptan",
+  "id": "inpatient-complete",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
@@ -19,45 +19,58 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "926214011000036103"
+            "code": "27908011000036108",
+            "display": "Clarithromycin 250 mg tablet, 100"
           }
         ],
-        "text": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10"
+        "text": "clarithromycin 250 mg tablet, 100"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "154011000036109",
+            "display": "tablet"
+          }
+        ],
+        "text": "tablet"
       }
     }
   ],
-  "status": "active",
+  "status": "completed",
   "medicationReference": {
     "reference": "#med1"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/irvine-ronny-lawrence"
   },
-  "effectiveDateTime": "2018-07-15",
-  "dateAsserted": "2018-07-15",
+  "effectivePeriod": {
+    "start": "2023-02-20T06:15:00+10:00",
+    "end": "2023-02-20T18:19:00+10:00"
+  },
+  "dateAsserted": "2023-02-20T18:19:00+10:00",
   "reasonCode": [
     {
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "38341003",
-          "display": "Hypertension"
+          "code": "3731000119107",
+          "display": "Idiopathic hypersomnia"
         }
-      ],
-      "text": "Hypertension"
+      ]
     }
   ],
   "dosage": [
     {
-      "text": "1 tablet daily",
+      "text": "1 Twice a Day\\nBefore meals",
       "timing": {
         "repeat": {
-          "frequency": 1,
+          "frequency": 2,
           "period": 1,
           "periodUnit": "d"
         }
       },
-      "asNeededBoolean": true,
+      "asNeededBoolean": false,
       "route": {
         "coding": [
           {

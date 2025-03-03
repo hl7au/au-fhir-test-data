@@ -1,29 +1,30 @@
 {
   "resourceType": "MedicationStatement",
-  "id": "atorvastatin",
+  "id": "reaptan-tpp",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
     ]
   },
   "status": "active",
-  "medicationCodeableConcept": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "27437011000036101",
-        "display": "Atorvastatin 20 mg tablet, 30"
-      }
-    ]
+  "medicationReference": {
+    "reference": "Medication/reaptan-tpp",
+    "display": "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/odonnell-gillian"
   },
-  "effectiveDateTime": "2021-09-26",
-  "dateAsserted": "2021-09-26",
-  "reasonReference": [
+  "dateAsserted": "2018-07-15",
+  "reasonCode": [
     {
-      "reference": "Condition/aci"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38341003",
+          "display": "Hypertension"
+        }
+      ],
+      "text": "Hypertension"
     }
   ],
   "dosage": [
@@ -36,6 +37,7 @@
           "periodUnit": "d"
         }
       },
+      "asNeededBoolean": true,
       "route": {
         "coding": [
           {

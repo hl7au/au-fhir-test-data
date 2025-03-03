@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationStatement",
-  "id": "atorvastatin",
+  "id": "missing-medication",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
@@ -10,20 +10,25 @@
   "medicationCodeableConcept": {
     "coding": [
       {
-        "system": "http://snomed.info/sct",
-        "code": "27437011000036101",
-        "display": "Atorvastatin 20 mg tablet, 30"
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code": "unknown"
       }
     ]
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/odonnell-gillian"
   },
-  "effectiveDateTime": "2021-09-26",
-  "dateAsserted": "2021-09-26",
-  "reasonReference": [
+  "dateAsserted": "2018-07-15",
+  "reasonCode": [
     {
-      "reference": "Condition/aci"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "38341003",
+          "display": "Hypertension"
+        }
+      ],
+      "text": "Hypertension"
     }
   ],
   "dosage": [
@@ -36,6 +41,7 @@
           "periodUnit": "d"
         }
       },
+      "asNeededBoolean": true,
       "route": {
         "coding": [
           {
