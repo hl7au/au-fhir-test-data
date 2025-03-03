@@ -73,40 +73,15 @@ group ToMedicationStatement(source src : MedicationStatementCSV, target tgt : Me
       };
     };
 
-    // context 0..1
-    /* not derived from MedicationRequest
-    src.encounter_reference_id as s_reference where length() > 0 -> tgt.context as t_context then {
-        s_reference -> t_context.reference = append('Encounter/', s_reference);
-    };
-    */
-
     // effective[x] 0..1 MS
-    src.authoredOn as s_authoredOn where length() > 0 -> tgt.effective = cast(s_authoredOn, 'dateTime');
-
-    // informationSource 0..1
-    /* not derived from MedicationRequest
-    src.requester_reference as s_requester where length() > 0 -> tgt.informationSource as t_informationSource then {
-        s_requester -> t_informationSource.reference = s_requester;
-
-        src.requester_identifier_value as s_identifier where length() > 0 -> t_informationSource.identifier as t_identifier then {
-            s_identifier -> t_identifier.value = s_identifier;
-            src.requester_identifier_system as s_system where length() > 0 -> t_identifier.system = s_system;
-            src.requester_identifier_type as s_type where length() > 0 -> t_identifier.type as t_type then {
-                s_type -> t_type.coding = c('http://terminology.hl7.org/CodeSystem/v2-0203', s_type) as t_coding first then {
-                    src.requester_identifier_type_display as s_display where length() > 0 -> t_coding.display = s_display;
-                };
-                src.requester_identifier_type_text as s_text where length() > 0 -> t_type.text = s_text;
-            };
-        };
-
-        src.requester_display as s_display where length() > 0 -> t_informationSource.display = s_display;
+    src.effectiveDateTime as s_effectiveDateTime where length() > 0 -> tgt.effective = cast(s_effectiveDateTime, 'dateTime');
+    src.effectiveDateTime where length() = 0 -> tgt.effective = create('Period') as t_effective then {
+        src.effectivePeriod_start as s_start where length() > 0 -> t_effective.start = cast(s_start, 'dateTime');
+        src.effectivePeriod_end as s_end where length() > 0 -> t_effective.end = cast(s_end, 'dateTime');
     };
-    */
 
-    // derivedFrom 0..1
-    src.id as s_id where length() > 0 -> tgt.derivedFrom as t_derivedFrom then {
-        s_id -> t_derivedFrom.reference = append('MedicationRequest/', s_id);
-    };
+    // dateAsserted 0..1 MS
+    src.dateAsserted as s_asserted where length() > 0 -> tgt.dateAsserted = s_asserted;
 
     // reasonCode 0..* MS
     src.reasonCode1_coding1_code as s_code -> tgt.reasonCode as t_reasonCode first then {
