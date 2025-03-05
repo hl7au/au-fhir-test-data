@@ -1,0 +1,86 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "johnson-joyce-HumulinN",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement",
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"
+        ]
+    },
+    "status": "active",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27769011000036109"
+            }
+          ],
+          "text": "Insulin isophane human (Humulin NPH Isophane) 100 units/mL injection, 5 x 3 mL cartridges"
+    },
+    "subject": {
+        "reference": "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
+        "type": "Patient",
+        "display": "Joyce JOHNSON"
+    },
+    "effectivePeriod": "2024-10-28",
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                "system": "http://snomed.info/sct",
+                "code": "11687002",
+                "display": "Gestational diabetes mellitus"
+                }
+            ],
+        "text": "Gestational diabetes"
+        }
+    ],
+    "dosage": [
+        {
+            "text": "Inject 10 units subcutaneously in the morning and evening as directed",
+            "timing": {
+                "repeat": {
+                    "frequency": 2,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "when": ["ACM", "ACV"],
+                    "offset": 30
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "34206005"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "422145002"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                                "code": "ordered"
+                            }
+                        ]
+                    },
+                    "doseQuantity": {
+                        "value": 10,
+                        "unit": "units",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "U"
+                    }
+                }
+            ]
+        }
+    ]
+}
