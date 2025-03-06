@@ -41,7 +41,6 @@
           "periodUnit": "d"
         }
       },
-      "asNeededBoolean": true,
       "route": {
         "coding": [
           {
