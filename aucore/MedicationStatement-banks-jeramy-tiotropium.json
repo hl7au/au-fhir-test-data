@@ -1,0 +1,63 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "banks-jeramy-tiotropium",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "medication",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "27953011000036106"
+          }
+        ],
+        "text": "Tiotropium 18 microgram powder for inhalation, 30 capsules"
+      }
+    }
+  ],
+  "status": "active",
+  "medicationReference": {
+    "reference": "#medication",
+    "display": "Tiotropium 18 microgram powder for inhalation, 30 capsules"
+  },
+  "subject": {
+    "reference": "Patient/banks-jeramy-ezra",
+    "display": "Jeramy BANKS"
+  },
+  "dateAsserted": "2025-02-27",
+  "dosage": [
+    {
+      "text": "The contents of ONE capsule via inhalation, once daily",
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "447694001",
+            "display": "Respiratory tract route"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "capsule",
+            "system": "http://snomed.info/sct",
+            "code": "385207009"
+          }
+        }
+      ]
+    }
+  ]
+}

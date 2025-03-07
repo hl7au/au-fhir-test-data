@@ -1,0 +1,30 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "johnson-joyce-otc",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+        ]
+    },
+    "status": "active",
+    "medicationCodeableConcept" : {
+        "coding" : [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "400572001"
+            }
+        ],
+        "text": "Prenatal vitamins"
+    },
+
+    "subject": {
+        "reference": "Patient/johnson-joyce",
+        "display": "Joyce JOHNSON"
+    },
+    "dateAsserted": "2024-10-28",
+    "dosage": [
+        {
+            "text": "1 tablet orally daily"
+        }
+    ]
+}
