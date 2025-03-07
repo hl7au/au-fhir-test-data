@@ -1,0 +1,71 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "banks-jeramy-telmisartan",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "medication",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "22969011000036102"
+          }
+        ],
+        "text": "Telmisartan 80 mg tablet"
+      }
+    }
+  ],
+  "status": "active",
+  "medicationReference": {
+    "reference": "#medication",
+    "display": "Telmisartan 80 mg tablet"
+  },
+  "subject": {
+    "reference": "Patient/banks-jeramy-ezra",
+    "display": "Jeramy BANKS"
+  },
+  "dateAsserted": "2025-02-27",
+  "dosage": [
+    {
+      "text": "80mg orally daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ],
+        "text": "Oral route"
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "tablet",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "banks-jeramy-salbutamol",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+      ]
+    },
+    "contained": [
+      {
+        "resourceType": "Medication",
+        "id": "medication",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27601011000036100"
+            }
+          ],
+          "text": "Salbutamol 100 microgram/actuation inhalation, 200 actuations"
+        }
+      }
+    ],
+    "status": "active",
+    "medicationReference": {
+      "reference": "#medication",
+      "display": "Salbutamol 100 microgram/actuation inhalation"
+    },
+    "subject": {
+      "reference": "Patient/banks-jeramy-ezra",
+      "display": "Jeramy BANKS"
+    },
+    "dateAsserted": "2025-02-27",
+    "reasonCode": [{
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "13645005",
+          "display": "COPD"
+        }
+      ],
+      "text": "COPD"
+		}],
+    "dosage": [
+      {
+        "text": "2 puffs, 4 times per day",
+        "timing": {
+          "repeat": {
+            "frequency": 4,
+            "period": 1,
+            "periodUnit": "d"
+          }
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "447694001",
+              "display": "Respiratory tract route"
+            }
+          ]
+        },
+        "doseAndRate": [
+          {
+            "doseQuantity": {
+              "value": 2,
+              "unit": "puff",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+              "code": "PUFF"
+            }
+          }
+        ]
+      },
+      {
+        "text": "2 puffs as needed",
+        "asNeededBoolean": true,
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "447694001",
+              "display": "Respiratory tract route"
+            }
+          ]
+        },
+        "doseAndRate": [
+          {
+            "doseQuantity": {
+              "value": 2,
+              "unit": "puff",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+              "code": "PUFF"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

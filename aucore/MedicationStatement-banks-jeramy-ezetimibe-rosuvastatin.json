@@ -1,0 +1,80 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "banks-jeramy-ezetimibe-rosuvastatin",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "medication",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "708731000168104"
+          }
+        ],
+        "text": "Ezetimibe 10 mg + atorvastatin 40 mg tablet"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "421026006",
+            "display": "Tablet"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "active",
+  "medicationReference": {
+    "reference": "#medication",
+    "display": "Ezetimibe 10 mg + atorvastatin 40 mg tablet"
+  },
+  "subject": {
+    "reference": "Patient/banks-jeramy-ezra",
+    "display": "Jeramy BANKS"
+  },
+  "dateAsserted": "2025-02-27",
+  "dosage": [
+    {
+      "text": "Ezetimibe 10 mg & Atorvastatin 40 mg orally, once daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ],
+        "text": "Oral route"
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "tablet",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ]
+}

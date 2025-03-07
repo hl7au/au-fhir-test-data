@@ -1,0 +1,85 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "johnson-joyce-HumulinR",
+    "meta": {
+        "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+        ]
+    },
+    "status": "active",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27161011000036100"
+            }
+          ],
+          "text": "Insulin neutral human (Humulin R Regular) 100 units/mL injection, 5 x 3 mL cartridges"
+    },
+    "subject": {
+        "reference": "Patient/johnson-joyce",
+        "display": "Joyce JOHNSON"
+    },
+    "effectiveDateTime": "2024-10-28",
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                "system": "http://snomed.info/sct",
+                "code": "11687002",
+                "display": "Gestational diabetes mellitus"
+                }
+            ],
+        "text": "Gestational diabetes"
+        }
+    ],
+    "dosage": [
+        {
+            "text": "Inject 5 units subcutaneously before each meal as directed",
+            "timing": {
+                "repeat": {
+                    "frequency": 2,
+                    "period": 1,
+                    "periodUnit": "d",
+                    "when": ["ACM", "ACD", "ACV"],
+                    "offset": 30
+                }
+            },
+            "asNeededBoolean": true,
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "34206005"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "422145002"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                                "code": "ordered"
+                            }
+                        ]
+                    },
+                    "doseQuantity": {
+                        "value": 5,
+                        "unit": "units",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "U"
+                    }
+                }
+            ]
+        }
+    ]
+}
