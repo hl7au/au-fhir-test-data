@@ -7,3 +7,4 @@
 /Sparked.Csv2FhirMapping/*.pdb
 /Sparked.TestDataClient/*.pdb
 /*.log
+/GenerateData.bat
