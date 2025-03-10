@@ -1,0 +1,57 @@
+{
+  "resourceType": "Task",
+  "id": "taskgroup-imaging-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+    ],
+    "tag": [
+      {
+        "system": "http://hl7.org.au/fhir/ereq/CodeSystem/au-erequesting-task-tag",
+        "code": "fulfilment-task-group"
+      }
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: Task taskgroup-imaging-1\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"taskgroup-imaging-1\"\u003E \u003C/a\u003E\u003Ca name=\"hctaskgroup-imaging-1\"\u003E \u003C/a\u003E\u003Ca name=\"taskgroup-imaging-1-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003EgroupIdentifier\u003C/b\u003E: Placer Group Number/EMC4542244-5624\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Requested\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eintent\u003C/b\u003E: order\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Epriority\u003C/b\u003E: Routine\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecode\u003C/b\u003E: \u003Cspan title=\"Codes:{http://hl7.org/fhir/CodeSystem/task-code fulfill}\"\u003EFulfill the focal request\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Efor\u003C/b\u003E: \u003Ca href=\"Patient-fred-roberts.html\"\u003EFred Roberts  Male, DoB: 1961-06-16 ( IHI: Austalian Healthcare Identifier - Individual#8003608500314661)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EauthoredOn\u003C/b\u003E: 2024-05-11\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequester\u003C/b\u003E: \u003Ca href=\"PractitionerRole-guthridge-jarred-gp.html\"\u003EPractitionerRole Family medicine specialist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eowner\u003C/b\u003E: \u003Ca href=\"Organization-mount-charlton-radiology.html\"\u003EOrganization Mount Charlton Radiology\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E"
+  },
+  "groupIdentifier": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "PGN"
+        }
+      ],
+      "text": "Placer Group Number"
+    },
+    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003622500032165",
+    "value": "EMC4542244-5624",
+    "assigner": {
+      "reference": "Organization/elimbah-medical-center",
+      "display": "Elimbah Medical Center"
+    }
+  },
+  "status": "requested",
+  "intent": "order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/CodeSystem/task-code",
+        "code": "fulfill"
+      }
+    ]
+  },
+  "for": {
+    "reference": "Patient/roberts-fred"
+  },
+  "authoredOn": "2024-05-11",
+  "requester": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "owner": {
+    "reference": "Organization/mount-charlton-radiology"
+  }
+}
