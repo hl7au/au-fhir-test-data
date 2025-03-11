@@ -1,0 +1,36 @@
+{
+    "resourceType": "Encounter",
+    "id": "obsgynaeclinic",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+      ]
+    },
+    "text": {
+      "status": "generated",
+      "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: Encounter obsgynaeclinic\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"obsgynaeclinic\"\u003E \u003C/a\u003E\u003Ca name=\"hcobsgynaeclinic\"\u003E \u003C/a\u003E\u003Ca name=\"obsgynaeclinic-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Finished\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eclass\u003C/b\u003E: \u003Ca href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v3-ActCode.html#v3-ActCode-AMB\"\u003EActCode AMB\u003C/a\u003E: ambulatory\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esubject\u003C/b\u003E: \u003Ca href=\"Patient-banks-mia-leanne.html\"\u003EMia Leanne Banks  Female, DoB: 1983-08-25 ( IHI: Austalian Healthcare Identifier - Individual#8003608333647261)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eperiod\u003C/b\u003E: 2025-01-10 09:15:00+1000 --&gt; 2025-01-10 09:25:00+1000\u003C/p\u003E\u003Ch3\u003ELocations\u003C/h3\u003E\u003Ctable class=\"grid\"\u003E\u003Ctr\u003E\u003Ctd style=\"display: none\"\u003E-\u003C/td\u003E\u003Ctd\u003E\u003Cb\u003ELocation\u003C/b\u003E\u003C/td\u003E\u003C/tr\u003E\u003Ctr\u003E\u003Ctd style=\"display: none\"\u003E*\u003C/td\u003E\u003Ctd\u003E\u003Ca href=\"Location-location-murrabit-hospital.html\"\u003ELocation Location Murrabit Hospital\u003C/a\u003E\u003C/td\u003E\u003C/tr\u003E\u003C/table\u003E\u003Cp\u003E\u003Cb\u003EserviceProvider\u003C/b\u003E: \u003Ca href=\"Organization-organization-murrabit-hospital.html\"\u003EOrganization Murrabit Public Hospital\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E"
+    },
+    "status": "finished",
+    "class": {
+      "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "code": "AMB",
+      "display": "ambulatory"
+    },
+    "subject": {
+      "reference": "Patient/banks-mia-leanne"
+    },
+    "period": {
+      "start": "2025-01-10T09:15:00+10:00",
+      "end": "2025-01-10T09:25:00+10:00"
+    },
+    "location": [
+      {
+        "location": {
+          "reference": "Location/barney-view-private-hospital"
+        }
+      }
+    ],
+    "serviceProvider": {
+      "reference": "Organization/barney-view-private-hospital"
+    }
+  }

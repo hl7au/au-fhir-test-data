@@ -1,0 +1,135 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "order-obsus-1",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"
+      ]
+    },
+    "text": {
+      "status": "extensions",
+      "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: ServiceRequest order-obsus-1\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"order-obsus-1\"\u003E \u003C/a\u003E\u003Ca name=\"hcorder-obsus-1\"\u003E \u003C/a\u003E\u003Ca name=\"order-obsus-1-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003EAU eRequesting Display Sequence\u003C/b\u003E: 1\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EAU eRequesting Fasting Precondition\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 16985007}\"\u003EFasting\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eidentifier\u003C/b\u003E: Placer Identifier/EMC4542244-5625-01\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequisition\u003C/b\u003E: Placer Group Number/EMC4542244-5625\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Active\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eintent\u003C/b\u003E: Order\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecategory\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 363679005}\"\u003EImaging\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecode\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 446208007}\"\u003E2nd Trimester US\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esubject\u003C/b\u003E: \u003Ca href=\"Patient-banks-mia-leanne.html\"\u003EMia Leanne Banks  Female, DoB: 1983-08-25 ( IHI: Austalian Healthcare Identifier - Individual#8003608333647261)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eencounter\u003C/b\u003E: \u003Ca href=\"Encounter-obsgynaeclinic.html\"\u003EEncounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-01-10 09:15:00+1000 --&gt; 2025-01-10 09:25:00+1000\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EauthoredOn\u003C/b\u003E: 2024-05-11\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequester\u003C/b\u003E: \u003Ca href=\"PractitionerRole-sally-losch-obgyn.html\"\u003EPractitionerRole Obstetrician and Gynaecologist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EsupportingInfo\u003C/b\u003E: \u003Ca href=\"Observation-observation-pregnancy-status.html\"\u003EPregnancy status\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E"
+    },
+    "extension": [
+      {
+        "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+        "valueInteger": 1
+      },
+      {
+        "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16985007",
+              "display": "Fasting"
+            }
+          ]
+        }
+      }
+    ],
+    "identifier": [
+      {
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ]
+        },
+        "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+        "value": "EMC4542244-5625-01",
+        "assigner": {
+          "display": "Elimbah Medical Center"
+        }
+      }
+    ],
+    "requisition": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PGN",
+            "display": "Placer Group Number"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+      "value": "EMC4542244-5625",
+      "assigner": {
+        "display": "Elimbah Medical Center"
+      }
+    },
+    "status": "active",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "363679005",
+            "display": "Imaging"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "446208007",
+          "display": "Ultrasonography in second trimester"
+        }
+      ],
+      "text": "2nd Trimester US"
+    },
+    "subject": {
+      "reference": "Patient/banks-mia-leanne"
+    },
+    "encounter": {
+      "reference": "Encounter/obsgynaeclinic"
+    },
+    "occurrencePeriod": {
+        "start": "2022-04-18",
+        "end": "2022-05-06"
+    },
+    "authoredOn": "2024-05-11",
+    "requester": {
+      "reference": "PractitionerRole/obstetrician-losch-sallie"
+    },
+    "supportingInfo": [
+      {
+        "reference": "Observation/observation-pregnancy-status",
+        "display": "Pregnancy status"
+      }
+    ],
+    "bodySite": [
+    {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "35039007",
+            "display": "Uterine structure (body structure)"
+        }
+        ],
+        "text": "Uterus"
+    },
+    {
+        "coding": [
+        {
+            "system": "http://snomed.info/sct",
+            "code": "83418008",
+            "display": "Entire fetus (body structure)"
+        }
+        ],
+        "text": "Foetus"
+    }
+    ],
+    "note": [
+        {
+            "text": "18-22 week Morphology scan. Pt advised the scan is ideally done around 20 weeks gestation,"
+        }
+    ]
+  }
