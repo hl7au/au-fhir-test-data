@@ -37,7 +37,7 @@ jobs:
       uses: ./.github/validate
       with:
         path: erequesting
-        ig: "hl7.fhir.au.ereq#0.2.0-preview"
+        ig: "hl7.fhir.au.ereq#0.3.0-preview"
     - name: Report
       uses: ./.github/report
       with:
