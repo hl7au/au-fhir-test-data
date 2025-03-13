@@ -1,46 +1,65 @@
 name: Upload
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      validate:
+        type: boolean
+        required: true
+        description: Validate before uploading
+        default: true
+      server:
+        type: choice
+        required: true
+        description: Server to upload to
+        default: "https://fhir.hl7.org.au/aucore/fhir/DEFAULT"
+        options:
+          - "https://fhir.hl7.org.au/aucore/fhir/DEFAULT"
+          - "https://fhir.hl7.org.au/ereq/fhir/DEFAULT/"
+      directory:
+        type: string
+        required: true
+        default: "generated/"
+        description: Directory with the files to upload
 
 jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
-    - name: Validate
-      uses: ./.github/validate
-    - shell: bash
-      run: |
-        cd /tmp &&\
-        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/TestDataClient-linux-x64.zip &&\
-        unzip TestDataClient-linux-x64.zip &&\
-        chmod +x TestDataClient-linux-x64-binaries/TestDataClient
-    - shell: bash
-      env:
-        AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-      run: |
-        declare resources=(
-          "Patient"
-          "HealthcareService"
-          "Organization"
-          "Location"
-          "Practitioner"
-          "PractitionerRole"
-          "RelatedPerson"
-          "Encounter"
-          "AllergyIntolerance"
-          "Condition"
-          "Immunization"
-          "Observation"
-          "Procedure"
-          "Medication"
-          "MedicationRequest") &&\
-        for resource in "${resources[@]}"
-        do
-        /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
-        done
-
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install deps
+        uses: ./.github/deps
+      - name: Validate
+        if: ${{ inputs.validate }}
+        uses: ./.github/validate
+      - shell: bash
+        run: |
+          cd /tmp &&\
+          wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/TestDataClient-linux-x64.zip &&\
+          unzip TestDataClient-linux-x64.zip &&\
+          chmod +x TestDataClient-linux-x64-binaries/TestDataClient
+      - shell: bash
+        env:
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+        run: |
+          declare resources=(
+            "Patient"
+            "HealthcareService"
+            "Organization"
+            "Location"
+            "Practitioner"
+            "PractitionerRole"
+            "RelatedPerson"
+            "Encounter"
+            "AllergyIntolerance"
+            "Condition"
+            "Immunization"
+            "Observation"
+            "Procedure"
+            "Medication"
+            "MedicationRequest") &&\
+          for resource in "${resources[@]}"
+          do
+          /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource ${{ inputs.directory }}  ${{ inputs.server }} Basic $AUTH_SECRET
+          done
