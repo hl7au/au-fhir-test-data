@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "plastic-pye-dusty",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2450011H"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/pye-dusty"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253517",
+          "display": "Plastic and Reconstructive Surgeon"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394611003",
+          "display": "Plastic surgery - speciality"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870100564",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "dusty.pye@example.com.au",
+      "use": "work"
+    }
+  ]
+}

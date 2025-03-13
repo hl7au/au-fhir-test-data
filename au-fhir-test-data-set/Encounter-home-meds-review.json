@@ -1,0 +1,68 @@
+{
+  "resourceType": "Encounter",
+  "id": "home-meds-review",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/encounter-description",
+      "valueString": "Patient has medications packed into blister packs via ABC pharmacy. Patient finds them easy to use and they promote good adherence to his regime. Patient's Bluecare nurse, Nurse B, was present for the interview. Of the medication listed on the referral, he is not currently taking Aldara 5% cream and Chloramphenicol ointment. In addition to the medication listed on the referral, he is also taking coQ10 150mg tab - 1 nocte. Patient reports occasional dizziness if changing position quickly, and reports falling outside in the garden; Patient wears a falls alarm buzzer. Patient reports that they only experiences chest pain when they become stressed (doesn’t like paperwork). Patient blood pressure at the time of the interview was 158 /76."
+    }
+  ],
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "HH",
+    "display": "home health"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1348931000168107",
+          "display": "Home medicines review"
+        }
+      ],
+      "text": "Home medicines review"
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "182836005",
+        "display": "Review of medication"
+      }
+    ],
+    "text": "Medicines review"
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/retailpharmacist-ford-dean"
+      }
+    }
+  ],
+  "period": {
+    "start": "2019-02-05T10:00:00+10:00",
+    "end": "2019-02-05T11:15:00+10:00"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "catdander",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "inactive"
+      }
+    ],
+    "text": "Inactive"
+  },
+  "category": [
+    "environment"
+  ],
+  "criticality": "low",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260152009"
+      }
+    ],
+    "text": "Cat Dander"
+  },
+  "patient": {
+    "reference": "Patient/baratz-toni"
+  },
+  "onsetDateTime": "1984-06-16",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  },
+  "asserter": {
+    "reference": "Patient/baratz-toni"
+  }
+}

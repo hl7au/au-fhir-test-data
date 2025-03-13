@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "woodcroft-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003621566706159"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81178458001"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8520",
+          "display": "Pathology and Diagnostic Imaging Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310074003",
+          "display": "Pathology service"
+        }
+      ],
+      "text": "Pathology laboratory service"
+    }
+  ],
+  "name": "Woodcroft Pathology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0855503641",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@woodcroftpathology.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "104 Gottfried Esp"
+      ],
+      "city": "Woodcroft",
+      "state": "SA",
+      "postalCode": "5162"
+    }
+  ]
+}

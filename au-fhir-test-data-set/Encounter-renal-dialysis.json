@@ -1,0 +1,75 @@
+{
+  "resourceType": "Encounter",
+  "id": "renal-dialysis",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "302497006",
+          "display": "Haemodialysis"
+        }
+      ]
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1244951000168104",
+        "display": "Renal dialysis service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/irvine-ronny-lawrence"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/nursepractitioner-osmond-deadra"
+      }
+    }
+  ],
+  "period": {
+    "start": "2012-08-05T09:00:00+10:00",
+    "end": "2012-08-05T13:00:00+10:00"
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/ckd"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/renal-dialysis-unit"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/barney-view-private-hospital"
+  }
+}

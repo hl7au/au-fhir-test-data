@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "cracow-pharmacy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Cracow Pharmacy",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "174 Tarpeian St"
+    ],
+    "city": "Cracow",
+    "state": "QLD",
+    "postalCode": "4719"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/cracow-pharmacy"
+  }
+}

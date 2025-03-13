@@ -1,0 +1,27 @@
+{
+  "resourceType": "Medication",
+  "id": "metformin-tpp",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "929529011000036109",
+        "display": "Metformin (Apo) 500 mg tablet, 100"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "154011000036109",
+        "display": "tablet"
+      }
+    ]
+  }
+}

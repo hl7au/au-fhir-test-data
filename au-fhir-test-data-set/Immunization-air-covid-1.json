@@ -1,0 +1,49 @@
+{
+  "resourceType": "Immunization",
+  "id": "air-covid-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+      "valueString": "vNo1111"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d"
+    }
+  ],
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+        "code": "COMIRN"
+      }
+    ],
+    "text": "Pfizer Comirnaty"
+  },
+  "patient": {
+    "reference": "Patient/baratz-toni"
+  },
+  "occurrenceDateTime": "2021-06-17",
+  "primarySource": true,
+  "location": {
+    "reference": "Location/au-hospital-pharm-out"
+  },
+  "protocolApplied": [
+    {
+      "targetDisease": [
+        {
+          "text": "COVID-19"
+        }
+      ],
+      "doseNumberPositiveInt": 1
+    }
+  ]
+}

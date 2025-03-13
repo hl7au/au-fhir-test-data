@@ -1,0 +1,62 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "diagnostic--chi",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2449251A"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/-chi"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253917",
+          "display": "Diagnostic and Interventional Radiologist"
+        }
+      ],
+      "text": "Nuclear Medicine Specialist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394649004",
+          "display": "Nuclear medicine - speciality"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370108366",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "chi.baldwin@example.net",
+      "use": "work"
+    }
+  ]
+}

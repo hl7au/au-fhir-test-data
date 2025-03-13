@@ -1,0 +1,78 @@
+{
+  "resourceType": "Condition",
+  "id": "nailwound-suppressed-subject",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "283680004",
+        "display": "Nail wound of sole of foot"
+      }
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "57999000",
+          "display": "Structure of sole of foot"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "masked"
+      }
+    ]
+  },
+  "encounter": {
+    "reference": "Encounter/nailwound"
+  },
+  "onsetDateTime": "2017-03-30",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "note": [
+    {
+      "text": "Puncture wound to sole of left foot from stepping on a rusty nail.              Wound red and swollen, no calf muscle tenderness, no coughing nor chest pain              which excludes pulmonary embolism."
+    }
+  ]
+}

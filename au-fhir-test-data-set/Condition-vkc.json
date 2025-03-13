@@ -1,0 +1,74 @@
+{
+  "resourceType": "Condition",
+  "id": "vkc",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        }
+      ]
+    }
+  ],
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "24484000",
+        "display": "Severe"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "317349009",
+        "display": "Vernal keratoconjunctivitis"
+      }
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "368601006",
+          "display": "Entire conjunctiva of left eye"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/italia-sofia"
+  },
+  "onsetDateTime": "2023-10-01",
+  "recordedDate": "2023-10-02",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "note": [
+    {
+      "text": "Itchy and burning eye, foreign body sensation. Mucoid discharge."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "beltana-medical-practice",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Beltana Medical Practice",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "181 State Rvr"
+    ],
+    "city": "Beltana",
+    "state": "SA",
+    "postalCode": "5730"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/beltana-medical-practice"
+  }
+}

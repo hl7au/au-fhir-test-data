@@ -1,0 +1,74 @@
+{
+  "resourceType": "Procedure",
+  "id": "stentinsertion",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "36969009",
+        "display": "Placement of stent in coronary artery"
+      }
+    ],
+    "text": "Placement of stent in right coronary artery"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "performedDateTime": "2021-09-25",
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/cardiothoracicsurgeon-manning-meg"
+      }
+    }
+  ],
+  "location": {
+    "reference": "Location/murrabit-public-hopsital"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "876856005",
+          "display": "Stenosis of right coronary artery"
+        }
+      ],
+      "text": "Occlusion of right coronary artery"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "13647002",
+          "display": "Right coronary artery structure"
+        }
+      ],
+      "text": "Right coronary artery"
+    }
+  ],
+  "focalDevice": [
+    {
+      "action": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "425362007",
+            "display": "Surgical insertion - action"
+          }
+        ]
+      },
+      "manipulated": {
+        "display": "coronary stent"
+      }
+    }
+  ]
+}

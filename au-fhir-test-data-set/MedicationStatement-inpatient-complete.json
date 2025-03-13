@@ -1,0 +1,95 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "inpatient-complete",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "med1",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "27908011000036108",
+            "display": "Clarithromycin 250 mg tablet, 100"
+          }
+        ],
+        "text": "clarithromycin 250 mg tablet, 100"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "154011000036109",
+            "display": "tablet"
+          }
+        ],
+        "text": "tablet"
+      }
+    }
+  ],
+  "status": "completed",
+  "medicationReference": {
+    "reference": "#med1"
+  },
+  "subject": {
+    "reference": "Patient/irvine-ronny-lawrence"
+  },
+  "effectivePeriod": {
+    "start": "2023-02-20T06:15:00+10:00",
+    "end": "2023-02-20T18:19:00+10:00"
+  },
+  "dateAsserted": "2023-02-20T18:19:00+10:00",
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "3731000119107",
+          "display": "Idiopathic hypersomnia"
+        }
+      ]
+    }
+  ],
+  "dosage": [
+    {
+      "text": "1 Twice a Day\\nBefore meals",
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "asNeededBoolean": false,
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ]
+}

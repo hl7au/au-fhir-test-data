@@ -1,0 +1,62 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "complementaryhealth-gordon-tad",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448921J"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/gordon-tad"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "252299",
+          "display": "Complementary Health Therapists nec"
+        }
+      ],
+      "text": "Exercise Physiologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1240761000168106",
+          "display": "Exercise physiology service"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270106132",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "tad.gordon@example.com",
+      "use": "work"
+    }
+  ]
+}

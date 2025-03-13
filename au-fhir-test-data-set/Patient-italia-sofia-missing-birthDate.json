@@ -1,0 +1,56 @@
+{
+  "resourceType": "Patient",
+  "id": "italia-sofia-missing-birthDate",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PPN"
+          }
+        ],
+        "text": "Passport Number"
+      },
+      "system": "http://hl7.org/fhir/sid/passport-ITA",
+      "value": "IT1111111"
+    }
+  ],
+  "name": [
+    {
+      "family": "Italia",
+      "given": [
+        "Sofia"
+      ],
+      "prefix": [
+        "Ms"
+      ]
+    }
+  ],
+  "gender": "female",
+  "_birthDate": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "unknown"
+      }
+    ]
+  },
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "Piazza del Colosseo"
+      ],
+      "city": "Rome",
+      "state": "Lazio",
+      "postalCode": "00184",
+      "country": "ITA"
+    }
+  ]
+}

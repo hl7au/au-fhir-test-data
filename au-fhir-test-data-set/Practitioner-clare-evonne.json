@@ -1,0 +1,97 @@
+{
+  "resourceType": "Practitioner",
+  "id": "clare-evonne",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NPI",
+            "display": "National provider identifier"
+          }
+        ],
+        "text": "HPI-I"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003618233385193"
+    }
+  ],
+  "name": [
+    {
+      "family": "CLARE",
+      "given": [
+        "Evonne"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870104737",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "evonne.clare@quinninupmc.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "117 Newhaven Way"
+      ],
+      "city": "Quinninup",
+      "state": "WA",
+      "postalCode": "6258"
+    }
+  ],
+  "gender": "other",
+  "qualification": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "ahpraProfession",
+              "valueCodeableConcept": {
+                "text": "Registered Nurses"
+              }
+            }
+          ],
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
+        }
+      ],
+      "identifier": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                "code": "AHPRA",
+                "display": "Australian Health Practitioner Regulation Agency Registration Number"
+              }
+            ],
+            "text": "Ahpra Registration Number"
+          },
+          "system": "http://hl7.org.au/id/ahpra-registration-number",
+          "value": "HAC00000000116"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
+          }
+        ]
+      }
+    }
+  ]
+}

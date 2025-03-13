@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "glennie-heights-public-hospital",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Glennie Heights Public Hospital",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "56 Central Gdns"
+    ],
+    "city": "Glennie Heights",
+    "state": "QLD",
+    "postalCode": "4370"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/glennie-heights-public-hospital"
+  }
+}

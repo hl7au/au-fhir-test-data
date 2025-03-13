@@ -1,0 +1,55 @@
+{
+  "resourceType": "Medication",
+  "id": "simvastatin",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "320000009",
+        "display": "Simvastatin 40 mg oral tablet"
+      }
+    ],
+    "text": "Simvastatin 40 MG Disintegrating Oral Tablet"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "263011000036100",
+        "display": "orally disintegrating tablet"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "2588011000036103",
+            "display": "simvastatin"
+          }
+        ]
+      },
+      "strength": {
+        "numerator": {
+          "value": 40,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tablet",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tbl}"
+        }
+      }
+    }
+  ]
+}

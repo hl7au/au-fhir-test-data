@@ -1,0 +1,30 @@
+{
+  "resourceType": "Encounter",
+  "id": "emergency",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/encounter-description",
+      "valueString": "3/52 ago involved in a rear end motor vehicle accident, mid-velocity impact; complaining of neck pain, dizziness, nausea and difficulties concentrating. Disturbed sleep. No spinal cord signs."
+    }
+  ],
+  "status": "in-progress",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "EMER",
+    "display": "emergency"
+  },
+  "subject": {
+    "reference": "Patient/irvine-ronny-lawrence"
+  },
+  "period": {
+    "start": "2023-02-10T09:20:00+10:00"
+  },
+  "serviceProvider": {
+    "reference": "Organization/barney-view-private-hospital"
+  }
+}

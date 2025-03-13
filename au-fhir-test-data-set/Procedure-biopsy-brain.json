@@ -1,0 +1,74 @@
+{
+  "resourceType": "Procedure",
+  "id": "biopsy-brain",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "230842002",
+        "display": "Biopsy of brain tissue"
+      }
+    ],
+    "text": "Biopsy of brain tissue"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo",
+    "display": "Deangelo Howe"
+  },
+  "encounter": {
+    "reference": "Encounter/biopsy-inpatient",
+    "display": "Inpatient"
+  },
+  "performedPeriod": {
+    "start": "2021-01-30T08:00:00+10:00",
+    "end": "2021-01-30T10:00:00+10:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/surgeongeneral-marchant-ricki",
+        "display": "Dr. Ricki MARCHANT"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "109979007",
+          "display": "B-cell lymphoma"
+        }
+      ],
+      "text": "Suspected Large Diffuse B-Cell Lymphoma of the brain"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "83251001",
+          "display": "Frontal lobe structure"
+        }
+      ],
+      "text": "Frontal lobe structure"
+    }
+  ],
+  "followUp": [
+    {
+      "text": "Review in oncology clinic"
+    }
+  ],
+  "note": [
+    {
+      "text": "Brain biopsy of the frontal lobe to diagnose suspected Large Diffuse B-Cell Lymphoma was performed under general anesthesia and without complications."
+    }
+  ]
+}

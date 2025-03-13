@@ -1,0 +1,93 @@
+{
+  "resourceType": "Encounter",
+  "id": "annualvisit-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "866149003",
+          "display": "Annual visit"
+        }
+      ]
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "788007007",
+        "display": "General practice service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/banks-mia-leanne",
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC",
+            "display": "Patient's Medicare number"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "29545410412"
+    }
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "EI",
+                "display": "Employee number"
+              }
+            ],
+            "text": "Employee Number"
+          },
+          "system": "http://tasmedicalcenter.example.com/providers",
+          "value": "8223TAS",
+          "assigner": {
+            "display": "TAS GP Medical Center TAS"
+          }
+        }
+      }
+    }
+  ],
+  "period": {
+    "start": "2022-02-10T09:20:00+10:00",
+    "end": "2022-02-10T09:35:00+10:00"
+  },
+  "serviceProvider": {
+    "display": "TAS GP Medical Center TAS"
+  }
+}

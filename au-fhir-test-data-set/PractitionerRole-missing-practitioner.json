@@ -1,0 +1,51 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "missing-practitioner",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "active": true,
+  "practitioner": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+        "valueCode": "unknown"
+      }
+    ]
+  },
+  "organization": {
+    "reference": "Organization/adv-hearing-care"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "309418004",
+          "display": "Audiologist"
+        }
+      ],
+      "text": "Audiologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394578005",
+          "display": "Audiological medicine"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "jill.bradley@ahc.example.com",
+      "use": "work"
+    }
+  ]
+}
