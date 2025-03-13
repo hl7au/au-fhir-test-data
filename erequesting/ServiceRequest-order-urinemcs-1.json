@@ -96,6 +96,7 @@
     "encounter": {
       "reference": "Encounter/obsgynaeclinic"
     },
+    "occurrenceDateTime": "2022-03-21T08:10:00+10:00",
     "authoredOn": "2022-03-21",
     "requester": {
       "reference": "PractitionerRole/obstetrician-losch-sallie"
