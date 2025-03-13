@@ -58,7 +58,13 @@ jobs:
             "Observation"
             "Procedure"
             "Medication"
-            "MedicationRequest") &&\
+            "MedicationRequest"
+            "Coverage"
+            "Specimen"
+            "CommunicationRequest"
+            "Consent"
+            "ServiceRequest"
+            "Task") &&\
           for resource in "${resources[@]}"
           do
           /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource ${{ inputs.directory }}  ${{ inputs.server }} Basic $AUTH_SECRET
