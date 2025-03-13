@@ -1,9 +1,15 @@
 {
     "resourceType": "Task",
-    "id": "path-scenario-1",
+    "id": "taskfulfilment-path-scenario-1",
     "meta": {
       "profile": [
         "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+      ],
+      "tag": [
+        {
+          "system": "http://hl7.org.au/fhir/ereq/CodeSystem/au-erequesting-task-tag",
+          "code": "fulfilment-task"
+        }
       ]
     },
     "groupIdentifier": {
@@ -35,6 +41,11 @@
       "display": "Elimbah Medical Centre"
       } 
     },
+    "partOf": [
+      {
+        "reference": "Task/taskgroup-path-scenario-1"
+      }
+    ],
     "status": "on-hold",
     "statusReason": {
       "text": "analyser scheduled maintenance"
@@ -48,7 +59,7 @@
       "reference": "Patient/baratz-toni"
     },
     "authoredOn": "2024-08-21T12:00:00+10:00",
-    "lastModified": "2024-08-21T12:01:00+10:00",
+    "lastModified": "2024-08-21T15:30:00+10:00",
     "requester": {
       "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
     },

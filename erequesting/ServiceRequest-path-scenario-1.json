@@ -6,6 +6,12 @@
       "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
     ]
   },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+      "valueInteger": 1
+    }
+  ],
   "identifier": [
     {
       "type": {
