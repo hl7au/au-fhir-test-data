@@ -1,0 +1,62 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "pbs-simvastatin",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://pbs.gov.au/code/item",
+        "code": "8173E",
+        "display": "simvastatin 40 mg tablet, 30"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "28213011000036109",
+        "display": "Simvastatin 40 mg tablet, 30"
+      }
+    ],
+    "text": "simvastatin 40 mg tablet, 30 tablets"
+  },
+  "subject": {
+    "reference": "Patient/hayes-arianne",
+    "display": "Arianne Hayes"
+  },
+  "effectivePeriod": {
+    "start": "2020-01-15"
+  },
+  "dateAsserted": "2020-01-15",
+  "dosage": [
+    {
+      "text": "Take one tablet daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 40,
+            "unit": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}
