@@ -1,0 +1,39 @@
+{
+    "resourceType": "Observation",
+    "id": "observation-pregnancy-status",
+    "meta": {
+      "profile": [
+        "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"
+      ]
+    },
+    "text": {
+      "status": "generated",
+      "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: Observation observation-pregnancy-status\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"observation-pregnancy-status\"\u003E \u003C/a\u003E\u003Ca name=\"hcobservation-pregnancy-status\"\u003E \u003C/a\u003E\u003Ca name=\"observation-pregnancy-status-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Final\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecode\u003C/b\u003E: \u003Cspan title=\"Codes:{http://loinc.org 82810-3}\"\u003EPregnancy status\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esubject\u003C/b\u003E: \u003Ca href=\"Patient-banks-mia-leanne.html\"\u003EMia Leanne Banks  Female, DoB: 1983-08-25 ( IHI: Austalian Healthcare Identifier - Individual#8003608333647261)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eeffective\u003C/b\u003E: 2025-01-10\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eperformer\u003C/b\u003E: \u003Ca href=\"PractitionerRole-guthridge-jarred-gp.html\"\u003EPractitionerRole Family medicine specialist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Evalue\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 77386006}\"\u003EPregnancy\u003C/span\u003E\u003C/p\u003E\u003C/div\u003E"
+    },
+    "status": "final",
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "82810-3"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/banks-mia-leanne"
+    },
+    "effectiveDateTime": "2022-03-21",
+    "performer": [
+      {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "77386006"
+        }
+      ]
+    }
+  }
