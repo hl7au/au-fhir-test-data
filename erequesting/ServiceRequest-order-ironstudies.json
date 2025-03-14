@@ -6,10 +6,6 @@
         "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
       ]
     },
-    "text": {
-      "status": "extensions",
-      "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: ServiceRequest order-urinemcs-1\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"order-urinemcs-1\"\u003E \u003C/a\u003E\u003Ca name=\"hcorder-urinemcs-1\"\u003E \u003C/a\u003E\u003Ca name=\"order-urinemcs-1-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003EAU eRequesting Display Sequence\u003C/b\u003E: 3\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EAU eRequesting Fasting Precondition\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 440565004}\"\u003ENonfasting\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eidentifier\u003C/b\u003E: Placer Identifier/EMC4551244-6241-02\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequisition\u003C/b\u003E: Placer Group Number/EMC4551244-6241\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Active\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eintent\u003C/b\u003E: Order\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecategory\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 108252007}\"\u003ELaboratory procedure\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecode\u003C/b\u003E: \u003Cspan title=\"Codes:{http://snomed.info/sct 271062006}\"\u003EGlucose, Fasting\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Equantity\u003C/b\u003E: 1 1\u003Cspan style=\"background: LightGoldenRodYellow\"\u003E (Details: UCUM  code1 = '1')\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esubject\u003C/b\u003E: \u003Ca href=\"Patient-banks-mia-leanne.html\"\u003EMia Leanne Banks  Female, DoB: 1983-08-25 ( IHI: Austalian Healthcare Identifier - Individual#8003608333647261)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eencounter\u003C/b\u003E: \u003Ca href=\"Encounter-consultation.html\"\u003EEncounter: status = finished; class = ambulatory (ActCode#AMB); serviceType = General practice service; period = 2024-05-11 10:15:00+1000 --&gt; 2024-05-11 10:30:00+1000\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eoccurrence\u003C/b\u003E: 2025-01-11 08:00:00+1000\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EauthoredOn\u003C/b\u003E: 2025-01-11\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequester\u003C/b\u003E: \u003Ca href=\"PractitionerRole-guthridge-jarred-gp.html\"\u003EPractitionerRole Family medicine specialist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EsupportingInfo\u003C/b\u003E: \u003Ca href=\"Observation-observation-pregnancy-status.html\"\u003EPregnancy status\u003C/a\u003E\u003C/p\u003E\u003C/div\u003E"
-    },
     "extension": [
       {
         "url": "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse",
@@ -96,12 +92,12 @@
       "text": "Iron studies"
     },
     "subject": {
-      "reference": "Patient/banks-mia-leanne"
+      "reference": "Patient/belger-remedios"
     },
     "encounter": {
       "reference": "Encounter/obsgynaeclinic"
     },
-    "authoredOn": "2022-03-21",
+    "authoredOn": "2025-02-21",
     "requester": {
       "reference": "PractitionerRole/obstetrician-losch-sallie"
     },
