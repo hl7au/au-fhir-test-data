@@ -3,7 +3,7 @@
   "id": "mackay-heather-3",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson"
+      "http://hl7.org.au/fhir/StructureDefinition/au-relatedperson"
     ]
   },
   "extension": [
