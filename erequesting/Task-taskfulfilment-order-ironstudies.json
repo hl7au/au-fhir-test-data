@@ -35,7 +35,7 @@
     }
   ],
   "status": "requested",
-  "intent": "plan",
+  "intent": "order",
   "priority": "routine",
   "code": {
     "coding": [
