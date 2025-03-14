@@ -6,10 +6,6 @@
         "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-copyto"
       ]
     },
-    "text": {
-      "status": "generated",
-      "div": "\u003Cdiv xmlns=\"http://www.w3.org/1999/xhtml\"\u003E\u003Cp class=\"res-header-id\"\u003E\u003Cb\u003EGenerated Narrative: CommunicationRequest communicationrequest-copyto-gp\u003C/b\u003E\u003C/p\u003E\u003Ca name=\"communicationrequest-copyto-gp\"\u003E \u003C/a\u003E\u003Ca name=\"hccommunicationrequest-copyto-gp\"\u003E \u003C/a\u003E\u003Ca name=\"communicationrequest-copyto-gp-en\"\u003E \u003C/a\u003E\u003Cp\u003E\u003Cb\u003EgroupIdentifier\u003C/b\u003E: Placer Group Number/EMC4551244-6241\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Estatus\u003C/b\u003E: Active\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Ecategory\u003C/b\u003E: \u003Cspan title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category notification}\"\u003Enotification\u003C/span\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esubject\u003C/b\u003E: \u003Ca href=\"Patient-banks-mia-leanne.html\"\u003EMia Leanne Banks  Female, DoB: 1983-08-25 ( IHI: Austalian Healthcare Identifier - Individual#8003608333647261)\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Eabout\u003C/b\u003E: \u003Ca href=\"ServiceRequest-order-glu-1.html\"\u003EServiceRequest Fasting blood glucose\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EauthoredOn\u003C/b\u003E: 2024-05-11 16:50:11+1000\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erequester\u003C/b\u003E: \u003Ca href=\"PractitionerRole-sally-losch-obgyn.html\"\u003EPractitionerRole Obstetrician and Gynaecologist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Erecipient\u003C/b\u003E: \u003Ca href=\"PractitionerRole-guthridge-jarred-gp.html\"\u003EPractitionerRole Family medicine specialist\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003Esender\u003C/b\u003E: \u003Ca href=\"Organization-kioma-pathology.html\"\u003EOrganization Kioma Pathology\u003C/a\u003E\u003C/p\u003E\u003Cp\u003E\u003Cb\u003EreasonCode\u003C/b\u003E: \u003Cspan title=\"Codes:{http://hl7.org.au/fhir/ereq/CodeSystem/au-erequesting-communication-request-reason copyto}\"\u003ECopy To\u003C/span\u003E\u003C/p\u003E\u003C/div\u003E"
-    },
     "groupIdentifier": {
       "type": {
         "coding": [
@@ -42,14 +38,14 @@
       }
     ],
     "subject": {
-      "reference": "Patient/banks-mia-leanne"
+      "reference": "Patient/belger-remedios"
     },
     "about": [
       {
         "reference": "ServiceRequest/order-glu-1"
       }
     ],
-    "authoredOn": "2022-03-21T08:00:00+10:00",
+    "authoredOn": "2025-02-21T08:00:00+10:00",
     "requester": {
       "reference": "PractitionerRole/obstetrician-losch-sallie"
     },
