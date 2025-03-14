@@ -1,4 +1,4 @@
 # The lines that begin with # should be ignored as comment, note that only whole lines work, inline comment won't
-generated/Immunization-air-covid-1.json
-generated/Immunization-covid-2.json
-generated/MedicationRequest-simvastatin-pbs.json
+au-fhir-test-data-set/Immunization-air-covid-1.json
+au-fhir-test-data-set/Immunization-covid-2.json
+au-fhir-test-data-set/MedicationRequest-simvastatin-pbs.json

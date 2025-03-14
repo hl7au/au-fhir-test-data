@@ -41,6 +41,6 @@ jobs:
           "MedicationRequest") &&\
         for resource in "${resources[@]}"
         do
-        /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
+        /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource au-fhir-test-data-set/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
         done
 
