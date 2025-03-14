@@ -11,7 +11,7 @@ runs:
         chmod +x Csv2FhirMapping-linux-x64-binaries/Csv2Fhir
     - shell: bash
       run: |
-        rm generated/* &&\
+        rm au-fhir-test-data-set/* &&\
         cd Sparked.Csv2FhirMapping/ &&
         declare resources=(
           "Patient"
@@ -32,5 +32,5 @@ runs:
           "MedicationStatement") &&\
         for resource in "${resources[@]}"
         do
-        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../generated/
+        echo $resource && /tmp/Csv2FhirMapping-linux-x64-binaries/Csv2Fhir $resource "../testdata-csv/AU Core Sample Data - ${resource}.csv" ../au-fhir-test-data-set/
         done
