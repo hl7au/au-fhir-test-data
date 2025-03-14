@@ -1,0 +1,58 @@
+{
+  "resourceType": "Procedure",
+  "id": "obstetric-missing-status",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "status": "unknown",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "386637004",
+        "display": "Obstetric procedure (procedure)"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "22633006",
+        "display": "Vaginal delivery, medical personnel present (procedure)"
+      }
+    ],
+    "text": "Vaginal delivery"
+  },
+  "subject": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "encounter": {
+    "reference": "Encounter/delivery"
+  },
+  "performedDateTime": "2022-09-14T09:30:10+01:00",
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/midwife-kendall-dallas"
+      }
+    }
+  ],
+  "location": {
+    "reference": "Location/barney-view-private-hospital"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "87527008",
+          "display": "Term pregnancy"
+        }
+      ],
+      "text": "term pregnancy, active labor"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "mmr",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "code": "inactive"
+      }
+    ],
+    "text": "Inactive"
+  },
+  "category": [
+    "biologic"
+  ],
+  "criticality": "low",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "831021000168104"
+      }
+    ],
+    "text": "measles/mumps/rubella [MMR] vaccine"
+  },
+  "patient": {
+    "reference": "Patient/baratz-toni"
+  },
+  "onsetDateTime": "1979-06-16",
+  "recordedDate": "1979-06-16",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  },
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "831021000168104"
+          }
+        ],
+        "text": "measles/mumps/rubella [MMR]"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10679231000119105"
+            }
+          ],
+          "text": "Swelling of left arm"
+        }
+      ],
+      "severity": "mild"
+    }
+  ]
+}

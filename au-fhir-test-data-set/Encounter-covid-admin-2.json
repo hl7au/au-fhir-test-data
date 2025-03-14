@@ -1,0 +1,70 @@
+{
+  "resourceType": "Encounter",
+  "id": "covid-admin-2",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "117096009",
+          "display": "Intramuscular injection of Vaccinia immune globulin, human"
+        }
+      ]
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1575161000168105",
+        "display": "COVID-19 vaccination service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    }
+  ],
+  "period": {
+    "start": "2021-08-01T09:20:00+10:00",
+    "end": "2021-08-01T09:35:00+10:00"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/elimbah-medical-centre"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/elimbah-medical-centre"
+  }
+}

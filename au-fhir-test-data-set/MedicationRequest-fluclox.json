@@ -1,0 +1,72 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "fluclox",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
+    ]
+  },
+  "status": "active",
+  "intent": "original-order",
+  "medicationCodeableConcept": {
+    "text": "flucloxacillin 500mg capsule"
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "encounter": {
+    "reference": "Encounter/annualvisit-2"
+  },
+  "authoredOn": "2022-02-10T14:14:00+10:00",
+  "requester": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "reasonCode": [
+    {
+      "text": "Signs of cellulitis, right knee, with low-grade fever"
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "Observation/bodytemp-1"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "text": "1 6-hourly for 5 days",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 6,
+          "periodUnit": "h"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "capsule",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "CAP"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 24,
+      "unit": "capsule",
+      "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+      "code": "CAP"
+    }
+  }
+}

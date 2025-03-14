@@ -1,0 +1,35 @@
+{
+    "resourceType": "Observation",
+    "id": "observation-pregnancy-status",
+    "meta": {
+      "profile": [
+        "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"
+      ]
+    },
+    "status": "final",
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "82810-3"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/belger-remedios"
+    },
+    "effectiveDateTime": "2025-02-21",
+    "performer": [
+      {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    ],
+    "valueCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "77386006"
+        }
+      ]
+    }
+  }

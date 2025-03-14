@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "visualacuity",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "exam"
+        }
+      ],
+      "text": "Vision"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "251739003"
+      }
+    ],
+    "text": "Distance visual acuity"
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "effectiveDateTime": "2024-05-23",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "422256009",
+        "display": "Counts fingers - distance vision"
+      }
+    ]
+  },
+  "bodySite": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "362503005"
+      }
+    ],
+    "text": "Entire left eye"
+  }
+}

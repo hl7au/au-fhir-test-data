@@ -1,0 +1,71 @@
+{
+    "resourceType": "CommunicationRequest",
+    "id": "communicationrequest-copyto-gp",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-copyto"
+      ]
+    },
+    "groupIdentifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PGN",
+            "display": "Placer Group Number"
+          }
+        ],
+        "text": "Placer Group Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+      "value": "EMC1552642-1110",
+      "assigner": {
+        "reference": "Organization/elimbah-medical-center",
+        "display": "Elimbah Medical Center"
+      }
+    },
+    "status": "active",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+            "code": "notification",
+            "display": "Notification"
+          }
+        ],
+        "text": "notification"
+      }
+    ],
+    "subject": {
+      "reference": "Patient/belger-remedios"
+    },
+    "about": [
+      {
+        "reference": "ServiceRequest/order-glu-1"
+      }
+    ],
+    "authoredOn": "2025-02-21T08:00:00+10:00",
+    "requester": {
+      "reference": "PractitionerRole/obstetrician-losch-sallie"
+    },
+    "recipient": [
+      {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    ],
+    "sender": {
+      "reference": "Organization/kioma-pathology"
+    },
+    "reasonCode": [
+      {
+        "coding": [
+          {
+            "system": "http://hl7.org.au/fhir/ereq/CodeSystem/au-erequesting-communication-request-reason",
+            "code": "copyto",
+            "display": "Copy To"
+          }
+        ]
+      }
+    ]
+  }

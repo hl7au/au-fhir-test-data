@@ -1,0 +1,61 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "obstetrician-rogers-lorilee",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2449981K"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/rogers-lorilee"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253913",
+          "display": "Obstetrician and Gynaecologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394585009",
+          "display": "Obstetrics and gynaecology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870102781",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "lorilee.rogers@example.com.au",
+      "use": "work"
+    }
+  ]
+}

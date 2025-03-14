@@ -1,0 +1,27 @@
+{
+  "resourceType": "Medication",
+  "id": "perindopril-amlodipine-mpp",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "86430011000036105",
+        "display": "Perindopril arginine 10 mg + amlodipine 10 mg tablet, 30"
+      }
+    ]
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "154011000036109",
+        "display": "tablet"
+      }
+    ]
+  }
+}

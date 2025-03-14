@@ -1,0 +1,43 @@
+{
+  "resourceType": "Encounter",
+  "id": "delivery",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "IMP",
+    "display": "inpatient encounter"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "177184002",
+          "display": "Normal delivery procedure"
+        }
+      ],
+      "text": "Normal delivery"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "period": {
+    "end": "2023-01-24"
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/barney-view-private-hospital"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/barney-view-private-hospital"
+  }
+}

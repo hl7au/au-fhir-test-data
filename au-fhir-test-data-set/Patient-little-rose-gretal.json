@@ -1,0 +1,108 @@
+{
+  "resourceType": "Patient",
+  "id": "little-rose-gretal",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "1",
+        "display": "Aboriginal but not Torres Strait Islander origin"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+            "code": "active"
+          }
+        },
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+            "code": "verified",
+            "display": "verified"
+          }
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608333647329"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "49516523711"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "LITTLE",
+      "given": [
+        "Rose",
+        "GRETAL"
+      ]
+    },
+    {
+      "use": "usual",
+      "text": "Rosalie Smith"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870106748",
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "0491575789",
+      "use": "mobile"
+    },
+    {
+      "system": "phone",
+      "value": "0870102104",
+      "use": "work"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1960-10-24",
+  "address": [
+    {
+      "line": [
+        "89 William Ave"
+      ],
+      "city": "Kulgera",
+      "state": "NT",
+      "postalCode": "0872",
+      "country": "AU"
+    }
+  ]
+}

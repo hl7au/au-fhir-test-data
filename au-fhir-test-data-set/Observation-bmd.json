@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "bmd",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "imaging"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "24701-5",
+        "display": "DXA Femur [Mass/Area] Bone density"
+      }
+    ],
+    "text": "BMD - Left femur"
+  },
+  "subject": {
+    "reference": "Patient/irvine-ronny-lawrence"
+  },
+  "effectiveDateTime": "2022-02-10",
+  "valueQuantity": {
+    "value": 0.887,
+    "unit": "g/cm²",
+    "system": "http://unitsofmeasure.org",
+    "code": "g/cm2"
+  }
+}

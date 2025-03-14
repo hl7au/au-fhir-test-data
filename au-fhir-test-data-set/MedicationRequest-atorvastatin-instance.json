@@ -1,0 +1,74 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "atorvastatin-instance",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
+    ]
+  },
+  "status": "active",
+  "intent": "instance-order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "22784011000036109",
+        "display": "Atorvastatin 20 mg tablet"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "encounter": {
+    "reference": "Encounter/cardio-hospital"
+  },
+  "authoredOn": "2021-09-26",
+  "requester": {
+    "reference": "PractitionerRole/cardiologist-felmingham-emma"
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/aci"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "text": "1 tablet daily",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "TAB",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+            "code": "TAB"
+          }
+        }
+      ]
+    }
+  ],
+  "dispenseRequest": {
+    "validityPeriod": {
+      "start": "2021-09-26"
+    },
+    "performer": {
+      "reference": "Organization/barney-view-private-hospital"
+    }
+  }
+}

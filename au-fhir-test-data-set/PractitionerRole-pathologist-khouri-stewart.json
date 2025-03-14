@@ -1,0 +1,69 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "pathologist-khouri-stewart",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2449361W"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/khouri-stewart"
+  },
+  "organization": {
+    "reference": "Organization/kununurra-pathology"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253915",
+          "display": "Pathologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394595002",
+          "display": "Pathology"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/kununurra-pathology"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870100955",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "stewart.khouri@kununurrapathology.example.com.au",
+      "use": "work"
+    }
+  ]
+}

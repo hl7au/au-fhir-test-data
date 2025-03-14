@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "chiropractic-karkoo-chiropractic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003626566707123"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/karkoo-chiropractic"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722170006",
+          "display": "Chiropractic service"
+        }
+      ],
+      "text": "Chiropractic"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/karkoo-chiropractic"
+    }
+  ],
+  "name": "Karkoo Chiropractic",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0855507557",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@karkoochiropractic.example.net"
+    }
+  ]
+}

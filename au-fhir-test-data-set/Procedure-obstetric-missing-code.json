@@ -1,0 +1,56 @@
+{
+  "resourceType": "Procedure",
+  "id": "obstetric-missing-code",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "386637004",
+        "display": "Obstetric procedure (procedure)"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code": "unknown"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "encounter": {
+    "reference": "Encounter/delivery"
+  },
+  "performedDateTime": "2022-09-14T09:30:10+01:00",
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/midwife-kendall-dallas"
+      }
+    }
+  ],
+  "location": {
+    "reference": "Location/barney-view-private-hospital"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "87527008",
+          "display": "Term pregnancy"
+        }
+      ],
+      "text": "term pregnancy, active labor"
+    }
+  ]
+}

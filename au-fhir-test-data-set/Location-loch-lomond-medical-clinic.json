@@ -1,0 +1,31 @@
+{
+  "resourceType": "Location",
+  "id": "loch-lomond-medical-clinic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Loch Lomond Medical Clinic",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "32 Silver Cl"
+    ],
+    "city": "Loch Lomond",
+    "state": "QLD",
+    "postalCode": "4370"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/loch-lomond-medical-clinic"
+  }
+}

@@ -2,7 +2,7 @@ name: Validate generated files
 inputs:
   path:
     description: "Directory to validate"
-    default: 'generated'
+    default: 'au-fhir-test-data-set'
   ig:
     description: "Implementation guide used to validate"
     default: 'hl7.fhir.au.core#1.1.0-preview'

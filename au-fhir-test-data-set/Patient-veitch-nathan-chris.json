@@ -1,0 +1,157 @@
+{
+  "resourceType": "Patient",
+  "id": "veitch-nathan-chris",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "9",
+        "display": "Not stated/inadequately described"
+      }
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "446141000124107",
+                "display": "Identifies as female gender (finding)"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA29520-6",
+                "display": "they/them/their/theirs/themselves"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+    },
+    {
+      "extension": [
+        {
+          "url": "type",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1515311000168102",
+                "display": "Biological sex at birth"
+              }
+            ]
+          }
+        },
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32570681000036106",
+                "display": "Indeterminate sex"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+    }
+  ],
+  "identifier": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+            "code": "active"
+          }
+        },
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+            "code": "verified",
+            "display": "verified"
+          }
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608166980458"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "49516522815"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "VEITCH",
+      "given": [
+        "Nathan",
+        "CHRIS"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870106485",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2022-06-01",
+  "address": [
+    {
+      "line": [
+        "78 Innovation Cct"
+      ],
+      "city": "Newcastle Waters",
+      "state": "NT",
+      "postalCode": "0862",
+      "country": "AU"
+    }
+  ]
+}

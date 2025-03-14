@@ -1,0 +1,110 @@
+{
+  "resourceType": "Observation",
+  "id": "gram-stain",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ],
+      "text": "Laboratory"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "664-3"
+      }
+    ],
+    "text": "Microscopic observation [Identifier] in Specimen by Gram stain"
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "effectiveDateTime": "2021-02-15T12:00:00+10:00",
+  "performer": [
+    {
+      "reference": "PractitionerRole/pathologist-herbert-aimee"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61609004"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "70003006"
+      }
+    ],
+    "text": "Gram-positive cocci in chains and clusters"
+  },
+  "note": [
+    {
+      "text": "Pathology result observation instance using Observation.component, intended for testing purposes. This test data instance does not intend to demostrate how to represent clinial data in FHIR."
+    }
+  ],
+  "specimen": {
+    "reference": "Specimen/nasoswab"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "708061008"
+          }
+        ],
+        "text": "Gram stain"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "10828004"
+          }
+        ],
+        "text": "Gram-positive"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "723198002"
+          }
+        ],
+        "text": "morphology (shape)"
+      },
+      "valueCodeableConcept": {
+        "text": "cocci"
+      }
+    },
+    {
+      "code": {
+        "text": "arrangement"
+      },
+      "dataAbsentReason": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+            "code": "asked-declined"
+          }
+        ],
+        "text": "asked but declined"
+      }
+    }
+  ]
+}

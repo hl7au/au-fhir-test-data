@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "blood-group",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "882-1",
+        "display": "ABO and Rh group [Type] in Blood"
+      }
+    ],
+    "text": "Blood Group"
+  },
+  "subject": {
+    "reference": "Patient/baratz-toni"
+  },
+  "effectiveDateTime": "2015-06-12",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "112144000",
+        "display": "Blood group A (finding)"
+      }
+    ],
+    "text": "A"
+  }
+}

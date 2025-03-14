@@ -1,0 +1,97 @@
+{
+  "resourceType": "Practitioner",
+  "id": "parr-adelaide",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NPI",
+            "display": "National provider identifier"
+          }
+        ],
+        "text": "HPI-I"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003613233385210"
+    }
+  ],
+  "name": [
+    {
+      "family": "PARR",
+      "given": [
+        "Adelaide"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870103000",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "adelaide.parr@capejaffaradiology.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "9 Elgin Pl"
+      ],
+      "city": "Cape Jaffa",
+      "state": "SA",
+      "postalCode": "5275"
+    }
+  ],
+  "gender": "other",
+  "qualification": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "ahpraProfession",
+              "valueCodeableConcept": {
+                "text": "Other Medical Practitioners"
+              }
+            }
+          ],
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
+        }
+      ],
+      "identifier": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                "code": "AHPRA",
+                "display": "Australian Health Practitioner Regulation Agency Registration Number"
+              }
+            ],
+            "text": "Ahpra Registration Number"
+          },
+          "system": "http://hl7.org.au/id/ahpra-registration-number",
+          "value": "HAC00000000166"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
+          }
+        ]
+      }
+    }
+  ]
+}

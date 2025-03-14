@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "registerednurses-lamerton-buck",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2448471X"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/lamerton-buck"
+  },
+  "organization": {
+    "reference": "Organization/southedge-practice"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "254499",
+          "display": "Registered Nurses nec"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "224535009",
+          "display": "Registered nurse"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722165004",
+          "display": "Nursing"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/southedge-practice"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770104404",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "buck.lamerton@southedgepractice.example.com.au",
+      "use": "work"
+    }
+  ]
+}
