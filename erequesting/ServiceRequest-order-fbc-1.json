@@ -1,6 +1,6 @@
 {
   "resourceType": "ServiceRequest",
-  "id": "path-scenario-1",
+  "id": "order-fbc-1",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
@@ -24,7 +24,7 @@
         ]
       },
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-      "value": "path-order-1-1",
+      "value": "EMC4542244-5625-01",
       "assigner": {
         "reference": "Organization/elimbah-medical-centre",
         "display": "Elimbah Medical Centre"
@@ -42,7 +42,7 @@
       ]
     },
     "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-    "value": "path-order-1",
+    "value": "EMC4542244-5625",
     "assigner": {
       "reference": "Organization/elimbah-medical-centre",
       "display": "Elimbah Medical Centre"
@@ -65,36 +65,25 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "12199005",
-        "display": "Vitamin D, 25-hydroxy measurement"
+        "code": "26604007",
+        "display": "Complete blood count"
       }
     ],
-    "text": "Vitamin D"
+    "text": "FBC"
   },
   "subject": {
-    "reference": "Patient/baratz-toni"
+    "reference": "Patient/roberts-fred"
   },
   "encounter": {
-    "reference": "Encounter/annualvisit-2"
+    "reference": "Encounter/gp-consultation"
   },
-  "authoredOn": "2024-08-21",
+  "authoredOn": "2024-05-11",
   "requester": {
     "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
   },
-  "reasonCode": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "225885004",
-          "display": "Health assessment"
-        }
-      ]
-    }
-  ],
   "insurance": [
     {
-      "reference": "Coverage/medicare-bt"
+      "reference": "Coverage/medicare-rf"
     }
   ]
 }

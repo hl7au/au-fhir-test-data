@@ -1,0 +1,110 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "order-ironstudies",
+    "meta": {
+      "profile": [
+        "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+      ]
+    },
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse",
+        "extension": [
+          {
+            "url": "value",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/sex-parameter-for-clinical-use",
+                  "code": "female-typical"
+                }
+              ],
+              "text": "Apply female-typical setting or reference range"
+            }
+          }
+        ]
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+        "valueCodeableConcept": {
+          "text": "On-hold pending normal urine MCS or resolution of suspected UTI."
+        }
+      },
+      {
+        "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+        "valueInteger": 4
+      }
+    ],
+    "identifier": [
+      {
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "PLAC",
+              "display": "Placer Identifier"
+            }
+          ]
+        },
+        "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+        "value": "EMC1552642-1110-04",
+        "assigner": {
+          "display": "Elimbah Medical Center"
+        }
+      }
+    ],
+    "requisition": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PGN",
+            "display": "Placer Group Number"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+      "value": "EMC1552642-1110",
+      "assigner": {
+        "display": "Elimbah Medical Center"
+      }
+    },
+    "status": "on-hold",
+    "intent": "order",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "108252007",
+            "display": "Laboratory procedure"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "269820002"
+        }
+      ],
+      "text": "Iron studies"
+    },
+    "subject": {
+      "reference": "Patient/belger-remedios"
+    },
+    "encounter": {
+      "reference": "Encounter/obsgynaeclinic"
+    },
+    "authoredOn": "2025-02-21",
+    "requester": {
+      "reference": "PractitionerRole/obstetrician-losch-sallie"
+    },
+    "supportingInfo": [
+      {
+        "reference": "Observation/observation-pregnancy-status",
+        "display": "Pregnancy status"
+      }
+    ]
+  }
