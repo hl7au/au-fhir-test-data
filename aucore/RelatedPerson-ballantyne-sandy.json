@@ -52,7 +52,7 @@
     }
   ],
   "patient": {
-    "reference": "Patient/terry-bob-ballantyne"
+    "reference": "Patient/ballantyne-terry-bob"
   },
   "relationship": [
     {
