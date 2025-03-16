@@ -1,9 +1,9 @@
 {
   "resourceType": "RelatedPerson",
-  "id": "ballantyne-flavia-3",
+  "id": "ballantyne-flavia-4",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/StructureDefinition/au-relatedperson"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson"
     ]
   },
   "identifier": [
@@ -32,7 +32,7 @@
             "code": "NI"
           }
         ],
-        "text": "=IF(A41=\"\",\"\",\"IHI\")"
+        "text": "IHI"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
       "value": "8003608833648488"
@@ -52,7 +52,7 @@
     }
   ],
   "patient": {
-    "reference": "Patient/ballantyne-sandy-choy"
+    "reference": "Patient/ballantyne-terry-bob"
   },
   "relationship": [
     {

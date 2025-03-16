@@ -1,11 +1,47 @@
 {
   "resourceType": "RelatedPerson",
-  "id": "ballantyne-flavia-3",
+  "id": "mackay-heather-3",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/StructureDefinition/au-relatedperson"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-relatedperson"
     ]
   },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "446151000124109",
+                "display": "Identifies as male gender (finding)"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+    },
+    {
+      "extension": [
+        {
+          "url": "value",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA29520-6",
+                "display": "they/them/their/theirs/themselves"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
+    }
+  ],
   "identifier": [
     {
       "extension": [
@@ -32,10 +68,10 @@
             "code": "NI"
           }
         ],
-        "text": "=IF(A41=\"\",\"\",\"IHI\")"
+        "text": "IHI"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
-      "value": "8003608833648488"
+      "value": "8003608666976451"
     },
     {
       "type": {
@@ -48,59 +84,58 @@
         "text": "Medicare Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "69518260311"
+      "value": "39513341311"
     }
   ],
   "patient": {
-    "reference": "Patient/ballantyne-sandy-choy"
+    "reference": "Patient/mackay-elliott"
   },
   "relationship": [
     {
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "code": "MTH",
-          "display": "mother"
+          "code": "PRN",
+          "display": "parent"
         }
       ]
     }
   ],
   "name": [
     {
-      "family": "BALLANTYNE",
+      "family": "MACKAY",
       "given": [
-        "Flavia",
-        "INDIRA"
+        "Heather"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870106296",
+      "value": "0370108075",
       "use": "home"
     },
     {
       "system": "phone",
-      "value": "0491570110",
+      "value": "0491578148",
       "use": "mobile"
     },
     {
       "system": "phone",
-      "value": "0870101585",
+      "value": "0370103228",
       "use": "work"
     }
   ],
   "gender": "female",
-  "birthDate": "1973-06-17",
+  "birthDate": "1982-11-27",
   "address": [
     {
       "line": [
-        "73 Abattoir Gdns"
+        "28 Stone Cr"
       ],
-      "city": "Wellington Forest",
-      "state": "WA",
-      "postalCode": "6236",
+      "city": "Appin South",
+      "state": "VIC",
+      "postalCode": "3579",
       "country": "AU"
     }
   ]

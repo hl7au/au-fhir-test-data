@@ -37,7 +37,7 @@
       "timing": {
         "repeat": {
           "frequency": 1,
-          "period": 8,
+          "period": 6,
           "periodUnit": "h"
         }
       },

@@ -1,0 +1,60 @@
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "previous-use-diflucan",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"]
+  },
+  "status" : "completed",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+        "valueCoding" : {
+          "system" : "http://terminology.hl7.org.au/CodeSystem/medication-type",
+          "code" : "BPDSF",
+          "display" : "Branded product with strengths and form"
+        }
+      }],
+      "system" : "http://snomed.info/sct",
+      "code" : "5232011000036102",
+      "display" : "Diflucan 200 mg/100 mL injection, 100 mL vial"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/banks-mia-leanne"
+  },
+  "effectivePeriod" : {
+    "start" : "2018-06-25",
+    "end" : "2018-07-05"
+  },
+  "dateAsserted" : "2018-07-10",
+  "dosage" : [{
+    "text" : "Every 1-10 days at 10am for 30 minutes",
+    "timing" : {
+      "repeat" : {
+        "duration" : 30,
+        "durationUnit" : "min",
+        "frequency" : 1,
+        "period" : 1,
+        "periodMax" : 10,
+        "periodUnit" : "d",
+        "timeOfDay" : ["10:00:00"]
+      }
+    },
+    "route" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "47625008",
+        "display" : "Intravenous route"
+      }]
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 200,
+        "unit" : "mg",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg"
+      }
+    }]
+  }]
+}

@@ -1,0 +1,30 @@
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "active-bisoprolol",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"]
+  },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "bisoprolol",
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "23281011000036106",
+        "display" : "Bisoprolol fumarate 2.5 mg tablet"
+      }],
+      "text" : "Bisoprolol 2.5mg tab"
+    }
+  }],
+  "status" : "active",
+  "medicationReference" : {
+    "reference" : "#bisoprolol"
+  },
+  "subject" : {
+    "reference" : "Patient/banks-mia-leanne"
+  },
+  "dateAsserted" : "2019-02-05",
+  "dosage" : [{
+    "text" : "1/2 tablet in the morning"
+  }]
+}

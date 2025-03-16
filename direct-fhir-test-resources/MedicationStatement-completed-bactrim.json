@@ -1,0 +1,31 @@
+{
+  "resourceType" : "MedicationStatement",
+  "id" : "completed-bactrim",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement completed-bactrim</b></p><a name=\"completed-bactrim\"> </a><a name=\"hccompleted-bactrim\"> </a><a name=\"completed-bactrim-en-AU\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-medicationstatement.html\">AU Core MedicationStatement</a></p></div><p><b>status</b>: Completed</p><p><b>medication</b>: <span title=\"Codes:{http://snomed.info/sct 6632011000036102}, {http://pbs.gov.au/code/item 2951H}\">Bactrim DS - tablet</span></p><p><b>subject</b>: <a href=\"Patient-banks-mia-leanne.html\">Mia Leanne Banks  Female, DoB: 1983-08-25 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608333647261)</a></p><p><b>dateAsserted</b>: 2020-05-30 10:00:00+1000</p><p><b>reasonReference</b>: <a href=\"Condition-uti.html\">Condition Urinary tract infection</a></p></div>"
+  },
+  "status" : "completed",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "6632011000036102",
+      "display" : "Bactrim DS tablet"
+    },
+    {
+      "system" : "http://pbs.gov.au/code/item",
+      "code" : "2951H"
+    }],
+    "text" : "Bactrim DS - tablet"
+  },
+  "subject" : {
+    "reference" : "Patient/banks-mia-leanne"
+  },
+  "dateAsserted" : "2020-05-30T10:00:00+10:00",
+  "reasonReference" : [{
+    "reference" : "Condition/uti"
+  }]
+}
