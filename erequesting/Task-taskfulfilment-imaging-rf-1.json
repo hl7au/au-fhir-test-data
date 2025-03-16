@@ -31,7 +31,7 @@
   },
   "partOf": [
     {
-      "reference": "Task/taskgroup-imaging-1"
+      "reference": "Task/taskgroup-imaging-rf-1"
     }
   ],
   "status": "requested",

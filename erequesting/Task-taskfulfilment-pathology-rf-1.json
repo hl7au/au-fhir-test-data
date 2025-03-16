@@ -31,7 +31,7 @@
   },
   "partOf": [
     {
-      "reference": "Task/taskgroup-pathology-1"
+      "reference": "Task/taskgroup-pathology-rf-1"
     }
   ],
   "status": "requested",
