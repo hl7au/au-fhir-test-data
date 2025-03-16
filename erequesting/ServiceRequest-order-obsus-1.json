@@ -36,7 +36,7 @@
           ]
         },
         "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-        "value": "EMC4542244-5625-01",
+        "value": "EMC1552642-1111-01",
         "assigner": {
           "display": "Elimbah Medical Center"
         }
@@ -53,7 +53,7 @@
         ]
       },
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-      "value": "EMC4542244-5625",
+      "value": "EMC1552642-1111",
       "assigner": {
         "display": "Elimbah Medical Center"
       }
