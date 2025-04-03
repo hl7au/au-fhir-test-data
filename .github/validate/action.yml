@@ -1,7 +1,7 @@
 name: Validate generated files
 inputs:
-  path:
-    description: "Directory to validate"
+  sources:
+    description: "Sources to validate"
     default: 'generated'
   ig:
     description: "Implementation guide used to validate"
@@ -14,23 +14,13 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Don't validate quarantine files
-      shell: bash
-      run: |
-        mkdir ${{ runner.temp }}/quarantine &&\
-        mv -v `grep -v '^#' ./quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
-      continue-on-error: true
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
       shell: bash
       run: |
-        java -jar validator_cli.jar ${{ inputs.path }}/*.json \
+        java -jar validator_cli.jar ${{ inputs.sources }} \
              -version 4.0.1 -tx ${{ inputs.tx }} \
              -ig ${{ inputs.ig }} -sct au \
              -level errors -jurisdiction au \
-             -html-output g_validation.html -output g_validation.xml
-    - name: Restore skipped files
-      shell: bash
-      run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
-      continue-on-error: true
+             -html-output g_validation.html -output g_validation.json

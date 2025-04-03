@@ -1,44 +1,36 @@
 name: Validate
 
 on:
-  pull_request
+  workflow_dispatch:
+    inputs:
+      profile:
+        type: choice
+        description: Profile
+        options: 
+        - AU Core
+        - eRequesting
 
 
 jobs:
-  Convert:
+  Validate:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
-    - name: Convert to json
-      uses: ./.github/fhirmapping
-    - id: git-diff-action
-      run: echo "changed=$(git status --porcelain=v1 2>/dev/null | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
-    - if: steps.git-diff-action.outputs.changed != '0'
-      uses: stefanzweifel/git-auto-commit-action@v5
+    - name: Setup python for result reporting
+      uses: actions/setup-python@v5
+    - name: Set profile
+      uses: ./.github/profiles
       with:
-        commit_message: Update generated files
-    - name: Validate
-      uses: ./.github/validate
-    - name: Report
-      uses: ./.github/report
-      with:
-        title: AU Core
-  ValidateERequesting:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
+          profile: ${{ github.event.inputs.profile }}
     - name: Validate
       uses: ./.github/validate
       with:
-        path: erequesting
-        ig: "hl7.fhir.au.ereq#0.3.0-preview"
+        sources: $paths
+        ig: $ig
     - name: Report
       uses: ./.github/report
       with:
-        title: eRequesting
+        title: ${{ github.event.inputs.profile }}
+        ig: $ig
+        paths: $paths

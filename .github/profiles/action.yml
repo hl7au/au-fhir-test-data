@@ -1,0 +1,27 @@
+name: Set values according to profile
+inputs:
+  profile:
+    description: 'Profile to use'
+    required: true
+    default: 'AU Core'
+
+# Environment variables to be set:
+# ig    - the IG to validate against when validating this profile
+# paths - the files to validate and upload
+#         space separated list of directories
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set AU Core profile
+      if: ${{ github.event.inputs.profile == 'AU Core' }}
+      shell: bash
+      run: |
+        echo "ig=hl7.fhir.au.core#1.1.0-preview" >> "$GITHUB_ENV" &&
+        echo "paths=generated/ aucore/ direct-fhir-test-resources/" >> "$GITHUB_ENV"
+    - name: Set eRequesting profile
+      if: ${{ github.event.inputs.profile == 'eRequesting' }}
+      shell: bash
+      run: |
+        echo "ig=hl7.fhir.au.ereq#0.3.0-preview" >> "$GITHUB_ENV" &&
+        echo "paths=generated/ erequesting/ direct-fhir-test-resources/" >> "$GITHUB_ENV"
