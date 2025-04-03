@@ -1,0 +1,107 @@
+{
+  "resourceType": "RelatedPerson",
+  "id": "ballantyne-flavia-4",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-relatedperson"
+    ]
+  },
+  "identifier": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+            "code": "active"
+          }
+        },
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+            "code": "verified",
+            "display": "verified"
+          }
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608833648488"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "69518260311"
+    }
+  ],
+  "patient": {
+    "reference": "Patient/ballantyne-terry-bob"
+  },
+  "relationship": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code": "MTH",
+          "display": "mother"
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "family": "BALLANTYNE",
+      "given": [
+        "Flavia",
+        "INDIRA"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870106296",
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "0491570110",
+      "use": "mobile"
+    },
+    {
+      "system": "phone",
+      "value": "0870101585",
+      "use": "work"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1973-06-17",
+  "address": [
+    {
+      "line": [
+        "73 Abattoir Gdns"
+      ],
+      "city": "Wellington Forest",
+      "state": "WA",
+      "postalCode": "6236",
+      "country": "AU"
+    }
+  ]
+}
