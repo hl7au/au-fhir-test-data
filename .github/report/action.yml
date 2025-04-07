@@ -1,96 +1,39 @@
-name: Report to pull request
+name: Report to action summary
 inputs:
-  issue:
-    description: "An issue that will be used for reporting"
-    default: context.issue.number
   title:
-    description: "Report title, is used in github comment"
+    description: "Report title"
+  ig:
+    description: "IG to validate against"
+  paths:
+    description: "Paths to be validate"
+
 runs:
   using: 'composite'
   steps:
     - id: validation-result
-      name: Archive validation result
+      name: Upload HTML validation result
       uses: actions/upload-artifact@v4
       with:
         name: "${{ inputs.title}} validation result"
         path: g_validation.html
-    - shell: bash
-      name: Generate extract_error_files.xsl
+    - id: generate-report
+      shell: bash
+      run: python ./.github/report/process_result.py -r g_validation.json -q ./.github/report/quarantine >> "$GITHUB_OUTPUT"
+    - name: Generate list using Markdown
+      shell: bash
       run: |
-        cat <<EOF > extract_error_files.xsl
-        <?xml version="1.0" encoding="UTF-8"?>
-        <xsl:stylesheet version="1.0"
-          xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-          xmlns:fhir="http://hl7.org/fhir"
-          xmlns:html="http://www.w3.org/1999/xhtml">
-
-          <xsl:template match="/fhir:Bundle">
-            <xsl:text>mkdir quarantined&#xA;</xsl:text>
-            <xsl:apply-templates/>
-          </xsl:template>
-
-          <xsl:template
-            match="/fhir:Bundle/fhir:entry/fhir:resource/fhir:OperationOutcome[fhir:text/html:div/html:table/html:tr/html:td='error']/fhir:extension[@url = 'http://hl7.org/fhir/StructureDefinition/operationoutcome-file']/fhir:valueString">
-            <xsl:text>mv </xsl:text>
-            <xsl:value-of select="./@value" />
-            <xsl:text> quarantined</xsl:text>
-            <xsl:text>&#xA;</xsl:text>
-          </xsl:template>
-
-          <xsl:template match="text()" />
-
-          <xsl:output method="text" encoding="utf-8"
-            media-type="string" />
-        </xsl:stylesheet>
-        EOF
+        echo "# ${{ inputs.title}} Validation Report" >> $GITHUB_STEP_SUMMARY
+        echo "### Run detail" >> $GITHUB_STEP_SUMMARY
+        echo "IG: ${{ inputs.ig }}" >> $GITHUB_STEP_SUMMARY
+        echo "Resources: ${{ inputs.paths }}" >> $GITHUB_STEP_SUMMARY
+        echo "### Validation Result" >> $GITHUB_STEP_SUMMARY
+        echo " ✅ Pass: ${{ steps.generate-report.outputs.pass }} (${{ steps.generate-report.outputs.warning }} with warning ⚠️)" >> $GITHUB_STEP_SUMMARY
+        echo " ❎ Error: ${{ steps.generate-report.outputs.error }} " >> $GITHUB_STEP_SUMMARY
+        echo " 🚫 Quarantined: ${{ steps.generate-report.outputs.quarantine }} " >> $GITHUB_STEP_SUMMARY
+        echo "### Note" >> $GITHUB_STEP_SUMMARY
+        echo "See **Artifacts** sections below for detailed report. " >> $GITHUB_STEP_SUMMARY
+        echo "See \`.github/report/quarantine\` for quarantined resources. " >> $GITHUB_STEP_SUMMARY
     - shell: bash
-      run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
-    - shell: bash
-      run: chmod +x quarantine_errors.sh
-    - shell: bash
-      run: ./quarantine_errors.sh
-    - shell: bash
-      id: has-validation-errors
-      run: echo "errors=$(ls -1q ./quarantined | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
-    - id: quarantined-result
-      name: Archive quarantined resources
-      if: steps.has-validation-errors.outputs.errors != '0'
-      uses: actions/upload-artifact@v4
-      with:
-        name: "${{ inputs.title }} quarantine"
-        path: quarantined
-    - name: Show validation results
-      if: steps.has-validation-errors.outputs.errors == '0'
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const comment = `
-            ✅  No errors found at ${{ inputs.title }}
-            Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }})
-          `;
-          github.rest.issues.createComment({
-            issue_number: ${{ inputs.issue }},
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: comment
-          })
-    - name: Show validation errors
-      if: steps.has-validation-errors.outputs.errors != '0'
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const comment = `
-            ❌ ${{ steps.has-validation-errors.outputs.errors }} errors found at ${{ inputs.title }} :
-            Validation report: [${{ steps.validation-result.outputs.artifact-id }}](${{ steps.validation-result.outputs.artifact-url }}).
-            Quarantined files: [${{ steps.quarantined-result.outputs.artifact-id }}](${{ steps.quarantined-result.outputs.artifact-url }})
-          `;
-          github.rest.issues.createComment({
-            issue_number: ${{ inputs.issue }},
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: comment
-          })
-    - shell: bash
-      name: Fail in case of validation errors
-      if: steps.has-validation-errors.outputs.errors != '0'
+      name: Fail in case of validation error
+      if: steps.generate-report.outputs.error != '0'
       run: exit -1
