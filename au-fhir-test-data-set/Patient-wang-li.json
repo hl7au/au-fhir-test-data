@@ -1,0 +1,55 @@
+{
+  "resourceType" : "Patient",
+  "id" : "wang-li",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"]
+  },
+  "extension" : [{
+    "url" : "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+    "valueCoding" : {
+      "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+      "code" : "4",
+      "display" : "Neither Aboriginal nor Torres Strait Islander origin"
+    }
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "MR",
+        "display" : "Medical record number"
+      }],
+      "text" : "Medical Record Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/medicalrecord/1.0/8003626566699734",
+    "value" : "22421441",
+    "assigner" : {
+      "display" : "Mount Mitchell Private Hospital"
+    }
+  }],
+  "name" : [{
+    "family" : "Wang",
+    "given" : ["Li"],
+    "prefix" : ["Mr"]
+  }],
+  "gender" : "male",
+  "birthDate" : "1975-05-03",
+  "address" : [{
+    "use" : "home",
+    "line" : ["29 Gadsby Street"],
+    "city" : "Blacktown",
+    "state" : "NSW",
+    "postalCode" : "2148",
+    "country" : "AU"
+  }],
+  "communication" : [{
+    "language" : {
+      "coding" : [{
+        "system" : "urn:ietf:bcp:47",
+        "code" : "yue"
+      }],
+      "text" : "Cantonese"
+    },
+    "preferred" : true
+  }]
+}
