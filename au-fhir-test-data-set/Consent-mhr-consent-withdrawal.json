@@ -1,6 +1,6 @@
 {
     "resourceType": "Consent",
-    "id": "mhr-consent-withdrawal-max",
+    "id": "mhr-consent-withdrawal",
     "meta": {
       "profile": [
         "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-mhrconsentwithdrawal"
@@ -28,7 +28,7 @@
             "display": "information disclosure"
           }
         ],
-        "text": "IDCSCL - information disclosure"
+        "text": "information disclosure"
       }
     ],
     "patient": {
