@@ -29,6 +29,11 @@
     "reference": "Patient/irvine-ronny-lawrence"
   },
   "recordedDate": "1999-08-25",
+  "note" : [
+    {
+      "text" : "The criticality is high due to a documented episode of hives following penicillin administration."
+    }
+  ],
   "reaction": [
     {
       "manifestation": [
