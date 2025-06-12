@@ -71,7 +71,7 @@
         },
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">\n            <table border=\"1\">\n              <thead>\n                <tr>\n                  <th>Allergy, Intolerance, Substance</th>\n                  <th>Onset</th>\n                  <th>Recorded</th>\n                  <th>Manifestation</th>\n                  <th>Manifestation Severity</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr>\n                  <td>Intolerance to lactose</td>\n                  <td>2022</td>\n                  <td>14/03/2023</td>\n                  <td>Abdominal pain, Abdominal bloating, Diarrhoea</td>\n                  <td>Mild</td>\n                </tr>\n                <tr>\n                  <td>Gluten intolerance</td>\n                  <td>1999</td>\n                  <td>12/01/2023</td>\n                  <td>Fatigue</td>\n                  <td>Mild</td>\n                </tr>\n                <tr>\n                  <td>Chlorhexidine</td>\n                  <td>12/01/2021</td>\n                  <td>12/01/2023</td>\n                  <td>Hives</td>\n                  <td>Mild</td>\n                </tr>\n              </tbody>\n            </table>\n            </div>"
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">\n            <table border=\"1\">\n              <thead>\n                <tr>\n                  <th>Allergy, Intolerance, Substance</th>\n                  <th>Onset</th>\n                  <th>Recorded</th>\n                  <th>Manifestation</th>\n                  <th>Manifestation Severity</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr>\n                  <td>Intolerance to lactose</td>\n                  <td>2022</td>\n                  <td>14/03/2023</td>\n                  <td>Abdominal pain, Abdominal bloating, Diarrhoea</td>\n                  <td>Mild</td>\n                </tr>\n                <tr>\n                  <td>Gluten intolerance</td>\n                  <td>1999</td>\n                  <td>12/01/2023</td>\n                  <td>Fatigue</td>\n                  <td>Mild</td>\n                </tr>\n                <tr>\n                  <td>Chlorhexidine</td>\n                  <td>12/01/2023</td>\n                  <td>09/09/2023</td>\n                  <td>Hives</td>\n                  <td>Mild</td>\n                </tr>\n              </tbody>\n            </table>\n            </div>"
         },
         "entry" : [{
           "reference" : "urn:uuid:ad6fb7b7-c76f-441e-88a5-9051e795db26"
@@ -387,7 +387,7 @@
       "id" : "06ba95f5-345b-412d-aa66-99e354470015",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_06ba95f5-345b-412d-aa66-99e354470015\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance 06ba95f5-345b-412d-aa66-99e354470015</b></p><a name=\"06ba95f5-345b-412d-aa66-99e354470015\"> </a><a name=\"hc06ba95f5-345b-412d-aa66-99e354470015\"> </a><a name=\"06ba95f5-345b-412d-aa66-99e354470015-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1269424006}\">Gluten intolerance</span></p><p><b>patient</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>onset</b>: 1999</p><p><b>recordedDate</b>: 2023-01-12</p><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Substance</b></td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 89811004}\">Gluten</span></td><td><span title=\"Codes:{http://snomed.info/sct 84229001}\">Fatigue</span></td><td>Mild</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_06ba95f5-345b-412d-aa66-99e354470015\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance 06ba95f5-345b-412d-aa66-99e354470015</b></p><a name=\"06ba95f5-345b-412d-aa66-99e354470015\"> </a><a name=\"hc06ba95f5-345b-412d-aa66-99e354470015\"> </a><a name=\"06ba95f5-345b-412d-aa66-99e354470015-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>type</b>: Intolerance</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1269424006}\">Gluten intolerance</span></p><p><b>patient</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>onset</b>: 1999</p><p><b>recordedDate</b>: 2023-01-12</p><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Substance</b></td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 89811004}\">Gluten</span></td><td><span title=\"Codes:{http://snomed.info/sct 84229001}\">Fatigue</span></td><td>Mild</td></tr></table></div>"
       },
       "clinicalStatus" : {
         "coding" : [{
@@ -396,6 +396,7 @@
         }],
         "text" : "Active"
       },
+      "type" : "intolerance",
       "code" : {
         "coding" : [{
           "system" : "http://snomed.info/sct",
@@ -434,7 +435,7 @@
       "id" : "d24db2d5-3400-4158-892c-d018acdeba09",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_d24db2d5-3400-4158-892c-d018acdeba09\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance d24db2d5-3400-4158-892c-d018acdeba09</b></p><a name=\"d24db2d5-3400-4158-892c-d018acdeba09\"> </a><a name=\"hcd24db2d5-3400-4158-892c-d018acdeba09\"> </a><a name=\"d24db2d5-3400-4158-892c-d018acdeba09-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 373568007}\">Chlorhexidine</span></p><p><b>patient</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>onset</b>: 2021-01-12</p><p><b>recordedDate</b>: 2021-09-09</p><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Substance</b></td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 373568007}\">Chlorhexidine</span></td><td><span title=\"Codes:{http://snomed.info/sct 247472004}\">Hives</span></td><td>Mild</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_d24db2d5-3400-4158-892c-d018acdeba09\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance d24db2d5-3400-4158-892c-d018acdeba09</b></p><a name=\"d24db2d5-3400-4158-892c-d018acdeba09\"> </a><a name=\"hcd24db2d5-3400-4158-892c-d018acdeba09\"> </a><a name=\"d24db2d5-3400-4158-892c-d018acdeba09-en-AU\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 373568007}\">Chlorhexidine</span></p><p><b>patient</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>onset</b>: 2023-01-12</p><p><b>recordedDate</b>: 2023-09-09</p><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Substance</b></td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 373568007}\">Chlorhexidine</span></td><td><span title=\"Codes:{http://snomed.info/sct 247472004}\">Hives</span></td><td>Mild</td></tr></table></div>"
       },
       "clinicalStatus" : {
         "coding" : [{
@@ -453,8 +454,8 @@
       "patient" : {
         "reference" : "urn:uuid:9be88cc6-09e8-4dc6-b058-88676240dbc7"
       },
-      "onsetDateTime" : "2021-01-12",
-      "recordedDate" : "2021-09-09",
+      "onsetDateTime" : "2023-01-12",
+      "recordedDate" : "2023-09-09",
       "reaction" : [{
         "substance" : {
           "coding" : [{
@@ -481,7 +482,7 @@
       "id" : "347e8435-cea1-4e94-9755-abb027926bb1",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_347e8435-cea1-4e94-9755-abb027926bb1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 347e8435-cea1-4e94-9755-abb027926bb1</b></p><a name=\"347e8435-cea1-4e94-9755-abb027926bb1\"> </a><a name=\"hc347e8435-cea1-4e94-9755-abb027926bb1\"> </a><a name=\"347e8435-cea1-4e94-9755-abb027926bb1-en-AU\"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"#hc347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\">Medication Bisoprolol fumarate 2.5 mg tablet</a></p><p><b>subject</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>dateAsserted</b>: 2025-01-05</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>1/2 tablet in the morning</td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #bisoprolol</b></p><a name=\"347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\"> </a><a name=\"hc347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\"> </a><a name=\"347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol-en-AU\"> </a><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 23281011000036106}\">Bisoprolol 2.5mg tab</span></p></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_347e8435-cea1-4e94-9755-abb027926bb1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 347e8435-cea1-4e94-9755-abb027926bb1</b></p><a name=\"347e8435-cea1-4e94-9755-abb027926bb1\"> </a><a name=\"hc347e8435-cea1-4e94-9755-abb027926bb1\"> </a><a name=\"347e8435-cea1-4e94-9755-abb027926bb1-en-AU\"> </a><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"#hc347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\">Medication Bisoprolol fumarate 2.5 mg tablet</a></p><p><b>subject</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>effective</b>: 2025-01-05</p><p><b>dateAsserted</b>: 2025-01-05</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>1/2 tablet in the morning</td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #bisoprolol</b></p><a name=\"347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\"> </a><a name=\"hc347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol\"> </a><a name=\"347e8435-cea1-4e94-9755-abb027926bb1/bisoprolol-en-AU\"> </a><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 23281011000036106}\">Bisoprolol 2.5mg tab</span></p><p><b>form</b>: <span title=\"Codes:{http://snomed.info/sct 385055001}\">Tablet</span></p><h3>Ingredients</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Item[x]</b></td><td><b>Strength</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://snomed.info/sct 386869006}\">Bisoprolol fumarate</span></td><td>2.5 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span>/1 Tablet<span style=\"background: LightGoldenRodYellow\"> (Details: SNOMED CT  code385055001 = 'Tablet')</span></td></tr></table></blockquote></div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
@@ -493,7 +494,36 @@
             "display" : "Bisoprolol fumarate 2.5 mg tablet"
           }],
           "text" : "Bisoprolol 2.5mg tab"
-        }
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "385055001",
+            "display" : "Tablet"
+          }]
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "http://snomed.info/sct",
+              "code" : "386869006",
+              "display" : "Bisoprolol fumarate"
+            }]
+          },
+          "strength" : {
+            "numerator" : {
+              "value" : 2.5,
+              "system" : "http://unitsofmeasure.org",
+              "code" : "mg"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Tablet",
+              "system" : "http://snomed.info/sct",
+              "code" : "385055001"
+            }
+          }
+        }]
       }],
       "status" : "active",
       "medicationReference" : {
@@ -502,6 +532,7 @@
       "subject" : {
         "reference" : "urn:uuid:9be88cc6-09e8-4dc6-b058-88676240dbc7"
       },
+      "effectiveDateTime" : "2025-01-05",
       "dateAsserted" : "2025-01-05",
       "dosage" : [{
         "text" : "1/2 tablet in the morning"
