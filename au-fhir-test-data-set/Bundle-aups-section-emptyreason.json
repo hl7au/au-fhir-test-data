@@ -1,0 +1,307 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "aups-section-emptyreason",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle"]
+  },
+  "language" : "en-AU",
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:uuid:b6c2419f-3add-455b-9825-7d835b41f34a"
+  },
+  "type" : "document",
+  "timestamp" : "2025-01-08T20:42:11.0607701+10:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:514af4c1-194d-48b4-8afe-7be09d3f895a",
+    "resource" : {
+      "resourceType" : "Composition",
+      "id" : "514af4c1-194d-48b4-8afe-7be09d3f895a",
+      "meta" : {
+        "versionId" : "1"
+      },
+      "language" : "en-AU",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\"><a name=\"Composition_514af4c1-194d-48b4-8afe-7be09d3f895a\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition 514af4c1-194d-48b4-8afe-7be09d3f895a</b></p><a name=\"514af4c1-194d-48b4-8afe-7be09d3f895a\"> </a><a name=\"hc514af4c1-194d-48b4-8afe-7be09d3f895a\"> </a><a name=\"514af4c1-194d-48b4-8afe-7be09d3f895a-en-AU\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 1; Language: en-AU</p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>date</b>: 2025-01-08</p><p><b>author</b>: <a href=\"Bundle-section-emptyreason.html#urn-uuid-715076f4-007a-4c9d-beed-c155cc46f765\">Bundle: identifier = UUID:b6c2419f-3add-455b-9825-7d835b41f34a; type = document; timestamp = 2025-01-08 20:42:11+1000</a></p><p><b>title</b>: International Patient Summary</p><p><b>custodian</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-70a756e3-20b3-4637-8601-a222983e295a\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><h3>Events</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActClass PCPR}\">care provision</span></td><td>?? --&gt; 2025-01-08</td></tr></table></div>"
+      },
+      "status" : "final",
+      "type" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5",
+          "display" : "Patient summary Document"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:9be88cc6-09e8-4dc6-b058-88676240dbc7"
+      },
+      "date" : "2025-01-08",
+      "author" : [{
+        "reference" : "urn:uuid:715076f4-007a-4c9d-beed-c155cc46f765"
+      }],
+      "title" : "International Patient Summary",
+      "custodian" : {
+        "reference" : "urn:uuid:70a756e3-20b3-4637-8601-a222983e295a"
+      },
+      "event" : [{
+        "code" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActClass",
+            "code" : "PCPR"
+          }]
+        }],
+        "period" : {
+          "end" : "2025-01-08"
+        }
+      }],
+      "section" : [{
+        "title" : "Allergies and Intolerances",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "48765-2",
+            "display" : "Allergies and adverse reactions Document"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">There is no information available regarding the consumer's allergy conditions.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      },
+      {
+        "title" : "Problem List",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11450-4",
+            "display" : "Problem list - Reported"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">There is no information available about the consumer's health problems or disabilities.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      },
+      {
+        "title" : "Medication Summary",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10160-0",
+            "display" : "History of Medication use Narrative"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">There is no information available about the consumer's medication use or administration.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      },
+      {
+        "title" : "Immunizations",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11369-6",
+            "display" : "History of Immunization Narrative"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">There is no information available about the consumer's immunisations.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:9be88cc6-09e8-4dc6-b058-88676240dbc7",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "9be88cc6-09e8-4dc6-b058-88676240dbc7",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_9be88cc6-09e8-4dc6-b058-88676240dbc7\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 9be88cc6-09e8-4dc6-b058-88676240dbc7</b></p><a name=\"9be88cc6-09e8-4dc6-b058-88676240dbc7\"> </a><a name=\"hc9be88cc6-09e8-4dc6-b058-88676240dbc7\"> </a><a name=\"9be88cc6-09e8-4dc6-b058-88676240dbc7-en-AU\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Mr. Ronny Lawrence Irvine Male, DoB:  ( DVA Number:\u00a0QX827261)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:ronny.irvine@myownpersonaldomain.com\">ronny.irvine@myownpersonaldomain.com</a></li><li>180 Hermann Rd Belmore River NSW 2440 AU (home)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This extension applies to the Patient, Person, and RelatedPerson resources and is used to indicate whether a person identifies as being of Aboriginal or Torres Strait Islander origin.\"><a href=\"https://build.fhir.org/ig/mjosborne1/mjo-au-fhir-base/StructureDefinition-indigenous-status.html\">Australian Indigenous Status</a></td><td colspan=\"3\">australian-indigenous-status-1 2: Torres Strait Islander but not Aboriginal origin</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+        "valueCoding" : {
+          "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+          "code" : "2",
+          "display" : "Torres Strait Islander but not Aboriginal origin"
+        }
+      }],
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "DVAU",
+            "display" : "DVA Number"
+          }],
+          "text" : "DVA Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/dva",
+        "value" : "QX827261"
+      }],
+      "name" : [{
+        "use" : "usual",
+        "text" : "Mr. Ronny Lawrence Irvine",
+        "family" : "Irvine",
+        "given" : ["Ronny",
+        "Lawrence"]
+      }],
+      "telecom" : [{
+        "system" : "email",
+        "value" : "ronny.irvine@myownpersonaldomain.com",
+        "use" : "home"
+      }],
+      "gender" : "male",
+      "_birthDate" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      },
+      "address" : [{
+        "use" : "home",
+        "line" : ["180 Hermann Rd"],
+        "city" : "Belmore River",
+        "state" : "NSW",
+        "postalCode" : "2440",
+        "country" : "AU"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:715076f4-007a-4c9d-beed-c155cc46f765",
+    "resource" : {
+      "resourceType" : "RelatedPerson",
+      "id" : "715076f4-007a-4c9d-beed-c155cc46f765",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"RelatedPerson_715076f4-007a-4c9d-beed-c155cc46f765\"> </a><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson 715076f4-007a-4c9d-beed-c155cc46f765</b></p><a name=\"715076f4-007a-4c9d-beed-c155cc46f765\"> </a><a name=\"hc715076f4-007a-4c9d-beed-c155cc46f765\"> </a><a name=\"715076f4-007a-4c9d-beed-c155cc46f765-en-AU\"> </a><p><b>patient</b>: <a href=\"Bundle-basicsummary.html#urn-uuid-9be88cc6-09e8-4dc6-b058-88676240dbc7\">Bundle: identifier = UUID:0bd27fed-5f11-4344-beeb-c3b78c00f604; type = document; timestamp = 2025-02-05 19:33:11+1000</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode SON}\">Son</span></p><p><b>name</b>: Mr. Sonny Irvine</p><p><b>telecom</b>: ph: 0491570737(Mobile)</p><p><b>address</b>: 1415 Right Bank Rd Belmore River NSW 2440 AU (home)</p></div>"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:9be88cc6-09e8-4dc6-b058-88676240dbc7"
+      },
+      "relationship" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+          "code" : "SON"
+        }],
+        "text" : "Son"
+      }],
+      "name" : [{
+        "use" : "usual",
+        "text" : "Mr. Sonny Irvine",
+        "family" : "Irvine",
+        "given" : ["Sonny"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0491570737",
+        "use" : "mobile"
+      }],
+      "address" : [{
+        "use" : "home",
+        "line" : ["1415 Right Bank Rd"],
+        "city" : "Belmore River",
+        "state" : "NSW",
+        "postalCode" : "2440",
+        "country" : "AU"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:70a756e3-20b3-4637-8601-a222983e295a",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "70a756e3-20b3-4637-8601-a222983e295a",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_70a756e3-20b3-4637-8601-a222983e295a\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization 70a756e3-20b3-4637-8601-a222983e295a</b></p><a name=\"70a756e3-20b3-4637-8601-a222983e295a\"> </a><a name=\"hc70a756e3-20b3-4637-8601-a222983e295a\"> </a><a name=\"70a756e3-20b3-4637-8601-a222983e295a-en-AU\"> </a><p><b>identifier</b>: HPI-O/8003629900040482, ABN/81132303164</p><p><b>type</b>: <span title=\"Codes:{http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8520}, {http://snomed.info/sct 708175003}\">Diagnostic Radiology</span></p><p><b>name</b>: Douglas Radiology</p><p><b>telecom</b>: ph: 0355500107(Work), <a href=\"mailto:reception@douglasradiology.example.com.au\">reception@douglasradiology.example.com.au</a></p><p><b>address</b>: 74 Freedom Lane Douglas VIC 3401 </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "NOI"
+          }],
+          "text" : "HPI-O"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+        "value" : "8003629900040482"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "XX"
+          }],
+          "text" : "ABN"
+        },
+        "system" : "http://hl7.org.au/id/abn",
+        "value" : "81132303164"
+      }],
+      "type" : [{
+        "coding" : [{
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code" : "8520",
+          "display" : "Pathology and Diagnostic Imaging Services"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "708175003",
+          "display" : "Diagnostic imaging service"
+        }],
+        "text" : "Diagnostic Radiology"
+      }],
+      "name" : "Douglas Radiology",
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0355500107",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "reception@douglasradiology.example.com.au"
+      }],
+      "address" : [{
+        "line" : ["74 Freedom Lane"],
+        "city" : "Douglas",
+        "state" : "VIC",
+        "postalCode" : "3401"
+      }]
+    }
+  }]
+}
