@@ -1,109 +1,81 @@
 {
-    "resourceType": "ServiceRequest",
-    "id": "order-obsus-1",
-    "meta": {
-      "profile": [
-        "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"
-      ]
+  "resourceType" : "ServiceRequest",
+  "id" : "order-obsus-1",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-obsus-1</b></p><a name=\"order-obsus-1\"> </a><a name=\"hcorder-obsus-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-imag.html\">AU eRequesting Imaging Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 1</p><p><b>identifier</b>: Placer Identifier/EMC1552642-1111-01</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1111</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 363679005}\">Imaging</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 446208007}\">2nd Trimester US</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>occurrence</b>: 2025-05-08 --&gt; 2025-06-11</p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: <a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></p><p><b>note</b>: </p><blockquote><div><p>18-22 week Morphology scan. Pt advised the scan is ideally done around 20 weeks gestation.</p>\n</div></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+    "valueInteger" : 1
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PLAC",
+        "display" : "Placer Identifier"
+      }]
     },
-    "extension": [
-      {
-        "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
-        "valueInteger": 1
-      },
-      {
-        "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "16985007",
-              "display": "Fasting"
-            }
-          ]
-        }
-      }
-    ],
-    "identifier": [
-      {
-        "type": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-              "code": "PLAC",
-              "display": "Placer Identifier"
-            }
-          ]
-        },
-        "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-        "value": "EMC1552642-1111-01",
-        "assigner": {
-          "display": "Elimbah Medical Center"
-        }
-      }
-    ],
-    "requisition": {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "PGN",
-            "display": "Placer Group Number"
-          }
-        ]
-      },
-      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
-      "value": "EMC1552642-1111",
-      "assigner": {
-        "display": "Elimbah Medical Center"
-      }
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC1552642-1111-01",
+    "assigner" : {
+      "display" : "Elimbah Medical Center"
+    }
+  }],
+  "requisition" : {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PGN",
+        "display" : "Placer Group Number"
+      }]
     },
-    "status": "active",
-    "intent": "order",
-    "category": [
-      {
-        "coding": [
-          {
-            "system": "http://snomed.info/sct",
-            "code": "363679005",
-            "display": "Imaging"
-          }
-        ]
-      }
-    ],
-    "code": {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "446208007",
-          "display": "Ultrasonography in second trimester"
-        }
-      ],
-      "text": "2nd Trimester US"
-    },
-    "subject": {
-      "reference": "Patient/belger-remedios"
-    },
-    "encounter": {
-      "reference": "Encounter/obsgynaeclinic"
-    },
-    "occurrencePeriod": {
-        "start": "2025-05-08",
-        "end": "2025-06-11"
-    },
-    "authoredOn": "2025-02-21",
-    "requester": {
-      "reference": "PractitionerRole/obstetrician-losch-sallie"
-    },
-    "supportingInfo": [
-      {
-        "reference": "Observation/observation-pregnancy-status",
-        "display": "Pregnancy status"
-      }
-    ],
-    "note": [
-        {
-            "text": "18-22 week Morphology scan. Pt advised the scan is ideally done around 20 weeks gestation."
-        }
-    ]
-  }
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC1552642-1111",
+    "assigner" : {
+      "display" : "Elimbah Medical Center"
+    }
+  },
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "363679005",
+      "display" : "Imaging"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "446208007",
+      "display" : "Ultrasonography in second trimester"
+    }],
+    "text" : "2nd Trimester US"
+  },
+  "subject" : {
+    "reference" : "Patient/belger-remedios"
+  },
+  "encounter" : {
+    "reference" : "Encounter/obsgynaeclinic"
+  },
+  "occurrencePeriod" : {
+    "start" : "2025-05-08",
+    "end" : "2025-06-11"
+  },
+  "authoredOn" : "2025-02-21",
+  "requester" : {
+    "reference" : "PractitionerRole/obstetrician-losch-sallie"
+  },
+  "supportingInfo" : [{
+    "reference" : "Observation/observation-pregnancy-status",
+    "display" : "Pregnancy status"
+  }],
+  "note" : [{
+    "text" : "18-22 week Morphology scan. Pt advised the scan is ideally done around 20 weeks gestation."
+  }]
+}

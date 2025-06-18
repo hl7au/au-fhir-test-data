@@ -1,0 +1,73 @@
+{
+  "resourceType" : "CommunicationRequest",
+  "id" : "communicationrequest-donotperform",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-patient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CommunicationRequest communicationrequest-donotperform</b></p><a name=\"communicationrequest-donotperform\"> </a><a name=\"hccommunicationrequest-donotperform\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-communicationrequest-patient.html\">AU eRequesting CommunicationRequest Patient</a></p></div><p><b>groupIdentifier</b>: Placer Group Number/EMC1552642-1111</p><p><b>status</b>: Active</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category reminder}\">reminder</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category instruction}\">instruction</span></p><p><b>doNotPerform</b>: true</p><p><b>medium</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode EMAILWRIT}\">email</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>about</b>: <a href=\"ServiceRequest-order-obsus-1.html\">ServiceRequest Ultrasonography in second trimester</a></p><p><b>authoredOn</b>: 2025-03-15 10:30:00+1000</p><p><b>requester</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>recipient</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>sender</b>: <a href=\"Organization-mount-charlton-radiology.html\">Organization Mount Charlton Radiology</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason patient}\">Patient Request</span></p></div>"
+  },
+  "groupIdentifier" : {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PGN",
+        "display" : "Placer Group Number"
+      }],
+      "text" : "Placer Group Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC1552642-1111",
+    "assigner" : {
+      "reference" : "Organization/elimbah-medical-center",
+      "display" : "Elimbah Medical Center"
+    }
+  },
+  "status" : "active",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
+      "code" : "reminder"
+    }],
+    "text" : "reminder"
+  },
+  {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
+      "code" : "instruction"
+    }],
+    "text" : "instruction"
+  }],
+  "doNotPerform" : true,
+  "medium" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode",
+      "code" : "EMAILWRIT"
+    }],
+    "text" : "email"
+  }],
+  "subject" : {
+    "reference" : "Patient/belger-remedios"
+  },
+  "about" : [{
+    "reference" : "ServiceRequest/order-obsus-1"
+  }],
+  "authoredOn" : "2025-03-15T10:30:00+10:00",
+  "requester" : {
+    "reference" : "Patient/belger-remedios"
+  },
+  "recipient" : [{
+    "reference" : "Patient/belger-remedios"
+  }],
+  "sender" : {
+    "reference" : "Organization/mount-charlton-radiology"
+  },
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason",
+      "code" : "patient",
+      "display" : "Patient Request"
+    }]
+  }]
+}
