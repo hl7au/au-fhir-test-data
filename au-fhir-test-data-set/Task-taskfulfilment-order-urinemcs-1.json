@@ -7,7 +7,7 @@
     ],
     "tag": [
       {
-        "system": "http://hl7.org.au/fhir/ereq/CodeSystem/au-erequesting-task-tag",
+        "system": "http://terminology.hl7.org.au/CodeSystem/task-tag",
         "code": "fulfilment-task"
       }
     ]

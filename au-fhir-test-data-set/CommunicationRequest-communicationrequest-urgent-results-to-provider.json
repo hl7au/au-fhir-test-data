@@ -1,0 +1,68 @@
+{
+  "resourceType" : "CommunicationRequest",
+  "id" : "communicationrequest-urgent-results-to-provider",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-urgentprovider"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CommunicationRequest communicationrequest-urgent-results-to-provider</b></p><a name=\"communicationrequest-urgent-results-to-provider\"> </a><a name=\"hccommunicationrequest-urgent-results-to-provider\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-communicationrequest-urgentprovider.html\">AU eRequesting CommunicationRequest Urgent Provider</a></p></div><p><b>groupIdentifier</b>: Placer Group Number/EMC4542244-5624</p><p><b>status</b>: Active</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/communication-category alert}\">alert</span></p><p><b>priority</b>: Urgent</p><p><b>medium</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationMode PHONE}\">phone</span></p><p><b>subject</b>: <a href=\"Patient-roberts-fred.html\">Fred Roberts  Male, DoB: 1961-06-16 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314661)</a></p><p><b>about</b>: <a href=\"ServiceRequest-order-xray-1.html\">ServiceRequest Plain chest X-ray</a></p><p><b>authoredOn</b>: 2024-05-11</p><p><b>requester</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>recipient</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>sender</b>: <a href=\"Organization-mount-charlton-radiology.html\">Organization Mount Charlton Radiology</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason urgent}\">Urgent Results</span></p></div>"
+  },
+  "groupIdentifier" : {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PGN",
+        "display" : "Placer Group Number"
+      }],
+      "text" : "Placer Group Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC4542244-5624",
+    "assigner" : {
+      "reference" : "Organization/elimbah-medical-center",
+      "display" : "Elimbah Medical Center"
+    }
+  },
+  "status" : "active",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
+      "code" : "alert",
+      "display" : "Alert"
+    }],
+    "text" : "alert"
+  }],
+  "priority" : "urgent",
+  "medium" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode",
+      "code" : "PHONE",
+      "display" : "telephone"
+    }],
+    "text" : "phone"
+  }],
+  "subject" : {
+    "reference" : "Patient/roberts-fred"
+  },
+  "about" : [{
+    "reference" : "ServiceRequest/order-xray-1"
+  }],
+  "authoredOn" : "2024-05-11",
+  "requester" : {
+    "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "recipient" : [{
+    "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred"
+  }],
+  "sender" : {
+    "reference" : "Organization/mount-charlton-radiology"
+  },
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason",
+      "code" : "urgent",
+      "display" : "Urgent Results"
+    }]
+  }]
+}
