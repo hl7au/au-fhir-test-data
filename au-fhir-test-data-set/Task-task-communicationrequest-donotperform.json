@@ -19,7 +19,7 @@
     "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
     "value" : "EMC1552642-1111",
     "assigner" : {
-      "reference" : "Organization/elimbah-medical-center",
+      "reference" : "Organization/elimbah-medical-centre",
       "display" : "Elimbah Medical Center"
     }
   },
