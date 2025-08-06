@@ -1,0 +1,4 @@
+# The filenames listed here won't be checked against the reference integrity script.
+# The lines that begin with # should be ignored as comment, note that only whole lines work, inline comment won't
+Bundle-aups-section-emptyreason.json
+Bundle-aups-basicsummary.json
