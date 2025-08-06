@@ -1,0 +1,60 @@
+name: Reference Integrity Check
+
+on:
+  pull_request:
+
+jobs:
+  run-script-and-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Python script
+        id: run_script
+        run: |
+          python .github/scripts/reference_integrity.py
+
+      - name: Check for error file and set result
+        id: set_result
+        run: |
+          if [ -f reference_errors.json ]; then
+            echo "result=FAIL" >> $GITHUB_OUTPUT
+            echo "errors=$(cat reference_errors.json)" >> $GITHUB_OUTPUT
+          else
+            echo "result=PASS" >> $GITHUB_OUTPUT
+            echo "errors={}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            let result = `Integrity Check Result: **${{ steps.set_result.outputs.result }}**`;
+            let errors = ${{ steps.set_result.outputs.errors }};
+            if (errors && errors !== "{}") {
+              let table = "\n\n**Reference Integrity Errors:**\n\n| Filename | Error |\n|---|---|\n";
+              for (const [file, error] of Object.entries(errors)) {
+                table += `| \`${file}\` | ${error} |\n`;
+              }
+              result += table;
+            }
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: result
+            })
+
+      - name: Fail if errors found
+        if: steps.set_result.outputs.result == 'FAIL'
+        run: |
+          echo "Reference integrity errors found. Failing the workflow."
+          exit 1
