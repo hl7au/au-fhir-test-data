@@ -4,10 +4,10 @@ on:
   pull_request:
 
 jobs:
-  run-script-and-comment:
+  run-check:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,46 +15,29 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Run Python script
-        id: run_script
         run: |
           python .github/scripts/reference_integrity.py
 
-      - name: Check for error file and set result
-        id: set_result
+      - name: Prepare result JSON
         run: |
           if [ -f reference_errors.json ]; then
-            echo "result=FAIL" >> $GITHUB_OUTPUT
-            echo "errors=$(cat reference_errors.json)" >> $GITHUB_OUTPUT
+            echo '{"result":"FAIL :red_circle:","errors":'$(cat reference_errors.json)'}' > result.json
           else
-            echo "result=PASS" >> $GITHUB_OUTPUT
-            echo "errors={}" >> $GITHUB_OUTPUT
+            echo '{"result":"PASS :white_check_mark:","errors":{}}' > result.json
           fi
 
-      - name: Comment on PR
-        uses: actions/github-script@v7
+      - name: Upload result artifact
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            let result = `Integrity Check Result: **${{ steps.set_result.outputs.result }}**`;
-            let errors = ${{ steps.set_result.outputs.errors }};
-            if (errors && errors !== "{}") {
-              let table = "\n\n**Reference Integrity Errors:**\n\n| Filename | Error |\n|---|---|\n";
-              for (const [file, error] of Object.entries(errors)) {
-                table += `| \`${file}\` | ${error} |\n`;
-              }
-              result += table;
-            }
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: result
-            })
+          name: reference-check-result
+          path: result.json
 
       - name: Fail if errors found
-        if: steps.set_result.outputs.result == 'FAIL'
         run: |
-          echo "Reference integrity errors found. Failing the workflow."
-          exit 1
+          if [ -f reference_errors.json ]; then
+            echo "Reference integrity errors found. Failing the workflow."
+            exit 1
+          fi
