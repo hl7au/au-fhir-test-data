@@ -4,10 +4,8 @@ on:
   pull_request:
 
 jobs:
-  run-check:
+  run-script:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -15,29 +13,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.x'
 
       - name: Run Python script
+        id: run_script
         run: |
           python .github/scripts/reference_integrity.py
 
-      - name: Prepare result JSON
+      - name: Check for error file, set result, fail if errors found
+        id: set_result
         run: |
-          if [ -f reference_errors.json ]; then
-            echo '{"result":"FAIL :red_circle:","errors":'$(cat reference_errors.json)'}' > result.json
-          else
-            echo '{"result":"PASS :white_check_mark:","errors":{}}' > result.json
-          fi
-
-      - name: Upload result artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: reference-check-result
-          path: result.json
-
-      - name: Fail if errors found
-        run: |
-          if [ -f reference_errors.json ]; then
+          if [ -f reference_errors ]; then
+            echo "Reference Integrity Check failed" >> $GITHUB_STEP_SUMMARY
+            echo "$(cat reference_errors)" >> $GITHUB_STEP_SUMMARY
             echo "Reference integrity errors found. Failing the workflow."
             exit 1
+          else
+            echo "Reference Integrity Check passed" >> $GITHUB_STEP_SUMMARY
           fi

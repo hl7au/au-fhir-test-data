@@ -35,6 +35,17 @@ def load_quarantine_list(path):
         pass
     return quarantine
 
+def write_result(errors):
+    if errors:
+        with open("reference_errors", "w") as f:
+            f.write("| Filename | Error |\n|---|---|\n")
+            for file_path, error in errors.items():
+                f.write(f"| {file_path} | {error} |\n")
+    else:
+        error_file = Path("reference_errors")
+        if error_file.exists():
+            error_file.unlink()
+
 def main():
     json_files = list(Path('.').rglob('*.json'))
     references = set()
@@ -54,9 +65,9 @@ def main():
                     if ref and not ref.startswith('#'): # Ignore local references
                         references_list[file_path].add(ref)
         except json.JSONDecodeError as e:
-            errors[str(file_path)] = f"JSON decode error."
+            errors[str(file_path)] = "JSON decode error."
         except Exception as e:
-            errors[str(file_path)] = f"Error reading file."
+            errors[str(file_path)] = "Error reading file."
 
     for file_path, refs in references_list.items():
         for ref in refs:
@@ -66,15 +77,7 @@ def main():
     quarantine = load_quarantine_list(".github/scripts/reference_integrity_quarantine")
     # Remove errors for quarantined files (by filename, not path)
     errors = {k: v for k, v in errors.items() if Path(k).name not in quarantine}
-
-    if errors:
-        with open("reference_errors.json", "w") as f:
-            json.dump(errors, f)
-    else:
-        # Remove error file if exists from previous runs
-        error_file = Path("reference_errors.json")
-        if error_file.exists():
-            error_file.unlink()
+    write_result(errors)
 
 if __name__ == "__main__":
     main()
