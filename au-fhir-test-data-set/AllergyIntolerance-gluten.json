@@ -59,5 +59,10 @@
       ],
       "severity": "mild"
     }
+  ],
+  "note": [
+    {
+      "text": "Patient reports fatigue after gluten consumption. Advised to maintain a gluten-free diet to avoid symptoms."
+    }
   ]
 }
