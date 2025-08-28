@@ -2,9 +2,7 @@
 HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and to support developers. This repository includes synthetic (realistic but not real) data that conforms to HL7 AU FHIR Implementation Guides (IGs). The synthetic data covers a broader and expanded content scope over that in the FHIR instance examples included in published HL7 AU FHIR IGs.
 
 >[!WARNING]
->All data in this data set is for test purpose only. They shall not contain any personal or protected health information. 
->
->The data shall be strictly fictional. Any resemblance to real persons, organizations or locations is purely coincidental.
+> This dataset is provided for testing purposes only. The dataset shall not contain any personal information or [Protected Health Information (PHI)](https://en.wikipedia.org/wiki/Protected_health_information). All persons are entirely fictitious, and any resemblance or similarity to real individuals is purely coincidental. Locations and organisations may reflect real-world entities (for example jurisdictions), but are included only for contextual realism. 
 >
 >See [GOVERNANCE](/GOVERNANCE.md) for HL7 Australia License and Legal information.
 
