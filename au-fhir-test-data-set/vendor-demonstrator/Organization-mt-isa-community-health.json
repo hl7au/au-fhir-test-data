@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "st-kilda-medical-clinic",
+  "id": "mt-isa-community-health",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003621566708320"
+      "value": "8003623233375723"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81138604897"
+      "value": "81149577996"
     }
   ],
   "type": [
@@ -39,38 +39,38 @@
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-          "code": "8511",
-          "display": "General Practice"
+          "code": "8599",
+          "display": "Other Health Care Services n.e.c."
         },
         {
-          "code": "788007007",
-          "display": "General practice service",
+          "code": "413294000",
+          "display": "Community health services",
           "system": "http://snomed.info/sct"
         }
       ],
-      "text": "General practice medical clinic service"
+      "text": "Public Community Health Centre"
     }
   ],
-  "name": "St Kilda Medical Clinic",
+  "name": "Mt Isa Community Health",
   "telecom": [
     {
       "system": "phone",
-      "value": "0355501206",
+      "value": "0755507608",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "reception@stkildamedicalclinic.myownpersonaldomain.com"
+      "value": "contact@mtisacommunityhealth.example.com"
     }
   ],
   "address": [
     {
       "line": [
-        "117 Abba Est"
+        "149 Gateway Est"
       ],
-      "city": "St Kilda",
-      "state": "VIC",
-      "postalCode": "3182"
+      "city": "Mount Isa",
+      "state": "QLD",
+      "postalCode": "4825"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "mt-isa-community-health",
+  "id": "parramatta-medical-clinic",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003623233375723"
+      "value": "8003629900042876"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81149577996"
+      "value": "81151542032"
     }
   ],
   "type": [
@@ -39,38 +39,38 @@
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-          "code": "8599",
-          "display": "Other Healthcare Services nec"
+          "code": "8511",
+          "display": "General Practice Medical Services"
         },
         {
-          "code": "413294000",
-          "display": "Community health services",
+          "code": "788007007",
+          "display": "General practice service",
           "system": "http://snomed.info/sct"
         }
       ],
-      "text": "Public Community Health Centre"
+      "text": "General practice medical clinic service"
     }
   ],
-  "name": "Mt Isa Community Health",
+  "name": "Parramatta Medical Clinic",
   "telecom": [
     {
       "system": "phone",
-      "value": "0755507608",
+      "value": "0255506902",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "contact@mtisacommunityhealth.example.com"
+      "value": "reception@parramattamedicalclinic.example.com"
     }
   ],
   "address": [
     {
       "line": [
-        "149 Gateway Est"
+        "14 West Way"
       ],
-      "city": "Mount Isa",
-      "state": "QLD",
-      "postalCode": "4825"
+      "city": "Parramatta",
+      "state": "NSW",
+      "postalCode": "2150"
     }
   ]
 }

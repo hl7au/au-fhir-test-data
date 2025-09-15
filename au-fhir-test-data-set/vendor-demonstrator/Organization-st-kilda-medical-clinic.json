@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "sunshine-medical-clinic",
+  "id": "st-kilda-medical-clinic",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003621566708064"
+      "value": "8003621566708320"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81189336154"
+      "value": "81138604897"
     }
   ],
   "type": [
@@ -40,7 +40,7 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
-          "display": "General Practice"
+          "display": "General Practice Medical Services"
         },
         {
           "code": "788007007",
@@ -51,26 +51,26 @@
       "text": "General practice medical clinic service"
     }
   ],
-  "name": "Sunshine Medical Clinic",
+  "name": "St Kilda Medical Clinic",
   "telecom": [
     {
       "system": "phone",
-      "value": "0355505339",
+      "value": "0355501206",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "reception@sunshinemedicalclinic.myownpersonaldomain.com"
+      "value": "reception@stkildamedicalclinic.myownpersonaldomain.com"
     }
   ],
   "address": [
     {
       "line": [
-        "86 Homer Cl"
+        "117 Abba Est"
       ],
-      "city": "Sunshine",
+      "city": "St Kilda",
       "state": "VIC",
-      "postalCode": "3020"
+      "postalCode": "3182"
     }
   ]
 }

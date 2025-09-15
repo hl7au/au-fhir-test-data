@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "westmead-medical-clinic",
+  "id": "westmead-pharmacy",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003629900042884"
+      "value": "8003626566709251"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81185310423"
+      "value": "81196291661"
     }
   ],
   "type": [
@@ -39,34 +39,34 @@
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-          "code": "8511",
-          "display": "General Practice"
+          "code": "4271",
+          "display": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
         },
         {
-          "code": "788007007",
-          "display": "General practice service",
+          "code": "310080006",
+          "display": "Pharmacy service",
           "system": "http://snomed.info/sct"
         }
       ],
-      "text": "General practice medical clinic service"
+      "text": "Pharmacy, retail, operation"
     }
   ],
-  "name": "Westmead Medical Clinic",
+  "name": "Westmead Pharmacy",
   "telecom": [
     {
       "system": "phone",
-      "value": "0270102490",
+      "value": "0255500514",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "reception@westmeadmedicalclinic.example.com"
+      "value": "contact@westmeadpharmacy.example.org"
     }
   ],
   "address": [
     {
       "line": [
-        "134 Forrest St"
+        "89 Versace Ave"
       ],
       "city": "Westmead",
       "state": "NSW",

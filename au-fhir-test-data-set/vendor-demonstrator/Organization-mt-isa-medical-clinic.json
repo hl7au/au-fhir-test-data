@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "parramatta-medical-clinic",
+  "id": "mt-isa-medical-clinic",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003629900042876"
+      "value": "8003628233375649"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81151542032"
+      "value": "81173067754"
     }
   ],
   "type": [
@@ -40,7 +40,7 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
-          "display": "General Practice"
+          "display": "General Practice Medical Services"
         },
         {
           "code": "788007007",
@@ -51,26 +51,26 @@
       "text": "General practice medical clinic service"
     }
   ],
-  "name": "Parramatta Medical Clinic",
+  "name": "Mt Isa Medical Clinic",
   "telecom": [
     {
       "system": "phone",
-      "value": "0255506902",
+      "value": "0755503450",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "reception@parramattamedicalclinic.example.com"
+      "value": "reception@mtisamedicalclinic.example.org"
     }
   ],
   "address": [
     {
       "line": [
-        "14 West Way"
+        "98 Airport Ave"
       ],
-      "city": "Parramatta",
-      "state": "NSW",
-      "postalCode": "2150"
+      "city": "Mount Isa",
+      "state": "QLD",
+      "postalCode": "4825"
     }
   ]
 }

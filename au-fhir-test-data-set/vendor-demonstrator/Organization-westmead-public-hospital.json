@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "westmead-pharmacy",
+  "id": "westmead-public-hospital",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003626566709251"
+      "value": "8003626566709236"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81196291661"
+      "value": "81114949661"
     }
   ],
   "type": [
@@ -39,34 +39,39 @@
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-          "code": "4271",
-          "display": "Retail Pharmacy"
+          "code": "8401",
+          "display": "Hospitals (Except Psychiatric Hospitals)"
         },
         {
-          "code": "310080006",
-          "display": "Pharmacy service",
+          "code": "1790241000168101",
+          "display": "Acute care public hospital service",
           "system": "http://snomed.info/sct"
         }
       ],
-      "text": "Pharmacy, retail, operation"
+      "text": "Public acute care Hospital"
     }
   ],
-  "name": "Westmead Pharmacy",
+  "name": "Westmead Public Hospital",
   "telecom": [
     {
       "system": "phone",
-      "value": "0255500514",
+      "value": "0270105238",
+      "use": "work"
+    },
+    {
+      "system": "phone",
+      "value": "1800975711",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "contact@westmeadpharmacy.example.org"
+      "value": "reception@westmeadpublichospital.example.net"
     }
   ],
   "address": [
     {
       "line": [
-        "89 Versace Ave"
+        "26 Queen Cnr"
       ],
       "city": "Westmead",
       "state": "NSW",

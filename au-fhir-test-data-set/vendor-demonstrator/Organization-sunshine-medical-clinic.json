@@ -1,6 +1,6 @@
 {
   "resourceType": "Organization",
-  "id": "parramatta-public-hospital",
+  "id": "sunshine-medical-clinic",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
@@ -18,7 +18,7 @@
         "text": "HPI-O"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
-      "value": "8003621566708288"
+      "value": "8003621566708064"
     },
     {
       "type": {
@@ -31,7 +31,7 @@
         "text": "ABN"
       },
       "system": "http://hl7.org.au/id/abn",
-      "value": "81156604035"
+      "value": "81189336154"
     }
   ],
   "type": [
@@ -39,38 +39,38 @@
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-          "code": "8401",
-          "display": "Hospitals (except Psychiatric Hospitals)"
+          "code": "8511",
+          "display": "General Practice Medical Services"
         },
         {
-          "code": "1790241000168101",
-          "display": "Acute care public hospital service",
+          "code": "788007007",
+          "display": "General practice service",
           "system": "http://snomed.info/sct"
         }
       ],
-      "text": "Public acute care Hospital"
+      "text": "General practice medical clinic service"
     }
   ],
-  "name": "Parramatta Public Hospital",
+  "name": "Sunshine Medical Clinic",
   "telecom": [
     {
       "system": "phone",
-      "value": "0255502598",
+      "value": "0355505339",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "reception@parramattapublichospital.myownpersonaldomain.com"
+      "value": "reception@sunshinemedicalclinic.myownpersonaldomain.com"
     }
   ],
   "address": [
     {
       "line": [
-        "8 Dean Esp"
+        "86 Homer Cl"
       ],
-      "city": "Parramatta",
-      "state": "NSW",
-      "postalCode": "2150"
+      "city": "Sunshine",
+      "state": "VIC",
+      "postalCode": "3020"
     }
   ]
 }
