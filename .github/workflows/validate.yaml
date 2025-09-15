@@ -21,7 +21,7 @@ on:
         required: true
 
 jobs:
-  Run Validator:
+  Run-Validator:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
