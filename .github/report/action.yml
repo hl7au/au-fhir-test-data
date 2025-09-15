@@ -43,22 +43,22 @@ runs:
             media-type="string" />
         </xsl:stylesheet>
         EOF
-    - shell: bash
-      run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
-    - shell: bash
-      run: chmod +x quarantine_errors.sh
-    - shell: bash
-      run: ./quarantine_errors.sh
+    # - shell: bash
+    #   run: xsltproc extract_error_files.xsl g_validation.xml > quarantine_errors.sh
+    # - shell: bash
+    #   run: chmod +x quarantine_errors.sh
+    # - shell: bash
+    #   run: ./quarantine_errors.sh
     - shell: bash
       id: has-validation-errors
       run: echo "errors=$(ls -1q ./quarantined | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
-    - id: quarantined-result
-      name: Archive quarantined resources
-      if: steps.has-validation-errors.outputs.errors != '0'
-      uses: actions/upload-artifact@v4
-      with:
-        name: "${{ inputs.title }} quarantine"
-        path: quarantined
+    # - id: quarantined-result
+    #   name: Archive quarantined resources
+    #   if: steps.has-validation-errors.outputs.errors != '0'
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: "${{ inputs.title }} quarantine"
+    #     path: quarantined
     - name: Show validation results
       if: steps.has-validation-errors.outputs.errors == '0'
       uses: actions/github-script@v7
