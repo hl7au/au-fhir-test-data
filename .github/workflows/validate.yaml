@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       path:
-        description: "Directory to validate"
+        description: "Path to validate"
+        default: 'au-fhir-test-data-set/*.json'
         required: true
-      resource_matcher:
-        description: "Matcher for resources to validate, eg Patient*"
-        default: '*'
       report_title:
         description: "Report title"
         default: "AU Core"
