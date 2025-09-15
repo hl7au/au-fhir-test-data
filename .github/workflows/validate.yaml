@@ -32,7 +32,8 @@ jobs:
         path: ${{ github.event.inputs.path }}
         ig: ${{ github.event.inputs.ig }}
         tx: ${{ github.event.inputs.tx }}
-    - name: Report
-      uses: ./.github/report
-      with:
         title: ${{ github.event.inputs.report_title }}
+    # - name: Report
+    #   uses: ./.github/report
+    #   with:
+    #     title: ${{ github.event.inputs.report_title }}
