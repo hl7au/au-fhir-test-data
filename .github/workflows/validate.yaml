@@ -6,6 +6,9 @@ on:
       path:
         description: "Directory to validate"
         required: true
+      resource_matcher:
+        description: "Matcher for resources to validate, eg Patient*"
+        default: '*'
       report_title:
         description: "Report title"
         default: "AU Core"

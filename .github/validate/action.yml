@@ -3,9 +3,12 @@ inputs:
   path:
     description: "Directory to validate"
     default: 'generated'
+  resource_matcher:
+    description: "Matcher for resources to validate, eg Patient*"
+    default: '*'
   ig:
     description: "Implementation guide used to validate"
-    default: 'hl7.fhir.au.core#1.1.0-preview'
+    default: 'hl7.fhir.au.core#2.0.0-ballot'
   tx:
     description: "Terminology server"
     default: "https://tx.dev.hl7.org.au/fhir"
@@ -25,7 +28,7 @@ runs:
     - name: Run validator
       shell: bash
       run: |
-        java -jar validator_cli.jar ${{ inputs.path }}/*.json \
+        java -jar validator_cli.jar ${{ inputs.path }}/${{ inputs.resource_matcher }}.json \
              -version 4.0.1 -tx ${{ inputs.tx }} \
              -ig ${{ inputs.ig }} -sct au \
              -level errors -jurisdiction au \
