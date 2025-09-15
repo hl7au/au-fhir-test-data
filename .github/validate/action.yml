@@ -14,12 +14,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Don't validate quarantine files
-      shell: bash
-      run: |
-        mkdir ${{ runner.temp }}/quarantine &&\
-        mv -v `grep -v '^#' ./.github/validate/validator_quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
-      continue-on-error: true
+    # - name: Don't validate quarantine files
+    #   shell: bash
+    #   run: |
+    #     mkdir ${{ runner.temp }}/quarantine &&\
+    #     mv -v `grep -v '^#' ./.github/validate/validator_quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
+      # continue-on-error: true
     - shell: bash
       run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
     - name: Run validator
@@ -30,7 +30,7 @@ runs:
              -ig ${{ inputs.ig }} -sct au \
              -level errors -jurisdiction au \
              -html-output g_validation.html -output g_validation.xml
-    - name: Restore skipped files
-      shell: bash
-      run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
-      continue-on-error: true
+    # - name: Restore skipped files
+    #   shell: bash
+    #   run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
+    #   continue-on-error: true
