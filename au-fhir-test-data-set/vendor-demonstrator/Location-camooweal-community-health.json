@@ -1,0 +1,33 @@
+{
+  "resourceType": "Location",
+  "id": "camooweal-community-health",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Camooweal Community Health",
+  "mode": "instance",
+  "address": [
+    {
+      "line": [
+        "1 Barff Pde"
+      ],
+      "city": "Camooweal",
+      "state": "QLD",
+      "postalCode": "4828"
+    }
+  ],
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/camooweal-community-health"
+  }
+}

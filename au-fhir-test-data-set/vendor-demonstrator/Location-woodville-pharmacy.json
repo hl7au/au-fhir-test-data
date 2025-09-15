@@ -1,0 +1,33 @@
+{
+  "resourceType": "Location",
+  "id": "woodville-pharmacy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Woodville Pharmacy",
+  "mode": "instance",
+  "address": [
+    {
+      "line": [
+        "76 Pheonix Cir"
+      ],
+      "city": "Woodville",
+      "state": "SA",
+      "postalCode": "5011"
+    }
+  ],
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/woodville-pharmacy"
+  }
+}
