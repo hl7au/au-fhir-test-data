@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "garran-ophthalmology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003628233375623"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81178390182"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8512",
+          "display": "Specialist Medical Services"
+        },
+        {
+          "code": "310160007",
+          "display": "Ophthalmology service",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Ophthalmology service"
+    }
+  ],
+  "name": "Garran Ophthalmology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0255502579",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@garranophthalmology.myownpersonaldomain.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "47 Valley Gr"
+      ],
+      "city": "Garran",
+      "state": "ACT",
+      "postalCode": "2605"
+    }
+  ]
+}

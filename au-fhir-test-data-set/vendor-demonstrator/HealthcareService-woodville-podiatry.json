@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "woodville-podiatry",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003624900041655"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/woodville-podiatry"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "310087009",
+          "display": "Podiatry service",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Podiatry service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/woodville-podiatry"
+    }
+  ],
+  "name": "Woodville Podiatry",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0855502543",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@woodvillepodiatry.example.com"
+    }
+  ]
+}

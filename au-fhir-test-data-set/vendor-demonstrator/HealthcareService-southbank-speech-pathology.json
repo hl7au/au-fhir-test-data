@@ -1,0 +1,57 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "southbank-speech-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003624900041713"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/southbank-speech-pathology"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "310101009",
+          "display": "Speech and language therapy service",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Speech pathology service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/southbank-speech-pathology"
+    }
+  ],
+  "name": "Southbank Speech Pathology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0355508134",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@southbankspeechpathology.example.org"
+    }
+  ]
+}

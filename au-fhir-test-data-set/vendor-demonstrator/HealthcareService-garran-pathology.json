@@ -1,0 +1,62 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "garran-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-healthcareservice"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003621566708239"
+    }
+  ],
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/garran-pathology"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "310074003",
+          "display": "Pathology service",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Pathology laboratory service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/garran-pathology"
+    }
+  ],
+  "name": "Garran Pathology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0255500783",
+      "use": "work"
+    },
+    {
+      "system": "fax",
+      "value": "0255500784",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@garranpathology.example.com"
+    }
+  ]
+}

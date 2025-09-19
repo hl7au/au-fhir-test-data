@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "southbank-speech-pathology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003624900041713"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81190098438"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8539",
+          "display": "Other Allied Health Services"
+        },
+        {
+          "code": "310101009",
+          "display": "Speech and language therapy service",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Speech pathology service"
+    }
+  ],
+  "name": "Southbank Speech Pathology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0355508134",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@southbankspeechpathology.example.org"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "107 Bay Dr"
+      ],
+      "city": "Southbank",
+      "state": "VIC",
+      "postalCode": "3006"
+    }
+  ]
+}

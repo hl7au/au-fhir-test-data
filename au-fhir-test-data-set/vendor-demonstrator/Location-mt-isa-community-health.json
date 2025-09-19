@@ -1,0 +1,32 @@
+{
+  "resourceType": "Location",
+  "id": "mt-isa-community-health",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Mt Isa Community Health",
+  "mode": "instance",
+  "address": {
+    "line": [
+      "149 Gateway Est"
+    ],
+    "city": "Mount Isa",
+    "state": "QLD",
+    "postalCode": "4825",
+    "country": "AU"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/mt-isa-community-health"
+  }
+}
