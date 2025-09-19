@@ -1,0 +1,102 @@
+{
+  "resourceType": "Patient",
+  "id": "lowe-cedric",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "4",
+        "display": "Neither Aboriginal nor Torres Strait Islander origin"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+            "code": "active"
+          }
+        },
+        {
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+          "valueCoding": {
+            "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+            "code": "verified",
+            "display": "verified"
+          }
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI"
+          }
+        ],
+        "text": "IHI"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+      "value": "8003608333660694"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MC"
+          }
+        ],
+        "text": "Medicare Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-number",
+      "value": "29546643911"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "LOWE",
+      "given": [
+        "Cedric"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0491579760",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "cedric.lowe@example.com"
+    },
+    {
+      "system": "phone",
+      "value": "0255505884",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1975-08-14",
+  "address": [
+    {
+      "line": [
+        "131 Desleigh Dr"
+      ],
+      "city": "Parramatta",
+      "state": "NSW",
+      "postalCode": "2150",
+      "country": "AU"
+    }
+  ]
+}
