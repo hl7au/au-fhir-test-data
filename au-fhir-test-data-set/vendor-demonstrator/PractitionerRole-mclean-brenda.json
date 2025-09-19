@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "mclean-brenda",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452431T"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/mclean-brenda"
+  },
+  "organization": {
+    "reference": "Organization/herston-public-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253514",
+          "display": "Orthopaedic Surgeon"
+        },
+        {
+          "code": "22731001",
+          "display": "Orthopedic surgeon",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Orthopaedic Surgeon"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1345027006",
+          "display": "Surgical orthopedic specialty"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/herston-public-hospital"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0755503201",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "brenda.mclean@herstonpublichospital.myownpersonaldomain.com"
+    }
+  ]
+}

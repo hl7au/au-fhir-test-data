@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "huddlestone-velda",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2451941A"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/huddlestone-velda"
+  },
+  "organization": {
+    "reference": "Organization/adelaide-public-hospital"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253316",
+          "display": "Gastroenterologist"
+        },
+        {
+          "code": "71838004",
+          "display": "Gastroenterologist",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Gastroenterologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394584008",
+          "display": "Gastroenterology"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/adelaide-public-hospital"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870102301",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "velda.huddlestone@example.net"
+    }
+  ]
+}

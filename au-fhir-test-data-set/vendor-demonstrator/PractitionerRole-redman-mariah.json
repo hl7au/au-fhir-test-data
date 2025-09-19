@@ -1,0 +1,79 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "redman-mariah",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452691W"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/redman-mariah"
+  },
+  "organization": {
+    "reference": "Organization/parramatta-midwifery"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "254111",
+          "display": "Midwife"
+        },
+        {
+          "code": "309453006",
+          "display": "Registered midwife",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Midwife"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1287784006",
+          "display": "Obstetric nursing"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/parramatta-midwifery"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270100100",
+      "use": "work"
+    },
+    {
+      "system": "phone",
+      "value": "0491578888",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "mariah.redman@parramattamidwifery.example.org"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "maxwell-israel",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452251X"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/maxwell-israel"
+  },
+  "organization": {
+    "reference": "Organization/garran-dental"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "252312",
+          "display": "Dental Practitioner"
+        },
+        {
+          "code": "106289002",
+          "display": "Dentist",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Dental Practitioner"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722163006",
+          "display": "Dentistry"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/garran-dental"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0270100985",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "israel.maxwell@garrandental.example.com"
+    }
+  ]
+}

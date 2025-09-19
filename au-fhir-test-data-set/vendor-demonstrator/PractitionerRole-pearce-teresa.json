@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "pearce-teresa",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452531K"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/pearce-teresa"
+  },
+  "organization": {
+    "reference": "Organization/townsville-specialist-clinic"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253518",
+          "display": "Urologist"
+        },
+        {
+          "code": "24590004",
+          "display": "Urologist",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Urologist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394612005",
+          "display": "Urology"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/townsville-specialist-clinic"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0770102376",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "teresa.pearce@townsvillespecialistclinic.myownpersonaldomain.com"
+    }
+  ]
+}

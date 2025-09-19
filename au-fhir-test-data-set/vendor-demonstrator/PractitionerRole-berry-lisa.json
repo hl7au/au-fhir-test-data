@@ -1,0 +1,63 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "berry-lisa",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452041H"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/berry-lisa"
+  },
+  "organization": {
+    "reference": "Organization/woodville-ot-services"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "252411",
+          "display": "Occupational Therapist"
+        },
+        {
+          "code": "80546007",
+          "display": "Occupational therapist",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Occupational Therapist"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/woodville-ot-services"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0870109571",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "lisa.berry@woodvilleotservices.example.net"
+    }
+  ]
+}

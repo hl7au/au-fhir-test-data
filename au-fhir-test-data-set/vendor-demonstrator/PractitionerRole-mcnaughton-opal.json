@@ -1,0 +1,68 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "mcnaughton-opal",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2451691B"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/mcnaughton-opal"
+  },
+  "organization": {
+    "reference": "Organization/sunshine-medical-centre"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "251911",
+          "display": "Health Promotion Officer"
+        },
+        {
+          "code": "1011451000168108",
+          "display": "Diabetes educator",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Diabetes Educator"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/sunshine-medical-centre"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370103523",
+      "use": "work"
+    },
+    {
+      "system": "phone",
+      "value": "0491578148",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "opal.mcnaughton@sunshinemedicalcentre.example.com"
+    }
+  ]
+}
