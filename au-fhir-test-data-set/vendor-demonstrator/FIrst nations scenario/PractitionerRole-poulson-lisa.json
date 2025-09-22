@@ -1,0 +1,58 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "poulson-lisa",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2453111A"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/poulson-lisa"
+  },
+  "organization": {
+    "reference": "Organization/broome-community-health"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "411511",
+          "display": "Aboriginal and Torres Strait Islander Health Worker"
+        },
+        {
+          "code": "826241000168109",
+          "display": "Aboriginal and Torres Strait Islander health worker",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Aboriginal and Torres Strait Islander Health Worker"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0855502687",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "lisa.poulson@broomecommunityhealth.example.com"
+    }
+  ]
+}

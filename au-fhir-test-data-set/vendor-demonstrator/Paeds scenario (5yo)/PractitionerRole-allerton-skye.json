@@ -1,0 +1,74 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "allerton-skye",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "UPIN"
+          }
+        ],
+        "text": "Medicare Provider Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+      "value": "2452171X"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/allerton-skye"
+  },
+  "organization": {
+    "reference": "Organization/garran-medical-clinic"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253321",
+          "display": "Paediatrician"
+        },
+        {
+          "code": "82296001",
+          "display": "Pediatrician",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Paediatrician"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "24251000087109",
+          "display": "General paediatric specialty"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0255505489",
+      "use": "work"
+    },
+    {
+      "system": "phone",
+      "value": "0491571804",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "skye.allerton@example.com"
+    }
+  ]
+}
