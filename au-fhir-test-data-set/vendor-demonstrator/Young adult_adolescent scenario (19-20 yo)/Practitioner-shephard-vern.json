@@ -1,0 +1,112 @@
+{
+  "resourceType": "Practitioner",
+  "id": "shephard-vern",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NPI",
+            "display": "National provider identifier"
+          }
+        ],
+        "text": "HPI-I"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+      "value": "8003614900055292"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "PRES",
+            "display": "Prescriber Number"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/medicare-prescriber-number",
+      "value": "8002080"
+    }
+  ],
+  "name": [
+    {
+      "family": "SHEPHARD",
+      "given": [
+        "Vern"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0370101005",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "vern.shephard@stkildapsychology.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "138 Museum Cir"
+      ],
+      "city": "St Kilda",
+      "state": "VIC",
+      "postalCode": "3182",
+      "country": "AU"
+    }
+  ],
+  "gender": "male",
+  "qualification": [
+    {
+      "extension": [
+        {
+          "extension": [
+            {
+              "url": "ahpraProfession",
+              "valueCodeableConcept": {
+                "text": "Medical Practitioner"
+              }
+            }
+          ],
+          "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
+        }
+      ],
+      "identifier": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                "code": "AHPRA",
+                "display": "Australian Health Practitioner Regulation Agency Registration Number"
+              }
+            ],
+            "text": "Ahpra Registration Number"
+          },
+          "system": "http://hl7.org.au/id/ahpra-registration-number",
+          "value": "HAC0000000372"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+            "code": "AUAHPRAProfession",
+            "display": "AHPRA Profession"
+          }
+        ]
+      }
+    }
+  ],
+  "birthDate": "1988-03-07"
+}
