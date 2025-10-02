@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "parramatta-specialist-clinic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003628233375722"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "XX"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81130057001"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8512",
+          "display": "Specialist Medical Services"
+        },
+        {
+          "code": "224891009",
+          "display": "Healthcare services",
+          "system": "http://snomed.info/sct"
+        }
+      ],
+      "text": "Specialist medical clinic service"
+    }
+  ],
+  "name": "Parramatta Specialist Clinic",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0255503406",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@parramattaspecialistclinic.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "23 Princess Rvr"
+      ],
+      "city": "Parramatta",
+      "state": "NSW",
+      "postalCode": "2150"
+    }
+  ]
+}
