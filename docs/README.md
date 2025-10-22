@@ -108,7 +108,7 @@ HL7 Australia materials contain and reference intellectual property owned by thi
 
 Following is a non-exhaustive list of third-party artefacts and terminologies that may require a separate licence:
 <table>
-  <tr><td>Artefact / Terminology	Statement</td><td></td></tr>
+  <tr><td>Artefact / Terminology</td><td>Statement</td></tr>
   <tr><td>SNOMED CT</td><td>International Healthcare Terminology Standards Developing Organization (IHTSDO). Where this specification includes or references content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO) it is distributed by agreement between IHTSDO and HL7, or the Australian Digital Health Agency via NCTS terms. Implementer use of SNOMED CT is not covered by this agreement</td></tr>
   <tr>Logical Observation Identifiers Names & Codes (LOINC)<td></td><td>This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.</td></tr>
   <tr><td>National Clinical Terminology Services (NCTS)</td><td>This material contains references to National Clinical Terminology Service artefacts these are Copyright © 2024 Australian Digital Health Agency, implementer user of this content are advised of the NCTS [Terms of Use](https://www.healthterminologies.gov.au/ncts-website-terms-of-use/).</td></tr>
