@@ -1,44 +1,39 @@
 name: Validate
 
 on:
-  workflow_dispatch
-
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "Path to validate"
+        default: 'au-fhir-test-data-set/*.json'
+        required: true
+      report_title:
+        description: "Report title"
+        default: "AU Core"
+        required: true
+      ig:
+        description: "Implementation guide used to validate"
+        default: 'hl7.fhir.au.core#2.0.0-ballot'
+        required: true
+      tx:
+        description: "Terminology server"
+        default: "https://tx.dev.hl7.org.au/fhir"
+        required: true
 
 jobs:
-  Convert:
+  Run-Validator:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
-    - name: Convert to json
-      uses: ./.github/fhirmapping
-    - id: git-diff-action
-      run: echo "changed=$(git status --porcelain=v1 2>/dev/null | wc -l | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
-    - if: steps.git-diff-action.outputs.changed != '0'
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: Update generated files
-    - name: Validate
-      uses: ./.github/validate
-    - name: Report
-      uses: ./.github/report
-      with:
-        title: AU Core
-  ValidateERequesting:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
     - name: Validate
       uses: ./.github/validate
       with:
-        path: erequesting
-        ig: "hl7.fhir.au.ereq#0.3.0-preview"
-    - name: Report
-      uses: ./.github/report
-      with:
-        title: eRequesting
+        path: ${{ github.event.inputs.path }}
+        ig: ${{ github.event.inputs.ig }}
+        tx: ${{ github.event.inputs.tx }}
+        title: ${{ github.event.inputs.report_title }}
+    # - name: Report
+    #   uses: ./.github/report
+    #   with:
+    #     title: ${{ github.event.inputs.report_title }}
