@@ -1,6 +1,6 @@
 {
   "resourceType": "Encounter",
-  "id": "influenza-admin-1",
+  "id": "influenza-admin-6",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
@@ -12,17 +12,6 @@
     "code": "AMB",
     "display": "ambulatory"
   },
-  "type": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "117096009",
-          "display": "Intramuscular injection of Vaccinia immune globulin, human"
-        }
-      ]
-    }
-  ],
   "serviceType": {
     "coding": [
       {
@@ -33,7 +22,7 @@
     ]
   },
   "subject": {
-    "reference": "Patient/baratz-toni"
+    "reference": "Patient/italia-sofia"
   },
   "participant": [
     {
@@ -54,9 +43,32 @@
     }
   ],
   "period": {
-    "start": "2022-04-11T09:20:00+10:00",
-    "end": "2022-04-11T09:35:00+10:00"
+    "start": "2023-04-11T09:20:00+10:00",
+    "end": "2023-04-11T09:35:00+10:00"
   },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "12866006",
+          "display": "Influenza prevention"
+        }
+      ]
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "Condition/chronic-asthma"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/elimbah-medical-centre"
+      }
+    }
+  ],
   "serviceProvider": {
     "reference": "Organization/elimbah-medical-centre"
   }

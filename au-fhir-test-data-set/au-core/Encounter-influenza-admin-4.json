@@ -12,17 +12,6 @@
     "code": "AMB",
     "display": "ambulatory"
   },
-  "type": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "117096009",
-          "display": "Intramuscular injection of Vaccinia immune globulin, human"
-        }
-      ]
-    }
-  ],
   "serviceType": {
     "coding": [
       {
@@ -57,6 +46,29 @@
     "start": "2025-04-11T09:20:00+10:00",
     "end": "2025-04-11T09:35:00+10:00"
   },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "12866006",
+          "display": "Influenza prevention"
+        }
+      ]
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "Condition/immunocompromised"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/elimbah-medical-centre"
+      }
+    }
+  ],
   "serviceProvider": {
     "reference": "Organization/elimbah-medical-centre"
   }
