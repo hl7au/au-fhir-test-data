@@ -9,6 +9,14 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference documentreference-clinical-context</b></p><a name=\"documentreference-clinical-context\"> </a><a name=\"hcdocumentreference-clinical-context\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-clinicalcontext-documentreference.html\">AU eRequesting Clinical Context DocumentReference</a></p></div><p><b>status</b>: Current</p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Australian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>date</b>: 2022-03-21 08:00:00+1000</p><p><b>author</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td><code>MzMteWVhci1vbGQgZmVtYWxlIHByZXNlbnRpbmcgd2l0aCA0IGhvdXJzIG9mIGxvd2VyIGFiZG9taW5hbCBwYWluIGFuZCB1cmluZSBkaXBzdGljayBwb3NpdGl2ZSBmb3IgbGV1Y29jeXRlcy4=</code></td></tr></table></blockquote></div>"
   },
   "status" : "current",
+  "type" : {
+    "coding" : [
+      {
+        "system" : "http://loinc.org",
+        "code" : "107903-7"
+      }
+    ]
+  },
   "subject" : {
     "reference" : "Patient/belger-remedios"
   },
