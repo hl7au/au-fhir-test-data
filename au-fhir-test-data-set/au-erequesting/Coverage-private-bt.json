@@ -27,8 +27,8 @@
     }]
   },
   "beneficiary" : {
-    "reference" : "Patient/baratz-toni",
-    "display" : "Toni BARATZ"
+    "reference" : "Patient/sandilands-kendall",
+    "display" : "Kendall SANDILANDS"
   },
   "relationship" : {
     "coding" : [{

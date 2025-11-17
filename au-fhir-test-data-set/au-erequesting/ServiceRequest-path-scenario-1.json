@@ -72,7 +72,7 @@
     "text": "Vitamin D"
   },
   "subject": {
-    "reference": "Patient/baratz-toni"
+    "reference": "Patient/sandilands-kendall"
   },
   "encounter": {
     "reference": "Encounter/annualvisit-2"
