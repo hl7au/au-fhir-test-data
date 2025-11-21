@@ -17,8 +17,8 @@
     ]
   },
   "beneficiary": {
-    "reference": "Patient/irvine-ronny-lawrence",
-    "display": "Ronny IRVINE"
+    "reference": "Patient/scott-elijah-ken",
+    "display": "Elijah KEN SCOTT"
   },
   "relationship": {
     "coding": [
