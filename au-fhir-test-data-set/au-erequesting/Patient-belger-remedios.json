@@ -1,9 +1,9 @@
 {
   "resourceType": "Patient",
-  "id": "sandilands-kendall",
+  "id": "belger-remedios",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-patient"
     ]
   },
   "extension": [
@@ -11,26 +11,9 @@
       "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
       "valueCoding": {
         "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
-        "code": "2",
-        "display": "Torres Strait Islander but not Aboriginal origin"
+        "code": "3",
+        "display": "Both Aboriginal and Torres Strait Islander origin"
       }
-    },
-    {
-      "extension": [
-        {
-          "url": "value",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://loinc.org",
-                "code": "LA29519-8",
-                "display": "she/her/her/hers/herself"
-              }
-            ]
-          }
-        }
-      ],
-      "url": "http://hl7.org/fhir/StructureDefinition/individual-pronouns"
     }
   ],
   "identifier": [
@@ -62,7 +45,7 @@
         "text": "IHI"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
-      "value": "8003608833648413"
+      "value": "8003608666976378"
     },
     {
       "type": {
@@ -75,45 +58,45 @@
         "text": "Medicare Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "59511386611"
+      "value": "49516515811"
     }
   ],
   "name": [
     {
       "use": "official",
-      "family": "SANDILANDS",
+      "family": "BELGER",
       "given": [
-        "Kendall"
+        "Remedios"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870106664",
+      "value": "0770109100",
       "use": "home"
     },
     {
       "system": "phone",
-      "value": "0491576398",
+      "value": "0491570159",
       "use": "mobile"
     },
     {
       "system": "phone",
-      "value": "0870101896",
+      "value": "0770103121",
       "use": "work"
     }
   ],
   "gender": "female",
-  "birthDate": "1981-04-10",
+  "birthDate": "1989-01-04",
   "address": [
     {
       "line": [
-        "81 Marine Gr"
+        "200 Ocean Pl"
       ],
-      "city": "Sheaoak Flat",
-      "state": "SA",
-      "postalCode": "5581",
+      "city": "Logan Reserve",
+      "state": "QLD",
+      "postalCode": "4133",
       "country": "AU"
     }
   ]
