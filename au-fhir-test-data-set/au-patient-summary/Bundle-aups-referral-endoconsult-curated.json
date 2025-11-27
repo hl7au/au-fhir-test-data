@@ -1,0 +1,977 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "aups-referral-endoconsult-curated",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle"]
+  },
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:uuid:a78f146f-cadf-4c4a-84e2-c2e7dc41dd74"
+  },
+  "type" : "document",
+  "timestamp" : "2024-10-28T11:57:11.269+11:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c",
+    "resource" : {
+      "resourceType" : "Composition",
+      "id" : "de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-composition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c</b></p><a name=\"de2c9e3f-c4a8-4a65-b355-b08cd2c58c7c\"> </a><a name=\"hcde2c9e3f-c4a8-4a65-b355-b08cd2c58c7c\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-composition.html\">AU PS Composition</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>date</b>: 2024-10-28 11:57:10+1100</p><p><b>author</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-afead11c-3bee-4020-af4f-44040abfa961\">PractitionerRole General Practitioner</a></p><p><b>title</b>: Patient Summary for Joyce Johnson as of 28 OCT 2024</p><h3>Attesters</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td style=\"display: none\">*</td><td>Professional</td><td>2024-10-28 11:57:11+1100</td><td><a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-afead11c-3bee-4020-af4f-44040abfa961\">PractitionerRole General Practitioner</a></td></tr></table><p><b>custodian</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-14292353-98f0-43b3-a25b-406baf3f9175\">Organization Bungabbee Medical Clinic</a></p><h3>Events</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActClass PCPR}\">care provision</span></td><td>?? --&gt; 2024-10-28 11:57:10+1100</td></tr></table></div>"
+      },
+      "status" : "final",
+      "type" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "date" : "2024-10-28T11:57:10.868+11:00",
+      "author" : [{
+        "reference" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961"
+      }],
+      "title" : "Patient Summary for Joyce Johnson as of 28 OCT 2024",
+      "attester" : [{
+        "mode" : "professional",
+        "time" : "2024-10-28T11:57:11.269+11:00",
+        "party" : {
+          "reference" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961"
+        }
+      }],
+      "custodian" : {
+        "reference" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175"
+      },
+      "event" : [{
+        "code" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActClass",
+            "code" : "PCPR"
+          }]
+        }],
+        "period" : {
+          "end" : "2024-10-28T11:57:10+11:00"
+        }
+      }],
+      "section" : [{
+        "title" : "Allergies and Intolerances",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "48765-2"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">No known allergies.</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:0baac8a9-69b8-4e99-9460-03df08f92c98"
+        }]
+      },
+      {
+        "title" : "Medication Summary",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10160-0"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Medicine</th>\n                    <th>Dose</th>\n                    <th>Status</th>\n                    <th>Last Updated</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Prenatal vitamins</td>\n                    <td>1 tablet daily</td>\n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td>Pt prefers Blackmores</td>\n                  </tr>\n                  <tr>\n                    <td>Insulin (Humulin N)</td>\n                    <td>10 units subcutaneously in the morning and evening</td>\n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Insulin (Humulin R)</td>\n                    <td>5 units subcutaneously before each meal</td>\n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Metformin</td>\n                    <td>500mg twice daily</td>\n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:7193cc2f-d03e-42cb-ab55-4130904505d5"
+        },
+        {
+          "reference" : "urn:uuid:1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417"
+        },
+        {
+          "reference" : "urn:uuid:166c2afe-c6fb-4928-88f0-1c1a1e5e65cd"
+        },
+        {
+          "reference" : "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da"
+        }]
+      },
+      {
+        "title" : "Problem list",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11450-4"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Problem/Diagnosis</th>\n                    <th>Status</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Gestational diabetes</td>\n                    <td>Active</td>\n                    <td>Recent diagnosis, referring to Endo &amp; Dietitian</td>\n                  </tr>\n                  <tr>\n                    <td>Anaemia</td>\n                    <td>Active</td>\n                    <td/>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
+        },
+        {
+          "reference" : "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63"
+        }]
+      },
+      {
+        "title" : "History of Immunizations",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11369-6"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Vaccine</th>\n                    <th>Date of administration</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe</td>\n                    <td>05/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>05/05/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>15/05/2023</td>\n                    <td>Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn.</td>\n                  </tr>\n                  <tr>\n                    <td>COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe</td>\n                    <td>15/05/2023</td>\n                    <td/>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c"
+        },
+        {
+          "reference" : "urn:uuid:97767fb5-3be7-4d16-9ee8-76c47a4ab0ce"
+        },
+        {
+          "reference" : "urn:uuid:62eb70e3-e814-4785-80d3-8aa45b1fc367"
+        },
+        {
+          "reference" : "urn:uuid:2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96"
+        }]
+      },
+      {
+        "title" : "Pregnancy Information",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10162-6"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pregnancy confirmed 12/06/2024. Estimated Date of Delivery  03/02/2025.</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9"
+        }]
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/note",
+          "valueAnnotation" : {
+            "authorReference" : {
+              "reference" : "urn:uuid:0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9"
+            },
+            "time" : "2024-10-28T11:57:10.868+11:00",
+            "text" : "Joyce is a 39-year-old woman who is currently pregnant and lives with her partner in a stable home environment. She works in an office-based job, which involves prolonged periods of sitting, but she attempting to increase her activity outside of work through regular walks and light exercise. She has a strong support system, including her partner, family, and close friends.\n\nJoyce does not smoke and does not consume alcohol during pregnancy. She follows a generally balanced diet but occasionally consumes convenience foods due to her busy work schedule. She has access to healthcare services and attends routine antenatal appointments as recommended.\n\nShe reports moderate stress related to work responsibilities and preparing for the baby’s arrival but manages it through mindfulness techniques and social support. Financially, she and her partner are stable, with plans in place for parental leave and childcare. She has no history of substance use and is not exposed to occupational hazards that would pose a risk to her pregnancy.\n\nOverall, Joyce maintains a healthy and supportive lifestyle, with good access to medical care and a positive outlook on her pregnancy."
+          }
+        }],
+        "title" : "Social History",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "29762-2"
+          }]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            Joyce is a 39-year-old woman who is currently pregnant and lives with her partner in a stable home environment. She works in an office-based job, which involves prolonged periods of sitting, but she attempting to increase her activity outside of work through regular walks and light exercise. She has a strong support system, including her partner, family, and close friends.\n\n\nJoyce does not smoke and does not consume alcohol during pregnancy. She follows a generally balanced diet but occasionally consumes convenience foods due to her busy work schedule. She has access to healthcare services and attends routine antenatal appointments as recommended.\n\n\nShe reports moderate stress related to work responsibilities and preparing for the baby’s arrival but manages it through mindfulness techniques and social support. Financially, she and her partner are stable, with plans in place for parental leave and childcare. She has no history of substance use and is not exposed to occupational hazards that would pose a risk to her pregnancy.\n\n\nOverall, Joyce maintains a healthy and supportive lifestyle, with good access to medical care and a positive outlook on her pregnancy.</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:8924f910-53b3-4125-b0f2-58d0068f8983"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "85822a88-55b1-460c-bb7b-e8fc22d8568f",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_85822a88-55b1-460c-bb7b-e8fc22d8568f\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 85822a88-55b1-460c-bb7b-e8fc22d8568f</b></p><a name=\"85822a88-55b1-460c-bb7b-e8fc22d8568f\"> </a><a name=\"hc85822a88-55b1-460c-bb7b-e8fc22d8568f\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-patient.html\">AU PS Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Medicare Number/29545401611</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 0270108012(Home)</li><li>ph: 0491571804(Mobile)</li><li>139 River Lane Palmvale NSW 2484 AU </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>General Practitioner: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-afead11c-3bee-4020-af4f-44040abfa961\">PractitionerRole General Practitioner</a></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This extension applies to the Patient, Person, and RelatedPerson resources and is used to indicate whether a person identifies as being of Aboriginal or Torres Strait Islander origin.\"><a href=\"https://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-indigenous-status.html\">Australian Indigenous Status</a></td><td colspan=\"3\">australian-indigenous-status-1: 4 (Neither Aboriginal nor Torres Strait Islander origin)</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+        "valueCoding" : {
+          "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+          "code" : "4",
+          "display" : "Neither Aboriginal nor Torres Strait Islander origin"
+        }
+      }],
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI"
+          }],
+          "text" : "IHI"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+        "value" : "8003608500314679"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MC"
+          }],
+          "text" : "Medicare Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-number",
+        "value" : "29545401611"
+      }],
+      "name" : [{
+        "family" : "JOHNSON",
+        "given" : ["Joyce"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270108012",
+        "use" : "home"
+      },
+      {
+        "system" : "phone",
+        "value" : "0491571804",
+        "use" : "mobile"
+      }],
+      "gender" : "female",
+      "birthDate" : "1985-02-06",
+      "address" : [{
+        "line" : ["139 River Lane"],
+        "city" : "Palmvale",
+        "state" : "NSW",
+        "postalCode" : "2484",
+        "country" : "AU"
+      }],
+      "generalPractitioner" : [{
+        "reference" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:0baac8a9-69b8-4e99-9460-03df08f92c98",
+    "resource" : {
+      "resourceType" : "AllergyIntolerance",
+      "id" : "0baac8a9-69b8-4e99-9460-03df08f92c98",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-allergyintolerance"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_0baac8a9-69b8-4e99-9460-03df08f92c98\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance 0baac8a9-69b8-4e99-9460-03df08f92c98</b></p><a name=\"0baac8a9-69b8-4e99-9460-03df08f92c98\"> </a><a name=\"hc0baac8a9-69b8-4e99-9460-03df08f92c98\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-allergyintolerance.html\">AU PS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 716186003}\">No known allergy</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code" : "active"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "716186003"
+        }],
+        "text" : "No known allergy"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "05292a9c-2bc9-43a7-b935-0a61ede063da",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_05292a9c-2bc9-43a7-b935-0a61ede063da\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 05292a9c-2bc9-43a7-b935-0a61ede063da</b></p><a name=\"05292a9c-2bc9-43a7-b935-0a61ede063da\"> </a><a name=\"hc05292a9c-2bc9-43a7-b935-0a61ede063da\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"#hc05292a9c-2bc9-43a7-b935-0a61ede063da/metformin\">Medication Product containing metformin (medicinal product)</a></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>500mg twice daily</td><td>2 per 1 day</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral route</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #metformin</b></p><a name=\"05292a9c-2bc9-43a7-b935-0a61ede063da/metformin\"> </a><a name=\"hc05292a9c-2bc9-43a7-b935-0a61ede063da/metformin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medication.html\">AU PS Medication</a></p></div><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 109081006}\">Metformin</span></p><p><b>form</b>: <span title=\"Codes:{http://snomed.info/sct 421026006}\">Tablet</span></p></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "metformin",
+        "meta" : {
+          "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medication"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "109081006",
+            "display" : "Product containing metformin (medicinal product)"
+          }],
+          "text" : "Metformin"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "421026006",
+            "display" : "Tablet"
+          }],
+          "text" : "Tablet"
+        }
+      }],
+      "status" : "active",
+      "medicationReference" : {
+        "reference" : "#metformin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "dosage" : [{
+        "text" : "500mg twice daily",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 2,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "26643006",
+            "display" : "Oral route"
+          }],
+          "text" : "Oral route"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:166c2afe-c6fb-4928-88f0-1c1a1e5e65cd",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "166c2afe-c6fb-4928-88f0-1c1a1e5e65cd",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_166c2afe-c6fb-4928-88f0-1c1a1e5e65cd\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 166c2afe-c6fb-4928-88f0-1c1a1e5e65cd</b></p><a name=\"166c2afe-c6fb-4928-88f0-1c1a1e5e65cd\"> </a><a name=\"hc166c2afe-c6fb-4928-88f0-1c1a1e5e65cd\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Prenatal vitamins</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><p><b>note</b>: </p><blockquote><div><p>Pt prefers Blackmores</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>1 tablet daily</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral route</span></td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Prenatal vitamins"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "note" : [{
+        "text" : "Pt prefers Blackmores"
+      }],
+      "dosage" : [{
+        "text" : "1 tablet daily",
+        "route" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "26643006",
+            "display" : "Oral route"
+          }],
+          "text" : "Oral route"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:7193cc2f-d03e-42cb-ab55-4130904505d5",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "7193cc2f-d03e-42cb-ab55-4130904505d5",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_7193cc2f-d03e-42cb-ab55-4130904505d5\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 7193cc2f-d03e-42cb-ab55-4130904505d5</b></p><a name=\"7193cc2f-d03e-42cb-ab55-4130904505d5\"> </a><a name=\"hc7193cc2f-d03e-42cb-ab55-4130904505d5\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Insulin (Humulin N)</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>10 units subcutaneously in the morning and evening</td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Insulin (Humulin N)"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "dosage" : [{
+        "text" : "10 units subcutaneously in the morning and evening"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "id" : "1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement 1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417</b></p><a name=\"1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417\"> </a><a name=\"hc1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Insulin (Humulin R)</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>5 units subcutaneously before each meal</td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Insulin (Humulin R)"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "dosage" : [{
+        "text" : "5 units subcutaneously before each meal"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "cb647933-b18c-42ef-a1c8-ae137921ba83",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_cb647933-b18c-42ef-a1c8-ae137921ba83\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition cb647933-b18c-42ef-a1c8-ae137921ba83</b></p><a name=\"cb647933-b18c-42ef-a1c8-ae137921ba83\"> </a><a name=\"hccb647933-b18c-42ef-a1c8-ae137921ba83\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 11687002}\">Gestational diabetes</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>note</b>: </p><blockquote><div><p>Recent diagnosis, referring to Endo &amp; Dietitian</p>\n</div></blockquote></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "11687002",
+          "display" : "Gestational diabetes mellitus"
+        }],
+        "text" : "Gestational diabetes"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "note" : [{
+        "text" : "Recent diagnosis, referring to Endo & Dietitian"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "78f75926-3ee1-44a7-9424-6178d905af63",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_78f75926-3ee1-44a7-9424-6178d905af63\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 78f75926-3ee1-44a7-9424-6178d905af63</b></p><a name=\"78f75926-3ee1-44a7-9424-6178d905af63\"> </a><a name=\"hc78f75926-3ee1-44a7-9424-6178d905af63\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 271737000}\">Anaemia</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "271737000",
+          "display" : "Anaemia"
+        }],
+        "text" : "Anaemia"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "id" : "784ae7d5-22df-442d-b932-0c001720136c",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_784ae7d5-22df-442d-b932-0c001720136c\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization 784ae7d5-22df-442d-b932-0c001720136c</b></p><a name=\"784ae7d5-22df-442d-b932-0c001720136c\"> </a><a name=\"hc784ae7d5-22df-442d-b932-0c001720136c\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{http://snomed.info/sct 1789171000168108}\">Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2024-10-05</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "version" : "http://snomed.info/sct/32506021000036107/version/20250131",
+          "code" : "1789171000168108",
+          "display" : "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
+        }],
+        "text" : "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2024-10-05"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:ad82d71b-ca1c-4db6-a726-cc70cf638306",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "ad82d71b-ca1c-4db6-a726-cc70cf638306",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-edd-uv-ips"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_ad82d71b-ca1c-4db6-a726-cc70cf638306\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation ad82d71b-ca1c-4db6-a726-cc70cf638306</b></p><a name=\"ad82d71b-ca1c-4db6-a726-cc70cf638306\"> </a><a name=\"hcad82d71b-ca1c-4db6-a726-cc70cf638306\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/ips/STU2/StructureDefinition-Observation-pregnancy-edd-uv-ips.html\">Observation Pregnancy - Expected Delivery Date (IPS)</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category imaging}\">Imaging</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 161714006}, {http://loinc.org 11778-8}\">Estimated date of delivery</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>value</b>: 2025-02-03</p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "imaging",
+          "display" : "Imaging"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "161714006",
+          "display" : "Estimated date of delivery"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "11778-8",
+          "display" : "Delivery date Estimated"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "valueDateTime" : "2025-02-03"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "f85ad223-7bed-46f3-893d-e89d6082f9a9",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_f85ad223-7bed-46f3-893d-e89d6082f9a9\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation f85ad223-7bed-46f3-893d-e89d6082f9a9</b></p><a name=\"f85ad223-7bed-46f3-893d-e89d6082f9a9\"> </a><a name=\"hcf85ad223-7bed-46f3-893d-e89d6082f9a9\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/ips/STU2/StructureDefinition-Observation-pregnancy-status-uv-ips.html\">Observation Pregnancy - Status (IPS)</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 82810-3}\">Pregnancy status</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 77386006}, {http://loinc.org LA15173-0}\">Pregnant</span></p><p><b>hasMember</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-ad82d71b-ca1c-4db6-a726-cc70cf638306\">Observation Estimated date of delivery</a></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "social-history",
+          "display" : "Social History"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "82810-3",
+          "display" : "Pregnancy status"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "77386006",
+          "display" : "Pregnant"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "LA15173-0",
+          "display" : "Pregnant"
+        }],
+        "text" : "Pregnant"
+      },
+      "hasMember" : [{
+        "reference" : "urn:uuid:ad82d71b-ca1c-4db6-a726-cc70cf638306"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "id" : "afead11c-3bee-4020-af4f-44040abfa961",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitionerrole"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_afead11c-3bee-4020-af4f-44040abfa961\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole afead11c-3bee-4020-af4f-44040abfa961</b></p><a name=\"afead11c-3bee-4020-af4f-44040abfa961\"> </a><a name=\"hcafead11c-3bee-4020-af4f-44040abfa961\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-practitionerrole.html\">AU PS PractitionerRole</a></p></div><p><b>identifier</b>: Medicare Provider Number/2448681J</p><p><b>practitioner</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9\">Practitioner Ginger BURROWS </a></p><p><b>organization</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-14292353-98f0-43b3-a25b-406baf3f9175\">Organization Bungabbee Medical Clinic</a></p><p><b>code</b>: <span title=\"Codes:{http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0 253111}, {http://snomed.info/sct 62247001}\">General Practitioner</span></p><p><b>specialty</b>: <span title=\"Codes:{http://snomed.info/sct 408443003}\">General medical practice</span></p><p><b>telecom</b>: ph: 0270105673(Work), <a href=\"mailto:ginger.burrows@bungabbeemc.example.com.au\">ginger.burrows@bungabbeemc.example.com.au</a></p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "UPIN"
+          }],
+          "text" : "Medicare Provider Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-provider-number",
+        "value" : "2448681J"
+      }],
+      "practitioner" : {
+        "reference" : "urn:uuid:0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9"
+      },
+      "organization" : {
+        "reference" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175"
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code" : "253111",
+          "display" : "General Practitioner"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "62247001"
+        }]
+      }],
+      "specialty" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "408443003"
+        }]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270105673",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "ginger.burrows@bungabbeemc.example.com.au",
+        "use" : "work"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitioner"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner 0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9</b></p><a name=\"0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9\"> </a><a name=\"hc0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-practitioner.html\">AU PS Practitioner</a></p></div><p><b>identifier</b>: HPI-I/8003618233385011</p><p><b>name</b>: Ginger BURROWS </p><p><b>telecom</b>: ph: 0270105673(Work), <a href=\"mailto:ginger.burrows@bungabbeemc.example.com.au\">ginger.burrows@bungabbeemc.example.com.au</a></p><p><b>address</b>: 189 Bay Esp Bungabbee NSW 2480 </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NPI",
+            "display" : "National provider identifier"
+          }],
+          "text" : "HPI-I"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+        "value" : "8003618233385011"
+      }],
+      "name" : [{
+        "family" : "BURROWS",
+        "given" : ["Ginger"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270105673",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "ginger.burrows@bungabbeemc.example.com.au"
+      }],
+      "address" : [{
+        "line" : ["189 Bay Esp"],
+        "city" : "Bungabbee",
+        "state" : "NSW",
+        "postalCode" : "2480"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175",
+    "resource" : {
+      "resourceType" : "Organization",
+      "id" : "14292353-98f0-43b3-a25b-406baf3f9175",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-organization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_14292353-98f0-43b3-a25b-406baf3f9175\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization 14292353-98f0-43b3-a25b-406baf3f9175</b></p><a name=\"14292353-98f0-43b3-a25b-406baf3f9175\"> </a><a name=\"hc14292353-98f0-43b3-a25b-406baf3f9175\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-organization.html\">AU PS Organization</a></p></div><p><b>identifier</b>: HPI-O/8003624900039170, ABN/81156248664</p><p><b>type</b>: <span title=\"Codes:{http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8511}, {http://snomed.info/sct 788007007}\">General practice medical clinic service</span></p><p><b>name</b>: Bungabbee Medical Clinic</p><p><b>telecom</b>: ph: 0255506327(Work), <a href=\"mailto:info@bungabbeemc.example.com.au\">info@bungabbeemc.example.com.au</a></p><p><b>address</b>: 158 Toby Ave Bungabbee NSW 2480 </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "NOI"
+          }],
+          "text" : "HPI-O"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+        "value" : "8003624900039170"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "XX"
+          }],
+          "text" : "ABN"
+        },
+        "system" : "http://hl7.org.au/id/abn",
+        "value" : "81156248664"
+      }],
+      "type" : [{
+        "coding" : [{
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code" : "8511",
+          "display" : "General Practice Medical Services"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "788007007",
+          "display" : "General practice service"
+        }],
+        "text" : "General practice medical clinic service"
+      }],
+      "name" : "Bungabbee Medical Clinic",
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0255506327",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "info@bungabbeemc.example.com.au"
+      }],
+      "address" : [{
+        "line" : ["158 Toby Ave"],
+        "city" : "Bungabbee",
+        "state" : "NSW",
+        "postalCode" : "2480"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:62eb70e3-e814-4785-80d3-8aa45b1fc367",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "id" : "62eb70e3-e814-4785-80d3-8aa45b1fc367",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_62eb70e3-e814-4785-80d3-8aa45b1fc367\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization 62eb70e3-e814-4785-80d3-8aa45b1fc367</b></p><a name=\"62eb70e3-e814-4785-80d3-8aa45b1fc367\"> </a><a name=\"hc62eb70e3-e814-4785-80d3-8aa45b1fc367\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2023-05-15</p><p><b>primarySource</b>: true</p><p><b>note</b>: </p><blockquote><div><p>Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn.</p>\n</div></blockquote></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2023-05-15",
+      "primarySource" : true,
+      "note" : [{
+        "text" : "Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn."
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "id" : "2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization 2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96</b></p><a name=\"2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96\"> </a><a name=\"hc2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>Vaccine Vial Serial Number</b>: SERIAL1234</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2024-05-05</p><p><b>primarySource</b>: true</p><p><b>lotNumber</b>: lot001</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+        "valueString" : "SERIAL1234"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX",
+          "display" : "Panvax"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2024-05-05",
+      "primarySource" : true,
+      "lotNumber" : "lot001"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:97767fb5-3be7-4d16-9ee8-76c47a4ab0ce",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "id" : "97767fb5-3be7-4d16-9ee8-76c47a4ab0ce",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_97767fb5-3be7-4d16-9ee8-76c47a4ab0ce\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization 97767fb5-3be7-4d16-9ee8-76c47a4ab0ce</b></p><a name=\"97767fb5-3be7-4d16-9ee8-76c47a4ab0ce\"> </a><a name=\"hc97767fb5-3be7-4d16-9ee8-76c47a4ab0ce\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>Vaccine Vial Serial Number</b>: vNo1111</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats MODERN}, {http://snomed.info/sct 1730491000168104}\">COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2023-05-15</p><p><b>recorded</b>: 2022-02-14</p><p><b>primarySource</b>: true</p><p><b>manufacturer</b>: ModernaTX, Inc.</p><p><b>lotNumber</b>: RX00000F</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+        "valueString" : "vNo1111"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "MODERN"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1730491000168104",
+          "display" : "Spikevax 50 microgram/0.5 mL injection, 0.5 mL syringe"
+        }],
+        "text" : "COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2023-05-15",
+      "recorded" : "2022-02-14",
+      "primarySource" : true,
+      "manufacturer" : {
+        "display" : "ModernaTX, Inc."
+      },
+      "lotNumber" : "RX00000F"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8924f910-53b3-4125-b0f2-58d0068f8983",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "8924f910-53b3-4125-b0f2-58d0068f8983",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-smokingstatus"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_8924f910-53b3-4125-b0f2-58d0068f8983\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation 8924f910-53b3-4125-b0f2-58d0068f8983</b></p><a name=\"8924f910-53b3-4125-b0f2-58d0068f8983\"> </a><a name=\"hc8924f910-53b3-4125-b0f2-58d0068f8983\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-smokingstatus.html\">AU PS Smoking Status</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1747861000168109}, {http://loinc.org 72166-2}\">Smoking status</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-10-28</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 266919005}\">Lifetime non-smoker</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "social-history",
+          "display" : "Social History"
+        }],
+        "text" : "Social History"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "1747861000168109"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "72166-2"
+        }],
+        "text" : "Smoking status"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-10-28",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "266919005"
+        }],
+        "text" : "Lifetime non-smoker"
+      }
+    }
+  }],
+  "signature" : {
+    "type" : [{
+      "system" : "urn:iso-astm:E1762-95:2013",
+      "code" : "1.2.840.10065.1.12.1.1",
+      "display" : "Author's Signature"
+    }],
+    "when" : "2024-10-28T11:57:11.269+11:00",
+    "who" : {
+      "reference" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961"
+    },
+    "targetFormat" : "application/fhir+xml",
+    "sigFormat" : "image/png",
+    "data" : "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"
+  }
+}
