@@ -1,0 +1,3238 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "aups-referral-endoconsult-autogen",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle"]
+  },
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:uuid:b1398367-c580-412f-a34e-a09bab5d0bf2"
+  },
+  "type" : "document",
+  "timestamp" : "2024-11-07T10:02:11.269+11:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:ecf18329-b2ae-4648-8888-01aff6dc8172",
+    "resource" : {
+      "resourceType" : "Composition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-composition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-composition.html\">AU PS Composition</a></p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>date</b>: 2024-11-07 10:02:10+1100</p><p><b>author</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-40c3b2a7-e673-4f83-8dd8-2b112a88775e\">Device: identifier = http://example.com/CIS-ID#12345; manufacturer = Some Clinical Information System Manufacturer; modelNumber = 2.0.1; type = Clinical information system</a></p><p><b>title</b>: Patient Summary for Joyce Johnson as of 07 NOV 2024</p><p><b>custodian</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-14292353-98f0-43b3-a25b-406baf3f9175\">Organization Bungabbee Medical Clinic</a></p><h3>Events</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Code</b></td><td><b>Period</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActClass PCPR}\">care provision</span></td><td>?? --&gt; 2024-11-07 10:02:10+1100</td></tr></table></div>"
+      },
+      "status" : "final",
+      "type" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "date" : "2024-11-07T10:02:10.868+11:00",
+      "author" : [{
+        "reference" : "urn:uuid:40c3b2a7-e673-4f83-8dd8-2b112a88775e"
+      }],
+      "title" : "Patient Summary for Joyce Johnson as of 07 NOV 2024",
+      "custodian" : {
+        "reference" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175"
+      },
+      "event" : [{
+        "code" : [{
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v3-ActClass",
+            "code" : "PCPR"
+          }]
+        }],
+        "period" : {
+          "end" : "2024-11-07T10:02:10+11:00"
+        }
+      }],
+      "section" : [{
+        "title" : "Allergies and Intolerances",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "48765-2"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n              <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Type</th>\n                    <th>Substance</th>\n                    <th>Date/time of onset of first reaction</th>\n                    <th>Manifestation</th>\n                    <th>Severity of reaction</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Allergy</td>\n                    <td>Prawns</td>\n                    <td>18:50 02/11/2024</td>\n                    <td>Itchy throat</td>\n                    <td>Mild</td>\n                    <td>Pt stated had prawns with dinner and noticed itchy throat, never experienced this before</td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:f7bd83e4-2a4e-40be-8467-8a29b667ef46"
+        }]
+      },
+      {
+        "title" : "Medication Summary",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10160-0"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n              <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Medicine</th>\n                    <th>Dose</th>\n                    <th>Clinical Indication</th>\n                    <th>Status</th>\n                    <th>Last Updated</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Prenatal vitamins</td>\n                    <td>1 tablet daily</td>\n                    <td>Pregnancy</td>\n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td>Pt prefers Blackmores</td>\n                  </tr>\n                  <tr>\n                    <td>Insulin (Humulin N)</td>\n                    <td>10 units subcutaneously in the morning and evening</td>\n                    <td>Gestational diabetes</td> \n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Insulin (Humulin R)</td>\n                    <td>5 units subcutaneously before each meal</td>\n                    <td>Gestational diabetes</td> \n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Metformin</td>\n                    <td>500mg twice daily</td>\n                    <td>Gestational diabetes</td> \n                    <td>Active</td>\n                    <td>28/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Nitrofurantoin</td>\n                    <td>100mg 6-hourly for 5 days</td>\n                    <td>Urinary tract infection (UTI)</td>\n                    <td>Active</td>\n                    <td>04/11/2024</td>\n                    <td/>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:7193cc2f-d03e-42cb-ab55-4130904505d5"
+        },
+        {
+          "reference" : "urn:uuid:1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417"
+        },
+        {
+          "reference" : "urn:uuid:166c2afe-c6fb-4928-88f0-1c1a1e5e65cd"
+        },
+        {
+          "reference" : "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da"
+        },
+        {
+          "reference" : "urn:uuid:cbe37f4b-e84b-4f34-8490-f21da27f1aa9"
+        }]
+      },
+      {
+        "title" : "Problem list",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11450-4"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n              <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Problem/Diagnosis</th>\n                    <th>Severity</th>\n                    <th>Status</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Gestational diabetes</td>\n                    <td/>\n                    <td>Active</td>\n                    <td>Recent diagnosis, referring to Endo &amp; Dietitian</td>\n                  </tr>\n                  <tr>\n                    <td>Anaemia</td>\n                    <td/>\n                    <td>Active</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Urinary tract infection (UTI)</td>\n                    <td>Moderate</td>\n                    <td>Active</td>\n                    <td>Patient reported symptoms of UTI. MSU to confirm</td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
+        },
+        {
+          "reference" : "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63"
+        },
+        {
+          "reference" : "urn:uuid:07034a67-66ce-4d29-95ab-1ef7e964a873"
+        }]
+      },
+      {
+        "title" : "History of Immunizations",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11369-6"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n              <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Vaccine</th>\n                    <th>Date of administration</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe</td>\n                    <td>05/10/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>05/05/2024</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>15/05/2023</td>\n                    <td>Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn.</td>\n                  </tr>\n                  <tr>\n                    <td>COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe</td>\n                    <td>15/05/2023</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>01/06/2022</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Covid vaccine - Pfizer</td>\n                    <td>02/02/2022</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Covid vaccine - Pfizer</td>\n                    <td>20/07/2021</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>17/05/2021</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Covid vaccine - Pfizer</td>\n                    <td>27/04/2021</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Influenza vaccine</td>\n                    <td>03/05/2020</td>\n                    <td/>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c"
+        },
+        {
+          "reference" : "urn:uuid:46624cc1-7d2e-4367-aa82-85d097ac423f"
+        },
+        {
+          "reference" : "urn:uuid:5711e015-890f-489d-9f8f-49d9a7ff95cd"
+        },
+        {
+          "reference" : "urn:uuid:97767fb5-3be7-4d16-9ee8-76c47a4ab0ce"
+        },
+        {
+          "reference" : "urn:uuid:62eb70e3-e814-4785-80d3-8aa45b1fc367"
+        },
+        {
+          "reference" : "urn:uuid:fac8c42e-4d2a-4cf5-bcc6-831c60e8230e"
+        },
+        {
+          "reference" : "urn:uuid:40a0b552-b0ea-4283-b33e-a5d2e26ed20f"
+        },
+        {
+          "reference" : "urn:uuid:2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96"
+        },
+        {
+          "reference" : "urn:uuid:eb1f812e-41c6-4f8d-b9de-573428a94994"
+        },
+        {
+          "reference" : "urn:uuid:c4e7d351-cd85-435d-9fa5-2db04108651f"
+        }]
+      },
+      {
+        "title" : "Past Medical History (Problems)",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11348-0"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n              <table border=\"1\">\n                <thead>\n                  <tr>\n                    <th>Problem/Diagnosis</th>\n                    <th>Status</th>\n                    <th>Onset Date</th>\n                    <th>Date of Resolution</th>\n                    <th>Comment</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>Appendicitis</td>\n                    <td>Resolved</td>\n                    <td>03/2000</td>\n                    <td/>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>Upper respiratory tract infection</td>\n                    <td>Resolved</td>\n                    <td>10/2022</td>\n                    <td>03/11/2022</td>\n                    <td/>\n                  </tr>\n                  <tr>\n                    <td>First degree burn, Upper shoulders and back</td>\n                    <td>Resolved</td>\n                    <td>02/01/2005</td>\n                    <td/>\n                    <td>Severe sunburn, upper shoulders and back</td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:289aff01-0b3e-4614-aee8-378d074fc3d2"
+        },
+        {
+          "reference" : "urn:uuid:e6db9bbe-60c3-4f89-8f65-25c58771fe41"
+        },
+        {
+          "reference" : "urn:uuid:dc422222-8b3a-4dd5-96b5-b7e0cf43b477"
+        }]
+      },
+      {
+        "title" : "Pregnancy Information",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10162-6"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pregnancy confirmed 12/06/2024. Estimated Date of Delivery  03/02/2025.</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9"
+        }]
+      },
+      {
+        "title" : "Result History",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "30954-2"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<table border=\"1\">\n<thead>\n<tr>\n<th>Test Name</th>\n<th>Test Result</th>\n<th>Date</th>\n</tr>\n</thead>\n<tbody>\n<tr><td>Urine M/C/S - pH</td><td>7</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Protein</td><td>Positive</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Blood</td><td>Positive</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Glucose</td><td>Positive</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Leucocytes</td><td>370  x 10^6/L  (&lt;10)</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Erythrocytes</td><td>150 x 10^6/L  (&lt;10)</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Epithelial cells</td><td>Nil</td><td>05/11/2024</td></tr>\n<tr><td>Urine M/C/S - Culture</td><td>Org 1: Escherichia coli &gt; 10^8  Organisms/mL</td><td>05/11/2024</td></tr><tr><td>Urine M/C/S - Antimicrobial susceptibility</td><td style=\"white-space: pre-line;\">Org 1\nAmp/Amoxycillin: Susceptible\nAmox/clav. acid: Susceptible\nCephalexin: Susceptible\nTrimethoprim: Susceptible\nNitrofurantoin: Susceptible\nGentamicin: Susceptible\nNorfloxacin: Susceptible</td><td>05/11/2024</td></tr>\n<tr>\n<td>Glucose Tolerance Test (GTT) Fasting</td>\n<td>5.3 mmol/L</td>\n<td>21/10/2024</td>\n</tr>\n<tr>\n<td>Glucose Tolerance Test (GTT) 1 hour</td>\n<td>10.0 mmol/L</td>\n<td>21/10/2024</td>\n</tr>\n<tr>\n<td>Glucose Tolerance Test (GTT) 2 hour</td>\n<td>8.6 mmol/L</td>\n<td>21/10/2024</td>\n</tr>\n<tr>\n<td>Haemoglobin A1c</td>\n<td>5.8 %</td>\n<td>14/06/2024</td>\n</tr>\n<tr><td>Full Blood Count -  Haemoglobin</td><td>125  g/L (115-165)</td><td>12/06/2024</td></tr>\n<tr><td>Full Blood Count -  Haematocrit</td><td>0.37  L/L (0.37-0.51)</td><td>12/06/2024</td></tr>\n<tr><td>Full Blood Count -  White Blood Cell Count</td><td>8 x 10^9/L (4.0-11.0)</td><td>12/06/2024</td></tr>\n<tr><td>Full Blood Count -  Platelets</td><td>250 x 10^9/L (150-400)</td><td>12/06/2024</td></tr>\n<tr><td>Full Blood Count - MCV</td><td>85 fL (80-100)</td><td>12/06/2024</td></tr>\n<tr><td>HCG</td><td>16000 IU/L</td><td>12/06/2024</td></tr>\n<tr><td>Urinalysis -  Colour</td><td>Light yellow colour</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Clarity</td><td>Clear</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  pH</td><td>6</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Specific Gravity</td><td>1.02</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Protein</td><td>Negative</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Glucose</td><td>Negative</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Ketones</td><td>Negative</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Nitrites</td><td>Negative</td><td>03/06/2024</td></tr>\n<tr><td>Urinalysis -  Leukocyte Esterase</td><td>Negative</td><td>03/06/2024</td></tr>\n</tbody>\n</table>\n</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:5f1b9790-4892-4af3-9b76-3cb4f854a5b1"
+        },
+        {
+          "reference" : "urn:uuid:1bbd2e05-161d-4030-975c-0cca3ef97cdb"
+        },
+        {
+          "reference" : "urn:uuid:27060cbf-e30e-4091-bd64-7d4ef40916ac"
+        },
+        {
+          "reference" : "urn:uuid:fc061f59-5410-41e9-945e-3f59664e8611"
+        },
+        {
+          "reference" : "urn:uuid:bf094219-4a9b-4184-ae36-0743f93a41ef"
+        },
+        {
+          "reference" : "urn:uuid:f8bbeb04-f3bc-452d-9975-abd1caf12d62"
+        },
+        {
+          "reference" : "urn:uuid:1a506b54-9462-46bf-a266-2d51acbc64ff"
+        },
+        {
+          "reference" : "urn:uuid:8a394aa6-8527-4535-9c68-35cf315232fb"
+        },
+        {
+          "reference" : "urn:uuid:c967c04f-d89d-4266-b4bf-029bc86501ab"
+        },
+        {
+          "reference" : "urn:uuid:d8358a54-f0f3-4457-ae78-b253ea57a4a6"
+        },
+        {
+          "reference" : "urn:uuid:755dc0b4-a796-4a01-ba27-5e6f4098a519"
+        },
+        {
+          "reference" : "urn:uuid:beeded39-c3f2-46bc-80b9-86ea74c2be11"
+        },
+        {
+          "reference" : "urn:uuid:98d97917-eeae-4158-9d25-416420c5828f"
+        },
+        {
+          "reference" : "urn:uuid:714eea46-2561-4b07-8881-f20134abf224"
+        },
+        {
+          "reference" : "urn:uuid:855789e2-18be-43e2-a8a0-402d525202dd"
+        },
+        {
+          "reference" : "urn:uuid:70fa03d7-27bf-46ff-bbad-8fabe4d90901"
+        },
+        {
+          "reference" : "urn:uuid:8c083358-32cf-47b8-9885-4671f55d132c"
+        },
+        {
+          "reference" : "urn:uuid:900d6181-0c2c-4f33-b1e6-51c21d59bb49"
+        },
+        {
+          "reference" : "urn:uuid:049d8e10-c075-41cf-ab74-78438373b95f"
+        },
+        {
+          "reference" : "urn:uuid:92b3e48e-c00b-4a3c-b256-52aced6d52d2"
+        },
+        {
+          "reference" : "urn:uuid:69adb034-1cb7-46fb-9725-633ea913491f"
+        },
+        {
+          "reference" : "urn:uuid:bee00ec5-b2df-445c-95a9-482db09aab28"
+        },
+        {
+          "reference" : "urn:uuid:f0eb1dda-eea3-4272-92e2-b9ac91a14543"
+        },
+        {
+          "reference" : "urn:uuid:1b99e170-74fc-4007-89bc-c6a091bea2d1"
+        },
+        {
+          "reference" : "urn:uuid:5579d9f3-88a9-4339-9662-5431d707288b"
+        },
+        {
+          "reference" : "urn:uuid:1cc93219-c1a2-44dc-9683-33559b3af9fc"
+        },
+        {
+          "reference" : "urn:uuid:03e92f38-81e2-4c93-98c7-a581ecf8f56f"
+        },
+        {
+          "reference" : "urn:uuid:9e30eb5c-b907-4e39-b25f-9bba4f09f79e"
+        },
+        {
+          "reference" : "urn:uuid:775fd6d4-c7ab-48cd-8e30-3a04f415633b"
+        },
+        {
+          "reference" : "urn:uuid:afa66cf9-c360-4655-88a1-adf24684b749"
+        },
+        {
+          "reference" : "urn:uuid:3ede83be-9b70-415e-a354-b23a66e6c67c"
+        },
+        {
+          "reference" : "urn:uuid:c33cd78a-e5a9-40c2-8431-cc92c8638e8e"
+        },
+        {
+          "reference" : "urn:uuid:3706b230-5e87-4da4-b727-1bc44d6f50df"
+        },
+        {
+          "reference" : "urn:uuid:996486b5-3eea-413f-b67d-2ade13cb22b4"
+        },
+        {
+          "reference" : "urn:uuid:a0807ad8-f160-4d27-92d0-f4ee87a63e49"
+        }]
+      },
+      {
+        "title" : "Social History",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "29762-2"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Lifetime non-smoker 28/10/2024</div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:8924f910-53b3-4125-b0f2-58d0068f8983"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f",
+    "resource" : {
+      "resourceType" : "Patient",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-patient.html\">AU PS Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Medicare Number/29545401611</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 0270108012(Home)</li><li>ph: 0491571804(Mobile)</li><li>139 River Lane Palmvale NSW 2484 AU </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>General Practitioner: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-afead11c-3bee-4020-af4f-44040abfa961\">PractitionerRole General Practitioner</a></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"This extension applies to the Patient, Person, and RelatedPerson resources and is used to indicate whether a person identifies as being of Aboriginal or Torres Strait Islander origin.\"><a href=\"https://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-indigenous-status.html\">Australian Indigenous Status</a></td><td colspan=\"3\">australian-indigenous-status-1: 4 (Neither Aboriginal nor Torres Strait Islander origin)</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+        "valueCoding" : {
+          "system" : "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+          "code" : "4",
+          "display" : "Neither Aboriginal nor Torres Strait Islander origin"
+        }
+      }],
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI"
+          }],
+          "text" : "IHI"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+        "value" : "8003608500314679"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MC"
+          }],
+          "text" : "Medicare Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-number",
+        "value" : "29545401611"
+      }],
+      "name" : [{
+        "family" : "JOHNSON",
+        "given" : ["Joyce"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270108012",
+        "use" : "home"
+      },
+      {
+        "system" : "phone",
+        "value" : "0491571804",
+        "use" : "mobile"
+      }],
+      "gender" : "female",
+      "birthDate" : "1985-02-06",
+      "address" : [{
+        "line" : ["139 River Lane"],
+        "city" : "Palmvale",
+        "state" : "NSW",
+        "postalCode" : "2484",
+        "country" : "AU"
+      }],
+      "generalPractitioner" : [{
+        "reference" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f7bd83e4-2a4e-40be-8467-8a29b667ef46",
+    "resource" : {
+      "resourceType" : "AllergyIntolerance",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-allergyintolerance"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-allergyintolerance.html\">AU PS AllergyIntolerance</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification unconfirmed}\">Unconfirmed</span></p><p><b>type</b>: Allergy</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 227151004}\">Prawns</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>onset</b>: 2024-11-02 18:50:00+1100</p><p><b>recordedDate</b>: 2024-11-04</p><p><b>note</b>: </p><blockquote><div><p>Pt stated had prawns with dinner and noticed itchy throat, never experienced this before</p>\n</div></blockquote><h3>Reactions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Manifestation</b></td><td><b>Severity</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">Itchy throat</span></td><td>Mild</td></tr></table></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "code" : "unconfirmed",
+          "display" : "Unconfirmed"
+        }]
+      },
+      "type" : "allergy",
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "227151004",
+          "display" : "Prawns"
+        }],
+        "text" : "Prawns"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "onsetDateTime" : "2024-11-02T18:50:00+11:00",
+      "recordedDate" : "2024-11-04",
+      "note" : [{
+        "text" : "Pt stated had prawns with dinner and noticed itchy throat, never experienced this before"
+      }],
+      "reaction" : [{
+        "manifestation" : [{
+          "text" : "Itchy throat"
+        }],
+        "severity" : "mild"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:cbe37f4b-e84b-4f34-8490-f21da27f1aa9",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"#hcnull/nitrofurantoin\">Medication Nitrofurantoin</a></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-04 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-11-04</p><p><b>reasonReference</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-07034a67-66ce-4d29-95ab-1ef7e964a873\">Condition Urinary tract infection</a></p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>100mg 6-hourly for 5 days</td><td>Once per 6 hours</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral route</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #nitrofurantoin</b></p><a name=\"null/nitrofurantoin\"> </a><a name=\"hcnull/nitrofurantoin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medication.html\">AU PS Medication</a></p></div><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 85343003}\">Nitrofurantoin</span></p><p><b>form</b>: <span title=\"Codes:{http://snomed.info/sct 420692007}\">Capsule</span></p></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "nitrofurantoin",
+        "meta" : {
+          "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medication"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "85343003",
+            "display" : "Nitrofurantoin"
+          }],
+          "text" : "Nitrofurantoin"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "420692007",
+            "display" : "Capsule"
+          }],
+          "text" : "Capsule"
+        }
+      }],
+      "status" : "active",
+      "medicationReference" : {
+        "reference" : "#nitrofurantoin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024-11-04"
+      },
+      "dateAsserted" : "2024-11-04",
+      "reasonReference" : [{
+        "reference" : "urn:uuid:07034a67-66ce-4d29-95ab-1ef7e964a873"
+      }],
+      "dosage" : [{
+        "text" : "100mg 6-hourly for 5 days",
+        "timing" : {
+          "repeat" : {
+            "boundsDuration" : {
+              "value" : 5,
+              "system" : "http://unitsofmeasure.org",
+              "code" : "d"
+            },
+            "frequency" : 1,
+            "period" : 6,
+            "periodUnit" : "h"
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "26643006",
+            "display" : "Oral route"
+          }],
+          "text" : "Oral route"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:05292a9c-2bc9-43a7-b935-0a61ede063da",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"#hcnull/metformin\">Medication Product containing metformin (medicinal product)</a></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><p><b>reasonReference</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-cb647933-b18c-42ef-a1c8-ae137921ba83\">Condition Gestational diabetes mellitus</a></p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>500mg twice daily</td><td>2 per 1 day</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral route</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #metformin</b></p><a name=\"null/metformin\"> </a><a name=\"hcnull/metformin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medication.html\">AU PS Medication</a></p></div><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 109081006}\">Metformin</span></p><p><b>form</b>: <span title=\"Codes:{http://snomed.info/sct 421026006}\">Tablet</span></p></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "metformin",
+        "meta" : {
+          "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medication"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "109081006",
+            "display" : "Product containing metformin (medicinal product)"
+          }],
+          "text" : "Metformin"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "421026006",
+            "display" : "Tablet"
+          }],
+          "text" : "Tablet"
+        }
+      }],
+      "status" : "active",
+      "medicationReference" : {
+        "reference" : "#metformin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "reasonReference" : [{
+        "reference" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
+      }],
+      "dosage" : [{
+        "text" : "500mg twice daily",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 2,
+            "period" : 1,
+            "periodUnit" : "d"
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "26643006",
+            "display" : "Oral route"
+          }],
+          "text" : "Oral route"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:166c2afe-c6fb-4928-88f0-1c1a1e5e65cd",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Prenatal vitamins</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 77386006}\">Pregnancy</span></p><p><b>note</b>: </p><blockquote><div><p>Pt prefers Blackmores</p>\n</div></blockquote><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td>1 tablet daily</td><td><span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral route</span></td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Prenatal vitamins"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "reasonCode" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "77386006",
+          "display" : "Pregnant"
+        }],
+        "text" : "Pregnancy"
+      }],
+      "note" : [{
+        "text" : "Pt prefers Blackmores"
+      }],
+      "dosage" : [{
+        "text" : "1 tablet daily",
+        "route" : {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "26643006",
+            "display" : "Oral route"
+          }],
+          "text" : "Oral route"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:7193cc2f-d03e-42cb-ab55-4130904505d5",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Insulin (Humulin N)</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><p><b>reasonReference</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-cb647933-b18c-42ef-a1c8-ae137921ba83\">Condition Gestational diabetes mellitus</a></p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>10 units subcutaneously in the morning and evening</td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Insulin (Humulin N)"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "reasonReference" : [{
+        "reference" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
+      }],
+      "dosage" : [{
+        "text" : "10 units subcutaneously in the morning and evening"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1c4dd2b6-a9ee-4ba3-9b37-c1aff277c417",
+    "resource" : {
+      "resourceType" : "MedicationStatement",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationStatement_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-medicationstatement.html\">AU PS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <span title=\"Codes:\">Insulin (Humulin R)</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024 --&gt; (ongoing)</p><p><b>dateAsserted</b>: 2024-10-24</p><p><b>reasonReference</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-cb647933-b18c-42ef-a1c8-ae137921ba83\">Condition Gestational diabetes mellitus</a></p><h3>Dosages</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>5 units subcutaneously before each meal</td></tr></table></div>"
+      },
+      "status" : "active",
+      "medicationCodeableConcept" : {
+        "text" : "Insulin (Humulin R)"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectivePeriod" : {
+        "start" : "2024"
+      },
+      "dateAsserted" : "2024-10-24",
+      "reasonReference" : [{
+        "reference" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83"
+      }],
+      "dosage" : [{
+        "text" : "5 units subcutaneously before each meal"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:cb647933-b18c-42ef-a1c8-ae137921ba83",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 11687002}\">Gestational diabetes</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>note</b>: </p><blockquote><div><p>Recent diagnosis, referring to Endo &amp; Dietitian</p>\n</div></blockquote></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "11687002",
+          "display" : "Gestational diabetes mellitus"
+        }],
+        "text" : "Gestational diabetes"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "note" : [{
+        "text" : "Recent diagnosis, referring to Endo & Dietitian"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:07034a67-66ce-4d29-95ab-1ef7e964a873",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status provisional}\">Provisional</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>severity</b>: <span title=\"Codes:{http://snomed.info/sct 6736007}\">Moderate</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 68566005}\">Urinary tract infection (UTI)</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>note</b>: </p><blockquote><div><p>Patient reported symptoms of UTI. MSU to confirm.</p>\n</div></blockquote></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+          "code" : "provisional"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "severity" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "6736007"
+        }],
+        "text" : "Moderate"
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "68566005",
+          "display" : "Urinary tract infection"
+        }],
+        "text" : "Urinary tract infection (UTI)"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "note" : [{
+        "text" : "Patient reported symptoms of UTI. MSU to confirm."
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:78f75926-3ee1-44a7-9424-6178d905af63",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 271737000}\">Anaemia</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "271737000",
+          "display" : "Anaemia"
+        }],
+        "text" : "Anaemia"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:289aff01-0b3e-4614-aee8-378d074fc3d2",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 74400008}\">Appendicitis</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>onset</b>: 2000-03</p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "74400008",
+          "display" : "Appendicitis"
+        }],
+        "text" : "Appendicitis"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "onsetDateTime" : "2000-03"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:e6db9bbe-60c3-4f89-8f65-25c58771fe41",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 54150009}\">Upper respiratory tract infection</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>onset</b>: 2022-10</p><p><b>abatement</b>: 2022-11-03</p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "54150009",
+          "display" : "Upper respiratory tract infection"
+        }],
+        "text" : "Upper respiratory tract infection"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "onsetDateTime" : "2022-10",
+      "abatementDateTime" : "2022-11-03"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:dc422222-8b3a-4dd5-96b5-b7e0cf43b477",
+    "resource" : {
+      "resourceType" : "Condition",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-condition.html\">AU PS Condition</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical resolved}\">Resolved</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 403190006}\">First degree burn, Upper shoulders and back</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>onset</b>: 2005-01-02</p><p><b>note</b>: </p><blockquote><div><p>Severe sunburn, upper shoulders and back</p>\n</div></blockquote></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "resolved"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item"
+        }],
+        "text" : "Problem"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "403190006",
+          "display" : "Epidermal burn of skin"
+        }],
+        "text" : "First degree burn, Upper shoulders and back"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "onsetDateTime" : "2005-01-02",
+      "note" : [{
+        "text" : "Severe sunburn, upper shoulders and back"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:784ae7d5-22df-442d-b932-0c001720136c",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{http://snomed.info/sct 1789171000168108}\">Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2024-10-05</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "version" : "http://snomed.info/sct/32506021000036107/version/20250131",
+          "code" : "1789171000168108",
+          "display" : "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
+        }],
+        "text" : "Diphtheria + tetanus + pertussis 5 component adolescent/adult vaccine injection, 0.5 mL syringe"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2024-10-05"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:ad82d71b-ca1c-4db6-a726-cc70cf638306",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-edd-uv-ips"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/ips/STU2/StructureDefinition-Observation-pregnancy-edd-uv-ips.html\">Observation Pregnancy - Expected Delivery Date (IPS)</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category imaging}\">Imaging</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 161714006}, {http://loinc.org 11778-8}\">Estimated date of delivery</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>value</b>: 2025-02-03</p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "imaging",
+          "display" : "Imaging"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "161714006",
+          "display" : "Estimated date of delivery"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "11778-8",
+          "display" : "Delivery date Estimated"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "valueDateTime" : "2025-02-03"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f85ad223-7bed-46f3-893d-e89d6082f9a9",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/ips/STU2/StructureDefinition-Observation-pregnancy-status-uv-ips.html\">Observation Pregnancy - Status (IPS)</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 82810-3}\">Pregnancy status</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 77386006}, {http://loinc.org LA15173-0}\">Pregnant</span></p><p><b>hasMember</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-ad82d71b-ca1c-4db6-a726-cc70cf638306\">Observation Estimated date of delivery</a></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "social-history",
+          "display" : "Social History"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "82810-3",
+          "display" : "Pregnancy status"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "77386006",
+          "display" : "Pregnant"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "LA15173-0",
+          "display" : "Pregnant"
+        }],
+        "text" : "Pregnant"
+      },
+      "hasMember" : [{
+        "reference" : "urn:uuid:ad82d71b-ca1c-4db6-a726-cc70cf638306"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:afead11c-3bee-4020-af4f-44040abfa961",
+    "resource" : {
+      "resourceType" : "PractitionerRole",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitionerrole"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"PractitionerRole_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-practitionerrole.html\">AU PS PractitionerRole</a></p></div><p><b>identifier</b>: Medicare Provider Number/2448681J</p><p><b>practitioner</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9\">Practitioner Ginger BURROWS </a></p><p><b>organization</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-14292353-98f0-43b3-a25b-406baf3f9175\">Organization Bungabbee Medical Clinic</a></p><p><b>code</b>: <span title=\"Codes:{http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0 253111}, {http://snomed.info/sct 62247001}\">General Practitioner</span></p><p><b>specialty</b>: <span title=\"Codes:{http://snomed.info/sct 408443003}\">General medical practice</span></p><p><b>telecom</b>: ph: 0270105673(Work), <a href=\"mailto:ginger.burrows@bungabbeemc.example.com.au\">ginger.burrows@bungabbeemc.example.com.au</a></p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "UPIN"
+          }],
+          "text" : "Medicare Provider Number"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/medicare-provider-number",
+        "value" : "2448681J"
+      }],
+      "practitioner" : {
+        "reference" : "urn:uuid:0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9"
+      },
+      "organization" : {
+        "reference" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175"
+      },
+      "code" : [{
+        "coding" : [{
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code" : "253111",
+          "display" : "General Practitioner"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "62247001"
+        }]
+      }],
+      "specialty" : [{
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "408443003"
+        }]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270105673",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "ginger.burrows@bungabbeemc.example.com.au",
+        "use" : "work"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:0c0e2c4f-a748-4cc7-afde-f09bdc2d6fa9",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitioner"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-practitioner.html\">AU PS Practitioner</a></p></div><p><b>identifier</b>: HPI-I/8003618233385011</p><p><b>name</b>: Ginger BURROWS </p><p><b>telecom</b>: ph: 0270105673(Work), <a href=\"mailto:ginger.burrows@bungabbeemc.example.com.au\">ginger.burrows@bungabbeemc.example.com.au</a></p><p><b>address</b>: 189 Bay Esp Bungabbee NSW 2480 </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NPI",
+            "display" : "National provider identifier"
+          }],
+          "text" : "HPI-I"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+        "value" : "8003618233385011"
+      }],
+      "name" : [{
+        "family" : "BURROWS",
+        "given" : ["Ginger"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0270105673",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "ginger.burrows@bungabbeemc.example.com.au"
+      }],
+      "address" : [{
+        "line" : ["189 Bay Esp"],
+        "city" : "Bungabbee",
+        "state" : "NSW",
+        "postalCode" : "2480"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:14292353-98f0-43b3-a25b-406baf3f9175",
+    "resource" : {
+      "resourceType" : "Organization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-organization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-organization.html\">AU PS Organization</a></p></div><p><b>identifier</b>: HPI-O/8003624900039170, ABN/81156248664</p><p><b>type</b>: <span title=\"Codes:{http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0 8511}, {http://snomed.info/sct 788007007}\">General practice medical clinic service</span></p><p><b>name</b>: Bungabbee Medical Clinic</p><p><b>telecom</b>: ph: 0255506327(Work), <a href=\"mailto:info@bungabbeemc.example.com.au\">info@bungabbeemc.example.com.au</a></p><p><b>address</b>: 158 Toby Ave Bungabbee NSW 2480 </p></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code" : "NOI"
+          }],
+          "text" : "HPI-O"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+        "value" : "8003624900039170"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "XX"
+          }],
+          "text" : "ABN"
+        },
+        "system" : "http://hl7.org.au/id/abn",
+        "value" : "81156248664"
+      }],
+      "type" : [{
+        "coding" : [{
+          "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code" : "8511",
+          "display" : "General Practice Medical Services"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "788007007",
+          "display" : "General practice service"
+        }],
+        "text" : "General practice medical clinic service"
+      }],
+      "name" : "Bungabbee Medical Clinic",
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0255506327",
+        "use" : "work"
+      },
+      {
+        "system" : "email",
+        "value" : "info@bungabbeemc.example.com.au"
+      }],
+      "address" : [{
+        "line" : ["158 Toby Ave"],
+        "city" : "Bungabbee",
+        "state" : "NSW",
+        "postalCode" : "2480"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:46624cc1-7d2e-4367-aa82-85d097ac423f",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2022-06-01</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2022-06-01",
+      "primarySource" : true
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:5711e015-890f-489d-9f8f-49d9a7ff95cd",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2021-05-17</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2021-05-17",
+      "primarySource" : true
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:62eb70e3-e814-4785-80d3-8aa45b1fc367",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2023-05-15</p><p><b>primarySource</b>: true</p><p><b>note</b>: </p><blockquote><div><p>Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn.</p>\n</div></blockquote></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2023-05-15",
+      "primarySource" : true,
+      "note" : [{
+        "text" : "Pt reported localised redness and swelling post previous flu vax last year. Monitor for rxn."
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:2f3537b2-f50c-4a2a-ab92-30fdcfe5fd96",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>Vaccine Vial Serial Number</b>: SERIAL1234</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2024-05-05</p><p><b>primarySource</b>: true</p><p><b>lotNumber</b>: lot001</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+        "valueString" : "SERIAL1234"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX",
+          "display" : "Panvax"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2024-05-05",
+      "primarySource" : true,
+      "lotNumber" : "lot001"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:c4e7d351-cd85-435d-9fa5-2db04108651f",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats PANVAX}\">Panvax</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2020-05-03</p><p><b>primarySource</b>: true</p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "PANVAX",
+          "display" : "Panvax"
+        }],
+        "text" : "Panvax"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2020-05-03",
+      "primarySource" : true
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:97767fb5-3be7-4d16-9ee8-76c47a4ab0ce",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>Vaccine Vial Serial Number</b>: vNo1111</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats MODERN}, {http://snomed.info/sct 1730491000168104}\">COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2023-05-15</p><p><b>recorded</b>: 2022-02-14</p><p><b>primarySource</b>: true</p><p><b>manufacturer</b>: ModernaTX, Inc.</p><p><b>lotNumber</b>: RX00000F</p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+        "valueString" : "vNo1111"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "MODERN"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1730491000168104",
+          "display" : "Spikevax 50 microgram/0.5 mL injection, 0.5 mL syringe"
+        }],
+        "text" : "COVID-19 mRNA-1273 Vaccine (Moderna) injection, 0.5 mL syringe"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2023-05-15",
+      "recorded" : "2022-02-14",
+      "primarySource" : true,
+      "manufacturer" : {
+        "display" : "ModernaTX, Inc."
+      },
+      "lotNumber" : "RX00000F"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:40a0b552-b0ea-4283-b33e-a5d2e26ed20f",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>Vaccine Vial Serial Number</b>: vNo1111</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats COMIRN}, {http://snomed.info/sct 1525011000168107}\">Pfizer Comirnaty</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2021-07-20</p><p><b>primarySource</b>: true</p><p><b>manufacturer</b>: Pfizer Australia Ltd</p><p><b>lotNumber</b>: 300000000P</p><p><b>site</b>: <span title=\"Codes:{http://snomed.info/sct 368208006}\">Left upper arm</span></p></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org.au/fhir/StructureDefinition/vaccine-serial-number",
+        "valueString" : "vNo1111"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "COMIRN"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1525011000168107",
+          "display" : "Comirnaty"
+        }],
+        "text" : "Pfizer Comirnaty"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2021-07-20",
+      "primarySource" : true,
+      "manufacturer" : {
+        "display" : "Pfizer Australia Ltd"
+      },
+      "lotNumber" : "300000000P",
+      "site" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "368208006"
+        }],
+        "text" : "Left upper arm"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:fac8c42e-4d2a-4cf5-bcc6-831c60e8230e",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.5.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats COMIRN}\">Pfizer Comirnaty</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2022-02-02</p><p><b>primarySource</b>: true</p><p><b>manufacturer</b>: Pfizer Australia Ltd</p><p><b>lotNumber</b>: 500000000P</p><p><b>site</b>: <span title=\"Codes:{http://snomed.info/sct 368208006}\">Left upper arm</span></p></div>"
+      },
+      "identifier" : [{
+        "system" : "urn:ietf:rfc:3986",
+        "value" : "urn:uuid:475db616-dfd5-43f3-b935-9f582233a38d"
+      }],
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "COMIRN"
+        }],
+        "text" : "Pfizer Comirnaty"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2022-02-02",
+      "primarySource" : true,
+      "manufacturer" : {
+        "display" : "Pfizer Australia Ltd"
+      },
+      "lotNumber" : "500000000P",
+      "site" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "368208006"
+        }],
+        "text" : "Left upper arm"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:eb1f812e-41c6-4f8d-b9de-573428a94994",
+    "resource" : {
+      "resourceType" : "Immunization",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-immunization"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Immunization_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Immunization </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-immunization.html\">AU PS Immunization</a></p></div><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats COMIRN}, {http://snomed.info/sct 1525011000168107}\">Pfizer Comirnaty</span></p><p><b>patient</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>occurrence</b>: 2021-04-27</p><p><b>primarySource</b>: true</p><p><b>manufacturer</b>: Pfizer Australia Ltd</p><p><b>lotNumber</b>: 200000000P</p><p><b>site</b>: <span title=\"Codes:{http://snomed.info/sct 368208006}\">Left upper arm</span></p></div>"
+      },
+      "status" : "completed",
+      "vaccineCode" : {
+        "coding" : [{
+          "system" : "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats",
+          "code" : "COMIRN"
+        },
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "1525011000168107",
+          "display" : "Comirnaty"
+        }],
+        "text" : "Pfizer Comirnaty"
+      },
+      "patient" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "occurrenceDateTime" : "2021-04-27",
+      "primarySource" : true,
+      "manufacturer" : {
+        "display" : "Pfizer Australia Ltd"
+      },
+      "lotNumber" : "200000000P",
+      "site" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "368208006"
+        }],
+        "text" : "Left upper arm"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:5f1b9790-4892-4af3-9b76-3cb4f854a5b1",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 14995-5}\">Glucose Tolerance Test (GTT) 2 hour</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-10-21</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 8.6 mmol/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemmol/L = 'mmol/L')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "14995-5",
+          "display" : "Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO"
+        }],
+        "text" : "Glucose Tolerance Test (GTT) 2 hour"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-10-21",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 8.6,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mmol/L"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1bbd2e05-161d-4030-975c-0cca3ef97cdb",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 14996-3}\">Glucose Tolerance Test (GTT) Fasting</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-10-21</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 5.3 mmol/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemmol/L = 'mmol/L')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "14996-3",
+          "display" : "Glucose [Moles/volume] in Serum or Plasma --pre 75 g glucose PO"
+        }],
+        "text" : "Glucose Tolerance Test (GTT) Fasting"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-10-21",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 5.3,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mmol/L"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:27060cbf-e30e-4091-bd64-7d4ef40916ac",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 51597-3}\">Glucose Tolerance Test (GTT) 1 hour</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-10-21</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 10 mmol/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemmol/L = 'mmol/L')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "51597-3",
+          "display" : "Glucose [Moles/volume] in Serum or Plasma --1 hour post 75 g glucose PO"
+        }],
+        "text" : "Glucose Tolerance Test (GTT) 1 hour"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-10-21",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 10,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mmol/L"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:fc061f59-5410-41e9-945e-3f59664e8611",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4548-4}\">Haemoglobin A1c</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-14</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 5.8 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "4548-4",
+          "display" : "Hemoglobin A1c/Hemoglobin.total in Blood"
+        }],
+        "text" : "Haemoglobin A1c"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-14",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 5.8,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "%"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:bf094219-4a9b-4184-ae36-0743f93a41ef",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 2756-5}\">Urine M/C/S - pH</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 7.0</p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "2756-5",
+          "display" : "pH of Urine"
+        }],
+        "text" : "Urine M/C/S - pH"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 7.0
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f8bbeb04-f3bc-452d-9975-abd1caf12d62",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 20454-5}\">Urine M/C/S - Protein</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 10828004}\">Positive</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "20454-5",
+          "display" : "Protein [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urine M/C/S - Protein"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "10828004",
+          "display" : "Positive"
+        }],
+        "text" : "Positive"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1a506b54-9462-46bf-a266-2d51acbc64ff",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5794-3}\">Urine M/C/S - Blood</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 10828004}\">Positive</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5794-3",
+          "display" : "Hemoglobin [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urine M/C/S - Blood"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "10828004",
+          "display" : "Positive"
+        }],
+        "text" : "Positive"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8a394aa6-8527-4535-9c68-35cf315232fb",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 25428-4}\">Urine M/C/S - Glucose</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 10828004}\">Positive</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "25428-4",
+          "display" : "Glucose [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urine M/C/S - Glucose"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "10828004",
+          "display" : "Positive"
+        }],
+        "text" : "Positive"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:c967c04f-d89d-4266-b4bf-029bc86501ab",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30405-5}\">Urine M/C/S - Leucocytes</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 370 10*6/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code10*6/L = '10*6/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>&lt;10</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "30405-5",
+          "display" : "Leukocytes [#/volume] in Urine"
+        }],
+        "text" : "Urine M/C/S - Leucocytes"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 370,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "10*6/L"
+      },
+      "referenceRange" : [{
+        "text" : "<10"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:d8358a54-f0f3-4457-ae78-b253ea57a4a6",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30391-7}\">Urine M/C/S - Erythrocytes</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 150 10*6/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code10*6/L = '10*6/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>&lt;10</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "30391-7",
+          "display" : "Erythrocytes [#/volume] in Urine"
+        }],
+        "text" : "Urine M/C/S - Erythrocytes"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 150,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "10*6/L"
+      },
+      "referenceRange" : [{
+        "text" : "<10"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:755dc0b4-a796-4a01-ba27-5e6f4098a519",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 30383-4}\">Urine M/C/S - Epithelial cells</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260386005}\">Nil</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "30383-4",
+          "display" : "Epithelial cells [#/volume] in Urine"
+        }],
+        "text" : "Urine M/C/S - Epithelial cells"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260386005",
+          "display" : "Nil"
+        }],
+        "text" : "Nil"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:beeded39-c3f2-46bc-80b9-86ea74c2be11",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 630-4}\">Urine M/C/S - Culture</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 112283007}\">Escherichia coli</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "630-4",
+          "display" : "Bacteria identified in Urine by Culture"
+        }],
+        "text" : "Urine M/C/S - Culture"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "112283007",
+          "display" : "Escherichia coli"
+        }],
+        "text" : "Escherichia coli"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:98d97917-eeae-4158-9d25-416420c5828f",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 19090-0}\">Colony count</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: &gt;1e8 /mL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code/mL = '/mL')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "19090-0",
+          "display" : "Colony count [#/volume] in Urine"
+        }],
+        "text" : "Colony count"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 1E+8,
+        "comparator" : ">",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "/mL"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:714eea46-2561-4b07-8881-f20134abf224",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18861-5}\">Amp/Amoxycillin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18861-5",
+          "display" : "Amoxicillin [Susceptibility]"
+        }],
+        "text" : "Amp/Amoxycillin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:855789e2-18be-43e2-a8a0-402d525202dd",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18862-3}\">Amox/clav. acid</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18862-3",
+          "display" : "Amoxicillin+Clavulanate [Susceptibility]"
+        }],
+        "text" : "Amox/clav. acid"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:70fa03d7-27bf-46ff-bbad-8fabe4d90901",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18897-9}\">Cephalexin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18897-9",
+          "display" : "Cephalexin [Susceptibility]"
+        }],
+        "text" : "Cephalexin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8c083358-32cf-47b8-9885-4671f55d132c",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18997-7}\">Trimethoprim</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18997-7",
+          "display" : "Trimethoprim [Susceptibility]"
+        }],
+        "text" : "Trimethoprim"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:900d6181-0c2c-4f33-b1e6-51c21d59bb49",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18955-5}\">Nitrofurantoin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18955-5",
+          "display" : "Nitrofurantoin [Susceptibility]"
+        }],
+        "text" : "Nitrofurantoin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:049d8e10-c075-41cf-ab74-78438373b95f",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18928-2}\">Gentamicin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18928-2",
+          "display" : "Gentamicin [Susceptibility]"
+        }],
+        "text" : "Gentamicin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:92b3e48e-c00b-4a3c-b256-52aced6d52d2",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 18956-3}\">Norfloxacin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-11-05</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation S}\">Susceptible</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "18956-3",
+          "display" : "Norfloxacin [Susceptibility]"
+        }],
+        "text" : "Norfloxacin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-11-05",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code" : "S",
+          "display" : "Susceptible"
+        }],
+        "text" : "Susceptible"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:69adb034-1cb7-46fb-9725-633ea913491f",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 718-7}\">Full Blood Count -  Haemoglobin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 125 g/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg/L = 'g/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>115-165</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "718-7",
+          "display" : "Hemoglobin [Mass/volume] in Blood"
+        }],
+        "text" : "Full Blood Count -  Haemoglobin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 125,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "g/L"
+      },
+      "referenceRange" : [{
+        "text" : "115-165"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:bee00ec5-b2df-445c-95a9-482db09aab28",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 4544-3}\">Full Blood Count -  Haematocrit</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 0.37 L/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeL/L = 'L/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>0.37-0.51</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "4544-3",
+          "display" : "Hematocrit [Volume Fraction] of Blood by Automated count"
+        }],
+        "text" : "Full Blood Count -  Haematocrit"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 0.37,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "L/L"
+      },
+      "referenceRange" : [{
+        "text" : "0.37-0.51"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f0eb1dda-eea3-4272-92e2-b9ac91a14543",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 6690-2}\">Full Blood Count -  White Blood Cell Count</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 8.0 10*9/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code10*9/L = '10*9/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>4.0-11.0</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "6690-2",
+          "display" : "Leukocytes [#/volume] in Blood by Automated count"
+        }],
+        "text" : "Full Blood Count -  White Blood Cell Count"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 8.0,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "10*9/L"
+      },
+      "referenceRange" : [{
+        "text" : "4.0-11.0"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1b99e170-74fc-4007-89bc-c6a091bea2d1",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 777-3}\">Full Blood Count - Platelets</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 250 10*9/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code10*9/L = '10*9/L')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>150-400</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "777-3",
+          "display" : "Platelets [#/volume] in Blood by Automated count"
+        }],
+        "text" : "Full Blood Count - Platelets"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 250,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "10*9/L"
+      },
+      "referenceRange" : [{
+        "text" : "150-400"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:5579d9f3-88a9-4339-9662-5431d707288b",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 787-2}\">Full Blood Count - MCV</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 85 fL<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codefL = 'fL')</span></p><h3>ReferenceRanges</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Text</b></td></tr><tr><td style=\"display: none\">*</td><td>80-100</td></tr></table></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "787-2",
+          "display" : "MCV [Entitic mean volume] in Red Blood Cells by Automated count"
+        }],
+        "text" : "Full Blood Count - MCV"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 85,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "fL"
+      },
+      "referenceRange" : [{
+        "text" : "80-100"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:1cc93219-c1a2-44dc-9683-33559b3af9fc",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5778-6}\">Urinalysis - Colour</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 1290436002}\">Light yellow</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5778-6",
+          "display" : "Color of Urine"
+        }],
+        "text" : "Urinalysis - Colour"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "1290436002",
+          "display" : "Light yellow colour"
+        }],
+        "text" : "Light yellow"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:03e92f38-81e2-4c93-98c7-a581ecf8f56f",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 32167-9}\">Urinalysis - Clarity</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 263707001}\">Clear</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "32167-9",
+          "display" : "Clarity of Urine"
+        }],
+        "text" : "Urinalysis - Clarity"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "263707001",
+          "display" : "Clear"
+        }],
+        "text" : "Clear"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:9e30eb5c-b907-4e39-b25f-9bba4f09f79e",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5803-2}\">Urinalysis - pH</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 6.0</p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5803-2",
+          "display" : "pH of Urine by Test strip"
+        }],
+        "text" : "Urinalysis - pH"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 6.0
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:775fd6d4-c7ab-48cd-8e30-3a04f415633b",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5811-5}\">Urinalysis - Specific Gravity</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 1.02</p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5811-5",
+          "display" : "Specific gravity of Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Specific Gravity"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 1.02
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:afa66cf9-c360-4655-88a1-adf24684b749",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 20454-5}\">Urinalysis - Protein</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "20454-5",
+          "display" : "Protein [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Protein"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }],
+        "text" : "Negative"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:3ede83be-9b70-415e-a354-b23a66e6c67c",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 25428-4}\">Urinalysis - Glucose</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "25428-4",
+          "display" : "Glucose [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Glucose"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }],
+        "text" : "Negative"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:c33cd78a-e5a9-40c2-8431-cc92c8638e8e",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 2514-8}\">Urinalysis - Ketones</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "2514-8",
+          "display" : "Ketones [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Ketones"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }],
+        "text" : "Negative"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:3706b230-5e87-4da4-b727-1bc44d6f50df",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5802-4}\">Urinalysis - Nitrites</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5802-4",
+          "display" : "Nitrite [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Nitrites"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }],
+        "text" : "Negative"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:996486b5-3eea-413f-b67d-2ade13cb22b4",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 5799-2}\">Urinalysis - Leukocyte Esterase</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-03</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260385009}\">Negative</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "5799-2",
+          "display" : "Leukocyte esterase [Presence] in Urine by Test strip"
+        }],
+        "text" : "Urinalysis - Leukocyte Esterase"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-03",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "260385009",
+          "display" : "Negative"
+        }],
+        "text" : "Negative"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:a0807ad8-f160-4d27-92d0-f4ee87a63e49",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-diagnosticresult-path"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-diagnosticresult-path.html\">AU PS Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 21198-7}\">HCG</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-06-12</p><p><b>performer</b>: ?rref?</p><p><b>value</b>: 16000 [IU]/L<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code[IU]/L = '[IU]/L')</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "laboratory",
+          "display" : "Laboratory"
+        }]
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "21198-7",
+          "display" : "Choriogonadotropin.beta subunit [Units/volume] in Serum or Plasma"
+        }],
+        "text" : "HCG"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-06-12",
+      "performer" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode" : "unknown"
+        }]
+      }],
+      "valueQuantity" : {
+        "value" : 16000,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "[IU]/L"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8924f910-53b3-4125-b0f2-58d0068f8983",
+    "resource" : {
+      "resourceType" : "Observation",
+      "meta" : {
+        "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-smokingstatus"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Observation_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Observation </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-ps-smokingstatus.html\">AU PS Smoking Status</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category social-history}\">Social History</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 1747861000168109}, {http://loinc.org 72166-2}\">Smoking status</span></p><p><b>subject</b>: <a href=\"Bundle-aups-referral-endoconsult-autogen.html#urn-uuid-85822a88-55b1-460c-bb7b-e8fc22d8568f\">Joyce JOHNSON  Female, DoB: 1985-02-06 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608500314679)</a></p><p><b>effective</b>: 2024-10-28</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 266919005}\">Lifetime non-smoker</span></p></div>"
+      },
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "social-history",
+          "display" : "Social History"
+        }],
+        "text" : "Social History"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "1747861000168109"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "72166-2"
+        }],
+        "text" : "Smoking status"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:85822a88-55b1-460c-bb7b-e8fc22d8568f"
+      },
+      "effectiveDateTime" : "2024-10-28",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "266919005"
+        }],
+        "text" : "Lifetime non-smoker"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:40c3b2a7-e673-4f83-8dd8-2b112a88775e",
+    "resource" : {
+      "resourceType" : "Device",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Device_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Device </b></p><p><b>identifier</b>: <code>http://example.com/CIS-ID</code>/12345</p><p><b>manufacturer</b>: Some Clinical Information System Manufacturer</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Name of Device</td><td>Model name</td></tr></table><p><b>modelNumber</b>: 2.0.1</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 706593004}\">Clinical information system</span></p></div>"
+      },
+      "identifier" : [{
+        "system" : "http://example.com/CIS-ID",
+        "value" : "12345"
+      }],
+      "manufacturer" : "Some Clinical Information System Manufacturer",
+      "deviceName" : [{
+        "name" : "Name of Device",
+        "type" : "model-name"
+      }],
+      "modelNumber" : "2.0.1",
+      "type" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "706593004",
+          "display" : "Clinical information system"
+        }]
+      }
+    }
+  }],
+  "signature" : {
+    "type" : [{
+      "system" : "urn:iso-astm:E1762-95:2013",
+      "code" : "1.2.840.10065.1.12.1.5",
+      "display" : "Verification Signature"
+    }],
+    "when" : "2025-11-27T00:50:00Z",
+    "who" : {
+      "identifier" : {
+        "system" : "http://example.org/certificates",
+        "value" : "OU=IG Publisher,L=Ann Arbor,CN=hl7.org,O=HL7,ST=Missouri,C=us"
+      }
+    },
+    "targetFormat" : "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document",
+    "sigFormat" : "application/jose",
+    "data" : "ZXlKMGVYQWlPaUpLVDFORklpd2ljM0pEYlhNaU9sdDdJbU52YlcxSlpDSTZleUpwWkNJNkluVnlianB2YVdRNk1TNHlMamcwTUM0eE1EQTJOUzR4TGpFeUxqRXVOU0lzSW1SbGMyTWlPaUpXWlhKcFptbGpZWFJwYjI0Z1UybG5ibUYwZFhKbEluMTlYU3dpWVd4bklqb2lVbE15TlRZaUxDSnphV2RVSWpvaU1qQXlOUzB4TVMweU4xUXdNRG8xTURvd01Gb2lMQ0pqWVc1dmJpSTZJbWgwZEhBNkx5OW9iRGN1YjNKbkwyWm9hWEl2WTJGdWIyNXBZMkZzYVhwaGRHbHZiaTlxYzI5dUkyUnZZM1Z0Wlc1MElpd2llRFZqSWpwYklrMUpTVVJ2ZWtORFFXOXhaMEYzU1VKQlowbENRVVJCVGtKbmEzRm9hMmxIT1hjd1FrRlJNRVpCUkVKeVRWRnpkME5SV1VSV1VWRkhSWGRLTVdONlJWSk5RVGhIUVRGVlJVTkJkMGxVVjJ4Nll6STVNV050YTNoRVJFRkxRbWRPVmtKQmIwMUJNR2hOVG5wRlVVMUJORWRCTVZWRlFYZDNTR0ZIZHpOTWJUbDVXbnBGVTAxQ1FVZEJNVlZGUW5kM1NsRlhOWFZKUlVaNVdXMDVlVTFTVlhkRmQxbEVWbEZSVEVSQmVFcFNlVUpSWkZkS2MyRllUbTlhV0VsM1NHaGpUazFxVlhkT2FrVTFUVVJKZWsxRVRYcFhhR05PVFdwWmQwNXFTWGROUkVsNlRVUk5lbGRxUW5KTlVYTjNRMUZaUkZaUlVVZEZkMG94WTNwRlVrMUJPRWRCTVZWRlEwRjNTVlJYYkhwak1qa3hZMjFyZUVSRVFVdENaMDVXUWtGdlRVRXdhRTFPZWtWUlRVRTBSMEV4VlVWQmQzZElZVWQzTTB4dE9YbGFla1ZUVFVKQlIwRXhWVVZDZDNkS1VWYzFkVWxGUm5sWmJUbDVUVkpWZDBWM1dVUldVVkZNUkVGNFNsSjVRbEZrVjBwellWaE9iMXBZU1hkblowVnFUVUV3UjBOVGNVZFRTV0l6UkZGRlFrRlJWVUZCTkVsQ1JVRkJkMmRuUlV4QmIwbENRV2RET1ZWek9IWXdWWGxQZVN0WVYweFNabVl5T1VkSVVXRTVZWGh4ZEVSaGJ6ZGhlbk5YYmtZeUwwRkNaR2N4Wnpaa1QwWXZNRnByY21oTVpIRktTVk5xT0Uxc1UxQTFWa3h2ZFRZM2FWcEpTREJTZUZKTlpsTkJNR1V2Wm1rNVJFVTRVVk42Y0VsUGJIVmxaVWd5VFRoUk1sWmxjMHR3TTJoSmEzQXJlRU5oUjFCaVl6Uk1NR3RhVm10Rk5rVlhLMVJWVWpkUlZITXhUbXRoZUhSM1dYWlhPRGRuUzNwdU5rSk1NRmw0THpWdGRURlZSbGRqU2k5WWRFeElhMmxoWjNSSllsTnBSVmhUWkhOcWVIWnBUMkpLVFRKVFlWWXpkR0ZEWVdGNVIwdFdSbkJWTm5KUVRFUXZWbEpoY25RMldsQXhRMHBSTW5wc1NYTnJSVVZQYm01VlMwVlZkWGRqUm5CTU4zUTFSbGhwU0ZaUFdEQm9XalZtYzNWSFdYUTRSWFZNZDJFM1oybEZVWFptTDFCaFVXSlVjbFJXVFU5a1MwZ3ZSVWRXU2trNE1VMW1UbWQ2UldKeVFTOURkbU5ITDJ4blJ6TkVUU3RLZDBsRVFWRkJRbTh4UVhkVWFrRmtRbWRPVmtoUk5FVkdaMUZWY1VKTGJ6SnBVVEJTTlhJMVIybE9iR2d5YzA1RGVrVnhPVkZKZDBoM1dVUldVakJxUWtKbmQwWnZRVlZ4UWt0dk1tbFJNRkkxY2pWSGFVNXNhREp6VGtONlJYRTVVVWwzUkVGWlJGWlNNRlJDUVZWM1FYZEZRaTk2UVU1Q1oydHhhR3RwUnpsM01FSkJVVEJHUVVGUFEwRlJTVUZwT0VaV2MzRmFTalJQWm1scFoycG5jRFFyUTJWSVJIZzJURXBTZFhFMldXOXBUbVZ5ZUVvMGJDdEZWRFJDWWpkcU9FVXZSRVJsUldabFlrVlJkbmRRY21oc1QzbEdUMlo1YjNONllVSnVSamhGY0M5SWF6ZFBhalpqY0V4b2IwRklhbVZXTTBkVmVTc3plR2N6VGtJelJIVkZOMHBvYm5nNU9XdDNabEpNT1hSUFdFbzFLMHhzTVVGSmFIbFVNRXBKUkRoS05pODVPVkUxVm0xM1UwTlZaVkptYm1odWJtbG5XbXgzVXpSV2FFRnZZVzVvY25GNmQxaDJjRTlqYnl0SWVXaE1NSGt6YlcxaVFrZ3ZaVXRWSzBnMVVDdE1Na2xHYVZOR1REWllRVXcwVUUwemNGbEpMM3BxSzA1NWFFRllXbHBhZDJ4c1VtcHZTVXRtYkVkUFR6aElWV00xYVVwcFZFaG9XVzh3YVV0VE1XeFFlRU5JYjB0NVFTdGhWa1ZoVmtVdloyOXhRbmR2WlROV09XMTRTRUY2TkZWeE9HVXZZVkV3VDJaamFVWnRhalUxY3padGVEVmxWV1I1Tld4UmNXWnZaV3RGUFNKZGZRLi5ZMVRuRzVnSjRCMTdyeDRBMU9VdS1CenpXSFZCanc5WDdWSUxoS3FRdzBPYU45YWdhTWJZNGNhTGwwSlZoaVdHRmlWaGJaQWlNZjh3bEhrQkRON09XY0pDZjhRTFdQbmpicFY1Q1pGcU10RUVfYTRJa3JEb01aOWFqSXJVNjE2NmZXeGIyajVub2xFdnJMZEZoNnI2dW9sOG1takNjQXdhVEczOENINjFTVklRYnZCcWlydjNKMzczM2tEcXRJUkNSSFlZTnZlQjBwX1BVSGxRUlU2Z1FkR2xtTWRJdWNPWndLalJPMllPQjN4ZG1fQmNZYWNLdnBqdnhDMGF3LVNnM2NVQUJnYmJ0ZWlGTDhIR3NzNWFEREozX3JkeXMyMXJvc1hSMjlvWm9ZeDJrd2tGZ1BZWkh5VEUxUEZNbTBFNzQ5eXY5SklWbTVzNzVMYlV1UkpzQUVV"
+  }
+}
