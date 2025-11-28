@@ -1,9 +1,9 @@
 {
   "resourceType": "Patient",
-  "id": "sandilands-kendall",
+  "id": "scott-elijah-ken",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-patient"
     ]
   },
   "extension": [
@@ -23,8 +23,8 @@
             "coding": [
               {
                 "system": "http://loinc.org",
-                "code": "LA29519-8",
-                "display": "she/her/her/hers/herself"
+                "code": "LA29518-0",
+                "display": "he/him/his/his/himself"
               }
             ]
           }
@@ -62,7 +62,7 @@
         "text": "IHI"
       },
       "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
-      "value": "8003608833648413"
+      "value": "8003608333647204"
     },
     {
       "type": {
@@ -75,45 +75,60 @@
         "text": "Medicare Number"
       },
       "system": "http://ns.electronichealth.net.au/id/medicare-number",
-      "value": "59511386611"
+      "value": "29545408911"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "DVAU",
+            "display": "DVA Number"
+          }
+        ],
+        "text": "DVA Number"
+      },
+      "system": "http://ns.electronichealth.net.au/id/dva",
+      "value": "QX521750"
     }
   ],
   "name": [
     {
       "use": "official",
-      "family": "SANDILANDS",
+      "family": "SCOTT",
       "given": [
-        "Kendall"
+        "Elijah",
+        "KEN"
       ]
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "0870106664",
+      "value": "0270103850",
       "use": "home"
     },
     {
       "system": "phone",
-      "value": "0491576398",
+      "value": "0433952520",
       "use": "mobile"
     },
     {
       "system": "phone",
-      "value": "0870101896",
+      "value": "0270103810",
       "use": "work"
     }
   ],
-  "gender": "female",
-  "birthDate": "1981-04-10",
+  "gender": "male",
+  "birthDate": "1986-11-28",
   "address": [
     {
       "line": [
-        "81 Marine Gr"
+        "81 Short Cir"
       ],
-      "city": "Sheaoak Flat",
-      "state": "SA",
-      "postalCode": "5581",
+      "city": "Gilmore",
+      "state": "ACT",
+      "postalCode": "2905",
       "country": "AU"
     }
   ]

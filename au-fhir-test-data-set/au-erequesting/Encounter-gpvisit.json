@@ -1,0 +1,83 @@
+{
+  "resourceType": "Encounter",
+  "id": "gpvisit",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "866149003",
+          "display": "Annual visit"
+        }
+      ],
+      "text": "GP visit"
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "788007007",
+        "display": "General practice service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/sandilands-kendall",
+    "display": "Kendall SANDILANDS"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    }
+  ],
+  "period": {
+    "start": "2024-08-21T13:00:00+10:00",
+    "end": "2024-08-21T13:20:00+10:00"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "90688005",
+          "display": "Chronic renal failure"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/elimbah-medical-centre"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/elimbah-medical-centre"
+  }
+}

@@ -75,7 +75,7 @@
     "reference": "Patient/sandilands-kendall"
   },
   "encounter": {
-    "reference": "Encounter/annualvisit-2"
+    "reference": "Encounter/gpvisit"
   },
   "authoredOn": "2024-08-21",
   "requester": {
@@ -86,8 +86,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "225885004",
-          "display": "Health assessment"
+          "code": "90688005",
+          "display": "Chronic renal failure"
         }
       ]
     }

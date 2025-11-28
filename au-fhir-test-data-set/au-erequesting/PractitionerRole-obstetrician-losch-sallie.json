@@ -3,7 +3,7 @@
   "id": "obstetrician-losch-sallie",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-practitionerrole"
     ]
   },
   "identifier": [
