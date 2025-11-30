@@ -1,0 +1,81 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "order-xray-2",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-xray-2</b></p><a name=\"order-xray-2\"> </a><a name=\"hcorder-xray-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-imag.html\">AU eRequesting Imaging Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 1</p><p><b>identifier</b>: Placer Identifier/EMC4543344-1620-01</p><p><b>requisition</b>: Placer Group Number/EMC4543344-1620</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 363679005}\">Imaging</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 3621000087107}\">X-ray of left hand</span></p><p><b>subject</b>: <a href=\"Patient-scott-elijah-ken.html\">Elijah KEN SCOTT (official) Male, DoB: 1986-11-28 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608333647204)</a></p><p><b>encounter</b>: <a href=\"Encounter-gp-consultation.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); serviceType = General practice service; period = 2024-05-11 10:15:00+1000 --&gt; 2024-05-11 10:30:00+1000</a></p><p><b>authoredOn</b>: 2024-05-12</p><p><b>requester</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>insurance</b>: <a href=\"Coverage-coverage-dva.html\">Coverage: identifier = DVA Number:\u00a0QX521750; status = active; type = veteran health program; period = 2023-01-01 --&gt; (ongoing)</a></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 770882009}\">Left ring finger</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+    "valueInteger" : 1
+  }],
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PLAC",
+        "display" : "Placer Identifier"
+      }]
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC4543344-1620-01",
+    "assigner" : {
+      "display" : "Elimbah Medical Center"
+    }
+  }],
+  "requisition" : {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PGN",
+        "display" : "Placer Group Number"
+      }]
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+    "value" : "EMC4543344-1620",
+    "assigner" : {
+      "display" : "Elimbah Medical Center"
+    }
+  },
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "363679005",
+      "display" : "Imaging"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "3621000087107",
+      "display" : "Plain X-ray of left hand"
+    }],
+    "text" : "X-ray of left hand"
+  },
+  "subject" : {
+    "reference" : "Patient/scott-elijah-ken"
+  },
+  "encounter" : {
+    "reference" : "Encounter/gp-consultation"
+  },
+  "authoredOn" : "2024-05-12",
+  "requester" : {
+    "reference" : "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "insurance" : [{
+    "reference" : "Coverage/coverage-dva"
+  }],
+  "bodySite" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "770882009",
+      "display" : "Structure of left ring finger"
+    }],
+    "text" : "Left ring finger"
+  }]
+}
