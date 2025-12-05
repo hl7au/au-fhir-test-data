@@ -33,6 +33,12 @@
   "status" : "requested",
   "intent" : "order",
   "priority" : "urgent",
+   "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/CodeSystem/task-code",
+      "code" : "fulfill"
+    }]
+  },
   "focus" : {
     "reference" : "CommunicationRequest/communicationrequest-urgent-results-to-provider"
   },

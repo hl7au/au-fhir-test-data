@@ -29,6 +29,12 @@
   "status" : "requested",
   "intent" : "order",
   "priority" : "routine",
+  "code" : {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/CodeSystem/task-code",
+      "code" : "fulfill"
+    }]
+  },
   "focus" : {
     "reference" : "CommunicationRequest/communicationrequest-copyto-gp"
   },

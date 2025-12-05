@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-urinemcs-1</b></p><a name=\"order-urinemcs-1\"> </a><a name=\"hcorder-urinemcs-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 3</p><p><b>AU eRequesting Fasting Precondition</b>: <span title=\"Codes:{http://snomed.info/sct 440565004}\">Nonfasting</span></p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-03</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 401324008}\">Urine MCS</span></p><p><b>quantity</b>: 1 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Australian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>occurrence</b>: 2025-02-21 08:10:00+1000</p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: </p><ul><li><a href=\"DocumentReference-documentreference-clinical-context.html\">Clinical context</a></li><li><a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-urinemcs-1</b></p><a name=\"order-urinemcs-1\"> </a><a name=\"hcorder-urinemcs-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 3</p><p><b>AU eRequesting Fasting Precondition</b>: <span title=\"Codes:{http://snomed.info/sct 440565004}\">Nonfasting</span></p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-03</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 401324008}\">Urine MCS</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>occurrence</b>: 2025-02-21 08:10:00+1000</p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: </p><ul><li><a href=\"DocumentReference-documentreference-clinical-context.html\">Clinical context</a></li><li><a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></li></ul></div>"
   },
   "extension" : [{
     "url" : "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
@@ -33,7 +33,7 @@
     "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
     "value" : "EMC1552642-1110-03",
     "assigner" : {
-      "display" : "Elimbah Medical Center"
+      "display" : "Elimbah Medical Centre"
     }
   }],
   "requisition" : {
@@ -47,7 +47,7 @@
     "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
     "value" : "EMC1552642-1110",
     "assigner" : {
-      "display" : "Elimbah Medical Center"
+      "display" : "Elimbah Medical Centre"
     }
   },
   "status" : "active",
@@ -67,11 +67,6 @@
       "display" : "Urine microscopy, culture and sensitivities"
     }],
     "text" : "Urine MCS"
-  },
-  "quantityQuantity" : {
-    "value" : 1,
-    "system" : "http://unitsofmeasure.org",
-    "code" : "1"
   },
   "subject" : {
     "reference" : "Patient/belger-remedios"

@@ -52,6 +52,12 @@
     },    
     "intent": "order",
     "priority": "routine",
+    "code" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/CodeSystem/task-code",
+        "code" : "fulfill"
+      }]
+    },
     "focus": {
       "reference": "ServiceRequest/path-scenario-1"
     },
