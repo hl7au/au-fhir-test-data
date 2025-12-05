@@ -1,0 +1,75 @@
+{
+  "resourceType": "Encounter",
+  "id": "influenza-admin-6",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1633181000168107",
+        "display": "Influenza vaccination service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/italia-sofia"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+      }
+    }
+  ],
+  "period": {
+    "start": "2023-04-11T09:20:00+10:00",
+    "end": "2023-04-11T09:35:00+10:00"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "12866006",
+          "display": "Influenza prevention"
+        }
+      ]
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "Condition/chronic-asthma"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/elimbah-medical-centre"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/elimbah-medical-centre"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "resourceType": "Condition",
+  "id": "chronic-asthma",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        }
+      ]
+    }
+  ],
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "6736007",
+        "display": "Moderate severity"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "195967001",
+        "display": "Asthma"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/italia-sofia",
+    "display": "Sofia Italia"
+  },
+  "onsetDateTime": "2018-03-15",
+  "recordedDate": "2018-03-20",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "note": [
+    {
+      "text": "Patient has chronic asthma which increases risk for influenza complications. Annual influenza vaccination strongly recommended."
+    }
+  ]
+}

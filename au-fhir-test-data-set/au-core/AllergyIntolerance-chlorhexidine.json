@@ -59,5 +59,10 @@
       ],
       "severity": "mild"
     }
+  ],
+  "note": [
+    {
+      "text": "Patient experienced mild hives after exposure to chlorhexidine. Monitor for worsening reactions."
+    }
   ]
 }

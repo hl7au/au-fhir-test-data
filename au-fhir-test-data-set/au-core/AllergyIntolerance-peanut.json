@@ -73,5 +73,10 @@
       ],
       "severity": "severe"
     }
+  ],
+  "note": [
+    {
+      "text": "Severe peanut allergy with history of throat constriction. Patient carries epinephrine auto-injector and requires strict avoidance of peanuts."
+    }
   ]
 }
