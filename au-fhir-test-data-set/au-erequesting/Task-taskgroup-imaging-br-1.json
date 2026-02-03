@@ -7,7 +7,7 @@
     ],
     "tag": [
       {
-        "system": "http://terminology.hl7.org.au/CodeSystem/task-tag",
+        "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
         "code": "fulfilment-task-group"
       }
     ]
