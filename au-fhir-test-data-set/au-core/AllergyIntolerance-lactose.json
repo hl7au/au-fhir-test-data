@@ -40,11 +40,19 @@
   "patient": {
     "reference": "Patient/banks-mia-leanne"
   },
-  "onsetAge": {
-    "value": 1,
-    "unit": "year",
-    "system": "http://unitsofmeasure.org",
-    "code": "a"
+  "onsetRange":{
+    "low": {
+      "value": 2,
+      "unit": "year",
+      "system": "http://unitsofmeasure.org",
+      "code": "a"
+    },
+    "high": {
+      "value": 5,
+      "unit": "year",
+      "system": "http://unitsofmeasure.org",
+      "code": "a"
+    }
   },
   "recordedDate": "2023-03-14",
   "recorder": {
