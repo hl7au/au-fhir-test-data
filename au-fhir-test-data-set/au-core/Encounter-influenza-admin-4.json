@@ -51,8 +51,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "12866006",
-          "display": "Influenza prevention"
+          "code": "185903001",
+          "display": "Needs influenza vaccination"
         }
       ]
     }
