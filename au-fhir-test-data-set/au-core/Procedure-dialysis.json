@@ -20,7 +20,7 @@
   "subject": {
     "reference": "Patient/irvine-ronny-lawrence"
   },
-  "performedDateTime": "2012-08-05",
+  "performedString": "August 2012",
   "performer": [
     {
       "actor": {

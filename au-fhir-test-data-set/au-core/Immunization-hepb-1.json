@@ -19,8 +19,8 @@
   "patient": {
     "reference": "Patient/baby-banks-john"
   },
-  "occurrenceDateTime": "2023-01-24",
-  "primarySource": true,
+  "occurrenceString": "late January 2023",
+  "primarySource": false,
   "location": {
     "reference": "Location/barney-view-private-hospital"
   },
