@@ -26,6 +26,14 @@
     "display": "Inpatient"
   },
   "performedDateTime": "2021-01-27T14:00:00+10:00",
+  "_performedDateTime": {
+    "extension": [
+      {
+        "url": "http://hl7.org.au/fhir/StructureDefinition/au-timezone-usage",
+        "valueCode": "Australia/Brisbane"
+      }
+    ]
+  },
   "performer": [
     {
       "actor": {
