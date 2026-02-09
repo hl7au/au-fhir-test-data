@@ -24,16 +24,6 @@
           }
         ],
         "text": "clarithromycin 250 mg tablet, 100"
-      },
-      "form": {
-        "coding": [
-          {
-            "system": "http://snomed.info/sct",
-            "code": "154011000036109",
-            "display": "tablet"
-          }
-        ],
-        "text": "tablet"
       }
     }
   ],

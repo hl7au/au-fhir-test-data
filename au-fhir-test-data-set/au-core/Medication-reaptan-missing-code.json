@@ -13,14 +13,5 @@
         "code": "unknown"
       }
     ]
-  },
-  "form": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "154011000036109",
-        "display": "tablet"
-      }
-    ]
   }
 }
