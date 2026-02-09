@@ -36,10 +36,10 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "112144000",
-        "display": "Blood group A (finding)"
+        "code": "278149003",
+        "display": "Blood group A Rh(D) positive"
       }
     ],
-    "text": "A"
+    "text": "A Rh(D) Positive"
   }
 }
