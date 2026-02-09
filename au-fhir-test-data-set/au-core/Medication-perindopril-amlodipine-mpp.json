@@ -14,14 +14,5 @@
         "display": "Perindopril arginine 10 mg + amlodipine 10 mg tablet, 30"
       }
     ]
-  },
-  "form": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "154011000036109",
-        "display": "tablet"
-      }
-    ]
   }
 }
