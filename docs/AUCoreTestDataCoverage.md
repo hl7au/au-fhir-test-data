@@ -1,17 +1,5 @@
 ## AU Core Test Data Coverage
 
-It is recommended that users of au-fhir-test-data upload the entire set of test data in the [generated folder](https://github.com/hl7au/au-fhir-test-data/tree/master/generated) and [direct-fhir-test-resources folder](https://github.com/hl7au/au-fhir-test-data/tree/master/direct-fhir-test-resources) to their target server. With that said, the current minimal set of test data from this au-fhir-test-data repo that provides test data coverage of the Must Support elements as reported below are for the following Patient ids which must include the network of all resource instances linked to these Patients e.g. referenced PractitionerRole, Organization, and Location on a patient Encounter:
-
-| Patient.id                                |
-|:------------------------------------------|
-| howe-deangelo                 |
-| hayes-arianne                 |
-| irvine-ronny-lawrence         |
-| banks-mia-leanne              |
-| baratz-toni                   |
-| italia-sofia                  |
-| baby-banks-john               |
-
 Disclaimer: While we try to keep this page updated, we cannot guarantee its completeness or accuracy. The summary of test data coverage provided here is for reference only and should not be relied upon for critical purposes. Please use this information alongside your own analysis and judgement.
 
 ## au-core-allergyintolerance test data coverage
