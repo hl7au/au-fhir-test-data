@@ -13,11 +13,10 @@ Profile: AU Core AllergyIntolerance | Profile URL: http://hl7.org.au/fhir/core/S
 | AllergyIntolerance.patient                | Included                                                                   |
 | AllergyIntolerance.onsetDateTime          | Included                                                                   |
 | AllergyIntolerance.onsetAge               | Included                                                                   |
-| AllergyIntolerance.onsetPeriod            | Included                                                                   |
-| AllergyIntolerance.onsetRange             | Included                                                                   |
+| AllergyIntolerance.onsetPeriod            | Not Included                                                               |
+| AllergyIntolerance.onsetRange             | Not Included                                                               |
 | AllergyIntolerance.reaction.manifestation | Included                                                                   |
 | AllergyIntolerance.reaction.severity      | Included                                                                   |
-| AllergyIntolerance.note                   | Included                                                                   |
 
 ## au-core-condition test data coverage
 Profile: AU Core Condition | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition 
@@ -32,8 +31,8 @@ Profile: AU Core Condition | Profile URL: http://hl7.org.au/fhir/core/StructureD
 | Condition.subject            | Included                                                          |
 | Condition.onsetDateTime      | Included                                                          |
 | Condition.onsetAge           | Included                                                          |
-| Condition.onsetPeriod        | Included                                                          |
-| Condition.onsetRange         | Included                                                          |
+| Condition.onsetPeriod        | Not Included                                                      |
+| Condition.onsetRange         | Not Included                                                      |
 | Condition.abatementDateTime  | Included                                                          |
 | Condition.abatementAge       | Not Included                                                      |
 | Condition.abatementPeriod    | Not Included                                                      |
@@ -61,16 +60,6 @@ Profile: AU Core Encounter | Profile URL: http://hl7.org.au/fhir/core/StructureD
 | Encounter.location.location      |                                                                   | Included              |
 | Encounter.serviceProvider        |                                                                   | Included              |
 
-## au-core-healthcareservice test data coverage
-Profile: AU Core HealthcareService | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice
-
-| Must Support element         |  HL7 AU FHIR Test Data |
-|:-----------------------------|:-----------------------|
-| HealthcareService.identifier | Included               |
-| HealthcareService.type       | Included               |
-| HealthcareService.name       | Included               |
-| HealthcareService.telecom    | Included               |
-
 ## au-core-immunization test data coverage
 Profile: AU Core Immunization | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization
 
@@ -82,9 +71,8 @@ Profile: AU Core Immunization | Profile URL: http://hl7.org.au/fhir/core/Structu
 | Immunization.vaccineCode.coding:airVaccineCode | Included                                                             |
 | Immunization.patient                           | Included                                                             |
 | Immunization.occurrenceDateTime                | Included                                                             |
-| Immunization.occurrenceString                  | Included                                                             |
+| Immunization.occurrenceString                  | Not Included                                                         |
 | Immunization.primarySource                     | Included                                                             |
-| Immunization.lotNumber                         | Included                                                             |
 | Immunization.note                              | Included                                                             |
 
 ## au-core-location test data coverage
@@ -130,43 +118,20 @@ Profile: AU Core MedicationRequest | Profile URL: http://hl7.org.au/fhir/core/St
 | MedicationRequest.reasonReference                      | Reference(AU Core Condition)                             | Included              |
 | MedicationRequest.reasonReference                      | Reference(AU Core Observation)                           | Included              |
 | MedicationRequest.dosageInstruction                    |                                                          | Included              |
-| MedicationRequest.dosageInstruction.text               |                                                          | Included              |
-
-## au-core-medicationstatement test data coverage
-Profile: AU Core MedicationStatement | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement
-
-|  Must Support element                                    | Type (where there is a choice of data type)              | HL7 AU FHIR Test Data |
-|:---------------------------------------------------------|:---------------------------------------------------------|:----------------------|
-| MedicationStatement.status                               |                                                          | Included              |
-| MedicationStatement.medicationCodeableConcept            |                                                          | Included              |
-| MedicationStatement.medicationCodeableConcept.coding:pbs |                                                          | Included              |
-| MedicationStatement.medicationCodeableConcept.coding:amt |                                                          | Included              |
-| MedicationStatement.medicationReference                  |                                                          | Included              |
-| MedicationStatement.subject                              |                                                          | Included              |
-| MedicationStatement.effectiveDateTime                    |                                                          | Included              |
-| MedicationStatement.effectivePeriod                      |                                                          | Included              |
-| MedicationStatement.reasonCode                           |                                                          | Included              |
-| MedicationStatement.reasonReference                      | Reference(AU Core Condition)                             | Included              |
-| MedicationStatement.reasonReference                      | Reference(AU Core Observation)                           | Not Included          |
-| MedicationStatement.reasonReference                      | Reference(AU Base DiagnosticReport)                      | Not Included          |
-| MedicationStatement.dosage                               |                                                          | Included              |
-| MedicationStatement.dosage.text                          |                                                          | Included              |
 
 ## au-core-organization test data coverage
 Profile: AU Core Organization | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization
 
-|  Must Support element       | Type (where there is a choice of data type)                          | HL7 AU FHIR Test Data |
-|:----------------------------|:---------------------------------------------------------------------|:----------------------|
-| Organization.identifier     | Identifier                                                           | Included              |
-| Organization.identifier     | AUHPIO                                                               | Included              |
-| Organization.identifier     | AUAustralianBusinessNumber                                           | Included              |
-| Organization.type           |                                                                      | Included              |
-| Organization.name           |                                                                      | Included              |
-| Organization.telecom        |                                                                      | Included              |
-| Organization.telecom.system |                                                                      | Included              |
-| Organization.telecom.value  |                                                                      | Included              |
-| Organization.address        | Address                                                              | Included              |
-| Organization.address        | AustralianAddress                                                    | Included              |
+|  Must Support element   | Type (where there is a choice of data type)                          | HL7 AU FHIR Test Data |
+|:------------------------|:---------------------------------------------------------------------|:----------------------|
+| Organization.identifier | Identifier                                                           | Included              |
+| Organization.identifier | AUHPIO                                                               | Included              |
+| Organization.identifier | AUAustralianBusinessNumber                                           | Included              |
+| Organization.type       |                                                                      | Included              |
+| Organization.name       |                                                                      | Included              |
+| Organization.telecom    |                                                                      | Included              |
+| Organization.address    | Address                                                              | Not Included          |
+| Organization.address    | AustralianAddress                                                    | Included              |
 
 ## au-core-patient test data coverage
 Profile: AU Core Patient | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient
@@ -186,14 +151,10 @@ Profile: AU Core Patient | Profile URL: http://hl7.org.au/fhir/core/StructureDef
 | Patient.name.family                  |                                                                 | Included              |
 | Patient.name.given                   |                                                                 | Included              |
 | Patient.telecom                      |                                                                 | Included              |
-| Patient.telecom.system               |                                                                 | Included              |
-| Patient.telecom.value                |                                                                 | Included              |
-| Patient.telecom.use                  |                                                                 | Included              |
 | Patient.gender                       |                                                                 | Included              |
 | Patient.birthDate                    |                                                                 | Included              |
 | Patient.address                      | AustralianAddress                                               | Included              |
 | Patient.address                      | Address                                                         | Included              |
-| Patient.communication                |                                                                 | Included              |
 | Patient.communication.language       |                                                                 | Included              |
 | Patient.communication.preferred      |                                                                 | Included              |
 
@@ -211,17 +172,15 @@ Profile: AU Core Practitioner | Profile URL: http://hl7.org.au/fhir/core/Structu
 ## au-core-practitionerrole test data coverage
 Profile: AU Core PractitionerRole | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole
 
-|  Must Support element           | Type (where there is a choice of data type)                              | HL7 AU FHIR Test Data |
-|:--------------------------------|:-------------------------------------------------------------------------|:----------------------|
-| PractitionerRole.identifier     | Identifier                                                               | Included              |
-| PractitionerRole.identifier     | AUMedicareProviderNumber                                                 | Included              |
-| PractitionerRole.practitioner   |                                                                          | Included              |
-| PractitionerRole.organization   |                                                                          | Included              |
-| PractitionerRole.code           |                                                                          | Included              |
-| PractitionerRole.specialty      |                                                                          | Included              |
-| PractitionerRole.telecom        |                                                                          | Included              |
-| PractitionerRole.telecom.system |                                                                          | Included              |
-| PractitionerRole.telecom.value  |                                                                          | Included              |
+|  Must Support element         | Type (where there is a choice of data type)                              | HL7 AU FHIR Test Data |
+|:------------------------------|:-------------------------------------------------------------------------|:----------------------|
+| PractitionerRole.identifier   | Identifier                                                               | Included              |
+| PractitionerRole.identifier   | AUMedicareProviderNumber                                                 | Included              |
+| PractitionerRole.practitioner |                                                                          | Included              |
+| PractitionerRole.organization |                                                                          | Included              |
+| PractitionerRole.code         |                                                                          | Included              |
+| PractitionerRole.specialty    |                                                                          | Included              |
+| PractitionerRole.telecom      |                                                                          | Included              |
 
 ## au-core-procedure test data coverage
 Profile: AU Core Procedure | Profile URL: http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure
@@ -234,7 +193,7 @@ Profile: AU Core Procedure | Profile URL: http://hl7.org.au/fhir/core/StructureD
 | Procedure.encounter         |                                                                   | Included              |
 | Procedure.performedDateTime |                                                                   | Included              |
 | Procedure.performedPeriod   |                                                                   | Included              |
-| Procedure.performedString   |                                                                   | Included              |
+| Procedure.performedString   |                                                                   | Not Included          |
 | Procedure.performedAge      |                                                                   | Not Included          |
 | Procedure.performedRange    |                                                                   | Not Included          |
 | Procedure.reasonCode        |                                                                   | Included              |

@@ -57,20 +57,7 @@
     "reference": "Patient/baratz-toni",
     "display": "Toni Baratz"
   },
-  "onsetRange": {
-    "low": {
-      "value": 35,
-      "unit": "years",
-      "system": "http://unitsofmeasure.org",
-      "code": "a"
-    },
-    "high": {
-      "value": 40,
-      "unit": "years",
-      "system": "http://unitsofmeasure.org",
-      "code": "a"
-    }
-  },
+  "onsetDateTime": "2020-08-10",
   "recordedDate": "2020-08-15",
   "recorder": {
     "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"

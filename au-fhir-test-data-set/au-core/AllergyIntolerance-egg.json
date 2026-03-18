@@ -43,9 +43,7 @@
   "patient": {
     "reference": "Patient/irvine-ronny-lawrence"
   },
-  "onsetPeriod": {
-    "start": "2023-02-12"
-  },
+  "onsetDateTime": "2023-02-12",
   "recordedDate": "2023-04-24",
   "recorder": {
     "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"

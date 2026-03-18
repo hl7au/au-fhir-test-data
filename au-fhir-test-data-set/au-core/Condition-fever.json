@@ -56,12 +56,9 @@
   "subject": {
     "reference": "Patient/howe-deangelo"
   },
-  "onsetPeriod": {
-    "start":"2015-02-11",
-    "end":"2015-02-14"
-  },
+  "onsetDateTime": "2015-02-11",
   "abatementDateTime": "2015-02-14",
-  "recordedDate": "2015-02-14",
+  "recordedDate": "2015-02-12",
   "recorder": {
     "reference": "PractitionerRole/registerednurses-sinclair-forrest"
   },
