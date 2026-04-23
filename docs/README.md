@@ -10,43 +10,31 @@ HL7 AU FHIR Test Data contains sample FHIR instances for testing purposes, and t
 
 
 ## Synthetic Data Properties
+The [administrative resources](https://hl7.org/fhir/R4/administration-module.html) (Patient, RelatedPerson, Practitioner, PractitionerRole, Organization, Location, HealthcareService) in this data set contain a mixture of synthetic data elements with differing characteristics:
 
-- **Conformance**: The synthetic data generated aims to conform to the structures and constraints defined in the corresponding HL7 AU FHIR Implementation Guides, as indicated. Some data may be intentionally non-conformant to support negaitve testing scenarios.
+- Names of individuals and organisations are synthetic and fictional. They are designed to resemble realistic naming conventions rather than generic placeholders. Any resemblance to real persons or organisations is coincidental and not intended.
+- Physical addresses are constructed using real address components, but are generally not valid or do not correspond to actual locations within the stated suburb or state. **There is no guarantee that all addresses are non-existent or non-attributable to real locations.**
+- Australian phone numbers are from [the reserved set](https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works) provided by the Australian Communications and Media Authority for use in creative works. 
+- Email addresses use the following domains reserved for documentation and testing purposes: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'. 
+- IHI, HPI-I, or HPI-O have been provided by Services Australia. They are valid identifiers reserved for testing purposes in the HI Vendor Test Environment. 
+- Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia. They have a practitioner professions prefix (`HAC`) that is not linked to a real-world profession.
+- Medicare Card Numbers, Medicare Provider Numbers, PBS Prescriber Numbers and DVA Numbers are provided by Services Australia. They are valid identifiers **NOT** reserved for testing purposes. **As a result, there is a possibility that some identifiers may coincide with those assigned to real persons.**
+- Australian Business Numbers (ABNs) are intentionally invalid and do not conform to real-world formats.
 
-- **Anonymity and Realism**: All data is synthetic, containing no personally identifiable information (PII) or protected health information (PHI). It is generated to approximate real-world properties and relationships found in actual healthcare data to support testing and development. The dataset includes Patients, Practitioners, PractitionerRoles, Organizations, Healthcare Services, and clinical resources such as *AllergyIntolerance*. Any resemblance to real entities is purely coincidental. Specifically,
-  - Names are randomly generated.
-  - Addresses are valid addresses based on publicly available address data from Australia Post.
-  - Australian phone numbers are from the reserved set provided by the Australian Communications and Media Authority for use in creative works. 
-  - Email addresses use the following domains set aside for development and testing: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'. 
-  - Resources with an IHI, HPI-I, or HPI-O have been provided by Services Australia and are present in the HI Vendor Test Environment. These resources may be in tests within that environment.
-  - IHIs, HPI-Os, HPI-Is are provided by Services Australia for test purposes and will pass Luhn check. 
-  - Medicare Card Numbers and DVA numbers are provided by Services Australia for test purposes.
-  - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia for test purposes.
-  - ABNs present in the data for fictious organisations are not valid ABNs, i.e. they will not pass validity checks.
-
-- **Unbiased**: The dataset is intended to avoid biases in data representation.
-
-- **Variation**: The dataset aims to exhibit sufficient variation to effectively test different aspects of HL7 AU FHIR IGs, helping to validate a range of expected behaviours and constraints.
-
-- **Data Integrity**: Relationships between different entities are maintained as accurately as possible. For example, *PractitionerRoles* are appropriately linked to *Practitioners* and *Organizations*, reflecting real-world associations.
+Users of this dataset are responsible for ensuring that appropriate safeguards are in place to prevent unintended association with real individuals, including (but not limited to) avoiding use in production systems, external integrations, or any other processes involving real-world entities.
 
 ## How to navigate this repository
 Synthetic FHIR test data (JSON) files are available in the following directories: 
-* [au-fhir-test-data-set](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set)
-  - Includes sample FHIR instances for testing purposes, covering AU Core 1.1.0-preview, eRequesting 0.3.0-preview, and AU Base 5.1.0-preview. 
-  - Patient, RelatedPerson, Practitioner, PractitionerRole, Organization, HealthcareService, and Location instances are generated from Services Australia (SA) provided data then enriched with additional elements for AU Core Must Support elements and some extra AU Base elements.
-  - A limited set of non-SA personas created to test where an IHI is not present in the data.
-  - Includes test data for verifying missing data and suppressed data test cases (for details see [MissingAndSuppressedData_TestData.md](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/MissingAndSuppressedData_TestData.md)).
-* [generated](https://github.com/hl7au/au-fhir-test-data/tree/master/generated)
-  - contains test data generated from the [testdata-csv](https://github.com/hl7au/au-fhir-test-data/tree/master/testdata-csv) and uses tooling that includes mappings and utilities for conversion to FHIR (JSON format) and validation. These generated instances are included in the [au-fhir-test-data-set](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set) directory.
-
-Documentation on Confluence for the HL7 FHIR Test Data project details the [development process](https://confluence.hl7.org/spaces/HAFWG/pages/265093726/Process+Test+Data+-+iterative+development). It outlines the role of CSV-to-FHIR mappings located in the [Sparked.Csv2FhirMapping/Maps](https://github.com/hl7au/au-fhir-test-data/tree/master/Sparked.Csv2FhirMapping/Maps) directory, and GitHub workflows found in the [.github](https://github.com/hl7au/au-fhir-test-data/tree/master/.github) directory, some of which depend on utilities from the [hl7au/au-fhir-test-data-utils repository](https://github.com/hl7au/au-fhir-test-data-utils). These workflows are part of a CI pipeline that validates FHIR data, supporting contributors and reviewers in identifying and resolving validation errors before merging changes, and can automate the upload of test data to a target server.
-The documentation also explains the approach to managing quarantined instances — test data instances that are assessed as valid but report errors that can be justified (such as tooling or terminology service issues). These instances are listed in the [quarantine](https://github.com/hl7au/au-fhir-test-data/blob/master/quarantine) directory to avoid confounding subsequent QA/validation report reviews, with justifications provided via inline comments.
-
-To support HL7 AU Connectathons, Postman collection import files containing a selection of AU Core and AU eRequesting Test Data, along with sample Postman environment import files, are available in the [Postman](https://github.com/hl7au/au-fhir-test-data/tree/master/Postman) directory.
-
-## Test Data Coverage of HL7 AU FHIR Implementation Guides
-The test dataset is developed on a best-effort basis, aiming to provide broad coverage of HL7 AU IG profiles and extensions. The extent of coverage evolves iteratively, shaped by the maturity of the IGs, shifting priorities of HL7 AU projects, available resources, and community contributions. For example, in the case of the AU Core IG, the dataset includes coverage of Must Support elements within AU Core profiles and extensions. The current coverage is documented in [AUCoreTestDataCoverage.md](https://github.com/hl7au/au-fhir-test-data/blob/master/AUCoreTestDataCoverage.md).
+- [au-fhir-test-data-set](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set)
+  - [/au-base](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-base)
+    - AU Base examples
+  - [/au-core](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-core)
+    - AU Core examples, some shared with eRequesting, identifiable by additional meta.profile
+    - Includes test data for verifying missing data and suppressed data test cases (for details see [MissingAndSuppressedData_TestData.md](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/MissingAndSuppressedData_TestData.md)).
+  - [/au-erequesting](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-erequesting)
+    - AU eRequesting specific examples
+  - [/au-patient-summary](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-patient-summary)
+    - AU Patient Summary document Bundle examples
 
 ## Versioning
 The versioning approach follows **a modified Semantic Versioning (semver) strategy** aligned with HL7 AU conventions:
@@ -89,17 +77,10 @@ If you have a question, the best place to start is Zulip e.g. the https://chat.f
 We value contributions to **au-fhir-test-data**. Here’s how you can help:
 
 ### 1. Communicate Before You Start
-- Before contributing, open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans. This helps *avoid duplication of effort, align with project priorities, and ensure your contributions fit within the project's scope. Refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf) for guidance.  
-- **Some test data instances are linked to Services Australia–provided data** and cannot be modified without governance oversight.  
-  - The following resource types require consultation with the HL7 FHIR Test Data project team before making changes:  
-    - Patient 
-    - Practitioner
-    - PractitionerRole 
-    - Organization 
-    - HealthcareService 
-    - Location
-- Changes to **quarantined files** also require careful review.  
-- Join the fortnightly HL7 AU Infrastructure and Tooling Community Meetings ([register here](https://confluence.hl7.org/display/HAFWG/Infrastructure+and+Tooling+Contact+List)) where we discuss and triage issues. Feel free to add your issue to the [meeting agenda](https://confluence.hl7.org/pages/viewpage.action?pageId=265492851#CommunityMeetingAgendaandMinutes-MeetingDetails) and we'll aim to discuss your issue/ proposed contribution when you are present at the meeting.
+- Before contributing, open a [GitHub issue](https://github.com/hl7au/au-fhir-test-data/issues) to discuss your plans. This helps *avoid duplication of effort, align with project priorities, and ensure your contributions fit within the project's scope. Refer to the [HL7 AU Test Data Project Scope Statement](https://confluence.hl7.org/display/HA/HL7+Australia+Project+Registry?preview=/184927329/248874957/Test%20Data%20Project%201.2.pdf) for guidance.
+- Ownership of test data remains with the respective Implementation Guide (IG) projects. As such, all contributions require appropriate review and endorsement from the relevant project teams. 
+- Administrative resources are centrally defined and managed to maintain their [Synthetic Data Properties](#Synthetic-Data-Properties). When referencing to these resources, please engage with the project team to require allocation and/or creation.
+- Join the monthly HL7 AU Infrastructure and Tooling Community Meetings ([register here](https://confluence.hl7.org/display/HAFWG/Infrastructure+and+Tooling+Contact+List)) where we discuss and triage issues. Feel free to add your issue to the [meeting agenda](https://confluence.hl7.org/pages/viewpage.action?pageId=265492851#CommunityMeetingAgendaandMinutes-MeetingDetails) and we'll aim to discuss your issue/ proposed contribution when you are present at the meeting.
 - Use Zulip to connect with the team and community asynchronously: 
   - Specific topic for the HL7 AU Test Data project: [AU FHIR Test Data](https://chat.fhir.org/#narrow/stream/179173-australia/topic/AU.20FHIR.20Test.20Data)
   - General: [Australia Stream](https://chat.fhir.org/#narrow/stream/179173-australia)
@@ -111,13 +92,11 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 4. Submit a pull request (PR) for review.
 5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the master branch.
 
-
-
 # HL7 Australia License and Legal
 
 ## Licensing Overview
 
-This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) and its release packages for the [HL7 AU FHIR Test Data project](https://confluence.hl7.org/spaces/HA/pages/184927329/HL7+Australia+Project+Registry) are licensed under the [Creative Commons Legal Code (Creative Commons Zero v1.0 Universal)](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/LICENSE.md#CreativeCommonsLegalCode).
+This repository [`hl7au / au-fhir-test-data`](https://github.com/hl7au/au-fhir-test-data) and its release packages for the [HL7 AU FHIR Test Data project](https://confluence.hl7.org/spaces/HA/pages/184927329/HL7+Australia+Project+Registry) are licensed under the [Creative Commons Legal Code (Creative Commons Zero v1.0 Universal)](https://github.com/hl7au/au-fhir-test-data/blob/master/LICENSE).
 
 ## HL7 Australia Intellectual Property Policy
 
@@ -142,5 +121,5 @@ Following is a non-exhaustive list of third-party artefacts and terminologies th
   <tr><td>Artefact / Terminology</td><td>Statement</td></tr>
   <tr><td>SNOMED CT</td><td>International Healthcare Terminology Standards Developing Organization (IHTSDO). Where this specification includes or references content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO) it is distributed by agreement between IHTSDO and HL7, or the Australian Digital Health Agency via NCTS terms. Implementer use of SNOMED CT is not covered by this agreement</td></tr>
   <tr><td>Logical Observation Identifiers Names & Codes (LOINC)</td><td>This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.</td></tr>
-  <tr><td>National Clinical Terminology Services (NCTS)</td><td>This material contains references to National Clinical Terminology Service artefacts these are Copyright © 2024 Australian Digital Health Agency, implementer user of this content are advised of the NCTS [Terms of Use](https://www.healthterminologies.gov.au/ncts-website-terms-of-use/).</td></tr>
+  <tr><td>National Clinical Terminology Services (NCTS)</td><td>This material contains references to National Clinical Terminology Service artefacts these are Copyright © 2024 Australian Digital Health Agency, implementer user of this content are advised of the NCTS Terms of Use (https://www.healthterminologies.gov.au/ncts-website-terms-of-use/).</td></tr>
 </table>
