@@ -18,7 +18,7 @@ The [administrative resources](https://hl7.org/fhir/R4/administration-module.htm
 - Email addresses use the following domains reserved for documentation and testing purposes: 'example', 'myownpersonaldomain domain', and 'my-own-personal-domain domain'. 
 - IHI, HPI-I, or HPI-O have been provided by Services Australia. They are valid identifiers reserved for testing purposes in the HI Vendor Test Environment. 
 - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia. They have a practitioner professions prefix (`HAC`) that is not linked to a real-world profession.
-- Medicare Card Numbers, Medicare Provider numbers, PBS provider numbers, and DVA numbers are provided by Services Australia. They are valid identifiers **NOT** reserved for testing purposes. **As a result, there is a possibility that some identifiers may coincide with those assigned to real persons.**
+- Medicare Card Numbers, Medicare Provider Numbers, PBS Prescriber Numbers and DVA Numbers are provided by Services Australia. They are valid identifiers **NOT** reserved for testing purposes. **As a result, there is a possibility that some identifiers may coincide with those assigned to real persons.**
 - Australian Business Numbers (ABNs) are intentionally invalid and do not conform to real-world formats.
 
 Users of this dataset are responsible for ensuring that appropriate safeguards are in place to prevent unintended association with real individuals, including (but not limited to) avoiding use in production systems, external integrations, or any other processes involving real-world entities.
