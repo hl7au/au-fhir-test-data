@@ -1,0 +1,365 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "aups-patient-story",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle"]
+  },
+  "language" : "en-AU",
+  "identifier" : {
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:uuid:e4f12f49-43e8-435e-8680-453c509dc0e5"
+  },
+  "type" : "document",
+  "timestamp" : "2025-08-21T19:32:10.0607701+10:00",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:048c37d9-9f41-4223-a8b2-ed322cb2f056",
+    "resource" : {
+      "resourceType" : "Composition",
+      "id" : "048c37d9-9f41-4223-a8b2-ed322cb2f056",
+      "language" : "en-AU",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\"><a name=\"Composition_048c37d9-9f41-4223-a8b2-ed322cb2f056\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition 048c37d9-9f41-4223-a8b2-ed322cb2f056</b></p><a name=\"048c37d9-9f41-4223-a8b2-ed322cb2f056\"> </a><a name=\"hc048c37d9-9f41-4223-a8b2-ed322cb2f056\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en-AU</p></div><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 60591-5}\">Patient summary Document</span></p><p><b>date</b>: 2025-08-21</p><p><b>author</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p><p><b>title</b>: Patient Summary</p></div>"
+      },
+      "status" : "final",
+      "type" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "60591-5",
+          "display" : "Patient summary Document"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      },
+      "date" : "2025-08-21",
+      "author" : [{
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }],
+      "title" : "Patient Summary",
+      "section" : [{
+        "title" : "Allergies and Intolerances",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "48765-2",
+            "display" : "Allergies and adverse reactions Document"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">No information is provided about the patient's allergies and intolerances.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      },
+      {
+        "title" : "Problem List",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "11450-4",
+            "display" : "Problem list - Reported"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">\n                <p>Health problems as reported by the patient:</p>\n                  <ul>\n                    <li>My prostate cancer has come back and spread to my bones</li>\n                    <li>Trouble with my digestion</li>\n                    <li>Problems with my skin</li>\n                    <li>Infections are hard to fight off</li>\n                    <li>Not as sharp mentally as I used to be</li>\n                    <li>Bad pain in my back and stomach</li>\n                  </ul>\n              </div>"
+        },
+        "entry" : [{
+          "reference" : "urn:uuid:03e7d19a-a796-4779-a9c0-b72b9a63f7d6"
+        },
+        {
+          "reference" : "urn:uuid:a0deca67-656f-43bc-a6d7-ded0e4416804"
+        },
+        {
+          "reference" : "urn:uuid:7fe97b01-3def-4c5e-a53a-735b1aea6a62"
+        },
+        {
+          "reference" : "urn:uuid:6768ef5c-7e36-4124-a83b-f7a1d8f026e4"
+        },
+        {
+          "reference" : "urn:uuid:99d8f634-8dd6-4d48-8f79-c4dbfd9ee714"
+        },
+        {
+          "reference" : "urn:uuid:b2038034-fc91-4de8-83e2-44442fb33ceb"
+        }]
+      },
+      {
+        "title" : "Medication Summary",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "10160-0",
+            "display" : "History of Medication use Narrative"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\">No information is provided about the patient's medications.</div>"
+        },
+        "emptyReason" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "code" : "unavailable",
+            "display" : "Unavailable"
+          }],
+          "text" : "No information available"
+        }
+      },
+      {
+        "title" : "Patient Story",
+        "code" : {
+          "coding" : [{
+            "system" : "http://loinc.org",
+            "code" : "81338-6",
+            "display" : "Patient Goals, preferences, and priorities for care experience"
+          }]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\"><p>I'm 83 and I've been dealing with prostate cancer that's come back and spread to my bones. Recently I ended up in hospital with terrible pain in my back and stomach, along with some other problems, but they got me sorted and I'm back home now.</p>\n            <p>My wife and I live in a beautiful valley that we've called home for many years. Our garden is my pride and joy - I've put decades of work into it and being able to potter around out there means everything to me. We're active in our local community too, especially with the choral group that puts on the Christmas carols each year. It's a close-knit community and I know most of the staff at the local hospital.</p>\n            <p>Our kids are spread out across the country, with some a couple of hours away in the city. That's where my GP is too - I've been seeing him for years and really trust him, but I'll be honest, the two-hour drive is getting harder and harder.</p>\n            <p>The cancer has caused me quite a few problems - my digestion is troublesome, I've had skin issues, and I'm not fighting off infections like I used to. I'm taking supplements to keep my weight up. I've also noticed I'm not quite as sharp as I was, which is frustrating.</p>\n            <p>What matters most to me is staying in my own home, in my garden, for as long as I possibly can. I know there may come a time when that's not practical, and I'm trying to accept that. My main worry is keeping the pain under control - I don't want to suffer. If it comes to it, I'd rather have quality time than drag things out. This is my home, and I want to make the most of whatever time I have left here.</p>\n            <p>Goals:</p>\n            <ol>\n              <li>Stay comfortable and keep the pain under control</li>\n              <li>Stay in my home and garden for as long as I can</li>\n              <li>Have honest conversations and make sure everyone knows what I want</li>\n            </ol></div>"
+        }
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "f88cc963-56bd-42e7-930d-3b18db0fa723",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_f88cc963-56bd-42e7-930d-3b18db0fa723\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient f88cc963-56bd-42e7-930d-3b18db0fa723</b></p><a name=\"f88cc963-56bd-42e7-930d-3b18db0fa723\"> </a><a name=\"hcf88cc963-56bd-42e7-930d-3b18db0fa723\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 0770106438(Home)</li><li>ph: 0491571266(Mobile)</li><li>12 Pheonix Lane Walliebum QLD 4655 AU (home)</li></ul></td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI"
+          }],
+          "text" : "IHI"
+        },
+        "system" : "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+        "value" : "8003608833648454"
+      }],
+      "name" : [{
+        "use" : "official",
+        "family" : "Martin",
+        "given" : ["Shawn"]
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "0770106438",
+        "use" : "home"
+      },
+      {
+        "system" : "phone",
+        "value" : "0491571266",
+        "use" : "mobile"
+      }],
+      "gender" : "other",
+      "birthDate" : "1942-07-11",
+      "address" : [{
+        "use" : "home",
+        "line" : ["12 Pheonix Lane"],
+        "city" : "Walliebum",
+        "state" : "QLD",
+        "postalCode" : "4655",
+        "country" : "AU"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:03e7d19a-a796-4779-a9c0-b72b9a63f7d6",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "03e7d19a-a796-4779-a9c0-b72b9a63f7d6",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_03e7d19a-a796-4779-a9c0-b72b9a63f7d6\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 03e7d19a-a796-4779-a9c0-b72b9a63f7d6</b></p><a name=\"03e7d19a-a796-4779-a9c0-b72b9a63f7d6\"> </a><a name=\"hc03e7d19a-a796-4779-a9c0-b72b9a63f7d6\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">My prostate cancer has come back and spread to my bones</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "My prostate cancer has come back and spread to my bones"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:a0deca67-656f-43bc-a6d7-ded0e4416804",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "a0deca67-656f-43bc-a6d7-ded0e4416804",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_a0deca67-656f-43bc-a6d7-ded0e4416804\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition a0deca67-656f-43bc-a6d7-ded0e4416804</b></p><a name=\"a0deca67-656f-43bc-a6d7-ded0e4416804\"> </a><a name=\"hca0deca67-656f-43bc-a6d7-ded0e4416804\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">Trouble with my digestion</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "Trouble with my digestion"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:7fe97b01-3def-4c5e-a53a-735b1aea6a62",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "7fe97b01-3def-4c5e-a53a-735b1aea6a62",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_7fe97b01-3def-4c5e-a53a-735b1aea6a62\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 7fe97b01-3def-4c5e-a53a-735b1aea6a62</b></p><a name=\"7fe97b01-3def-4c5e-a53a-735b1aea6a62\"> </a><a name=\"hc7fe97b01-3def-4c5e-a53a-735b1aea6a62\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">Problems with my skin</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "Problems with my skin"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:6768ef5c-7e36-4124-a83b-f7a1d8f026e4",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "6768ef5c-7e36-4124-a83b-f7a1d8f026e4",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_6768ef5c-7e36-4124-a83b-f7a1d8f026e4\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 6768ef5c-7e36-4124-a83b-f7a1d8f026e4</b></p><a name=\"6768ef5c-7e36-4124-a83b-f7a1d8f026e4\"> </a><a name=\"hc6768ef5c-7e36-4124-a83b-f7a1d8f026e4\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">Infections are hard to fight off</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "Infections are hard to fight off"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:99d8f634-8dd6-4d48-8f79-c4dbfd9ee714",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "99d8f634-8dd6-4d48-8f79-c4dbfd9ee714",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_99d8f634-8dd6-4d48-8f79-c4dbfd9ee714\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 99d8f634-8dd6-4d48-8f79-c4dbfd9ee714</b></p><a name=\"99d8f634-8dd6-4d48-8f79-c4dbfd9ee714\"> </a><a name=\"hc99d8f634-8dd6-4d48-8f79-c4dbfd9ee714\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">Not as sharp mentally as I used to be</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "Not as sharp mentally as I used to be"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:b2038034-fc91-4de8-83e2-44442fb33ceb",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "b2038034-fc91-4de8-83e2-44442fb33ceb",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_b2038034-fc91-4de8-83e2-44442fb33ceb\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition b2038034-fc91-4de8-83e2-44442fb33ceb</b></p><a name=\"b2038034-fc91-4de8-83e2-44442fb33ceb\"> </a><a name=\"hcb2038034-fc91-4de8-83e2-44442fb33ceb\"> </a><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:\">Bad pain in my back and stomach</span></p><p><b>subject</b>: <a href=\"Bundle-aups-patient-story.html#urn-uuid-f88cc963-56bd-42e7-930d-3b18db0fa723\">Shawn Martin (official) Other, DoB: 1942-07-11 ( IHI:\u00a0Austalian Healthcare Identifier - Individual#8003608833648454)</a></p></div>"
+      },
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code" : "problem-list-item",
+          "display" : "Problem List Item"
+        }]
+      }],
+      "code" : {
+        "text" : "Bad pain in my back and stomach"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:f88cc963-56bd-42e7-930d-3b18db0fa723"
+      }
+    }
+  }]
+}
