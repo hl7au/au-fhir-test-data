@@ -1,0 +1,74 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "lipid-panel-report",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport"]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "FILL"
+      }]
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
+    "value" : "26-1552642-HDL-01",
+    "assigner" : {
+      "reference" : "Organization/pullabooka-pathology",
+      "display" : "Pullabooka Pathology"
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "FGN"
+      }]
+    },
+    "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
+    "value" : "26-1552642",
+    "assigner" : {
+      "reference" : "Organization/pullabooka-pathology",
+      "display" : "Pullabooka Pathology"
+    }
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "LAB",
+      "display" : "Laboratory"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "16254007",
+      "display" : "Lipid panel"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/banks-mia-leanne"
+  },
+  "effectiveDateTime" : "2023-01-17T08:30:00+10:00",
+  "issued" : "2023-01-18T09:30:00+10:00",
+  "performer" : [{
+    "reference" : "Organization/pullabooka-pathology"
+  }],
+  "result" : [{
+    "reference" : "Observation/lipid-hdl-1",
+    "display" : "HDL"
+  },
+  {
+    "reference" : "Observation/lipid-ldl-1",
+    "display" : "LDL"
+  },
+  {
+    "reference" : "Observation/lipid-total-chol-1",
+    "display" : "Total cholesterol"
+  },
+  {
+    "reference" : "Observation/lipid-triglyceride-1",
+    "display" : "Triglyceride"
+  }]
+}
