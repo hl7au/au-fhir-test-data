@@ -1,0 +1,48 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "surgeon-chau-fryer",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+        "code" : "UPIN"
+      }],
+      "text" : "Medicare Provider Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/medicare-provider-number",
+    "value" : "2449211J"
+  }],
+  "practitioner" : {
+    "reference" : "Practitioner/chau-fryer"
+  },
+  "organization" : {
+    "reference" : "Organization/murrabit-hospital"
+  },
+  "code" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "304292004"
+    },
+    {
+      "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+      "code" : "253511",
+      "display" : "Surgeon (General)"
+    }],
+    "text" : "Surgeon"
+  }],
+  "location" : [{
+    "reference" : "Location/murrabit-hospital"
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "(03) 7010 8625"
+  },
+  {
+    "system" : "email",
+    "value" : "chau.fryer@murrabitph.example.com.au",
+    "use" : "work"
+  }]
+}
