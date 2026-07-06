@@ -1,0 +1,43 @@
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "reaptan",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
+  },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "med1",
+    "code" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "926213011000036100"
+      }],
+      "text" : "Reaptan 10 mg/10 mg (perindopril arginine/amlodipine) tablet, 10"
+    }
+  }],
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "#med1"
+  },
+  "subject" : {
+    "reference" : "Patient/wang-li"
+  },
+  "performer" : [{
+    "actor" : {
+      "display" : "Main Street Pharmacy"
+    }
+  }],
+  "authorizingPrescription" : [{
+    "reference" : "MedicationRequest/reaptan"
+  }],
+  "quantity" : {
+    "value" : 10,
+    "unit" : "TAB",
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code" : "TAB"
+  },
+  "whenPrepared" : "2018-07-15",
+  "dosageInstruction" : [{
+    "text" : "1 tablet daily"
+  }]
+}
