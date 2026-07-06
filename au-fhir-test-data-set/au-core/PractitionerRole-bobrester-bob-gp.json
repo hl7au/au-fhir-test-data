@@ -1,0 +1,47 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "bobrester-bob-gp",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"]
+  },
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "EI",
+        "display" : "Employee number"
+      }],
+      "text" : "Employee Number"
+    },
+    "system" : "http://ns.electronichealth.net.au/id/abn-scoped/service-provider-individual/1.0/12345678901",
+    "value" : "12345678",
+    "assigner" : {
+      "display" : "Bobrester Medical Center"
+    }
+  }],
+  "practitioner" : {
+    "reference" : "Practitioner/bobrester-bob"
+  },
+  "organization" : {
+    "reference" : "Organization/bobrester-medical-center"
+  },
+  "code" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "62247001"
+    },
+    {
+      "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+      "code" : "253111"
+    }],
+    "text" : "General Practitioner"
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "0491579760"
+  },
+  {
+    "system" : "email",
+    "value" : "drbob@bobrestermedical.example.com"
+  }]
+}
