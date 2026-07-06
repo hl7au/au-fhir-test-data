@@ -4,10 +4,6 @@
   "meta" : {
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"]
   },
-  "text" : {
-    "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation pathresult-covid-1</b></p><a name=\"pathresult-covid-1\"> </a><a name=\"hcpathresult-covid-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-core-diagnosticresult-path.html\">AU Core Pathology Result Observation</a></p></div><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 MB}\">Microbiology</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 94309-2}\">2019-Novel Coronavirus PCR</span></p><p><b>subject</b>: <a href=\"Patient-wang-li.html\">Li Wang  Male, DoB: 1975-05-03 ( Medical Record Number:\u00a022421441)</a></p><p><b>effective</b>: 2021-02-15 12:00:00+1000</p><p><b>performer</b>: PATHOLOGY LAB</p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 260415000}\">Not detected</span></p><p><b>specimen</b>: <a href=\"Specimen-nasoswab.html\">Specimen: type = Swab; note = Collection Setting COVID HSC Assessment Clinic</a></p></div>"
-  },
   "status" : "final",
   "category" : [{
     "coding" : [{
