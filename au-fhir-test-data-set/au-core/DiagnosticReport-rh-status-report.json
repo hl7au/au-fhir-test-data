@@ -19,7 +19,7 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "12-122299-RHS-01",
       "assigner" : {
-        🔗 "reference" : "Organization/kunanurra-pathology",
+        "reference" : "Organization/kunanurra-pathology",
         "display" : "Kunanurra Pathology"
       }
     },
@@ -35,8 +35,8 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "12-122299",
       "assigner" : {
-        🔗 "reference" : "Organization/kunanurra-pathology",
-        "display" : "Kunanurra Pathology"
+        "reference" : "Organization/kununurra-pathology",
+        "display" : "Kununurra Pathology"
       }
     }
   ],
@@ -68,7 +68,7 @@
   "issued" : "2015-06-13T11:00:00+10:00",
   "performer" : [
     {
-      "reference" : "Organization/kunanurra-pathology"
+      "reference" : "Organization/kununurra-pathology"
     }
   ],
   "result" : [
