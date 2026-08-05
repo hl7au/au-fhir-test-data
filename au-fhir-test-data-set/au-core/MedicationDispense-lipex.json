@@ -1,19 +1,19 @@
 {
   "resourceType" : "MedicationDispense",
-  "id" : "simvastatin",
+  "id" : "lipex",
   "meta" : {
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
   },
   "status" : "completed",
   "medicationReference" : {
-    "reference" : "Medication/simvastatin"
+    "reference" : "Medication/lipex"
   },
   "subject" : {
     "reference" : "Patient/wang-li"
   },
   "performer" : [{
     "actor" : {
-      "display" : "Main Street Pharmacy"
+      "reference" : "Organization/appin-pharmacy"
     }
   }],
   "authorizingPrescription" : [{

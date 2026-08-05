@@ -22,5 +22,5 @@
       "code" : "http://ns.electronichealth.net.au/er/sc/deliver/hl7Mdm/2012"
     }]
   }],
-  "address" : "https://smd.mitchellshillaudiology.example.com.au/SealedMessageDelivery.svc"
+  "address" : "https://smd.mitchellshillaudiology.example.com/SealedMessageDelivery.svc"
 }

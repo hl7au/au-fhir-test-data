@@ -24,7 +24,7 @@
   },
   "performer" : [{
     "actor" : {
-      "display" : "Main Street Pharmacy"
+      "reference" : "PractitionerRole/pharmacist-megan-peterson"
     }
   }],
   "authorizingPrescription" : [{

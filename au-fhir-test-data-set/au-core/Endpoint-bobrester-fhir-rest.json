@@ -12,8 +12,8 @@
   "name" : "Bobrester Medical Center FHIR Endpoint",
   "payloadType" : [{
     "coding" : [{
-      "system" : "http://hl7.org/fhir/resource-types",
-      "code" : "Patient"
+      "system" : "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+      "code" : "any"
     }]
   }],
   "address" : "https://api.bobrestermedical.example.com/fhir/R4"
