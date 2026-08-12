@@ -1,5 +1,20 @@
 # Data Set for Alex’s Story
 
+## Change Log
+
+Changes made to this data set while building the connected-care FHIR test data, kept here for reconciliation with the original story owner.
+
+| Date | Change | Reason |
+| --- | --- | --- |
+| 2026-08-12 | Renamed "Sydney Private Clinic" (Dr. Emily Chen) to **Ashfield Private Clinic**; address updated from 100 George St, Sydney, NSW 2000 to 12 Roberts St, Ashfield, NSW 2131 | Aligned to the existing Organization already generated from the Services Australia providers/orgs sheet, so Dr. Chen's PractitionerRole didn't need a second, duplicate clinic |
+| 2026-08-12 | Renamed "Sydney Private Hospital" (Dr. Mark Wilson) to **Ashfield Private Hospital**; address updated from 50 Pitt St, Sydney, NSW 2000 to 63 Victoria St, Ashfield, NSW 2131 | Same reason — aligns to the existing Organization for Dr. Wilson |
+
+## Pending / Placeholder Data
+
+This data set contains IHI, MEDICARE NO, HPI-O, and HPI-I values throughout (patient demographics at the top of every section table, and every "Provider Organisation" / "Clinician" row). **These are placeholder numbers, not valid identifiers**, and have been ignored when building the connected-care FHIR resources — Patient, Organization, Practitioner, and PractitionerRole resources in this set currently carry no `identifier` values for these.
+
+Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this document and the corresponding FHIR resources will need to be updated to include them.
+
 ## 0. MyHealth App
 
 | Data Field | Actual Data | Critical? |
@@ -23,6 +38,22 @@
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
 | Clinician | Ms. Sarah Taylor (System Administrator, HPI-I: 1010-2020-3030-4040) | *Yes |
 | QR CODE VIEW | Displays consumer perspective: eRequest retrieval, sample processing, results notification | *Yes |
+
+### FHIR Resources – Section 0
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ⏳ Not yet generated | — |
+| Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
+| Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
+| Appointment | Bathurst Pathology booking (BOOK-2025-10-000) | ⏳ Not yet generated | — |
+| Practitioner | Dr. Chris Lee | ✅ Generated | `Practitioner-lee-chris.json` |
+| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-lee-chris.json` |
+| Practitioner | Sarah Taylor | ⏳ Not yet generated | — |
+| PractitionerRole | Sarah Taylor – System Administrator, National Cancer Screening Register | ⏳ Not yet generated | — |
 
 ## 1. Pathology (Collection Centre)
 
@@ -51,6 +82,17 @@
 | Organisation Address | 10 George St, Bathurst, NSW 2795 | No |
 | Clinician | Ms. Sally Johnson (Phlebotomist, HPI-I: 1212-3434-5656-7878) | *Yes |
 
+### FHIR Resources – Section 1
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
+| Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
+| Practitioner | Sally Johnson | ✅ Generated | `Practitioner-johnson-sally.json` |
+| PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | `PractitionerRole-phlebotomist-johnson-sally.json` |
+
 ## 2. General Practice
 
 | Data Field | Actual Data | Critical? |
@@ -70,11 +112,28 @@
 | Care Plan Details | Goals: Coordinate gynaecology referral, monitor results; Team: GP, Specialist; Prepopulated from national guidelines template | *Yes |
 | e-Referral ID | REF-2025-10-004 | *Yes |
 | Referral Details | To: Gynaecologist (no named provider); Include: Screening result, AUPS; Issued: 2025-10-09 | *Yes |
-| Provider Directory Search | Filters: Bathurst/Sydney, Wait Time <2 weeks; Selected: Dr. Emily Chen, Sydney Private Clinic (HPI-I: 2222-3333-4444-5555) | *Yes |
+| Provider Directory Search | Filters: Bathurst/Sydney, Wait Time <2 weeks; Selected: Dr. Emily Chen, Ashfield Private Clinic (HPI-I: 2222-3333-4444-5555) | *Yes |
 | Subscription Preferences | GP (Dr. Jane Smith, HPI-I: 5555-6666-7777-8888): Critical updates only (results, bookings) | *Yes |
 | Provider Organisation | Bathurst Medical Centre (HPI-O: 6666-7777-8888-9999) | *Yes |
 | Organisation Address | 25 Russell St, Bathurst, NSW 2795 | No |
 | Clinician | Dr. Chris Lee (GP, HPI-I: 5555-6666-7777-8888) | *Yes |
+
+### FHIR Resources – Section 2
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Bathurst Medical Centre | ✅ Generated | `Organization-bathurst-medical-centre.json` |
+| Location | Bathurst Medical Centre | ✅ Generated | `Location-bathurst-medical-centre.json` |
+| HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | `HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json` |
+| Practitioner | Dr. Chris Lee | ✅ Generated | `Practitioner-lee-chris.json` |
+| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-lee-chris.json` |
+| Practitioner | Dr. Jane Smith | ✅ Generated | `Practitioner-smith-jane.json` |
+| PractitionerRole | Dr. Jane Smith – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-smith-jane.json` |
+| Practitioner | Dr. Emily Chen | ✅ Generated | `Practitioner-chen-emily.json` |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | `PractitionerRole-obstetricianandgynaecologist-chen-emily.json` |
+
+> **Note:** "Sydney Private Clinic" / "Sydney Private Hospital" have been renamed to **Ashfield Private Clinic** / **Ashfield Private Hospital** throughout this document — see Change Log at the top.
 
 ## 3. Specialist (Gynaecological Oncologist – Private Practice)
 
@@ -96,15 +155,26 @@
 | Multidisciplinary Meeting ID | MDM-2025-10-008 | *Yes |
 | MDM Decision | Plan: Day surgery (cone procedure); Shared Care Plan Updated: 2025-10-20 | *Yes |
 | Hospital Booking ID | BOOK-2025-10-009 | *Yes |
-| Booking Details | Sydney Private Hospital (HPI-O: 3333-4444-5555-6666); Date: 2025-11-01; Prep: SMART Form completed | *Yes |
+| Booking Details | Ashfield Private Hospital (HPI-O: 3333-4444-5555-6666); Date: 2025-11-01; Prep: SMART Form completed | *Yes |
 | SMART Form ID | FORM-2025-10-010 | *Yes |
 | Form Details | Consent: Signed digitally; Medical History: No comorbidities; Allergies: Penicillin | *Yes |
 | ALLIED HEALTH eREFERRALS | Issued: Physio (REF-2025-11-017), Counselling (REF-2025-11-018) electronically | *Yes |
 | Structured Data for Payer Approvals | Patient/procedure data structured for instant payer requests |  |
 | Payer Pre-Approval | Submitted: Procedure Code CNE001; Cost: $6,000; Insurer: Medibank Private | No |
-| Provider Organisation | Sydney Private Clinic (HPI-O: 7777-8888-9999-0000) | *Yes |
-| Organisation Address | 100 George St, Sydney, NSW 2000 | No |
+| Provider Organisation | Ashfield Private Clinic (HPI-O: 7777-8888-9999-0000) | *Yes |
+| Organisation Address | 12 Roberts St, Ashfield, NSW 2131 | No |
 | Clinician | Dr. Emily Chen (Gynaecologist, HPI-I: 2222-3333-4444-5555) | *Yes |
+
+### FHIR Resources – Section 3
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Ashfield Private Clinic | ✅ Generated | `Organization-ashfield-private-clinic.json` |
+| Location | Ashfield Private Clinic | ✅ Generated | `Location-ashfield-private-clinic.json` |
+| HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | `HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json` |
+| Practitioner | Dr. Emily Chen | ✅ Generated | `Practitioner-chen-emily.json` |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | `PractitionerRole-obstetricianandgynaecologist-chen-emily.json` |
 
 ## 4. Private Hospital (Theatre / Inpatient)
 
@@ -127,9 +197,20 @@
 | Follow-Up Appointments | Auto-generated: GP (2025-11-08), Physio (2025-11-10), Counselling (2025-11-15); In MyHealth App | *Yes |
 | Image Viewer Access | Intra-op images attached; Viewed by: Surgical Team (HPI-O: 3333-4444-5555-6666) | No |
 | Publication Status | Published: Shared Care Plan; Notified: GP, Specialist, Patient | *Yes |
-| Provider Organisation | Sydney Private Hospital (HPI-O: 3333-4444-5555-6666) | *Yes |
-| Organisation Address | 50 Pitt St, Sydney, NSW 2000 | No |
+| Provider Organisation | Ashfield Private Hospital (HPI-O: 3333-4444-5555-6666) | *Yes |
+| Organisation Address | 63 Victoria St, Ashfield, NSW 2131 | No |
 | Clinician | Dr. Mark Wilson (Surgeon, HPI-I: 3434-5656-7878-9090) | *Yes |
+
+### FHIR Resources – Section 4
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
+| Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
+| Practitioner | Dr. Mark Wilson | ✅ Generated | `Practitioner-wilson-mark.json` |
+| PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | `PractitionerRole-surgeon-wilson-mark.json` |
 
 ## 5. Pharmacy
 
@@ -153,6 +234,17 @@
 | Provider Organisation | Bathurst Community Pharmacy (HPI-O: 8888-9999-0000-1111) | *Yes |
 | Organisation Address | 15 Keppel St, Bathurst, NSW 2795 | No |
 | Clinician | Ms. Sarah Lee (Pharmacist, HPI-I: 4545-6767-8989-0101) | *Yes |
+
+### FHIR Resources – Section 5
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Bathurst Community Pharmacy | ✅ Generated | `Organization-bathurst-community-pharmacy.json` |
+| Location | Bathurst Community Pharmacy | ✅ Generated | `Location-bathurst-community-pharmacy.json` |
+| HealthcareService | Bathurst Community Pharmacy | ✅ Generated | `HealthcareService-communitypharmacy-bathurst-community-pharmacy.json` |
+| Practitioner | Sarah Lee | ✅ Generated | `Practitioner-lee-sarah.json` |
+| PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ Generated | `PractitionerRole-retailpharmacist-lee-sarah.json` |
 
 ## 6. Allied Health (Physiotherapy & Counselling)
 
@@ -183,6 +275,22 @@
 | Clinician (Physio) | Ms. Sarah Evans (Physiotherapist, HPI-I: 5656-7878-9090-1212) | *Yes |
 | Clinician (Counselling) | Dr. Rachel Patel (Counsellor, HPI-I: 6767-8989-0101-2323) | *Yes |
 
+### FHIR Resources – Section 6
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Organization | Bathurst Physio Centre | ✅ Generated | `Organization-bathurst-physio-centre.json` |
+| Location | Bathurst Physio Centre | ✅ Generated | `Location-bathurst-physio-centre.json` |
+| HealthcareService | Bathurst Physio Centre | ✅ Generated | `HealthcareService-physiotherapyservices-bathurst-physio-centre.json` |
+| Practitioner | Sarah Evans | ✅ Generated | `Practitioner-evans-sarah.json` |
+| PractitionerRole | Sarah Evans – Physiotherapist, Bathurst Physio Centre | ✅ Generated | `PractitionerRole-physiotherapist-evans-sarah.json` |
+| Organization | Bathurst Psychology | ✅ Generated | `Organization-bathurst-psychology.json` |
+| Location | Bathurst Psychology | ✅ Generated | `Location-bathurst-psychology.json` |
+| HealthcareService | Bathurst Psychology | ⏳ Not yet generated (no SNOMED service-type match in Type Codes) | — |
+| Practitioner | Dr. Rachel Patel | ✅ Generated | `Practitioner-patel-rachel.json` |
+| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | `PractitionerRole-counsellorsnec-patel-rachel.json` |
+
 ## 7. Population Health / Analytics
 
 | Data Field | Actual Data | Critical? |
@@ -198,3 +306,11 @@
 | Update Cadence | Daily; Source: FHIR via Health Connect Australia | No |
 | Provider Organisation | Australian Institute of Health and Welfare (HPI-O: 0000-1111-2222-3333) | *Yes |
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
+
+### FHIR Resources – Section 7
+
+| Resource Type | Description | Status | Reference |
+| --- | --- | --- | --- |
+| Organization | Australian Institute of Health and Welfare | ⏳ Not yet generated | — |
+
+> This section describes a de-identified, aggregated population-health view rather than per-patient data — it wouldn't produce Patient-linked clinical resources; a `Measure`/`MeasureReport` pair would be the more natural fit if we model it at all.
