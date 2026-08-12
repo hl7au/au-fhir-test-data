@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "anxietylevel-thompson-alex-20251115",
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "405051006",
+        "display": "Level of anxiety"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/counsellingvisit-thompson-alex-20251115"
+  },
+  "effectiveDateTime": "2025-11-15",
+  "performer": [
+    {
+      "reference": "PractitionerRole/counsellorsnec-patel-rachel",
+      "display": "Dr Rachel Patel"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61387006",
+        "display": "Moderate anxiety"
+      }
+    ]
+  }
+}
