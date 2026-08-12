@@ -134,6 +134,7 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Observation | Weight, BP, HR, alcohol use | ⏳ Not yet generated | — |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
 | ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ⏳ Not yet generated | — |
+| Composition (AU Patient Summary) | Patient Summary sent with the e-Referral to Dr. Emily Chen | ⏳ Not yet generated | — |
 | Organization | Bathurst Medical Centre | ✅ Generated | `Organization-bathurst-medical-centre.json` |
 | Location | Bathurst Medical Centre | ✅ Generated | `Location-bathurst-medical-centre.json` |
 | HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | `HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json` |
@@ -229,6 +230,7 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (not sent with the referral — pulled independently, e.g. via provider access) | ⏳ Not yet generated | — |
 | Appointment | Hospital booking (BOOK-2025-11-009) | ⏳ Not yet generated | — |
 | QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
 | Procedure | Cone Biopsy (Day Surgery) | ⏳ Not yet generated | — |
@@ -274,6 +276,7 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Composition (AU Patient Summary) | Patient Summary viewed by Bathurst Community Pharmacy as part of medication review | ⏳ Not yet generated | — |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
 | MedicationRequest / MedicationStatement | Updated medication list (MED-2025-11-014) | ⏳ Not yet generated | — |
 | Encounter | Pharmacy counselling encounter — Ibuprofen/Sertraline interaction check, dosing counselling, red-flag advice (NOTE-2025-11-015) | ⏳ Not yet generated | — |
