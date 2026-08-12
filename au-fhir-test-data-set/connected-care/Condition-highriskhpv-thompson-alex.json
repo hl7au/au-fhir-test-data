@@ -1,0 +1,68 @@
+{
+  "resourceType": "Condition",
+  "id": "highriskhpv-thompson-alex",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "problem-list-item",
+          "display": "Problem List Item"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "718591004",
+        "display": "High risk human papillomavirus detected by cytology"
+      }
+    ],
+    "text": "High-risk cervical screening result: high-risk HPV detected, CIN2/3 (pre-cancerous)"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/gpconsultation-thompson-alex-20251009"
+  },
+  "onsetDateTime": "2025-10-08",
+  "recordedDate": "2025-10-09",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-lee-chris"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/generalpractitioner-lee-chris"
+  },
+  "note": [
+    {
+      "text": "High-risk HPV detected with CIN2/3 (pre-cancerous) on cervical screening pathology result PATH-2025-10-002 (Bathurst Pathology, result date 2025-10-08). Reviewed with patient at GP consultation; gynaecology referral initiated."
+    }
+  ]
+}

@@ -39,12 +39,13 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Clinician | Ms. Sarah Taylor (System Administrator, HPI-I: 1010-2020-3030-4040) | *Yes |
 | QR CODE VIEW | Displays consumer perspective: eRequest retrieval, sample processing, results notification | *Yes |
 
-### FHIR Resources – Section 0
+### FHIR Resources – MyHealth App
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
 | Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
+| *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified yet (not a Communication, since AU Core doesn't include that resource; needs a decision) | ⏳ Not yet generated | — |
 | ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ⏳ Not yet generated | — |
 | Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
 | Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
@@ -82,11 +83,13 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Organisation Address | 10 George St, Bathurst, NSW 2795 | No |
 | Clinician | Ms. Sally Johnson (Phlebotomist, HPI-I: 1212-3434-5656-7878) | *Yes |
 
-### FHIR Resources – Section 1
+### FHIR Resources – Pathology (Collection Centre)
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ⏳ Not yet generated | — |
+| DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ⏳ Not yet generated | — |
 | Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
 | Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
 | HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
@@ -118,11 +121,19 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Organisation Address | 25 Russell St, Bathurst, NSW 2795 | No |
 | Clinician | Dr. Chris Lee (GP, HPI-I: 5555-6666-7777-8888) | *Yes |
 
-### FHIR Resources – Section 2
+### FHIR Resources – General Practice
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| AllergyIntolerance | Penicillin (anaphylaxis) | ⏳ Not yet generated | — |
+| MedicationStatement | No active medications | ⏳ Not yet generated | — |
+| Condition | High-risk cervical screening (high-risk HPV / CIN2/3) | ✅ Generated | `Condition-highriskhpv-thompson-alex.json` |
+| Encounter | GP consultation, 2025-10-09 | ✅ Generated | `Encounter-gpconsultation-thompson-alex-20251009.json` |
+| Composition (Encounter Summary) | GP consultation summary, 2025-10-09 — pending the emerging AU Encounter Summary IG (alongside AU Patient Summary) | ⏳ Not yet generated | — |
+| Observation | Weight, BP, HR, alcohol use | ⏳ Not yet generated | — |
+| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
+| ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ⏳ Not yet generated | — |
 | Organization | Bathurst Medical Centre | ✅ Generated | `Organization-bathurst-medical-centre.json` |
 | Location | Bathurst Medical Centre | ✅ Generated | `Location-bathurst-medical-centre.json` |
 | HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | `HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json` |
@@ -165,14 +176,26 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Organisation Address | 12 Roberts St, Ashfield, NSW 2131 | No |
 | Clinician | Dr. Emily Chen (Gynaecologist, HPI-I: 2222-3333-4444-5555) | *Yes |
 
-### FHIR Resources – Section 3
+### FHIR Resources – Specialist (Gynaecological Oncologist – Private Practice)
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| ServiceRequest | Colposcopy with Biopsy, requested (REQ-2025-10-005) | ⏳ Not yet generated | — |
+| MedicationRequest | Ibuprofen 400 mg PRN (eScript SCR-2025-10-006) | ⏳ Not yet generated | — |
+| MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ⏳ Not yet generated | — |
+| DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ⏳ Not yet generated | — |
+| Encounter | Multidisciplinary meeting / specialist decision encounter (MDM-2025-10-008) | ⏳ Not yet generated | — |
+| Appointment | Ashfield Private Hospital booking (BOOK-2025-10-009) | ⏳ Not yet generated | — |
+| QuestionnaireResponse | SMART Form consent (FORM-2025-10-010) | ⏳ Not yet generated | — |
+| ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ⏳ Not yet generated | — |
+| ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ⏳ Not yet generated | — |
 | Organization | Ashfield Private Clinic | ✅ Generated | `Organization-ashfield-private-clinic.json` |
 | Location | Ashfield Private Clinic | ✅ Generated | `Location-ashfield-private-clinic.json` |
 | HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | `HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json` |
+| Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
+| Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
 | Practitioner | Dr. Emily Chen | ✅ Generated | `Practitioner-chen-emily.json` |
 | PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | `PractitionerRole-obstetricianandgynaecologist-chen-emily.json` |
 
@@ -201,11 +224,22 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Organisation Address | 63 Victoria St, Ashfield, NSW 2131 | No |
 | Clinician | Dr. Mark Wilson (Surgeon, HPI-I: 3434-5656-7878-9090) | *Yes |
 
-### FHIR Resources – Section 4
+### FHIR Resources – Private Hospital (Theatre / Inpatient)
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Appointment | Hospital booking (BOOK-2025-11-009) | ⏳ Not yet generated | — |
+| QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
+| Procedure | Cone Biopsy (Day Surgery) | ⏳ Not yet generated | — |
+| Encounter | Peri-operative encounter (PERI-2025-11-012) | ⏳ Not yet generated | — |
+| DocumentReference | Discharge Summary (DS-2025-11-013) | ⏳ Not yet generated | — |
+| MedicationRequest | Discharge meds – Ibuprofen x5 days | ⏳ Not yet generated | — |
+| MedicationRequest | Discharge meds – Paracetamol x5 days | ⏳ Not yet generated | — |
+| CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ Not yet generated | — |
+| Appointment | Follow-up – GP (2025-11-08) | ⏳ Not yet generated | — |
+| Appointment | Follow-up – Physio (2025-11-10) | ⏳ Not yet generated | — |
+| Appointment | Follow-up – Counselling (2025-11-15) | ⏳ Not yet generated | — |
 | Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
 | Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
 | HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
@@ -235,11 +269,17 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Organisation Address | 15 Keppel St, Bathurst, NSW 2795 | No |
 | Clinician | Ms. Sarah Lee (Pharmacist, HPI-I: 4545-6767-8989-0101) | *Yes |
 
-### FHIR Resources – Section 5
+### FHIR Resources – Pharmacy
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
+| MedicationRequest / MedicationStatement | Updated medication list (MED-2025-11-014) | ⏳ Not yet generated | — |
+| Encounter | Pharmacy counselling encounter — Ibuprofen/Sertraline interaction check, dosing counselling, red-flag advice (NOTE-2025-11-015) | ⏳ Not yet generated | — |
+| MedicationDispense | Ibuprofen 25 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
+| MedicationDispense | Oxycodone 10 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
+| MedicationDispense | Paracetamol 20 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
 | Organization | Bathurst Community Pharmacy | ✅ Generated | `Organization-bathurst-community-pharmacy.json` |
 | Location | Bathurst Community Pharmacy | ✅ Generated | `Location-bathurst-community-pharmacy.json` |
 | HealthcareService | Bathurst Community Pharmacy | ✅ Generated | `HealthcareService-communitypharmacy-bathurst-community-pharmacy.json` |
@@ -275,11 +315,21 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Clinician (Physio) | Ms. Sarah Evans (Physiotherapist, HPI-I: 5656-7878-9090-1212) | *Yes |
 | Clinician (Counselling) | Dr. Rachel Patel (Counsellor, HPI-I: 6767-8989-0101-2323) | *Yes |
 
-### FHIR Resources – Section 6
+### FHIR Resources – Allied Health (Physiotherapy & Counselling)
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| ServiceRequest | eReferral – Physio (REF-2025-11-017) | ⏳ Not yet generated | — |
+| ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ⏳ Not yet generated | — |
+| Appointment | Physio booking (BOOK-2025-11-019) | ⏳ Not yet generated | — |
+| Appointment | Counselling booking (BOOK-2025-11-020), Telehealth | ⏳ Not yet generated | — |
+| Encounter | Pelvic-health physio visit, 2025-11-10 (+ balance training, 2025-10-09) | ⏳ Not yet generated | — |
+| Observation | Physio measures – pelvic floor strength, pain score, mobility (OBS-2025-11-021) | ⏳ Not yet generated | — |
+| Encounter | Psycho-Oncology counselling, Telehealth, 2025-11-15 | ⏳ Not yet generated | — |
+| Observation | Counselling measures – PHQ-9, anxiety (OBS-2025-11-022) | ⏳ Not yet generated | — |
+| Observation | Apple Watch data – heart rate, steps | ⏳ Not yet generated | — |
+| CarePlan | Shared Care Plan update (physio exercises, counselling notes) | ⏳ Not yet generated | — |
 | Organization | Bathurst Physio Centre | ✅ Generated | `Organization-bathurst-physio-centre.json` |
 | Location | Bathurst Physio Centre | ✅ Generated | `Location-bathurst-physio-centre.json` |
 | HealthcareService | Bathurst Physio Centre | ✅ Generated | `HealthcareService-physiotherapyservices-bathurst-physio-centre.json` |
@@ -307,7 +357,7 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Provider Organisation | Australian Institute of Health and Welfare (HPI-O: 0000-1111-2222-3333) | *Yes |
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
 
-### FHIR Resources – Section 7
+### FHIR Resources – Population Health / Analytics
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
