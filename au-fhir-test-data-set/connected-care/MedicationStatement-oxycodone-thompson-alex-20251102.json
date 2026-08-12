@@ -10,9 +10,19 @@
   "medicationCodeableConcept": {
     "coding": [
       {
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+            "valueCoding": {
+              "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          }
+        ],
         "system": "http://snomed.info/sct",
-        "code": "55452001",
-        "display": "Oxycodone"
+        "code": "22269011000036101",
+        "display": "Oxycodone hydrochloride 5 mg tablet"
       }
     ],
     "text": "Oxycodone 5 mg tablet"

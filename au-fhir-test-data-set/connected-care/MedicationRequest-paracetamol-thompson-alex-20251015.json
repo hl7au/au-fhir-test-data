@@ -21,9 +21,19 @@
   "medicationCodeableConcept": {
     "coding": [
       {
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+            "valueCoding": {
+              "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+              "code": "UPDSF",
+              "display": "Unbranded product with strengths and form"
+            }
+          }
+        ],
         "system": "http://snomed.info/sct",
-        "code": "28314011000036104",
-        "display": "paracetamol 500 mg tablet, 100"
+        "code": "23628011000036109",
+        "display": "Paracetamol 500 mg tablet"
       }
     ],
     "text": "Paracetamol 500 mg tablet"
