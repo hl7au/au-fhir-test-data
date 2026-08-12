@@ -7,11 +7,11 @@ The data set is organised into 8 steps, each representing a different point of c
 0. [MyHealth App](#0-myhealth-app)
 1. [Pathology (Collection Centre)](#1-pathology-collection-centre)
 2. [General Practice](#2-general-practice)
-3. [Specialist (Gynaecological Oncologist – Private Practice)](#3-specialist-gynaecological-oncologist-private-practice)
-4. [Private Hospital (Theatre / Inpatient)](#4-private-hospital-theatre-inpatient)
+3. [Specialist (Gynaecological Oncologist – Private Practice)](#3-specialist-gynaecological-oncologist--private-practice)
+4. [Private Hospital (Theatre / Inpatient)](#4-private-hospital-theatre--inpatient)
 5. [Pharmacy](#5-pharmacy)
-6. [Allied Health (Physiotherapy & Counselling)](#6-allied-health-physiotherapy-counselling)
-7. [Population Health / Analytics](#7-population-health-analytics)
+6. [Allied Health (Physiotherapy & Counselling)](#6-allied-health-physiotherapy--counselling)
+7. [Population Health / Analytics](#7-population-health--analytics)
 
 See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bottom of this document for open items and judgment calls made while building this data set.
 
