@@ -289,11 +289,15 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
 | Composition (AU Patient Summary) | Patient Summary viewed by Bathurst Community Pharmacy as part of medication review | ⏳ Not yet generated | — |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
-| MedicationRequest / MedicationStatement | Updated medication list (MED-2025-11-014) | ⏳ Not yet generated | — |
-| Encounter | Pharmacy counselling encounter — Ibuprofen/Sertraline interaction check, dosing counselling, red-flag advice (NOTE-2025-11-015) | ⏳ Not yet generated | — |
-| MedicationDispense | Ibuprofen 25 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
-| MedicationDispense | Oxycodone 10 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
-| MedicationDispense | Paracetamol 20 tablets (DISP-2025-11-016) | ⏳ Not yet generated | — |
+| Encounter | Medication review encounter, Bathurst Community Pharmacy, 2025-11-02 | ✅ Generated | `Encounter-medicationreview-thompson-alex-20251102.json` |
+| MedicationStatement | Sertraline 100 mg each morning — newly disclosed regular medication | ✅ Generated | `MedicationStatement-sertraline-thompson-alex-20251102.json` |
+| MedicationStatement | Ibuprofen 400 mg PRN — revised to max 3 tablets/day following the Sertraline interaction alert | ✅ Generated | `MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json` |
+| MedicationStatement | Paracetamol 500 mg PRN — reconfirmed | ✅ Generated | `MedicationStatement-paracetamol-postdischarge-thompson-alex-20251102.json` |
+| MedicationStatement | Oxycodone 5 mg PRN — short course, breakthrough pain only | ✅ Generated | `MedicationStatement-oxycodone-thompson-alex-20251102.json` |
+| Composition | Medication Review episode (MED-2025-11-014), LOINC 56445-0 "Medication summary Document" — follows the AU PS section pattern even though it's a plain `au-core-composition`: Active Problems, Active Allergies, Current Medicines (all 4 MedicationStatements), Procedure History (colposcopy + cone biopsy), Plan of Care (counselling notes, NOTE-2025-11-015, text-only) | ✅ Generated | `Composition-medicationreview-thompson-alex-20251102.json` |
+| MedicationDispense | Ibuprofen 25 tablets (DISP-2025-11-016) | ✅ Generated | `MedicationDispense-ibuprofen-thompson-alex-20251102.json` |
+| MedicationDispense | Oxycodone 10 tablets (DISP-2025-11-016, no authorizing prescription reference — see Pending / Placeholder Data) | ✅ Generated | `MedicationDispense-oxycodone-thompson-alex-20251102.json` |
+| MedicationDispense | Paracetamol 20 tablets (DISP-2025-11-016) | ✅ Generated | `MedicationDispense-paracetamol-thompson-alex-20251102.json` |
 | Organization | Bathurst Community Pharmacy | ✅ Generated | `Organization-bathurst-community-pharmacy.json` |
 | Location | Bathurst Community Pharmacy | ✅ Generated | `Location-bathurst-community-pharmacy.json` |
 | HealthcareService | Bathurst Community Pharmacy | ✅ Generated | `HealthcareService-communitypharmacy-bathurst-community-pharmacy.json` |
@@ -413,6 +417,10 @@ The two eScript `MedicationRequest` identifiers use the `http://ns.electronichea
 The `Appointment-hospitalbooking-thompson-alex-20251101.json` identifier (BOOK-2025-11-009) does **not** use the `hpio-scoped/order/1.0` namespace like the ServiceRequest/DiagnosticReport placer/filler identifiers elsewhere in this data set — a booking ID is a local scheduling reference, not an order/requisition number, so the ADHA order-scoped namespace doesn't fit. Instead its `identifier.system` is a fictional practice-organisation URI, `http://ashfieldprivatehospital.example.org/id/booking`, following the same pattern already used for the `Device` identifier in the AU PS Bundle (`http://bathurstmedicalcentre.example.net/id/cis`) — a locally-assigned system URI scoped to the organisation, not an ADHA namespace. This should be revisited once Ashfield Private Hospital's real PAS/booking-system identifier namespace is known.
 
 The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s identifier `assigner`) is recorded as Ashfield Private Clinic — a simplification, since the source story data doesn't name the anatomical pathology laboratory that would actually process a biopsy specimen for a Sydney-area specialist (unlike Section 1, where Bathurst Pathology is named explicitly). This should be revisited if/when a specific lab is identified for this part of the story.
+
+Consider reworking all `MedicationRequest`, `MedicationStatement`, and `MedicationDispense` resources in this data set to use a contained `Medication` resource (`medicationReference` to a `#contained` entry) instead of `medicationCodeableConcept`, for consistency with the `au-core` reference examples (e.g. `MedicationDispense-metformin.json`, `MedicationRequest-atorvastatin.json`), which model medications this way.
+
+`MedicationDispense-oxycodone-thompson-alex-20251102.json` has no `authorizingPrescription` — the source story data doesn't give a separate order/eScript ID for the Oxycodone short course (unlike the Ibuprofen/Paracetamol dispenses, which reference the existing discharge `MedicationRequest`s). A `MedicationRequest` for the Oxycodone prescription should be built once/if an identifier or prescriber is confirmed for it.
 
 `DocumentReference-dischargesummary-thompson-alex-20251101.json` wraps a real PDF (base64-encoded in `content[0].attachment.data`), rendered by concatenating a Patient narrative banner with `Composition-dischargesummary-thompson-alex-20251101.json`'s own narrative and each of its section narratives, per FHIR document rendering rules. The Patient narrative banner is generated on the fly for this rendering only — `Patient-thompson-alex.json` itself still carries no `text.div`. The two resources share the same business identifier (DS-2025-11-013) but there is no direct FHIR reference from the `DocumentReference` back to the `Composition`.
 

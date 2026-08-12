@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "oxycodone-thompson-alex-20251102",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"
+    ]
+  },
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "55452001",
+        "display": "Oxycodone"
+      }
+    ],
+    "text": "Oxycodone 5 mg tablet"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "display": "Sarah Lee"
+      }
+    }
+  ],
+  "quantity": {
+    "value": 10,
+    "unit": "TAB",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code": "TAB"
+  },
+  "whenPrepared": "2025-11-02",
+  "dosageInstruction": [
+    {
+      "text": "5 mg as needed for intense pain only, max 4 tablets/day, short course up to 3 days"
+    }
+  ],
+  "note": [
+    {
+      "text": "Only 10 tablets supplied. No separate order/eScript identifier was given in the source story data for this prescription — see Pending / Placeholder Data."
+    }
+  ]
+}

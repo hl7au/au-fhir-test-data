@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "paracetamol-thompson-alex-20251102",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"
+    ]
+  },
+  "status": "completed",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "28314011000036104",
+        "display": "paracetamol 500 mg tablet, 100"
+      }
+    ],
+    "text": "Paracetamol 500 mg tablet"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "display": "Sarah Lee"
+      }
+    }
+  ],
+  "authorizingPrescription": [
+    {
+      "reference": "MedicationRequest/paracetamol-discharge-thompson-alex-20251101"
+    }
+  ],
+  "quantity": {
+    "value": 20,
+    "unit": "TAB",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code": "TAB"
+  },
+  "whenPrepared": "2025-11-02",
+  "dosageInstruction": [
+    {
+      "text": "500 mg every 6 hours as needed for pain (max 4 g/day); alternate with Ibuprofen"
+    }
+  ]
+}
