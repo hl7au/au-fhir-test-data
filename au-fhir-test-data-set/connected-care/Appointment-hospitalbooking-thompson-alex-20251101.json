@@ -1,0 +1,72 @@
+{
+  "resourceType": "Appointment",
+  "id": "hospitalbooking-thompson-alex-20251101",
+  "identifier": [
+    {
+      "system": "http://ashfieldprivatehospital.example.org/id/booking",
+      "type": {
+        "text": "Booking ID"
+      },
+      "value": "BOOK-2025-11-009",
+      "assigner": {
+        "reference": "Organization/ashfield-private-hospital",
+        "display": "Ashfield Private Hospital"
+      }
+    }
+  ],
+  "status": "fulfilled",
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/conebiopsydaysurgery-thompson-alex-20251020"
+    }
+  ],
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "54535009",
+          "display": "Cone biopsy of cervix"
+        }
+      ],
+      "text": "Day surgery – Cone biopsy"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ]
+    }
+  ],
+  "description": "Day surgery admission for cone biopsy procedure",
+  "start": "2025-11-01T08:00:00+11:00",
+  "end": "2025-11-01T10:00:00+11:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/thompson-alex",
+        "display": "Alex Thompson"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "PractitionerRole/surgeon-wilson-mark",
+        "display": "Dr Mark Wilson"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/ashfield-private-hospital",
+        "display": "Ashfield Private Hospital"
+      },
+      "status": "accepted"
+    }
+  ]
+}

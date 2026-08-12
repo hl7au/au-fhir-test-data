@@ -1,0 +1,85 @@
+{
+  "resourceType": "Procedure",
+  "id": "colposcopybiopsy-thompson-alex-20251015",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/colposcopybiopsy-thompson-alex-20251010"
+    }
+  ],
+  "status": "completed",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "103693007",
+          "display": "Diagnostic procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "34999005",
+        "display": "Colposcopy"
+      }
+    ],
+    "text": "Colposcopy with biopsy"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/colposcopy-thompson-alex-20251015"
+  },
+  "performedPeriod": {
+    "start": "2025-10-15T11:00:00+11:00",
+    "end": "2025-10-15T11:30:00+11:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/obstetricianandgynaecologist-chen-emily",
+        "display": "Dr Emily Chen"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ]
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "71252005",
+          "display": "Cervix uteri structure"
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "text": "Colposcopic examination performed and a cervical punch biopsy specimen obtained and sent for histopathology"
+  },
+  "followUp": [
+    {
+      "text": "Await histopathology result; multidisciplinary meeting to determine further management"
+    }
+  ]
+}

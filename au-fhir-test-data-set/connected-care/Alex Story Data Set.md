@@ -8,6 +8,8 @@ Changes made to this data set while building the connected-care FHIR test data, 
 | --- | --- | --- |
 | 2026-08-12 | Renamed "Sydney Private Clinic" (Dr. Emily Chen) to **Ashfield Private Clinic**; address updated from 100 George St, Sydney, NSW 2000 to 12 Roberts St, Ashfield, NSW 2131 | Aligned to the existing Organization already generated from the Services Australia providers/orgs sheet, so Dr. Chen's PractitionerRole didn't need a second, duplicate clinic |
 | 2026-08-12 | Renamed "Sydney Private Hospital" (Dr. Mark Wilson) to **Ashfield Private Hospital**; address updated from 50 Pitt St, Sydney, NSW 2000 to 63 Victoria St, Ashfield, NSW 2131 | Same reason — aligns to the existing Organization for Dr. Wilson |
+| 2026-08-12 | Section 3 lists "Hospital Booking ID: BOOK-2025-10-009" while Section 4 lists "Booking ID: BOOK-2025-11-009" for what is clearly the same Ashfield Private Hospital day-surgery admission on 2025-11-01. A single `Appointment` resource was built using **BOOK-2025-11-009** (the Section 4 value, which also supplies the 8:00 AM time) | Likely a typo in the source spreadsheet's Section 3 row; using one Appointment resource avoids duplicating the same real-world booking |
+| 2026-08-12 | Built a `ServiceRequest` (REQ-2025-11-009) authorising the cone biopsy day surgery that `Appointment-hospitalbooking-thompson-alex-20251101.json` is `basedOn` — this identifier value is **synthesised**, not sourced from the spreadsheet | The story data gives a Hospital Booking ID for the appointment but no separate request/order ID for the surgery itself; a `ServiceRequest` is still needed so the Appointment has something to be `basedOn` |
 
 ## Pending / Placeholder Data
 
@@ -24,6 +26,12 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 The GP consultation's "Alcohol use: Occasional (2 standard drinks/week)" vital is not modelled as an Observation — AU Core does not currently carry an Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) releases (it existed only in older preview builds, which this data set avoids). Weight, blood pressure, and heart rate are generated; alcohol use can be added if/when AU Core reintroduces the profile.
 
 For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
+
+The two eScript `MedicationRequest` identifiers use the `http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{{hpio}}` namespace specifically (the prescription-scoped variant, distinct from the order-scoped one used elsewhere), per the [hpio-scoped/prescription/1.0](https://implementer.digitalhealth.gov.au/namespaces/id/hpio-scoped/prescription/1.0/index.html) namespace.
+
+The `Appointment-hospitalbooking-thompson-alex-20251101.json` identifier (BOOK-2025-11-009) does **not** use the `hpio-scoped/order/1.0` namespace like the ServiceRequest/DiagnosticReport placer/filler identifiers elsewhere in this data set — a booking ID is a local scheduling reference, not an order/requisition number, so the ADHA order-scoped namespace doesn't fit. Instead its `identifier.system` is a fictional practice-organisation URI, `http://ashfieldprivatehospital.example.org/id/booking`, following the same pattern already used for the `Device` identifier in the AU PS Bundle (`http://bathurstmedicalcentre.example.net/id/cis`) — a locally-assigned system URI scoped to the organisation, not an ADHA namespace. This should be revisited once Ashfield Private Hospital's real PAS/booking-system identifier namespace is known.
+
+The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s identifier `assigner`) is recorded as Ashfield Private Clinic — a simplification, since the source story data doesn't name the anatomical pathology laboratory that would actually process a biopsy specimen for a Sydney-area specialist (unlike Section 1, where Bathurst Pathology is named explicitly). This should be revisited if/when a specific lab is identified for this part of the story.
 
 ## 0. MyHealth App
 
@@ -197,15 +205,19 @@ For business identifiers that require an AU Base Local Identifier profile (e.g. 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| ServiceRequest | Colposcopy with Biopsy, requested (REQ-2025-10-005) | ⏳ Not yet generated | — |
-| MedicationRequest | Ibuprofen 400 mg PRN (eScript SCR-2025-10-006) | ⏳ Not yet generated | — |
-| MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ⏳ Not yet generated | — |
-| DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ⏳ Not yet generated | — |
+| Encounter | Colposcopy with biopsy visit, 2025-10-15 | ✅ Generated | `Encounter-colposcopy-thompson-alex-20251015.json` |
+| ServiceRequest | Colposcopy with Biopsy, requested (REQ-2025-10-005) | ✅ Generated | `ServiceRequest-colposcopybiopsy-thompson-alex-20251010.json` |
+| Procedure | Colposcopy with biopsy, performed in-rooms (specimen sent for histopathology) | ✅ Generated | `Procedure-colposcopybiopsy-thompson-alex-20251015.json` |
+| MedicationRequest | Ibuprofen 400 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | `MedicationRequest-ibuprofen-thompson-alex-20251015.json` |
+| MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | `MedicationRequest-paracetamol-thompson-alex-20251015.json` |
+| ServiceRequest | Histopathology examination of cervical biopsy specimen (REQ-2025-10-007, identifier synthesised — see Pending / Placeholder Data), requested from the colposcopy-directed biopsy | ✅ Generated | `ServiceRequest-histopathology-thompson-alex-20251015.json` |
+| DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ✅ Generated | `DiagnosticReport-histopathology-thompson-alex-20251020.json` |
 | Encounter | Multidisciplinary meeting / specialist decision encounter (MDM-2025-10-008) | ⏳ Not yet generated | — |
-| Appointment | Ashfield Private Hospital booking (BOOK-2025-10-009) | ⏳ Not yet generated | — |
+| ServiceRequest | Cone biopsy day surgery, requested following MDM decision (identifier synthesised, see Pending / Placeholder Data) | ✅ Generated | `ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json` |
+| Appointment | Ashfield Private Hospital booking — Section 3 says BOOK-2025-10-009, Section 4 says BOOK-2025-11-009; one Appointment built using BOOK-2025-11-009 (see Change Log) | ✅ Generated | `Appointment-hospitalbooking-thompson-alex-20251101.json` |
 | QuestionnaireResponse | SMART Form consent (FORM-2025-10-010) | ⏳ Not yet generated | — |
-| ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ⏳ Not yet generated | — |
-| ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ⏳ Not yet generated | — |
+| ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ✅ Generated | `ServiceRequest-referral-physio-thompson-alex-20251101.json` |
+| ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ✅ Generated | `ServiceRequest-referral-counselling-thompson-alex-20251101.json` |
 | Organization | Ashfield Private Clinic | ✅ Generated | `Organization-ashfield-private-clinic.json` |
 | Location | Ashfield Private Clinic | ✅ Generated | `Location-ashfield-private-clinic.json` |
 | HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | `HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json` |
@@ -246,7 +258,7 @@ For business identifiers that require an AU Base Local Identifier profile (e.g. 
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
 | Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (not sent with the referral — pulled independently, e.g. via provider access) | ⏳ Not yet generated | — |
-| Appointment | Hospital booking (BOOK-2025-11-009) | ⏳ Not yet generated | — |
+| Appointment | Hospital booking (BOOK-2025-11-009) — shared with Section 3, see note there on the BOOK-2025-10-009/BOOK-2025-11-009 discrepancy | ✅ Generated | `Appointment-hospitalbooking-thompson-alex-20251101.json` |
 | QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
 | Procedure | Cone Biopsy (Day Surgery) | ⏳ Not yet generated | — |
 | Encounter | Peri-operative encounter (PERI-2025-11-012) | ⏳ Not yet generated | — |
@@ -338,8 +350,8 @@ For business identifiers that require an AU Base Local Identifier profile (e.g. 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| ServiceRequest | eReferral – Physio (REF-2025-11-017) | ⏳ Not yet generated | — |
-| ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ⏳ Not yet generated | — |
+| ServiceRequest | eReferral – Physio (REF-2025-11-017) | ✅ Generated | `ServiceRequest-referral-physio-thompson-alex-20251101.json` |
+| ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ✅ Generated | `ServiceRequest-referral-counselling-thompson-alex-20251101.json` |
 | Appointment | Physio booking (BOOK-2025-11-019) | ⏳ Not yet generated | — |
 | Appointment | Counselling booking (BOOK-2025-11-020), Telehealth | ⏳ Not yet generated | — |
 | Encounter | Pelvic-health physio visit, 2025-11-10 (+ balance training, 2025-10-09) | ⏳ Not yet generated | — |

@@ -1,0 +1,80 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "conebiopsydaysurgery-thompson-alex-20251020",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-servicerequest"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PLAC",
+            "display": "Placer Identifier"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+      "value": "REQ-2025-11-009",
+      "assigner": {
+        "reference": "Organization/ashfield-private-clinic",
+        "display": "Ashfield Private Clinic"
+      }
+    }
+  ],
+  "status": "completed",
+  "intent": "order",
+  "priority": "routine",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "387713003",
+          "display": "Surgical procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "54535009",
+        "display": "Cone biopsy of cervix"
+      }
+    ],
+    "text": "Cone biopsy of cervix (day surgery)"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "occurrenceDateTime": "2025-11-01T08:00:00+11:00",
+  "authoredOn": "2025-10-20",
+  "requester": {
+    "reference": "PractitionerRole/obstetricianandgynaecologist-chen-emily",
+    "display": "Dr Emily Chen"
+  },
+  "performer": [
+    {
+      "reference": "PractitionerRole/surgeon-wilson-mark",
+      "display": "Dr Mark Wilson"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "CIN2/3 confirmed on histopathology (PATH-2025-10-007); cone biopsy recommended at the multidisciplinary meeting (MDM-2025-10-008)"
+    }
+  ]
+}

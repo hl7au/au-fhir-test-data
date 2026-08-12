@@ -1,0 +1,89 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "colposcopybiopsy-thompson-alex-20251010",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/StructureDefinition/au-servicerequest"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PLAC",
+            "display": "Placer Identifier"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+      "value": "REQ-2025-10-005",
+      "assigner": {
+        "reference": "Organization/ashfield-private-clinic",
+        "display": "Ashfield Private Clinic"
+      }
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/referral-gynaecologist-thompson-alex-20251009"
+    }
+  ],
+  "status": "completed",
+  "intent": "order",
+  "priority": "urgent",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "103693007",
+          "display": "Diagnostic procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "34999005",
+        "display": "Colposcopy"
+      }
+    ],
+    "text": "Colposcopy with biopsy"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "occurrenceDateTime": "2025-10-15T11:00:00+11:00",
+  "authoredOn": "2025-10-10",
+  "requester": {
+    "reference": "PractitionerRole/obstetricianandgynaecologist-chen-emily",
+    "display": "Dr Emily Chen"
+  },
+  "performer": [
+    {
+      "reference": "PractitionerRole/obstetricianandgynaecologist-chen-emily",
+      "display": "Dr Emily Chen"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Colposcopy with biopsy requested by Dr Chen following acceptance of the GP e-Referral (REF-2025-10-004) on 2025-10-10."
+    }
+  ]
+}
