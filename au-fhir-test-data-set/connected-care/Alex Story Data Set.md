@@ -15,6 +15,8 @@ This data set contains IHI, MEDICARE NO, HPI-O, and HPI-I values throughout (pat
 
 Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this document and the corresponding FHIR resources will need to be updated to include them.
 
+For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
+
 ## 0. MyHealth App
 
 | Data Field | Actual Data | Critical? |
@@ -46,7 +48,8 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
 | Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
 | *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified yet (not a Communication, since AU Core doesn't include that resource; needs a decision) | ⏳ Not yet generated | — |
-| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ⏳ Not yet generated | — |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | `ServiceRequest-cervicalscreening-thompson-alex-20250930.json` |
+| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | `Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json` |
 | Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
 | Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
 | HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
@@ -88,8 +91,9 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ⏳ Not yet generated | — |
-| DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ⏳ Not yet generated | — |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | `ServiceRequest-cervicalscreening-thompson-alex-20250930.json` |
+| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | `Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json` |
+| DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ✅ Generated | `DiagnosticReport-hpvpathology-thompson-alex-20251008.json` |
 | Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
 | Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
 | HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |

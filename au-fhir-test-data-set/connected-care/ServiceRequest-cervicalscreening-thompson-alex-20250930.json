@@ -1,0 +1,83 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "cervicalscreening-thompson-alex-20250930",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+      "valueInteger": 1
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PLAC",
+            "display": "Placer Identifier"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+      "value": "REQ-2025-10-001-1",
+      "assigner": {
+        "reference": "Organization/bathurst-medical-centre",
+        "display": "Bathurst Medical Centre"
+      }
+    }
+  ],
+  "requisition": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "PGN",
+          "display": "Placer Group Number"
+        }
+      ]
+    },
+    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+    "value": "REQ-2025-10-001",
+    "assigner": {
+      "reference": "Organization/bathurst-medical-centre",
+      "display": "Bathurst Medical Centre"
+    }
+  },
+  "status": "completed",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "108252007",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "171149006",
+        "display": "Screening for malignant neoplasm of cervix"
+      }
+    ],
+    "text": "Cervical Screening Test (National Cervical Screening Program)"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "occurrenceDateTime": "2025-10-01T09:00:00+10:00",
+  "authoredOn": "2025-09-30",
+  "requester": {
+    "reference": "PractitionerRole/generalpractitioner-lee-chris"
+  }
+}
