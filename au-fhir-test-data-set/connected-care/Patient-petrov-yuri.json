@@ -1,0 +1,59 @@
+{
+  "resourceType": "Patient",
+  "id": "petrov-yuri",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+      "valueCoding": {
+        "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+        "code": "4",
+        "display": "Neither Aboriginal nor Torres Strait Islander origin"
+      }
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Petrov",
+      "given": [
+        "Yuri"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0491 578 957",
+      "use": "mobile"
+    },
+    {
+      "system": "email",
+      "value": "yuri.petrov@example.net",
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "(08) 5550 4441",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1949-04-10",
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "17 Goldfields Rd"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430",
+      "country": "AU"
+    }
+  ]
+}
