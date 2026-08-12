@@ -1,49 +1,19 @@
 # Data Set for Alex’s Story
 
-## Change Log
+Alex Thompson is a Bathurst, NSW resident whose story traces a connected-care journey from a routine screening reminder through to population-level reporting. It starts with a cervical screening overdue notification in Alex's MyHealth App, which leads to a pathology collection and a high-risk HPV result. The GP reviews the result and refers Alex to a gynaecological specialist, who performs a colposcopy with biopsy and, once histopathology confirms CIN2/3, arranges a cone biopsy day surgery at a private hospital. Discharge triggers a pharmacy medication update and allied health follow-up (physiotherapy and counselling), and the de-identified journey ultimately feeds into population health analytics on the cervical cancer care pathway.
 
-Changes made to this data set while building the connected-care FHIR test data, kept here for reconciliation with the original story owner.
+The data set is organised into 8 steps, each representing a different point of care and the FHIR resources generated for it:
 
-| Date | Change | Reason |
-| --- | --- | --- |
-| 2026-08-12 | Renamed "Sydney Private Clinic" (Dr. Emily Chen) to **Ashfield Private Clinic**; address updated from 100 George St, Sydney, NSW 2000 to 12 Roberts St, Ashfield, NSW 2131 | Aligned to the existing Organization already generated from the Services Australia providers/orgs sheet, so Dr. Chen's PractitionerRole didn't need a second, duplicate clinic |
-| 2026-08-12 | Renamed "Sydney Private Hospital" (Dr. Mark Wilson) to **Ashfield Private Hospital**; address updated from 50 Pitt St, Sydney, NSW 2000 to 63 Victoria St, Ashfield, NSW 2131 | Same reason — aligns to the existing Organization for Dr. Wilson |
-| 2026-08-12 | Section 3 lists "Hospital Booking ID: BOOK-2025-10-009" while Section 4 lists "Booking ID: BOOK-2025-11-009" for what is clearly the same Ashfield Private Hospital day-surgery admission on 2025-11-01. A single `Appointment` resource was built using **BOOK-2025-11-009** (the Section 4 value, which also supplies the 8:00 AM time) | Likely a typo in the source spreadsheet's Section 3 row; using one Appointment resource avoids duplicating the same real-world booking |
-| 2026-08-12 | Built a `ServiceRequest` (REQ-2025-11-009) authorising the cone biopsy day surgery that `Appointment-hospitalbooking-thompson-alex-20251101.json` is `basedOn` — this identifier value is **synthesised**, not sourced from the spreadsheet | The story data gives a Hospital Booking ID for the appointment but no separate request/order ID for the surgery itself; a `ServiceRequest` is still needed so the Appointment has something to be `basedOn` |
+0. MyHealth App
+1. Pathology (Collection Centre)
+2. General Practice
+3. Specialist (Gynaecological Oncologist – Private Practice)
+4. Private Hospital (Theatre / Inpatient)
+5. Pharmacy
+6. Allied Health (Physiotherapy & Counselling)
+7. Population Health / Analytics
 
-## Pending / Placeholder Data
-
-This data set contains IHI, MEDICARE NO, HPI-O, and HPI-I values throughout (patient demographics at the top of every section table, and every "Provider Organisation" / "Clinician" row). **These are placeholder numbers, not valid identifiers**, and have been ignored when building the connected-care FHIR resources — Patient, Organization, Practitioner, and PractitionerRole resources in this set currently carry no `identifier` values for these.
-
-Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this document and the corresponding FHIR resources will need to be updated to include them.
-
-`Bundle-aups-thompson-alex-20251009.json` is a fully self-contained AU Patient Summary (AU PS) document Bundle — the Composition, Patient, custodian Organization, Device, Practitioner/PractitionerRole, Encounter, and every section entry (Condition, AllergyIntolerance, MedicationStatement, DiagnosticReport, 3 vital-sign Observations) are embedded inline with `urn:uuid` references, matching the official au-fhir-ps example pattern, rather than pointing back at the standalone connected-care files. Three judgment calls on scope:
-
-1. The embedded `Patient` carries no `identifier`, consistent with this data set's no-placeholder-IHI policy above — this makes it technically non-conformant with AU PS's strengthened `Patient.identifier` cardinality until a real/placeholder IHI is agreed.
-2. Secondary references reached *through* an embedded entry (the DiagnosticReport's `performer`/Bathurst Pathology and `basedOn`/the ServiceRequest) were left as plain relative references to the existing standalone files rather than also being embedded, to avoid the embedding requirement cascading through the whole data set.
-3. `Composition.author` is a `Device` ("Bathurst Medical Centre Clinical Information System"), not Dr. Lee's PractitionerRole — this AU PS document is presented as system-generated (auto-compiled from the practice's records at the time of the consultation), matching the "autogen" pattern shown in the AU PS `Joyce 07 November 2024` example. `PractitionerRole/generalpractitioner-lee-chris` (Dr. Chris Lee) is still embedded and used elsewhere (e.g. as `Condition.recorder`/`asserter` and `Observation.performer`), just not as the document author. The `Device` resource's identifier, manufacturer, and model are fictional placeholders.
-
-`Bundle-aups-specialist-thompson-alex-20251101.json` is a second, separate AU PS document Bundle — curated by Dr. Chen (Ashfield Private Clinic) rather than Dr. Lee, reflecting what's known once the histopathology result is back. It's dated 2025-11-01, not immediately after the 2025-10-20 result — that's when the full plan of care (cone biopsy day-surgery request, both allied-health eReferrals, hospital booking) had actually been arranged, so the Plan of Care section isn't referencing anything that didn't exist yet at the document's date. A few scope notes specific to this bundle:
-
-1. `Composition.author` is Dr. Chen's `PractitionerRole` directly, not a `Device` — unlike the GP's "autogen" AU PS above, this document is presented as personally curated by the specialist after reviewing the histopathology result, so no `Device` resource is embedded in this bundle.
-2. Vital Signs is omitted entirely (not included as an empty section) — no vitals were captured at the specialist encounter.
-3. The embedded `Condition`'s `encounter` and `recorder`/`asserter` still point to the original GP consultation and Dr. Lee (external relative references, not embedded) — the diagnosis was originally recorded there, not at the specialist visit, and re-pointing it to this bundle's encounter/author would misrepresent when it was actually made. A `note` was added noting the biopsy-confirmed CIN2/3 and planned cone biopsy.
-4. Plan of Care is text-narrative only, with no `entry` array, per the request — the cone biopsy day-surgery ServiceRequest and the two allied-health ServiceRequests aren't linked as coded entries, only described in the section text alongside the hospital Appointment.
-5. The histopathology `DiagnosticReport`'s `performer` is the embedded Ashfield Private Clinic `Organization` (reusing the custodian's `urn:uuid`, since it's the same organisation) rather than an external reference, since it's already embedded in this bundle for other reasons.
-
-The peri-operative `Encounter-periop-thompson-alex-20251101.json` carries no `identifier` (the story's PERI-2025-11-012 notes ID isn't represented as a coded value). `Encounter.appointment` links it to the hospital booking `Appointment` (BOOK-2025-11-009), but the three follow-up `Appointment`s (GP, Physio, Counselling) deliberately do **not** reference this encounter — they're separate future bookings arising from the discharge plan, not part of the admission itself.
-
-The GP follow-up `Appointment` (2025-11-08) uses a synthesised Booking ID (BOOK-2025-11-008) — the source story data doesn't give one for this appointment (unlike the Physio and Counselling follow-ups, which reuse the real BOOK-2025-11-019/BOOK-2025-11-020 values given in Section 6).
-
-The GP consultation's "Alcohol use: Occasional (2 standard drinks/week)" vital is not modelled as an Observation — AU Core does not currently carry an Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) releases (it existed only in older preview builds, which this data set avoids). Weight, blood pressure, and heart rate are generated; alcohol use can be added if/when AU Core reintroduces the profile.
-
-For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
-
-The two eScript `MedicationRequest` identifiers use the `http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{{hpio}}` namespace specifically (the prescription-scoped variant, distinct from the order-scoped one used elsewhere), per the [hpio-scoped/prescription/1.0](https://implementer.digitalhealth.gov.au/namespaces/id/hpio-scoped/prescription/1.0/index.html) namespace.
-
-The `Appointment-hospitalbooking-thompson-alex-20251101.json` identifier (BOOK-2025-11-009) does **not** use the `hpio-scoped/order/1.0` namespace like the ServiceRequest/DiagnosticReport placer/filler identifiers elsewhere in this data set — a booking ID is a local scheduling reference, not an order/requisition number, so the ADHA order-scoped namespace doesn't fit. Instead its `identifier.system` is a fictional practice-organisation URI, `http://ashfieldprivatehospital.example.org/id/booking`, following the same pattern already used for the `Device` identifier in the AU PS Bundle (`http://bathurstmedicalcentre.example.net/id/cis`) — a locally-assigned system URI scoped to the organisation, not an ADHA namespace. This should be revisited once Ashfield Private Hospital's real PAS/booking-system identifier namespace is known.
-
-The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s identifier `assigner`) is recorded as Ashfield Private Clinic — a simplification, since the source story data doesn't name the anatomical pathology laboratory that would actually process a biopsy specimen for a Sydney-area specialist (unlike Section 1, where Bathurst Pathology is named explicitly). This should be revisited if/when a specific lab is identified for this part of the story.
+See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bottom of this document for open items and judgment calls made while building this data set.
 
 ## 0. MyHealth App
 
@@ -407,3 +377,50 @@ The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s 
 | Organization | Australian Institute of Health and Welfare | ⏳ Not yet generated | — |
 
 > This section describes a de-identified, aggregated population-health view rather than per-patient data — it wouldn't produce Patient-linked clinical resources; a `Measure`/`MeasureReport` pair would be the more natural fit if we model it at all.
+
+
+## Pending / Placeholder Data
+
+This data set contains IHI, MEDICARE NO, HPI-O, and HPI-I values throughout (patient demographics at the top of every section table, and every "Provider Organisation" / "Clinician" row). **These are placeholder numbers, not valid identifiers**, and have been ignored when building the connected-care FHIR resources — Patient, Organization, Practitioner, and PractitionerRole resources in this set currently carry no `identifier` values for these.
+
+Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this document and the corresponding FHIR resources will need to be updated to include them.
+
+`Bundle-aups-thompson-alex-20251009.json` is a fully self-contained AU Patient Summary (AU PS) document Bundle — the Composition, Patient, custodian Organization, Device, Practitioner/PractitionerRole, Encounter, and every section entry (Condition, AllergyIntolerance, MedicationStatement, DiagnosticReport, 3 vital-sign Observations) are embedded inline with `urn:uuid` references, matching the official au-fhir-ps example pattern, rather than pointing back at the standalone connected-care files. Three judgment calls on scope:
+
+1. The embedded `Patient` carries no `identifier`, consistent with this data set's no-placeholder-IHI policy above — this makes it technically non-conformant with AU PS's strengthened `Patient.identifier` cardinality until a real/placeholder IHI is agreed.
+2. Secondary references reached *through* an embedded entry (the DiagnosticReport's `performer`/Bathurst Pathology and `basedOn`/the ServiceRequest) were left as plain relative references to the existing standalone files rather than also being embedded, to avoid the embedding requirement cascading through the whole data set.
+3. `Composition.author` is a `Device` ("Bathurst Medical Centre Clinical Information System"), not Dr. Lee's PractitionerRole — this AU PS document is presented as system-generated (auto-compiled from the practice's records at the time of the consultation), matching the "autogen" pattern shown in the AU PS `Joyce 07 November 2024` example. `PractitionerRole/generalpractitioner-lee-chris` (Dr. Chris Lee) is still embedded and used elsewhere (e.g. as `Condition.recorder`/`asserter` and `Observation.performer`), just not as the document author. The `Device` resource's identifier, manufacturer, and model are fictional placeholders.
+
+`Bundle-aups-specialist-thompson-alex-20251101.json` is a second, separate AU PS document Bundle — curated by Dr. Chen (Ashfield Private Clinic) rather than Dr. Lee, reflecting what's known once the histopathology result is back. It's dated 2025-11-01, not immediately after the 2025-10-20 result — that's when the full plan of care (cone biopsy day-surgery request, both allied-health eReferrals, hospital booking) had actually been arranged, so the Plan of Care section isn't referencing anything that didn't exist yet at the document's date. A few scope notes specific to this bundle:
+
+1. `Composition.author` is Dr. Chen's `PractitionerRole` directly, not a `Device` — unlike the GP's "autogen" AU PS above, this document is presented as personally curated by the specialist after reviewing the histopathology result, so no `Device` resource is embedded in this bundle.
+2. Vital Signs is omitted entirely (not included as an empty section) — no vitals were captured at the specialist encounter.
+3. The embedded `Condition`'s `encounter` and `recorder`/`asserter` still point to the original GP consultation and Dr. Lee (external relative references, not embedded) — the diagnosis was originally recorded there, not at the specialist visit, and re-pointing it to this bundle's encounter/author would misrepresent when it was actually made. A `note` was added noting the biopsy-confirmed CIN2/3 and planned cone biopsy.
+4. Plan of Care is text-narrative only, with no `entry` array, per the request — the cone biopsy day-surgery ServiceRequest and the two allied-health ServiceRequests aren't linked as coded entries, only described in the section text alongside the hospital Appointment.
+5. The histopathology `DiagnosticReport`'s `performer` is the embedded Ashfield Private Clinic `Organization` (reusing the custodian's `urn:uuid`, since it's the same organisation) rather than an external reference, since it's already embedded in this bundle for other reasons.
+
+The peri-operative `Encounter-periop-thompson-alex-20251101.json` carries no `identifier` (the story's PERI-2025-11-012 notes ID isn't represented as a coded value). `Encounter.appointment` links it to the hospital booking `Appointment` (BOOK-2025-11-009), but the three follow-up `Appointment`s (GP, Physio, Counselling) deliberately do **not** reference this encounter — they're separate future bookings arising from the discharge plan, not part of the admission itself.
+
+The GP follow-up `Appointment` (2025-11-08) uses a synthesised Booking ID (BOOK-2025-11-008) — the source story data doesn't give one for this appointment (unlike the Physio and Counselling follow-ups, which reuse the real BOOK-2025-11-019/BOOK-2025-11-020 values given in Section 6).
+
+The GP consultation's "Alcohol use: Occasional (2 standard drinks/week)" vital is not modelled as an Observation — AU Core does not currently carry an Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) releases (it existed only in older preview builds, which this data set avoids). Weight, blood pressure, and heart rate are generated; alcohol use can be added if/when AU Core reintroduces the profile.
+
+For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
+
+The two eScript `MedicationRequest` identifiers use the `http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{{hpio}}` namespace specifically (the prescription-scoped variant, distinct from the order-scoped one used elsewhere), per the [hpio-scoped/prescription/1.0](https://implementer.digitalhealth.gov.au/namespaces/id/hpio-scoped/prescription/1.0/index.html) namespace.
+
+The `Appointment-hospitalbooking-thompson-alex-20251101.json` identifier (BOOK-2025-11-009) does **not** use the `hpio-scoped/order/1.0` namespace like the ServiceRequest/DiagnosticReport placer/filler identifiers elsewhere in this data set — a booking ID is a local scheduling reference, not an order/requisition number, so the ADHA order-scoped namespace doesn't fit. Instead its `identifier.system` is a fictional practice-organisation URI, `http://ashfieldprivatehospital.example.org/id/booking`, following the same pattern already used for the `Device` identifier in the AU PS Bundle (`http://bathurstmedicalcentre.example.net/id/cis`) — a locally-assigned system URI scoped to the organisation, not an ADHA namespace. This should be revisited once Ashfield Private Hospital's real PAS/booking-system identifier namespace is known.
+
+The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s identifier `assigner`) is recorded as Ashfield Private Clinic — a simplification, since the source story data doesn't name the anatomical pathology laboratory that would actually process a biopsy specimen for a Sydney-area specialist (unlike Section 1, where Bathurst Pathology is named explicitly). This should be revisited if/when a specific lab is identified for this part of the story.
+
+
+## Change Log
+
+Changes made to this data set while building the connected-care FHIR test data, kept here for reconciliation with the original story owner.
+
+| Date | Change | Reason |
+| --- | --- | --- |
+| 2026-08-12 | Renamed "Sydney Private Clinic" (Dr. Emily Chen) to **Ashfield Private Clinic**; address updated from 100 George St, Sydney, NSW 2000 to 12 Roberts St, Ashfield, NSW 2131 | Aligned to the existing Organization already generated from the Services Australia providers/orgs sheet, so Dr. Chen's PractitionerRole didn't need a second, duplicate clinic |
+| 2026-08-12 | Renamed "Sydney Private Hospital" (Dr. Mark Wilson) to **Ashfield Private Hospital**; address updated from 50 Pitt St, Sydney, NSW 2000 to 63 Victoria St, Ashfield, NSW 2131 | Same reason — aligns to the existing Organization for Dr. Wilson |
+| 2026-08-12 | Section 3 lists "Hospital Booking ID: BOOK-2025-10-009" while Section 4 lists "Booking ID: BOOK-2025-11-009" for what is clearly the same Ashfield Private Hospital day-surgery admission on 2025-11-01. A single `Appointment` resource was built using **BOOK-2025-11-009** (the Section 4 value, which also supplies the 8:00 AM time) | Likely a typo in the source spreadsheet's Section 3 row; using one Appointment resource avoids duplicating the same real-world booking |
+| 2026-08-12 | Built a `ServiceRequest` (REQ-2025-11-009) authorising the cone biopsy day surgery that `Appointment-hospitalbooking-thompson-alex-20251101.json` is `basedOn` — this identifier value is **synthesised**, not sourced from the spreadsheet | The story data gives a Hospital Booking ID for the appointment but no separate request/order ID for the surgery itself; a `ServiceRequest` is still needed so the Appointment has something to be `basedOn` |
