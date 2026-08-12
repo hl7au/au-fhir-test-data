@@ -1,0 +1,40 @@
+{
+  "resourceType": "Practitioner",
+  "id": "lee-chris",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "name": [
+    {
+      "family": "Lee",
+      "given": [
+        "Chris"
+      ],
+      "text": "Chris Lee"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 6575",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "chris.lee@bathurstmedicalcentre.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "42 Havannah Street"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ],
+  "gender": "female"
+}

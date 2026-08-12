@@ -1,0 +1,28 @@
+{
+  "resourceType": "Practitioner",
+  "id": "hayes-linda",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "name": [
+    {
+      "family": "Hayes",
+      "given": [
+        "Linda"
+      ],
+      "text": "Linda Hayes"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "78/15 Allara Street"
+      ],
+      "city": "Canberra",
+      "state": "ACT",
+      "postalCode": "2601"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "resourceType": "Practitioner",
+  "id": "king-narelle",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "name": [
+    {
+      "family": "King",
+      "given": [
+        "Narelle"
+      ],
+      "text": "Narelle King"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 4566",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "narelle.king@kalgoorliecommunityhs.example.org"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "187 Forrest Street"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430"
+    }
+  ],
+  "gender": "female"
+}

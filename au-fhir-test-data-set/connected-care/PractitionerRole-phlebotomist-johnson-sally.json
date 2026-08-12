@@ -1,0 +1,37 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "phlebotomist-johnson-sally",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/johnson-sally"
+  },
+  "organization": {
+    "reference": "Organization/bathurst-pathology"
+  },
+  "code": [
+    {
+      "text": "Phlebotomist"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/bathurst-pathology"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 4562",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "sally.johnson@bathurstpathology.example.com",
+      "use": "work"
+    }
+  ]
+}

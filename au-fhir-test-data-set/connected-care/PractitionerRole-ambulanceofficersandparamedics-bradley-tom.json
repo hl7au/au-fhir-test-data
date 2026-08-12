@@ -1,0 +1,38 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "ambulanceofficersandparamedics-bradley-tom",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/bradley-tom"
+  },
+  "organization": {
+    "reference": "Organization/garran-ambulance-service"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "4111",
+          "display": "Ambulance Officers and Paramedics"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/garran-ambulance-service"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 7869",
+      "use": "work"
+    }
+  ]
+}

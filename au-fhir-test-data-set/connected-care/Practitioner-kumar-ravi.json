@@ -1,0 +1,40 @@
+{
+  "resourceType": "Practitioner",
+  "id": "kumar-ravi",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner"
+    ]
+  },
+  "name": [
+    {
+      "family": "Kumar",
+      "given": [
+        "Ravi"
+      ],
+      "text": "Ravi Kumar"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 1128",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "ravi.kumar@kalgoorliemedicalcentre.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "63 Dugan Street"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430"
+    }
+  ],
+  "gender": "unknown"
+}

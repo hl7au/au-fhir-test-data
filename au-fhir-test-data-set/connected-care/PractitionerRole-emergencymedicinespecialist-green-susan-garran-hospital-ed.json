@@ -1,0 +1,54 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "emergencymedicinespecialist-green-susan-garran-hospital-ed",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/green-susan"
+  },
+  "organization": {
+    "reference": "Organization/garran-hospital-ed"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253912",
+          "display": "Emergency Medicine Specialist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "773568002",
+          "display": "Emergency medicine"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/garran-hospital-ed"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 7845",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "susan.green@garranhospital.example.org",
+      "use": "work"
+    }
+  ]
+}

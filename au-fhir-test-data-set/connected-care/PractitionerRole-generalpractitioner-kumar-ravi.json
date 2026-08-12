@@ -1,0 +1,54 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "generalpractitioner-kumar-ravi",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/kumar-ravi"
+  },
+  "organization": {
+    "reference": "Organization/kalgoorlie-medical-centre"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "253111",
+          "display": "General Practitioner"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "408443003",
+          "display": "General medical practice"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/kalgoorlie-medical-centre"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 1128",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "ravi.kumar@kalgoorliemedicalcentre.example.com",
+      "use": "work"
+    }
+  ]
+}

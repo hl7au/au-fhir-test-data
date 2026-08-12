@@ -1,0 +1,54 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "physiotherapist-evans-sarah",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/evans-sarah"
+  },
+  "organization": {
+    "reference": "Organization/bathurst-physio-centre"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "252511",
+          "display": "Physiotherapist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722138006",
+          "display": "Physiotherapy"
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/bathurst-physio-centre"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 1122",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "sarah.evans@bathurstphysio.example.com",
+      "use": "work"
+    }
+  ]
+}
