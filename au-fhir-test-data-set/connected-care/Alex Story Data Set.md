@@ -245,7 +245,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
 | Encounter | Peri-operative encounter (PERI-2025-11-012) | ✅ Generated | `Encounter-periop-thompson-alex-20251101.json` |
 | Procedure | Cone Biopsy of cervix (Day Surgery) | ✅ Generated | `Procedure-conebiopsy-thompson-alex-20251101.json` |
-| DocumentReference | Discharge Summary (DS-2025-11-013) | ⏳ Not yet generated | — |
+| Composition | Discharge Summary (DS-2025-11-013) — same pattern as the GP Episode of Care Summary (Section 2), LOINC 18842-5 "Discharge summary"; references the peri-operative Encounter, Procedure History, and Hospital Discharge Medications; Plan of Care section is text-narrative only, listing the three follow-up appointments without `entry` references (they aren't otherwise linked to the encounter) | ✅ Generated | `Composition-dischargesummary-thompson-alex-20251101.json` |
 | MedicationRequest | Discharge meds – Ibuprofen x5 days | ✅ Generated | `MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json` |
 | MedicationRequest | Discharge meds – Paracetamol x5 days | ✅ Generated | `MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json` |
 | CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ Not yet generated | — |
