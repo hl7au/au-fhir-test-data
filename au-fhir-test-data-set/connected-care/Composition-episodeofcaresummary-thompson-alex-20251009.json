@@ -1,0 +1,134 @@
+{
+  "resourceType": "Composition",
+  "id": "episodeofcaresummary-thompson-alex-20251009",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-composition"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Episode of Care Summary – GP Consultation</b></p><p><b>Status</b>: Final</p><p><b>Type</b>: Summary of episode note</p><p><b>Encounter</b>: GP consultation, Bathurst Medical Centre, 2025-10-09</p><p><b>Date</b>: 2025-10-09</p><p><b>Author</b>: Dr Chris Lee, General Practitioner, Bathurst Medical Centre</p><p><b>Custodian</b>: Bathurst Medical Centre</p></div>"
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "34133-9",
+        "display": "Summary of episode note"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/gpconsultation-thompson-alex-20251009"
+  },
+  "date": "2025-10-09",
+  "author": [
+    {
+      "reference": "PractitionerRole/generalpractitioner-lee-chris",
+      "display": "Dr Chris Lee"
+    }
+  ],
+  "title": "Episode of Care Summary – GP Consultation",
+  "custodian": {
+    "reference": "Organization/bathurst-medical-centre",
+    "display": "Bathurst Medical Centre"
+  },
+  "section": [
+    {
+      "title": "Problems",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11450-4",
+            "display": "Problem list - Reported"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 High-risk HPV detected (cytology); CIN2/3 (pre-cancerous) - active</div>"
+      },
+      "entry": [
+        {
+          "reference": "Condition/highriskhpv-thompson-alex"
+        }
+      ]
+    },
+    {
+      "title": "Vital Signs",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8716-3",
+            "display": "Vital signs"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 Weight 65 kg; Blood pressure 120/80 mmHg; Heart rate 78 bpm</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/bodyweight-thompson-alex-20251009"
+        },
+        {
+          "reference": "Observation/bloodpressure-thompson-alex-20251009"
+        },
+        {
+          "reference": "Observation/heartrate-thompson-alex-20251009"
+        }
+      ]
+    },
+    {
+      "title": "Results",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "30954-2",
+            "display": "Relevant diagnostic tests/laboratory data Narrative"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">08/10/2025 Cervical Screening Test result: high-risk HPV detected (cytology); reflex liquid-based cytology reported as high-grade squamous intraepithelial lesion, consistent with CIN2/3</div>"
+      },
+      "entry": [
+        {
+          "reference": "DiagnosticReport/hpvpathology-thompson-alex-20251008"
+        }
+      ]
+    },
+    {
+      "title": "Plan of Care",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18776-5",
+            "display": "Plan of care note"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 e-Referral to Gynaecologist (Dr Emily Chen, Ashfield Private Clinic) — high-risk HPV / CIN2/3 follow-up</div>"
+      },
+      "entry": [
+        {
+          "reference": "ServiceRequest/referral-gynaecologist-thompson-alex-20251009"
+        }
+      ]
+    }
+  ]
+}

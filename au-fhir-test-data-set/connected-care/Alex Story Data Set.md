@@ -142,7 +142,7 @@ For business identifiers that require an AU Base Local Identifier profile (e.g. 
 | MedicationStatement | No active medications — pre-existing, unrelated to this encounter | ✅ Generated | `MedicationStatement-nomedications-thompson-alex.json` |
 | Condition | High-risk cervical screening (high-risk HPV / CIN2/3) | ✅ Generated | `Condition-highriskhpv-thompson-alex.json` |
 | Encounter | GP consultation, 2025-10-09 | ✅ Generated | `Encounter-gpconsultation-thompson-alex-20251009.json` |
-| Composition (Encounter Summary) | GP consultation summary, 2025-10-09 — pending the emerging AU Encounter Summary IG (alongside AU Patient Summary) | ⏳ Not yet generated | — |
+| Composition (Episode of Care Summary) | GP consultation summary, 2025-10-09 — AU Core Composition profile only (no dedicated AU Encounter Summary IG profile yet), LOINC 34133-9 "Summary of episode note", referencing the Encounter with Problems / Vital Signs / Results / Plan of Care sections (labelled with AU PS section LOINC codes). Note: this is the bare `Composition` resource only, referencing the existing standalone connected-care files by `ResourceType/id` — unlike the AU Patient Summary above, it is **not** wrapped in a self-contained `document`-type Bundle, so no resources are embedded and no narrative was added to `Patient-thompson-alex.json`. | ✅ Generated | `Composition-episodeofcaresummary-thompson-alex-20251009.json` |
 | Observation | Weight | ✅ Generated | `Observation-bodyweight-thompson-alex-20251009.json` |
 | Observation | Blood pressure (systolic/diastolic) | ✅ Generated | `Observation-bloodpressure-thompson-alex-20251009.json` |
 | Observation | Heart rate | ✅ Generated | `Observation-heartrate-thompson-alex-20251009.json` |
