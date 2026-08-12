@@ -1,0 +1,924 @@
+{
+  "resourceType": "Bundle",
+  "id": "aups-thompson-alex-20251009",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-bundle"
+    ]
+  },
+  "language": "en-AU",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:973ae78d-3077-40a5-9441-289e3f104399"
+  },
+  "type": "document",
+  "timestamp": "2025-10-09T11:45:00+10:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:2cf297fc-561b-41b7-926a-16cd5fe76fa7",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "2cf297fc-561b-41b7-926a-16cd5fe76fa7",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-composition"
+          ]
+        },
+        "language": "en-AU",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-AU\" lang=\"en-AU\"><p><b>Australian Patient Summary</b></p><p><b>Status</b>: Final</p><p><b>Type</b>: Patient summary Document</p><p><b>Date</b>: 2025-10-09</p><p><b>Author</b>: Bathurst Medical Centre Clinical Information System</p><p><b>Custodian</b>: Bathurst Medical Centre</p></div>"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Patient summary Document"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "date": "2025-10-09",
+        "author": [
+          {
+            "reference": "urn:uuid:a33b15bd-3b62-4764-a223-af29b7eaf507",
+            "display": "Bathurst Medical Centre Clinical Information System"
+          }
+        ],
+        "title": "Australian Patient Summary",
+        "custodian": {
+          "reference": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6"
+        },
+        "section": [
+          {
+            "title": "Active Problems",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11450-4",
+                  "display": "Problem list - Reported"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 High-risk HPV detected (cytology); CIN2/3 (pre-cancerous) - active</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d9cf2be2-d114-403d-8154-0063fabde027"
+              }
+            ]
+          },
+          {
+            "title": "Active Allergies or Intolerances",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Penicillin - anaphylaxis (high criticality)</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:e5b8497e-4c59-4dbc-be18-e13af0b28acc"
+              }
+            ]
+          },
+          {
+            "title": "Current Medicines",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10160-0",
+                  "display": "History of Medication use Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 No known current medicines</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:0ba8be43-61bd-4774-83bb-cf9976bf93cb"
+              }
+            ]
+          },
+          {
+            "title": "Relevant Diagnostic Tests / Laboratory Data",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "30954-2",
+                  "display": "Relevant diagnostic tests/laboratory data Narrative"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">08/10/2025 Cervical Screening Test result: high-risk HPV detected (cytology); reflex liquid-based cytology reported as high-grade squamous intraepithelial lesion, consistent with CIN2/3</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:59ad3b3c-12b4-4144-896c-a853671a7205"
+              }
+            ]
+          },
+          {
+            "title": "Vital Signs",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">09/10/2025 Weight 65 kg; Blood pressure 120/80 mmHg; Heart rate 78 bpm</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d220104d-c482-4331-a061-41689b41bd6f"
+              },
+              {
+                "reference": "urn:uuid:16659c2a-dac1-462e-ac0e-ee58020d28bf"
+              },
+              {
+                "reference": "urn:uuid:25059fc0-08da-4adc-97d3-5facd558549f"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "2df64949-0c1b-4673-a98d-0430b2094a3c",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Alex Thompson</b> Female, DoB: 1993-05-15</p><table class=\"grid\"><tr><td>Contact Detail</td><td><ul><li>ph: (02) 5550 1155 (Work)</li><li>ph: 0491 575 254 (Mobile)</li><li><a href=\"mailto:alex.thompson@myownpersonaldomain.com\">alex.thompson@myownpersonaldomain.com</a></li><li>ph: (02) 5550 6545 (Home)</li><li>42 Macquarie St Bathurst NSW 2795 AU</li></ul></td></tr><tr><td>Australian Indigenous Status</td><td>Not stated/inadequately described</td></tr></table></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+            "valueCoding": {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+              "code": "9",
+              "display": "Not stated/inadequately described"
+            }
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Thompson",
+            "given": [
+              "Alex"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(02) 5550 1155",
+            "use": "work"
+          },
+          {
+            "system": "phone",
+            "value": "0491 575 254",
+            "use": "mobile"
+          },
+          {
+            "system": "email",
+            "value": "alex.thompson@myownpersonaldomain.com",
+            "use": "home"
+          },
+          {
+            "system": "phone",
+            "value": "(02) 5550 6545",
+            "use": "home"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1993-05-15",
+        "address": [
+          {
+            "use": "home",
+            "line": [
+              "42 Macquarie St"
+            ],
+            "city": "Bathurst",
+            "state": "NSW",
+            "postalCode": "2795",
+            "country": "AU"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "c088fccd-05ed-4270-96f3-f052fd1cf3d6",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-organization"
+          ]
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+                "code": "8511",
+                "display": "General Practice"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "700232004",
+                "display": "General medical service"
+              }
+            ],
+            "text": "General medical practitioner service"
+          }
+        ],
+        "name": "Bathurst Medical Centre",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(02) 5550 6575",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "reception@bathurstmedicalcentre.example.net"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "25 Russell St"
+            ],
+            "city": "Bathurst",
+            "state": "NSW",
+            "postalCode": "2795"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3bdb4f5f-34ac-45cc-aa37-6d1b26c1dfdb",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "3bdb4f5f-34ac-45cc-aa37-6d1b26c1dfdb",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitioner"
+          ]
+        },
+        "name": [
+          {
+            "family": "Lee",
+            "given": [
+              "Chris"
+            ],
+            "text": "Chris Lee"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(02) 5550 6575",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "chris.lee@bathurstmedicalcentre.example.net"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "42 Havannah Street"
+            ],
+            "city": "Bathurst",
+            "state": "NSW",
+            "postalCode": "2795"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "06c27609-0da1-429e-a0ed-261b1c392a85",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-practitionerrole"
+          ]
+        },
+        "practitioner": {
+          "reference": "urn:uuid:3bdb4f5f-34ac-45cc-aa37-6d1b26c1dfdb"
+        },
+        "organization": {
+          "reference": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "code": "253111",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "408443003",
+                "display": "General medical practice"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/bathurst-medical-centre"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(02) 5550 6575",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "chris.lee@bathurstmedicalcentre.example.net",
+            "use": "work"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a33b15bd-3b62-4764-a223-af29b7eaf507",
+      "resource": {
+        "resourceType": "Device",
+        "id": "a33b15bd-3b62-4764-a223-af29b7eaf507",
+        "identifier": [
+          {
+            "system": "http://bathurstmedicalcentre.example.net/id/cis",
+            "value": "BMC-CIS-01"
+          }
+        ],
+        "manufacturer": "Generic Health Software Pty Ltd",
+        "modelNumber": "4.2.0",
+        "type": {
+          "text": "Clinical information system"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:31da64db-b5b9-4244-8046-b96a9ce988af",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "31da64db-b5b9-4244-8046-b96a9ce988af",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "serviceType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "700232004",
+              "display": "General medical service"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "PPRF",
+                    "display": "primary performer"
+                  }
+                ]
+              }
+            ],
+            "individual": {
+              "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+            }
+          }
+        ],
+        "period": {
+          "start": "2025-10-09"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "718591004",
+                "display": "High risk human papillomavirus detected by cytology"
+              }
+            ]
+          }
+        ],
+        "serviceProvider": {
+          "reference": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d9cf2be2-d114-403d-8154-0063fabde027",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "d9cf2be2-d114-403d-8154-0063fabde027",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "718591004",
+              "display": "High risk human papillomavirus detected by cytology"
+            }
+          ],
+          "text": "High-risk cervical screening result: high-risk HPV detected, CIN2/3 (pre-cancerous)"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "encounter": {
+          "reference": "urn:uuid:31da64db-b5b9-4244-8046-b96a9ce988af"
+        },
+        "onsetDateTime": "2025-10-08",
+        "recordedDate": "2025-10-09",
+        "recorder": {
+          "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+        },
+        "asserter": {
+          "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e5b8497e-4c59-4dbc-be18-e13af0b28acc",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "e5b8497e-4c59-4dbc-be18-e13af0b28acc",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-allergyintolerance"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          "medication"
+        ],
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "764146007",
+              "display": "Penicillin"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "39579001",
+                    "display": "Anaphylaxis"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0ba8be43-61bd-4774-83bb-cf9976bf93cb",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "0ba8be43-61bd-4774-83bb-cf9976bf93cb",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ps/StructureDefinition/au-ps-medicationstatement"
+          ]
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "787481004",
+              "display": "No known medications"
+            }
+          ],
+          "text": "No known current medicines"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "effectiveDateTime": "2025-10-09"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:59ad3b3c-12b4-4144-896c-a853671a7205",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "59ad3b3c-12b4-4144-896c-a853671a7205",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport",
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/DiagnosticReport-uv-ips"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "FILL",
+                  "display": "Filler Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+            "value": "PATH-2025-10-002",
+            "assigner": {
+              "reference": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6",
+              "display": "Bathurst Pathology"
+            }
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/cervicalscreening-thompson-alex-20250930"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "CP",
+                "display": "Cytopathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "171149006",
+              "display": "Screening for malignant neoplasm of cervix"
+            }
+          ],
+          "text": "Cervical Screening Test result (HPV / liquid-based cytology)"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "effectiveDateTime": "2025-10-01",
+        "issued": "2025-10-08T09:00:00+11:00",
+        "performer": [
+          {
+            "reference": "Organization/bathurst-pathology",
+            "display": "Bathurst Pathology"
+          }
+        ],
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "718591004",
+                "display": "High risk human papillomavirus detected by cytology"
+              }
+            ],
+            "text": "High-risk HPV detected (cytology). Reflex liquid-based cytology reported as a high-grade squamous intraepithelial lesion, consistent with CIN2/3. Colposcopy referral recommended per the National Cervical Screening Program pathway."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d220104d-c482-4331-a061-41689b41bd6f",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d220104d-c482-4331-a061-41689b41bd6f",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyweight"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ],
+            "text": "Vital Signs"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27113001"
+            }
+          ],
+          "text": "Weight"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "encounter": {
+          "reference": "urn:uuid:31da64db-b5b9-4244-8046-b96a9ce988af"
+        },
+        "effectiveDateTime": "2025-10-09",
+        "performer": [
+          {
+            "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+          }
+        ],
+        "valueQuantity": {
+          "value": 65,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:16659c2a-dac1-462e-ac0e-ee58020d28bf",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "16659c2a-dac1-462e-ac0e-ee58020d28bf",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ],
+            "text": "Vital Signs"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "75367002"
+            }
+          ],
+          "text": "Blood pressure systolic and diastolic"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "encounter": {
+          "reference": "urn:uuid:31da64db-b5b9-4244-8046-b96a9ce988af"
+        },
+        "effectiveDateTime": "2025-10-09",
+        "performer": [
+          {
+            "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "271649006"
+                }
+              ],
+              "text": "Systolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 120,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "271650006"
+                }
+              ],
+              "text": "Diastolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 80,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:25059fc0-08da-4adc-97d3-5facd558549f",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "25059fc0-08da-4adc-97d3-5facd558549f",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ],
+            "text": "Vital Signs"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "364075005",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "urn:uuid:2df64949-0c1b-4673-a98d-0430b2094a3c"
+        },
+        "encounter": {
+          "reference": "urn:uuid:31da64db-b5b9-4244-8046-b96a9ce988af"
+        },
+        "effectiveDateTime": "2025-10-09",
+        "performer": [
+          {
+            "reference": "urn:uuid:06c27609-0da1-429e-a0ed-261b1c392a85"
+          }
+        ],
+        "valueQuantity": {
+          "value": 78,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    }
+  ]
+}
