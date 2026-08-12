@@ -1,0 +1,72 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "dischargesummary-thompson-alex-20251101",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-documentreference"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://ashfieldprivatehospital.example.org/id/discharge-summary",
+      "value": "DS-2025-11-013"
+    }
+  ],
+  "status": "current",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "18842-5",
+        "display": "Discharge summary"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "107903-7",
+          "display": "Clinical note"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "date": "2025-11-01T16:00:00+11:00",
+  "author": [
+    {
+      "reference": "PractitionerRole/surgeon-wilson-mark",
+      "display": "Dr Mark Wilson"
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/ashfield-private-hospital",
+    "display": "Ashfield Private Hospital"
+  },
+  "context": {
+    "encounter": [
+      {
+        "reference": "Encounter/periop-thompson-alex-20251101"
+      }
+    ],
+    "period": {
+      "start": "2025-11-01T08:00:00+11:00",
+      "end": "2025-11-01T16:00:00+11:00"
+    }
+  },
+  "content": [
+    {
+      "attachment": {
+        "contentType": "application/pdf",
+        "data": "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoRHIgTWFyayBXaWxzb24pIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjA4MTMwMTI4NDArMDknMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjA4MTMwMTI4NDArMDknMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKERpc2NoYXJnZSBTdW1tYXJ5IC0gQWxleCBUaG9tcHNvbikgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNCAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTQ3MAo+PgpzdHJlYW0KR2F0bTtnTik6NSY6Tl5scU41VEZAaT1WTTtSTnBuM2pZKj5BTENJJSRTUkFoWV1hUiEsS1Y1L3JPLzU4JFlGQ0clNFU6ZWVZZyUqa3NJaFJgczhUOFA4ckxxIXA9YjE4LSJoa09NOT4lYVRMPG4+IUg2UG1FUi1MVS1VSVVFLk0pMSdHM0hfRHU4KT5ISlpMRUEvdUFGazg1bFEnImBaW2k1Mm0/XDRKSFVrNnJFVDRLIUxOIypYT0Vuc11hWCldczMxQEg4JCshcVMkMkdmSDZQQ2pCSThyUDg8RmhzT15TTU5MN2opTC02YU0iKVBmTnM+XTtHUkwxWVJXKVAsWUEtajw8QVVNPDFNSWZYNWw8M2lyQj9ARGZpPEZXYEVzbmxtQjg/WjxXJWBEbEhUIzY3WTg9aCxaQXRzUFdURzpjUjZUZTpzMixLaS8yPD5tSDZiPkszbS4/XS1NM1NgJ3NeRSxqcSdvUkdMSCtaKCkwUCEtcSgjKyRnc0VXRmowOjZoXl1YNkJlI2ZlSnRFJTQpZFcqPGJkN2c/UVslLCtMaTdGQmg5c0Ewc1BfcUE7cjQ9RCpPRFo1bz49bktuTi91I1luQ15ELC5YbzpCOz5ZbmEpYCVzMl5QbD1WYV1rMiYzKy0sTFQ0YWhCNEokZSFeQHQ2c2Q3KktzYEdMbkc8I2opW1BMJzxrcjRCay5lSzxdckFoKSNVMStSQ3JWbDZAQkI6QWMtW25NJD51aCY/QDxaLShcXE1CKlxGZDJORjs0YkNdck9TOkJbNz9NXSttIT4lPSN0STdPayFtVk1WXixxMEwtOG1DSG5BIz1OUVRiPmJZKENcc106KW9bZC9ob0gzJlcqOHNjQWdkVDY1TDdTMG1NXVgwTT8mMCQuQjpdMS1Pc2kmXEcnQl1jbjxWaFtlJ0s4XzsiaWouWXAnNicpQCpObjwvMVM0XldCLltRXksybFNYTE5yOVdyN2paSC46I0JrRylRIUU2aG1rdV9raHEsJVVZV21COUxtdUdTV3I1WUJyam9lUHIwWV9eUT9kJUBkQlNbKFZFb1Zmc1FoUGxITkx1X0ciW3InJnA/TzRMaE9tLCt0PW48L3ViNF8rSjI5WWllQzw0dF45aCxjWjlgSVtgc1BONlJhS29GZGFLO0NNbF8lLUUwYHEvP1g8VSNQWjFuLHU2TDhgT1pCMlsvaHAjJ15zbm1OWWArZTNZSHAyYUguNGImRFE+XDsna2duKC1ab25EKlpbNDVSa10iOD1zX0tQP15VWysqLzY3czpBKDlKNmc3SyJaS1QqYXE1bS1maidGRitCTXI1QjFTR1UkNjplREIoZGssXUNnTl8sWHVHREFfLWUmTytFR0swQkc7TStxPWRhLU9Qa0BIZS1xMy0jU05ycldAcVQ/OUwkKTNgRWs5cGMjZTMicUEuLilgJmU+Zl9GNk9HcCNTLD9FXyhKZVs+PSJUblVWMUkiQzgqKGNqUVsoMWlFZU1MXiNrJVs3TlwuZWFBZlkqcGVSTHBWOE5zIilQPCcnRFA7cihnbC1BMDM/N0M2cCVBSC1HJFAyLTFiYz1zIytSZSRaJjdUJjZqJG1CLSVcdCE3RGRMTigzKCVBJGhWJHBfczVkakAvLG1rL1AkJURNZV0qKDYtMiw+XiQlJVY4PlQyY0pQWUEuYVNmQEtZVlxIZD1OI2tjdCkkX1RxXlw/bjhGalsnJFVWQHAiRiNrcWhmXERaXWspOFEnWmM4N0tMXnQ8NkpKKCg5RkNIU1Ziaig8LzMwcVBzWSIkNDohYy01MU0wS2hjZDBYOVAtKEo+SCNLLUZPWkRXJEo1KDpgRzUrJk9VLWdiLE5ePkA/TFZYcjhrTj9gbnQiQXNtMjBYKDljLC0rSio5MEhqWz9XXFY8OSxcJGxaQmM2PVAnLjJASSZqJC0zcEhvRm1JZlhmPSMjNX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAowMDAwMDAwMjA5IDAwMDAwIG4gCjAwMDAwMDAzMjEgMDAwMDAgbiAKMDAwMDAwMDUyNCAwMDAwMCBuIAowMDAwMDAwNTkyIDAwMDAwIG4gCjAwMDAwMDA4OTMgMDAwMDAgbiAKMDAwMDAwMDk1MiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzwyMmNlZGQyYzNkZjI1NzkwNjNiZWNkN2Q5NDMzYWI4OD48MjJjZWRkMmMzZGYyNTc5MDYzYmVjZDdkOTQzM2FiODg+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDYgMCBSCi9Sb290IDUgMCBSCi9TaXplIDkKPj4Kc3RhcnR4cmVmCjI1MTMKJSVFT0YK",
+        "title": "Discharge Summary - Alex Thompson - 2025-11-01.pdf",
+        "creation": "2025-11-01T16:00:00+11:00"
+      }
+    }
+  ]
+}

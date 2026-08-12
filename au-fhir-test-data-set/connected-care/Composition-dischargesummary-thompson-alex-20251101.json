@@ -6,6 +6,10 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-composition"
     ]
   },
+  "identifier": {
+    "system": "http://ashfieldprivatehospital.example.org/id/discharge-summary",
+    "value": "DS-2025-11-013"
+  },
   "text": {
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Discharge Summary – Ashfield Private Hospital</b></p><p><b>Status</b>: Final</p><p><b>Type</b>: Discharge summary</p><p><b>Encounter</b>: Peri-operative encounter (day surgery admission - cone biopsy of cervix), Ashfield Private Hospital, 2025-11-01 08:00–16:00</p><p><b>Date</b>: 2025-11-01</p><p><b>Author</b>: Dr Mark Wilson, Surgeon, Ashfield Private Hospital</p><p><b>Custodian</b>: Ashfield Private Hospital</p><p>Admitted for day surgery, 2025-11-01. Cone biopsy of cervix performed 09:00–10:30 under general anaesthesia; blood loss 100 mL; no complications. Discharged home the same day at 16:00 (disposition: Other/Home).</p></div>"
