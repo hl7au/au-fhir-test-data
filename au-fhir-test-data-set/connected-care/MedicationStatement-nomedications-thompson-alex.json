@@ -1,0 +1,30 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "nomedications-thompson-alex",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+    ]
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "787481004",
+        "display": "No known medications"
+      }
+    ],
+    "text": "No known current medicines"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "effectiveDateTime": "2025-10-09",
+  "note": [
+    {
+      "text": "Recorded in Alex's AU Patient Summary (AUPS) as no active medications; reviewed, not newly identified, at the GP consultation on 2025-10-09."
+    }
+  ]
+}

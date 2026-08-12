@@ -15,6 +15,8 @@ This data set contains IHI, MEDICARE NO, HPI-O, and HPI-I values throughout (pat
 
 Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this document and the corresponding FHIR resources will need to be updated to include them.
 
+The GP consultation's "Alcohol use: Occasional (2 standard drinks/week)" vital is not modelled as an Observation — AU Core does not currently carry an Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) releases (it existed only in older preview builds, which this data set avoids). Weight, blood pressure, and heart rate are generated; alcohol use can be added if/when AU Core reintroduces the profile.
+
 For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
 
 ## 0. MyHealth App
@@ -130,14 +132,17 @@ For business identifiers that require an AU Base Local Identifier profile (e.g. 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| AllergyIntolerance | Penicillin (anaphylaxis) | ⏳ Not yet generated | — |
-| MedicationStatement | No active medications | ⏳ Not yet generated | — |
+| AllergyIntolerance | Penicillin (anaphylaxis) — pre-existing, unrelated to this encounter | ✅ Generated | `AllergyIntolerance-penicillin-thompson-alex.json` |
+| MedicationStatement | No active medications — pre-existing, unrelated to this encounter | ✅ Generated | `MedicationStatement-nomedications-thompson-alex.json` |
 | Condition | High-risk cervical screening (high-risk HPV / CIN2/3) | ✅ Generated | `Condition-highriskhpv-thompson-alex.json` |
 | Encounter | GP consultation, 2025-10-09 | ✅ Generated | `Encounter-gpconsultation-thompson-alex-20251009.json` |
 | Composition (Encounter Summary) | GP consultation summary, 2025-10-09 — pending the emerging AU Encounter Summary IG (alongside AU Patient Summary) | ⏳ Not yet generated | — |
-| Observation | Weight, BP, HR, alcohol use | ⏳ Not yet generated | — |
+| Observation | Weight | ✅ Generated | `Observation-bodyweight-thompson-alex-20251009.json` |
+| Observation | Blood pressure (systolic/diastolic) | ✅ Generated | `Observation-bloodpressure-thompson-alex-20251009.json` |
+| Observation | Heart rate | ✅ Generated | `Observation-heartrate-thompson-alex-20251009.json` |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
-| ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ⏳ Not yet generated | — |
+| QuestionnaireResponse | GP Chronic Condition Management Plan (GP CCMP), per the [AEHRC GP CCMP FHIR IG](https://build.fhir.org/ig/aehrc/gpccmp-fhir-ig/branches/master/StructureDefinition-GPCCMPQuestionnaireResponse.html) — supports the Shared Care Plan | ⏳ Not yet generated | — |
+| ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ✅ Generated | `ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json` |
 | Composition (AU Patient Summary) | Patient Summary sent with the e-Referral to Dr. Emily Chen | ⏳ Not yet generated | — |
 | Organization | Bathurst Medical Centre | ✅ Generated | `Organization-bathurst-medical-centre.json` |
 | Location | Bathurst Medical Centre | ✅ Generated | `Location-bathurst-medical-centre.json` |
