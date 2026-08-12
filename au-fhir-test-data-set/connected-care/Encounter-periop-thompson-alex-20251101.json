@@ -1,0 +1,102 @@
+{
+  "resourceType": "Encounter",
+  "id": "periop-thompson-alex-20251101",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "SS",
+    "display": "short stay"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "54535009",
+          "display": "Cone biopsy of cervix"
+        }
+      ],
+      "text": "Day surgery admission - cone biopsy of cervix"
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1223171000168105",
+        "display": "Private same-day hospital service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/surgeon-wilson-mark",
+        "display": "Dr Mark Wilson"
+      }
+    }
+  ],
+  "appointment": [
+    {
+      "reference": "Appointment/hospitalbooking-thompson-alex-20251101"
+    }
+  ],
+  "period": {
+    "start": "2025-11-01T08:00:00+11:00",
+    "end": "2025-11-01T16:00:00+11:00"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "Admission for cone biopsy of cervix (day surgery) following biopsy-confirmed CIN2/3"
+    }
+  ],
+  "hospitalization": {
+    "dischargeDisposition": {
+      "coding": [
+        {
+          "system": "https://healthterminologies.gov.au/fhir/CodeSystem/separation-mode-1",
+          "code": "9",
+          "display": "Other/Home"
+        }
+      ],
+      "text": "Home"
+    }
+  },
+  "location": [
+    {
+      "location": {
+        "reference": "Location/ashfield-private-hospital"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/ashfield-private-hospital"
+  }
+}

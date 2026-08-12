@@ -31,6 +31,10 @@ Once real test IHI, Medicare, HPI-O, and HPI-I numbers are available, both this 
 4. Plan of Care is text-narrative only, with no `entry` array, per the request — the cone biopsy day-surgery ServiceRequest and the two allied-health ServiceRequests aren't linked as coded entries, only described in the section text alongside the hospital Appointment.
 5. The histopathology `DiagnosticReport`'s `performer` is the embedded Ashfield Private Clinic `Organization` (reusing the custodian's `urn:uuid`, since it's the same organisation) rather than an external reference, since it's already embedded in this bundle for other reasons.
 
+The peri-operative `Encounter-periop-thompson-alex-20251101.json` carries no `identifier` (the story's PERI-2025-11-012 notes ID isn't represented as a coded value). `Encounter.appointment` links it to the hospital booking `Appointment` (BOOK-2025-11-009), but the three follow-up `Appointment`s (GP, Physio, Counselling) deliberately do **not** reference this encounter — they're separate future bookings arising from the discharge plan, not part of the admission itself.
+
+The GP follow-up `Appointment` (2025-11-08) uses a synthesised Booking ID (BOOK-2025-11-008) — the source story data doesn't give one for this appointment (unlike the Physio and Counselling follow-ups, which reuse the real BOOK-2025-11-019/BOOK-2025-11-020 values given in Section 6).
+
 The GP consultation's "Alcohol use: Occasional (2 standard drinks/week)" vital is not modelled as an Observation — AU Core does not currently carry an Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) releases (it existed only in older preview builds, which this data set avoids). Weight, blood pressure, and heart rate are generated; alcohol use can be added if/when AU Core reintroduces the profile.
 
 For business identifiers that require an AU Base Local Identifier profile (e.g. `identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern, where `system` is mandatory), the assigning organisation's real HPI-O is not yet known. Rather than omitting `system` (which the AU Base Local Identifier profile requires), these use a literal `{{hpio}}` placeholder in place of the HPI-O segment of the namespace, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
@@ -269,15 +273,15 @@ The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s 
 | Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (not sent with the referral — pulled independently, e.g. via provider access) | ⏳ Not yet generated | — |
 | Appointment | Hospital booking (BOOK-2025-11-009) — shared with Section 3, see note there on the BOOK-2025-10-009/BOOK-2025-11-009 discrepancy | ✅ Generated | `Appointment-hospitalbooking-thompson-alex-20251101.json` |
 | QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
-| Procedure | Cone Biopsy (Day Surgery) | ⏳ Not yet generated | — |
-| Encounter | Peri-operative encounter (PERI-2025-11-012) | ⏳ Not yet generated | — |
+| Encounter | Peri-operative encounter (PERI-2025-11-012) | ✅ Generated | `Encounter-periop-thompson-alex-20251101.json` |
+| Procedure | Cone Biopsy of cervix (Day Surgery) | ✅ Generated | `Procedure-conebiopsy-thompson-alex-20251101.json` |
 | DocumentReference | Discharge Summary (DS-2025-11-013) | ⏳ Not yet generated | — |
-| MedicationRequest | Discharge meds – Ibuprofen x5 days | ⏳ Not yet generated | — |
-| MedicationRequest | Discharge meds – Paracetamol x5 days | ⏳ Not yet generated | — |
+| MedicationRequest | Discharge meds – Ibuprofen x5 days | ✅ Generated | `MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json` |
+| MedicationRequest | Discharge meds – Paracetamol x5 days | ✅ Generated | `MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json` |
 | CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ Not yet generated | — |
-| Appointment | Follow-up – GP (2025-11-08) | ⏳ Not yet generated | — |
-| Appointment | Follow-up – Physio (2025-11-10) | ⏳ Not yet generated | — |
-| Appointment | Follow-up – Counselling (2025-11-15) | ⏳ Not yet generated | — |
+| Appointment | Follow-up – GP (2025-11-08, identifier synthesised — see Pending / Placeholder Data) | ✅ Generated | `Appointment-followupgp-thompson-alex-20251108.json` |
+| Appointment | Follow-up – Physio (2025-11-10, BOOK-2025-11-019) — shared with Section 6 | ✅ Generated | `Appointment-followupphysio-thompson-alex-20251110.json` |
+| Appointment | Follow-up – Counselling (2025-11-15, BOOK-2025-11-020, Telehealth) — shared with Section 6 | ✅ Generated | `Appointment-followupcounselling-thompson-alex-20251115.json` |
 | Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
 | Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
 | HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
@@ -361,8 +365,8 @@ The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s 
 | Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
 | ServiceRequest | eReferral – Physio (REF-2025-11-017) | ✅ Generated | `ServiceRequest-referral-physio-thompson-alex-20251101.json` |
 | ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ✅ Generated | `ServiceRequest-referral-counselling-thompson-alex-20251101.json` |
-| Appointment | Physio booking (BOOK-2025-11-019) | ⏳ Not yet generated | — |
-| Appointment | Counselling booking (BOOK-2025-11-020), Telehealth | ⏳ Not yet generated | — |
+| Appointment | Physio booking (BOOK-2025-11-019) — shared with Section 4's follow-up appointments | ✅ Generated | `Appointment-followupphysio-thompson-alex-20251110.json` |
+| Appointment | Counselling booking (BOOK-2025-11-020), Telehealth — shared with Section 4 | ✅ Generated | `Appointment-followupcounselling-thompson-alex-20251115.json` |
 | Encounter | Pelvic-health physio visit, 2025-11-10 (+ balance training, 2025-10-09) | ⏳ Not yet generated | — |
 | Observation | Physio measures – pelvic floor strength, pain score, mobility (OBS-2025-11-021) | ⏳ Not yet generated | — |
 | Encounter | Psycho-Oncology counselling, Telehealth, 2025-11-15 | ⏳ Not yet generated | — |

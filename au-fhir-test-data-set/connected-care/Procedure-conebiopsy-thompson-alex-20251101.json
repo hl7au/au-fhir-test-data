@@ -1,0 +1,91 @@
+{
+  "resourceType": "Procedure",
+  "id": "conebiopsy-thompson-alex-20251101",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-procedure"
+    ]
+  },
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/conebiopsydaysurgery-thompson-alex-20251020"
+    }
+  ],
+  "status": "completed",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "387713003",
+          "display": "Surgical procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "54535009",
+        "display": "Cone biopsy of cervix"
+      }
+    ],
+    "text": "Cone biopsy of cervix (day surgery)"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/periop-thompson-alex-20251101"
+  },
+  "performedPeriod": {
+    "start": "2025-11-01T09:00:00+11:00",
+    "end": "2025-11-01T10:30:00+11:00"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/surgeon-wilson-mark",
+        "display": "Dr Mark Wilson"
+      }
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "Biopsy-confirmed CIN2/3 on histopathology (PATH-2025-10-007)"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "71252005",
+          "display": "Cervix uteri structure"
+        }
+      ]
+    }
+  ],
+  "outcome": {
+    "text": "Procedure successful under general anaesthesia; blood loss 100 mL; no complications"
+  },
+  "followUp": [
+    {
+      "text": "Discharge medications provided; activity restrictions (no lifting >5 kg); GP review in 7 days"
+    }
+  ],
+  "note": [
+    {
+      "text": "Anaesthesia: General. Blood loss: 100 mL. Complications: None."
+    }
+  ]
+}
