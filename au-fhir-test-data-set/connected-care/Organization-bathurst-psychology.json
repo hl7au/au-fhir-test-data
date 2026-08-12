@@ -1,0 +1,43 @@
+{
+  "resourceType": "Organization",
+  "id": "bathurst-psychology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8539",
+          "display": "Other Allied Health Services"
+        }
+      ],
+      "text": "Clinical psychology service"
+    }
+  ],
+  "name": "Bathurst Psychology",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 2356",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@bathurstpsychology.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "18 Keppel St"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ]
+}

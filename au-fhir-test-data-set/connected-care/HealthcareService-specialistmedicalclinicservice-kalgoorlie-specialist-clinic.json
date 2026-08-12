@@ -1,0 +1,54 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "specialistmedicalclinicservice-kalgoorlie-specialist-clinic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
+    ]
+  },
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/kalgoorlie-specialist-clinic"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310138009",
+          "display": "Surgical service"
+        }
+      ],
+      "text": "Specialist medical clinic service"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394583002",
+          "display": "Endocrinology"
+        }
+      ],
+      "text": "Endocrinology Services"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/kalgoorlie-specialist-clinic"
+    }
+  ],
+  "name": "Kalgoorlie Specialist Clinic",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 1221",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@kalgoorliespecialistclinic.example.net"
+    }
+  ]
+}

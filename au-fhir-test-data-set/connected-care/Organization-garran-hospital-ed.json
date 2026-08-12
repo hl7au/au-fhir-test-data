@@ -1,0 +1,27 @@
+{
+  "resourceType": "Organization",
+  "id": "garran-hospital-ed",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "name": "Garran Hospital ED",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 7845",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "1 Hospital Rd"
+      ],
+      "city": "Garran",
+      "state": "ACT",
+      "postalCode": "2605"
+    }
+  ]
+}

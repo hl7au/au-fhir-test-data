@@ -1,0 +1,48 @@
+{
+  "resourceType": "Organization",
+  "id": "bathurst-medical-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8511",
+          "display": "General Practice"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700232004",
+          "display": "General medical service"
+        }
+      ],
+      "text": "General medical practitioner service"
+    }
+  ],
+  "name": "Bathurst Medical Centre",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 6575",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@bathurstmedicalcentre.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "25 Russell St"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ]
+}

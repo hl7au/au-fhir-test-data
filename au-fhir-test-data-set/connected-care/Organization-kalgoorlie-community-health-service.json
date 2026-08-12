@@ -1,0 +1,43 @@
+{
+  "resourceType": "Organization",
+  "id": "kalgoorlie-community-health-service",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8599",
+          "display": "Other Healthcare Services nec"
+        }
+      ],
+      "text": "Public Community Health Centre"
+    }
+  ],
+  "name": "Kalgoorlie Community Health Service",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 4565",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@kalgoorliecommunityhs.example.org"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "20 Hannan St"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430"
+    }
+  ]
+}

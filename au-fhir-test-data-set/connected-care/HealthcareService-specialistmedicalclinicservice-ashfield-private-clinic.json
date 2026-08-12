@@ -1,0 +1,42 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "specialistmedicalclinicservice-ashfield-private-clinic",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
+    ]
+  },
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/ashfield-private-clinic"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310138009",
+          "display": "Surgical service"
+        }
+      ],
+      "text": "Specialist medical clinic service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/ashfield-private-clinic"
+    }
+  ],
+  "name": "Ashfield Private Clinic",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 1453",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@ashfieldprivateclinic.example.net"
+    }
+  ]
+}

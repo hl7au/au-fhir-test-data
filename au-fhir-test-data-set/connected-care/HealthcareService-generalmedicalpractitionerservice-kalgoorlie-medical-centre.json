@@ -1,0 +1,42 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "generalmedicalpractitionerservice-kalgoorlie-medical-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
+    ]
+  },
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/kalgoorlie-medical-centre"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700232004",
+          "display": "General medical service"
+        }
+      ],
+      "text": "General medical practitioner service"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/kalgoorlie-medical-centre"
+    }
+  ],
+  "name": "Kalgoorlie Medical Centre",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 3255",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@kalgoorliemedicalcentre.example.com"
+    }
+  ]
+}

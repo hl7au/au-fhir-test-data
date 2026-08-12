@@ -1,0 +1,43 @@
+{
+  "resourceType": "Organization",
+  "id": "kalgoorlie-ot-services",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8539",
+          "display": "Other Allied Health Services"
+        }
+      ],
+      "text": "Occupational therapy service"
+    }
+  ],
+  "name": "Kalgoorlie OT Services",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 8797",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@kalgoorlieotservices.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "20 Porter St"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430"
+    }
+  ]
+}

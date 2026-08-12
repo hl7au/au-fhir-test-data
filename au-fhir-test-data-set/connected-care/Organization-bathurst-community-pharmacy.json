@@ -1,0 +1,48 @@
+{
+  "resourceType": "Organization",
+  "id": "bathurst-community-pharmacy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "4271",
+          "display": "Retail Pharmacy"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310080006",
+          "display": "Pharmacy service"
+        }
+      ],
+      "text": "Community Pharmacy"
+    }
+  ],
+  "name": "Bathurst Community Pharmacy",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 2312",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@bathurstpharmacy.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "15 Keppel St"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ]
+}

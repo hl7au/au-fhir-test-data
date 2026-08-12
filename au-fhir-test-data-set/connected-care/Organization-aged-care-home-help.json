@@ -1,0 +1,31 @@
+{
+  "resourceType": "Organization",
+  "id": "aged-care-home-help",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "name": "Aged Care Home Help",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 7897",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "enquiries@agedcarehomehelp.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "71 Mawson Pl"
+      ],
+      "city": "Mawson",
+      "state": "ACT",
+      "postalCode": "2607"
+    }
+  ]
+}

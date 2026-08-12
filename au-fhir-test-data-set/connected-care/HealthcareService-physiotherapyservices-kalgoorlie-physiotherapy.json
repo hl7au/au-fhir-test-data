@@ -1,0 +1,42 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "physiotherapyservices-kalgoorlie-physiotherapy",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
+    ]
+  },
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/kalgoorlie-physiotherapy"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722140001",
+          "display": "Physiotherapy service"
+        }
+      ],
+      "text": "Physiotherapy Services"
+    }
+  ],
+  "location": [
+    {
+      "reference": "Location/kalgoorlie-physiotherapy"
+    }
+  ],
+  "name": "Kalgoorlie Physiotherapy",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 4555",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "contact@kalgoorliephysiotherapy.example.com"
+    }
+  ]
+}

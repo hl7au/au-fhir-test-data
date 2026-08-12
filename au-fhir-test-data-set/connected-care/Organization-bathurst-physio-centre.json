@@ -1,0 +1,48 @@
+{
+  "resourceType": "Organization",
+  "id": "bathurst-physio-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8533",
+          "display": "Physiotherapy Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "722140001",
+          "display": "Physiotherapy service"
+        }
+      ],
+      "text": "Physiotherapy Services"
+    }
+  ],
+  "name": "Bathurst Physio Centre",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 1122",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@bathurstphysio.example.com"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "30 William St"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ]
+}
