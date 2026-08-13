@@ -26,10 +26,10 @@ sequenceDiagram
 sequenceDiagram
     participant RptSvr as eReporting Server
     participant PMS as GP PMS
-    participant PMH as PMH Server
+    participant PMH as PMH Service
     participant CPApp as SMART GPCCMP App
-    participant RefApp as SMART Referral App
-    participant RefSvr as Referral Server
+    participant RefApp as SMART eReferral App
+    participant ReqSvr as eRequesting Server
     participant PatApp as Consumer App
     
     RptSvr->>PMS: Retrieve Diagnostic Report (HPV pathology result)
@@ -39,16 +39,18 @@ sequenceDiagram
     CPApp->>PMS: Submit GP CCMP
 
     alt native eReferral 
-      PMS->>RefSvr: Submit Referral
-    else SMART Referral App
-      PMS->>RefApp: Pre-populate Referral
-      RefApp->>RefSvr: Submit Referral
-      RefApp->>PMS: Referral write back
+      PMS->>ReqSvr: Submit eReferral
+    else SMART eReferral App
+      PMS->>RefApp: Pre-populate eReferral
+      RefApp->>ReqSvr: Submit eReferral
+      RefApp->>PMS: eReferral write back
     end
 
     RptSvr->>PatApp: Retrieve Diagnostic Report (HPV pathology result)
     PMS->>PatApp: Retrieve GP CCMP
-    RefSvr->>PatApp: Retrieve Referral
+    PMS->>PatApp: Retrieve Patient Summary
+    PMS->>PatApp: Retrieve Encounter Record
+    ReqSvr->>PatApp: Retrieve eReferral
 
 ```
 
@@ -65,15 +67,14 @@ sequenceDiagram
     participant RptSvr as eReporting Server
 
     participant PD as Provider Directory
-    participant RefApp as SMART Referral App
-    participant RefSvr as eReferral Server
+    participant RefApp as SMART eReferral App
     participant EMR as Hospital EMR
     
 
-    participant PMH as PMH Server
+    participant PMH as PMH Service
     participant PatApp as Consumer App
 
-    RefSvr->>PMS: Retrieve Referral
+    ReqSvr->>PMS: Retrieve eReferral
 
     PMS->>PatApp: Retrieve New Patient Form Task
     PatApp->>PMS: Submit New Patient Form 
@@ -89,19 +90,19 @@ sequenceDiagram
 
     alt native eReferral 
       PD->>PMS: Retrieve Provider Endpoint
-      PMS->>RefSvr: Submit Referral
-      RefSvr->>EMR: Retrieve Referral
-    else SMART Referral App 
-      PMS->>RefApp: Pre-populate Referral
-      RefApp->>RefSvr: Submit Referral
-      RefApp->>EMR: Referral Message (HL7 V2)
-      RefApp->>PMS: Referral write back
+      PMS->>ReqSvr: Submit eReferral
+      ReqSvr->>EMR: Retrieve eReferral
+    else SMART eReferral App 
+      PMS->>RefApp: Pre-populate eReferral
+      RefApp->>ReqSvr: Submit eReferral
+      RefApp->>EMR: eReferral Message (HL7 V2)
+      RefApp->>PMS: eReferral write back
     end
 
     PMS->>EMR: Book Hospital Theatre Appointment
 
     SEHR->>PatApp: Retrieve Patient Summary
-    RefSvr->>PatApp: Retrieve Referral
+    ReqSvr->>PatApp: Retrieve eReferral
     PMH->>PatApp: Retrieve Patient Medicines History
     
 ```
@@ -133,7 +134,7 @@ sequenceDiagram
 sequenceDiagram
 
     participant PMS as Pharmacy CMS
-    participant PMH as PMH Server
+    participant PMH as PMH Service
     participant PD as Provider Directory
     participant SEHR as Shared EHR
     participant GP as GP PMS
