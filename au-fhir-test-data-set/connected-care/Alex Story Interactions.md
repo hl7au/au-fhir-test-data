@@ -28,6 +28,7 @@ sequenceDiagram
     participant PMS as GP PMS
     participant PMH as PMH Service
     participant CPApp as SMART GPCCMP App
+    participant PD as Provider Directory
     participant RefApp as SMART eReferral App
     participant ReqSvr as eRequesting Server
     participant PatApp as Consumer App
@@ -39,6 +40,7 @@ sequenceDiagram
     CPApp->>PMS: Submit GP CCMP
 
     alt native eReferral 
+      PD->>PMS: Retrieve Provider Endpoint
       PMS->>ReqSvr: Submit eReferral
     else SMART eReferral App
       PMS->>RefApp: Pre-populate eReferral
