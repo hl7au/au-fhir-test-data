@@ -43,17 +43,17 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
 | Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
 | *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified yet (not a Communication, since AU Core doesn't include that resource; needs a decision) | ⏳ Not yet generated | — |
-| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | `ServiceRequest-cervicalscreening-thompson-alex-20250930.json` |
-| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | `Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json` |
-| Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
-| Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
-| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
+| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
+| Organization | Bathurst Pathology | ✅ Generated | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
+| Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratoryservice-bathurst-pathology.json](HealthcareService-pathologylaboratoryservice-bathurst-pathology.json) |
 | Appointment | Bathurst Pathology booking (BOOK-2025-10-000) | ⏳ Not yet generated | — |
-| Practitioner | Dr. Chris Lee | ✅ Generated | `Practitioner-lee-chris.json` |
-| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-lee-chris.json` |
+| Practitioner | Dr. Chris Lee | ✅ Generated | [Practitioner-lee-chris.json](Practitioner-lee-chris.json) |
+| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-lee-chris.json](PractitionerRole-generalpractitioner-lee-chris.json) |
 | Practitioner | Sarah Taylor | ⏳ Not yet generated | — |
 | PractitionerRole | Sarah Taylor – System Administrator, National Cancer Screening Register | ⏳ Not yet generated | — |
 
@@ -88,15 +88,15 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | `ServiceRequest-cervicalscreening-thompson-alex-20250930.json` |
-| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | `Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json` |
-| DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ✅ Generated | `DiagnosticReport-hpvpathology-thompson-alex-20251008.json` |
-| Organization | Bathurst Pathology | ✅ Generated | `Organization-bathurst-pathology.json` |
-| Location | Bathurst Pathology | ✅ Generated | `Location-bathurst-pathology.json` |
-| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | `HealthcareService-pathologylaboratoryservice-bathurst-pathology.json` |
-| Practitioner | Sally Johnson | ✅ Generated | `Practitioner-johnson-sally.json` |
-| PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | `PractitionerRole-phlebotomist-johnson-sally.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
+| ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
+| Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
+| DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ✅ Generated | [DiagnosticReport-hpvpathology-thompson-alex-20251008.json](DiagnosticReport-hpvpathology-thompson-alex-20251008.json) |
+| Organization | Bathurst Pathology | ✅ Generated | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
+| Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratoryservice-bathurst-pathology.json](HealthcareService-pathologylaboratoryservice-bathurst-pathology.json) |
+| Practitioner | Sally Johnson | ✅ Generated | [Practitioner-johnson-sally.json](Practitioner-johnson-sally.json) |
+| PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | [PractitionerRole-phlebotomist-johnson-sally.json](PractitionerRole-phlebotomist-johnson-sally.json) |
 
 ## 2. General Practice
 
@@ -127,28 +127,28 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| AllergyIntolerance | Penicillin (anaphylaxis) — pre-existing, unrelated to this encounter | ✅ Generated | `AllergyIntolerance-penicillin-thompson-alex.json` |
-| MedicationStatement | No active medications — pre-existing, unrelated to this encounter | ✅ Generated | `MedicationStatement-nomedications-thompson-alex.json` |
-| Condition | High-risk cervical screening (high-risk HPV / CIN2/3) | ✅ Generated | `Condition-highriskhpv-thompson-alex.json` |
-| Encounter | GP consultation, 2025-10-09 | ✅ Generated | `Encounter-gpconsultation-thompson-alex-20251009.json` |
-| Composition (Episode of Care Summary) | GP consultation summary, 2025-10-09 — AU Core Composition profile only (no dedicated AU Encounter Summary IG profile yet), LOINC 34133-9 "Summary of episode note", referencing the Encounter with Problems / Vital Signs / Results / Plan of Care sections (labelled with AU PS section LOINC codes). Note: this is the bare `Composition` resource only, referencing the existing standalone connected-care files by `ResourceType/id` — unlike the AU Patient Summary above, it is **not** wrapped in a self-contained `document`-type Bundle, so no resources are embedded and no narrative was added to `Patient-thompson-alex.json`. | ✅ Generated | `Composition-episodeofcaresummary-thompson-alex-20251009.json` |
-| Observation | Weight | ✅ Generated | `Observation-bodyweight-thompson-alex-20251009.json` |
-| Observation | Blood pressure (systolic/diastolic) | ✅ Generated | `Observation-bloodpressure-thompson-alex-20251009.json` |
-| Observation | Heart rate | ✅ Generated | `Observation-heartrate-thompson-alex-20251009.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
+| AllergyIntolerance | Penicillin (anaphylaxis) — pre-existing, unrelated to this encounter | ✅ Generated | [AllergyIntolerance-penicillin-thompson-alex.json](AllergyIntolerance-penicillin-thompson-alex.json) |
+| MedicationStatement | No active medications — pre-existing, unrelated to this encounter | ✅ Generated | [MedicationStatement-nomedications-thompson-alex.json](MedicationStatement-nomedications-thompson-alex.json) |
+| Condition | High-risk cervical screening (high-risk HPV / CIN2/3) | ✅ Generated | [Condition-highriskhpv-thompson-alex.json](Condition-highriskhpv-thompson-alex.json) |
+| Encounter | GP consultation, 2025-10-09 | ✅ Generated | [Encounter-gpconsultation-thompson-alex-20251009.json](Encounter-gpconsultation-thompson-alex-20251009.json) |
+| Composition (Episode of Care Summary) | GP consultation summary, 2025-10-09 — AU Core Composition profile only (no dedicated AU Encounter Summary IG profile yet), LOINC 34133-9 "Summary of episode note", referencing the Encounter with Problems / Vital Signs / Results / Plan of Care sections (labelled with AU PS section LOINC codes). Note: this is the bare `Composition` resource only, referencing the existing standalone connected-care files by `ResourceType/id` — unlike the AU Patient Summary above, it is **not** wrapped in a self-contained `document`-type Bundle, so no resources are embedded and no narrative was added to `Patient-thompson-alex.json`. | ✅ Generated | [Composition-episodeofcaresummary-thompson-alex-20251009.json](Composition-episodeofcaresummary-thompson-alex-20251009.json) |
+| Observation | Weight | ✅ Generated | [Observation-bodyweight-thompson-alex-20251009.json](Observation-bodyweight-thompson-alex-20251009.json) |
+| Observation | Blood pressure (systolic/diastolic) | ✅ Generated | [Observation-bloodpressure-thompson-alex-20251009.json](Observation-bloodpressure-thompson-alex-20251009.json) |
+| Observation | Heart rate | ✅ Generated | [Observation-heartrate-thompson-alex-20251009.json](Observation-heartrate-thompson-alex-20251009.json) |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
 | QuestionnaireResponse | GP Chronic Condition Management Plan (GP CCMP), per the [AEHRC GP CCMP FHIR IG](https://build.fhir.org/ig/aehrc/gpccmp-fhir-ig/branches/master/StructureDefinition-GPCCMPQuestionnaireResponse.html) — supports the Shared Care Plan | ⏳ Not yet generated | — |
-| ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ✅ Generated | `ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json` |
-| Bundle (AU Patient Summary) | Self-contained AU PS document — what the GP knows as of the 2025-10-09 consultation (Problems, Allergies, Medications, Results, Vital Signs), sent with the e-Referral to Dr. Emily Chen | ✅ Generated | `Bundle-aups-thompson-alex-20251009.json` |
-| Organization | Bathurst Medical Centre | ✅ Generated | `Organization-bathurst-medical-centre.json` |
-| Location | Bathurst Medical Centre | ✅ Generated | `Location-bathurst-medical-centre.json` |
-| HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | `HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json` |
-| Practitioner | Dr. Chris Lee | ✅ Generated | `Practitioner-lee-chris.json` |
-| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-lee-chris.json` |
-| Practitioner | Dr. Jane Smith | ✅ Generated | `Practitioner-smith-jane.json` |
-| PractitionerRole | Dr. Jane Smith – GP, Bathurst Medical Centre | ✅ Generated | `PractitionerRole-generalpractitioner-smith-jane.json` |
-| Practitioner | Dr. Emily Chen | ✅ Generated | `Practitioner-chen-emily.json` |
-| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | `PractitionerRole-obstetricianandgynaecologist-chen-emily.json` |
+| ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ✅ Generated | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
+| Bundle (AU Patient Summary) | Self-contained AU PS document — what the GP knows as of the 2025-10-09 consultation (Problems, Allergies, Medications, Results, Vital Signs), sent with the e-Referral to Dr. Emily Chen | ✅ Generated | [Bundle-aups-thompson-alex-20251009.json](Bundle-aups-thompson-alex-20251009.json) |
+| Organization | Bathurst Medical Centre | ✅ Generated | [Organization-bathurst-medical-centre.json](Organization-bathurst-medical-centre.json) |
+| Location | Bathurst Medical Centre | ✅ Generated | [Location-bathurst-medical-centre.json](Location-bathurst-medical-centre.json) |
+| HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | [HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json](HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json) |
+| Practitioner | Dr. Chris Lee | ✅ Generated | [Practitioner-lee-chris.json](Practitioner-lee-chris.json) |
+| PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-lee-chris.json](PractitionerRole-generalpractitioner-lee-chris.json) |
+| Practitioner | Dr. Jane Smith | ✅ Generated | [Practitioner-smith-jane.json](Practitioner-smith-jane.json) |
+| PractitionerRole | Dr. Jane Smith – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-smith-jane.json](PractitionerRole-generalpractitioner-smith-jane.json) |
+| Practitioner | Dr. Emily Chen | ✅ Generated | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obstetricianandgynaecologist-chen-emily.json](PractitionerRole-obstetricianandgynaecologist-chen-emily.json) |
 
 > **Note:** "Sydney Private Clinic" / "Sydney Private Hospital" have been renamed to **Ashfield Private Clinic** / **Ashfield Private Hospital** throughout this document — see Change Log at the top.
 
@@ -186,29 +186,29 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| Encounter | Colposcopy with biopsy visit, 2025-10-15 | ✅ Generated | `Encounter-colposcopy-thompson-alex-20251015.json` |
-| ServiceRequest | Colposcopy with Biopsy, requested (REQ-2025-10-005) | ✅ Generated | `ServiceRequest-colposcopybiopsy-thompson-alex-20251010.json` |
-| Procedure | Colposcopy with biopsy, performed in-rooms (specimen sent for histopathology) | ✅ Generated | `Procedure-colposcopybiopsy-thompson-alex-20251015.json` |
-| MedicationRequest | Ibuprofen 400 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | `MedicationRequest-ibuprofen-thompson-alex-20251015.json` |
-| MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | `MedicationRequest-paracetamol-thompson-alex-20251015.json` |
-| ServiceRequest | Histopathology examination of cervical biopsy specimen (REQ-2025-10-007, identifier synthesised — see Pending / Placeholder Data), requested from the colposcopy-directed biopsy | ✅ Generated | `ServiceRequest-histopathology-thompson-alex-20251015.json` |
-| DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ✅ Generated | `DiagnosticReport-histopathology-thompson-alex-20251020.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
+| Encounter | Colposcopy with biopsy visit, 2025-10-15 | ✅ Generated | [Encounter-colposcopy-thompson-alex-20251015.json](Encounter-colposcopy-thompson-alex-20251015.json) |
+| ServiceRequest | Colposcopy with Biopsy, requested (REQ-2025-10-005) | ✅ Generated | [ServiceRequest-colposcopybiopsy-thompson-alex-20251010.json](ServiceRequest-colposcopybiopsy-thompson-alex-20251010.json) |
+| Procedure | Colposcopy with biopsy, performed in-rooms (specimen sent for histopathology) | ✅ Generated | [Procedure-colposcopybiopsy-thompson-alex-20251015.json](Procedure-colposcopybiopsy-thompson-alex-20251015.json) |
+| MedicationRequest | Ibuprofen 400 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | [MedicationRequest-ibuprofen-thompson-alex-20251015.json](MedicationRequest-ibuprofen-thompson-alex-20251015.json) |
+| MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ✅ Generated | [MedicationRequest-paracetamol-thompson-alex-20251015.json](MedicationRequest-paracetamol-thompson-alex-20251015.json) |
+| ServiceRequest | Histopathology examination of cervical biopsy specimen (REQ-2025-10-007, identifier synthesised — see Pending / Placeholder Data), requested from the colposcopy-directed biopsy | ✅ Generated | [ServiceRequest-histopathology-thompson-alex-20251015.json](ServiceRequest-histopathology-thompson-alex-20251015.json) |
+| DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ✅ Generated | [DiagnosticReport-histopathology-thompson-alex-20251020.json](DiagnosticReport-histopathology-thompson-alex-20251020.json) |
 | Encounter | Multidisciplinary meeting / specialist decision encounter (MDM-2025-10-008) | ⏳ Not yet generated | — |
-| ServiceRequest | Cone biopsy day surgery, requested following MDM decision (identifier synthesised, see Pending / Placeholder Data) | ✅ Generated | `ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json` |
-| Appointment | Ashfield Private Hospital booking — Section 3 says BOOK-2025-10-009, Section 4 says BOOK-2025-11-009; one Appointment built using BOOK-2025-11-009 (see Change Log) | ✅ Generated | `Appointment-hospitalbooking-thompson-alex-20251101.json` |
+| ServiceRequest | Cone biopsy day surgery, requested following MDM decision (identifier synthesised, see Pending / Placeholder Data) | ✅ Generated | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
+| Appointment | Ashfield Private Hospital booking — Section 3 says BOOK-2025-10-009, Section 4 says BOOK-2025-11-009; one Appointment built using BOOK-2025-11-009 (see Change Log) | ✅ Generated | [Appointment-hospitalbooking-thompson-alex-20251101.json](Appointment-hospitalbooking-thompson-alex-20251101.json) |
 | QuestionnaireResponse | SMART Form consent (FORM-2025-10-010) | ⏳ Not yet generated | — |
-| ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ✅ Generated | `ServiceRequest-referral-physio-thompson-alex-20251101.json` |
-| ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ✅ Generated | `ServiceRequest-referral-counselling-thompson-alex-20251101.json` |
-| Bundle (AU Patient Summary) | Self-contained AU PS document curated by Dr. Chen after the histopathology result — Problems, Allergies, Medicines, Results (both lab reports), Procedure History; no Vital Signs; Plan of Care is text-narrative only (cone biopsy day surgery, both allied health eReferrals, hospital booking — not linked as coded `entry`s) | ✅ Generated | `Bundle-aups-specialist-thompson-alex-20251101.json` |
-| Organization | Ashfield Private Clinic | ✅ Generated | `Organization-ashfield-private-clinic.json` |
-| Location | Ashfield Private Clinic | ✅ Generated | `Location-ashfield-private-clinic.json` |
-| HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | `HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json` |
-| Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
-| Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
-| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
-| Practitioner | Dr. Emily Chen | ✅ Generated | `Practitioner-chen-emily.json` |
-| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | `PractitionerRole-obstetricianandgynaecologist-chen-emily.json` |
+| ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ✅ Generated | [ServiceRequest-referral-physio-thompson-alex-20251101.json](ServiceRequest-referral-physio-thompson-alex-20251101.json) |
+| ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ✅ Generated | [ServiceRequest-referral-counselling-thompson-alex-20251101.json](ServiceRequest-referral-counselling-thompson-alex-20251101.json) |
+| Bundle (AU Patient Summary) | Self-contained AU PS document curated by Dr. Chen after the histopathology result — Problems, Allergies, Medicines, Results (both lab reports), Procedure History; no Vital Signs; Plan of Care is text-narrative only (cone biopsy day surgery, both allied health eReferrals, hospital booking — not linked as coded `entry`s) | ✅ Generated | [Bundle-aups-specialist-thompson-alex-20251101.json](Bundle-aups-specialist-thompson-alex-20251101.json) |
+| Organization | Ashfield Private Clinic | ✅ Generated | [Organization-ashfield-private-clinic.json](Organization-ashfield-private-clinic.json) |
+| Location | Ashfield Private Clinic | ✅ Generated | [Location-ashfield-private-clinic.json](Location-ashfield-private-clinic.json) |
+| HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | [HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json](HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json) |
+| Organization | Ashfield Private Hospital | ✅ Generated | [Organization-ashfield-private-hospital.json](Organization-ashfield-private-hospital.json) |
+| Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacutecarehospital-ashfield-private-hospital.json](HealthcareService-privateacutecarehospital-ashfield-private-hospital.json) |
+| Practitioner | Dr. Emily Chen | ✅ Generated | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
+| PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obstetricianandgynaecologist-chen-emily.json](PractitionerRole-obstetricianandgynaecologist-chen-emily.json) |
 
 ## 4. Private Hospital (Theatre / Inpatient)
 
@@ -239,25 +239,25 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
 | Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (not sent with the referral — pulled independently, e.g. via provider access) | ⏳ Not yet generated | — |
-| Appointment | Hospital booking (BOOK-2025-11-009) — shared with Section 3, see note there on the BOOK-2025-10-009/BOOK-2025-11-009 discrepancy | ✅ Generated | `Appointment-hospitalbooking-thompson-alex-20251101.json` |
+| Appointment | Hospital booking (BOOK-2025-11-009) — shared with Section 3, see note there on the BOOK-2025-10-009/BOOK-2025-11-009 discrepancy | ✅ Generated | [Appointment-hospitalbooking-thompson-alex-20251101.json](Appointment-hospitalbooking-thompson-alex-20251101.json) |
 | QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
-| Encounter | Peri-operative encounter (PERI-2025-11-012) | ✅ Generated | `Encounter-periop-thompson-alex-20251101.json` |
-| Procedure | Cone Biopsy of cervix (Day Surgery) | ✅ Generated | `Procedure-conebiopsy-thompson-alex-20251101.json` |
-| Composition | Discharge Summary (DS-2025-11-013) — same pattern as the GP Episode of Care Summary (Section 2), LOINC 18842-5 "Discharge summary"; references the peri-operative Encounter, Procedure History, and Hospital Discharge Medications; Plan of Care section is text-narrative only, listing the three follow-up appointments without `entry` references (they aren't otherwise linked to the encounter) | ✅ Generated | `Composition-dischargesummary-thompson-alex-20251101.json` |
+| Encounter | Peri-operative encounter (PERI-2025-11-012) | ✅ Generated | [Encounter-periop-thompson-alex-20251101.json](Encounter-periop-thompson-alex-20251101.json) |
+| Procedure | Cone Biopsy of cervix (Day Surgery) | ✅ Generated | [Procedure-conebiopsy-thompson-alex-20251101.json](Procedure-conebiopsy-thompson-alex-20251101.json) |
+| Composition | Discharge Summary (DS-2025-11-013) — same pattern as the GP Episode of Care Summary (Section 2), LOINC 18842-5 "Discharge summary"; references the peri-operative Encounter, Procedure History, and Hospital Discharge Medications; Plan of Care section is text-narrative only, listing the three follow-up appointments without `entry` references (they aren't otherwise linked to the encounter) | ✅ Generated | [Composition-dischargesummary-thompson-alex-20251101.json](Composition-dischargesummary-thompson-alex-20251101.json) |
 | DocumentReference | Discharge Summary (DS-2025-11-013), same identifier as the Composition above — wraps a PDF rendering of that Composition, produced by concatenating a generated Patient narrative banner with the Composition's own narrative and each section narrative, per FHIR document rendering rules | ✅ Generated | `DocumentReference-dischargesummary-thompson-alex-20251101.json` (attachment PDF also saved standalone as `Discharge Summary - Alex Thompson - 2025-11-01.pdf`) |
-| MedicationRequest | Discharge meds – Ibuprofen x5 days | ✅ Generated | `MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json` |
-| MedicationRequest | Discharge meds – Paracetamol x5 days | ✅ Generated | `MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json` |
+| MedicationRequest | Discharge meds – Ibuprofen x5 days | ✅ Generated | [MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json](MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json) |
+| MedicationRequest | Discharge meds – Paracetamol x5 days | ✅ Generated | [MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json](MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json) |
 | CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ Not yet generated | — |
-| Appointment | Follow-up – GP (2025-11-08, identifier synthesised — see Pending / Placeholder Data) | ✅ Generated | `Appointment-followupgp-thompson-alex-20251108.json` |
-| Appointment | Follow-up – Physio (2025-11-10, BOOK-2025-11-019) — shared with Section 6 | ✅ Generated | `Appointment-followupphysio-thompson-alex-20251110.json` |
-| Appointment | Follow-up – Counselling (2025-11-15, BOOK-2025-11-020, Telehealth) — shared with Section 6 | ✅ Generated | `Appointment-followupcounselling-thompson-alex-20251115.json` |
-| Organization | Ashfield Private Hospital | ✅ Generated | `Organization-ashfield-private-hospital.json` |
-| Location | Ashfield Private Hospital | ✅ Generated | `Location-ashfield-private-hospital.json` |
-| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | `HealthcareService-privateacutecarehospital-ashfield-private-hospital.json` |
-| Practitioner | Dr. Mark Wilson | ✅ Generated | `Practitioner-wilson-mark.json` |
-| PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | `PractitionerRole-surgeon-wilson-mark.json` |
+| Appointment | Follow-up – GP (2025-11-08, identifier synthesised — see Pending / Placeholder Data) | ✅ Generated | [Appointment-followupgp-thompson-alex-20251108.json](Appointment-followupgp-thompson-alex-20251108.json) |
+| Appointment | Follow-up – Physio (2025-11-10, BOOK-2025-11-019) — shared with Section 6 | ✅ Generated | [Appointment-followupphysio-thompson-alex-20251110.json](Appointment-followupphysio-thompson-alex-20251110.json) |
+| Appointment | Follow-up – Counselling (2025-11-15, BOOK-2025-11-020, Telehealth) — shared with Section 6 | ✅ Generated | [Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
+| Organization | Ashfield Private Hospital | ✅ Generated | [Organization-ashfield-private-hospital.json](Organization-ashfield-private-hospital.json) |
+| Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacutecarehospital-ashfield-private-hospital.json](HealthcareService-privateacutecarehospital-ashfield-private-hospital.json) |
+| Practitioner | Dr. Mark Wilson | ✅ Generated | [Practitioner-wilson-mark.json](Practitioner-wilson-mark.json) |
+| PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | [PractitionerRole-surgeon-wilson-mark.json](PractitionerRole-surgeon-wilson-mark.json) |
 
 ## 5. Pharmacy
 
@@ -286,23 +286,23 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
 | Composition (AU Patient Summary) | Patient Summary viewed by Bathurst Community Pharmacy as part of medication review | ⏳ Not yet generated | — |
 | CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
-| Encounter | Medication review encounter, Bathurst Community Pharmacy, 2025-11-02 | ✅ Generated | `Encounter-medicationreview-thompson-alex-20251102.json` |
-| MedicationStatement | Sertraline 100 mg each morning — newly disclosed regular medication | ✅ Generated | `MedicationStatement-sertraline-thompson-alex-20251102.json` |
-| MedicationStatement | Ibuprofen 400 mg PRN — revised to max 3 tablets/day following the Sertraline interaction alert | ✅ Generated | `MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json` |
-| MedicationStatement | Paracetamol 500 mg PRN — reconfirmed | ✅ Generated | `MedicationStatement-paracetamol-postdischarge-thompson-alex-20251102.json` |
-| MedicationStatement | Oxycodone 5 mg PRN — short course, breakthrough pain only | ✅ Generated | `MedicationStatement-oxycodone-thompson-alex-20251102.json` |
-| Composition | Medication Review episode (MED-2025-11-014), LOINC 56445-0 "Medication summary Document" — follows the AU PS section pattern even though it's a plain `au-core-composition`: Active Problems, Active Allergies, Current Medicines (all 4 MedicationStatements), Procedure History (colposcopy + cone biopsy), Plan of Care (counselling notes, NOTE-2025-11-015, text-only) | ✅ Generated | `Composition-medicationreview-thompson-alex-20251102.json` |
-| MedicationDispense | Ibuprofen (Nurofen Double Strength) 24 tablets — one standard retail pack, covering the revised 5-day/max-3-per-day course; corrected from the story's "25 tablets" (DISP-2025-11-016, see Change Log) | ✅ Generated | `MedicationDispense-ibuprofen-thompson-alex-20251102.json` |
-| MedicationDispense | Oxycodone 10 tablets (DISP-2025-11-016, no authorizing prescription reference — see Pending / Placeholder Data) | ✅ Generated | `MedicationDispense-oxycodone-thompson-alex-20251102.json` |
-| MedicationDispense | Paracetamol 20 tablets (DISP-2025-11-016) | ✅ Generated | `MedicationDispense-paracetamol-thompson-alex-20251102.json` |
-| Organization | Bathurst Community Pharmacy | ✅ Generated | `Organization-bathurst-community-pharmacy.json` |
-| Location | Bathurst Community Pharmacy | ✅ Generated | `Location-bathurst-community-pharmacy.json` |
-| HealthcareService | Bathurst Community Pharmacy | ✅ Generated | `HealthcareService-communitypharmacy-bathurst-community-pharmacy.json` |
-| Practitioner | Sarah Lee | ✅ Generated | `Practitioner-lee-sarah.json` |
-| PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ Generated | `PractitionerRole-retailpharmacist-lee-sarah.json` |
+| Encounter | Medication review encounter, Bathurst Community Pharmacy, 2025-11-02 | ✅ Generated | [Encounter-medicationreview-thompson-alex-20251102.json](Encounter-medicationreview-thompson-alex-20251102.json) |
+| MedicationStatement | Sertraline 100 mg each morning — newly disclosed regular medication | ✅ Generated | [MedicationStatement-sertraline-thompson-alex-20251102.json](MedicationStatement-sertraline-thompson-alex-20251102.json) |
+| MedicationStatement | Ibuprofen 400 mg PRN — revised to max 3 tablets/day following the Sertraline interaction alert | ✅ Generated | [MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json](MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json) |
+| MedicationStatement | Paracetamol 500 mg PRN — reconfirmed | ✅ Generated | [MedicationStatement-paracetamol-postdischarge-thompson-alex-20251102.json](MedicationStatement-paracetamol-postdischarge-thompson-alex-20251102.json) |
+| MedicationStatement | Oxycodone 5 mg PRN — short course, breakthrough pain only | ✅ Generated | [MedicationStatement-oxycodone-thompson-alex-20251102.json](MedicationStatement-oxycodone-thompson-alex-20251102.json) |
+| Composition | Medication Review episode (MED-2025-11-014), LOINC 56445-0 "Medication summary Document" — follows the AU PS section pattern even though it's a plain `au-core-composition`: Active Problems, Active Allergies, Current Medicines (all 4 MedicationStatements), Procedure History (colposcopy + cone biopsy), Plan of Care (counselling notes, NOTE-2025-11-015, text-only) | ✅ Generated | [Composition-medicationreview-thompson-alex-20251102.json](Composition-medicationreview-thompson-alex-20251102.json) |
+| MedicationDispense | Ibuprofen (Nurofen Double Strength) 24 tablets — one standard retail pack, covering the revised 5-day/max-3-per-day course; corrected from the story's "25 tablets" (DISP-2025-11-016, see Change Log) | ✅ Generated | [MedicationDispense-ibuprofen-thompson-alex-20251102.json](MedicationDispense-ibuprofen-thompson-alex-20251102.json) |
+| MedicationDispense | Oxycodone 10 tablets (DISP-2025-11-016, no authorizing prescription reference — see Pending / Placeholder Data) | ✅ Generated | [MedicationDispense-oxycodone-thompson-alex-20251102.json](MedicationDispense-oxycodone-thompson-alex-20251102.json) |
+| MedicationDispense | Paracetamol 20 tablets (DISP-2025-11-016) | ✅ Generated | [MedicationDispense-paracetamol-thompson-alex-20251102.json](MedicationDispense-paracetamol-thompson-alex-20251102.json) |
+| Organization | Bathurst Community Pharmacy | ✅ Generated | [Organization-bathurst-community-pharmacy.json](Organization-bathurst-community-pharmacy.json) |
+| Location | Bathurst Community Pharmacy | ✅ Generated | [Location-bathurst-community-pharmacy.json](Location-bathurst-community-pharmacy.json) |
+| HealthcareService | Bathurst Community Pharmacy | ✅ Generated | [HealthcareService-communitypharmacy-bathurst-community-pharmacy.json](HealthcareService-communitypharmacy-bathurst-community-pharmacy.json) |
+| Practitioner | Sarah Lee | ✅ Generated | [Practitioner-lee-sarah.json](Practitioner-lee-sarah.json) |
+| PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ Generated | [PractitionerRole-retailpharmacist-lee-sarah.json](PractitionerRole-retailpharmacist-lee-sarah.json) |
 
 ## 6. Allied Health (Physiotherapy & Counselling)
 
@@ -337,30 +337,30 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Patient | Alex Thompson | ✅ Generated | `Patient-thompson-alex.json` |
-| ServiceRequest | eReferral – Physio (REF-2025-11-017) | ✅ Generated | `ServiceRequest-referral-physio-thompson-alex-20251101.json` |
-| ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ✅ Generated | `ServiceRequest-referral-counselling-thompson-alex-20251101.json` |
-| Appointment | Physio booking (BOOK-2025-11-019) — shared with Section 4's follow-up appointments | ✅ Generated | `Appointment-followupphysio-thompson-alex-20251110.json` |
-| Appointment | Counselling booking (BOOK-2025-11-020), Telehealth — shared with Section 4 | ✅ Generated | `Appointment-followupcounselling-thompson-alex-20251115.json` |
-| Encounter | Pelvic-health physio visit, 2025-11-10 — the story's "Balance Training: 2025-10-09" entry predates the physio eReferral (2025-11-01) and isn't modelled, see Change Log | ✅ Generated | `Encounter-physiovisit-thompson-alex-20251110.json` |
-| Observation | Physio measures (OBS-2025-11-021) – pelvic floor strength (Modified Oxford Scale, 3/5) | ✅ Generated | `Observation-pelvicfloorstrength-thompson-alex-20251110.json` |
-| Observation | Physio measures (OBS-2025-11-021) – pain score (3/10) | ✅ Generated | `Observation-painscore-physio-thompson-alex-20251110.json` |
-| Observation | Physio measures (OBS-2025-11-021) – mobility (Improving) | ✅ Generated | `Observation-mobility-thompson-alex-20251110.json` |
-| Encounter | Psycho-Oncology counselling, Telehealth, 2025-11-15 | ✅ Generated | `Encounter-counsellingvisit-thompson-alex-20251115.json` |
-| Observation | Counselling measures (OBS-2025-11-022) – PHQ-9 total score (10, mild-moderate depression) | ✅ Generated | `Observation-phq9-thompson-alex-20251115.json` |
-| Observation | Counselling measures (OBS-2025-11-022) – anxiety level (Moderate) | ✅ Generated | `Observation-anxietylevel-thompson-alex-20251115.json` |
+| Patient | Alex Thompson | ✅ Generated | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
+| ServiceRequest | eReferral – Physio (REF-2025-11-017) | ✅ Generated | [ServiceRequest-referral-physio-thompson-alex-20251101.json](ServiceRequest-referral-physio-thompson-alex-20251101.json) |
+| ServiceRequest | eReferral – Counselling (REF-2025-11-018) | ✅ Generated | [ServiceRequest-referral-counselling-thompson-alex-20251101.json](ServiceRequest-referral-counselling-thompson-alex-20251101.json) |
+| Appointment | Physio booking (BOOK-2025-11-019) — shared with Section 4's follow-up appointments | ✅ Generated | [Appointment-followupphysio-thompson-alex-20251110.json](Appointment-followupphysio-thompson-alex-20251110.json) |
+| Appointment | Counselling booking (BOOK-2025-11-020), Telehealth — shared with Section 4 | ✅ Generated | [Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
+| Encounter | Pelvic-health physio visit, 2025-11-10 — the story's "Balance Training: 2025-10-09" entry predates the physio eReferral (2025-11-01) and isn't modelled, see Change Log | ✅ Generated | [Encounter-physiovisit-thompson-alex-20251110.json](Encounter-physiovisit-thompson-alex-20251110.json) |
+| Observation | Physio measures (OBS-2025-11-021) – pelvic floor strength (Modified Oxford Scale, 3/5) | ✅ Generated | [Observation-pelvicfloorstrength-thompson-alex-20251110.json](Observation-pelvicfloorstrength-thompson-alex-20251110.json) |
+| Observation | Physio measures (OBS-2025-11-021) – pain score (3/10) | ✅ Generated | [Observation-painscore-physio-thompson-alex-20251110.json](Observation-painscore-physio-thompson-alex-20251110.json) |
+| Observation | Physio measures (OBS-2025-11-021) – mobility (Improving) | ✅ Generated | [Observation-mobility-thompson-alex-20251110.json](Observation-mobility-thompson-alex-20251110.json) |
+| Encounter | Psycho-Oncology counselling, Telehealth, 2025-11-15 | ✅ Generated | [Encounter-counsellingvisit-thompson-alex-20251115.json](Encounter-counsellingvisit-thompson-alex-20251115.json) |
+| Observation | Counselling measures (OBS-2025-11-022) – PHQ-9 total score (10, mild-moderate depression) | ✅ Generated | [Observation-phq9-thompson-alex-20251115.json](Observation-phq9-thompson-alex-20251115.json) |
+| Observation | Counselling measures (OBS-2025-11-022) – anxiety level (Moderate) | ✅ Generated | [Observation-anxietylevel-thompson-alex-20251115.json](Observation-anxietylevel-thompson-alex-20251115.json) |
 | Observation | Apple Watch data – heart rate, steps | ⏳ Not yet generated | — |
 | CarePlan | Shared Care Plan update (physio exercises, counselling notes) | ⏳ Not yet generated | — |
-| Organization | Bathurst Physio Centre | ✅ Generated | `Organization-bathurst-physio-centre.json` |
-| Location | Bathurst Physio Centre | ✅ Generated | `Location-bathurst-physio-centre.json` |
-| HealthcareService | Bathurst Physio Centre | ✅ Generated | `HealthcareService-physiotherapyservices-bathurst-physio-centre.json` |
-| Practitioner | Sarah Evans | ✅ Generated | `Practitioner-evans-sarah.json` |
-| PractitionerRole | Sarah Evans – Physiotherapist, Bathurst Physio Centre | ✅ Generated | `PractitionerRole-physiotherapist-evans-sarah.json` |
-| Organization | Bathurst Psychology | ✅ Generated | `Organization-bathurst-psychology.json` |
-| Location | Bathurst Psychology | ✅ Generated | `Location-bathurst-psychology.json` |
+| Organization | Bathurst Physio Centre | ✅ Generated | [Organization-bathurst-physio-centre.json](Organization-bathurst-physio-centre.json) |
+| Location | Bathurst Physio Centre | ✅ Generated | [Location-bathurst-physio-centre.json](Location-bathurst-physio-centre.json) |
+| HealthcareService | Bathurst Physio Centre | ✅ Generated | [HealthcareService-physiotherapyservices-bathurst-physio-centre.json](HealthcareService-physiotherapyservices-bathurst-physio-centre.json) |
+| Practitioner | Sarah Evans | ✅ Generated | [Practitioner-evans-sarah.json](Practitioner-evans-sarah.json) |
+| PractitionerRole | Sarah Evans – Physiotherapist, Bathurst Physio Centre | ✅ Generated | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json) |
+| Organization | Bathurst Psychology | ✅ Generated | [Organization-bathurst-psychology.json](Organization-bathurst-psychology.json) |
+| Location | Bathurst Psychology | ✅ Generated | [Location-bathurst-psychology.json](Location-bathurst-psychology.json) |
 | HealthcareService | Bathurst Psychology | ⏳ Not yet generated (no SNOMED service-type match in Type Codes) | — |
-| Practitioner | Dr. Rachel Patel | ✅ Generated | `Practitioner-patel-rachel.json` |
-| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | `PractitionerRole-counsellorsnec-patel-rachel.json` |
+| Practitioner | Dr. Rachel Patel | ✅ Generated | [Practitioner-patel-rachel.json](Practitioner-patel-rachel.json) |
+| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-counsellorsnec-patel-rachel.json](PractitionerRole-counsellorsnec-patel-rachel.json) |
 
 ## 7. Population Health / Analytics
 
