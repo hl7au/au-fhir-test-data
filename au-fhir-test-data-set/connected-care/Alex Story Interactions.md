@@ -1,24 +1,18 @@
 # Alex’s Story Interactions
-## 0. MyHealth App
-
-```mermaid
-sequenceDiagram
-    participant PMS as GP PMS
-    participant ReqSvr as eRequesting Server
-
-    PMS->>ReqSvr: Submit eRequest (Cervical Screening Test)
-```
 
 ## 1. Pathology (Collection Centre)
 
 ```mermaid
 sequenceDiagram
+    participant PMS as GP PMS
     participant ReqSvr as eRequesting Server
     participant PatApp as Consumer App
     participant Lab as Lab System
     participant RptSvr as eReporting Server
     participant VT as Virtual Triage
     
+    PMS->>ReqSvr: Submit eRequest (Cervical Screening Test)
+
     ReqSvr->>PatApp: Retrieve eRequest (Cervical Screening Test)
     ReqSvr->>Lab: Retrieve eRequest (Cervical Screening Test)
     Lab->>RptSvr: Submit Diagnostic Report (HPV pathology result)
