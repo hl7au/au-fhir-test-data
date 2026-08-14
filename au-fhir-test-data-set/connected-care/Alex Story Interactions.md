@@ -6,29 +6,31 @@ Each sequence diagram is followed by an Interaction Summary table; numbers in th
 
 The diagram arrow points from the initiator to the responder.
 
-| Participant | Description |
-| --- | --- |
-| Allied Health PMS | Allied Health Practice Management System |
-| Pop. Health Analytics | Population Health Analytics Service |
-| Consumer App | Consumer-facing Personal Health App |
-| eReferral Server | Clinical eReferral Repository |
-| eReporting Server | Diagnostic Reporting Repository |
-| eRequesting Server | Diagnostic eRequesting Repository |
-| GP PMS | General Practice Practice Management System |
-| Hospital EMR | Hospital Electronic Medical Record System |
-| Lab System | Laboratory Information System |
-| SMART Medicines eCDS App | SMART Medicines Electronic Clinical Decision Support App |
-| Pharmacy CMS | Pharmacy Clinical Management System |
-| Pharmacy Dispense | Pharmacy Dispensing System |
-| Provider Directory | Healthcare Provider Directory Repository |
-| SHL Sharing Server | SMART Health Link Sharing Server |
-| Shared EHR/HIE | Shared Health Information Exchange / Repository |
-| Shared Medicines History | Shared Medicines History Repository |
-| SMART eReferral App | SMART eReferral App |
-| SMART GP CCMP App | SMART GP Chronic Condition Management Plan App |
-| SMART PS App | SMART Patient Summary App |
-| Specialist PMS | Specialist Practice Management System |
-| Virtual Triage CMS | Virtual Triage Clinical Management System |
+Every participant appearing across the diagrams, whether it acts as a client (initiator), server (responder), or both, and a short description.
+
+| Participant | Description | Client / Server |
+| --- | --- | --- |
+| Allied Health PMS | Allied Health Practice Management System | Client / Server |
+| Pop. Health Analytics | Population Health Analytics Service | Client |
+| Consumer App | Consumer-facing Personal Health App | Client |
+| eReferral Server | Clinical eReferral Repository | Server |
+| eReporting Server | Diagnostic Reporting Repository | Server |
+| eRequesting Server | Diagnostic eRequesting Repository | Server |
+| GP PMS | General Practice Practice Management System | Client / Server |
+| Hospital EMR | Hospital Electronic Medical Record System | Client / Server |
+| Lab System | Laboratory Information System | Client |
+| SMART Medicines eCDS App | SMART Medicines Electronic Clinical Decision Support App | Client |
+| Pharmacy CMS | Pharmacy Clinical Management System | Client |
+| Pharmacy Dispense | Pharmacy Dispensing System | Client / Server |
+| Provider Directory | Healthcare Provider Directory Repository | Server |
+| SHL Sharing Server | SMART Health Link Sharing Server | Server |
+| Shared EHR/HIE | Shared Health Information Exchange / Repository | Server |
+| Shared Medicines History | Shared Medicines History Repository | Server |
+| SMART eReferral App | SMART eReferral App | Client |
+| SMART GP CCMP App | SMART GP Chronic Condition Management Plan App | Client |
+| SMART PS App | SMART Patient Summary App | Client |
+| Specialist PMS | Specialist Practice Management System | Client / Server |
+| Virtual Triage CMS | Virtual Triage Clinical Management System | Client / Server |
 
 ## 1. Pathology (Collection Centre)
 
