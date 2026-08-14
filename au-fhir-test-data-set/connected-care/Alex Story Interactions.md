@@ -4,6 +4,7 @@
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant PMS as GP PMS
     participant ReqSvr as eRequesting Server
     participant PatApp as Consumer App
@@ -24,6 +25,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant RptSvr as eReporting Server
     participant PMS as GP PMS
     participant PMH as PMH Service
@@ -61,6 +63,7 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant PMS as Specialist PMS
     participant PSApp as SMART PS App
     participant SEHR as Shared EHR
@@ -111,8 +114,9 @@ sequenceDiagram
 ## 4. Private Hospital (Theatre / Inpatient)
 ```mermaid
 sequenceDiagram
+    autonumber
     participant EMR as Hospital EMR
-    participant eCDS as Medcines eCDS
+    participant eCDS as Medicines eCDS
     participant SEHR as Shared EHR
     participant PMS as GP PMS
     participant AHPMS as Allied Health PMS
@@ -134,30 +138,36 @@ sequenceDiagram
 ## 5. Pharmacy
 ```mermaid
 sequenceDiagram
-
-    participant PMS as Pharmacy CMS
+    autonumber
+    participant PCMS as Pharmacy CMS
+    participant PDMS as Pharmacy Dispense
     participant PMH as PMH Service
     participant PD as Provider Directory
     participant SEHR as Shared EHR
-    participant GP as GP PMS
+    participant GPPMS as GP PMS
     participant PatApp as Consumer App
 
-    SEHR->>PMS: Retrieve Patient Summary
+    SEHR->>PCMS: Retrieve Patient Summary
 
-    PMH->>PMS: Retrieve Patient Medicines History
+    PMH->>PCMS: Retrieve Patient Medicines History
 
-    PD->>PMS: Retrieve GP Provider Details
-    PMS->>SEHR: Submit Pharmacy Encounter Record
-    SEHR->>GP: Retrieve Pharmacy Encounter Record
-
+    PD->>PCMS: Retrieve GP Provider Details
+    PCMS->>SEHR: Submit Pharmacy Encounter Record
+    SEHR->>GPPMS: Retrieve Pharmacy Encounter Record
     SEHR->>PatApp: Retrieve Pharmacy Encounter Record
+
+    PMH->>PDMS: Retrieve Patient Medicines History
+
+    PMH->>GPPMS: Retrieve Patient Medicines History
+
+    PDMS->>PatApp: Retrieve dispensed medicines
     PMH->>PatApp: Retrieve Patient Medicines History
 ```
 
 ## 6. Allied Health (Physiotherapy & Counselling)
 ```mermaid
 sequenceDiagram
-
+    autonumber
     participant PMS as Allied Health PMS
     participant RefSvr as Referral Server
     participant EHRSvr as Shared EHR
@@ -170,9 +180,11 @@ sequenceDiagram
 ## 7. Population Health / Analytics
 ```mermaid
 sequenceDiagram
-
+    autonumber
     participant PMS as GP PMS
     participant AnlSvr as Analytics Server
+    actor Analyst
 
     PMS->>AnlSvr: PIP QI Bulk FHIR
+    AnlSvr->>Analyst: Population Health Insights
 ```
