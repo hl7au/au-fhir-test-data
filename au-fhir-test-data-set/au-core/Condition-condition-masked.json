@@ -1,0 +1,29 @@
+{
+  "resourceType" : "Condition",
+  "id" : "condition-masked",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-condition"]
+  },
+  "clinicalStatus" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code" : "active"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+      "code" : "masked"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+      "code" : "masked"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/bennelong-anne",
+    "display" : "Anne Bennelong"
+  }
+}

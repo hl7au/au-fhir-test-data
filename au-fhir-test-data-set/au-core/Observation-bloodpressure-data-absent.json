@@ -1,6 +1,6 @@
 {
   "resourceType" : "Observation",
-  "id" : "bloodpressure-1",
+  "id" : "bloodpressure-data-absent",
   "meta" : {
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"]
   },
@@ -26,12 +26,12 @@
     "text" : "Blood pressure systolic and diastolic"
   },
   "subject" : {
-    "reference" : "Patient/wang-li"
+    "reference" : "Patient/ronny-irvine"
   },
-  "effectiveDateTime" : "2016-07-02",
-  "performer" : [{
-    "reference" : "PractitionerRole/bobrester-bob-gp"
-  }],
+  "encounter" : {
+    "reference" : "Encounter/discharge-1"
+  },
+  "effectiveDateTime" : "2023-02-20T06:20:00+10:00",
   "component" : [{
     "code" : {
       "coding" : [{
@@ -65,11 +65,13 @@
       }],
       "text" : "Diastolic blood pressure"
     },
-    "valueQuantity" : {
-      "value" : 44,
-      "unit" : "mmHg",
-      "system" : "http://unitsofmeasure.org",
-      "code" : "mm[Hg]"
+    "dataAbsentReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
+        "code" : "unknown",
+        "display" : "Unknown"
+      }],
+      "text" : "Unknown"
     }
   }]
 }

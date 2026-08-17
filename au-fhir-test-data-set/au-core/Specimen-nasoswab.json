@@ -9,7 +9,7 @@
     }]
   },
   "subject" : {
-    "reference" : "Patient/howe-deangelo"
+    "reference" : "Patient/wang-li"
   },
   "collection" : {
     "collectedDateTime" : "2021-02-15T12:00:00+10:00",

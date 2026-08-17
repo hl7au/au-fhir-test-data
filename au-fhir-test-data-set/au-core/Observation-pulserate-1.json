@@ -1,8 +1,8 @@
 {
   "resourceType" : "Observation",
-  "id" : "bodytemp-1",
+  "id" : "pulserate-1",
   "meta" : {
-    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp"]
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"]
   },
   "status" : "final",
   "category" : [{
@@ -16,23 +16,29 @@
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "8310-5",
-      "display" : "Body temperature"
+      "code" : "8867-4",
+      "display" : "Heart rate"
     },
     {
       "system" : "http://snomed.info/sct",
-      "code" : "386725007"
+      "code" : "364075005",
+      "display" : "Heart rate"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "78564009",
+      "display" : "Pulse rate"
     }],
-    "text" : "Body temperature"
+    "text" : "Pulse rate"
   },
   "subject" : {
-    "reference" : "Patient/bennelong-anne"
+    "reference" : "Patient/wang-li"
   },
-  "effectiveDateTime" : "2022-02-10",
+  "effectiveDateTime" : "2016-07-02",
   "valueQuantity" : {
-    "value" : 36.5,
-    "unit" : "C",
+    "value" : 80,
+    "unit" : "beats/minute",
     "system" : "http://unitsofmeasure.org",
-    "code" : "Cel"
+    "code" : "/min"
   }
 }
