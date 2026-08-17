@@ -13,8 +13,7 @@
   },
   "performer" : [{
     "actor" : {
-      "reference" : "Organization/community-pharmacy-example",
-      "display" : "Example Community Pharmacy"
+      "reference" : "Organization/appin-pharmacy"
     }
   }],
   "authorizingPrescription" : [{

@@ -21,9 +21,6 @@
       "reference" : "Organization/mcbeath-pharmacy"
     }
   }],
-  "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/paracetamol-codeine"
-  }],
   "quantity" : {
     "value" : 20,
     "unit" : "TAB",
