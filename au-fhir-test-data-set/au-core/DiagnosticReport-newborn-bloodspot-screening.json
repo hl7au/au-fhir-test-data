@@ -68,7 +68,7 @@
   "issued": "2022-09-20T14:30:00+10:00",
   "performer" : [
     {
-      "reference" : "Organization/pullabooka-pathology"
+      "reference" : "PractitionerRole/pathologist-pratley-philomena"
     }
   ],
   "result": [
