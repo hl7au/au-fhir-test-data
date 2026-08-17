@@ -5,12 +5,8 @@
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
   },
   "status" : "completed",
-  "medicationCodeableConcept" : {
-    "coding" : [{
-      "system" : "http://snomed.info/sct",
-      "code" : "27437011000036101",
-      "display" : "Atorvastatin 20 mg tablet, 30"
-    }]
+  "medicationReference" : {
+    "reference" : "Medication/atorvastatin"
   },
   "subject" : {
     "reference" : "Patient/howe-deangelo"
