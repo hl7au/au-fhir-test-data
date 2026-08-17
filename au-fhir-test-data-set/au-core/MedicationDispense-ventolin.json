@@ -35,8 +35,8 @@
     "route" : {
       "coding" : [{
         "system" : "http://snomed.info/sct",
-        "code" : "18679011000036104",
-        "display" : "Inhalation route"
+        "code" : "447694001",
+        "display" : "Respiratory tract route"
       }]
     },
     "doseAndRate" : [{
