@@ -1,0 +1,116 @@
+{
+  "resourceType": "Medication",
+  "id": "pramin",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+            "valueCoding": {
+              "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+              "code": "UPD",
+              "display": "Unbranded product with no strengths or form"
+            }
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "56549003",
+        "display": "Metoclopramide"
+      },      
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+            "valueCoding": {
+              "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+              "code": "BPD",
+              "display": "Branded product with no strengths or form"
+            }
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "3330011000036102",
+        "display": "Pramin"
+      }
+    ]
+  },
+  "manufacturer": {
+    "identifier": {
+      "system": "http://pbs.gov.au/code/manufacturer",
+      "value": "AF"
+    }
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "421026006",
+        "display": "Tablet"
+      }
+    ],
+    "text": "Tablet"
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "372776000",
+            "display": "Metoclopramide"
+          }
+        ],
+        "text": "metoclopramide"
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 10,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "tablet",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tbl}"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "51963001",
+            "display": "Sulphites"
+          }
+        ]
+      },
+      "isActive": false,
+      "strength": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Medication.ingredient.strength",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/CodeSystem/medication-ingredientstrength",
+                  "code": "trace",
+                  "display": "Trace"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
