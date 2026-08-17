@@ -1,0 +1,17 @@
+{
+  "resourceType": "Specimen",
+  "id": "newborn-bloodspot",
+  "type" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "440500007",
+      "display" : "Dried blood spot specimen"
+    }]
+  },
+  "subject": {
+    "reference": "Patient/baby-banks-john"
+  },
+  "collection": {
+    "collectedDateTime": "2022-09-16T10:00:00+10:00"
+  }
+}

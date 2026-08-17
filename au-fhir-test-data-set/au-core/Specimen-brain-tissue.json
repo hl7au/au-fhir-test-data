@@ -1,0 +1,20 @@
+{
+  "resourceType": "Specimen",
+  "id": "brain-tissue",
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "128157004",
+        "display": "Brain tissue specimen"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/howe-deangelo"
+  },
+  "collection": {
+    "collectedDateTime": "2021-01-29T10:30:00+10:00"
+  }
+}
