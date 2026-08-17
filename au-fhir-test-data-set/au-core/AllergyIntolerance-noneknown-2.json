@@ -1,6 +1,6 @@
 {
   "resourceType": "AllergyIntolerance",
-  "id": "noneknown",
+  "id": "noneknown-2",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
@@ -10,8 +10,15 @@
     "coding": [
       {
         "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-        "code": "active",
-        "display": "Active"
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "code": "unconfirmed"
       }
     ]
   },
@@ -25,6 +32,13 @@
     ]
   },
   "patient": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/baby-banks-john"
+  },
+  "recordedDate": "2023-01-08",
+  "recorder": {
+    "reference": "Patient/banks-mia-leanne"
+  },
+  "asserter": {
+    "reference": "Patient/banks-mia-leanne"
   }
 }

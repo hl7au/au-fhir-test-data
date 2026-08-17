@@ -1,6 +1,6 @@
 {
   "resourceType" : "Specimen",
-  "id" : "nasoswab",
+  "id" : "nasoswab-2",
   "type" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",

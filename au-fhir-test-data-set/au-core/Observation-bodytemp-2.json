@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "bodyheight-1",
+  "id": "bodytemp-2",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp"
     ]
   },
   "status": "final",
@@ -23,32 +23,32 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "8302-2",
-        "display": "Body height"
+        "code": "8310-5",
+        "display": "Body temperature"
       },
       {
         "system": "http://snomed.info/sct",
-        "code": "50373000"
+        "code": "386725007"
       }
     ],
-    "text": "height"
+    "text": "Body temperature"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/baratz-toni"
   },
   "encounter": {
-    "display": "GP Visit"
+    "reference": "Encounter/annualvisit-2"
   },
-  "effectiveDateTime": "2016-07-02",
+  "effectiveDateTime": "2022-02-10",
   "performer": [
     {
       "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
     }
   ],
   "valueQuantity": {
-    "value": 175,
-    "unit": "cm",
+    "value": 37.5,
+    "unit": "C",
     "system": "http://unitsofmeasure.org",
-    "code": "cm"
+    "code": "Cel"
   }
 }

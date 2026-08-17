@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "heartrate-1",
+  "id": "bodyheight-2",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodyheight"
     ]
   },
   "status": "final",
@@ -23,16 +23,15 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "8867-4",
-        "display": "Heart rate"
+        "code": "8302-2",
+        "display": "Body height"
       },
       {
         "system": "http://snomed.info/sct",
-        "code": "364075005",
-        "display": "Heart rate"
+        "code": "50373000"
       }
     ],
-    "text": "Heart rate"
+    "text": "height"
   },
   "subject": {
     "reference": "Patient/howe-deangelo"
@@ -47,9 +46,9 @@
     }
   ],
   "valueQuantity": {
-    "value": 80,
-    "unit": "beats/minute",
+    "value": 175,
+    "unit": "cm",
     "system": "http://unitsofmeasure.org",
-    "code": "/min"
+    "code": "cm"
   }
 }
