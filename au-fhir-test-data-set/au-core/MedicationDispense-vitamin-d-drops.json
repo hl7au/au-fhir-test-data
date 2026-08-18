@@ -24,28 +24,6 @@
   },
   "whenPrepared" : "2023-08-14",
   "dosageInstruction" : [{
-    "text" : "Give 0.2 mL by mouth once daily.",
-    "timing" : {
-      "repeat" : {
-        "frequency" : 1,
-        "period" : 1,
-        "periodUnit" : "d"
-      }
-    },
-    "route" : {
-      "coding" : [{
-        "system" : "http://snomed.info/sct",
-        "code" : "26643006",
-        "display" : "Oral route"
-      }]
-    },
-    "doseAndRate" : [{
-      "doseQuantity" : {
-        "value" : 0.2,
-        "unit" : "mL",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "mL"
-      }
-    }]
+    "text" : "Give 0.2 mL by mouth once daily."
   }]
 }
