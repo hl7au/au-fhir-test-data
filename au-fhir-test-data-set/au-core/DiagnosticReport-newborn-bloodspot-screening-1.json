@@ -1,6 +1,6 @@
 {
   "resourceType": "DiagnosticReport",
-  "id": "newborn-bloodspot-screening",
+  "id": "newborn-bloodspot-screening-1",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport"
@@ -73,13 +73,13 @@
   ],
   "result": [
     {
-      "reference": "Observation/newborn-screening-pku"
+      "reference": "Observation/newborn-screening-pku-1"
     },
     {
-      "reference": "Observation/newborn-screening-congenital-hypothyroidism"
+      "reference": "Observation/newborn-screening-congenital-hypothyroidism-1"
     },
     {
-      "reference": "Observation/newborn-screening-cystic-fibrosis"
+      "reference": "Observation/newborn-screening-cystic-fibrosis-1"
     }
   ],
   "conclusion": "Newborn bloodspot screening negative for the conditions reported."

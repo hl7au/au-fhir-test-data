@@ -1,6 +1,6 @@
 {
   "resourceType" : "DiagnosticReport",
-  "id" : "rh-status-report",
+  "id" : "rh-status-report-1",
   "meta" : {
     "profile" : [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport"
@@ -73,14 +73,14 @@
   ],
   "result" : [
     {
-      "reference" : "Observation/rh-status",
+      "reference" : "Observation/rh-status-1",
       "display" : "Blood Group Antibody Screen"
     }
   ],
   "presentedForm" : [
     {
       "contentType" : "application/pdf",
-      "url" : "Binary/rh-status-pdf-report"
+      "url" : "Binary/rh-status-pdf-report-1"
     }
   ]
 }

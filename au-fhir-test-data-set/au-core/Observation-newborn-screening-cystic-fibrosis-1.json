@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "newborn-screening-pku",
+  "id": "newborn-screening-cystic-fibrosis-1",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
@@ -23,11 +23,11 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "46746-4",
-        "display": "Phenylketonuria and variants/Biopterin defects newborn screen interpretation"
+        "code": "46769-6",
+        "display": "Cystic fibrosis newborn screen interpretation"
       }
     ],
-    "text": "Phenylketonuria newborn screening"
+    "text": "Cystic fibrosis newborn screening"
   },
   "subject": {
     "reference": "Patient/baby-banks-john"
@@ -49,6 +49,6 @@
     "text": "Screen negative"
   },
   "specimen": {
-    "reference": "Specimen/newborn-bloodspot"
+    "reference": "Specimen/newborn-bloodspot-1"
   }
 }

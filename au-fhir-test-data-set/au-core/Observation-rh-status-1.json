@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "brain-tissue-lymphoma",
+  "id": "rh-status-1",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticresult-path"
@@ -15,39 +15,31 @@
           "code": "laboratory",
           "display": "Laboratory"
         }
-      ],
-      "text": "Pathology"
+      ]
     }
   ],
   "code": {
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "93782-1",
-        "display": "Large B-cell lymphoma [Type] in Tissue"
+        "code": "890-4",
+        "display": "Blood group antibody screen [Presence] in Serum or Plasma"
       }
-    ]
+    ],
+    "text": "Blood Group Antibody Screen"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/baratz-toni"
   },
-  "effectiveDateTime": "2021-01-29T10:30:00+10:00",
-  "performer": [
-    {
-      "reference": "Organization/pullabooka-pathology"
-    }
-  ],
+  "effectiveDateTime": "2015-06-12",
   "valueCodeableConcept": {
     "coding": [
       {
-        "system": "http://loinc.org",
-        "code": "LA26525-8",
-        "display": "Diffuse large B-cell lymphoma (DLBCL), NOS"
+        "system": "http://snomed.info/sct",
+        "code": "260385009",
+        "display": "Negative"
       }
     ],
-    "text": "Diffuse large B-cell lymphoma"
-  },
-  "specimen": {
-    "reference": "Specimen/brain-tissue"
+    "text": "Negative"
   }
 }
