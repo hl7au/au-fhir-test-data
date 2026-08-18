@@ -4,9 +4,24 @@
   "meta" : {
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
   },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "med1",
+    "meta" : {
+     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"]
+     },
+    "code" : {
+     "coding" : [{
+       "system" : "http://snomed.info/sct",
+       "code" : "712541000168104",
+       "display" : "Flucloxacillin (Apo) 500 mg capsule, 24"
+     }],
+     "text" : "Flucloxacillin 500 mg capsule"
+     }
+   }],
   "status" : "completed",
-  "medicationCodeableConcept" : {
-    "text" : "flucloxacillin 500mg capsule"
+  "medicationReference" : {
+    "reference" : "#med1"
   },
   "subject" : {
     "reference" : "Patient/baratz-toni"
