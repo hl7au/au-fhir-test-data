@@ -19,7 +19,7 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "22-091622-NBS-01",
       "assigner" : {
-        "reference" : "Organization/pullabooka-pathology"
+        "display" : "Pullabooka Pathology"
       }
     },
     {
@@ -34,7 +34,7 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "22-091622",
       "assigner" : {
-        "reference" : "Organization/pullabooka-pathology"
+        "display" : "Pullabooka Pathology"
       }
     }
   ],

@@ -19,8 +19,7 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003626566707024",
       "value" : "12-155222-BGP-01",
       "assigner" : {
-        "reference" : "Organization/kununurra-pathology",
-        "display" : "Kununurra Pathology"
+        "display" : "Trentham Pathology"
       }
     },
     {
@@ -35,7 +34,6 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003626566707024",
       "value" : "12-155222",
       "assigner" : {
-        "reference" : "Organization/trentham-pathology",
         "display" : "Trentham Pathology"
       }
     }

@@ -19,7 +19,6 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "68-156789-BMD-02",
       "assigner" : {
-        "reference" : "Organization/fishermans-reach-radiology",
         "display" : "Fishermans Reach Radiology"
       }
     },
@@ -35,7 +34,6 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "68-156789",
       "assigner" : {
-        "reference" : "Organization/fishermans-reach-radiology",
         "display" : "Fishermans Reach Radiology"
       }
     }
