@@ -24,7 +24,7 @@
         ]
       },
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
-      "value": "XX",
+      "value": "REQ-2025-10-001-1",
       "assigner": {
         "reference": "Organization/bathurst-medical-centre",
         "display": "Bathurst Medical Centre"

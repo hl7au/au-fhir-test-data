@@ -49,17 +49,6 @@
   "dosage": [
     {
       "text": "ONE tablet (400 mg) every 6-8 hours as needed for pain.",
-      "additionalInstruction": [
-        {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "311504000"
-            }
-          ],
-          "text": "With or after food"
-        }
-      ],
       "timing": {
         "repeat": {
           "frequency": 1,

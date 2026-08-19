@@ -12,7 +12,14 @@
   },
   "type": [
     {
-      "text": "Specialist medical clinic service"
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "700434000",
+          "display": "Endocrinology service"
+        }
+      ],
+      "text": "Endocrinology service"
     }
   ],
   "specialty": [
