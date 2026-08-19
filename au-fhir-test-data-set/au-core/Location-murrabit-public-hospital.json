@@ -1,12 +1,12 @@
 {
   "resourceType": "Location",
-  "id": "murrabit-public-hopsital",
+  "id": "murrabit-public-hospital",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
     ]
   },
-  "name": "Murrabit Public Hopsital",
+  "name": "Murrabit Public Hospital",
   "mode": "instance",
   "address": {
     "line": [
@@ -26,6 +26,6 @@
     ]
   },
   "managingOrganization": {
-    "reference": "Organization/murrabit-public-hopsital"
+    "reference": "Organization/murrabit-public-hospital"
   }
 }
