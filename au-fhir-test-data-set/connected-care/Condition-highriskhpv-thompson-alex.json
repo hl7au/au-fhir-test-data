@@ -43,7 +43,7 @@
         "display": "High risk human papillomavirus detected by cytology"
       }
     ],
-    "text": "High-risk cervical screening result: high-risk HPV detected, CIN2/3 (pre-cancerous)"
+    "text": "High-risk HPV detected, CIN2/3 (pre-cancerous)"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -60,6 +60,15 @@
   "asserter": {
     "reference": "PractitionerRole/generalpractitioner-lee-chris"
   },
+  "evidence": [
+    {
+      "detail": [
+        {
+          "reference": "DiagnosticReport/hpvpathology-thompson-alex-20251008"
+        }
+      ]
+    }
+  ],
   "note": [
     {
       "text": "High-risk HPV detected with CIN2/3 (pre-cancerous) on cervical screening pathology result PATH-2025-10-002 (Bathurst Pathology, result date 2025-10-08). Reviewed with patient at GP consultation; gynaecology referral initiated."

@@ -36,7 +36,7 @@
         "display": "Ibuprofen 400 mg tablet"
       }
     ],
-    "text": "Ibuprofen 400 mg tablet"
+    "text": "ibuprofen 400 mg tablet"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -64,7 +64,7 @@
   ],
   "dosageInstruction": [
     {
-      "text": "400 mg every 6-8 hours as needed for pain, over-the-counter (max 2.4 g/day)",
+      "text": "400 mg every 6-8 hours as needed for pain (max 2.4 g/day)",
       "timing": {
         "repeat": {
           "frequency": 1,

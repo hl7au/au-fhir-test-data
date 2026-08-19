@@ -36,7 +36,7 @@
         "display": "Paracetamol 500 mg tablet"
       }
     ],
-    "text": "Paracetamol 500 mg tablet"
+    "text": "paracetamol 500 mg tablet"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -64,7 +64,7 @@
   ],
   "dosageInstruction": [
     {
-      "text": "500 mg every 6 hours as needed for pain, over-the-counter (max 4 g/day)",
+      "text": "500 mg every 6 hours as needed for pain (max 4 g/day)",
       "timing": {
         "repeat": {
           "frequency": 1,

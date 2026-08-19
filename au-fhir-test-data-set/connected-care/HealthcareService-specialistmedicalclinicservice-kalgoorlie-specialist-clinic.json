@@ -12,13 +12,6 @@
   },
   "type": [
     {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "310138009",
-          "display": "Surgical service"
-        }
-      ],
       "text": "Specialist medical clinic service"
     }
   ],

@@ -76,11 +76,11 @@
     }
   ],
   "outcome": {
-    "text": "Procedure successful under general anaesthesia; blood loss 100 mL; no complications"
+    "text": "Procedure performed under general anaesthesia; blood loss 100 mL; no complications"
   },
   "followUp": [
     {
-      "text": "Discharge medications provided; activity restrictions (no lifting >5 kg); GP review in 7 days"
+      "text": "Prescriptions for pain relief provided; activity restrictions (no lifting >5 kg); GP review in 7 days"
     }
   ],
   "note": [

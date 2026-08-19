@@ -25,7 +25,7 @@
         "display": "Oxycodone hydrochloride 5 mg tablet"
       }
     ],
-    "text": "Oxycodone 5 mg tablet"
+    "text": "oxycodone 5 mg tablet"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -47,12 +47,12 @@
           "display": "Pain management"
         }
       ],
-      "text": "Short course for breakthrough pain if Ibuprofen and Paracetamol are insufficient following cone biopsy"
+      "text": "Short course for breakthrough pain if ibuprofen and paracetamol are insufficient following cone biopsy"
     }
   ],
   "dosage": [
     {
-      "text": "5 mg as needed for severe/intense pain only, maximum 4 tablets/day, for up to 3 days (10 tablets supplied)",
+      "text": "ONE tablet (5 mg) when needed for severe pain. Maximum FOUR tablets/day (20mg/day).",
       "timing": {
         "repeat": {
           "frequency": 1,
@@ -102,7 +102,7 @@
   ],
   "note": [
     {
-      "text": "Only 10 tablets supplied; take only if pain is intense. If not necessary, continue Ibuprofen (with food) alternating with Paracetamol."
+      "text": "Only 10 tablets supplied; take only if pain is severe. If not necessary, continue Ibuprofen (with food) alternating with Paracetamol."
     }
   ]
 }

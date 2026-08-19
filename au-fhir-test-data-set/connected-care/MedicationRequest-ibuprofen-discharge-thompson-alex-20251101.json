@@ -27,7 +27,7 @@
         "display": "Ibuprofen 400 mg tablet"
       }
     ],
-    "text": "Ibuprofen 400 mg tablet"
+    "text": "ibuprofen 400 mg tablet"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -55,19 +55,13 @@
   ],
   "dosageInstruction": [
     {
-      "text": "400 mg every 6-8 hours as needed for pain, for 5 days (max 2.4 g/day)",
+      "text": "400 mg every 6-8 hours as needed for pain (max 2.4 g/day)",
       "timing": {
         "repeat": {
           "frequency": 1,
           "period": 6,
           "periodMax": 8,
-          "periodUnit": "h",
-          "boundsDuration": {
-            "value": 5,
-            "unit": "d",
-            "system": "http://unitsofmeasure.org",
-            "code": "d"
-          }
+          "periodUnit": "h"
         }
       },
       "asNeededBoolean": true,

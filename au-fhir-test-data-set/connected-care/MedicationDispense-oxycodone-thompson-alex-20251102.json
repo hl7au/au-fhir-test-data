@@ -24,8 +24,8 @@
                 "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
                 "valueCoding": {
                   "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
-                  "code": "BPDSF",
-                  "display": "Branded product with strengths and form"
+                  "code": "BPG",
+                  "display": "Branded package with no container"
                 }
               }
             ],
@@ -34,7 +34,7 @@
             "display": "Endone 5 mg tablet, 10"
           }
         ],
-        "text": "Endone 5 mg tablet, 10"
+        "text": "Endone (oxycodone) 5 mg tablet, 10"
       },
       "form": {
         "coding": [
@@ -75,7 +75,7 @@
   "whenPrepared": "2025-11-02",
   "dosageInstruction": [
     {
-      "text": "5 mg as needed for intense pain only, max 4 tablets/day, short course up to 3 days"
+      "text": "Take ONE (1) tablet when needed for severe pain. Maximum FOUR (4) tablets in 24 hours. If pain persists, seek medical review."
     }
   ],
   "note": [
