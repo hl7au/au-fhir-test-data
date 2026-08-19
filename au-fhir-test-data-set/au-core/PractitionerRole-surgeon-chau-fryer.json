@@ -34,7 +34,7 @@
     "text" : "Surgeon"
   }],
   "location" : [{
-    "reference" : "Location/murrabit-hospital"
+    "reference" : "Location/murrabit-public-hopsital"
   }],
   "telecom" : [{
     "system" : "phone",
