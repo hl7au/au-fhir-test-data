@@ -3,7 +3,8 @@
   "id" : "creatinine-clearance-report-1",
   "meta" : {
     "profile" : [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport",
+      "http://hl7.org.au/fhir/StructureDefinition/au-pathologyreport"
     ]
   },
   "identifier" : [
@@ -19,7 +20,6 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "26-155987-CRE-01",
       "assigner" : {
-        "reference" : "Organization/pullabooka-pathology",
         "display" : "Pullabooka Pathology"
       }
     },
@@ -35,7 +35,6 @@
       "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
       "value" : "26-155987",
       "assigner" : {
-        "reference" : "Organization/pullabooka-pathology",
         "display" : "Pullabooka Pathology"
       }
     }
