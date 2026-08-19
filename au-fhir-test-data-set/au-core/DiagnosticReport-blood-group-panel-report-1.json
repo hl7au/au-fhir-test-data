@@ -3,7 +3,9 @@
   "id" : "blood-group-panel-report-1",
   "meta" : {
     "profile" : [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport"]
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport",
+      "http://hl7.org.au/fhir/StructureDefinition/au-pathologyreport"
+    ]
   },
   "identifier" : [
     {
@@ -70,11 +72,11 @@
   ],
   "result" : [
     {
-      "reference" : "Observation/blood-group-1",
+      "reference" : "Observation/blood-group",
       "display" : "Blood Group"
     },
     {
-      "reference" : "Observation/rh-status-1",
+      "reference" : "Observation/rh-status",
       "display" : "Blood Group Antibody Screen"
     }
   ],
