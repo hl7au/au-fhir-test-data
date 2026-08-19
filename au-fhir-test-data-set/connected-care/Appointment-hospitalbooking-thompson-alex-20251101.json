@@ -56,7 +56,7 @@
     },
     {
       "actor": {
-        "reference": "PractitionerRole/surgeon-wilson-mark",
+        "reference": "PractitionerRole/obstetrician-wilson-mark",
         "display": "Dr Mark Wilson"
       },
       "status": "accepted"

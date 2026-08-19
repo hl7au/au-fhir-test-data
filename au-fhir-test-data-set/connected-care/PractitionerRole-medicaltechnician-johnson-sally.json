@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "phlebotomist-johnson-sally",
+  "id": "medicaltechnician-johnson-sally",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -14,7 +14,13 @@
   },
   "code": [
     {
-      "text": "Phlebotomist"
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+          "code": "311299",
+          "display": "Medical Technician"
+        }
+      ]
     }
   ],
   "location": [

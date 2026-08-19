@@ -113,7 +113,7 @@ sequenceDiagram
 | 2 | Retrieve Prescription and Dispensing History | GP PMS | Shared Medicines History | *TBD — dispense record for Sertraline?* |
 | 3 | Pre-populate GP CCMP Questionnaire | SMART GPCCMP App | GP PMS | *Various* |
 | 4 | Submit GP CCMP Questionnaire Response | SMART GPCCMP App | GP PMS | _TBD — QuestionnaireResponse ?_|
-| 5 | Retrieve Provider Details | GP PMS | Provider Directory | [PractitionerRole-obstetricianandgynaecologist-chen-emily.json](PractitionerRole-obstetricianandgynaecologist-chen-emily.json) |
+| 5 | Retrieve Provider Details | GP PMS | Provider Directory | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
 | 6 | Submit eReferral | GP PMS | eReferral Server | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
 | 7 | Pre-populate eReferral | SMART eReferral App | GP PMS | *Various* |
 | 8 | Submit eReferral | SMART eReferral App | eReferral Server | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
@@ -194,7 +194,7 @@ sequenceDiagram
 | 6 | Retrieve Diagnostic Report (Histopathology result) | Specialist PMS | eReporting Server | [DiagnosticReport-histopathology-thompson-alex-20251020.json](DiagnosticReport-histopathology-thompson-alex-20251020.json) |
 | 7 | Pre-populate Patient Summary | SMART PS App | Specialist PMS | *Various* |
 | 8 | Submit Patient Summary | SMART PS App | SHL Sharing Server | [Bundle-aups-specialist-thompson-alex-20251101.json](Bundle-aups-specialist-thompson-alex-20251101.json) |
-| 9 | Retrieve Provider Details | Specialist PMS | Provider Directory | [PractitionerRole-surgeon-wilson-mark.json](PractitionerRole-surgeon-wilson-mark.json) |
+| 9 | Retrieve Provider Details | Specialist PMS | Provider Directory | [PractitionerRole-obstetrician-wilson-mark.json](PractitionerRole-obstetrician-wilson-mark.json) |
 | 10 | Submit eReferral | Specialist PMS | eReferral Server | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
 | 11 | Retrieve eReferral | Hospital EMR | eReferral Server | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
 | 12 | Pre-populate eReferral | SMART eReferral App | Specialist PMS | *Various* |
