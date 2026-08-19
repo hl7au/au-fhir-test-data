@@ -19,7 +19,7 @@
     "reference" : "Practitioner/chau-fryer"
   },
   "organization" : {
-    "reference" : "Organization/murrabit-hospital"
+    "reference" : "Organization/murrabit-public-hospital"
   },
   "code" : [{
     "coding" : [{
@@ -34,7 +34,7 @@
     "text" : "Surgeon"
   }],
   "location" : [{
-    "reference" : "Location/murrabit-hospital"
+    "reference" : "Location/murrabit-public-hospital"
   }],
   "telecom" : [{
     "system" : "phone",

@@ -23,7 +23,7 @@
     }
   }],
   "location" : {
-    "reference" : "Location/murrabit-hospital"
+    "reference" : "Location/murrabit-public-hospital"
   },
   "reasonCode" : [{
     "coding" : [{

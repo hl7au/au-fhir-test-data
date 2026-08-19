@@ -18,7 +18,7 @@
     }]
   },
   "subject" : {
-    "reference" : "Patient/ronny-irvine"
+    "reference" : "Patient/Patient/ronny-irvine"
   },
   "effectivePeriod" : {
     "extension" : [{

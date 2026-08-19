@@ -1,6 +1,6 @@
 {
   "resourceType": "HealthcareService",
-  "id": "publicacute-murrabit-public-hopsital",
+  "id": "publicacute-murrabit-public-hospital",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
@@ -23,7 +23,7 @@
   ],
   "active": true,
   "providedBy": {
-    "reference": "Organization/murrabit-public-hopsital"
+    "reference": "Organization/murrabit-public-hospital"
   },
   "type": [
     {
@@ -39,7 +39,7 @@
   ],
   "location": [
     {
-      "reference": "Location/murrabit-public-hopsital"
+      "reference": "Location/murrabit-public-hospital"
     }
   ],
   "name": "Murrabit Public Hopsital",
