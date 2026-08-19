@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "288573005",
-          "display": "Community health care environment"
+          "code": "310391008",
+          "display": "Community health centre"
         }
       ],
       "text": "Public Community Health Centre"

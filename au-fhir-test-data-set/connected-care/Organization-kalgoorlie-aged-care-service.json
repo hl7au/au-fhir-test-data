@@ -16,10 +16,11 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "288573005",
-          "display": "Community health care environment"
+          "code": "257622000",
+          "display": "Healthcare facility"
         }
-      ]
+      ],
+      "text": "Healthcare service nec"
     }
   ],
   "name": "Kalgoorlie Aged Care Service",

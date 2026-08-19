@@ -6,6 +6,23 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
     ]
   },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8591",
+          "display": "Ambulance Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "11424001",
+          "display": "Ambulance-based care"
+        }
+      ],
+      "text": "Ambulance service"
+    }
+  ],
   "name": "Garran Ambulance Service",
   "telecom": [
     {

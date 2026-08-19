@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "257585005",
-          "display": "Clinic"
+          "code": "702893009",
+          "display": "Occupational therapy clinic"
         }
       ],
       "text": "Occupational therapy service"

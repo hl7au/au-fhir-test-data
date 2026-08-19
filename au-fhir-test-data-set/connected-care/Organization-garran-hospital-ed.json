@@ -6,6 +6,23 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
     ]
   },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8401",
+          "display": "Hospitals (Except Psychiatric Hospitals)"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "34271000087101",
+          "display": "General hospital"
+        }
+      ],
+      "text": "General Hospital"
+    }
+  ],
   "name": "Garran Hospital ED",
   "telecom": [
     {

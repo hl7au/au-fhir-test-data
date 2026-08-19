@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "257585005",
-          "display": "Clinic"
+          "code": "702915002",
+          "display": "Psychology clinic"
         }
       ],
       "text": "Clinical psychology service"

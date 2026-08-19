@@ -6,6 +6,23 @@
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
     ]
   },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8790",
+          "display": "Other Social Assistance Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "66280005",
+          "display": "Private home-based care"
+        }
+      ],
+      "text": "Aged care assistance service"
+    }
+  ],
   "name": "Aged Care Home Help",
   "telecom": [
     {
