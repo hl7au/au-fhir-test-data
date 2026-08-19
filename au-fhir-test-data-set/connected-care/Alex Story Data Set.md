@@ -50,7 +50,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
 | Organization | Bathurst Pathology | ✅ Generated | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
 | Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
-| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratoryservice-bathurst-pathology.json](HealthcareService-pathologylaboratoryservice-bathurst-pathology.json) |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratory-bathurst-pathology.json](HealthcareService-pathologylaboratory-bathurst-pathology.json) |
 | Appointment | Bathurst Pathology booking (BOOK-2025-10-000) | ⏳ Not yet generated | — |
 | Practitioner | Dr. Chris Lee | ✅ Generated | [Practitioner-lee-chris.json](Practitioner-lee-chris.json) |
 | PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-lee-chris.json](PractitionerRole-generalpractitioner-lee-chris.json) |
@@ -94,7 +94,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | DiagnosticReport | HPV pathology result (PATH-2025-10-002), high-risk HPV / CIN2/3 | ✅ Generated | [DiagnosticReport-hpvpathology-thompson-alex-20251008.json](DiagnosticReport-hpvpathology-thompson-alex-20251008.json) |
 | Organization | Bathurst Pathology | ✅ Generated | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
 | Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
-| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratoryservice-bathurst-pathology.json](HealthcareService-pathologylaboratoryservice-bathurst-pathology.json) |
+| HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ Generated | [HealthcareService-pathologylaboratory-bathurst-pathology.json](HealthcareService-pathologylaboratory-bathurst-pathology.json) |
 | Practitioner | Sally Johnson | ✅ Generated | [Practitioner-johnson-sally.json](Practitioner-johnson-sally.json) |
 | PractitionerRole | Sally Johnson – Phlebotomist, Bathurst Pathology | ✅ Generated | [PractitionerRole-phlebotomist-johnson-sally.json](PractitionerRole-phlebotomist-johnson-sally.json) |
 
@@ -142,7 +142,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Bundle (AU Patient Summary) | Self-contained AU PS document — what the GP knows as of the 2025-10-09 consultation (Problems, Allergies, Medications, Results, Vital Signs), sent with the e-Referral to Dr. Emily Chen | ✅ Generated | [Bundle-aups-thompson-alex-20251009.json](Bundle-aups-thompson-alex-20251009.json) |
 | Organization | Bathurst Medical Centre | ✅ Generated | [Organization-bathurst-medical-centre.json](Organization-bathurst-medical-centre.json) |
 | Location | Bathurst Medical Centre | ✅ Generated | [Location-bathurst-medical-centre.json](Location-bathurst-medical-centre.json) |
-| HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | [HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json](HealthcareService-generalmedicalpractitionerservice-bathurst-medical-centre.json) |
+| HealthcareService | Bathurst Medical Centre – General medical practitioner service | ✅ Generated | [HealthcareService-generalmedical-bathurst-medical-centre.json](HealthcareService-generalmedical-bathurst-medical-centre.json) |
 | Practitioner | Dr. Chris Lee | ✅ Generated | [Practitioner-lee-chris.json](Practitioner-lee-chris.json) |
 | PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ Generated | [PractitionerRole-generalpractitioner-lee-chris.json](PractitionerRole-generalpractitioner-lee-chris.json) |
 | Practitioner | Dr. Jane Smith | ✅ Generated | [Practitioner-smith-jane.json](Practitioner-smith-jane.json) |
@@ -203,10 +203,10 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Bundle (AU Patient Summary) | Self-contained AU PS document curated by Dr. Chen after the histopathology result — Problems, Allergies, Medicines, Results (both lab reports), Procedure History; no Vital Signs; Plan of Care is text-narrative only (cone biopsy day surgery, both allied health eReferrals, hospital booking — not linked as coded `entry`s) | ✅ Generated | [Bundle-aups-specialist-thompson-alex-20251101.json](Bundle-aups-specialist-thompson-alex-20251101.json) |
 | Organization | Ashfield Private Clinic | ✅ Generated | [Organization-ashfield-private-clinic.json](Organization-ashfield-private-clinic.json) |
 | Location | Ashfield Private Clinic | ✅ Generated | [Location-ashfield-private-clinic.json](Location-ashfield-private-clinic.json) |
-| HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | [HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json](HealthcareService-specialistmedicalclinicservice-ashfield-private-clinic.json) |
+| HealthcareService | Ashfield Private Clinic – Specialist medical clinic service | ✅ Generated | [HealthcareService-specialistmedical-ashfield-private-clinic.json](HealthcareService-specialistmedical-ashfield-private-clinic.json) |
 | Organization | Ashfield Private Hospital | ✅ Generated | [Organization-ashfield-private-hospital.json](Organization-ashfield-private-hospital.json) |
 | Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
-| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacutecarehospital-ashfield-private-hospital.json](HealthcareService-privateacutecarehospital-ashfield-private-hospital.json) |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacute-ashfield-private-hospital.json](HealthcareService-privateacute-ashfield-private-hospital.json) |
 | Practitioner | Dr. Emily Chen | ✅ Generated | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
 | PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ Generated | [PractitionerRole-obstetricianandgynaecologist-chen-emily.json](PractitionerRole-obstetricianandgynaecologist-chen-emily.json) |
 
@@ -255,7 +255,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Appointment | Follow-up – Counselling (2025-11-15, BOOK-2025-11-020, Telehealth) — shared with Section 6 | ✅ Generated | [Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
 | Organization | Ashfield Private Hospital | ✅ Generated | [Organization-ashfield-private-hospital.json](Organization-ashfield-private-hospital.json) |
 | Location | Ashfield Private Hospital | ✅ Generated | [Location-ashfield-private-hospital.json](Location-ashfield-private-hospital.json) |
-| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacutecarehospital-ashfield-private-hospital.json](HealthcareService-privateacutecarehospital-ashfield-private-hospital.json) |
+| HealthcareService | Ashfield Private Hospital – Private acute care hospital | ✅ Generated | [HealthcareService-privateacute-ashfield-private-hospital.json](HealthcareService-privateacute-ashfield-private-hospital.json) |
 | Practitioner | Dr. Mark Wilson | ✅ Generated | [Practitioner-wilson-mark.json](Practitioner-wilson-mark.json) |
 | PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ Generated | [PractitionerRole-surgeon-wilson-mark.json](PractitionerRole-surgeon-wilson-mark.json) |
 
@@ -358,7 +358,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | PractitionerRole | Sarah Evans – Physiotherapist, Bathurst Physio Centre | ✅ Generated | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json) |
 | Organization | Bathurst Psychology | ✅ Generated | [Organization-bathurst-psychology.json](Organization-bathurst-psychology.json) |
 | Location | Bathurst Psychology | ✅ Generated | [Location-bathurst-psychology.json](Location-bathurst-psychology.json) |
-| HealthcareService | Bathurst Psychology | ⏳ Not yet generated (no SNOMED service-type match in Type Codes) | — |
+| HealthcareService | Bathurst Psychology | ✅ Generated | [HealthcareService-clinicalpsychology-bathurst-psychology.json](HealthcareService-clinicalpsychology-bathurst-psychology.json) |
 | Practitioner | Dr. Rachel Patel | ✅ Generated | [Practitioner-patel-rachel.json](Practitioner-patel-rachel.json) |
 | PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-counsellorsnec-patel-rachel.json](PractitionerRole-counsellorsnec-patel-rachel.json) |
 

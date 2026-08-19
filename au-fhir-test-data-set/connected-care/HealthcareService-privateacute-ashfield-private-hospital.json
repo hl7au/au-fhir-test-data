@@ -1,6 +1,6 @@
 {
   "resourceType": "HealthcareService",
-  "id": "specialistmedicalclinicservice-ashfield-private-clinic",
+  "id": "privateacute-ashfield-private-hospital",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
@@ -8,35 +8,35 @@
   },
   "active": true,
   "providedBy": {
-    "reference": "Organization/ashfield-private-clinic"
+    "reference": "Organization/ashfield-private-hospital"
   },
   "type": [
     {
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "310061009",
-          "display": "Gynaecology services"
+          "code": "2421000175108",
+          "display": "Acute care inpatient service"
         }
       ],
-      "text": "Gynaecology service"
+      "text": "Private acute care Hospital"
     }
   ],
   "location": [
     {
-      "reference": "Location/ashfield-private-clinic"
+      "reference": "Location/ashfield-private-hospital"
     }
   ],
-  "name": "Ashfield Private Clinic",
+  "name": "Ashfield Private Hospital",
   "telecom": [
     {
       "system": "phone",
-      "value": "(02) 5550 1453",
+      "value": "(02) 5550 4544",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "contact@ashfieldprivateclinic.example.net"
+      "value": "contact@ashfieldprivatehospital.example.org"
     }
   ]
 }

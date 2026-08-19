@@ -1,6 +1,6 @@
 {
   "resourceType": "HealthcareService",
-  "id": "specialistmedicalclinicservice-kalgoorlie-specialist-clinic",
+  "id": "specialistmedical-ashfield-private-clinic",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-healthcareservice"
@@ -8,18 +8,18 @@
   },
   "active": true,
   "providedBy": {
-    "reference": "Organization/kalgoorlie-specialist-clinic"
+    "reference": "Organization/ashfield-private-clinic"
   },
   "type": [
     {
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "700434000",
-          "display": "Endocrinology service"
+          "code": "1304108006",
+          "display": "Physician service"
         }
       ],
-      "text": "Endocrinology service"
+      "text": "Specialist medical clinic service"
     }
   ],
   "specialty": [
@@ -27,28 +27,28 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "394583002",
-          "display": "Endocrinology"
+          "code": "394586005",
+          "display": "Gynaecology"
         }
       ],
-      "text": "Endocrinology Services"
+      "text": "Gynaecology services"
     }
   ],
   "location": [
     {
-      "reference": "Location/kalgoorlie-specialist-clinic"
+      "reference": "Location/ashfield-private-clinic"
     }
   ],
-  "name": "Kalgoorlie Specialist Clinic",
+  "name": "Ashfield Private Clinic",
   "telecom": [
     {
       "system": "phone",
-      "value": "(08) 5550 1221",
+      "value": "(02) 5550 1453",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "info@kalgoorliespecialistclinic.example.net"
+      "value": "contact@ashfieldprivateclinic.example.net"
     }
   ]
 }
