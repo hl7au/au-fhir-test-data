@@ -75,7 +75,6 @@
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
-  "occurrenceDateTime": "2025-10-01T09:00:00+10:00",
   "authoredOn": "2025-09-30",
   "requester": {
     "reference": "PractitionerRole/generalpractitioner-lee-chris"

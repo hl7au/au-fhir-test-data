@@ -24,8 +24,8 @@
                 "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
                 "valueCoding": {
                   "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
-                  "code": "BPDSF",
-                  "display": "Branded product with strengths and form"
+                  "code": "BPG",
+                  "display": "Branded package with no container"
                 }
               }
             ],
@@ -34,7 +34,7 @@
             "display": "Panadol 500 mg tablet, 20"
           }
         ],
-        "text": "Panadol 500 mg tablet, 20"
+        "text": "Panadol (paracetamol) 500 mg tablet, 20"
       },
       "form": {
         "coding": [
@@ -80,7 +80,7 @@
   "whenPrepared": "2025-11-02",
   "dosageInstruction": [
     {
-      "text": "500 mg every 6 hours as needed for pain (max 4 g/day); alternate with Ibuprofen"
+      "text": "Take TWO (2) tablets every 4-6 hours as needed for pain. Maximum EIGHT (8) tablets in 24 hours."
     }
   ]
 }

@@ -25,7 +25,7 @@
         "display": "Sertraline 100 mg tablet"
       }
     ],
-    "text": "Sertraline 100 mg tablet"
+    "text": "sertraline 100 mg tablet"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -34,14 +34,14 @@
   "context": {
     "reference": "Encounter/medicationreview-thompson-alex-20251102"
   },
-  "effectiveDateTime": "2025-11-02",
+  "dateAsserted": "2025-11-02",
   "informationSource": {
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
   "dosage": [
     {
-      "text": "100 mg (1 tablet) once daily each morning",
+      "text": "ONE tablet (100 mg) once daily each morning.",
       "timing": {
         "repeat": {
           "frequency": 1,

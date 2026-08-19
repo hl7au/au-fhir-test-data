@@ -15,11 +15,11 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "310138009",
-          "display": "Surgical service"
+          "code": "310061009",
+          "display": "Gynaecology services"
         }
       ],
-      "text": "Specialist medical clinic service"
+      "text": "Gynaecology service"
     }
   ],
   "location": [
