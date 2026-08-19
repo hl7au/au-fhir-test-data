@@ -1,6 +1,6 @@
 {
   "resourceType": "Observation",
-  "id": "bloodpressure-1",
+  "id": "bloodpressure-2",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bloodpressure"

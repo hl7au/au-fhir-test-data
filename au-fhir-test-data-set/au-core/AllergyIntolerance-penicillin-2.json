@@ -1,6 +1,6 @@
 {
   "resourceType": "AllergyIntolerance",
-  "id": "nkda2",
+  "id": "penicillin-2",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
@@ -27,23 +27,48 @@
   "category": [
     "medication"
   ],
+  "criticality": "high",
   "code": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "409137002"
+        "code": "764146007"
       }
     ],
-    "text": "No known drug allergy"
+    "text": "Penicillin"
   },
   "patient": {
-    "reference": "Patient/baratz-toni"
+    "reference": "Patient/italia-sofia"
   },
-  "recordedDate": "2024-07-14",
-  "recorder": {
-    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+  "onsetAge": {
+    "value": 17,
+    "unit": "year",
+    "system": "http://unitsofmeasure.org",
+    "code": "a"
   },
-  "asserter": {
-    "reference": "PractitionerRole/generalpractitioner-harding-diana"
-  }
+  "reaction": [
+    {
+      "substance": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "764146007"
+          }
+        ],
+        "text": "Penicillin"
+      },
+      "manifestation": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "278528006"
+            }
+          ],
+          "text": "Facial swelling"
+        }
+      ],
+      "severity": "mild"
+    }
+  ]
 }

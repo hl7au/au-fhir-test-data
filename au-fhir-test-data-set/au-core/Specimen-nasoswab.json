@@ -2,27 +2,33 @@
   "resourceType" : "Specimen",
   "id" : "nasoswab",
   "type" : {
-    "coding" : [{
-      "system" : "http://snomed.info/sct",
-      "code" : "257261003",
-      "display" : "Swab"
-    }]
+    "coding" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "257261003",
+        "display" : "Swab"
+      }
+    ]
   },
   "subject" : {
-    "reference" : "Patient/howe-deangelo"
+    "reference" : "Patient/wang-li"
   },
   "collection" : {
     "collectedDateTime" : "2021-02-15T12:00:00+10:00",
     "bodySite" : {
-      "coding" : [{
-        "system" : "http://snomed.info/sct",
-        "code" : "71836000",
-        "display" : "Nasopharyngeal structure"
-      }],
+      "coding" : [
+        {
+          "system" : "http://snomed.info/sct",
+          "code" : "71836000",
+          "display" : "Nasopharyngeal structure"
+        }
+      ],
       "text" : "Nasopharyngeal"
     }
   },
-  "note" : [{
-    "text" : "Collection Setting COVID HSC Assessment Clinic"
-  }]
+  "note" : [
+    {
+      "text" : "Collection Setting COVID HSC Assessment Clinic"
+    }
+  ]
 }

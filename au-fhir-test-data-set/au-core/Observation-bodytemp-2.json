@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "heartrate-1",
+  "id": "bodytemp-2",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-heartrate"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-bodytemp"
     ]
   },
   "status": "final",
@@ -23,33 +23,32 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "8867-4",
-        "display": "Heart rate"
+        "code": "8310-5",
+        "display": "Body temperature"
       },
       {
         "system": "http://snomed.info/sct",
-        "code": "364075005",
-        "display": "Heart rate"
+        "code": "386725007"
       }
     ],
-    "text": "Heart rate"
+    "text": "Body temperature"
   },
   "subject": {
-    "reference": "Patient/howe-deangelo"
+    "reference": "Patient/baratz-toni"
   },
   "encounter": {
-    "display": "GP Visit"
+    "reference": "Encounter/annualvisit-2"
   },
-  "effectiveDateTime": "2016-07-02",
+  "effectiveDateTime": "2022-02-10",
   "performer": [
     {
       "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
     }
   ],
   "valueQuantity": {
-    "value": 80,
-    "unit": "beats/minute",
+    "value": 37.5,
+    "unit": "C",
     "system": "http://unitsofmeasure.org",
-    "code": "/min"
+    "code": "Cel"
   }
 }
