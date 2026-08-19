@@ -25,7 +25,7 @@
     "reference": "Practitioner/sutherland-sallie"
   },
   "organization": {
-    "reference": "Organization/murrabit-public-hospital"
+    "reference": "Organization/murrabit-public-hopsital"
   },
   "code": [
     {
@@ -51,7 +51,7 @@
   ],
   "location": [
     {
-      "reference": "Location/murrabit-public-hospital"
+      "reference": "Location/murrabit-public-hopsital"
     }
   ],
   "telecom": [
