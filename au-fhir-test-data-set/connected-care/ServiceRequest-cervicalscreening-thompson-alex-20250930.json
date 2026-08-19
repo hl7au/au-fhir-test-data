@@ -24,7 +24,7 @@
         ]
       },
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
-      "value": "REQ-2025-10-001-1",
+      "value": "XX",
       "assigner": {
         "reference": "Organization/bathurst-medical-centre",
         "display": "Bathurst Medical Centre"
@@ -75,7 +75,6 @@
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
-  "occurrenceDateTime": "2025-10-01T09:00:00+10:00",
   "authoredOn": "2025-09-30",
   "requester": {
     "reference": "PractitionerRole/generalpractitioner-lee-chris"
