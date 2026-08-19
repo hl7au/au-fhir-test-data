@@ -19,7 +19,7 @@
     "reference" : "Practitioner/chau-fryer"
   },
   "organization" : {
-    "reference" : "Organization/murrabit-hospital"
+    "reference" : "Organization/murrabit-public-hopsital"
   },
   "code" : [{
     "coding" : [{
