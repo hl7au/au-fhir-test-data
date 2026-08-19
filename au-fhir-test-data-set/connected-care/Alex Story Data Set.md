@@ -232,7 +232,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Image Viewer Access | Intra-op images attached; Viewed by: Surgical Team (HPI-O: 3333-4444-5555-6666) | No |
 | Publication Status | Published: Shared Care Plan; Notified: GP, Specialist, Patient | *Yes |
 | Provider Organisation | Ashfield Private Hospital (HPI-O: 3333-4444-5555-6666) | *Yes |
-| Organisation Address | 63 Victoria St, Ashfield, NSW 2131 | No |
+| Organisation Address | 70 Victoria St, Ashfield, NSW 2131 | No |
 | Clinician | Dr. Mark Wilson (Surgeon, HPI-I: 3434-5656-7878-9090) | *Yes |
 
 ### FHIR Resources – Private Hospital (Theatre / Inpatient)
@@ -442,3 +442,4 @@ Changes made to this data set while building the connected-care FHIR test data, 
 | 2026-08-12 | Built a `ServiceRequest` (REQ-2025-11-009) authorising the cone biopsy day surgery that `Appointment-hospitalbooking-thompson-alex-20251101.json` is `basedOn` — this identifier value is **synthesised**, not sourced from the spreadsheet | The story data gives a Hospital Booking ID for the appointment but no separate request/order ID for the surgery itself; a `ServiceRequest` is still needed so the Appointment has something to be `basedOn` |
 | 2026-08-13 | `MedicationDispense-ibuprofen-thompson-alex-20251102.json` quantity changed from the story's **25 tablets** to **24 tablets** | 25 doesn't match either real Nurofen Double Strength pack size (12 or 24); a single 24-pack covers the revised 5-day course (max 3 tablets/day = 15 tablets) and matches the real Trade Product Pack, `930613011000036109` |
 | 2026-08-13 | Section 6's "Balance Training: 2025-10-09, 14:00 PM" (within the Physio Details field) is not modelled as a separate `Encounter` | This date predates the physio eReferral (2025-11-01) and hospital admission (2025-11-01) entirely — likely a stray/templated entry in the source spreadsheet, not a real event in Alex's pathway. Only the 2025-11-10 pelvic-health physio visit is built |
+| 2026-08-19 | Ashfield Private Hospital's address updated from **63 Victoria St** to **70 Victoria St**, Ashfield, NSW 2131 | Services Australia registered the organisation with this address in their test data |
