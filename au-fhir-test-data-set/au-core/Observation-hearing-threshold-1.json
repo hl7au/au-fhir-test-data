@@ -22,7 +22,7 @@
     "text" : "Hearing threshold Ear - left --500 Hz"
   },
   "subject" : {
-    "reference" : "Patient/ronny-irvine"
+    "reference" : "Patient/irvine-ronny-lawrence"
   },
   "effectiveDateTime" : "2020-11-06T10:45:00-05:00",
   "performer" : [{
