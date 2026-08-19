@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "310080006",
-          "display": "Pharmacy service"
+          "code": "846609000",
+          "display": "Community pharmacy"
         }
       ],
       "text": "Community Pharmacy"

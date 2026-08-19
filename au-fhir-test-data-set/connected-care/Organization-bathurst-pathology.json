@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "310074003",
-          "display": "Pathology service"
+          "code": "722171005",
+          "display": "Diagnostic institution"
         }
       ],
       "text": "Pathology laboratory service"

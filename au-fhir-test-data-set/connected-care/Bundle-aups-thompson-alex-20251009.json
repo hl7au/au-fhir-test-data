@@ -259,8 +259,8 @@
               },
               {
                 "system": "http://snomed.info/sct",
-                "code": "700232004",
-                "display": "General medical service"
+                "code": "394761003",
+                "display": "GP practice site"
               }
             ],
             "text": "General medical practitioner service"

@@ -13,6 +13,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8539",
           "display": "Other Allied Health Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "257585005",
+          "display": "Clinic"
         }
       ],
       "text": "Clinical psychology service"

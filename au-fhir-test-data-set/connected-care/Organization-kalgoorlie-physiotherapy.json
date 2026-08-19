@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "722140001",
-          "display": "Physiotherapy service"
+          "code": "702935001",
+          "display": "Physiotherapy clinic"
         }
       ],
       "text": "Physiotherapy Services"

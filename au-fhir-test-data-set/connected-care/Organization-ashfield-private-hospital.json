@@ -16,8 +16,8 @@
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "2421000175108",
-          "display": "Acute care inpatient service"
+          "code": "25731000087105",
+          "display": "Inpatient acute care environment"
         }
       ],
       "text": "Private acute care Hospital"
