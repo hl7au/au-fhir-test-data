@@ -1,17 +1,24 @@
 {
-  "resourceType" : "Organization",
-  "id" : "mitchells-hill-audiology",
-  "meta" : {
-    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"]
+  "resourceType": "Organization",
+  "id": "mitchells-hill-audiology",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
   },
-  "identifier" : [{
-    "type" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org.au/CodeSystem/v2-0203",
-        "code" : "NOI",
-        "display" : "National Organisation Identifier"
-      }],
-      "text" : "HPI-O"
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003626566707032"
     },
     {
       "type": {
@@ -51,37 +58,19 @@
       "value": "0355503095",
       "use": "work"
     },
-    "system" : "http://hl7.org.au/id/abn",
-    "value" : "81129842694"
-  }],
-  "type" : [{
-    "coding" : [{
-      "system" : "http://snomed.info/sct",
-      "code" : "702824005",
-      "display" : "Audiology clinic"
-    },
     {
-      "system" : "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
-      "code" : "8539",
-      "display" : "Other Allied Health Services"
-    }]
-  }],
-  "name" : "Mitchells Hill Audiology",
-  "telecom" : [{
-    "system" : "phone",
-    "value" : "(03) 5550 3095"
-  },
-  {
-    "system" : "email",
-    "value" : "reception@mitchellshillaudiology.example.com.au",
-    "use" : "work"
-  }],
-  "address" : [{
-    "type" : "physical",
-    "line" : ["87 Freedom Pnt"],
-    "city" : "Mitchells Hill",
-    "state" : "VIC",
-    "postalCode" : "3478",
-    "country" : "AU"
-  }]
+      "system": "email",
+      "value": "reception@mitchellshillaudiology.example.com.au"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "87 Freedom Pnt"
+      ],
+      "city": "Mitchells Hill",
+      "state": "VIC",
+      "postalCode": "3478"
+    }
+  ]
 }
