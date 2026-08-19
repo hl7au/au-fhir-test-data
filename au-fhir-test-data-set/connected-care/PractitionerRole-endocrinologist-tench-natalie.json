@@ -34,6 +34,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253315",
           "display": "Endocrinologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "61894003",
+          "display": "Endocrinologist"
         }
       ]
     }

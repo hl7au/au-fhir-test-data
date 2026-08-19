@@ -34,9 +34,25 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253913",
           "display": "Obstetrician and Gynaecologist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "309367003",
+          "display": "Obstetrician and gynaecologist"
         }
       ],
       "text": "Reproductive Endocrinologist/Infertility Specialist"
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394585009",
+          "display": "Obstetrics and gynaecology"
+        }
+      ]
     }
   ],
   "location": [

@@ -360,7 +360,7 @@ See the [Pending / Placeholder Data](#pending--placeholder-data) notes at the bo
 | Location | Bathurst Psychology | ✅ Generated | [Location-bathurst-psychology.json](Location-bathurst-psychology.json) |
 | HealthcareService | Bathurst Psychology | ✅ Generated | [HealthcareService-clinicalpsychology-bathurst-psychology.json](HealthcareService-clinicalpsychology-bathurst-psychology.json) |
 | Practitioner | Dr. Rachel Patel | ✅ Generated | [Practitioner-patel-rachel.json](Practitioner-patel-rachel.json) |
-| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-counsellorsnec-patel-rachel.json](PractitionerRole-counsellorsnec-patel-rachel.json) |
+| PractitionerRole | Dr. Rachel Patel – Counsellor, Bathurst Psychology | ✅ Generated | [PractitionerRole-counsellor-patel-rachel.json](PractitionerRole-counsellor-patel-rachel.json) |
 
 ## 7. Population Health / Analytics
 

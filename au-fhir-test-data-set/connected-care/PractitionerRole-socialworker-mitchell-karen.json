@@ -19,6 +19,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "272511",
           "display": "Social Worker"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "106328005",
+          "display": "Social worker"
         }
       ]
     }

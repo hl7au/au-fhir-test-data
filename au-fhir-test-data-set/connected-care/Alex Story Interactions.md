@@ -237,7 +237,7 @@ sequenceDiagram
 | 2 | Pre-populate Medicines eCDS | SMART Medicines eCDS App | Hospital EMR | *Various* |
 | 3 | Submit Discharge Summary | Hospital EMR | Shared EHR/HIE | [DocumentReference-dischargesummary-thompson-alex-20251101.json](DocumentReference-dischargesummary-thompson-alex-20251101.json) |
 | 4 | Book GP Appointment | Consumer App | GP PMS | [Appointment-followupgp-thompson-alex-20251108.json](Appointment-followupgp-thompson-alex-20251108.json) |
-| 5 | Search Allied Health Provider | Consumer App | Provider Directory | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json)<br/>[PractitionerRole-counsellorsnec-patel-rachel.json](PractitionerRole-counsellorsnec-patel-rachel.json) |
+| 5 | Search Allied Health Provider | Consumer App | Provider Directory | [PractitionerRole-physiotherapist-evans-sarah.json](PractitionerRole-physiotherapist-evans-sarah.json)<br/>[PractitionerRole-counsellor-patel-rachel.json](PractitionerRole-counsellor-patel-rachel.json) |
 | 6 | Book Allied Health Appointment | Consumer App | Allied Health PMS | [Appointment-followupphysio-thompson-alex-20251110.json](Appointment-followupphysio-thompson-alex-20251110.json)<br/>[Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
 | 7 | Retrieve Discharge Summary | Consumer App | Shared EHR/HIE | [DocumentReference-dischargesummary-thompson-alex-20251101.json](DocumentReference-dischargesummary-thompson-alex-20251101.json) |
 

@@ -19,6 +19,11 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "311299",
           "display": "Medical Technician"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "307988006",
+          "display": "Medical technician"
         }
       ]
     }

@@ -19,6 +19,22 @@
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "252411",
           "display": "Occupational Therapist"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "80546007",
+          "display": "Occupational therapist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394821009",
+          "display": "Occupational medicine"
         }
       ]
     }

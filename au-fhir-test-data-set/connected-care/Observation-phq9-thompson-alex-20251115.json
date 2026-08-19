@@ -32,7 +32,7 @@
   "effectiveDateTime": "2025-11-15",
   "performer": [
     {
-      "reference": "PractitionerRole/counsellorsnec-patel-rachel",
+      "reference": "PractitionerRole/counsellor-patel-rachel",
       "display": "Dr Rachel Patel"
     }
   ],
