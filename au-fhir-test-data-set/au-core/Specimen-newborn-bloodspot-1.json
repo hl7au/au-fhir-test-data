@@ -1,6 +1,6 @@
 {
   "resourceType": "Specimen",
-  "id": "newborn-bloodspot",
+  "id": "newborn-bloodspot-1",
   "type" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
