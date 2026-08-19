@@ -74,7 +74,7 @@
   ],
   "result" : [
     {
-      "reference" : "Observation/rh-status-1",
+      "reference" : "Observation/rh-status",
       "display" : "Blood Group Antibody Screen"
     }
   ],
