@@ -1,0 +1,87 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "newborn-bloodspot-screening-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport",
+      "http://hl7.org.au/fhir/StructureDefinition/au-pathologyreport"
+    ]
+  },
+    "identifier" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "FILL"
+          }
+        ]
+      },
+      "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
+      "value" : "22-091622-NBS-01",
+      "assigner" : {
+        "display" : "Pullabooka Pathology"
+      }
+    },
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "FGN"
+          }
+        ]
+      },
+      "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003628233373131",
+      "value" : "22-091622",
+      "assigner" : {
+        "display" : "Pullabooka Pathology"
+      }
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "LAB",
+          "display": "Laboratory"
+        }
+      ],
+      "text": "Laboratory"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "57128-1",
+        "display": "Newborn Screening Report summary panel"
+      }
+    ],
+    "text": "Newborn bloodspot screening"
+  },
+  "subject": {
+    "reference": "Patient/baby-banks-john"
+  },
+  "effectiveDateTime": "2022-09-16T10:00:00+10:00",
+  "issued": "2022-09-20T14:30:00+10:00",
+  "performer" : [
+    {
+      "reference" : "PractitionerRole/pathologist-pratley-philomena"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/newborn-screening-pku-1"
+    },
+    {
+      "reference": "Observation/newborn-screening-congenital-hypothyroidism-1"
+    },
+    {
+      "reference": "Observation/newborn-screening-cystic-fibrosis-1"
+    }
+  ],
+  "conclusion": "Newborn bloodspot screening negative for the conditions reported."
+}
