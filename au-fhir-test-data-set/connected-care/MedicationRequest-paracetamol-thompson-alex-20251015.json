@@ -10,9 +10,19 @@
     {
       "system": "http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/8003624900045276",
       "type": {
-        "text": "eScript ID"
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "LPN"
+          }
+        ],
+        "text": "Local Prescription Identifier"
       },
-      "value": "SCR-2025-10-006"
+      "value": "SCR-2025-10-006",
+      "assigner": {
+        "reference": "Organization/ashfield-private-clinic",
+        "display": "Ashfield Private Clinic"
+      }
     }
   ],
   "status": "active",
