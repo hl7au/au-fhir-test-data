@@ -1,0 +1,53 @@
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "simvastatin-pbs",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
+  },
+  "status" : "completed",
+  "medicationReference" : {
+    "reference" : "Medication/simvastatin-pbs"
+  },
+  "subject" : {
+    "reference" : "Patient/hayes-arianne"
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "Organization/appin-pharmacy"
+    }
+  }],
+  "authorizingPrescription" : [{
+    "reference" : "MedicationRequest/simvastatin-pbs"
+  }],
+  "quantity" : {
+    "value" : 30,
+    "unit" : "tablet"
+  },
+  "whenPrepared" : "2020-01-15",
+  "note" : [{
+    "text" : "Advised to avoid grapefruit juice due to potential interaction."
+  }],
+  "dosageInstruction" : [{
+    "text" : "Take one tablet daily",
+    "timing" : {
+      "repeat" : {
+        "frequency" : 1,
+        "period" : 1,
+        "periodUnit" : "d"
+      }
+    },
+    "route" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "26643006",
+        "display" : "Oral route"
+      }]
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 40,
+        "unit" : "mg"
+      }
+    }]
+  }]
+}
