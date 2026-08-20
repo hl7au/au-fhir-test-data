@@ -22,7 +22,7 @@
       ],
       "text": "Placer Group Number"
     },
-    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046240",
     "value": "REQ-2025-10-001",
     "assigner": {
       "reference": "Organization/bathurst-medical-centre",
