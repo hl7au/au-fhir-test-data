@@ -75,5 +75,11 @@
       ],
       "text": "High-risk HPV detected (cytology). Reflex liquid-based cytology reported as a high-grade squamous intraepithelial lesion, consistent with CIN2/3. Colposcopy referral recommended per the National Cervical Screening Program pathway."
     }
+  ],
+  "presentedForm": [
+    {
+      "contentType": "application/pdf",
+      "url": "Binary/PATH-2025-10-002-Cytology"
+    }
   ]
 }
