@@ -12,17 +12,15 @@
     }
   ],
   "status": "completed",
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "387713003",
-          "display": "Surgical procedure"
-        }
-      ]
-    }
-  ],
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "387713003",
+        "display": "Surgical procedure"
+      }
+    ]
+  },
   "code": {
     "coding": [
       {
@@ -47,7 +45,7 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/obstetrician-wilson-mark",
+        "reference": "PractitionerRole/obgyn-wilson-mark",
         "display": "Dr Mark Wilson"
       }
     }

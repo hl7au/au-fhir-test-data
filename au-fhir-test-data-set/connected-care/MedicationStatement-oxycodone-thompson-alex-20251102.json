@@ -35,9 +35,9 @@
     "reference": "Encounter/medicationreview-thompson-alex-20251102"
   },
   "effectivePeriod": {
-    "start": "2025-11-02",
-    "end": "2025-11-05"
+    "start": "2025-11-02"
   },
+  "dateAsserted": "2025-11-02",
   "reasonCode": [
     {
       "coding": [
@@ -59,8 +59,7 @@
           "period": 1,
           "periodUnit": "d",
           "boundsPeriod": {
-            "start": "2025-11-02",
-            "end": "2025-11-05"
+            "start": "2025-11-02"
           }
         }
       },

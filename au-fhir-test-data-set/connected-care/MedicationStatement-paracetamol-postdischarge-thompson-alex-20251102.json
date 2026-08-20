@@ -34,6 +34,7 @@
   "context": {
     "reference": "Encounter/medicationreview-thompson-alex-20251102"
   },
+  "dateAsserted": "2025-11-02",
   "reasonCode": [
     {
       "coding": [

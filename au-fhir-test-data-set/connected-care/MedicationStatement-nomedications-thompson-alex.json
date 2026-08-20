@@ -21,7 +21,11 @@
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
+  "context": {
+    "reference": "Encounter/gpconsultation-thompson-alex-20251009"
+  },
   "effectiveDateTime": "2025-10-09",
+  "dateAsserted": "2025-10-09",
   "note": [
     {
       "text": "Recorded in Alex's AU Patient Summary (AUPS) as no active medications; reviewed, not newly identified, at the GP consultation on 2025-10-09."

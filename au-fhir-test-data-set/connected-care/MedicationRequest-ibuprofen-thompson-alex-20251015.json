@@ -36,17 +36,17 @@
             "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
             "valueCoding": {
               "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
-              "code": "UPDSF",
-              "display": "Unbranded product with strengths and form"
+              "code": "UPG",
+              "display": "Unbranded package with no container"
             }
           }
         ],
         "system": "http://snomed.info/sct",
-        "code": "23262011000036102",
-        "display": "Ibuprofen 400 mg tablet"
+        "code": "932369011000036108",
+        "display": "Ibuprofen 400 mg tablet, 24"
       }
     ],
-    "text": "ibuprofen 400 mg tablet"
+    "text": "ibuprofen 400 mg tablet, 24"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -57,7 +57,7 @@
   },
   "authoredOn": "2025-10-15",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-chen-emily",
+    "reference": "PractitionerRole/obgyn-chen-emily",
     "display": "Dr Emily Chen"
   },
   "reasonCode": [

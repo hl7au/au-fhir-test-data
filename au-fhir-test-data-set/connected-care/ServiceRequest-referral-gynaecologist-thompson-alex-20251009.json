@@ -63,7 +63,7 @@
   },
   "performer": [
     {
-      "reference": "PractitionerRole/obstetrician-chen-emily",
+      "reference": "PractitionerRole/obgyn-chen-emily",
       "display": "Dr Emily Chen"
     }
   ],

@@ -36,6 +36,23 @@
       "reference": "ServiceRequest/colposcopybiopsy-thompson-alex-20251010"
     }
   ],
+  "requisition": {
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "PGN",
+          "display": "Placer Group Number"
+        }
+      ]
+    },
+    "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003624900045276",
+    "value": "REQ-2025-10-007",
+    "assigner": {
+      "reference": "Organization/ashfield-private-clinic",
+      "display": "Ashfield Private Clinic"
+    }
+  },
   "status": "completed",
   "intent": "order",
   "category": [
@@ -53,7 +70,7 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "110469002",
+        "code": "252416005",
         "display": "Histopathology test"
       }
     ],
@@ -63,10 +80,13 @@
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
+  "encounter": {
+    "reference": "Encounter/colposcopy-thompson-alex-20251015"
+  },
   "occurrenceDateTime": "2025-10-15T11:30:00+11:00",
   "authoredOn": "2025-10-15",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-chen-emily",
+    "reference": "PractitionerRole/obgyn-chen-emily",
     "display": "Dr Emily Chen"
   }
 }

@@ -1,32 +1,32 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "physiotherapist-smith-john",
+  "id": "phlebotomist-johnson-sally",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/smith-john"
+    "reference": "Practitioner/johnson-sally"
   },
   "organization": {
-    "reference": "Organization/kalgoorlie-physiotherapy"
+    "reference": "Organization/bathurst-pathology"
   },
   "code": [
     {
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "252511",
-          "display": "Physiotherapist"
+          "code": "311299",
+          "display": "Medical Technicians nec"
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "36682004",
-          "display": "Physiotherapist"
+          "code": "307988006",
+          "display": "Medical technician"
         }
       ],
-      "text": "Physiotherapist"
+      "text": "Phlebotomist"
     }
   ],
   "specialty": [
@@ -34,26 +34,26 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "722138006",
-          "display": "Physiotherapy"
+          "code": "1303756001",
+          "display": "Phlebology"
         }
       ]
     }
   ],
   "location": [
     {
-      "reference": "Location/kalgoorlie-physiotherapy"
+      "reference": "Location/bathurst-pathology"
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "(08) 5550 4555",
+      "value": "(02) 5550 4562",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "john.smith@kalgoorliephysiotherapy.example.com",
+      "value": "sally.johnson@bathurstpathology.example.com",
       "use": "work"
     }
   ]

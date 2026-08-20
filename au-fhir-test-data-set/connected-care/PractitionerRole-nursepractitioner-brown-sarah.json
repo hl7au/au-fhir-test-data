@@ -40,18 +40,8 @@
           "code": "224571005",
           "display": "Nurse practitioner"
         }
-      ]
-    }
-  ],
-  "specialty": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "722165004",
-          "display": "Nursing"
-        }
-      ]
+      ],
+      "text": "Nurse Practitioner"
     }
   ],
   "location": [

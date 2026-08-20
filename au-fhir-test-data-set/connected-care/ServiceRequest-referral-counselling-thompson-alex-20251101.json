@@ -56,12 +56,12 @@
   },
   "authoredOn": "2025-11-01",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-chen-emily",
+    "reference": "PractitionerRole/obgyn-chen-emily",
     "display": "Dr Emily Chen"
   },
   "performer": [
     {
-      "reference": "PractitionerRole/counsellor-patel-rachel",
+      "reference": "PractitionerRole/mentalhealthcounsellor-patel-rachel",
       "display": "Dr Rachel Patel"
     }
   ],

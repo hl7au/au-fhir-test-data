@@ -17,17 +17,17 @@
             "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
             "valueCoding": {
               "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
-              "code": "UPDSF",
-              "display": "Unbranded product with strengths and form"
+              "code": "UPG",
+              "display": "Unbranded package with no container"
             }
           }
         ],
         "system": "http://snomed.info/sct",
-        "code": "23628011000036109",
-        "display": "Paracetamol 500 mg tablet"
+        "code": "46259011000036105",
+        "display": "Paracetamol 500 mg tablet, 20"
       }
     ],
-    "text": "paracetamol 500 mg tablet"
+    "text": "paracetamol 500 mg tablet, 20"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -38,7 +38,7 @@
   },
   "authoredOn": "2025-11-01",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-wilson-mark",
+    "reference": "PractitionerRole/obgyn-wilson-mark",
     "display": "Dr Mark Wilson"
   },
   "reasonCode": [
@@ -98,13 +98,5 @@
         }
       }
     }
-  ],
-  "dispenseRequest": {
-    "expectedSupplyDuration": {
-      "value": 5,
-      "unit": "days",
-      "system": "http://unitsofmeasure.org",
-      "code": "d"
-    }
-  }
+  ]
 }

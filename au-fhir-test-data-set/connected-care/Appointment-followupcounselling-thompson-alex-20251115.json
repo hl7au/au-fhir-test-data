@@ -52,7 +52,7 @@
     },
     {
       "actor": {
-        "reference": "PractitionerRole/counsellor-patel-rachel",
+        "reference": "PractitionerRole/mentalhealthcounsellor-patel-rachel",
         "display": "Dr Rachel Patel"
       },
       "status": "accepted"

@@ -1,14 +1,14 @@
 {
   "resourceType": "Task",
-  "id": "taskfulfilment-cervicalscreening-thompson-alex-20250930",
+  "id": "taskgroup-cervicalscreening-thompson-alex-20250930",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
     ],
     "tag": [
       {
         "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
-        "code": "fulfilment-task"
+        "code": "fulfilment-task-group"
       }
     ]
   },
@@ -29,14 +29,8 @@
       "display": "Bathurst Medical Centre"
     }
   },
-  "partOf": [
-    {
-      "reference": "Task/taskgroup-cervicalscreening-thompson-alex-20250930"
-    }
-  ],
   "status": "completed",
   "intent": "order",
-  "priority": "routine",
   "code": {
     "coding": [
       {
@@ -45,19 +39,14 @@
       }
     ]
   },
-  "focus": {
-    "reference": "ServiceRequest/cervicalscreening-thompson-alex-20250930"
-  },
   "for": {
     "reference": "Patient/thompson-alex"
   },
   "authoredOn": "2025-09-30",
-  "lastModified": "2025-10-08T09:00:00+11:00",
   "requester": {
     "reference": "PractitionerRole/generalpractitioner-lee-chris"
   },
   "owner": {
-    "reference": "Organization/bathurst-pathology",
-    "display": "Bathurst Pathology"
+    "reference": "Organization/bathurst-pathology"
   }
 }

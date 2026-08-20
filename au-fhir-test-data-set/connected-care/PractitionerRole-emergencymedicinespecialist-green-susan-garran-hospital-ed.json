@@ -33,14 +33,15 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
           "code": "253912",
-          "display": "Emergency Medicine Specialist/Emergency Physician"
+          "display": "Emergency Medicine Specialist"
         },
         {
           "system": "http://snomed.info/sct",
           "code": "309294001",
           "display": "Emergency department physician"
         }
-      ]
+      ],
+      "text": "Emergency Medicine Specialist"
     }
   ],
   "specialty": [

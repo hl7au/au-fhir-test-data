@@ -75,6 +75,9 @@
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
+  "encounter": {
+    "reference": "Encounter/gpconsultation-thompson-alex-20250930"
+  },
   "authoredOn": "2025-09-30",
   "requester": {
     "reference": "PractitionerRole/generalpractitioner-lee-chris"

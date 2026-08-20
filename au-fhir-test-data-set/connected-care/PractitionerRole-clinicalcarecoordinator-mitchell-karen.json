@@ -1,47 +1,48 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "medicaltechnician-johnson-sally",
+  "id": "clinicalcarecoordinator-mitchell-karen",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
     ]
   },
   "practitioner": {
-    "reference": "Practitioner/johnson-sally"
+    "reference": "Practitioner/mitchell-karen"
   },
   "organization": {
-    "reference": "Organization/bathurst-pathology"
+    "reference": "Organization/kalgoorlie-aged-care-service"
   },
   "code": [
     {
       "coding": [
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
-          "code": "311299",
-          "display": "Medical Technician"
+          "code": "272511",
+          "display": "Social Worker"
         },
         {
           "system": "http://snomed.info/sct",
-          "code": "307988006",
-          "display": "Medical technician"
+          "code": "1011231000168101",
+          "display": "Clinical care coordinator"
         }
-      ]
+      ],
+      "text": "Clinical Care Coordinator"
     }
   ],
   "location": [
     {
-      "reference": "Location/bathurst-pathology"
+      "reference": "Location/kalgoorlie-aged-care-service"
     }
   ],
   "telecom": [
     {
       "system": "phone",
-      "value": "(02) 5550 4562",
+      "value": "(08) 5550 1232",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "sally.johnson@bathurstpathology.example.com",
+      "value": "karen.mitchell@kalgoorlieagedcareservice.example.net",
       "use": "work"
     }
   ]
