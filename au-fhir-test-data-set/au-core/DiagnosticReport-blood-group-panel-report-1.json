@@ -1,0 +1,90 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "blood-group-panel-report-1",
+  "meta" : {
+    "profile" : [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-diagnosticreport",
+      "http://hl7.org.au/fhir/StructureDefinition/au-pathologyreport"
+    ]
+  },
+  "identifier" : [
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "FILL"
+          }
+        ]
+      },
+      "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003626566707024",
+      "value" : "12-155222-BGP-01",
+      "assigner" : {
+        "display" : "Trentham Pathology"
+      }
+    },
+    {
+      "type" : {
+        "coding" : [
+          {
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "FGN"
+          }
+        ]
+      },
+      "system" : "http://ns.electronichealth.net.au/id/hpio-scoped/report/1.0/8003626566707024",
+      "value" : "12-155222",
+      "assigner" : {
+        "display" : "Trentham Pathology"
+      }
+    }
+  ],
+  "status" : "final",
+  "category" : [
+    {
+      "coding" : [
+        {
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code" : "LAB",
+          "display" : "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code" : {
+    "coding" : [
+      {
+        "system" : "http://snomed.info/sct",
+        "code" : "20099001",
+        "display" : "Blood typing, ABO, Rho(D) and RBC antibody screening"
+      }
+    ]
+  },
+  "subject" : {
+    "reference" : "Patient/baratz-toni"
+  },
+  "effectiveDateTime" : "2015-06-12T12:00:00+10:00",
+  "issued" : "2015-06-13T10:00:00+10:00",
+  "performer" : [
+    {
+      "reference" : "Organization/trentham-pathology"
+    }
+  ],
+  "result" : [
+    {
+      "reference" : "Observation/blood-group",
+      "display" : "Blood Group"
+    },
+    {
+      "reference" : "Observation/rh-status",
+      "display" : "Blood Group Antibody Screen"
+    }
+  ],
+  "presentedForm" : [
+    {
+      "contentType" : "application/pdf",
+      "url" : "https://hl7.org.au/assets/data/diagnosticreport-blood-group-panel-report.pdf",
+      "title" : "Baratz - Blood Type and Indirect Antibody Screen"
+    }
+  ]
+}
