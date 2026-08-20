@@ -52,47 +52,5 @@
       "postalCode": "6430"
     }
   ],
-  "gender": "unknown",
-  "qualification": [
-    {
-      "extension": [
-        {
-          "extension": [
-            {
-              "url": "ahpraProfession",
-              "valueCodeableConcept": {
-                "text": "Social Workers"
-              }
-            }
-          ],
-          "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
-        }
-      ],
-      "identifier": [
-        {
-          "type": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
-                "code": "AHPRA",
-                "display": "Australian Health Practitioner Regulation Agency Registration Number"
-              }
-            ],
-            "text": "Ahpra Registration Number"
-          },
-          "system": "http://hl7.org.au/id/ahpra-registration-number",
-          "value": "HAC0000000419"
-        }
-      ],
-      "code": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
-            "code": "AUAHPRAProfession",
-            "display": "AHPRA Profession"
-          }
-        ]
-      }
-    }
-  ]
+  "gender": "unknown"
 }

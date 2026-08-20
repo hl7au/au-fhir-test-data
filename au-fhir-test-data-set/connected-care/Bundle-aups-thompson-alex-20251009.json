@@ -124,7 +124,7 @@
                 {
                   "system": "http://loinc.org",
                   "code": "30954-2",
-                  "display": "Relevant diagnostic tests/laboratory data Narrative"
+                  "display": "Relevant diagnostic tests/laboratory data note"
                 }
               ]
             },
@@ -145,7 +145,7 @@
                 {
                   "system": "http://loinc.org",
                   "code": "8716-3",
-                  "display": "Vital signs"
+                  "display": "Vital signs note"
                 }
               ]
             },
@@ -311,12 +311,12 @@
               {
                 "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
                 "code": "8511",
-                "display": "General Practice"
+                "display": "General Practice Medical Services"
               },
               {
                 "system": "http://snomed.info/sct",
                 "code": "394761003",
-                "display": "GP practice site"
+                "display": "GP (general practitioner) site"
               }
             ],
             "text": "General medical practitioner service"

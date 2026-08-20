@@ -61,9 +61,14 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "reference": "PractitionerRole/pharmacist-lee-sarah",
         "display": "Sarah Lee"
       }
+    }
+  ],
+  "authorizingPrescription": [
+    {
+      "reference": "MedicationRequest/oxycodone-discharge-thompson-alex-20251101"
     }
   ],
   "quantity": {

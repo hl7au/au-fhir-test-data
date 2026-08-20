@@ -1,12 +1,14 @@
 {
-  "resourceType": "MedicationStatement",
-  "id": "ibuprofen-postdischarge-thompson-alex-20251102",
+  "resourceType": "MedicationRequest",
+  "id": "oxycodone-discharge-thompson-alex-20251101",
   "meta": {
     "profile": [
-      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationstatement"
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationrequest"
     ]
   },
   "status": "active",
+  "intent": "order",
+  "priority": "routine",
   "medicationCodeableConcept": {
     "coding": [
       {
@@ -15,26 +17,30 @@
             "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
             "valueCoding": {
               "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
-              "code": "UPDSF",
-              "display": "Unbranded product with strengths and form"
+              "code": "UPG",
+              "display": "Unbranded package with no container"
             }
           }
         ],
         "system": "http://snomed.info/sct",
-        "code": "23262011000036102",
-        "display": "Ibuprofen 400 mg tablet"
+        "code": "1496621000168103",
+        "display": "Oxycodone hydrochloride 5 mg tablet, 10"
       }
     ],
-    "text": "ibuprofen 400 mg tablet"
+    "text": "oxycodone 5 mg tablet, 10"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
     "display": "Alex Thompson"
   },
-  "context": {
-    "reference": "Encounter/medicationreview-thompson-alex-20251102"
+  "encounter": {
+    "reference": "Encounter/periop-thompson-alex-20251101"
   },
-  "dateAsserted": "2025-11-02",
+  "authoredOn": "2025-11-01",
+  "requester": {
+    "reference": "PractitionerRole/obgyn-wilson-mark",
+    "display": "Dr Mark Wilson"
+  },
   "reasonCode": [
     {
       "coding": [
@@ -44,20 +50,12 @@
           "display": "Pain management"
         }
       ],
-      "text": "Post-operative pain management following cone biopsy"
+      "text": "Short course for breakthrough pain if ibuprofen and paracetamol are insufficient following cone biopsy"
     }
   ],
-  "dosage": [
+  "dosageInstruction": [
     {
-      "text": "ONE tablet (400 mg) with food every 6-8 hours as needed for pain.",
-      "timing": {
-        "repeat": {
-          "frequency": 1,
-          "period": 6,
-          "periodMax": 8,
-          "periodUnit": "h"
-        }
-      },
+      "text": "ONE tablet (5 mg) when needed for severe pain. Maximum FOUR tablets/day (20mg/day).",
       "asNeededBoolean": true,
       "route": {
         "coding": [
@@ -80,7 +78,7 @@
       ],
       "maxDosePerPeriod": {
         "numerator": {
-          "value": 3,
+          "value": 4,
           "unit": "TAB",
           "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
           "code": "TAB"
@@ -92,11 +90,6 @@
           "code": "d"
         }
       }
-    }
-  ],
-  "note": [
-    {
-      "text": "Pharmacy medication review: CDS alert: Ibuprofen + Sertraline (SSRI) — GI bleeding risk; maximum reduced from 6 tablets/day (2.4 g/day) at discharge to 3 tablets/day (1.2 g/day). Take with food; alternate with Paracetamol."
     }
   ]
 }

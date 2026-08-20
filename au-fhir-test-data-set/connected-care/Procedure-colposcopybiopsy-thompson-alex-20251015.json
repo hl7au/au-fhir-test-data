@@ -12,22 +12,20 @@
     }
   ],
   "status": "completed",
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://snomed.info/sct",
-          "code": "103693007",
-          "display": "Diagnostic procedure"
-        }
-      ]
-    }
-  ],
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "103693007",
+        "display": "Diagnostic procedure"
+      }
+    ]
+  },
   "code": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "34999005",
+        "code": "392003006",
         "display": "Colposcopy"
       }
     ],
@@ -47,7 +45,7 @@
   "performer": [
     {
       "actor": {
-        "reference": "PractitionerRole/obstetrician-chen-emily",
+        "reference": "PractitionerRole/obgyn-chen-emily",
         "display": "Dr Emily Chen"
       }
     }

@@ -56,12 +56,12 @@
   "occurrenceDateTime": "2025-11-01T08:00:00+11:00",
   "authoredOn": "2025-10-20",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-chen-emily",
+    "reference": "PractitionerRole/obgyn-chen-emily",
     "display": "Dr Emily Chen"
   },
   "performer": [
     {
-      "reference": "PractitionerRole/obstetrician-wilson-mark",
+      "reference": "PractitionerRole/obgyn-wilson-mark",
       "display": "Dr Mark Wilson"
     }
   ],

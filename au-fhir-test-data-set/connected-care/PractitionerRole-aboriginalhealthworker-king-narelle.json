@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "aboriginal-king-narelle",
+  "id": "aboriginalhealthworker-king-narelle",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -25,7 +25,8 @@
           "code": "826241000168109",
           "display": "Aboriginal and Torres Strait Islander health worker"
         }
-      ]
+      ],
+      "text": "Aboriginal and Torres Strait Islander Health Worker"
     }
   ],
   "location": [

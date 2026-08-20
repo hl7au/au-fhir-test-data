@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "obstetrician-wilson-mark",
+  "id": "obgyn-wilson-mark",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
@@ -41,7 +41,7 @@
           "display": "Obstetrician and gynaecologist"
         }
       ],
-      "text": "Reproductive Endocrinologist/Infertility Specialist"
+      "text": "Obstetrician and Gynaecologist"
     }
   ],
   "specialty": [

@@ -48,7 +48,7 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "34999005",
+        "code": "392003006",
         "display": "Colposcopy"
       }
     ],
@@ -61,12 +61,12 @@
   "occurrenceDateTime": "2025-10-15T11:00:00+11:00",
   "authoredOn": "2025-10-10",
   "requester": {
-    "reference": "PractitionerRole/obstetrician-chen-emily",
+    "reference": "PractitionerRole/obgyn-chen-emily",
     "display": "Dr Emily Chen"
   },
   "performer": [
     {
-      "reference": "PractitionerRole/obstetrician-chen-emily",
+      "reference": "PractitionerRole/obgyn-chen-emily",
       "display": "Dr Emily Chen"
     }
   ],

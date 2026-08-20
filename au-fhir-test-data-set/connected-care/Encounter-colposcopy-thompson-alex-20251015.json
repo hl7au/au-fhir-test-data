@@ -17,7 +17,7 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "34999005",
+          "code": "392003006",
           "display": "Colposcopy"
         }
       ],
@@ -51,7 +51,7 @@
         }
       ],
       "individual": {
-        "reference": "PractitionerRole/obstetrician-chen-emily",
+        "reference": "PractitionerRole/obgyn-chen-emily",
         "display": "Dr Emily Chen"
       }
     }

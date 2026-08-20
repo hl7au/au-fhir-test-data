@@ -24,8 +24,8 @@
       "type": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "XX"
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "ABN"
           }
         ],
         "text": "ABN"
@@ -40,7 +40,7 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8401",
-          "display": "Hospitals (except Psychiatric Hospitals)"
+          "display": "Hospitals (Except Psychiatric Hospitals)"
         },
         {
           "system": "http://snomed.info/sct",
