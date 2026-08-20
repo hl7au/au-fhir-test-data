@@ -387,50 +387,45 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## Pending / Placeholder Data
 
-This data set's source tables (patient demographics, every "Provider Organisation" / "Clinician" row) contain IHI, MEDICARE NO, HPI-O, and HPI-I values. **These are placeholder numbers, not valid identifiers**, and are not used in the FHIR resources.
+**Source-table identifiers.** IHI, MEDICARE NO, HPI-O, and HPI-I values in this document's own tables (patient demographics, every "Provider Organisation"/"Clinician" row): placeholder numbers, not valid identifiers. Not used in the FHIR resources.
 
-Alex's `Patient`, `Organization`, `HealthcareService`, `Practitioner`, and `PractitionerRole` resources instead carry `identifier` values sourced from the Services Australia / Healthcare Identifiers Service test data: IHI + Medicare Number on `Patient`, HPI-O + ABN on `Organization`, HPI-O on `HealthcareService`, HPI-I + Medicare Prescriber Number + AHPRA registration `qualification` on `Practitioner`, and HPI-I + Medicare Provider Number on `PractitionerRole`. This applies to both the standalone connected-care files and the embedded copies of these resource types inside the two AU Patient Summary document Bundles below.
+**Resource identifiers.** Alex's `Patient`, `Organization`, `HealthcareService`, `Practitioner`, and `PractitionerRole` resources — standalone and embedded — carry `identifier` values from the Services Australia / Healthcare Identifiers Service test data:
+- `Patient`: IHI + Medicare Number
+- `Organization`: HPI-O + ABN
+- `HealthcareService`: HPI-O
+- `Practitioner`: HPI-I + Medicare Prescriber Number + AHPRA registration `qualification`
+- `PractitionerRole`: HPI-I + Medicare Provider Number
 
-`Bundle-aups-thompson-alex-20251009.json` is a self-contained AU Patient Summary (AU PS) document Bundle. The Composition, Patient, custodian Organization, Device, Practitioner/PractitionerRole, Encounter, and every section entry (Condition, AllergyIntolerance, MedicationStatement, DiagnosticReport, 3 vital-sign Observations) are embedded inline with `urn:uuid` references rather than pointing to the standalone connected-care files.
+**`Bundle-aups-thompson-alex-20251009.json`** (GP AU Patient Summary document Bundle):
+- Composition, Patient, custodian Organization, Device, Practitioner/PractitionerRole, Encounter, and every section entry (Condition, AllergyIntolerance, MedicationStatement, DiagnosticReport, 3 vital-sign Observations) embedded inline via `urn:uuid`.
+- Embedded `Patient`: IHI + Medicare Number identifier, matching `Patient-thompson-alex.json`.
+- DiagnosticReport `performer`/Bathurst Pathology and `basedOn`/ServiceRequest: plain relative references to the standalone files, not embedded.
+- `Composition.author`: `Device` ("Bathurst Medical Centre Clinical Information System"). `PractitionerRole/generalpractitioner-lee-chris` embedded, used as `Condition.recorder`/`asserter` and `Observation.performer`, not as author. `Device` identifier, manufacturer, model: fictional.
 
-- The embedded `Patient` carries an IHI + Medicare Number `identifier`, matching `Patient-thompson-alex.json`.
-- References reached through an embedded entry (the DiagnosticReport's `performer`/Bathurst Pathology and `basedOn`/the ServiceRequest) are plain relative references to the standalone files, not embedded.
-- `Composition.author` is a `Device` ("Bathurst Medical Centre Clinical Information System"), representing a system-generated document. `PractitionerRole/generalpractitioner-lee-chris` is embedded and used elsewhere (`Condition.recorder`/`asserter`, `Observation.performer`) but not as document author. The `Device` identifier, manufacturer, and model are fictional placeholders.
+**`Bundle-aups-specialist-thompson-alex-20251101.json`** (specialist AU PS document Bundle, curated by Dr. Chen, dated 2025-11-01):
+- `Composition.author`: Dr. Chen's `PractitionerRole` directly. No `Device` embedded.
+- Vital Signs section: omitted.
+- Embedded `Condition`'s `encounter` and `recorder`/`asserter`: external relative references to the GP consultation and Dr. Lee. `note`: records the biopsy-confirmed CIN2/3 and planned cone biopsy.
+- Plan of Care: text-narrative only, no `entry` array.
+- Histopathology `DiagnosticReport.performer`: embedded Ashfield Private Clinic `Organization` (same `urn:uuid` as the custodian).
 
-`Bundle-aups-specialist-thompson-alex-20251101.json` is a second AU PS document Bundle, curated by Dr. Chen (Ashfield Private Clinic), dated 2025-11-01.
-
-- `Composition.author` is Dr. Chen's `PractitionerRole` directly — no `Device` is embedded in this bundle.
-- Vital Signs is omitted — no vitals were captured at the specialist encounter.
-- The embedded `Condition`'s `encounter` and `recorder`/`asserter` point to the original GP consultation and Dr. Lee (external relative references, not embedded). A `note` records the biopsy-confirmed CIN2/3 and planned cone biopsy.
-- Plan of Care is text-narrative only, with no `entry` array — the cone biopsy day-surgery ServiceRequest and the two allied-health ServiceRequests are described in the section text only, alongside the hospital Appointment.
-- The histopathology `DiagnosticReport`'s `performer` is the embedded Ashfield Private Clinic `Organization` (same `urn:uuid` as the custodian), not an external reference.
-
-The peri-operative `Encounter-periop-thompson-alex-20251101.json` carries no `identifier`. `Encounter.appointment` links it to the hospital booking `Appointment` (BOOK-2025-11-009); the three follow-up `Appointment`s (GP, Physio, Counselling) do not reference this encounter — they are separate future bookings from the discharge plan, not part of the admission itself.
-
-The GP follow-up `Appointment` uses a synthesised Booking ID, BOOK-2025-11-008 (the Physio and Counselling follow-ups instead reuse the real BOOK-2025-11-019/BOOK-2025-11-020 values from Section 6).
-
-The GP consultation's "Alcohol use" vital is not modelled as an Observation — AU Core has no Alcohol Status profile in the current published (v2.0.0) or ballot (v3.0.0-ballot1) release. Weight, blood pressure, and heart rate are generated.
-
-Business identifiers requiring an AU Base Local Identifier profile (`identifier.system` on a ServiceRequest/DiagnosticReport, per the [Local Identifier](https://implementer.digitalhealth.gov.au/namespaces/browse-identifiers.html) namespace pattern) use a literal `{{hpio}}` placeholder in the HPI-O segment, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}`, since the assigning organisation's real HPI-O is not yet known. Search for `{{hpio}}` across the data set to find every identifier needing a real HPI-O substituted in later.
-
-The two eScript `MedicationRequest` identifiers use the `http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{{hpio}}` namespace (the prescription-scoped variant), per the [hpio-scoped/prescription/1.0](https://implementer.digitalhealth.gov.au/namespaces/id/hpio-scoped/prescription/1.0/index.html) namespace.
-
-`Appointment-hospitalbooking-thompson-alex-20251101.json`'s identifier (BOOK-2025-11-009) uses a fictional practice-organisation URI, `http://ashfieldprivatehospital.example.org/id/booking`, not the `hpio-scoped/order/1.0` namespace used elsewhere — a booking ID is a local scheduling reference, not an order/requisition number. Revisit once Ashfield Private Hospital's real PAS/booking-system identifier namespace is known.
-
-The histopathology `DiagnosticReport`'s `performer` (and its `ServiceRequest`'s identifier `assigner`) is Ashfield Private Clinic — the source data doesn't name a specific anatomical pathology laboratory for this specimen. Revisit if/when one is identified.
-
-The three `MedicationDispense` resources (Ibuprofen, Paracetamol, Oxycodone) use a `contained` `Medication` resource with `medicationReference`, coded at Trade Product Pack (TPP) level with the `medication-type` extension (`BPDSF`, "Branded product with strengths and form") — Nurofen Double Strength ibuprofen 400 mg tablet, 24 (`930613011000036109`), Panadol 500 mg tablet, 20 (`56245011000036101`), and Endone 5 mg tablet, 10 (`1496631000168100`). `MedicationRequest`/`MedicationStatement` resources remain at generic/ingredient level, consistent with the Ibuprofen + Sertraline CDS alert operating on active ingredient rather than brand.
-
-The five Section 6 allied-health `Observation`s (`Observation-pelvicfloorstrength-thompson-alex-20251110.json`, `Observation-painscore-physio-thompson-alex-20251110.json`, `Observation-mobility-thompson-alex-20251110.json`, `Observation-phq9-thompson-alex-20251115.json`, `Observation-anxietylevel-thompson-alex-20251115.json`) carry no `meta.profile` — AU Core has no profile for functional/psychometric assessment scores (Modified Oxford Scale, a 0-10 pain score, PHQ-9, qualitative anxiety level). These use plain base FHIR R4 `Observation` with verified LOINC/SNOMED codes (LOINC 72514-3 pain score, LOINC 44261-6 PHQ-9, LOINC 54522-8 mobility, SNOMED 249957003 Oxford muscle-power scale, SNOMED 405051006/61387006 anxiety level).
-
-`MedicationDispense-oxycodone-thompson-alex-20251102.json` has no `authorizingPrescription` — there is no separate order/eScript ID for the Oxycodone short course, unlike the Ibuprofen/Paracetamol dispenses.
-
-`DocumentReference-dischargesummary-thompson-alex-20251101.json` wraps a PDF (base64-encoded in `content[0].attachment.data`), rendered by concatenating a generated Patient narrative banner with `Composition-dischargesummary-thompson-alex-20251101.json`'s own narrative and each section narrative, per FHIR document rendering rules. `Patient-thompson-alex.json` itself carries no `text.div`. The two resources share the same business identifier (DS-2025-11-013); there is no direct FHIR reference from the `DocumentReference` back to the `Composition`.
+**Other resource-level facts:**
+- `Encounter-periop-thompson-alex-20251101.json`: no `identifier`. `Encounter.appointment` → `Appointment` BOOK-2025-11-009. GP/Physio/Counselling follow-up `Appointment`s: do not reference this encounter.
+- GP follow-up `Appointment`: Booking ID BOOK-2025-11-008 (synthesised). Physio/Counselling follow-ups: real BOOK-2025-11-019/BOOK-2025-11-020 values from Section 6.
+- GP consultation "Alcohol use" vital: not modelled as an Observation. Weight, blood pressure, heart rate: modelled. AU Core Alcohol Status profile: absent from current published (v2.0.0) and ballot (v3.0.0-ballot1) releases.
+- ServiceRequest/DiagnosticReport/Task business identifiers (AU Base Local Identifier profile): `identifier.system` carries the assigning organisation's real HPI-O, e.g. `http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046240` (Bathurst Medical Centre).
+- Two eScript `MedicationRequest` identifiers: `http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{HPI-O}` namespace, Ashfield Private Clinic's HPI-O. `MedicationRequest.identifier`: no `assigner` field.
+- `Appointment-hospitalbooking-thompson-alex-20251101.json` identifier (BOOK-2025-11-009): fictional URI `http://ashfieldprivatehospital.example.org/id/booking`, not the `hpio-scoped/order/1.0` namespace.
+- Histopathology `DiagnosticReport.performer` and its `ServiceRequest.identifier.assigner`: Ashfield Private Clinic. No specific anatomical pathology laboratory named.
+- Three `MedicationDispense` resources (Ibuprofen, Paracetamol, Oxycodone): `contained` `Medication` resource, `medicationReference`, Trade Product Pack level, `medication-type` extension `BPDSF`. Nurofen Double Strength ibuprofen 400 mg tablet, 24 (`930613011000036109`); Panadol 500 mg tablet, 20 (`56245011000036101`); Endone 5 mg tablet, 10 (`1496631000168100`). `MedicationRequest`/`MedicationStatement`: generic/ingredient level.
+- Five Section 6 allied-health `Observation`s (`Observation-pelvicfloorstrength-thompson-alex-20251110.json`, `Observation-painscore-physio-thompson-alex-20251110.json`, `Observation-mobility-thompson-alex-20251110.json`, `Observation-phq9-thompson-alex-20251115.json`, `Observation-anxietylevel-thompson-alex-20251115.json`): no `meta.profile`, plain base FHIR R4 `Observation`. Codes: LOINC 72514-3 (pain score), 44261-6 (PHQ-9), 54522-8 (mobility); SNOMED 249957003 (Oxford muscle-power scale), 405051006/61387006 (anxiety level).
+- `MedicationDispense-oxycodone-thompson-alex-20251102.json`: no `authorizingPrescription`.
+- `DocumentReference-dischargesummary-thompson-alex-20251101.json`: wraps a PDF (base64 in `content[0].attachment.data`), rendered from a generated Patient narrative banner plus the Composition's narrative and section narratives. `Patient-thompson-alex.json`: no `text.div`. Shares business identifier DS-2025-11-013 with the Composition; no direct FHIR reference between them.
 
 
 ## Change Log
 
-**Purpose:** this log records only deviations between this data set and the original source story/spreadsheet — renamed entities, corrected values, resolved conflicts, or data invented because the source didn't provide it — so the story owner can review and confirm each one. It is **not** a changelog of edits to this document, and it does not record FHIR-modelling or terminology decisions (see [Pending / Placeholder Data](#pending--placeholder-data) for those).
+**Purpose:** deviations between this data set and the original source story/spreadsheet only — renamed entities, corrected values, resolved conflicts, invented data. For story-owner review and confirmation. Excludes: document edits, FHIR-modelling/terminology decisions (see [Pending / Placeholder Data](#pending--placeholder-data)).
 
 | Date | Change | Reason |
 | --- | --- | --- |

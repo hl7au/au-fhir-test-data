@@ -790,7 +790,7 @@
                 }
               ]
             },
-            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046190",
             "value": "PATH-2025-10-002",
             "assigner": {
               "reference": "urn:uuid:c088fccd-05ed-4270-96f3-f052fd1cf3d6",

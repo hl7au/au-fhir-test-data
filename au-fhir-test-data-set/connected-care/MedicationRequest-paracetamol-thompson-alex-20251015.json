@@ -8,7 +8,7 @@
   },
   "identifier": [
     {
-      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/{{hpio}}",
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/prescription/1.0/8003624900045276",
       "type": {
         "text": "eScript ID"
       },

@@ -902,7 +902,7 @@
                 }
               ]
             },
-            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046190",
             "value": "PATH-2025-10-002",
             "assigner": {
               "reference": "Organization/bathurst-pathology",
@@ -984,7 +984,7 @@
                 }
               ]
             },
-            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003624900045276",
             "value": "PATH-2025-10-007",
             "assigner": {
               "reference": "urn:uuid:503c7afb-f894-4a0e-9105-f49fe2f006a0",

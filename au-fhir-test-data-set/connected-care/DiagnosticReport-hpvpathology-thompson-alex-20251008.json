@@ -17,7 +17,7 @@
           }
         ]
       },
-      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046190",
       "value": "PATH-2025-10-002",
       "assigner": {
         "reference": "Organization/bathurst-pathology",
