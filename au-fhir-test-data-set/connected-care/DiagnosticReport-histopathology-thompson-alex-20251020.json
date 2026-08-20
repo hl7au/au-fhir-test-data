@@ -17,7 +17,7 @@
           }
         ]
       },
-      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/{{hpio}}",
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003624900045276",
       "value": "PATH-2025-10-007",
       "assigner": {
         "reference": "Organization/ashfield-private-clinic",
