@@ -5,6 +5,15 @@
     "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-immunization"]
   },
   "status" : "not-done",
+  "statusReason": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "1620681000168106",
+        "display": "Patient objection"
+      }
+    ]
+  },
   "vaccineCode" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",

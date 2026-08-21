@@ -40,5 +40,40 @@
       "display" : "Structure of left upper arm"
     }],
     "text" : "Left upper arm"
-  }
+  },
+  "performer": [
+    {
+      "function": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+            "code": "AP",
+            "display": "Administering Provider"
+          }
+        ],
+        "text": "Administering Provider"
+      },
+      "actor": {
+        "reference": "PractitionerRole/bobrester-bob-gp"
+      }
+    }
+  ],
+  "protocolApplied": [
+    {
+      "series": "primary vaccination course 2-dose",
+      "targetDisease": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "COVID-19"
+        }
+      ],
+      "doseNumberPositiveInt": 1
+    }
+  ]
 }

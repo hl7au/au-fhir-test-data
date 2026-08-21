@@ -43,5 +43,11 @@
     "reference" : "Patient/banks-mia-leanne"
   },
   "onsetDateTime" : "2020-05-10",
-  "abatementDateTime" : "2020-05-24"
+  "abatementDateTime" : "2020-05-24",
+  "recorder": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+  }
 }
