@@ -37,7 +37,8 @@
           "code": "224571005",
           "display": "Nurse practitioner"
         }
-      ]
+      ],
+      "text": "Nurse Practitioner"
     }
   ],
   "specialty": [
@@ -51,6 +52,7 @@
       ]
     }
   ],
+
   "telecom": [
     {
       "system": "phone",

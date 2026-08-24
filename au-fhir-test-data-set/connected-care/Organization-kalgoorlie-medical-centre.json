@@ -24,8 +24,8 @@
       "type": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "XX"
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "ABN"
           }
         ],
         "text": "ABN"
@@ -40,12 +40,12 @@
         {
           "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
           "code": "8511",
-          "display": "General Practice"
+          "display": "General Practice Medical Services"
         },
         {
           "system": "http://snomed.info/sct",
           "code": "394761003",
-          "display": "GP practice site"
+          "display": "GP (general practitioner) site"
         }
       ],
       "text": "General medical practitioner service"

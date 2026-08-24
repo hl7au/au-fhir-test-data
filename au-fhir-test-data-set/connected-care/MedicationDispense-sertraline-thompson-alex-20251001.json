@@ -1,6 +1,6 @@
 {
   "resourceType": "MedicationDispense",
-  "id": "ibuprofen-thompson-alex-20251102",
+  "id": "sertraline-thompson-alex-20251001",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"
@@ -30,11 +30,11 @@
               }
             ],
             "system": "http://snomed.info/sct",
-            "code": "930613011000036109",
-            "display": "Nurofen Double Strength 400 mg tablet, 24"
+            "code": "11206011000036106",
+            "display": "Sertraline (GenRx) 100 mg tablet, 30"
           }
         ],
-        "text": "Nurofen Double Strength 400 mg tablet, 24"
+        "text": "Sertraline (GenRx) 100 mg tablet, 30"
       },
       "form": {
         "coding": [
@@ -46,13 +46,13 @@
         ]
       },
       "manufacturer": {
-        "display": "Reckitt Benckiser (Australia) Pty Ltd"
+        "display": "Apotex Pty Ltd"
       }
     }
   ],
   "medicationReference": {
     "reference": "#med",
-    "display": "Nurofen Double Strength 400 mg tablet, 24"
+    "display": "Sertraline (GenRx) 100 mg tablet, 30"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
@@ -66,21 +66,16 @@
       }
     }
   ],
-  "authorizingPrescription": [
-    {
-      "reference": "MedicationRequest/ibuprofen-discharge-thompson-alex-20251101"
-    }
-  ],
   "quantity": {
-    "value": 24,
+    "value": 30,
     "unit": "TAB",
     "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
     "code": "TAB"
   },
-  "whenPrepared": "2025-11-02",
+  "whenPrepared": "2025-10-01",
   "dosageInstruction": [
     {
-      "text": "Take ONE (1) tablet with food every 6-8 hours as needed for pain. Max THREE (3) tablets in 24 hours."
+      "text": "Take ONE (1) tablet (100 mg) once daily each morning."
     }
   ]
 }

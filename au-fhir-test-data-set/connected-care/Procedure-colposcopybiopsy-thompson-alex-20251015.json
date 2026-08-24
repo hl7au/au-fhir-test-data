@@ -12,8 +12,7 @@
     }
   ],
   "status": "completed",
-  "category": [
-    {
+  "category": {
       "coding": [
         {
           "system": "http://snomed.info/sct",
@@ -21,13 +20,12 @@
           "display": "Diagnostic procedure"
         }
       ]
-    }
-  ],
+  },
   "code": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "34999005",
+        "code": "392003006",
         "display": "Colposcopy"
       }
     ],

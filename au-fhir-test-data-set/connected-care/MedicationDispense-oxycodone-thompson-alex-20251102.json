@@ -66,6 +66,11 @@
       }
     }
   ],
+  "authorizingPrescription": [
+    {
+      "reference": "MedicationRequest/oxycodone-discharge-thompson-alex-20251101"
+    }
+  ],
   "quantity": {
     "value": 10,
     "unit": "TAB",
