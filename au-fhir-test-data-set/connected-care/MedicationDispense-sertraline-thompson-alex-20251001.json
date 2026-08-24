@@ -40,8 +40,8 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "154011000036109",
-            "display": "tablet"
+            "code": "421026006",
+            "display": "Tablet"
           }
         ]
       },
