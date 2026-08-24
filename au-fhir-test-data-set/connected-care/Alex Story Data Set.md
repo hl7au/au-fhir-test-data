@@ -21,22 +21,22 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | Phone Number | 0412-345-678 | No |
 | Email | [alex.thompson@cafe.com](mailto:alex.thompson@cafe.com) | No |
-| Notification Source | National Cancer Screening Register (HPI-O: 2222-1111-0000-9999) | *Yes |
+| Notification Source | National Cancer Screening Register (HPI-O: TBD) | *Yes |
 | Notification Details | Reminder: Cervical Screening overdue; Issued: 2025-09-30, 08:00 AM; Via: MyHealth App | *Yes |
 | e-Request ID | REQ-2025-10-001 | *Yes |
-| e-Request Details | Request Type: Cervical Screening (National Cervical Screening Program); Issued by: Dr. Chris Lee (HPI-I: 5555-6666-7777-8888); Date: 2025-09-30 | *Yes |
-| Provider Directory Search | National Health Services Directory (powered by Provider Directory Service); Filters: Location (Bathurst, NSW), Service Type (Pathology), Availability (<1 week); Selected: Bathurst Pathology (HPI-O:1111-2222-3333-4444) | *Yes |
+| e-Request Details | Request Type: Cervical Screening (National Cervical Screening Program); Issued by: Dr. Chris Lee (HPI-I: 8003616566728310); Date: 2025-09-30 | *Yes |
+| Provider Directory Search | National Health Services Directory (powered by Provider Directory Service); Filters: Location (Bathurst, NSW), Service Type (Pathology), Availability (<1 week); Selected: Bathurst Pathology (HPI-O: 8003629900046190) | *Yes |
 | Booking ID | BOOK-2025-10-000 | *Yes |
 | Booking Details | Pathology Centre: Bathurst Pathology, 10 George St, Bathurst, NSW 2795; Date: 2025-10-01, 9:00 AM; Prep: Self-collect swab, bring QR code | *Yes |
 | MyHealth App View | Displays: eRequest, Booking Confirmation, Prep Notes (“Bring QR code, no appointment needed for self-collect”); Consent: View shared with GP | *Yes |
-| Provider Organisation | National Cancer Screening Register (HPI-O: 2222-1111-0000-9999) | *Yes |
+| Provider Organisation | National Cancer Screening Register (HPI-O: TBD) | *Yes |
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
-| Clinician | Ms. Sarah Taylor (System Administrator, HPI-I: 1010-2020-3030-4040) | *Yes |
+| Clinician | Ms. Sarah Taylor (System Administrator, HPI-I: TBD) | *Yes |
 | QR CODE VIEW | Displays consumer perspective: eRequest retrieval, sample processing, results notification | *Yes |
 
 ### FHIR Resources – MyHealth App
@@ -63,26 +63,26 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | Phone Number | 0412-345-678 | No |
 | Email | [alex.thompson@cafe.com](mailto:alex.thompson@cafe.com) | No |
 | e-Request ID | REQ-2025-10-001 | *Yes |
 | Request Type | Cervical Screening (National Cervical Screening Program) | *Yes |
 | Booking Details | Pathology Centre: Bathurst Pathology, 10 George St, Bathurst, NSW 2795; 2025-10-01, 9:00 AM; Booked via MyHealth App | *Yes |
-| QR Code Data | eRequest ID: REQ-2025-10-001; IHI: 9876-5432-1098-7654; Provider: Bathurst Pathology (HPI-O: 1111-2222-3333-4444) | *Yes |
+| QR Code Data | eRequest ID: REQ-2025-10-001; IHI: 8003608500344031; Provider: Bathurst Pathology (HPI-O: 8003629900046190) | *Yes |
 | Pathology Result ID | PATH-2025-10-002 | *Yes |
 | Result Date | 2025-10-08 | *Yes |
 | Result Details | High-risk HPV detected; CIN2/3 (pre-cancerous); Status: Urgent | *Yes |
-| Notification Recipients | Patient (MyHealth App), GP (Dr. Chris Lee, HPI-I: 5555-6666-7777-8888); Trigger: Immediate alert | *Yes |
+| Notification Recipients | Patient (MyHealth App), GP (Dr. Chris Lee, HPI-I: 8003616566728310); Trigger: Immediate alert | *Yes |
 | DISCOVERY SERVICE ACCESS | Pathologist views gynaecological/sexual health history via Discovery Service | *Yes |
 | COHORT ANALYSIS | Augmented by data from National Screening Register for accurate reference range |  |
 | REGISTER UPDATE | System automatically updates National Cervical Screening Register |  |
 | Follow-Up Timer | Set: Confirm acceptance by GP within 48 hours | *Yes |
-| Provider Organisation | Bathurst Pathology (HPI-O: 1111-2222-3333-4444) | *Yes |
+| Provider Organisation | Bathurst Pathology (HPI-O: 8003629900046190) | *Yes |
 | Organisation Address | 10 George St, Bathurst, NSW 2795 | No |
-| Clinician | Ms. Sally Johnson (Phlebotomist, HPI-I: 1212-3434-5656-7878) | *Yes |
+| Clinician | Ms. Sally Johnson (Phlebotomist, HPI-I: 8003616566728328) | *Yes |
 
 ### FHIR Resources – Pathology (Collection Centre)
 
@@ -104,8 +104,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | AUPS Key Allergies | Penicillin (anaphylaxis) | *Yes |
 | AUPS Current Medications | None active | *Yes |
@@ -117,11 +117,11 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Care Plan Details | Goals: Coordinate gynaecology referral, monitor results; Team: GP, Specialist; Prepopulated from national guidelines template | *Yes |
 | e-Referral ID | REF-2025-10-004 | *Yes |
 | Referral Details | To: Gynaecologist (no named provider); Include: Screening result, AUPS; Issued: 2025-10-09 | *Yes |
-| Provider Directory Search | Filters: Bathurst/Sydney, Wait Time <2 weeks; Selected: Dr. Emily Chen, Ashfield Private Clinic (HPI-I: 2222-3333-4444-5555) | *Yes |
-| Subscription Preferences | GP (Dr. Jane Smith, HPI-I: 5555-6666-7777-8888): Critical updates only (results, bookings) | *Yes |
-| Provider Organisation | Bathurst Medical Centre (HPI-O: 6666-7777-8888-9999) | *Yes |
+| Provider Directory Search | Filters: Bathurst/Sydney, Wait Time <2 weeks; Selected: Dr. Emily Chen, Ashfield Private Clinic (HPI-I: 8003616566728344) | *Yes |
+| Subscription Preferences | GP (Dr. Jane Smith, HPI-I: 8003618233394732): Critical updates only (results, bookings) | *Yes |
+| Provider Organisation | Bathurst Medical Centre (HPI-O: 8003629900046240) | *Yes |
 | Organisation Address | 25 Russell St, Bathurst, NSW 2795 | No |
-| Clinician | Dr. Chris Lee (GP, HPI-I: 5555-6666-7777-8888) | *Yes |
+| Clinician | Dr. Chris Lee (GP, HPI-I: 8003616566728310) | *Yes |
 
 ### FHIR Resources – General Practice
 
@@ -156,8 +156,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | Referral ID | REF-2025-10-004 | *Yes |
 | Acceptance Date | 2025-10-10 | *Yes |
@@ -170,15 +170,15 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Multidisciplinary Meeting ID | MDM-2025-10-008 | *Yes |
 | MDM Decision | Plan: Day surgery (cone procedure); Shared Care Plan Updated: 2025-10-20 | *Yes |
 | Hospital Booking ID | BOOK-2025-10-009 | *Yes |
-| Booking Details | Ashfield Private Hospital (HPI-O: 3333-4444-5555-6666); Date: 2025-11-01; Prep: SMART Form completed | *Yes |
+| Booking Details | Ashfield Private Hospital (HPI-O: 8003628233379211); Date: 2025-11-01; Prep: SMART Form completed | *Yes |
 | SMART Form ID | FORM-2025-10-010 | *Yes |
 | Form Details | Consent: Signed digitally; Medical History: No comorbidities; Allergies: Penicillin | *Yes |
 | ALLIED HEALTH eREFERRALS | Issued: Physio (REF-2025-11-017), Counselling (REF-2025-11-018) electronically | *Yes |
 | Structured Data for Payer Approvals | Patient/procedure data structured for instant payer requests |  |
 | Payer Pre-Approval | Submitted: Procedure Code CNE001; Cost: $6,000; Insurer: Medibank Private | No |
-| Provider Organisation | Ashfield Private Clinic (HPI-O: 7777-8888-9999-0000) | *Yes |
+| Provider Organisation | Ashfield Private Clinic (HPI-O: 8003624900045276) | *Yes |
 | Organisation Address | 12 Roberts St, Ashfield, NSW 2131 | No |
-| Clinician | Dr. Emily Chen (Gynaecologist, HPI-I: 2222-3333-4444-5555) | *Yes |
+| Clinician | Dr. Emily Chen (Gynaecologist, HPI-I: 8003616566728344) | *Yes |
 
 ### FHIR Resources – Specialist (Gynaecological Oncologist – Private Practice)
 
@@ -214,8 +214,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | Booking ID | BOOK-2025-11-009 | *Yes |
 | Procedure Type | Cone Biopsy (Day Surgery); Date: 2025-11-01, 8:00 AM | *Yes |
@@ -227,11 +227,11 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Discharge Date | 2025-11-01, 16:00 PM | *Yes |
 | Summary Key Points | Meds: Ibuprofen 400 mg every 6–8 hours PRN (max 2.4 g/day) x5 days; Paracetamol 500 mg every 6 hours PRN (max 4 g/day) x5 days; Non-Pharmacologic: Heating pad, deep breathing, hydration; Restrictions: No lifting >5 kg; Follow-up: GP in 7 days | *Yes |
 | Follow-Up Appointments | Auto-generated: GP (2025-11-08), Physio (2025-11-10), Counselling (2025-11-15); In MyHealth App | *Yes |
-| Image Viewer Access | Intra-op images attached; Viewed by: Surgical Team (HPI-O: 3333-4444-5555-6666) | No |
+| Image Viewer Access | Intra-op images attached; Viewed by: Surgical Team (HPI-O: 8003628233379211) | No |
 | Publication Status | Published: Shared Care Plan; Notified: GP, Specialist, Patient | *Yes |
-| Provider Organisation | Ashfield Private Hospital (HPI-O: 3333-4444-5555-6666) | *Yes |
+| Provider Organisation | Ashfield Private Hospital (HPI-O: 8003628233379211) | *Yes |
 | Organisation Address | 70 Victoria St, Ashfield, NSW 2131 | No |
-| Clinician | Dr. Mark Wilson (Surgeon, HPI-I: 3434-5656-7878-9090) | *Yes |
+| Clinician | Dr. Mark Wilson (Surgeon, HPI-I: 8003616566728351) | *Yes |
 
 ### FHIR Resources – Private Hospital (Theatre / Inpatient)
 
@@ -263,8 +263,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | Shared Care Plan ID | SCP-2025-10-003 | *Yes |
 | Medication Update ID | MED-2025-11-014 | *Yes |
@@ -274,11 +274,11 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Notes Details | Counselling: Take Ibuprofen with food; Alternate with Paracetamol;  Stop date: 2025-11-06; Counselling – 10 tablets only supplied for Oxycodone take only if pain is intense; If oxycodone not necessary, take Ibuprofen with food and alternate with Paracetamol Heating pad, hydration advised; Watch: Nausea, rash | *Yes |
 | Dispense Event ID | DISP-2025-11-016 | *Yes |
 | Dispense Details | Dispensed: 25 tablets Ibuprofen, 10 tablets Oxycodone, 20 tablets Paracetamol; Date: 2025-11-02 | *Yes |
-| Notification Recipients | GP (Dr. Jane Smith, HPI-I: 5555-6666-7777-8888), Surgeon (Dr. Mark Wilson, HPI-I: 3434-5656-7878-9090) | *Yes |
+| Notification Recipients | GP (Dr. Jane Smith, HPI-I: 8003618233394732), Surgeon (Dr. Mark Wilson, HPI-I: 8003616566728351) | *Yes |
 | MyHealth App View | Med List Start/Stop dates; Counselling: “Alternate Ibuprofen/Paracetamol, use heating pad”; Reminders: Set | *Yes |
-| Provider Organisation | Bathurst Community Pharmacy (HPI-O: 8888-9999-0000-1111) | *Yes |
+| Provider Organisation | Bathurst Community Pharmacy (HPI-O: 8003629900046257) | *Yes |
 | Organisation Address | 15 Keppel St, Bathurst, NSW 2795 | No |
-| Clinician | Ms. Sarah Lee (Pharmacist, HPI-I: 4545-6767-8989-0101) | *Yes |
+| Clinician | Ms. Sarah Lee (Pharmacist, HPI-I: 8003616566728377) | *Yes |
 
 ### FHIR Resources – Pharmacy
 
@@ -308,13 +308,13 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
 | Date of Birth | 15/05/1993 | *Yes |
-| IHI | 9876-5432-1098-7654 | *Yes |
-| MEDICARE NO | 2345 678 901 1 | *Yes |
+| IHI | 8003608500344031 | *Yes |
+| MEDICARE NO | 29548194011 | *Yes |
 | Address (Patient) | 42 Macquarie St, Bathurst, NSW 2795 | No |
 | eReferral ID (Physio) | REF-2025-11-017 | *Yes |
 | eReferral ID (Counselling) | REF-2025-11-018 | *Yes |
 | Booking ID (Physio) | BOOK-2025-11-019 | *Yes |
-| Physio Details | Pelvic-Health Physio: 2025-11-10, 14:00 PM, Bathurst Physio Centre (HPI-O: 9999-0000-1111-2222); Balance Training: 2025-10-09, 14:00 PM; Transport: Confirmed digitally; Prep: Wear comfortable clothing | *Yes |
+| Physio Details | Pelvic-Health Physio: 2025-11-10, 14:00 PM, Bathurst Physio Centre (HPI-O: 8003628233379229); Balance Training: 2025-10-09, 14:00 PM; Transport: Confirmed digitally; Prep: Wear comfortable clothing | *Yes |
 | Booking ID (Counselling) | BOOK-2025-11-020 | *Yes |
 | Counselling Details | Psycho-Oncology: 2025-11-15, 11:00 AM, Telehealth; Prep: List anxiety concerns | *Yes |
 | Provider Directory Filters | Wait Time: <1 week; Accessibility: Wheelchair-friendly; Selected: Bathurst Physio, Telehealth Counselling | *Yes |
@@ -325,11 +325,11 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Apple Watch Data | Consent: Shared via MyHealth App; Heart Rate: Avg 80 bpm; Steps: 5,000/day; Date Range: 2025-11-01 to 2025-11-10 | *Yes |
 | MYHEALTH APP VIEW | Displays: Appointments, transport details, prep notes | *Yes |
 | Shared Care Plan Update | Added: Physio exercises, counselling notes; Notified: GP, Specialist | *Yes |
-| Provider Access | Limited: Physio (observations), Counselling (mental health); HPI-O: 9999-0000-1111-2222 (Physio Centre) | No |
-| Provider Organisation | Bathurst Physio Centre (HPI-O: 9999-0000-1111-2222) | *Yes |
+| Provider Access | Limited: Physio (observations), Counselling (mental health); HPI-O: 8003628233379229 (Physio Centre) | No |
+| Provider Organisation | Bathurst Physio Centre (HPI-O: 8003628233379229) | *Yes |
 | Organisation Address | 30 William St, Bathurst, NSW 2795 | No |
-| Clinician (Physio) | Ms. Sarah Evans (Physiotherapist, HPI-I: 5656-7878-9090-1212) | *Yes |
-| Clinician (Counselling) | Dr. Rachel Patel (Counsellor, HPI-I: 6767-8989-0101-2323) | *Yes |
+| Clinician (Physio) | Ms. Sarah Evans (Physiotherapist, HPI-I: 8003613233394519) | *Yes |
+| Clinician (Counselling) | Dr. Rachel Patel (Counsellor, HPI-I: 8003611566727867) | *Yes |
 
 ### FHIR Resources – Allied Health (Physiotherapy & Counselling)
 
@@ -373,7 +373,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Outcome Metrics | Complications: 10% (linked to delays >30 days); Readmissions: 5% | *Yes |
 | Dashboard Insights | Bottlenecks: Pathology wait times; Equity: Regional access improved 15% | *Yes |
 | Update Cadence | Daily; Source: FHIR via Health Connect Australia | No |
-| Provider Organisation | Australian Institute of Health and Welfare (HPI-O: 0000-1111-2222-3333) | *Yes |
+| Provider Organisation | Australian Institute of Health and Welfare (HPI-O: TBD) | *Yes |
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
 
 ### FHIR Resources – Population Health / Analytics
@@ -387,7 +387,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## Pending / Placeholder Data
 
-**Source-table identifiers.** IHI, MEDICARE NO, HPI-O, and HPI-I values in this document's own tables (patient demographics, every "Provider Organisation"/"Clinician" row): placeholder numbers, not valid identifiers. Not used in the FHIR resources.
+**Source-table identifiers.** IHI, MEDICARE NO, HPI-O, and HPI-I values in this document's own tables (patient demographics, every "Provider Organisation"/"Clinician" row) match the real Services Australia / Healthcare Identifiers Service test data used in the FHIR resources, for every entity that has one built. Three entities have no FHIR resource yet and still show placeholder numbers: National Cancer Screening Register (HPI-O), Sarah Taylor (HPI-I), Australian Institute of Health and Welfare (HPI-O).
 
 **Resource identifiers.** Alex's `Patient`, `Organization`, `HealthcareService`, `Practitioner`, and `PractitionerRole` resources — standalone and embedded — carry `identifier` values from the Services Australia / Healthcare Identifiers Service test data:
 - `Patient`: IHI + Medicare Number
@@ -436,3 +436,6 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | 2026-08-13 | `MedicationDispense-ibuprofen-thompson-alex-20251102.json` quantity changed from the story's **25 tablets** to **24 tablets** | 25 doesn't match either real Nurofen Double Strength pack size (12 or 24); a single 24-pack covers the revised 5-day course (max 3 tablets/day = 15 tablets) and matches the real Trade Product Pack, `930613011000036109` |
 | 2026-08-13 | Section 6's "Balance Training: 2025-10-09, 14:00 PM" (within the Physio Details field) is not modelled as a separate `Encounter` | This date predates the physio eReferral (2025-11-01) and hospital admission (2025-11-01) entirely — likely a stray/templated entry in the source spreadsheet, not a real event in Alex's pathway. Only the 2025-11-10 pelvic-health physio visit is built |
 | 2026-08-19 | Ashfield Private Hospital's address updated from **63 Victoria St** to **70 Victoria St**, Ashfield, NSW 2131 | Services Australia registered the organisation with this address in their test data |
+| 2026-08-20 | All IHI/MEDICARE NO/HPI-O/HPI-I placeholders in the section tables replaced with the real Services Australia / Healthcare Identifiers Service test data values used in the FHIR resources | Story's placeholders were not valid identifiers |
+| 2026-08-20 | National Cancer Screening Register (HPI-O), Sarah Taylor (HPI-I), Australian Institute of Health and Welfare (HPI-O): placeholders (2222-1111-0000-9999 / 1010-2020-3030-4040 / 0000-1111-2222-3333) → **TBD** | No FHIR resource built yet for these three entities |
+| 2026-08-20 | Dr. Chris Lee and Dr. Jane Smith's shared placeholder HPI-I (5555-6666-7777-8888) → distinct real HPI-I values | Two clinicians cannot share one HPI-I |

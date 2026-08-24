@@ -1,0 +1,55 @@
+{
+  "resourceType" : "MedicationDispense",
+  "id" : "ventolin",
+  "meta" : {
+    "profile" : ["http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"]
+  },
+  "status" : "completed",
+  "medicationCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "13029011000036109",
+      "display" : "Ventolin Inhaler CFC-Free 100 microgram/actuation inhalation, 200 actuations"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/italia-sofia"
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "Organization/appin-pharmacy",
+      "display" : "Appin Pharmacy"
+    }
+  }],
+  "quantity" : {
+    "value" : 1,
+    "unit" : "inhaler"
+  },
+  "whenHandedOver" : "2024-05-16",
+  "note" : [{
+    "text" : "Consumer medicine information supplied."
+  }],
+  "dosageInstruction" : [{
+    "text" : "Inhale 1-2 puffs when required for wheeze or shortness of breath.",
+    "asNeededBoolean" : true,
+    "route" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "447694001",
+        "display" : "Respiratory tract route"
+      }]
+    },
+    "doseAndRate" : [{
+      "doseRange" : {
+        "low" : {
+          "value" : 1,
+          "unit" : "puff"
+        },
+        "high" : {
+          "value" : 2,
+          "unit" : "puff"
+        }
+      }
+    }]
+  }]
+}
