@@ -68,7 +68,7 @@
           {
             "system": "http://loinc.org",
             "code": "8716-3",
-            "display": "Vital signs"
+            "display": "Vital signs note"
           }
         ]
       },
@@ -95,7 +95,7 @@
           {
             "system": "http://loinc.org",
             "code": "30954-2",
-            "display": "Relevant diagnostic tests/laboratory data Narrative"
+            "display": "Relevant diagnostic tests/laboratory data note"
           }
         ]
       },

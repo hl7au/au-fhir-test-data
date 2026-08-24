@@ -40,7 +40,8 @@
           "code": "224571005",
           "display": "Nurse practitioner"
         }
-      ]
+      ],
+      "text": "Nurse Practitioner"
     }
   ],
   "specialty": [
@@ -54,6 +55,7 @@
       ]
     }
   ],
+  
   "location": [
     {
       "reference": "Location/kalgoorlie-community-health-service"

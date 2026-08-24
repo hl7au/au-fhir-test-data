@@ -49,10 +49,11 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "394585009",
-          "display": "Obstetrics and gynaecology"
+          "code": "1251552000",
+          "display": "Reproductive medicine"
         }
-      ]
+      ],
+      "text": "Reproductive Endocrinologist/Infertility Specialist"
     }
   ],
   "location": [

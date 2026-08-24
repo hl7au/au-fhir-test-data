@@ -53,8 +53,8 @@
       "coding": [
         {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
-          "code": "PAT",
-          "display": "Pathology (Gross & Histopathology, Cytology)"
+          "code": "SP",
+          "display": "Surgical Pathology"
         }
       ]
     }
@@ -63,7 +63,7 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "110469002",
+        "code": "252416005",
         "display": "Histopathology test"
       }
     ],

@@ -31,17 +31,17 @@
             ],
             "system": "http://snomed.info/sct",
             "code": "930613011000036109",
-            "display": "Nurofen Double Strength ibuprofen 400 mg tablet, 24"
+            "display": "Nurofen Double Strength 400 mg tablet, 24"
           }
         ],
-        "text": "Nurofen Double Strength ibuprofen 400 mg tablet, 24"
+        "text": "Nurofen Double Strength 400 mg tablet, 24"
       },
       "form": {
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "154011000036109",
-            "display": "tablet"
+            "code": "421026006",
+            "display": "Tablet"
           }
         ]
       },
@@ -52,7 +52,7 @@
   ],
   "medicationReference": {
     "reference": "#med",
-    "display": "Nurofen Double Strength ibuprofen 400 mg tablet, 24"
+    "display": "Nurofen Double Strength 400 mg tablet, 24"
   },
   "subject": {
     "reference": "Patient/thompson-alex",
