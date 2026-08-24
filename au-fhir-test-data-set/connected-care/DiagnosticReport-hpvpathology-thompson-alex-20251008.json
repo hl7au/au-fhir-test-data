@@ -12,6 +12,23 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "PLAC",
+            "display": "Placer Identifier"
+          }
+        ]
+      },
+      "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900046240",
+      "value": "REQ-2025-10-001",
+      "assigner": {
+        "reference": "Organization/bathurst-medical-centre",
+        "display": "Bathurst Medical Centre"
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
             "code": "FILL",
             "display": "Filler Identifier"
           }
@@ -74,6 +91,12 @@
         }
       ],
       "text": "High-risk HPV detected (cytology). Reflex liquid-based cytology reported as a high-grade squamous intraepithelial lesion, consistent with CIN2/3. Colposcopy referral recommended per the National Cervical Screening Program pathway."
+    }
+  ],
+  "presentedForm": [
+    {
+      "contentType": "application/pdf",
+      "url": "Binary/PATH-2025-10-002-Cytology"
     }
   ]
 }
