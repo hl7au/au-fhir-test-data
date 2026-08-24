@@ -31,6 +31,11 @@
     "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2024-05-23",
+  "performer": [
+    {
+      "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+    }
+  ],
   "valueCodeableConcept": {
     "coding": [
       {

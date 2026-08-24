@@ -46,6 +46,11 @@
       }
     ]
   },
+  "performer": [
+    {
+      "reference": "Organization/pullabooka-pathology"
+    }
+  ],
   "valueCodeableConcept": {
     "coding": [
       {
