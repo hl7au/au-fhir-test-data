@@ -16,8 +16,8 @@ The data set is organised into 8 steps, each representing a different point of c
 See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and modelling notes, and the [Change Log](#change-log) for deviations from the original story data.
 
 **FHIR Resource Status Legend:**
-- ✅ Generated — resource file created
-- ⏳ Not yet generated — resource planned but not yet created
+- ✅ Sample FHIR resource provided
+- ⏳ Sample FHIR resource not yet provided
 
 ## 0. MyHealth App
 
