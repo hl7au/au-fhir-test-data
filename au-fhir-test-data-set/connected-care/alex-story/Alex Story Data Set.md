@@ -15,7 +15,17 @@ The data set is organised into 8 steps, each representing a different point of c
 
 See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and modelling notes, and the [Change Log](#change-log) for deviations from the original story data.
 
+**FHIR Resource Status Legend:**
+- ✅ Sample FHIR resource provided
+- ⏳ Sample FHIR resource not yet provided
+
 ## 0. MyHealth App
+
+**Consumer Background**
+
+Alex is a 32–year–old café owner and mother of two school-aged children. She lives in a regional town in NSW, about 90 minutes from the nearest cancer centre, and juggles long hours at work with parenting responsibilities. She values clear communication, the ability to plan around her commitments, and minimal time spent on the phone organising care. She has high digital health literacy and relies on the MyHealth app to keep track of referrals, appointments, and results so she can manage her treatment journey without losing focus on her family and business. Alex also has an Apple Watch and Apple Health app that connects to her Shared Care Plan, recording heart rate and fitness information that her GP and later her physiotherapist can access. She also has good private health insurance and prefers a private hospital and specialist if anything serious ever happens to her.
+
+**Screening Reminder and eRequest**
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -44,21 +54,23 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
-| Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
-| *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified for this | ⏳ Not yet generated | — |
+| Organization | National Cancer Screening Register | ⏳ | — |
+| *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified for this | ⏳ | — |
 | ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
 | Task (eRequesting group) | Task Group for the Cervical Screening e-Request (REQ-2025-10-001), grouping all related e-requesting tasks | ✅ | [Task-taskgroup-cervicalscreening-thompson-alex-20250930.json](Task-taskgroup-cervicalscreening-thompson-alex-20250930.json) |
 | Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ | [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
 | Organization | Bathurst Pathology | ✅ | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
 | Location | Bathurst Pathology | ✅ | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
 | HealthcareService | Bathurst Pathology – Pathology laboratory service | ✅ | [HealthcareService-pathologylaboratory-bathurst-pathology.json](HealthcareService-pathologylaboratory-bathurst-pathology.json) |
-| Appointment | Bathurst Pathology booking (BOOK-2025-10-000) | ⏳ Not yet generated | — |
+| Appointment | Bathurst Pathology booking (BOOK-2025-10-000) | ⏳ | — |
 | Practitioner | Dr. Chris Lee | ✅ | [Practitioner-lee-chris.json](Practitioner-lee-chris.json) |
 | PractitionerRole | Dr. Chris Lee – GP, Bathurst Medical Centre | ✅ | [PractitionerRole-generalpractitioner-lee-chris.json](PractitionerRole-generalpractitioner-lee-chris.json) |
-| Practitioner | Sarah Taylor | ⏳ Not yet generated | — |
-| PractitionerRole | Sarah Taylor – System Administrator, National Cancer Screening Register | ⏳ Not yet generated | — |
+| Practitioner | Sarah Taylor | ⏳ | — |
+| PractitionerRole | Sarah Taylor – System Administrator, National Cancer Screening Register | ⏳ | — |
 
 ## 1. Pathology (Collection Centre)
+
+Alex books a cervical screening at her local collection centre using the MyHealth app. She presents a QR code to share her eRequest, self-collects the sample, and the pathologist publishes results. When marked high risk, alerts and notifications ensure Alex and her GP are informed without delay.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -101,6 +113,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## 2. General Practice
 
+Alex's GP receives the high-risk result, explains it, and updates her Patient Summary. A Digital Shared Care Plan is created, and together they use the Provider Directory to select a gynaecologist. A digital referral is sent, adding the specialist to the plan and making appointments and preparation steps visible in MyHealth.
+
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
 | Patient Name | Alex Thompson | *Yes |
@@ -138,8 +152,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Observation | Weight | ✅ | [Observation-bodyweight-thompson-alex-20251009.json](Observation-bodyweight-thompson-alex-20251009.json) |
 | Observation | Blood pressure (systolic/diastolic) | ✅ | [Observation-bloodpressure-thompson-alex-20251009.json](Observation-bloodpressure-thompson-alex-20251009.json) |
 | Observation | Heart rate | ✅ | [Observation-heartrate-thompson-alex-20251009.json](Observation-heartrate-thompson-alex-20251009.json) |
-| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
-| QuestionnaireResponse | GP Chronic Condition Management Plan (GP CCMP), per the [AEHRC GP CCMP FHIR IG](https://build.fhir.org/ig/aehrc/gpccmp-fhir-ig/branches/master/StructureDefinition-GPCCMPQuestionnaireResponse.html) — supports the Shared Care Plan | ⏳ Not yet generated | — |
+| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ | — |
+| QuestionnaireResponse | GP Chronic Condition Management Plan (GP CCMP), per the [AEHRC GP CCMP FHIR IG](https://build.fhir.org/ig/aehrc/gpccmp-fhir-ig/branches/master/StructureDefinition-GPCCMPQuestionnaireResponse.html) — supports the Shared Care Plan | ⏳ | — |
 | ServiceRequest | e-Referral to Gynaecologist (REF-2025-10-004) | ✅ | [ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json](ServiceRequest-referral-gynaecologist-thompson-alex-20251009.json) |
 | Bundle (AU Patient Summary) | Self-contained AU PS document — what the GP knows as of the 2025-10-09 consultation (Problems, Allergies, Medications, Results, Vital Signs), sent with the e-Referral to Dr. Emily Chen | ✅ | [Bundle-aups-thompson-alex-20251009.json](Bundle-aups-thompson-alex-20251009.json) |
 | Organization | Bathurst Medical Centre | ✅ | [Organization-bathurst-medical-centre.json](Organization-bathurst-medical-centre.json) |
@@ -152,7 +166,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Dr. Emily Chen | ✅ | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
 | PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
 
-## 3. Specialist (Gynaecological Oncologist – Private Practice)
+## 3. Specialist Consultation and Preparation
+
+The gynaecologist performs a colposcopy and biopsy, adds the request and results to Alex's Shared Care Plan, and issues prescriptions and allied health referrals. When surgery is planned, bookings and preparation steps appear in MyHealth, giving Alex visibility and reassurance that her team is connected and her care is moving quickly.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -194,10 +210,10 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | MedicationRequest | Paracetamol 500 mg PRN (eScript SCR-2025-10-006) | ✅ | [MedicationRequest-paracetamol-thompson-alex-20251015.json](MedicationRequest-paracetamol-thompson-alex-20251015.json) |
 | ServiceRequest | Histopathology examination of cervical biopsy specimen (REQ-2025-10-007, synthesised identifier), requested from the colposcopy-directed biopsy | ✅ | [ServiceRequest-histopathology-thompson-alex-20251015.json](ServiceRequest-histopathology-thompson-alex-20251015.json) |
 | DiagnosticReport | Histopathology result (PATH-2025-10-007), CIN2/3 confirmed | ✅ | [DiagnosticReport-histopathology-thompson-alex-20251020.json](DiagnosticReport-histopathology-thompson-alex-20251020.json) |
-| Encounter | Multidisciplinary meeting / specialist decision encounter (MDM-2025-10-008) | ⏳ Not yet generated | — |
+| Encounter | Multidisciplinary meeting / specialist decision encounter (MDM-2025-10-008) | ⏳ | — |
 | ServiceRequest | Cone biopsy day surgery, requested following MDM decision (REQ-2025-11-009, synthesised identifier) | ✅ | [ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json](ServiceRequest-conebiopsydaysurgery-thompson-alex-20251020.json) |
 | Appointment | Ashfield Private Hospital booking (BOOK-2025-11-009) | ✅ | [Appointment-hospitalbooking-thompson-alex-20251101.json](Appointment-hospitalbooking-thompson-alex-20251101.json) |
-| QuestionnaireResponse | SMART Form consent (FORM-2025-10-010) | ⏳ Not yet generated | — |
+| QuestionnaireResponse | SMART Form consent (FORM-2025-10-010) | ⏳ | — |
 | ServiceRequest | Allied health eReferral – Physio (REF-2025-11-017) | ✅ | [ServiceRequest-referral-physio-thompson-alex-20251101.json](ServiceRequest-referral-physio-thompson-alex-20251101.json) |
 | ServiceRequest | Allied health eReferral – Counselling (REF-2025-11-018) | ✅ | [ServiceRequest-referral-counselling-thompson-alex-20251101.json](ServiceRequest-referral-counselling-thompson-alex-20251101.json) |
 | Bundle (AU Patient Summary) | Self-contained AU PS document, curated by Dr. Chen, dated 2025-11-01 — Problems, Allergies, Medicines, Results (both lab reports), Procedure History; no Vital Signs; Plan of Care is text-narrative only | ✅ | [Bundle-aups-specialist-thompson-alex-20251101.json](Bundle-aups-specialist-thompson-alex-20251101.json) |
@@ -210,7 +226,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Dr. Emily Chen | ✅ | [Practitioner-chen-emily.json](Practitioner-chen-emily.json) |
 | PractitionerRole | Dr. Emily Chen – Gynaecologist, Ashfield Private Clinic | ✅ | [PractitionerRole-obstetrician-chen-emily.json](PractitionerRole-obstetrician-chen-emily.json) |
 
-## 4. Private Hospital (Theatre / Inpatient)
+## 4. Hospital (Day Surgery)
+
+Before admission, Alex completes a pre-admission checklist in MyHealth. On the day, the surgical team reviews her preparation details, results and consents. Procedure notes are captured digitally, and a discharge summary is published before she leaves. Follow-up appointments are generated automatically and appear in her app, ensuring seamless continuity of care.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -240,9 +258,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
-| Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (pulled independently, not sent with the referral) | ⏳ Not yet generated | — |
+| Composition (AU Patient Summary) | Patient Summary retrieved by Ashfield Private Hospital at admission (pulled independently, not sent with the referral) | ⏳ | — |
 | Appointment | Hospital booking (BOOK-2025-11-009) | ✅ | [Appointment-hospitalbooking-thompson-alex-20251101.json](Appointment-hospitalbooking-thompson-alex-20251101.json) |
-| QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ Not yet generated | — |
+| QuestionnaireResponse | SMART Form pre-admission (FORM-2025-11-011) | ⏳ | — |
 | Encounter | Peri-operative encounter (PERI-2025-11-012) | ✅ | [Encounter-periop-thompson-alex-20251101.json](Encounter-periop-thompson-alex-20251101.json) |
 | Procedure | Cone Biopsy of cervix (Day Surgery) | ✅ | [Procedure-conebiopsy-thompson-alex-20251101.json](Procedure-conebiopsy-thompson-alex-20251101.json) |
 | Composition | Discharge Summary (DS-2025-11-013), LOINC 18842-5 "Discharge summary"; references the peri-operative Encounter, Procedure History, and Hospital Discharge Medications; Plan of Care section is text-narrative only, listing the three follow-up appointments | ✅ | [Composition-dischargesummary-thompson-alex-20251101.json](Composition-dischargesummary-thompson-alex-20251101.json) |
@@ -250,7 +268,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | MedicationRequest | Discharge meds – Ibuprofen x5 days | ✅ | [MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json](MedicationRequest-ibuprofen-discharge-thompson-alex-20251101.json) |
 | MedicationRequest | Discharge meds – Oxycodone x3 days | ✅ | [MedicationRequest-oxycodone-discharge-thompson-alex-20251101.json](MedicationRequest-oxycodone-discharge-thompson-alex-20251101.json) |
 | MedicationRequest | Discharge meds – Paracetamol x5 days | ✅ | [MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json](MedicationRequest-paracetamol-discharge-thompson-alex-20251101.json) |
-| CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ Not yet generated | — |
+| CarePlan | Follow-up plan (heating pad, no lifting >5 kg, GP in 7 days) | ⏳ | — |
 | Appointment | Follow-up – GP (2025-11-08, BOOK-2025-11-008, synthesised identifier) | ✅ | [Appointment-followupgp-thompson-alex-20251108.json](Appointment-followupgp-thompson-alex-20251108.json) |
 | Appointment | Follow-up – Physio (2025-11-10, BOOK-2025-11-019) — shared with Section 6 | ✅ | [Appointment-followupphysio-thompson-alex-20251110.json](Appointment-followupphysio-thompson-alex-20251110.json) |
 | Appointment | Follow-up – Counselling (2025-11-15, BOOK-2025-11-020, Telehealth) — shared with Section 6 | ✅ | [Appointment-followupcounselling-thompson-alex-20251115.json](Appointment-followupcounselling-thompson-alex-20251115.json) |
@@ -261,6 +279,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | PractitionerRole | Dr. Mark Wilson – Surgeon, Ashfield Private Hospital | ✅ | [PractitionerRole-obstetrician-wilson-mark.json](PractitionerRole-obstetrician-wilson-mark.json) |
 
 ## 5. Pharmacy
+
+After surgery, Alex's updated medicines flow to her pharmacist via the Shared Care Plan. Clinical decision support checks for duplication and interactions before dispensing. Counselling notes are added back into the plan, notifying her GP and specialist. Alex sees her medicine list, reminders, and safety guidance clearly in the MyHealth app.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -288,8 +308,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
 | Patient | Alex Thompson | ✅ | [Patient-thompson-alex.json](Patient-thompson-alex.json) |
-| Composition (AU Patient Summary) | Patient Summary viewed by Bathurst Community Pharmacy as part of medication review | ⏳ Not yet generated | — |
-| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ Not yet generated | — |
+| Composition (AU Patient Summary) | Patient Summary viewed by Bathurst Community Pharmacy as part of medication review | ⏳ | — |
+| CarePlan | Shared Care Plan (SCP-2025-10-003) | ⏳ | — |
 | Encounter | Medication review encounter, Bathurst Community Pharmacy, 2025-11-02 | ✅ | [Encounter-medicationreview-thompson-alex-20251102.json](Encounter-medicationreview-thompson-alex-20251102.json) |
 | MedicationStatement | Sertraline 100 mg each morning — newly disclosed regular medication | ✅ | [MedicationStatement-sertraline-thompson-alex-20251102.json](MedicationStatement-sertraline-thompson-alex-20251102.json) |
 | MedicationStatement | Ibuprofen 400 mg PRN — revised to max 3 tablets/day following the Sertraline interaction alert | ✅ | [MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json](MedicationStatement-ibuprofen-postdischarge-thompson-alex-20251102.json) |
@@ -305,7 +325,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Sarah Lee | ✅ | [Practitioner-lee-sarah.json](Practitioner-lee-sarah.json) |
 | PractitionerRole | Sarah Lee – Pharmacist, Bathurst Community Pharmacy | ✅ | [PractitionerRole-retailpharmacist-lee-sarah.json](PractitionerRole-retailpharmacist-lee-sarah.json) |
 
-## 6. Allied Health (Physiotherapy & Counselling)
+## 6. Allied Health
+
+Alex is referred for physiotherapy and counselling, booked through the Provider Directory with visibility of wait times and accessibility. Appointments and preparation notes appear in MyHealth. Progress measures and symptom scores are added to her Shared Care Plan, allowing her GP and specialist to monitor recovery and intervene early if needed.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -350,8 +372,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Encounter | Psycho-Oncology counselling, Telehealth, 2025-11-15 | ✅ | [Encounter-counsellingvisit-thompson-alex-20251115.json](Encounter-counsellingvisit-thompson-alex-20251115.json) |
 | Observation | Counselling measures (OBS-2025-11-022) – PHQ-9 total score (10, mild-moderate depression) | ✅ | [Observation-phq9-thompson-alex-20251115.json](Observation-phq9-thompson-alex-20251115.json) |
 | Observation | Counselling measures (OBS-2025-11-022) – anxiety level (Moderate) | ✅ | [Observation-anxietylevel-thompson-alex-20251115.json](Observation-anxietylevel-thompson-alex-20251115.json) |
-| Observation | Apple Watch data – heart rate, steps | ⏳ Not yet generated | — |
-| CarePlan | Shared Care Plan update (physio exercises, counselling notes) | ⏳ Not yet generated | — |
+| Observation | Apple Watch data – heart rate, steps | ⏳ | — |
+| CarePlan | Shared Care Plan update (physio exercises, counselling notes) | ⏳ | — |
 | Organization | Bathurst Physio Centre | ✅ | [Organization-bathurst-physio-centre.json](Organization-bathurst-physio-centre.json) |
 | Location | Bathurst Physio Centre | ✅ | [Location-bathurst-physio-centre.json](Location-bathurst-physio-centre.json) |
 | HealthcareService | Bathurst Physio Centre | ✅ | [HealthcareService-physiotherapyservices-bathurst-physio-centre.json](HealthcareService-physiotherapyservices-bathurst-physio-centre.json) |
@@ -383,7 +405,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 | Resource Type | Description | Status | Reference |
 | --- | --- | --- | --- |
-| Organization | Australian Institute of Health and Welfare | ⏳ Not yet generated | — |
+| Organization | Australian Institute of Health and Welfare | ⏳ | — |
 
 > This section describes a de-identified, aggregated population-health view rather than per-patient data — it wouldn't produce Patient-linked clinical resources; a `Measure`/`MeasureReport` pair would be the more natural fit if we model it at all.
 
