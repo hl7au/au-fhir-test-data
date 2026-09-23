@@ -21,6 +21,16 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## 0. MyHealth App
 
+**Consumer Background**
+
+Yuri is a 76-year-old retired engineer who migrated to Australia from Eastern Europe in the 1980s and has lived in Kalgoorlie, WA ever since. He manages Type 2 diabetes and chronic kidney disease, supported by in-home aged-care services. Yuri prefers to stay at home within his community and values clinicians who take time to explain things clearly and provide written instructions.
+
+He wears an internet-connected glucose monitor that shares data with his GP and alerts his daughter in Perth. His GP has created a digital Shared Care Plan used by his local health service and aged-care team. Because specialist services are often hundreds of kilometres away, good coordination is essential.
+
+While visiting family in the ACT, Yuri experiences a fall. His daughter, who helps with his digital tasks, uses the MyHealth App to follow his care, manage appointments across jurisdictions, and ensure the right information reaches his care team at home.
+
+**Notification and Initial Response**
+
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
 | Patient Name | Yuri Petrov | *Yes |
@@ -58,6 +68,8 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## 1. Healthdirect
 
+After a dizzy spell and fall in Canberra, Yuri calls HealthDirect with help from friends. A nurse practitioner reviews his Shared Care Plan, sees his medicines and history, and recommends an ambulance. The encounter summary is published instantly, notifying his GP and daughter in WA through the MyHealth app.
+
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
 | Patient Name | Yuri Petrov | *Yes |
@@ -75,7 +87,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Encounter Summary ID | ENC-2025-10-024 | *Yes |
 | Summary Details | Advice: Call ambulance; Symptoms: Dizziness, no injury reported; Notified: GP, Daughter | *Yes |
 | Notification Recipients | GP (Dr. Ravi Kumar, HPI-I: 8003611566727875), Daughter (Sofia Petrov, MyHealth App) | *Yes |
-| Provider Organisation | HealthDirect Australia (HPI-O: 1111-2222-3333-4444) | *Yes |
+| Provider Organisation | HealthDirect Australia (HPI-O: TBD) | *Yes |
 | Organisation Address | 10 Moore St, Canberra, ACT 2601 | No |
 | Clinician | Ms. Linda Hayes (Nurse Practitioner, HPI-I: 8003611566727883) | *Yes |
 
@@ -88,7 +100,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Ms. Linda Hayes | ✅ | [Practitioner-hayes-linda.json](Practitioner-hayes-linda.json) |
 | PractitionerRole | Ms. Linda Hayes – Nurse Practitioner, HealthDirect | ✅ | [PractitionerRole-nursepractitioner-hayes-linda.json](PractitionerRole-nursepractitioner-hayes-linda.json) |
 
-## 2. Ambulance
+## 2. Ambulance and Emergency Department
+
+Paramedics access Yuri's Patient Summary en route, confirming medicines and allergies. They send pre-arrival data, including vitals and reason for encounter, so the ED is ready. At hospital, triage is faster, initial observations are captured, and the team subscribes to his Shared Care Plan for updates across his journey.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -122,7 +136,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | ACT Ambulance Service | ✅ | [Location-garran-ambulance-service.json](Location-garran-ambulance-service.json) |
 | HealthcareService | ACT Ambulance Service | ✅ | [HealthcareService-ambulanceservice-garran-ambulance-service.json](HealthcareService-ambulanceservice-garran-ambulance-service.json) |
 
-## 3. ED / Inpatient (ACT)
+## 3. Hospital Admission and Discharge
+
+During his short stay, clinicians record results and medication changes, then publish a discharge summary before he leaves. His GP and local health service in WA are notified immediately through Health Connect. Yuri and his daughter see the same instructions in the MyHealth app, giving confidence that follow-up is coordinated.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -161,7 +177,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Practitioner | Dr. Susan Green | ✅ | [Practitioner-green-susan.json](Practitioner-green-susan.json) |
 | PractitionerRole | Dr. Susan Green – ED Physician, Garran Hospital | ✅ | [PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital.json](PractitionerRole-emergencymedicinespecialist-green-susan-garran-hospital.json) |
 
-## 4. Local Health Service (WA Nurse Practitioner)
+## 4. Local Health Service
+
+Back in Kalgoorlie, a nurse practitioner reviews Yuri's discharge summary and home glucose readings. They reconcile medicines, order tests, and update the Shared Care Plan. An eReferral to an endocrinologist is made, and diabetes education sessions are booked. His daughter receives alerts for night-time lows, ensuring early action and reassurance.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -199,7 +217,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Kalgoorlie Community Health Service | ✅ | [Location-kalgoorlie-community-health-service.json](Location-kalgoorlie-community-health-service.json) |
 | HealthcareService | Kalgoorlie Community Health Service | ✅ | [HealthcareService-publiccommunity-kalgoorlie-community-health-service.json](HealthcareService-publiccommunity-kalgoorlie-community-health-service.json) |
 
-## 5. Endocrinologist (WA)
+## 5. Endocrinologist (Telehealth)
+
+With his daughter and a local health worker present, Yuri meets an endocrinologist via telehealth. The specialist reviews his discharge summary and glucose readings, adjusts medicines, and sets safer targets. A diabetes education session is booked, and the updated Shared Care Plan is published immediately for his GP, pharmacy and daughter.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -240,7 +260,9 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Location | Kalgoorlie Specialist Clinic | ✅ | [Location-kalgoorlie-specialist-clinic.json](Location-kalgoorlie-specialist-clinic.json) |
 | HealthcareService | Kalgoorlie Specialist Clinic | ✅ | [HealthcareService-specialistmedical-kalgoorlie-specialist-clinic.json](HealthcareService-specialistmedical-kalgoorlie-specialist-clinic.json) |
 
-## 6. Aged-Care Service (WA)
+## 6. Aged-Care Coordination
+
+Yuri's care coordinator uses the Provider Directory to book occupational therapy and physiotherapy close to home, filtering for cultural-safety markers. Bookings and transport details are confirmed digitally and appear in MyHealth. Providers see only information relevant to their role, and Yuri feels confident services are appropriate and respectful.
 
 | Data Field | Actual Data | Critical? |
 | --- | --- | --- |
@@ -296,7 +318,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Outcome Metrics | Hypo-Related Falls: Reduced 20%; Telehealth Uptake: 45% | *Yes |
 | Dashboard Insights | Target: Add outreach for high-wait areas; Update: Directory with cultural safety flags | *Yes |
 | Update Cadence | Nightly; Source: FHIR via Health Connect Australia | No |
-| Provider Organisation | Australian Institute of Health and Welfare (HPI-O: 3333-2222-1111-0000) | *Yes |
+| Provider Organisation | Australian Institute of Health and Welfare (HPI-O: TBD) | *Yes |
 | Organisation Address | 1 Oxford St, Canberra, ACT 2601 | No |
 
 ### FHIR Resources – Population Health / Analytics
@@ -309,11 +331,14 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 
 ## Pending / Placeholder Data
 
-**Update Notification:** Yuri's last name changed to Petrov on 10 October 2025; all references updated throughout.
+**Source-table identifiers.** IHI, MEDICARE NO, HPI-O, and HPI-I values in this document's data outline tables match the real Services Australia / Healthcare Identifiers Service test data used in the FHIR resources, for every entity that has one built. Two entities have no FHIR resource yet and show placeholder numbers: HealthDirect Australia (HPI-O: TBD) and Australian Institute of Health and Welfare (HPI-O: TBD).
 
-**Source-table identifiers.** IHI, MEDICARE NO, HPI-O, and HPI-I values in this document's own tables match Services Australia / Healthcare Identifiers Service test data for entities with FHIR resources generated. Placeholders remain for entities without resources yet built.
-
-**Resource references.** FHIR resources for Yuri's story include 34 generated resources (Patient, Organizations, Locations, HealthcareServices, Practitioners, PractitionerRoles). Clinical resources (Encounters, Observations, ServiceRequests, Appointments, etc.) are not yet generated; entries show status ⏳.
+**Resource identifiers.** Yuri's `Patient`, `Organization`, `HealthcareService`, `Practitioner`, and `PractitionerRole` resources — standalone and embedded — carry `identifier` values from the Services Australia / Healthcare Identifiers Service test data:
+- `Patient`: IHI + Medicare Number
+- `Organization`: HPI-O + ABN
+- `HealthcareService`: HPI-O
+- `Practitioner`: HPI-I + Medicare Prescriber Number + AHPRA registration `qualification`
+- `PractitionerRole`: HPI-I + Medicare Provider Number
 
 ## Change Log
 
