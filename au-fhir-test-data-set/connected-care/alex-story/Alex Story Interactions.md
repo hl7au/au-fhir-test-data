@@ -58,11 +58,11 @@ sequenceDiagram
 
 | # | Interaction | Initiator | Responder | Test Data File |
 | --- | --- | --- | --- | --- |
-| 1 | Submit eRequest (Cervical Screening Test) | GP PMS | eRequesting Server | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
+| 1 | Submit eRequest (Cervical Screening Test) | GP PMS | eRequesting Server | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json), [Task-taskgroup-cervicalscreening-thompson-alex-20250930.json](Task-taskgroup-cervicalscreening-thompson-alex-20250930.json), [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
 | 2 | Retrieve eRequest (Cervical Screening Test) | Consumer App | eRequesting Server | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
 | 3 | Initiate Virtual Nurse Triage Call | Consumer App | Virtual Triage CMS | _TBD_ |
 | 4 | Submit Virtual Nursing Triage Encounter Record | Virtual Triage CMS | Shared EHR/HIE | _TBD_ |
-| 5 | Retrieve eRequest (Cervical Screening Test) | Lab System | eRequesting Server | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
+| 5 | Retrieve eRequest (Cervical Screening Test) | Lab System | eRequesting Server | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json), [Task-taskgroup-cervicalscreening-thompson-alex-20250930.json](Task-taskgroup-cervicalscreening-thompson-alex-20250930.json), [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
 | 6 | Submit Diagnostic Report (HPV pathology result) | Lab System | eReporting Server | [DiagnosticReport-hpvpathology-thompson-alex-20251008.json](DiagnosticReport-hpvpathology-thompson-alex-20251008.json) |
 
 ## 2. General Practice

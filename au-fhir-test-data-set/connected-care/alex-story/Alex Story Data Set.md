@@ -47,6 +47,7 @@ See [Pending / Placeholder Data](#pending--placeholder-data) for known gaps and 
 | Organization | National Cancer Screening Register | ⏳ Not yet generated | — |
 | *Unresolved* | Reminder: Cervical Screening overdue — no AU Core resource identified for this | ⏳ Not yet generated | — |
 | ServiceRequest | Cervical Screening e-Request (REQ-2025-10-001) | ✅ Generated | [ServiceRequest-cervicalscreening-thompson-alex-20250930.json](ServiceRequest-cervicalscreening-thompson-alex-20250930.json) |
+| Task (eRequesting group) | Task Group for the Cervical Screening e-Request (REQ-2025-10-001), grouping all related e-requesting tasks | ✅ Generated | [Task-taskgroup-cervicalscreening-thompson-alex-20250930.json](Task-taskgroup-cervicalscreening-thompson-alex-20250930.json) |
 | Task (eRequesting fulfilment) | Fulfilment task for the Cervical Screening e-Request (REQ-2025-10-001), owned by Bathurst Pathology | ✅ Generated | [Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json](Task-taskfulfilment-cervicalscreening-thompson-alex-20250930.json) |
 | Organization | Bathurst Pathology | ✅ Generated | [Organization-bathurst-pathology.json](Organization-bathurst-pathology.json) |
 | Location | Bathurst Pathology | ✅ Generated | [Location-bathurst-pathology.json](Location-bathurst-pathology.json) |
