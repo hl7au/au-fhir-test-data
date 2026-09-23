@@ -1,0 +1,160 @@
+{
+  "resourceType": "Composition",
+  "id": "medicationreview-thompson-alex-20251102",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-composition"
+    ]
+  },
+  "identifier": {
+    "system": "http://bathurstpharmacy.example.com/id/medication-review",
+    "value": "MED-2025-11-014"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Medication Review – Bathurst Community Pharmacy</b></p><p><b>Status</b>: Final</p><p><b>Type</b>: Medication summary Document</p><p><b>Encounter</b>: Medication review, Bathurst Community Pharmacy, 2025-11-02</p><p><b>Date</b>: 2025-11-02</p><p><b>Author</b>: Sarah Lee, Pharmacist, Bathurst Community Pharmacy</p><p><b>Custodian</b>: Bathurst Community Pharmacy</p></div>"
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "56445-0",
+        "display": "Medication summary Document"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "encounter": {
+    "reference": "Encounter/medicationreview-thompson-alex-20251102"
+  },
+  "date": "2025-11-02",
+  "author": [
+    {
+      "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+      "display": "Sarah Lee"
+    }
+  ],
+  "title": "Medication Review – Bathurst Community Pharmacy",
+  "custodian": {
+    "reference": "Organization/bathurst-community-pharmacy",
+    "display": "Bathurst Community Pharmacy"
+  },
+  "section": [
+    {
+      "title": "Active Problems",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11450-4",
+            "display": "Problem list - Reported"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">High-risk HPV detected (cytology); CIN2/3 (pre-cancerous) - biopsy-confirmed, treated by cone biopsy (2025-11-01)</div>"
+      },
+      "entry": [
+        {
+          "reference": "Condition/highriskhpv-thompson-alex"
+        }
+      ]
+    },
+    {
+      "title": "Active Allergies",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "48765-2",
+            "display": "Allergies and adverse reactions Document"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Penicillin - anaphylaxis (high criticality)</div>"
+      },
+      "entry": [
+        {
+          "reference": "AllergyIntolerance/penicillin-thompson-alex"
+        }
+      ]
+    },
+    {
+      "title": "Current Medicines",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "10160-0",
+            "display": "History of Medication use Narrative"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">02/11/2025 Sertraline 100 mg tablet - 100 mg (1 tablet) once daily each morning (newly disclosed)<br/>02/11/2025 Ibuprofen 400 mg tablet - 400 mg every 6-8 hours as needed for pain, reduced to max 3 tablets/day, to 2025-11-06<br/>02/11/2025 Paracetamol 500 mg tablet - 500 mg every 6 hours as needed for pain (max 4 g/day), to 2025-11-06<br/>02/11/2025 Oxycodone 5 mg tablet - 5 mg as needed for intense pain only, max 4 tablets/day, short course to 2025-11-05</div>"
+      },
+      "entry": [
+        {
+          "reference": "MedicationStatement/sertraline-thompson-alex-20251102"
+        },
+        {
+          "reference": "MedicationStatement/ibuprofen-postdischarge-thompson-alex-20251102"
+        },
+        {
+          "reference": "MedicationStatement/paracetamol-postdischarge-thompson-alex-20251102"
+        },
+        {
+          "reference": "MedicationStatement/oxycodone-thompson-alex-20251102"
+        }
+      ]
+    },
+    {
+      "title": "Procedure History",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "47519-4",
+            "display": "History of Procedures Document"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">15/10/2025 Colposcopy with biopsy, performed in-rooms<br/>01/11/2025 Cone biopsy of cervix (day surgery)</div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/colposcopybiopsy-thompson-alex-20251015"
+        },
+        {
+          "reference": "Procedure/conebiopsy-thompson-alex-20251101"
+        }
+      ]
+    },
+    {
+      "title": "Plan of Care",
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18776-5",
+            "display": "Plan of care note"
+          }
+        ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">02/11/2025 (NOTE-2025-11-015) Take Ibuprofen with food; alternate with Paracetamol; stop Ibuprofen 2025-11-06. Oxycodone: only 10 tablets supplied — take only if pain is intense; if not necessary, continue Ibuprofen (with food) alternating with Paracetamol. Heating pad and hydration advised. Watch for: nausea, rash. CDS red flag: Ibuprofen + Sertraline (SSRI) — GI bleeding risk.</div>"
+      }
+    }
+  ]
+}

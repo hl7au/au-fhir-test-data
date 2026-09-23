@@ -1,0 +1,81 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "sertraline-thompson-alex-20251001",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"
+    ]
+  },
+  "status": "completed",
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "med",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+                "valueCoding": {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+                  "code": "BPG",
+                  "display": "Branded package with no container"
+                }
+              }
+            ],
+            "system": "http://snomed.info/sct",
+            "code": "11206011000036106",
+            "display": "Sertraline (GenRx) 100 mg tablet, 30"
+          }
+        ],
+        "text": "Sertraline (GenRx) 100 mg tablet, 30"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "421026006",
+            "display": "Tablet"
+          }
+        ]
+      },
+      "manufacturer": {
+        "display": "Apotex Pty Ltd"
+      }
+    }
+  ],
+  "medicationReference": {
+    "reference": "#med",
+    "display": "Sertraline (GenRx) 100 mg tablet, 30"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "display": "Sarah Lee"
+      }
+    }
+  ],
+  "quantity": {
+    "value": 30,
+    "unit": "TAB",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code": "TAB"
+  },
+  "whenPrepared": "2025-10-01",
+  "dosageInstruction": [
+    {
+      "text": "Take ONE (1) tablet (100 mg) once daily each morning."
+    }
+  ]
+}

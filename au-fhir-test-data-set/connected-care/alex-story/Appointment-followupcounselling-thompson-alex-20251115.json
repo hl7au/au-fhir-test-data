@@ -1,0 +1,61 @@
+{
+  "resourceType": "Appointment",
+  "id": "followupcounselling-thompson-alex-20251115",
+  "identifier": [
+    {
+      "system": "http://bathurstpsychology.example.net/id/booking",
+      "type": {
+        "text": "Booking ID"
+      },
+      "value": "BOOK-2025-11-020"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/referral-counselling-thompson-alex-20251101"
+    }
+  ],
+  "status": "booked",
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310026003",
+          "display": "Counselling service"
+        }
+      ]
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "Psycho-oncology counselling following cancer-pathway diagnosis and surgery"
+    }
+  ],
+  "description": "Psycho-Oncology counselling session (Telehealth)",
+  "start": "2025-11-15T11:00:00+11:00",
+  "end": "2025-11-15T11:45:00+11:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/thompson-alex",
+        "display": "Alex Thompson"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "PractitionerRole/counsellorsnec-patel-rachel",
+        "display": "Dr Rachel Patel"
+      },
+      "status": "accepted"
+    }
+  ]
+}

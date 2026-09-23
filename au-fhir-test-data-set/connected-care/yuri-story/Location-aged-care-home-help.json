@@ -1,0 +1,30 @@
+{
+  "resourceType": "Location",
+  "id": "aged-care-home-help",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Aged Care Home Help",
+  "address": {
+    "line": [
+      "71 Mawson Pl"
+    ],
+    "city": "Mawson",
+    "state": "ACT",
+    "postalCode": "2607"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/aged-care-home-help"
+  }
+}
