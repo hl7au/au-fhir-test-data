@@ -4,3 +4,9 @@
 # Glob patterns work (*, ?, [abc]); a bare filename only matches a file at the root.
 # Lines starting with # are comments; inline comments are not supported.
 # Prefer fixing the reference over adding an entry here.
+
+# Encounter/gp-consultation is defined in both AU Core and AU eRequesting on
+# purpose: AU Core Encounters must not claim eRequesting profiles (Inferno).
+# Remove once the duplicate id is resolved.
+au-fhir-test-data-set/au-core/Encounter-gp-consultation.json
+au-fhir-test-data-set/au-erequesting/Encounter-gp-consultation.json
