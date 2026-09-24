@@ -2,32 +2,27 @@ name: Reference Integrity Check
 
 on:
   pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
 
 jobs:
-  run-script:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
 
-      - name: Run Python script
-        id: run_script
+      - name: Test the checker
+        working-directory: .github/scripts
         run: |
-          python .github/scripts/reference_integrity.py
+          pip install pytest==9.1.1
+          python -m pytest -q -p no:cacheprovider
 
-      - name: Check for error file, set result, fail if errors found
-        id: set_result
-        run: |
-          if [ -f reference_errors ]; then
-            echo "Reference Integrity Check failed" >> $GITHUB_STEP_SUMMARY
-            echo "$(cat reference_errors)" >> $GITHUB_STEP_SUMMARY
-            echo "Reference integrity errors found. Failing the workflow."
-            exit 1
-          else
-            echo "Reference Integrity Check passed" >> $GITHUB_STEP_SUMMARY
-          fi
+      - name: Check references
+        run: python .github/scripts/reference_integrity.py
