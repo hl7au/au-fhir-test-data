@@ -1,12 +1,6 @@
-# The filenames listed here won't be checked against the reference integrity script.
-# The lines that begin with # should be ignored as comment, note that only whole lines work, inline comment won't
-Bundle-aups-basicsummary.json
-Bundle-aups-gpvisit-retrieval.json
-Bundle-aups-noknownx.json
-Bundle-aups-referral-endoconsult-autogen.json
-Bundle-aups-referral-endoconsult-curated.json
-Bundle-aups-section-emptyreason.json
-Bundle-aups-basicsummary-missing-comp-elements.json
-Bundle-aups-basicsummarywihpath.json
-Bundle-aups-patient-story.json
-
+# Paths listed here are skipped by the reference integrity check.
+# One path per line, relative to the repository root, e.g.
+#   au-fhir-test-data-set/au-core/Condition-example.json
+# Glob patterns work (*, ?, [abc]); a bare filename only matches a file at the root.
+# Lines starting with # are comments; inline comments are not supported.
+# Prefer fixing the reference over adding an entry here.
