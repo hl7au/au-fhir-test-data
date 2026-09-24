@@ -16,8 +16,8 @@ def repo(tmp_path):
     return write
 
 
-def problems(root, quarantine=()):
-    return [(p.path, p.message) for p in Checker(root, quarantine).run()]
+def problems(root, quarantine=(), allowed_duplicates=()):
+    return [(p.path, p.message) for p in Checker(root, quarantine, allowed_duplicates).run()]
 
 
 def patient(id="p1", **fields):
@@ -169,6 +169,14 @@ def test_duplicate_resource_ids_across_folders(repo):
     assert problems(repo.root) == [
         ("au-core/Patient-p1.json", "Duplicate resource 'Patient/p1', also defined in au-erequesting/Patient-p1.json."),
         ("au-erequesting/Patient-p1.json", "Duplicate resource 'Patient/p1', also defined in au-core/Patient-p1.json."),
+    ]
+
+
+def test_allowed_duplicates_still_check_references(repo):
+    repo("au-core/Patient-p1.json", patient())
+    repo("au-erequesting/Patient-p1.json", patient(generalPractitioner=[{"reference": "Practitioner/missing"}]))
+    assert problems(repo.root, allowed_duplicates=["Patient/p1"]) == [
+        ("au-erequesting/Patient-p1.json", "Reference 'Practitioner/missing': not found in any resource."),
     ]
 
 
