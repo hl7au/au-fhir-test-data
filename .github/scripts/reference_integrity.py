@@ -21,7 +21,8 @@ Resolution rules:
   repository can resolve them.
 
 Two files that share a resourceType/id are also reported, because the one
-uploaded last overwrites the other on a server.
+uploaded last overwrites the other on a server, unless the resourceType/id
+is listed in the allowed duplicates file.
 
 Problems in files matching the quarantine file are ignored. Problems are
 printed, written to the GitHub step summary when running in Actions, and
@@ -39,6 +40,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 DEFAULT_QUARANTINE = Path(__file__).with_name("reference_integrity_quarantine")
+DEFAULT_ALLOWED_DUPLICATES = Path(__file__).with_name("reference_integrity_allowed_duplicates")
 
 # Literal reference shape from http://hl7.org/fhir/R4/references.html
 RELATIVE_REFERENCE = re.compile(
@@ -61,8 +63,8 @@ class BundleContext:
     keys: frozenset
 
 
-def load_quarantine(path):
-    """Return the quarantine patterns: repo-relative paths, globs allowed."""
+def load_list(path):
+    """Return the non-comment lines of a list file, or [] if it does not exist."""
     try:
         lines = Path(path).read_text(encoding="utf-8").splitlines()
     except FileNotFoundError:
@@ -110,9 +112,10 @@ def is_attachment_link(node, value):
 
 
 class Checker:
-    def __init__(self, root, quarantine_patterns=()):
+    def __init__(self, root, quarantine_patterns=(), allowed_duplicates=()):
         self.root = Path(root)
         self.quarantine = list(quarantine_patterns)
+        self.allowed_duplicates = set(allowed_duplicates)
         self.index = defaultdict(list)
         self.resources = {}
         self.problems = []
@@ -148,7 +151,9 @@ class Checker:
 
     def _check_duplicates(self):
         for key, paths in self.index.items():
-            for path in paths if len(paths) > 1 else []:
+            if len(paths) < 2 or key in self.allowed_duplicates:
+                continue
+            for path in paths:
                 others = ", ".join(p for p in paths if p != path)
                 self.problems.append(Problem(path, f"Duplicate resource '{key}', also defined in {others}."))
 
@@ -217,9 +222,15 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Check that references between test data files resolve.")
     parser.add_argument("root", nargs="?", default=".", help="directory to scan (default: current directory)")
     parser.add_argument("--quarantine", default=DEFAULT_QUARANTINE, help="file listing paths to ignore")
+    parser.add_argument(
+        "--allowed-duplicates", default=DEFAULT_ALLOWED_DUPLICATES,
+        help="file listing resourceType/id values that may be defined in more than one file",
+    )
     args = parser.parse_args(argv)
 
-    problems = Checker(args.root, load_quarantine(args.quarantine)).run()
+    problems = Checker(
+        args.root, load_list(args.quarantine), load_list(args.allowed_duplicates)
+    ).run()
     for problem in problems:
         print(f"{problem.path}: {problem.message}")
     write_step_summary(problems)

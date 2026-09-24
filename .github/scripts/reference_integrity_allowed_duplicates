@@ -1,0 +1,10 @@
+# resourceType/id values that may be defined in more than one file.
+# One per line, e.g. Encounter/example. Lines starting with # are comments.
+# References in these files are still checked; only the duplicate is allowed.
+# Each entry needs a comment explaining why the duplicate is intentional.
+
+# AU Core copy is long-standing AU Core test data. The AU eRequesting copy is
+# the published AU eRequesting IG example, which its ServiceRequest examples
+# reference by this id. AU Core Encounters must not claim AU eRequesting
+# profiles (Inferno), so the two cannot be merged into one file.
+Encounter/gp-consultation
