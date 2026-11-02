@@ -33,6 +33,11 @@
     "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2015-05-12",
+  "performer": [
+    {
+      "reference": "Organization/trentham-pathology"
+    }
+  ],
   "dataAbsentReason": {
     "coding": [
       {
