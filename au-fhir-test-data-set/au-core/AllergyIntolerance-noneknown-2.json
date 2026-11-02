@@ -1,6 +1,6 @@
 {
   "resourceType": "AllergyIntolerance",
-  "id": "nkda2",
+  "id": "noneknown-2",
   "meta": {
     "profile": [
       "http://hl7.org.au/fhir/core/StructureDefinition/au-core-allergyintolerance"
@@ -12,8 +12,7 @@
         "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
         "code": "active"
       }
-    ],
-    "text": "Active"
+    ]
   },
   "verificationStatus": {
     "coding": [
@@ -21,29 +20,25 @@
         "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
         "code": "unconfirmed"
       }
-    ],
-    "text": "Unconfirmed"
+    ]
   },
-  "category": [
-    "medication"
-  ],
   "code": {
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "409137002"
+        "code": "716186003",
+        "display": "No known allergy"
       }
-    ],
-    "text": "No known drug allergy"
+    ]
   },
   "patient": {
-    "reference": "Patient/baratz-toni"
+    "reference": "Patient/baby-banks-john"
   },
-  "recordedDate": "2024-07-14",
+  "recordedDate": "2023-01-08",
   "recorder": {
-    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+    "reference": "Patient/banks-mia-leanne"
   },
   "asserter": {
-    "reference": "PractitionerRole/generalpractitioner-harding-diana"
+    "reference": "Patient/banks-mia-leanne"
   }
 }

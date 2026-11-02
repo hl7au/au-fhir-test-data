@@ -31,6 +31,11 @@
     "reference": "Patient/irvine-ronny-lawrence"
   },
   "effectiveDateTime": "2022-02-10",
+  "performer": [
+    {
+      "reference": "Organization/fishermans-reach-radiology"
+    }
+  ],
   "valueQuantity": {
     "value": 0.887,
     "unit": "g/cm²",

@@ -31,6 +31,11 @@
     "reference": "Patient/howe-deangelo"
   },
   "effectiveDateTime": "2021-02-15T12:00:00+10:00",
+  "performer": [
+    {
+      "reference": "Organization/pullabooka-pathology"
+    }
+  ],
   "dataAbsentReason": {
     "coding": [
       {

@@ -29,6 +29,11 @@
     "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2023-08-08T13:30:00.000Z",
+  "performer": [
+    {
+      "reference": "PractitionerRole/generalpractitioner-guthridge-jarred"
+    }
+  ],
   "dataAbsentReason": {
     "coding": [
       {

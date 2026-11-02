@@ -32,6 +32,11 @@
     "reference": "Patient/baratz-toni"
   },
   "effectiveDateTime": "2015-06-12",
+  "performer": [
+    {
+      "reference": "Organization/trentham-pathology"
+    }
+  ],
   "hasMember": [
     {
       "reference": "Observation/blood-group"
