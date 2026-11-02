@@ -46,6 +46,11 @@
       }
     ]
   },
+  "performer": [
+    {
+      "reference": "Organization/pullabooka-pathology"
+    }
+  ],
   "valueCodeableConcept": {
     "coding": [
       {
@@ -62,6 +67,6 @@
     }
   ],
   "specimen": {
-    "reference": "Specimen/nasoswab"
+    "reference": "Specimen/nasoswab-2"
   }
 }
