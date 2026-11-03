@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "bathurst-medical-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003629900046240"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "ABN"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81127280462"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8511",
+          "display": "General Practice Medical Services"
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "394761003",
+          "display": "GP (general practitioner) site"
+        }
+      ],
+      "text": "General medical practitioner service"
+    }
+  ],
+  "name": "Bathurst Medical Centre",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(02) 5550 6575",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@bathurstmedicalcentre.example.net"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "25 Russell St"
+      ],
+      "city": "Bathurst",
+      "state": "NSW",
+      "postalCode": "2795"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "resourceType": "Appointment",
+  "id": "followupgp-thompson-alex-20251108",
+  "identifier": [
+    {
+      "system": "http://bathurstmedicalcentre.example.net/id/booking",
+      "type": {
+        "text": "Booking ID"
+      },
+      "value": "BOOK-2025-11-008"
+    }
+  ],
+  "status": "booked",
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "1223091000168105",
+          "display": "General practice service"
+        }
+      ]
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "Post-operative follow-up after cone biopsy"
+    }
+  ],
+  "description": "GP follow-up appointment, 7 days after cone biopsy day surgery",
+  "start": "2025-11-08T09:00:00+11:00",
+  "end": "2025-11-08T09:30:00+11:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/thompson-alex",
+        "display": "Alex Thompson"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "PractitionerRole/generalpractitioner-lee-chris",
+        "display": "Dr Chris Lee"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/bathurst-medical-centre",
+        "display": "Bathurst Medical Centre"
+      },
+      "status": "accepted"
+    }
+  ]
+}

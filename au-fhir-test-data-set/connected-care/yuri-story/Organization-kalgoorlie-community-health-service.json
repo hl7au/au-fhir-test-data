@@ -1,0 +1,76 @@
+{
+  "resourceType": "Organization",
+  "id": "kalgoorlie-community-health-service",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "NOI"
+          }
+        ],
+        "text": "HPI-O"
+      },
+      "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+      "value": "8003623233379022"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+            "code": "ABN"
+          }
+        ],
+        "text": "ABN"
+      },
+      "system": "http://hl7.org.au/id/abn",
+      "value": "81149350641"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+          "code": "8599",
+          "display": "Other Health Care Services n.e.c."
+        },
+        {
+          "system": "http://snomed.info/sct",
+          "code": "310391008",
+          "display": "Community health centre"
+        }
+      ],
+      "text": "Public Community Health Centre"
+    }
+  ],
+  "name": "Kalgoorlie Community Health Service",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "(08) 5550 4565",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "reception@kalgoorliecommunityhs.example.org"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "20 Hannan St"
+      ],
+      "city": "Kalgoorlie",
+      "state": "WA",
+      "postalCode": "6430"
+    }
+  ]
+}

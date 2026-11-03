@@ -1,0 +1,83 @@
+{
+  "resourceType": "Encounter",
+  "id": "medicationreview-thompson-alex-20251102",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "314530002",
+          "display": "Medication review done"
+        }
+      ]
+    }
+  ],
+  "serviceType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "310080006",
+        "display": "Pharmacy service"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "code": "PPRF",
+              "display": "primary performer"
+            }
+          ]
+        }
+      ],
+      "individual": {
+        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "display": "Sarah Lee"
+      }
+    }
+  ],
+  "period": {
+    "start": "2025-11-02"
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "718591004",
+          "display": "High risk human papillomavirus detected by cytology"
+        }
+      ],
+      "text": "Post-discharge medication review and dispensing following cone biopsy day surgery"
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location/bathurst-community-pharmacy"
+      }
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization/bathurst-community-pharmacy"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "resourceType": "Location",
+  "id": "kalgoorlie-medical-centre",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+    ]
+  },
+  "name": "Kalgoorlie Medical Centre",
+  "address": {
+    "line": [
+      "22 Porter St"
+    ],
+    "city": "Kalgoorlie",
+    "state": "WA",
+    "postalCode": "6430"
+  },
+  "physicalType": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+        "code": "si",
+        "display": "Site"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/kalgoorlie-medical-centre"
+  }
+}

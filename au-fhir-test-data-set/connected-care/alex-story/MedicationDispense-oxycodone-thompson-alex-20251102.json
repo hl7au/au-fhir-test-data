@@ -1,0 +1,91 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "oxycodone-thompson-alex-20251102",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medicationdispense"
+    ]
+  },
+  "status": "completed",
+  "contained": [
+    {
+      "resourceType": "Medication",
+      "id": "med",
+      "meta": {
+        "profile": [
+          "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+        ]
+      },
+      "code": {
+        "coding": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/medication-type",
+                "valueCoding": {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/medication-type",
+                  "code": "BPG",
+                  "display": "Branded package with no container"
+                }
+              }
+            ],
+            "system": "http://snomed.info/sct",
+            "code": "1496631000168100",
+            "display": "Endone 5 mg tablet, 10"
+          }
+        ],
+        "text": "Endone (oxycodone) 5 mg tablet, 10"
+      },
+      "form": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "421026006",
+            "display": "Tablet"
+          }
+        ]
+      },
+      "manufacturer": {
+        "display": "Viatris Pty Ltd"
+      }
+    }
+  ],
+  "medicationReference": {
+    "reference": "#med",
+    "display": "Endone 5 mg tablet, 10"
+  },
+  "subject": {
+    "reference": "Patient/thompson-alex",
+    "display": "Alex Thompson"
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/retailpharmacist-lee-sarah",
+        "display": "Sarah Lee"
+      }
+    }
+  ],
+  "authorizingPrescription": [
+    {
+      "reference": "MedicationRequest/oxycodone-discharge-thompson-alex-20251101"
+    }
+  ],
+  "quantity": {
+    "value": 10,
+    "unit": "TAB",
+    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+    "code": "TAB"
+  },
+  "whenPrepared": "2025-11-02",
+  "dosageInstruction": [
+    {
+      "text": "Take ONE (1) tablet when needed for severe pain. Maximum FOUR (4) tablets in 24 hours. If pain persists, seek medical review."
+    }
+  ],
+  "note": [
+    {
+      "text": "Only 10 tablets supplied. No separate order/eScript identifier was given in the source story data for this prescription — see Pending / Placeholder Data."
+    }
+  ]
+}
