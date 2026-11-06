@@ -63,8 +63,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "718591004",
-          "display": "High risk human papillomavirus detected by cytology"
+          "code": "182836005",
+          "display": "Review of medicine"
         }
       ],
       "text": "Post-discharge medication review and dispensing following cone biopsy day surgery"

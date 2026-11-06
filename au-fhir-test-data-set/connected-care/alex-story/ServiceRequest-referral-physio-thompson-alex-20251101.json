@@ -70,8 +70,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "718591004",
-          "display": "High risk human papillomavirus detected by cytology"
+          "code": "19585003",
+          "display": "Postoperative state"
         }
       ],
       "text": "Post-operative recovery following cone biopsy day surgery"
