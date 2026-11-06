@@ -10,8 +10,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "21614011000036102",
-        "display": "metformin"
+        "code": "109081006",
+        "display": "Metformin"
       }
     ]
   },
@@ -19,8 +19,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "154011000036109",
-        "display": "tablet"
+        "code": "421026006",
+        "display": "Tablet"
       }
     ]
   }

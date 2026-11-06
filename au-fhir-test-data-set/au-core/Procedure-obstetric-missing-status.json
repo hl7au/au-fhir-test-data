@@ -12,7 +12,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "386637004",
-        "display": "Obstetric procedure (procedure)"
+        "display": "Obstetric procedure"
       }
     ]
   },
@@ -21,7 +21,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "22633006",
-        "display": "Vaginal delivery, medical personnel present (procedure)"
+        "display": "Vaginal delivery, medical personnel present"
       }
     ],
     "text": "Vaginal delivery"
