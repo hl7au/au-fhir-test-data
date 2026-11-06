@@ -86,8 +86,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "20365006",
-          "display": "Squamous intraepithelial neoplasia, grade III"
+          "code": "92564006",
+          "display": "Carcinoma in situ of uterine cervix"
         }
       ],
       "text": "CIN2/3 confirmed on histopathology. Recommend cone biopsy (day surgery)."
