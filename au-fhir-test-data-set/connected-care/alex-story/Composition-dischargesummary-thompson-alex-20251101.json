@@ -78,7 +78,7 @@
       },
       "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">01/11/2025 Ibuprofen 400 mg every 6–8 hours as needed for pain (max 2.4 g/day), 5 days; Paracetamol 500 mg every 6 hours as needed for pain (max 4 g/day), 5 days</div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">01/11/2025 Ibuprofen 400 mg every 6–8 hours as needed for pain (max 2.4 g/day), 5 days; Paracetamol 500 mg every 6 hours as needed for pain (max 4 g/day), 5 days; Oxycodone 5 mg one tablet when needed for severe pain (max 4 tablets/day), 3 days</div>"
       },
       "entry": [
         {
@@ -86,6 +86,9 @@
         },
         {
           "reference": "MedicationRequest/paracetamol-discharge-thompson-alex-20251101"
+        },
+        {
+          "reference": "MedicationRequest/oxycodone-discharge-thompson-alex-20251101"
         }
       ]
     },
