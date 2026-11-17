@@ -1,0 +1,957 @@
+{
+  "resourceType": "Bundle",
+  "id": "ereq-imaging-rf-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-bundle-imagingrequest"
+    ]
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101",
+      "resource": {
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-patient"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+            "valueCoding": {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+              "code": "4",
+              "display": "Neither Aboriginal nor Torres Strait Islander origin"
+            }
+          },
+          {
+            "extension": [
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "33791000087105",
+                      "display": "Identifies as gender nonbinary"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-genderIdentity"
+          },
+          {
+            "extension": [
+              {
+                "url": "type",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://loinc.org",
+                      "code": "76689-9",
+                      "display": "Sex assigned at birth"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/administrative-gender",
+                      "code": "other",
+                      "display": "Other"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender"
+          }
+        ],
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+                "valueCoding": {
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+                  "code": "active"
+                }
+              },
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+                "valueCoding": {
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+                  "code": "verified",
+                  "display": "verified"
+                }
+              }
+            ],
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NI"
+                }
+              ],
+              "text": "IHI"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+            "value": "8003608500314661"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MC"
+                }
+              ],
+              "text": "Medicare Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-number",
+            "value": "49516514911"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "ROBERTS",
+            "given": [
+              "Fred"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0770109298",
+            "use": "home"
+          },
+          {
+            "system": "phone",
+            "value": "0491570158",
+            "use": "mobile"
+          },
+          {
+            "system": "phone",
+            "value": "0770104622",
+            "use": "work"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1961-06-16",
+        "address": [
+          {
+            "line": [
+              "33 Southern Cl"
+            ],
+            "city": "Westbrook",
+            "state": "QLD",
+            "postalCode": "4350",
+            "country": "AU"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000102",
+      "resource": {
+        "resourceType": "Practitioner",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitioner",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NPI",
+                  "display": "National provider identifier"
+                }
+              ],
+              "text": "HPI-I"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+            "value": "8003611566718288"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "PRES",
+                  "display": "Prescriber Number"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-prescriber-number",
+            "value": "8017183"
+          }
+        ],
+        "name": [
+          {
+            "family": "GUTHRIDGE",
+            "given": [
+              "Jarred"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0770109540",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "jarred.guthridge@elimbahmedicalcentre.example.com.au"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "30 Western Pl"
+            ],
+            "city": "Elimbah",
+            "state": "QLD",
+            "postalCode": "4516"
+          }
+        ],
+        "gender": "male",
+        "qualification": [
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "ahpraProfession",
+                    "valueCodeableConcept": {
+                      "text": "Medical Practitioner"
+                    }
+                  }
+                ],
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
+              }
+            ],
+            "identifier": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                      "code": "AHPRA",
+                      "display": "Australian Health Practitioner Regulation Agency Registration Number"
+                    }
+                  ],
+                  "text": "Ahpra Registration Number"
+                },
+                "system": "http://hl7.org.au/id/ahpra-registration-number",
+                "value": "HAC000000005"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+                  "code": "AHPRA",
+                  "display": "Ahpra Registration"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000103",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-practitionerrole"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "UPIN"
+                }
+              ],
+              "text": "Medicare Provider Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+            "value": "2448301T"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "EI",
+                  "display": "Employee number"
+                }
+              ],
+              "text": "Employee Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/service-provider-individual/1.0/8003629900040359",
+            "value": "BBC-GA-001",
+            "assigner": {
+              "display": "Elimbah Medical Centre"
+            }
+          }
+        ],
+        "practitioner": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000102"
+        },
+        "organization": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "code": "253111",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "408443003",
+                "display": "General medical practice"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000109"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0770109540",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "jarred.guthridge@elimbahmedicalcentre.example.com.au",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104",
+      "resource": {
+        "resourceType": "Organization",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "NOI"
+                }
+              ],
+              "text": "HPI-O"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+            "value": "8003629900040359"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "ABN"
+                }
+              ],
+              "text": "ABN"
+            },
+            "system": "http://hl7.org.au/id/abn",
+            "value": "81195054644"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+                "code": "8511",
+                "display": "General Practice Medical Services"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "700232004",
+                "display": "General medical service"
+              }
+            ],
+            "text": "General medical practitioner service"
+          }
+        ],
+        "name": "Elimbah Medical Centre",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0755503997",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@elimbahmedicalcentre.example.com.au"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "199 Copper Esp"
+            ],
+            "city": "Elimbah",
+            "state": "QLD",
+            "postalCode": "4516"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000105",
+      "resource": {
+        "resourceType": "Organization",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "NOI"
+                }
+              ],
+              "text": "HPI-O"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+            "value": "8003623233373306"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "ABN"
+                }
+              ],
+              "text": "ABN"
+            },
+            "system": "http://hl7.org.au/id/abn",
+            "value": "81184472182"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+                "code": "8520",
+                "display": "Pathology and Diagnostic Imaging Services"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "708175003",
+                "display": "Diagnostic imaging service"
+              }
+            ],
+            "text": "Diagnostic Radiology"
+          }
+        ],
+        "name": "Mount Charlton Radiology",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0755502224",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "reception@mouncharltonradiology.example.net"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "7 Desleigh Rdge"
+            ],
+            "city": "Mount Charlton",
+            "state": "QLD",
+            "postalCode": "4741"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000109",
+      "resource": {
+        "resourceType": "Location",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-location"
+          ]
+        },
+        "name": "Elimbah Medical Centre",
+        "mode": "instance",
+        "address": {
+          "line": [
+            "199 Copper Esp"
+          ],
+          "city": "Elimbah",
+          "state": "QLD",
+          "postalCode": "4516"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si",
+              "display": "Site"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Location"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000106",
+      "resource": {
+        "resourceType": "Encounter",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "serviceType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "788007007",
+              "display": "General practice service"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101"
+        },
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "PPRF",
+                    "display": "primary performer"
+                  }
+                ]
+              }
+            ],
+            "individual": {
+              "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000103"
+            }
+          }
+        ],
+        "period": {
+          "start": "2024-05-11T10:15:00+10:00",
+          "end": "2024-05-11T10:30:00+10:00"
+        },
+        "serviceProvider": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000107",
+      "resource": {
+        "resourceType": "Coverage",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-coverage"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Coverage coverage-concession</b></p><a name=\"coverage-concession\"> </a><a name=\"hccoverage-concession\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-coverage.html\">AU eRequesting Coverage</a></p></div><p><b>status</b>: Active</p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/coverage-selfpay payconc}\">Concession</span></p><p><b>beneficiary</b>: <a href=\"Patient-roberts-fred.html\">Fred Roberts  Male, DoB: 1961-06-16 ( IHI: Australian Healthcare Identifier - Individual#8003608500314661)</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/subscriber-relationship self}\">Self</span></p><p><b>period</b>: 2023-01-01 --&gt; (ongoing)</p><p><b>payor</b>: Identifier: IHI/8003608500314661</p></div>"
+        },
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/coverage-selfpay",
+              "code": "payconc",
+              "display": "Concession"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+              "code": "self"
+            }
+          ],
+          "text": "Self"
+        },
+        "period": {
+          "start": "2023-01-01"
+        },
+        "payor": [
+          {
+            "identifier": {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                    "code": "NI"
+                  }
+                ],
+                "text": "IHI"
+              },
+              "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+              "value": "8003608500314661"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Coverage"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000108",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-xray-1</b></p><a name=\"order-xray-1\"> </a><a name=\"hcorder-xray-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-imag.html\">AU eRequesting Imaging Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 1</p><p><b>identifier</b>: Placer Identifier/EMC4542244-5624-01</p><p><b>requisition</b>: Placer Group Number/EMC4542244-5624</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 363679005}\">Imaging</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 399208008}\">Chest X-Ray</span></p><p><b>subject</b>: <a href=\"Patient-roberts-fred.html\">Fred Roberts  Male, DoB: 1961-06-16 ( IHI: Australian Healthcare Identifier - Individual#8003608500314661)</a></p><p><b>encounter</b>: <a href=\"Encounter-gp-consultation.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); serviceType = General practice service; period = 2024-05-11 10:15:00+1000 --&gt; 2024-05-11 10:30:00+1000</a></p><p><b>authoredOn</b>: 2024-05-11</p><p><b>requester</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>insurance</b>: <a href=\"Coverage-coverage-concession.html\">Coverage: status = active; type = Concession; relationship = Self; period = 2023-01-01 --&gt; (ongoing)</a></p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+            "value": "EMC4542244-5624-01",
+            "assigner": {
+              "display": "Elimbah Medical Center"
+            }
+          }
+        ],
+        "requisition": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC4542244-5624",
+          "assigner": {
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "363679005",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399208008",
+              "display": "Plain chest X-ray"
+            }
+          ],
+          "text": "Chest X-Ray"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000106"
+        },
+        "authoredOn": "2024-05-11",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000103"
+        },
+        "insurance": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000107"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "51185008"
+              }
+            ],
+            "text": "Chest"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000201",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task taskgroup-imaging-1</b></p><a name=\"taskgroup-imaging-1\"> </a><a name=\"hctaskgroup-imaging-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-task-group.html\">AU eRequesting Task Group</a></p><p style=\"margin-bottom: 0px\">Tag: fulfilment of a group task (Details: Task Tag code fulfilment-task-group = 'fulfilment of a group task')</p></div><p><b>groupIdentifier</b>: Placer Group Number/EMC4542244-5624</p><p><b>status</b>: Requested</p><p><b>businessStatus</b>: <span title=\"Codes:{http://terminology.hl7.org.au/CodeSystem/task-businessstatus booked}\">Booked</span></p><p><b>intent</b>: order</p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/task-code fulfill}\">Fulfill the focal request</span></p><p><b>for</b>: <a href=\"Patient-roberts-fred.html\">Fred Roberts  Male, DoB: 1961-06-16 ( IHI: Australian Healthcare Identifier - Individual#8003608500314661)</a></p><p><b>authoredOn</b>: 2024-05-11</p><p><b>requester</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>owner</b>: <a href=\"Organization-mount-charlton-radiology.html\">Organization Mount Charlton Radiology</a></p></div>"
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003622500032165",
+          "value": "EMC4542244-5624",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "status": "requested",
+        "businessStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/task-businessstatus",
+              "code": "booked"
+            }
+          ]
+        },
+        "intent": "order",
+        "priority": "urgent",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101"
+        },
+        "authoredOn": "2024-05-11",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000103"
+        },
+        "owner": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000105"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0002-4001-8001-000000000202",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task taskfulfilment-imaging-1</b></p><a name=\"taskfulfilment-imaging-1\"> </a><a name=\"hctaskfulfilment-imaging-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-task-diagnosticrequest.html\">AU eRequesting Task Diagnostic Request</a></p><p style=\"margin-bottom: 0px\">Tag: fulfilment of a task (Details: Task Tag code fulfilment-task = 'fulfilment of a task')</p></div><p><b>groupIdentifier</b>: Placer Group Number/EMC4542244-5624</p><p><b>partOf</b>: <a href=\"Task-taskgroup-imaging-1.html\">Task Fulfill the focal request</a></p><p><b>status</b>: Requested</p><p><b>businessStatus</b>: <span title=\"Codes:{http://terminology.hl7.org.au/CodeSystem/task-businessstatus booked}\">Booked</span></p><p><b>intent</b>: order</p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://hl7.org/fhir/CodeSystem/task-code fulfill}\">Fulfill the focal request</span></p><p><b>focus</b>: <a href=\"ServiceRequest-order-xray-1.html\">ServiceRequest Plain chest X-ray</a></p><p><b>for</b>: <a href=\"Patient-roberts-fred.html\">Fred Roberts  Male, DoB: 1961-06-16 ( IHI: Australian Healthcare Identifier - Individual#8003608500314661)</a></p><p><b>authoredOn</b>: 2024-05-11</p><p><b>requester</b>: <a href=\"PractitionerRole-generalpractitioner-guthridge-jarred.html\">PractitionerRole General practitioner</a></p><p><b>owner</b>: <a href=\"Organization-mount-charlton-radiology.html\">Organization Mount Charlton Radiology</a></p></div>"
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003622500032165",
+          "value": "EMC4542244-5624",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000201"
+          }
+        ],
+        "status": "requested",
+        "businessStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/task-businessstatus",
+              "code": "booked"
+            }
+          ]
+        },
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "focus": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000108"
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000101"
+        },
+        "authoredOn": "2024-05-11",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000103"
+        },
+        "owner": {
+          "reference": "urn:uuid:6f5f6f11-0002-4001-8001-000000000105"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    }
+  ]
+}

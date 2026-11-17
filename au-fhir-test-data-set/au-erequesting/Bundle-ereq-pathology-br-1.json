@@ -1,0 +1,1231 @@
+{
+  "resourceType": "Bundle",
+  "id": "ereq-pathology-br-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-bundle-pathologyrequest"
+    ]
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101",
+      "resource": {
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-patient"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/StructureDefinition/indigenous-status",
+            "valueCoding": {
+              "system": "https://healthterminologies.gov.au/fhir/CodeSystem/australian-indigenous-status-1",
+              "code": "3",
+              "display": "Both Aboriginal and Torres Strait Islander origin"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-status",
+                "valueCoding": {
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-status-1",
+                  "code": "active"
+                }
+              },
+              {
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ihi-record-status",
+                "valueCoding": {
+                  "system": "https://healthterminologies.gov.au/fhir/CodeSystem/ihi-record-status-1",
+                  "code": "verified",
+                  "display": "verified"
+                }
+              }
+            ],
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NI"
+                }
+              ],
+              "text": "IHI"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/ihi/1.0",
+            "value": "8003608666976378"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MC"
+                }
+              ],
+              "text": "Medicare Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-number",
+            "value": "49516515811"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "BELGER",
+            "given": [
+              "Remedios"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0770109100",
+            "use": "home"
+          },
+          {
+            "system": "phone",
+            "value": "0491570159",
+            "use": "mobile"
+          },
+          {
+            "system": "phone",
+            "value": "0770103121",
+            "use": "work"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1989-01-04",
+        "address": [
+          {
+            "line": [
+              "200 Ocean Pl"
+            ],
+            "city": "Logan Reserve",
+            "state": "QLD",
+            "postalCode": "4133",
+            "country": "AU"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000102",
+      "resource": {
+        "resourceType": "Practitioner",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NPI",
+                  "display": "National provider identifier"
+                }
+              ],
+              "text": "HPI-I"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpii/1.0",
+            "value": "8003613233384866"
+          }
+        ],
+        "name": [
+          {
+            "family": "LOSCH",
+            "given": [
+              "Sallie"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0270104128",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "sallie.losch@example.com.au"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "93 Elizabeth Cl"
+            ],
+            "city": "Marlowe",
+            "state": "NSW",
+            "postalCode": "2622"
+          }
+        ],
+        "gender": "female",
+        "qualification": [
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "ahpraProfession",
+                    "valueCodeableConcept": {
+                      "text": "Other Medical Practitioners"
+                    }
+                  }
+                ],
+                "url": "http://hl7.org.au/fhir/StructureDefinition/ahpraprofession-details"
+              }
+            ],
+            "identifier": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                      "code": "AHPRA",
+                      "display": "Australian Health Practitioner Regulation Agency Registration Number"
+                    }
+                  ],
+                  "text": "Ahpra Registration Number"
+                },
+                "system": "http://hl7.org.au/id/ahpra-registration-number",
+                "value": "HAC0000000068"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0360",
+                  "code": "AHPRA",
+                  "display": "Ahpra Registration"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-practitionerrole"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "UPIN"
+                }
+              ],
+              "text": "Medicare Provider Number"
+            },
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number",
+            "value": "2448931H"
+          }
+        ],
+        "practitioner": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000102"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "code": "253913",
+                "display": "Obstetrician and Gynaecologist"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "309367003",
+                "display": "Obstetrician and gynaecologist"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "394585009",
+                "display": "Obstetrics and gynaecology"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0270104128",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "sallie.losch@example.com.au",
+            "use": "work"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+      "resource": {
+        "resourceType": "Organization",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "NOI"
+                }
+              ],
+              "text": "HPI-O"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+            "value": "8003629900040359"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "ABN"
+                }
+              ],
+              "text": "ABN"
+            },
+            "system": "http://hl7.org.au/id/abn",
+            "value": "81195054644"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+                "code": "8511",
+                "display": "General Practice Medical Services"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "700232004",
+                "display": "General medical service"
+              }
+            ],
+            "text": "General medical practitioner service"
+          }
+        ],
+        "name": "Elimbah Medical Centre",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0755503997",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@elimbahmedicalcentre.example.com.au"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "199 Copper Esp"
+            ],
+            "city": "Elimbah",
+            "state": "QLD",
+            "postalCode": "4516"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000105",
+      "resource": {
+        "resourceType": "Organization",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-organization",
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "NOI"
+                }
+              ],
+              "text": "HPI-O"
+            },
+            "system": "http://ns.electronichealth.net.au/id/hi/hpio/1.0",
+            "value": "8003621566705995"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203",
+                  "code": "ABN"
+                }
+              ],
+              "text": "ABN"
+            },
+            "system": "http://hl7.org.au/id/abn",
+            "value": "81122808516"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1292.0",
+                "code": "8520",
+                "display": "Pathology and Diagnostic Imaging Services"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "310074003",
+                "display": "Pathology service"
+              }
+            ],
+            "text": "Pathology laboratory service"
+          }
+        ],
+        "name": "Kioma Pathology",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0755505000",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@kiomapathology.example.net"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "15 Hazlett Est"
+            ],
+            "city": "Kioma",
+            "state": "QLD",
+            "postalCode": "4498"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000106",
+      "resource": {
+        "resourceType": "Encounter",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "period": {
+          "start": "2025-02-21T07:50:00+10:00",
+          "end": "2025-02-21T08:20:00+10:00"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000108",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-bg-abs</b></p><a name=\"order-bg-abs\"> </a><a name=\"hcorder-bg-abs\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 2</p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-02</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 20099001}\">Blood Group and Ab Screen</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI: Australian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: <a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 2
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+            "value": "EMC1552642-1110-02",
+            "assigner": {
+              "display": "Elimbah Medical Center"
+            }
+          }
+        ],
+        "requisition": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20099001",
+              "display": "Blood typing, ABO, Rho(D) and RBC antibody screening"
+            }
+          ],
+          "text": "Blood Group and Ab Screen"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000106"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000109",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-glu-1</b></p><a name=\"order-glu-1\"> </a><a name=\"hcorder-glu-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 1</p><p><b>AU eRequesting Fasting Precondition</b>: <span title=\"Codes:{http://snomed.info/sct 16985007}\">Fasting</span></p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-01</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 271062006}\">Glucose, Fasting</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI: Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>occurrence</b>: 2025-02-21 08:00:00+1000</p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 1268646002}\">Gestational diabetes mellitus screening</span></p><p><b>supportingInfo</b>: <a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "16985007",
+                  "display": "Fasting"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+            "value": "EMC1552642-1110-01",
+            "assigner": {
+              "display": "Elimbah Medical Centre"
+            }
+          }
+        ],
+        "requisition": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "display": "Elimbah Medical Centre"
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271062006",
+              "display": "Fasting blood glucose"
+            }
+          ],
+          "text": "Glucose, Fasting"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000106"
+        },
+        "occurrenceDateTime": "2025-02-21T08:00:00+10:00",
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1268646002",
+                "display": "Gestational diabetes mellitus screening"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000110",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-ironstudies</b></p><a name=\"order-ironstudies\"> </a><a name=\"hcorder-ironstudies\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><blockquote><p><b>Patient Sex Parameter For Clinical Use</b></p><ul><li>value: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/sex-parameter-for-clinical-use female-typical}\">Apply female-typical setting or reference range</span></li></ul></blockquote><p><b>Request status reason</b>: <span title=\"Codes:\">On-hold pending normal urine MCS or resolution of suspected UTI.</span></p><p><b>AU eRequesting Display Sequence</b>: 4</p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-04</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: On Hold</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 269820002}\">Iron studies</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI: Australian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: <a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-sexParameterForClinicalUse",
+            "extension": [
+              {
+                "url": "value",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/sex-parameter-for-clinical-use",
+                      "code": "female-typical"
+                    }
+                  ],
+                  "text": "Apply female-typical setting or reference range"
+                }
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "On-hold pending normal urine MCS or resolution of suspected UTI."
+            }
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 4
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+            "value": "EMC1552642-1110-04",
+            "assigner": {
+              "display": "Elimbah Medical Center"
+            }
+          }
+        ],
+        "requisition": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "status": "on-hold",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "269820002"
+            }
+          ],
+          "text": "Iron studies"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000106"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000111",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest order-urinemcs-1</b></p><a name=\"order-urinemcs-1\"> </a><a name=\"hcorder-urinemcs-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-au-erequesting-servicerequest-path.html\">AU eRequesting Pathology Request</a></p></div><p><b>AU eRequesting Display Sequence</b>: 3</p><p><b>AU eRequesting Fasting Precondition</b>: <span title=\"Codes:{http://snomed.info/sct 440565004}\">Nonfasting</span></p><p><b>identifier</b>: Placer Identifier/EMC1552642-1110-03</p><p><b>requisition</b>: Placer Group Number/EMC1552642-1110</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 108252007}\">Laboratory procedure</span></p><p><b>priority</b>: Urgent</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 401324008}\">Urine MCS</span></p><p><b>subject</b>: <a href=\"Patient-belger-remedios.html\">Remedios BELGER (official) Female, DoB: 1989-01-04 ( IHI: Austalian Healthcare Identifier - Individual#8003608666976378)</a></p><p><b>encounter</b>: <a href=\"Encounter-obsgynaeclinic.html\">Encounter: status = finished; class = ambulatory (ActCode#AMB); period = 2025-02-21 07:50:00+1000 --&gt; 2025-02-21 08:20:00+1000</a></p><p><b>occurrence</b>: 2025-02-21 08:10:00+1000</p><p><b>authoredOn</b>: 2025-02-21</p><p><b>requester</b>: <a href=\"PractitionerRole-obstetrician-losch-sallie.html\">PractitionerRole Obstetrician and Gynaecologist</a></p><p><b>supportingInfo</b>: </p><ul><li><a href=\"DocumentReference-documentreference-clinical-context.html\">Clinical context</a></li><li><a href=\"Observation-observation-pregnancy-status.html\">Pregnancy status</a></li></ul></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 3
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "440565004",
+                  "display": "Nonfasting"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+            "value": "EMC1552642-1110-03",
+            "assigner": {
+              "display": "Elimbah Medical Centre"
+            }
+          }
+        ],
+        "requisition": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "display": "Elimbah Medical Centre"
+          }
+        },
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "priority": "urgent",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "401324008",
+              "display": "Urine microscopy, culture and sensitivities"
+            }
+          ],
+          "text": "Urine MCS"
+        },
+        "subject": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000106"
+        },
+        "occurrenceDateTime": "2025-02-21T08:10:00+10:00",
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000201",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "status": "requested",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "authoredOn": "2025-02-21T08:00:00+10:00",
+        "lastModified": "2025-02-21T08:30:00+10:00",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000202",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000201"
+          }
+        ],
+        "status": "requested",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "focus": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000108"
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000203",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000201"
+          }
+        ],
+        "status": "requested",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "focus": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000109"
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000204",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000201"
+          }
+        ],
+        "status": "requested",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "focus": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000110"
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f5f6f11-0001-4001-8001-000000000205",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "groupIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN"
+              }
+            ],
+            "text": "Placer Group Number"
+          },
+          "system": "http://ns.electronichealth.net.au/id/hpio-scoped/order/1.0/8003629900040359",
+          "value": "EMC1552642-1110",
+          "assigner": {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000104",
+            "display": "Elimbah Medical Center"
+          }
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000201"
+          }
+        ],
+        "status": "requested",
+        "intent": "order",
+        "priority": "routine",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/CodeSystem/task-code",
+              "code": "fulfill"
+            }
+          ]
+        },
+        "focus": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000111"
+        },
+        "for": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000101"
+        },
+        "authoredOn": "2025-02-21",
+        "requester": {
+          "reference": "urn:uuid:6f5f6f11-0001-4001-8001-000000000103"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    }
+  ]
+}
