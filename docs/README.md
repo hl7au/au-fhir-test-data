@@ -52,7 +52,7 @@ The versioning approach follows **a modified Semantic Versioning (semver) strate
 
 Tags are used to mark releases, and repository states such as for HL7 AU Connectathons and Sparked Test Events, supporting consistency across testing environments and the reproducibility of test results.
 
-- Release tags use the format v<MAJOR>.<MINOR>.<PATCH> (e.g. v2.0.0). See HL7AUFHIRTestDataReleaseStrategy.md.
+- Release tags use the format `v<MAJOR>.<MINOR>.<PATCH>` (e.g. v2.0.0). See HL7AUFHIRTestDataReleaseStrategy.md.
 - Event snapshot tags use the format <YYMM><location> with an optional IG suffix (e.g. 2603SYD-PS).
 
 ## Did you find an error?
