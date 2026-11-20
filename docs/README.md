@@ -19,7 +19,10 @@ The [administrative resources](https://hl7.org/fhir/R4/administration-module.htm
 - IHI, HPI-I, or HPI-O have been provided by Services Australia. They are valid identifiers reserved for testing purposes in the HI Vendor Test Environment. 
 - Australian Health Practitioner Regulation Agency (Ahpra) Registration Numbers are provided by Services Australia. They have a practitioner professions prefix (`HAC`) that is not linked to a real-world profession.
 - Medicare Card Numbers, Medicare Provider Numbers, PBS Prescriber Numbers and DVA Numbers are provided by Services Australia. They are valid identifiers **NOT** reserved for testing purposes. **As a result, there is a possibility that some identifiers may coincide with those assigned to real persons.**
-- Australian Business Numbers (ABNs) are intentionally invalid and do not conform to real-world formats.
+- Australian Business Numbers (ABNs) are intentionally invalid and do not conform to real-world formats, except for the ABNs of federal agencies (e.g. Department of Veterans' Affairs).
+- Provider Connect Australia (PCA) Healthcare Service Identifiers (PCA-HSI) use the official PCA namespace http://pca.digitalhealth.gov.au/id/pca-healthcare-service, defined by the Australian Digital Health Agency in the PCA FHIR IG. The namespace does not yet resolve to a definitional endpoint. The identifier values are synthetic, are taken from the PCA FHIR IG examples, and are not real PCA-HSIs.
+- Local identifiers (e.g. medical record, order, report and prescription numbers) are synthetic. They use HPI-O-scoped or ABN-scoped namespaces based on a test HPI-O or a fictional ABN, or namespaces under fictional example domains.
+- Passport numbers are synthetic.
 
 Users of this dataset are responsible for ensuring that appropriate safeguards are in place to prevent unintended association with real individuals, including (but not limited to) avoiding use in production systems, external integrations, or any other processes involving real-world entities.
 
@@ -27,7 +30,7 @@ Users of this dataset are responsible for ensuring that appropriate safeguards a
 Synthetic FHIR test data (JSON) files are available in the following directories: 
 - [au-fhir-test-data-set](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set)
   - [/au-base](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-base)
-    - AU Base examples
+    - Reserved for AU Base examples
   - [/au-core](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-core)
     - AU Core examples, some shared with eRequesting, identifiable by additional meta.profile
     - Includes test data for verifying missing data and suppressed data test cases (for details see [MissingAndSuppressedData_TestData.md](https://github.com/hl7au/au-fhir-test-data/blob/master/docs/MissingAndSuppressedData_TestData.md)).
@@ -35,6 +38,8 @@ Synthetic FHIR test data (JSON) files are available in the following directories
     - AU eRequesting specific examples
   - [/au-patient-summary](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/au-patient-summary)
     - AU Patient Summary document Bundle examples
+  - [/connected-care](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/connected-care)
+    - Connected care patient journeys that span multiple IGs, one folder per story ([alex-story](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/connected-care/alex-story), [yuri-story](https://github.com/hl7au/au-fhir-test-data/tree/master/au-fhir-test-data-set/connected-care/yuri-story)). Each story folder has a Markdown file that describes the story and maps each step to its FHIR resources.
 
 ## Versioning
 The versioning approach follows **a modified Semantic Versioning (semver) strategy** aligned with HL7 AU conventions:
@@ -46,6 +51,9 @@ The versioning approach follows **a modified Semantic Versioning (semver) strate
 - **Pre-release** (`X.Y.0-beta`) may be used for testing purposes before an official release.
 
 Tags are used to mark releases, and repository states such as for HL7 AU Connectathons and Sparked Test Events, supporting consistency across testing environments and the reproducibility of test results.
+
+- Release tags use the format v<MAJOR>.<MINOR>.<PATCH> (e.g. v2.0.0). See HL7AUFHIRTestDataReleaseStrategy.md.
+- Event snapshot tags use the format <YYMM><location> with an optional IG suffix (e.g. 2603SYD-PS).
 
 ## Did you find an error?
 We appreciate your contributions to improving au-fhir-test-data. **If you encounter any bugs or defects, please follow the steps below to report them**:
@@ -89,7 +97,7 @@ We value contributions to **au-fhir-test-data**. Here’s how you can help:
 1. Fork this repository.
 2. Create a branch and use the GitHub issue number followed by a meaningful description as the branch name for your test data contribution, sticking to lowercase and hyphens to separate words. For example, the following is a branch for GitHub issue #123 for adding resources with logical references: `123-logical-refs`
 3. Make your contributions/ changes.
-4. Submit a pull request (PR) for review.
+4. Submit a pull request (PR) for review. The [Reference Integrity Check](https://github.com/hl7au/au-fhir-test-data/blob/master/.github/workflows/reference-integrity.yaml) runs automatically on every PR and fails if a reference between files does not resolve, or if a `resourceType/id` is used in more than one file (unless it is listed in [reference_integrity_allowed_duplicates](https://github.com/hl7au/au-fhir-test-data/blob/master/.github/scripts/reference_integrity_allowed_duplicates)).
 5.  Once the PR has been reviewed and feedback addressed collaboratively, it will be merged into the master branch.
 
 # HL7 Australia License and Legal
