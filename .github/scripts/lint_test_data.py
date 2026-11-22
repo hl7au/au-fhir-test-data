@@ -22,6 +22,13 @@ Problems whose rule and subject (the file path, or for contact rules the
 normalised number or email domain) match an entry in the exceptions file are
 ignored. Problems are printed, written to the GitHub step summary, and
 emitted as workflow commands when running in Actions.
+
+With --changed-files (a file listing one path per line, relative to the
+current directory, as git diff --name-only prints from the repository root),
+workflow commands are emitted only for errors and for problems in the listed
+files, and the step summary leads with the problems in those files. This keeps
+a pull request's annotations about the files it touches, since GitHub shows
+only the first few annotations per step. Errors anywhere still fail the run.
 """
 
 import argparse
@@ -223,6 +230,17 @@ def lint(root, exceptions=()):
     )
 
 
+def load_changed_files(path):
+    """Return the normalised paths listed one per line in path."""
+    lines = Path(path).read_text(encoding="utf-8").splitlines()
+    return {Path(os.path.normpath(line.strip())).as_posix() for line in lines if line.strip()}
+
+
+def is_changed(problem, root, changed_files):
+    """Return whether problem is in one of changed_files (paths relative to the current directory)."""
+    return Path(os.path.relpath(Path(root) / problem.path)).as_posix() in changed_files
+
+
 def escape_data(value):
     return value.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
 
@@ -236,23 +254,39 @@ def workflow_command(problem, root):
     return f"::{problem.severity} file={file},title={problem.rule}::{escape_data(problem.message)}"
 
 
-def write_step_summary(problems):
+def problem_table(problems):
+    return ["| Severity | Rule | File | Problem |", "|---|---|---|---|"] + [
+        f"| {p.severity} | {p.rule} | {p.path} | {p.message.replace('|', '&#124;')} |" for p in problems
+    ]
+
+
+def write_step_summary(problems, changed_problems=None):
+    """Append the summary; changed_problems, if given, are those in the files a pull request changed."""
     summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
     if not summary_path:
         return
     lines = ["## Test Data Lint", ""]
-    if problems:
+    if not problems:
+        lines.append("No problems found.")
+    else:
         counts = {}
         for p in problems:
             counts[(p.severity, p.rule)] = counts.get((p.severity, p.rule), 0) + 1
         lines += ["| Severity | Rule | Problems |", "|---|---|---|"]
         lines += [f"| {severity} | {rule} | {count} |" for (severity, rule), count in sorted(counts.items())]
-        lines += ["", "| Severity | Rule | File | Problem |", "|---|---|---|---|"]
-        lines += [
-            f"| {p.severity} | {p.rule} | {p.path} | {p.message.replace('|', '&#124;')} |" for p in problems
-        ]
-    else:
-        lines.append("No problems found.")
+        lines.append("")
+        if changed_problems is None:
+            lines += problem_table(problems)
+        else:
+            lines += ["### Problems in the files changed by this pull request", ""]
+            if changed_problems:
+                lines += problem_table(changed_problems)
+            else:
+                lines.append("No problems in the files changed by this pull request.")
+            lines += [
+                "", f"<details><summary>All {len(problems)} problems in the repository</summary>", "",
+                *problem_table(problems), "", "</details>",
+            ]
     with open(summary_path, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
@@ -261,20 +295,33 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Lint the test data files.")
     parser.add_argument("root", nargs="?", default=".", help="directory to scan (default: current directory)")
     parser.add_argument("--exceptions", default=DEFAULT_EXCEPTIONS, help="file listing problems to ignore")
+    parser.add_argument(
+        "--changed-files",
+        help="file listing the paths a pull request changed, one per line; annotate only errors and "
+        "problems in those files",
+    )
     args = parser.parse_args(argv)
 
     problems = lint(args.root, parse_exceptions(load_list(args.exceptions)))
+    changed_problems = None
+    if args.changed_files is not None:
+        changed_files = load_changed_files(args.changed_files)
+        changed_problems = [p for p in problems if is_changed(p, args.root, changed_files)]
+    annotated = set(problems if changed_problems is None else changed_problems)
+    annotated.update(p for p in problems if p.severity == ERROR)
     in_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     for problem in problems:
         print(f"{problem.path}: {problem.severity}: [{problem.rule}] {problem.message}")
-        if in_actions:
+        if in_actions and problem in annotated:
             print(workflow_command(problem, args.root))
-    write_step_summary(problems)
+    write_step_summary(problems, changed_problems)
 
     errors = sum(p.severity == ERROR for p in problems)
     warnings = len(problems) - errors
     if problems:
         print(f"\n{errors} error(s), {warnings} warning(s).", file=sys.stderr)
+        if changed_problems is not None:
+            print(f"{len(changed_problems)} problem(s) in the changed files.", file=sys.stderr)
     else:
         print("No problems found.")
     return 1 if errors else 0

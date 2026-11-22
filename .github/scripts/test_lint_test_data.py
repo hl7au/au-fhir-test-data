@@ -188,3 +188,77 @@ def test_main_exits_one_on_errors(repo, tmp_path, monkeypatch):
     monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
     repo("Patient-p1.json", {"resourceType": "Patient"})
     assert main([str(repo.root), "--exceptions", str(tmp_path / "none")]) == 1
+
+
+@pytest.fixture
+def pr_repo(repo, tmp_path, monkeypatch):
+    """A repo with a warning in a changed and an unchanged file, run from its root as in Actions."""
+    repo("data/Patient-changed.json", patient())
+    repo("data/Patient-unchanged.json", patient())
+    monkeypatch.chdir(repo.root)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setenv("GITHUB_STEP_SUMMARY", str(tmp_path / "summary.md"))
+    (tmp_path / "changed.txt").write_text("data/Patient-changed.json\nREADME.md\n\n")
+    return repo
+
+
+def run_pr(tmp_path, capsys, root="."):
+    status = main([root, "--exceptions", str(tmp_path / "none"), "--changed-files", str(tmp_path / "changed.txt")])
+    out = capsys.readouterr().out
+    annotations = [line for line in out.splitlines() if line.startswith("::")]
+    return status, out, annotations, (tmp_path / "summary.md").read_text()
+
+
+def test_changed_files_limit_annotations(pr_repo, tmp_path, capsys):
+    status, out, annotations, _ = run_pr(tmp_path, capsys)
+    assert status == 0
+    assert annotations == [
+        "::warning file=data/Patient-changed.json,title=file-name::"
+        "File name does not match the resource; expected 'Patient-p1.json'.",
+    ]
+    # Every problem is still printed.
+    assert "data/Patient-unchanged.json: warning: [file-name]" in out
+
+
+def test_changed_files_match_when_scanning_a_subdirectory(pr_repo, tmp_path, capsys):
+    _, _, annotations, _ = run_pr(tmp_path, capsys, root="data")
+    assert [a.split(",")[0] for a in annotations] == ["::warning file=data/Patient-changed.json"]
+
+
+def test_errors_in_unchanged_files_are_annotated_and_fail(pr_repo, tmp_path, capsys):
+    pr_repo("data/Patient-noid.json", {"resourceType": "Patient"})
+    status, _, annotations, _ = run_pr(tmp_path, capsys)
+    assert status == 1
+    assert [a.split(",")[0] for a in annotations] == [
+        "::warning file=data/Patient-changed.json",
+        "::error file=data/Patient-noid.json",
+    ]
+
+
+def test_changed_files_summary_sections(pr_repo, tmp_path, capsys):
+    *_, summary = run_pr(tmp_path, capsys)
+    counts = summary.index("| warning | file-name | 2 |")
+    changed = summary.index("### Problems in the files changed by this pull request")
+    details = summary.index("<details><summary>All 2 problems in the repository</summary>")
+    assert counts < changed < details
+    changed_section = summary[changed:details]
+    assert "| data/Patient-changed.json |" in changed_section
+    assert "Patient-unchanged.json" not in changed_section
+    assert "| data/Patient-unchanged.json |" in summary[details:]
+    assert summary.rstrip().endswith("</details>")
+
+
+def test_changed_files_summary_when_changed_files_are_clean(pr_repo, tmp_path, capsys):
+    (tmp_path / "changed.txt").write_text("README.md\n")
+    _, _, annotations, summary = run_pr(tmp_path, capsys)
+    assert annotations == []
+    assert "No problems in the files changed by this pull request." in summary
+    assert "<details><summary>All 2 problems in the repository</summary>" in summary
+
+
+def test_without_changed_files_everything_is_annotated(pr_repo, tmp_path, capsys):
+    assert main([".", "--exceptions", str(tmp_path / "none")]) == 0
+    out = capsys.readouterr().out
+    assert len([line for line in out.splitlines() if line.startswith("::")]) == 2
+    summary = (tmp_path / "summary.md").read_text()
+    assert "<details>" not in summary and "###" not in summary

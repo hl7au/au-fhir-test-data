@@ -20,6 +20,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
+        with:
+          # A pull request checks out its test merge commit; the parent is
+          # needed to list the files the pull request changes.
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 1 }}
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -32,5 +36,17 @@ jobs:
           pip install pytest==9.2.0
           python -m pytest -q -p no:cacheprovider test_lint_test_data.py
 
+      - name: List files changed by the pull request
+        if: github.event_name == 'pull_request'
+        # The first parent of the test merge commit is the base branch.
+        run: |
+          git -c core.quotePath=false diff --name-only --diff-filter=AMR HEAD^1 HEAD \
+            | tee "$RUNNER_TEMP/changed-files.txt"
+
       - name: Lint test data
-        run: python .github/scripts/lint_test_data.py
+        run: |
+          if [ -f "$RUNNER_TEMP/changed-files.txt" ]; then
+            python .github/scripts/lint_test_data.py --changed-files "$RUNNER_TEMP/changed-files.txt"
+          else
+            python .github/scripts/lint_test_data.py
+          fi
