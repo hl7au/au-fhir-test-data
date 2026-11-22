@@ -255,6 +255,13 @@ def test_invalid_json_and_non_fhir_files(repo):
     assert [path for path, _ in problems(repo.root)] == ["broken.json"]
 
 
+def test_dot_directories_are_not_scanned(repo):
+    repo(".github/validate/testdata/output.json", {"resourceType": "Bundle", "type": "collection"})
+    repo(".claude/worktrees/x/Patient-p1.json", patient())
+    repo("Patient-p1.json", patient())
+    assert problems(repo.root) == []
+
+
 def test_quarantine_matches_repo_relative_paths_and_globs(repo):
     repo("au-core/Condition-c1.json", {"resourceType": "Condition", "id": "c1", "subject": {"reference": "Patient/missing"}})
     repo("au-ps/Condition-c1.json", {"resourceType": "Condition", "id": "c2", "subject": {"reference": "Patient/missing"}})

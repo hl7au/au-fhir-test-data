@@ -56,7 +56,8 @@ RELATIVE_REFERENCE = re.compile(
 )
 BUNDLE_LOCAL_REFERENCE = re.compile(r"^urn:(uuid|oid):")
 
-SKIPPED_DIRS = {".git", "node_modules"}
+# Dot directories (.git, .github, .claude) hold tooling and fixtures, not test data.
+SKIPPED_DIRS = {"node_modules"}
 
 
 @dataclass(frozen=True)
@@ -84,7 +85,7 @@ def load_list(path):
 
 def iter_json_files(root):
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = sorted(d for d in dirnames if d not in SKIPPED_DIRS)
+        dirnames[:] = sorted(d for d in dirnames if d not in SKIPPED_DIRS and not d.startswith("."))
         for name in sorted(filenames):
             if name.endswith(".json"):
                 yield Path(dirpath) / name
