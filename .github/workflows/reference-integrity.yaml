@@ -6,8 +6,16 @@ on:
     branches: [master]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  check:
+  reference-integrity:
+    name: Reference integrity
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,12 +24,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
-          python-version: '3.x'
+          python-version: '3.15'
 
       - name: Test the checker
         working-directory: .github/scripts
         run: |
-          pip install pytest==9.1.1
+          pip install pytest==9.2.0
           python -m pytest -q -p no:cacheprovider
 
       - name: Check references
