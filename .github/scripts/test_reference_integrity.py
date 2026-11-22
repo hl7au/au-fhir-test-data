@@ -151,12 +151,61 @@ def test_bundle_attachment_urn_uuid(repo):
     ]
 
 
-def test_bundle_relative_reference_falls_back_to_repository(repo):
+def test_non_document_bundle_relative_reference_falls_back_to_repository(repo):
     repo("Patient-p1.json", patient())
+    repo("Bundle-b1.json", document_bundle(
+        [{"fullUrl": "urn:uuid:aaaa", "resource": {"resourceType": "Composition", "id": "c", "subject": {"reference": "Patient/p1"}}}],
+        type="collection",
+    ))
+    assert problems(repo.root) == []
+
+
+def severities(root):
+    return [(p.severity, p.message) for p in Checker(root).run()]
+
+
+@pytest.mark.parametrize("element", [
+    {"subject": {"reference": "Patient/p1"}},
+    {"encounter": {"reference": "Encounter/e1"}},
+    {"author": [{"reference": "Practitioner/pr1"}]},
+    {"attester": [{"mode": "legal", "party": {"reference": "Practitioner/pr1"}}]},
+    {"custodian": {"reference": "Organization/o1"}},
+    {"event": [{"detail": [{"reference": "Observation/ob1"}]}]},
+    {"section": [{"author": [{"reference": "Practitioner/pr1"}]}]},
+    {"section": [{"focus": {"reference": "Patient/p1"}}]},
+    {"section": [{"section": [{"entry": [{"reference": "Observation/ob1"}]}]}]},
+])
+def test_document_composition_references_must_be_in_the_bundle(repo, element):
+    for resource_type, id in [("Patient", "p1"), ("Encounter", "e1"), ("Practitioner", "pr1"),
+                              ("Organization", "o1"), ("Observation", "ob1")]:
+        repo(f"{resource_type}-{id}.json", {"resourceType": resource_type, "id": id})
+    repo("Bundle-b1.json", document_bundle([
+        {"fullUrl": "urn:uuid:aaaa", "resource": {"resourceType": "Composition", "id": "c", **element}},
+    ]))
+    [(severity, message)] = severities(repo.root)
+    assert severity == "error"
+    assert "must be an entry in the document Bundle" in message
+
+
+def test_document_composition_reference_resolves_by_entry_type_and_id(repo):
     repo("Bundle-b1.json", document_bundle([
         {"fullUrl": "urn:uuid:aaaa", "resource": {"resourceType": "Composition", "id": "c", "subject": {"reference": "Patient/p1"}}},
+        {"fullUrl": "urn:uuid:bbbb", "resource": patient()},
     ]))
     assert problems(repo.root) == []
+
+
+def test_document_other_references_outside_the_bundle_are_warnings(repo):
+    repo("Organization-o1.json", {"resourceType": "Organization", "id": "o1"})
+    repo("Bundle-b1.json", document_bundle([
+        {"fullUrl": "urn:uuid:aaaa", "resource": {"resourceType": "Composition", "id": "c", "subject": {"reference": "urn:uuid:bbbb"}}},
+        {"fullUrl": "urn:uuid:bbbb", "resource": patient(managingOrganization={"reference": "Organization/o1"})},
+        {"fullUrl": "urn:uuid:cccc", "resource": {"resourceType": "Condition", "id": "c1", "recorder": {"reference": "Practitioner/missing"}}},
+    ]))
+    assert severities(repo.root) == [
+        ("warning", "Reference 'Organization/o1': not in the document Bundle, so a consumer of the document cannot resolve it."),
+        ("error", "Reference 'Practitioner/missing': not found in any resource."),
+    ]
 
 
 def test_bundle_entries_are_not_visible_outside_the_bundle(repo):
@@ -228,5 +277,35 @@ def test_main_exit_code_and_step_summary(repo, tmp_path_factory, monkeypatch, ca
 
     repo("Condition-c1.json", {"resourceType": "Condition", "id": "c1", "subject": {"reference": "Patient/missing"}})
     assert main([str(repo.root), "--quarantine", str(quarantine)]) == 1
-    assert "| Condition-c1.json | Reference 'Patient/missing': not found in any resource. |" in summary.read_text()
-    assert "Condition-c1.json: Reference 'Patient/missing'" in capsys.readouterr().out
+    assert "| Condition-c1.json | error | Reference 'Patient/missing': not found in any resource. |" in summary.read_text()
+    assert "Condition-c1.json: error: Reference 'Patient/missing'" in capsys.readouterr().out
+
+
+def test_main_exits_zero_when_only_warnings(repo, tmp_path_factory, monkeypatch, capsys):
+    summary = tmp_path_factory.mktemp("gh") / "summary.md"
+    monkeypatch.setenv("GITHUB_STEP_SUMMARY", str(summary))
+    repo("Organization-o1.json", {"resourceType": "Organization", "id": "o1"})
+    repo("Bundle-b1.json", document_bundle([
+        {"fullUrl": "urn:uuid:aaaa", "resource": patient(managingOrganization={"reference": "Organization/o1"})},
+    ]))
+    assert main([str(repo.root), "--quarantine", "/nonexistent"]) == 0
+    assert "0 error(s) and 1 warning(s) found." in summary.read_text()
+    assert "Bundle-b1.json: warning: Reference 'Organization/o1'" in capsys.readouterr().out
+
+
+def test_main_prints_github_annotations(repo, monkeypatch, capsys):
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.delenv("GITHUB_STEP_SUMMARY", raising=False)
+    monkeypatch.chdir(repo.root.parent)
+    repo("data/a,b:c%.json", {"resourceType": "Condition", "id": "c1", "subject": {"reference": "Patient/50%\nx"}})
+    assert main([repo.root.name, "--quarantine", "/nonexistent"]) == 1
+    out = capsys.readouterr().out.splitlines()
+    assert f"::error file={repo.root.name}/data/a%2Cb%3Ac%25.json::Reference 'Patient/50%25%0Ax': " \
+           "not a relative Type/id reference, so it cannot be resolved against the test data." in out
+
+
+def test_main_prints_no_annotations_outside_github_actions(repo, monkeypatch, capsys):
+    monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
+    repo("Condition-c1.json", {"resourceType": "Condition", "id": "c1", "subject": {"reference": "Patient/missing"}})
+    main([str(repo.root), "--quarantine", "/nonexistent"])
+    assert "::error" not in capsys.readouterr().out

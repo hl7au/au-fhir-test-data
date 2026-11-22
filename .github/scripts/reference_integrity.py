@@ -15,6 +15,13 @@ Resolution rules:
   "#" against the enclosing resource itself.
 - Inside a Bundle, a reference resolves against an entry's fullUrl or an
   entry resource's type/id before falling back to the repository index.
+- In a document Bundle (type "document"), the Composition references that
+  FHIR R4 documents.html section 3.3.1 says SHALL be included in the Bundle
+  (subject, encounter, author, attester.party, custodian, event.detail, and
+  section.author, section.focus and section.entry in every section) must
+  resolve inside the Bundle, with no fallback. Any other reference in a
+  document Bundle that resolves only against the repository is a warning,
+  because a consumer of the document cannot resolve it.
 - "Type/id" (with any "/_history/..." suffix ignored) resolves against the
   resourceType/id of every top-level file in the repository.
 - Absolute and conditional references are reported, because nothing in the
@@ -25,8 +32,9 @@ uploaded last overwrites the other on a server, unless the resourceType/id
 is listed in the allowed duplicates file.
 
 Problems in files matching the quarantine file are ignored. Problems are
-printed, written to the GitHub step summary when running in Actions, and
-cause a non-zero exit.
+printed and, when running in GitHub Actions, written to the step summary
+and emitted as file annotations. Errors cause a non-zero exit; warnings
+alone do not.
 """
 
 import argparse
@@ -55,12 +63,14 @@ SKIPPED_DIRS = {".git", "node_modules"}
 class Problem:
     path: str
     message: str
+    severity: str = "error"  # "error" or "warning"
 
 
 @dataclass(frozen=True)
 class BundleContext:
     full_urls: frozenset
     keys: frozenset
+    document: bool
 
 
 def load_list(path):
@@ -107,6 +117,26 @@ def iter_literal_references(node):
     elif isinstance(node, list):
         for item in node:
             yield from iter_literal_references(item)
+
+
+def document_references(composition):
+    """Return the Composition references that SHALL be in a document Bundle.
+
+    From FHIR R4 documents.html section 3.3.1. Sections nest, so every
+    section at any depth is included.
+    """
+    references = [
+        composition.get("subject"), composition.get("encounter"), composition.get("custodian"),
+        *composition.get("author", []),
+        *(attester.get("party") for attester in composition.get("attester", [])),
+        *(detail for event in composition.get("event", []) for detail in event.get("detail", [])),
+    ]
+    sections = list(composition.get("section", []))
+    while sections:
+        section = sections.pop()
+        references += [*section.get("author", []), section.get("focus"), *section.get("entry", [])]
+        sections += section.get("section", [])
+    return {r["reference"] for r in references if isinstance(r, dict) and isinstance(r.get("reference"), str)}
 
 
 def is_attachment_link(node, value):
@@ -174,25 +204,31 @@ class Checker:
             bundle = BundleContext(
                 full_urls=frozenset(e["fullUrl"] for e in entries if "fullUrl" in e),
                 keys=frozenset(resource_key(r) for r in inner),
+                document=resource.get("type") == "document",
             )
+
+        required = set()
+        if bundle and bundle.document and resource.get("resourceType") == "Composition":
+            required = document_references(resource)
 
         for container in [resource, *resource.get("contained", [])]:
             where = "" if container is resource else f" (in contained '#{container.get('id')}')"
             for reference in iter_literal_references(container):
-                problem = self._resolve(reference, resource, bundle)
+                problem = self._resolve(reference, resource, bundle, reference in required)
                 if problem:
-                    self.problems.append(Problem(rel_path, f"Reference '{reference}'{where}: {problem}"))
+                    severity, message = problem
+                    self.problems.append(Problem(rel_path, f"Reference '{reference}'{where}: {message}", severity))
 
         for entry_resource in inner:
             self._check_resource(rel_path, entry_resource, bundle)
 
-    def _resolve(self, reference, resource, bundle):
-        """Return None when reference resolves, otherwise why it does not."""
+    def _resolve(self, reference, resource, bundle, required_in_bundle=False):
+        """Return None when reference resolves, otherwise (severity, why)."""
         if reference.startswith("#"):
             target = reference[1:]
             if not target or any(c.get("id") == target for c in resource.get("contained", [])):
                 return None
-            return "no contained resource has that id."
+            return "error", "no contained resource has that id."
 
         match = RELATIVE_REFERENCE.match(reference)
         key = f"{match['type']}/{match['id']}" if match else None
@@ -200,12 +236,23 @@ class Checker:
         if bundle is not None and (reference in bundle.full_urls or key in bundle.keys):
             return None
         if BUNDLE_LOCAL_REFERENCE.match(reference):
-            return "no Bundle entry has this fullUrl." if bundle else "only resolvable inside a Bundle."
+            return "error", "no Bundle entry has this fullUrl." if bundle else "only resolvable inside a Bundle."
+        if required_in_bundle:
+            return "error", "the Composition references it, so it must be an entry in the document Bundle (FHIR R4 documents 3.3.1)."
         if key:
-            return None if key in self.index else "not found in any resource."
+            if key not in self.index:
+                return "error", "not found in any resource."
+            if bundle is not None and bundle.document:
+                return "warning", "not in the document Bundle, so a consumer of the document cannot resolve it."
+            return None
         if "?" in reference:
-            return "conditional references cannot be resolved against the test data."
-        return "not a relative Type/id reference, so it cannot be resolved against the test data."
+            return "error", "conditional references cannot be resolved against the test data."
+        return "error", "not a relative Type/id reference, so it cannot be resolved against the test data."
+
+
+def count(problems):
+    errors = sum(p.severity == "error" for p in problems)
+    return f"{errors} error(s) and {len(problems) - errors} warning(s) found."
 
 
 def write_step_summary(problems):
@@ -214,12 +261,25 @@ def write_step_summary(problems):
         return
     lines = ["## Reference Integrity Check", ""]
     if problems:
-        lines += [f"{len(problems)} problem(s) found.", "", "| File | Problem |", "|---|---|"]
-        lines += [f"| {p.path} | {p.message.replace('|', '&#124;')} |" for p in problems]
+        lines += [count(problems), "", "| File | Severity | Problem |", "|---|---|---|"]
+        lines += [f"| {p.path} | {p.severity} | {p.message.replace('|', '&#124;')} |" for p in problems]
     else:
         lines.append("All references resolve.")
     with open(summary_path, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
+
+
+def annotation(problem, root):
+    """Return a GitHub Actions workflow command that annotates the file.
+
+    The path is relative to the working directory, which is the repository
+    root in Actions. Escaping follows the workflow command rules in
+    @actions/core (command.ts).
+    """
+    path = Path(os.path.relpath(Path(root) / problem.path)).as_posix()
+    message = problem.message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+    path = path.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A").replace(":", "%3A").replace(",", "%2C")
+    return f"::{problem.severity} file={path}::{message}"
 
 
 def main(argv=None):
@@ -235,14 +295,17 @@ def main(argv=None):
     problems = Checker(
         args.root, load_list(args.quarantine), load_list(args.allowed_duplicates)
     ).run()
+    in_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     for problem in problems:
-        print(f"{problem.path}: {problem.message}")
+        print(f"{problem.path}: {problem.severity}: {problem.message}")
+        if in_actions:
+            print(annotation(problem, args.root))
     write_step_summary(problems)
-    if problems:
-        print(f"\n{len(problems)} reference integrity problem(s) found.", file=sys.stderr)
-        return 1
-    print("All references resolve.")
-    return 0
+    if not problems:
+        print("All references resolve.")
+        return 0
+    print(f"\n{count(problems)}", file=sys.stderr)
+    return 1 if any(p.severity == "error" for p in problems) else 0
 
 
 if __name__ == "__main__":
