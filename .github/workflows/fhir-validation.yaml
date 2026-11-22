@@ -1,0 +1,89 @@
+name: FHIR validation
+
+on:
+  pull_request:
+    paths:
+      - "au-fhir-test-data-set/**"
+      - ".github/validate/**"
+      - ".github/workflows/fhir-validation.yaml"
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "Folder under au-fhir-test-data-set to validate"
+        type: choice
+        default: all
+        options:
+          - all
+          - au-core
+          - au-erequesting
+          - au-patient-summary
+          - connected-care
+          - au-base
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fhir-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # Referenced by the contributor docs; keep this name stable.
+    name: FHIR validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          # The PR merge commit and its first parent (the base) are enough
+          # to list the files the PR adds or modifies.
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 1 }}
+          persist-credentials: false
+
+      - name: Test the report parser
+        if: github.event_name == 'pull_request'
+        working-directory: .github/validate
+        run: |
+          pip install pytest==9.2.0
+          python -m pytest -q -p no:cacheprovider
+
+      - name: Select files
+        id: select
+        env:
+          EVENT: ${{ github.event_name }}
+          FOLDER: ${{ inputs.folder }}
+        run: |
+          list="$RUNNER_TEMP/fhir-validation-paths"
+          if [ "$EVENT" = "pull_request" ]; then
+            # Files the PR adds or modifies under the data set (a rename counts
+            # as an add); deletions are excluded.
+            git diff --name-only -z --no-renames --diff-filter=AM HEAD^1 HEAD -- \
+              au-fhir-test-data-set | tr '\0' '\n' | { grep '\.json$' || true; } > "$list"
+          elif [ -z "$FOLDER" ] || [ "$FOLDER" = "all" ]; then
+            echo "au-fhir-test-data-set" > "$list"
+          else
+            echo "au-fhir-test-data-set/$FOLDER" > "$list"
+          fi
+          count=$(grep -c . "$list" || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          {
+            echo "paths<<EOF_PATHS_$GITHUB_RUN_ID"
+            cat "$list"
+            echo "EOF_PATHS_$GITHUB_RUN_ID"
+          } >> "$GITHUB_OUTPUT"
+          if [ "$count" = "0" ]; then
+            {
+              echo "## FHIR validation"
+              echo
+              echo "No FHIR JSON files under au-fhir-test-data-set were added or modified."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Validate
+        if: steps.select.outputs.count != '0'
+        uses: ./.github/validate
+        with:
+          paths: ${{ steps.select.outputs.paths }}
+          title: FHIR validation
