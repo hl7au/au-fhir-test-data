@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    # "/" covers .github/workflows. Composite actions in other directories
+    # are only scanned when their directory is listed, so list each one.
+    directories:
+      - /
+      - /.github/validate
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
