@@ -87,12 +87,16 @@ def resource_key(resource):
 def iter_literal_references(node):
     """Yield the literal references in node.
 
-    Stops at "contained" and "entry" so that contained resources and Bundle
-    entries are checked in their own context.
+    Stops at a resource's "contained" and a Bundle's "entry" so that contained
+    resources and Bundle entries are checked in their own context. Other
+    "entry" elements, such as Composition.section.entry and List.entry, are
+    walked like any other element.
     """
     if isinstance(node, dict):
         for key, value in node.items():
-            if key in ("contained", "entry"):
+            if key == "contained" and "resourceType" in node:
+                continue
+            if key == "entry" and node.get("resourceType") == "Bundle":
                 continue
             if key == "reference" and isinstance(value, str):
                 yield value

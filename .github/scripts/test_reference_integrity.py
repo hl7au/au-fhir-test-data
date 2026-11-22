@@ -95,6 +95,26 @@ def test_references_inside_contained_resources_are_checked(repo):
     ]
 
 
+def test_list_entry_item_references_are_checked(repo):
+    repo("List-l1.json", {
+        "resourceType": "List", "id": "l1", "status": "current", "mode": "working",
+        "entry": [{"item": {"reference": "Condition/missing"}}],
+    })
+    assert problems(repo.root) == [
+        ("List-l1.json", "Reference 'Condition/missing': not found in any resource."),
+    ]
+
+
+def test_composition_section_entry_references_are_checked(repo):
+    repo("Composition-c1.json", {
+        "resourceType": "Composition", "id": "c1",
+        "section": [{"section": [{"entry": [{"reference": "Condition/missing"}]}]}],
+    })
+    assert problems(repo.root) == [
+        ("Composition-c1.json", "Reference 'Condition/missing': not found in any resource."),
+    ]
+
+
 def document_bundle(entries, **fields):
     return {"resourceType": "Bundle", "id": "b1", "type": "document", "entry": entries, **fields}
 
