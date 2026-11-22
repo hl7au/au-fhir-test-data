@@ -15,7 +15,7 @@ SAMPLE = HERE / "testdata" / "validator-output.json"
 # Configuration files shipped in the repo
 
 
-def test_repo_ig_map_is_valid_and_pins_published_versions():
+def test_repo_ig_map_is_valid_and_pins_exact_versions():
     version, folders = fv.load_ig_map(fv.DEFAULT_IGS)
     assert version == "4.0.1"
     assert {"au-core", "au-erequesting", "au-patient-summary", "connected-care", "au-base"} <= set(folders)
@@ -23,7 +23,8 @@ def test_repo_ig_map_is_valid_and_pins_published_versions():
         for ig in igs:
             package, _, pinned = ig.partition("#")
             assert package.startswith("hl7.fhir.au.")
-            assert pinned and not any(tag in pinned for tag in ("ballot", "draft", "preview", "dev", "current"))
+            # Ballot and draft versions are allowed; moving builds are not.
+            assert pinned and pinned not in ("current", "dev")
 
 
 def test_repo_quarantine_parses():

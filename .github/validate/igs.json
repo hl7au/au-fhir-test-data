@@ -1,11 +1,25 @@
 {
-  "_comment": "Implementation guides each top-level folder under au-fhir-test-data-set is validated against. Keys are folder names; values are validator -ig package references (id#version). Pin published releases only, never ballot or dev builds. A folder not listed here is validated against base FHIR R4 only.",
+  "_comment": "Implementation guides each top-level folder under au-fhir-test-data-set is validated against. Keys are folder names; values are validator -ig package references (id#version). Test data may target draft or ballot IG versions, so pin the version the data is written for, which can be a ballot or draft; never a moving build (current, dev), so results are reproducible. A folder not listed here is validated against base FHIR R4 only.",
   "fhirVersion": "4.0.1",
   "folders": {
-    "au-base": ["hl7.fhir.au.base#6.0.0"],
-    "au-core": ["hl7.fhir.au.core#2.0.0", "hl7.fhir.au.ereq#1.0.1"],
-    "au-erequesting": ["hl7.fhir.au.ereq#1.0.1"],
-    "au-patient-summary": ["hl7.fhir.au.ps#1.0.0"],
-    "connected-care": ["hl7.fhir.au.core#2.0.0", "hl7.fhir.au.ps#1.0.0", "hl7.fhir.au.ereq#1.0.1"]
+    "au-base": [
+      "hl7.fhir.au.base#7.0.0-ballot1"
+    ],
+    "au-core": [
+      "hl7.fhir.au.core#3.0.0-ballot1",
+      "hl7.fhir.au.ereq#1.0.1"
+    ],
+    "au-erequesting": [
+      "hl7.fhir.au.ereq#1.0.1"
+    ],
+    "au-patient-summary": [
+      "hl7.fhir.au.ps#1.0.0",
+      "hl7.fhir.au.core#3.0.0-ballot1"
+    ],
+    "connected-care": [
+      "hl7.fhir.au.core#3.0.0-ballot1",
+      "hl7.fhir.au.ps#1.0.0",
+      "hl7.fhir.au.ereq#1.0.1"
+    ]
   }
 }
