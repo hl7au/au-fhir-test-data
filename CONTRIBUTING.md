@@ -11,8 +11,8 @@ Thanks for helping improve the test data. This page describes how a change gets 
 | AU Encounter Record (future) | `au-fhir-test-data-set/au-encounter-record` | Sparked: Danielle Tavares-Rixon (`dt-r`), Dusica Bojicic (`dbojicic`) | Danielle Tavares-Rixon or Dusica Bojicic |
 | AU eRequesting | `au-fhir-test-data-set/au-erequesting` | Michael Osborne (`mjosborne1`); second reviewer to be confirmed | Michael Osborne, or the second reviewer (to be confirmed) when Michael is the author |
 | Connected care | `au-fhir-test-data-set/connected-care` | Connectathon track leads, currently Heath Frankel (`heathfrankel`) and Brett Esler (`brettesler-ext`, HL7 AU) | A track lead |
-| Services Australia data | Services Australia derived data and its CSV exports in `testdata-csv/` | Heath Frankel (`heathfrankel`) | Heath Frankel |
-| Tooling and CI | `.github/`, docs and process | Kyle Pettigrew (`KyleOps`) | Kyle Pettigrew |
+| Services Australia data | Services Australia derived data, and its CSV exports in `testdata-csv/` (being added in #245) | Heath Frankel (`heathfrankel`) | Heath Frankel |
+| Tooling and CI | `.github/` (checks, workflows, templates); triage and merging | Kyle Pettigrew (`KyleOps`) | Kyle Pettigrew |
 
 Anyone may review any PR; the table lists whose approval is required. An author cannot approve their own PR.
 
@@ -20,7 +20,7 @@ Other projects may add and manage their own starter test data in their own folde
 
 ### Services Australia data
 
-The Services Australia identifiers (IHI, HPI-I, HPI-O, Ahpra numbers, Medicare and DVA numbers, prescriber numbers) come from a formula-based source spreadsheet kept in the HL7 AU SharePoint IMT library. Exported CSVs are committed to `testdata-csv/` so that changes can be reviewed as text in a PR. The generated FHIR JSON in this repository is what consumers use.
+Services Australia derived data (for example IHI, HPI-I, HPI-O, Medicare, DVA and prescriber numbers) is maintained in a formula-based source spreadsheet that stays in the HL7 AU SharePoint IMT library. Its CSV exports are committed to `testdata-csv/` so that changes can be reviewed as text in a PR. The generated FHIR JSON in this repository is what consumers use.
 
 ## 1. Raise an issue
 
