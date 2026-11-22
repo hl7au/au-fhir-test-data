@@ -1,39 +1,49 @@
 name: Validate
 
+# Manual validation of any path, glob or IG combination. The pull request
+# check lives in fhir-validation.yaml; both use .github/validate.
+
 on:
   workflow_dispatch:
     inputs:
       path:
-        description: "Path to validate"
-        default: 'au-fhir-test-data-set/*.json'
+        description: "File, folder or glob to validate, relative to the repo root (e.g. au-fhir-test-data-set/au-core/Patient-*.json)"
+        default: "au-fhir-test-data-set"
         required: true
       report_title:
         description: "Report title"
-        default: "AU Core"
+        default: "FHIR validation"
         required: true
       ig:
-        description: "Implementation guide used to validate"
-        default: 'hl7.fhir.au.core#2.0.0-ballot'
-        required: true
+        description: "Optional -ig packages (id#version, space-separated) for every file; leave empty to use .github/validate/igs.json per folder"
+        default: ""
+        required: false
       tx:
         description: "Terminology server"
         default: "https://tx.dev.hl7.org.au/fhir"
         required: true
+      fail_on_errors:
+        description: "Fail the run when the validator reports errors"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
 
 jobs:
   Run-Validator:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Validate
-      uses: ./.github/validate
-      with:
-        path: ${{ github.event.inputs.path }}
-        ig: ${{ github.event.inputs.ig }}
-        tx: ${{ github.event.inputs.tx }}
-        title: ${{ github.event.inputs.report_title }}
-    # - name: Report
-    #   uses: ./.github/report
-    #   with:
-    #     title: ${{ github.event.inputs.report_title }}
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate
+        uses: ./.github/validate
+        with:
+          paths: ${{ inputs.path }}
+          ig: ${{ inputs.ig }}
+          tx: ${{ inputs.tx }}
+          title: ${{ inputs.report_title }}
+          fail-on-errors: ${{ inputs.fail_on_errors }}
