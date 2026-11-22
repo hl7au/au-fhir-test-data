@@ -1,0 +1,52 @@
+name: New test data request
+description: Ask for test data that does not exist yet, for example a new scenario, resource type or profile.
+title: "[Request]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search the [existing issues](https://github.com/hl7au/au-fhir-test-data/issues) first. The folder owner will agree the approach with you before work starts.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which test data set should this belong to? This routes the issue to the folder owner (see CONTRIBUTING.md).
+      options:
+        - AU Core
+        - AU Patient Summary
+        - AU eRequesting
+        - Connected care
+        - Services Australia data
+        - Other or not sure
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need
+      description: The scenario, resource types and profiles, and any specific elements, codes or search parameters the data must exercise.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: What is it for
+      description: For example a Connectathon track, a Sparked test event, an Inferno test, or your own development.
+    validations:
+      required: true
+  - type: textarea
+    id: existing
+    attributes:
+      label: Related existing data
+      description: Existing resources this should reference or extend (for example a Patient or Practitioner), if you know them.
+    validations:
+      required: false
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Can you contribute it?
+      options:
+        - "Yes, I can raise a pull request"
+        - "No, I am asking for someone else to create it"
+    validations:
+      required: true

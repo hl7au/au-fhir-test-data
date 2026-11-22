@@ -1,0 +1,47 @@
+name: Test data problem
+description: Something in the existing test data is wrong, for example invalid, inconsistent, a wrong code or display, or a broken reference.
+title: "[Data]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please search the [existing issues](https://github.com/hl7au/au-fhir-test-data/issues) first. Do not include any real personal or health information.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which test data is affected? This routes the issue to the folder owner (see CONTRIBUTING.md).
+      options:
+        - AU Core
+        - AU Patient Summary
+        - AU eRequesting
+        - Connected care
+        - Services Australia data
+        - Other or not sure
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Affected resources
+      description: File paths or `resourceType/id` values, one per line.
+      placeholder: |
+        au-fhir-test-data-set/au-core/Condition-ckd.json
+        Patient/baldwin-dinah
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: What you found, and how (for example, the validator message, the test that failed, or the server you loaded the data into).
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should be
+      description: The expected value or behaviour, with a reference to the IG, profile or terminology where you can.
+    validations:
+      required: false

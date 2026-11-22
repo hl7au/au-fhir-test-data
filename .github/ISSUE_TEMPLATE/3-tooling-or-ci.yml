@@ -1,0 +1,34 @@
+name: Tooling or CI
+description: A check, workflow or script misbehaves, or you want to propose a change to the tooling.
+title: "[Tooling]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If a check fails on your pull request and you cannot see why, you can also comment on the pull request and mention the tooling owner.
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Check or tool
+      options:
+        - Reference integrity
+        - Lint
+        - FHIR validation
+        - Upload workflow
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Pull request or workflow run
+      description: A link to the pull request or the failing run, if there is one.
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened
+      description: What the tool did, what you expected, and the relevant log or annotation text.
+    validations:
+      required: true
