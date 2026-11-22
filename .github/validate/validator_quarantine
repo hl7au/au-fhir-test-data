@@ -1,4 +1,10 @@
-# The lines that begin with # should be ignored as comment, note that only whole lines work, inline comment won't
-generated/Immunization-air-covid-1.json
-generated/Immunization-covid-2.json
-generated/MedicationRequest-simvastatin-pbs.json
+# Files the FHIR validation workflow skips.
+#
+# One entry per line: a repo-relative path or glob, then a justification
+# comment on the same line, for example:
+#
+#   au-fhir-test-data-set/au-core/Patient-example.json  # known IG defect, link the tracking issue here
+#
+# Globs use Python fnmatch rules, where "*" also matches "/".
+# An entry without a "# justification" comment fails the check.
+# Lines that start with "#" and blank lines are ignored.
