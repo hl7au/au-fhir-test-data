@@ -1,0 +1,8 @@
+# Lint problems to ignore, one per line as "<rule> <pattern>".
+# Lines starting with # are comments.
+# The pattern is an fnmatch glob matched against the problem's subject:
+# - contact-phone: the normalised number, e.g. 0255501234
+# - contact-email: the email domain, e.g. clinic.example.org
+# - every other rule: the file path relative to the scanned root
+# Each entry needs a comment explaining why the exception is intentional,
+# e.g. a real public service number that the data deliberately uses.
