@@ -1,0 +1,18 @@
+# Code owners for hl7au/au-fhir-test-data.
+#
+# GitHub requests a review from the owners of every path a pull request
+# touches. The last matching pattern wins, so the folder rules below
+# override the catch-all. Owners must have write access to the repository.
+# Keep this file in step with the ownership table in CONTRIBUTING.md.
+
+# Tooling, CI, docs and anything not owned below.
+*                                           @KyleOps
+/.github/                                   @KyleOps
+
+# Test data, by folder.
+/au-fhir-test-data-set/au-base/             @dt-r @dbojicic @brettesler-ext
+/au-fhir-test-data-set/au-core/             @dt-r @dbojicic
+/au-fhir-test-data-set/au-patient-summary/  @dt-r @dbojicic
+/au-fhir-test-data-set/au-encounter-record/ @dt-r @dbojicic
+/au-fhir-test-data-set/au-erequesting/      @mjosborne1
+/au-fhir-test-data-set/connected-care/      @heathfrankel
