@@ -20,6 +20,8 @@ ABN_SAMPLE = HERE / "testdata" / "validator-output-abn.json"
 # that aborted on an empty file.
 AUTOLOAD_LOG = HERE / "testdata" / "validator-autoload.log"
 FAILED_LOG = HERE / "testdata" / "validator-failed-empty-file.log"
+SMOKE_SET = HERE / "smoke_set"
+REPO_ROOT = HERE.parent.parent
 
 
 # ---------------------------------------------------------------------------
@@ -362,6 +364,34 @@ def test_main_nothing_to_validate(monkeypatch, tmp_path, repo):
     code = fv.main(["au-fhir-test-data-set/absent", "--jar", str(jar), "--repo-root", str(repo), "--summary", str(summary)])
     assert code == 0
     assert "No FHIR JSON files to validate" in summary.read_text()
+
+
+# ---------------------------------------------------------------------------
+# Smoke set validated when the check's own files change
+
+
+def _smoke_entries():
+    entries = []
+    for raw in SMOKE_SET.read_text(encoding="utf-8").splitlines():
+        line = raw.split("#", 1)[0].strip()
+        if line:
+            entries.append(line)
+    return entries
+
+
+def test_smoke_set_covers_every_mapped_folder_with_data():
+    _, folders = fv.load_ig_map(fv.DEFAULT_IGS)
+    entries = _smoke_entries()
+    for entry in entries:
+        assert (REPO_ROOT / entry).is_file(), entry
+        assert entry.startswith(fv.DATA_ROOT + "/") and entry.endswith(".json")
+        assert not any(ch in entry for ch in "*?["), "smoke entries are literal paths"
+        assert fv.prescreen(entry, REPO_ROOT) is None
+    covered = [fv.folder_of(e) for e in entries]
+    assert len(covered) == len(set(covered)), "one file per folder"
+    for folder in folders:
+        has_data = any((REPO_ROOT / fv.DATA_ROOT / folder).rglob("*.json"))
+        assert (folder in covered) == has_data, folder
 
 
 # ---------------------------------------------------------------------------

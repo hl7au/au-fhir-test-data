@@ -6,6 +6,17 @@ on:
       - "au-fhir-test-data-set/**"
       - ".github/validate/**"
       - ".github/workflows/fhir-validation.yaml"
+  # Runs the smoke set on the default branch, which also saves the
+  # validator and package caches there; caches saved by a pull request
+  # are scoped to that pull request, while every pull request can restore
+  # the default branch's.
+  push:
+    branches:
+      - master
+    paths:
+      - "au-fhir-test-data-set/**"
+      - ".github/validate/**"
+      - ".github/workflows/fhir-validation.yaml"
   workflow_dispatch:
     inputs:
       folder:
@@ -43,13 +54,13 @@ jobs:
           persist-credentials: false
 
       - name: Set up Python
-        if: github.event_name == 'pull_request'
+        if: github.event_name != 'workflow_dispatch'
         uses: actions/setup-python@v7
         with:
           python-version: '3.15'
 
       - name: Test the report parser
-        if: github.event_name == 'pull_request'
+        if: github.event_name != 'workflow_dispatch'
         working-directory: .github/validate
         run: |
           pip install pytest==9.2.0
@@ -65,21 +76,39 @@ jobs:
           # any file name works and the list can be any length.
           list="$RUNNER_TEMP/fhir-validation-paths"
           : > "$list"
+          smoke=""
           if [ "$EVENT" = "pull_request" ]; then
             # Files the PR adds or modifies under the data set (a rename counts
             # as an add); deletions are excluded.
             git diff --name-only -z --no-renames --diff-filter=AM HEAD^1 HEAD -- \
               au-fhir-test-data-set | { grep -z '\.json$' || true; } > "$list"
+            # A change to the check itself has to exercise the whole pipeline
+            # even when no data changed.
+            if ! git diff --quiet HEAD^1 HEAD -- .github/validate .github/workflows/fhir-validation.yaml; then
+              smoke="This pull request changes the FHIR validation check itself"
+            fi
+          elif [ "$EVENT" = "push" ]; then
+            smoke="This run is on the default branch"
           elif [ -z "$FOLDER" ] || [ "$FOLDER" = "all" ]; then
             printf '%s\0' "au-fhir-test-data-set" > "$list"
           else
             printf '%s\0' "au-fhir-test-data-set/$FOLDER" > "$list"
+          fi
+          if [ -n "$smoke" ]; then
+            sed -e 's/#.*//' -e 's/[[:space:]]*$//' -e '/^$/d' .github/validate/smoke_set \
+              | tr '\n' '\0' >> "$list"
           fi
           count=$(tr -cd '\0' < "$list" | wc -c | tr -d ' ')
           {
             echo "count=$count"
             echo "list=$list"
           } >> "$GITHUB_OUTPUT"
+          if [ -n "$smoke" ]; then
+            {
+              echo "$smoke, so the smoke set in \`.github/validate/smoke_set\` (one file per mapped folder) is validated to exercise the whole pipeline."
+              echo
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
           if [ "$count" = "0" ]; then
             {
               echo "## FHIR validation"

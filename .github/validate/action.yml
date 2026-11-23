@@ -88,6 +88,9 @@ runs:
       with:
         path: ~/.fhir/packages
         # Packages are pinned, so the mapping file fully determines the cache.
+        # A cache saved on the default branch (the workflow's push run) can
+        # be restored by every pull request; one saved by a pull request is
+        # visible only to that pull request.
         key: fhir-packages-${{ hashFiles('.github/validate/igs.json') }}
         restore-keys: fhir-packages-
 
