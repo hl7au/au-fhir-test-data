@@ -52,9 +52,20 @@ DEFAULT_MAX_ANNOTATIONS = 10
 MAX_SUMMARY_ROWS = 300
 TOP_MESSAGES_PER_FILE = 3
 TOP_MESSAGES_OVERALL = 10
+MAX_FILES_LISTED = 5
 ERROR_SEVERITIES = ("fatal", "error")
 PRESCREEN_MESSAGE_ID = "FHIR_VALIDATION_UNLOADABLE_FILE"
 VALIDATOR_FAILED_MESSAGE_ID = "FHIR_VALIDATION_VALIDATOR_FAILED"
+# Packages the validator loads for its own use whenever it needs them
+# (terminology, core extensions, cross-version definitions). Loading one
+# of these mid-run does not mean the data reached outside the IG pin.
+INFRASTRUCTURE_PACKAGES = (
+    "hl7.fhir.r4.core",
+    "hl7.terminology",
+    "hl7.fhir.uv.extensions",
+    "hl7.fhir.uv.xver",
+    "hl7.fhir.xver",
+)
 
 
 class ConfigError(Exception):
@@ -351,10 +362,45 @@ def prescreen(rel_path: str, repo_root: Path) -> Issue | None:
 
 LOG_VALIDATING = re.compile(r"^Validating\s*$")
 LOG_VALIDATE_FILE = re.compile(r"^\s+Validate (.+?)\s*$")
+LOG_LOAD_PACKAGE = re.compile(r"^\s+Load (\S+#\S+) - \d+ resources")
 LOG_FAILED_FILE = (
     re.compile(r"Unable to find/resolve/read (.+?)\s*$"),
     re.compile(r"^Loader: (.+?) is empty\s*$"),
 )
+
+
+def is_infrastructure_package(package: str) -> bool:
+    name = package.partition("#")[0]
+    # Match whole name segments: hl7.fhir.uv.xver covers hl7.fhir.uv.xver-r5.r4.
+    return any(name == p or name.startswith((p + ".", p + "-")) for p in INFRASTRUCTURE_PACKAGES)
+
+
+def packages_loaded_during_validation(log_text: str, pinned: list[str]) -> dict[str, set[str]]:
+    """Packages the validator loaded after start-up: {package: {file}}.
+
+    At start-up the validator loads the -ig packages and their
+    dependencies and prints a package summary. A package it loads later,
+    while validating a file, was fetched because that file reached
+    outside the pin (typically by claiming a profile from another IG);
+    the file is the one named on the preceding "Validate" line.
+    """
+    found: dict[str, set[str]] = collections.defaultdict(set)
+    validating = False
+    current = ""
+    for line in log_text.splitlines():
+        if not validating:
+            validating = bool(LOG_VALIDATING.match(line))
+            continue
+        match = LOG_VALIDATE_FILE.match(line)
+        if match:
+            current = match.group(1)
+            continue
+        match = LOG_LOAD_PACKAGE.match(line)
+        if match:
+            package = match.group(1)
+            if package not in pinned and not is_infrastructure_package(package):
+                found[package].add(current)
+    return dict(found)
 
 
 def failed_file(log_text: str, candidates: list[str]) -> str | None:
@@ -519,6 +565,8 @@ def unresolved_profiles(results: list[FileResult]) -> dict[str, set[str]]:
 class GroupReport:
     group: Group
     results: list[FileResult]
+    # Packages loaded outside the pin during validation: {package: {file}}
+    extra_packages: dict[str, set[str]] = field(default_factory=dict)
 
 
 def render_summary(
@@ -583,6 +631,27 @@ def render_summary(
         out.append("| --- | ---: |")
         for url in sorted(unresolved, key=lambda u: (-len(unresolved[u]), u)):
             out.append(f"| `{_cell(url, 200)}` | {len(unresolved[url])} |")
+
+    extra = [(pkg, rep.group, files) for rep in reports for pkg, files in sorted(rep.extra_packages.items())]
+    if extra:
+        out.append("")
+        out.append("### Packages loaded outside the pin")
+        out.append("")
+        out.append(
+            "> [!WARNING]\n> The validator loaded these packages while validating, although "
+            "`.github/validate/igs.json` does not pin them (or their dependencies) for the folder. "
+            "This usually means a file claims a profile from another IG, so its result depends on "
+            "whichever version the validator fetched. Pin the IG for the folder or drop the claim."
+        )
+        out.append("")
+        out.append("| Package | Folder | Files |")
+        out.append("| --- | --- | --- |")
+        for pkg, group, files in extra:
+            named = sorted(f for f in files if f)
+            listed = "<br>".join(f"`{f}`" for f in named[:MAX_FILES_LISTED]) or "(not identified)"
+            if len(named) > MAX_FILES_LISTED:
+                listed += f"<br>and {len(named) - MAX_FILES_LISTED} more"
+            out.append(f"| `{pkg}` | `{group.folder or DATA_ROOT}` | {listed} |")
 
     if error_issues:
         out.append("")
@@ -689,6 +758,17 @@ def validate_group(args: argparse.Namespace, group: Group, fhir_version: str, re
                 f"{len(results)} result(s) returned"
             )
         report.results.extend(results)
+        extra = packages_loaded_during_validation(log_text, group.igs)
+        submitted = set(files)
+        report.extra_packages = {
+            pkg: {f if f in submitted else _relative(f, args.repo_root) for f in claimed} for pkg, claimed in extra.items()
+        }
+        for pkg, claimed in sorted(report.extra_packages.items()):
+            named = sorted(f for f in claimed if f)
+            print(
+                f"::notice title=FHIR validation::{group.slug}: the validator loaded {pkg}, which igs.json "
+                f"does not pin for this folder" + (f" (claimed by {', '.join(named)})" if named else "")
+            )
         return None
     return None
 

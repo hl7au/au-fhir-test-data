@@ -15,8 +15,10 @@ SAMPLE = HERE / "testdata" / "validator-output.json"
 # 200 errors, almost all the AU Base 6.0.0 ABN identifier type or its
 # knock-on slice failures.
 ABN_SAMPLE = HERE / "testdata" / "validator-output-abn.json"
-# Validator log (machine paths scrubbed) of a run that aborted on an
-# empty file.
+# Validator logs (machine paths scrubbed): a run where a file claiming an
+# AU PS profile made the validator load hl7.fhir.au.ps#1.0.0, and a run
+# that aborted on an empty file.
+AUTOLOAD_LOG = HERE / "testdata" / "validator-autoload.log"
 FAILED_LOG = HERE / "testdata" / "validator-failed-empty-file.log"
 
 
@@ -588,3 +590,50 @@ def test_summary_counts_distinct_messages(abn_results):
     assert "**200** error(s) (**27** distinct message(s))" in text
     assert "Annotations show 10 of 200 errors" in text
     assert "least frequent messages first" in text
+
+
+# ---------------------------------------------------------------------------
+# Packages loaded outside the pin
+
+
+def test_packages_loaded_during_validation_from_captured_log():
+    extra = fv.packages_loaded_during_validation(AUTOLOAD_LOG.read_text(), ["hl7.fhir.au.ereq#1.0.1"])
+    # au.core#2.0.0, au.base#6.0.0 and ips#2.0.1 are eRequesting dependencies
+    # loaded at start-up, so they are not reported.
+    assert extra == {"hl7.fhir.au.ps#1.0.0": {"au-fhir-test-data-set/au-erequesting/probe/Patient-ps-profile.json"}}
+
+
+def test_infrastructure_packages_loaded_late_are_not_reported():
+    log = (
+        "Validating\n  Validate x.json\n"
+        "  Load hl7.terminology.r4#7.1.0 - 4072 resources (00:00.888)\n"
+        "  Load hl7.fhir.uv.extensions.r4#5.3.0 - 885 resources (00:00.589)\n"
+        "  Load hl7.fhir.uv.xver-r5.r4#0.1.0 - 4707 resources (00:00.102)\n"
+        "  Load hl7.fhir.au.base#7.0.0-ballot1 - 159 resources (00:00.004)\n"
+        "  Load hl7.fhir.au.core#3.0.0-ballot1 - 40 resources (00:00.004)\n"
+    )
+    assert fv.packages_loaded_during_validation(log, ["hl7.fhir.au.core#3.0.0-ballot1"]) == {
+        "hl7.fhir.au.base#7.0.0-ballot1": {"x.json"}
+    }
+
+
+def test_summary_lists_packages_loaded_outside_the_pin():
+    group = fv.Group("au-erequesting", ["hl7.fhir.au.ereq#1.0.1"], [])
+    report = fv.GroupReport(group, [], {"hl7.fhir.au.ps#1.0.0": {"au-fhir-test-data-set/au-erequesting/P.json"}})
+    text = fv.render_summary("FHIR validation", [report], [], annotated=0, advisory=True)
+    assert "### Packages loaded outside the pin" in text
+    assert "| `hl7.fhir.au.ps#1.0.0` | `au-erequesting` | `au-fhir-test-data-set/au-erequesting/P.json` |" in text
+
+
+def test_main_reports_package_loaded_outside_the_pin(monkeypatch, tmp_path, repo, capsys):
+    body = """
+print("Loading\\n  Load hl7.fhir.au.core#3.0.0-ballot1 - 40 resources (00:00.001)\\nValidating")
+for f in [a for a in args[2:] if a.endswith(".json") and "-output" not in a]:
+    print("  Validate " + f)
+    if f.endswith("Patient-b.json"):
+        print("  Load hl7.fhir.au.ps#1.0.0 - 18 resources (00:00.289)")
+""" + WRITE_ONE_ERROR
+    code, summary = _run_main(monkeypatch, tmp_path, repo, body)
+    assert code == 0
+    assert "| `hl7.fhir.au.ps#1.0.0` | `au-core` | `au-fhir-test-data-set/au-core/Patient-b.json` |" in summary
+    assert "loaded hl7.fhir.au.ps#1.0.0, which igs.json does not pin" in capsys.readouterr().out
