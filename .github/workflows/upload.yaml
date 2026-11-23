@@ -23,6 +23,7 @@ jobs:
   upload:
     name: Upload AU Core test data
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -75,19 +76,25 @@ jobs:
           )
 
           # Report types present in the data that this workflow does not
-          # upload (TestDataClient v0.0.8 has no case for them).
+          # upload. Today these are the types TestDataClient v0.0.8 has no
+          # case for; a supported type missing from the order above would be
+          # reported here too.
           present=$(for file in "$DATA_DIR"/*-*.json; do name=${file##*/}; echo "${name%%-*}"; done | sort -u)
           for type in $present; do
             if [[ " ${order[*]} " != *" $type "* ]]; then
-              echo "::warning::$type files in $DATA_DIR are not uploaded: TestDataClient $TEST_DATA_CLIENT_VERSION does not support $type"
+              echo "::warning::$type files in $DATA_DIR are not uploaded: $type is not in this workflow's upload order"
             fi
           done
 
-          # Some references cycle (Patient and RelatedPerson, Encounter and
-          # Condition) or point at the same type (Location, Observation), so
+          # Some types reference each other (Patient and RelatedPerson,
+          # Encounter and Condition) or themselves (Location, Observation), so
           # no type order satisfies them all. Types with failures are re-run,
           # in order, until a pass makes no progress. PUT is idempotent, so a
-          # re-run leaves already uploaded resources unchanged.
+          # re-run leaves already uploaded resources unchanged. Retries cannot
+          # break a cycle between individual resources: the hennessy Patients
+          # link to RelatedPersons that point back at them, so on a server that
+          # enforces referential integrity they upload only if one side is
+          # already there.
           pending=("${order[@]}")
           previous_failures=-1
           for pass in 1 2 3; do
