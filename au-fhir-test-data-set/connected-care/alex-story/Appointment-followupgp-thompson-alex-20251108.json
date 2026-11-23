@@ -27,8 +27,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "718591004",
-          "display": "High risk human papillomavirus detected by cytology"
+          "code": "439740005",
+          "display": "Postoperative follow-up visit"
         }
       ],
       "text": "Post-operative follow-up after cone biopsy"

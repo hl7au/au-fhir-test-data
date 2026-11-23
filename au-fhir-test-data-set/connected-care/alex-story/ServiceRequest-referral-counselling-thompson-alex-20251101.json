@@ -70,8 +70,8 @@
       "coding": [
         {
           "system": "http://snomed.info/sct",
-          "code": "718591004",
-          "display": "High risk human papillomavirus detected by cytology"
+          "code": "413736002",
+          "display": "Cancer emotional and psychosocial support and education"
         }
       ],
       "text": "Psychological support following cancer-pathway diagnosis and surgery"
