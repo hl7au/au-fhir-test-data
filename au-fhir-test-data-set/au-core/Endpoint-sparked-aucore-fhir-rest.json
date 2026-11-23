@@ -20,7 +20,7 @@
     "code" : "hl7-fhir-rest",
     "display" : "HL7 FHIR"
   },
-  "name" : "Sparked Development FHIR Server (AU Core)",
+  "name" : "Sparked FHIR Server (AU Core)",
   "managingOrganization" : {
     "display" : "CSIRO"
   },
