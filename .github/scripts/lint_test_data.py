@@ -2,7 +2,8 @@
 
 Every FHIR JSON file under the scanned root is checked against these rules:
 
-- resource-id (error): the resource has an id.
+- resource-id (error): the resource has an id. A transaction or batch Bundle
+  is exempt, since FHIR lets it have none.
 - file-name (warning): the file is named <resourceType>-<id>.json.
 - contact-phone (warning): every ContactPoint with system phone, fax or sms
   uses a number the ACMA reserves for fictional use.
@@ -193,6 +194,11 @@ def check_format(rel_path, text):
         yield Problem(rel_path, "json-indent", "File is not indented with 2 spaces.", rel_path)
 
 
+def needs_id(resource):
+    """Return whether the resource must have an id; a transaction or batch Bundle need not."""
+    return not (resource["resourceType"] == "Bundle" and resource.get("type") in ("transaction", "batch"))
+
+
 def check_file(path, root):
     rel_path = path.relative_to(root).as_posix()
     try:
@@ -206,7 +212,8 @@ def check_file(path, root):
     problems = []
     resource_type, resource_id = resource["resourceType"], resource.get("id")
     if not isinstance(resource_id, str) or not resource_id:
-        problems.append(Problem(rel_path, "resource-id", "Resource has no id.", rel_path))
+        if needs_id(resource):
+            problems.append(Problem(rel_path, "resource-id", "Resource has no id.", rel_path))
     elif path.name != f"{resource_type}-{resource_id}.json":
         problems.append(Problem(
             rel_path, "file-name",

@@ -54,6 +54,17 @@ def test_ignores_non_fhir_json_and_dot_dirs(repo):
     assert problems(repo.root) == []
 
 
+@pytest.mark.parametrize("bundle_type", ["transaction", "batch"])
+def test_transaction_and_batch_bundles_need_no_id(repo, bundle_type):
+    repo("Bundle-upload.json", {"resourceType": "Bundle", "type": bundle_type, "entry": []})
+    assert problems(repo.root) == []
+
+
+def test_other_bundles_need_an_id(repo):
+    repo("Bundle-b1.json", {"resourceType": "Bundle", "type": "collection"})
+    assert problems(repo.root) == [("Bundle-b1.json", "resource-id", "error")]
+
+
 def test_unparseable_file_is_an_error(repo):
     repo("Patient-p1.json", None, text="{")
     assert problems(repo.root) == [("Patient-p1.json", "parse", "error")]
