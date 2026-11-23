@@ -5,15 +5,20 @@ Every FHIR JSON file under the scanned root is checked against these rules:
 - resource-id (error): the resource has an id. A transaction or batch Bundle
   is exempt, since FHIR lets it have none.
 - file-name (warning): the file is named <resourceType>-<id>.json.
-- contact-phone (warning): every ContactPoint with system phone, fax or sms
-  uses a number the ACMA reserves for fictional use.
-- contact-email (warning): every ContactPoint with system email uses a
-  domain reserved for documentation (RFC 2606, RFC 6761).
+- contact-phone (warning): every ContactPoint with system phone, fax, sms or
+  pager uses a number the ACMA reserves for fictional use.
+- contact-email (warning): every email address uses a domain reserved for
+  documentation (RFC 2606, RFC 6761). This covers ContactPoints with system
+  email, ContactPoints with no system whose value contains @, and any address
+  found in another string value, such as narrative text.div, a mailto:
+  Endpoint.address or an extension valueString.
 - json-indent (warning): the file is indented with 2 spaces.
 - line-endings (warning): the file uses LF line endings, not CRLF.
 
-ContactPoints are found anywhere in a resource, including contained
-resources and Bundle entries.
+ContactPoints and strings are found anywhere in a resource, including
+contained resources and Bundle entries. ContactPoint systems are matched
+case-insensitively. Phone numbers in free text are not checked, because
+identifiers such as Medicare numbers look like phone numbers.
 
 An error fails the check. A warning is reported but does not, because the
 data on master still has violations of that rule; promote it to an error
@@ -39,6 +44,7 @@ import os
 import re
 import sys
 from dataclasses import dataclass
+from email.utils import parseaddr
 from pathlib import Path
 
 DEFAULT_EXCEPTIONS = Path(__file__).with_name("lint_test_data_exceptions")
@@ -74,12 +80,22 @@ RESERVED_NUMBERS = frozenset({
     "1800975711", "1300975707", "1300975708", "1300975709", "1300975710",
     "1300975711",
 })
-PHONE_SYSTEMS = {"phone", "fax", "sms"}
+PHONE_SYSTEMS = {"phone", "fax", "sms", "pager"}
+# A trailing extension such as "ext 12", "x12", "extn. 12" or ";ext=12".
+PHONE_EXTENSION = re.compile(r"[\s,;]*(?:extn|ext|x)[.:=]?\s*\d+\s*$", re.IGNORECASE)
 
 # Second-level domains reserved by RFC 2606 section 3, and top-level domains
 # reserved by RFC 2606 section 2 and RFC 6761. Subdomains of these are fine.
 RESERVED_DOMAINS = ("example.com", "example.net", "example.org")
-RESERVED_TLDS = ("example", "test", "invalid")
+RESERVED_TLDS = ("example", "test", "invalid", "localhost")
+RESERVED_DOMAINS_TEXT = "example.com, example.net, example.org, .example, .test, .invalid, .localhost"
+
+# An email address in free text. Deliberately conservative: the domain needs a
+# dot and an alphabetic top-level domain, and an address directly after a
+# slash or inside a longer token (such as URL userinfo) is not matched.
+EMAIL_IN_TEXT = re.compile(
+    r"(?<![\w.%+/-])[\w.%+-]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}(?![\w-])"
+)
 
 SKIPPED_DIRS = {"node_modules"}
 
@@ -126,9 +142,15 @@ def iter_json_files(root):
 
 def normalise_phone(value):
     """Return value as a national Australian number with only digits."""
-    digits = re.sub(r"\(0\)|[\s().\-]", "", value)
+    number = value.strip()
+    if number.lower().startswith("tel:"):
+        number = number[len("tel:"):]
+    number = PHONE_EXTENSION.sub("", number)
+    digits = re.sub(r"\(0\)|[\s().\-]", "", number)
     if digits.startswith("+61"):
         digits = "0" + digits[3:]
+    elif digits.startswith("0061"):
+        digits = "0" + digits[4:]
     elif digits.startswith("61") and len(digits) == 11:
         digits = "0" + digits[2:]
     return digits
@@ -139,10 +161,12 @@ def is_reserved_phone(number):
 
 
 def email_domain(value):
-    address = value.strip().lower()
-    if address.startswith("mailto:"):
-        address = address[len("mailto:"):]
-    return address.rpartition("@")[2].rstrip(".")
+    """Return the lower-case domain of an address, a mailto: URI or a "Name <address>" value."""
+    address = value.strip()
+    if address.lower().startswith("mailto:"):
+        address = address[len("mailto:"):].partition("?")[0]
+    address = parseaddr(address)[1] or address
+    return address.lower().rpartition("@")[2].rstrip(".")
 
 
 def is_reserved_domain(domain):
@@ -151,22 +175,52 @@ def is_reserved_domain(domain):
     return domain.rpartition(".")[2] in RESERVED_TLDS
 
 
-def iter_contact_points(node):
-    """Yield every ContactPoint-shaped object (system and string value) in node."""
+def child_path(path, key):
+    if isinstance(key, int):
+        return f"{path}[{key}]"
+    return f"{path}.{key}" if path else key
+
+
+def iter_nodes(node, path=""):
+    """Yield (JSON path, value) for node and everything inside it."""
+    yield path, node
     if isinstance(node, dict):
-        if isinstance(node.get("system"), str) and isinstance(node.get("value"), str):
-            yield node
-        for value in node.values():
-            yield from iter_contact_points(value)
+        for key, value in node.items():
+            yield from iter_nodes(value, child_path(path, key))
     elif isinstance(node, list):
-        for item in node:
-            yield from iter_contact_points(item)
+        for index, item in enumerate(node):
+            yield from iter_nodes(item, child_path(path, index))
+
+
+def is_contact_point(node):
+    """Return whether node looks like a ContactPoint: a string value and a string or absent system."""
+    return (
+        isinstance(node, dict) and isinstance(node.get("value"), str)
+        and isinstance(node.get("system", ""), str)
+    )
+
+
+def email_problem(rel_path, value, where=""):
+    domain = email_domain(value)
+    if is_reserved_domain(domain):
+        return None
+    location = f" in {where}" if where else ""
+    return Problem(
+        rel_path, "contact-email",
+        f"Email '{value}'{location} does not use a reserved domain ({RESERVED_DOMAINS_TEXT}).",
+        domain,
+    )
 
 
 def check_contacts(rel_path, resource):
-    for contact in iter_contact_points(resource):
-        system, value = contact["system"], contact["value"]
+    nodes = list(iter_nodes(resource))
+    checked = set()  # JSON paths of ContactPoint values already checked.
+    for path, node in nodes:
+        if not is_contact_point(node):
+            continue
+        system, value = node.get("system", "").lower(), node["value"]
         if system in PHONE_SYSTEMS:
+            checked.add(child_path(path, "value"))
             number = normalise_phone(value)
             if not is_reserved_phone(number):
                 yield Problem(
@@ -174,15 +228,21 @@ def check_contacts(rel_path, resource):
                     f"{system.capitalize()} number '{value}' is not in the ACMA ranges reserved for fictional use.",
                     number,
                 )
-        elif system == "email":
-            domain = email_domain(value)
-            if not is_reserved_domain(domain):
-                yield Problem(
-                    rel_path, "contact-email",
-                    f"Email '{value}' does not use a reserved domain (example.com, example.net, example.org, "
-                    ".example, .test, .invalid).",
-                    domain,
-                )
+        elif system == "email" or ("system" not in node and "@" in value):
+            checked.add(child_path(path, "value"))
+            problem = email_problem(rel_path, value)
+            if problem:
+                yield problem
+
+    # Any other string, such as narrative or an extension value. Attachment.data
+    # is base64, which cannot contain @, so encoded content is never matched.
+    for path, node in nodes:
+        if not isinstance(node, str) or path in checked or "@" not in node:
+            continue
+        for address in dict.fromkeys(m.group(0) for m in EMAIL_IN_TEXT.finditer(node)):
+            problem = email_problem(rel_path, address, path)
+            if problem:
+                yield problem
 
 
 def check_format(rel_path, text):

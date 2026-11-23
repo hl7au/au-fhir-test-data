@@ -77,6 +77,14 @@ def test_unparseable_file_is_an_error(repo):
     ("61491570006", "0491570006"),
     ("0491-570-006", "0491570006"),
     ("1800.975.707", "1800975707"),
+    ("tel:+61-2-5550-1234", "0255501234"),
+    ("TEL:0255501234", "0255501234"),
+    ("0061 2 5550 1234", "0255501234"),
+    ("(02) 5550 1234 ext 12", "0255501234"),
+    ("(02) 5550 1234 x12", "0255501234"),
+    ("(02) 5550 1234 extn. 12", "0255501234"),
+    ("02 5550 1234, Ext: 12", "0255501234"),
+    ("tel:+61-2-5550-1234;ext=12", "0255501234"),
 ])
 def test_normalise_phone(value, expected):
     assert normalise_phone(value) == expected
@@ -106,6 +114,8 @@ def test_reserved_phone(number, reserved):
     ("mail.example", True),
     ("x.test", True),
     ("foo.invalid", True),
+    ("localhost", True),
+    ("mail.localhost", True),
     ("example.com.au", False),
     ("myownpersonaldomain.com", False),
     ("notexample.com", False),
@@ -115,8 +125,73 @@ def test_reserved_domain(domain, reserved):
     assert is_reserved_domain(domain) is reserved
 
 
-def test_email_domain():
-    assert email_domain("mailto:Jo@Clinic.Example.ORG") == "clinic.example.org"
+@pytest.mark.parametrize("value, domain", [
+    ("mailto:Jo@Clinic.Example.ORG", "clinic.example.org"),
+    ("Jane Doe <jane@example.com>", "example.com"),
+    ("\"Doe, Jane\" <jane@example.com>", "example.com"),
+    ("mailto:jane@example.com?subject=Referral", "example.com"),
+    ("jane@clinic.example.com.", "clinic.example.com"),
+])
+def test_email_domain(value, domain):
+    assert email_domain(value) == domain
+
+
+def test_named_email_with_reserved_domain_passes(repo):
+    repo("Patient-p1.json", patient(telecom=[phone("Jane Doe <jane@example.com>", "email")]))
+    assert problems(repo.root) == []
+
+
+def test_contact_point_systems_match_case_insensitively_and_include_pager(repo):
+    repo("Patient-p1.json", patient(telecom=[
+        phone("0412 345 678", "Phone"), phone("0412 345 679", "pager"), phone("jo@email.com", "EMAIL"),
+        phone("0491 570 006", "pager"),
+    ]))
+    assert [(p.rule, p.subject) for p in lint(repo.root)] == [
+        ("contact-email", "email.com"), ("contact-phone", "0412345679"), ("contact-phone", "0412345678"),
+    ]
+    assert "Pager number '0412 345 679'" in lint(repo.root)[1].message
+
+
+def test_contact_point_without_system_is_checked_as_email_only_with_at(repo):
+    repo("Patient-p1.json", patient(telecom=[{"value": "jo@email.com"}, {"value": "0412 345 678"}]))
+    [problem] = lint(repo.root)
+    assert (problem.rule, problem.subject) == ("contact-email", "email.com")
+    assert " in " not in problem.message  # Reported once, as a ContactPoint.
+
+
+def test_emails_in_other_strings(repo):
+    organization = {
+        "resourceType": "Organization", "id": "o1",
+        "text": {"status": "generated", "div": '<div xmlns="http://www.w3.org/1999/xhtml">'
+                 '<a href="mailto:a@clinic.com.au">a@clinic.com.au</a>, b@clinic.example.org</div>'},
+    }
+    endpoint = {"resourceType": "Endpoint", "id": "e1", "address": "mailto:c@realmail.com"}
+    repo("Bundle-b1.json", {
+        "resourceType": "Bundle", "id": "b1", "type": "collection",
+        "entry": [{"resource": organization}, {"resource": endpoint}],
+    })
+    repo("Patient-p1.json", patient(
+        extension=[{"url": "http://example.org/ext", "valueString": "Contact d@gmail.com."}],
+        contained=[{"resourceType": "Practitioner", "id": "pr1", "text": {"div": "e@hospital.org.au"}}],
+    ))
+    assert [p.message.split(" does not")[0] for p in lint(repo.root)] == [
+        "Email 'a@clinic.com.au' in entry[0].resource.text.div",
+        "Email 'c@realmail.com' in entry[1].resource.address",
+        "Email 'd@gmail.com' in extension[0].valueString",
+        "Email 'e@hospital.org.au' in contained[0].text.div",
+    ]
+
+
+def test_free_text_scan_ignores_urls_identifiers_and_attachment_data(repo):
+    repo("Patient-p1.json", patient(
+        identifier=[{"system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0", "value": "1"}],
+        extension=[
+            {"url": "http://example.org/ext", "valueUri": "https://user@real.com.au/fhir"},
+            {"url": "http://example.org/ext", "valueString": "Medicare 2123 4567 8 1, phone 0412 345 678"},
+        ],
+        photo=[{"contentType": "text/plain", "data": "am9AZW1haWwuY29t"}],  # base64 of jo@email.com
+    ))
+    assert problems(repo.root) == []
 
 
 def test_reports_contacts_in_contained_resources_and_bundle_entries(repo):
