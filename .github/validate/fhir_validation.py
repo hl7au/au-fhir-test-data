@@ -52,6 +52,7 @@ DEFAULT_MAX_ANNOTATIONS = 10
 MAX_SUMMARY_ROWS = 300
 TOP_MESSAGES_PER_FILE = 3
 TOP_MESSAGES_OVERALL = 10
+ERROR_SEVERITIES = ("fatal", "error")
 PRESCREEN_MESSAGE_ID = "FHIR_VALIDATION_UNLOADABLE_FILE"
 VALIDATOR_FAILED_MESSAGE_ID = "FHIR_VALIDATION_VALIDATOR_FAILED"
 
@@ -416,43 +417,76 @@ def annotation(result: FileResult, issue: Issue) -> str:
     return f"::warning {','.join(props)}::{escape_data(message)}"
 
 
-def normalise(message: str) -> str:
-    """Drop the slice-evaluation context the validator appends.
+UUID = re.compile(r"\b(urn:uuid:)?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b")
+ARRAY_INDEX = re.compile(r"\[\d+\]")
 
-    When an element is checked against several slice profiles, the same
-    root message is repeated once per candidate with a trailing
-    "(validating against <profile>)"; grouping on the root message keeps
-    the summary readable.
+
+def normalise(message: str) -> str:
+    """Reduce a message to its root cause for grouping and counting.
+
+    Drops the slice-evaluation context the validator appends (when an
+    element is checked against several slice profiles, the same root
+    message repeats once per candidate with a trailing "(validating
+    against <profile>)"), and replaces the parts that only say where the
+    problem is, UUIDs and array indexes, so the same fault in different
+    entries or files counts as one message. Quoted values such as codes
+    are kept: a different unknown code is a different problem.
     """
-    return message.split(" (validating against ", 1)[0]
+    message = message.split(" (validating against ", 1)[0]
+    message = UUID.sub(lambda m: (m.group(1) or "") + "<uuid>", message)
+    return ARRAY_INDEX.sub("[n]", message)
+
+
+def is_error(issue: Issue) -> bool:
+    return issue.severity in ERROR_SEVERITIES
 
 
 def annotations(results: list[FileResult], limit: int) -> list[str]:
-    """One annotation per distinct error, spread across files.
+    """Choose which errors get one of GitHub's few annotations.
 
-    Takes each file's first distinct error, then each file's second, and
-    so on, so a single noisy file cannot use up GitHub's per-step limit.
+    Each distinct (normalised) message gets at most one annotation per
+    file, and every message gets its first annotation before any message
+    gets a second. Within a round, messages that occur less often in the
+    whole run go first, so one root cause repeated hundreds of times
+    cannot hide a new, rarer error; ties go to the file with the fewest
+    annotations so far, so a single noisy file cannot use up the limit.
     """
-    per_file: list[list[Issue]] = []
-    for result in results:
-        seen = set()
-        distinct = []
+    counts: collections.Counter[str] = collections.Counter()
+    # message -> [(file index, first issue with that message in the file)]
+    remaining: dict[str, list[tuple[int, Issue]]] = {}
+    for index, result in enumerate(results):
+        seen: set[str] = set()
         for issue in result.issues:
-            if issue.severity not in ("fatal", "error"):
+            if not is_error(issue):
                 continue
-            key = (normalise(issue.message), issue.location)
+            key = normalise(issue.message)
+            counts[key] += 1
             if key not in seen:
                 seen.add(key)
-                distinct.append(issue)
-        per_file.append(distinct)
+                remaining.setdefault(key, []).append((index, issue))
+
+    used: collections.Counter[int] = collections.Counter()
     lines: list[str] = []
-    rank = 0
-    while len(lines) < limit and any(rank < len(d) for d in per_file):
-        for result, distinct in zip(results, per_file):
-            if rank < len(distinct) and len(lines) < limit:
-                lines.append(annotation(result, distinct[rank]))
-        rank += 1
+    while len(lines) < limit and any(remaining.values()):
+        # One round: each message with occurrences left gets one annotation.
+        pending = {key for key, occ in remaining.items() if occ}
+        while pending and len(lines) < limit:
+
+            def load(key: str) -> int:
+                return min(used[i] for i, _ in remaining[key])
+
+            key = min(pending, key=lambda k: (counts[k], load(k), k))
+            pending.discard(key)
+            occ = remaining[key]
+            pos = min(range(len(occ)), key=lambda p: (used[occ[p][0]], p))
+            index, issue = occ.pop(pos)
+            used[index] += 1
+            lines.append(annotation(results[index], issue))
     return lines
+
+
+def distinct_messages(issues: list[Issue]) -> int:
+    return len({normalise(i.message) for i in issues})
 
 
 def _cell(text: str, width: int = 160) -> str:
@@ -497,9 +531,11 @@ def render_summary(
     all_results = [r for rep in reports for r in rep.results]
     total_errors = sum(r.errors for r in all_results)
     total_warnings = sum(r.warnings for r in all_results)
+    error_issues = [i for r in all_results for i in r.issues if is_error(i)]
     out = [f"## {title}", ""]
     out.append(
-        f"Validated **{len(all_results)}** file(s): **{total_errors}** error(s), **{total_warnings}** warning(s)."
+        f"Validated **{len(all_results)}** file(s): **{total_errors}** error(s) "
+        f"(**{distinct_messages(error_issues)}** distinct message(s)), **{total_warnings}** warning(s)."
     )
     if advisory:
         out.append("")
@@ -548,7 +584,6 @@ def render_summary(
         for url in sorted(unresolved, key=lambda u: (-len(unresolved[u]), u)):
             out.append(f"| `{_cell(url, 200)}` | {len(unresolved[url])} |")
 
-    error_issues = [i for r in all_results for i in r.issues if i.severity in ("fatal", "error")]
     if error_issues:
         out.append("")
         out.append("### Most frequent errors")
@@ -567,7 +602,7 @@ def render_summary(
         out.append("| File | Errors | Warnings | Top messages |")
         out.append("| --- | ---: | ---: | --- |")
         for r in with_findings[:MAX_SUMMARY_ROWS]:
-            ranked = [i for i in r.issues if i.severity in ("fatal", "error")] or r.issues
+            ranked = [i for i in r.issues if is_error(i)] or r.issues
             msgs = "<br>".join(
                 _cell(m) + (f" (x{c})" if c > 1 else "") for m, c in top_messages(ranked, TOP_MESSAGES_PER_FILE)
             )
@@ -584,7 +619,8 @@ def render_summary(
         out.append("")
         out.append(
             f"Annotations show {annotated} of {total_errors} errors (GitHub displays at most "
-            f"{DEFAULT_MAX_ANNOTATIONS} per step); the full list is in the HTML report artifact."
+            f"{DEFAULT_MAX_ANNOTATIONS} per step): one per distinct message before any repeats, "
+            "least frequent messages first. The full list is in the HTML report artifact."
         )
     return "\n".join(out) + "\n"
 

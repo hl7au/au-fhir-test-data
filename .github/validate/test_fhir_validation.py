@@ -11,6 +11,10 @@ import fhir_validation as fv
 
 HERE = Path(__file__).resolve().parent
 SAMPLE = HERE / "testdata" / "validator-output.json"
+# Errors only, from a run over the three au-erequesting Bundles of PR #255:
+# 200 errors, almost all the AU Base 6.0.0 ABN identifier type or its
+# knock-on slice failures.
+ABN_SAMPLE = HERE / "testdata" / "validator-output-abn.json"
 # Validator log (machine paths scrubbed) of a run that aborted on an
 # empty file.
 FAILED_LOG = HERE / "testdata" / "validator-failed-empty-file.log"
@@ -524,3 +528,63 @@ for f in [a for a in args[2:] if a.endswith(".json") and "-output" not in a]:
     assert code == 2
     assert "while processing `au-fhir-test-data-set/au-core/Patient-b.json`" in summary
     assert "::error title=FHIR validator failed" in capsys.readouterr().out
+
+
+# ---------------------------------------------------------------------------
+# Annotation choice and distinct message counts
+
+
+@pytest.fixture
+def abn_results(tmp_path):
+    return fv.parse_output(json.loads(ABN_SAMPLE.read_text(encoding="utf-8")), tmp_path)
+
+
+def test_normalise_strips_location_specific_parts():
+    a = "Unable to find a profile match for urn:uuid:6f5f6f11-0003-4001-8001-000000000104 among choices: x"
+    b = "Unable to find a profile match for urn:uuid:6f5f6f11-0002-4001-8001-000000000104 among choices: x"
+    assert fv.normalise(a) == fv.normalise(b) == "Unable to find a profile match for urn:uuid:<uuid> among choices: x"
+    assert fv.normalise("Bundle.entry[12].resource is bad") == "Bundle.entry[n].resource is bad"
+    # Quoted values identify the problem, not its location, so they stay.
+    assert fv.normalise("Unknown code 'ABN'") != fv.normalise("Unknown code 'XYZ'")
+
+
+def test_annotations_prefer_rare_messages_over_the_dominant_one(abn_results):
+    abn = "Unknown code 'ABN' in the CodeSystem"
+    errors = [i for r in abn_results for i in r.issues if fv.is_error(i)]
+    assert len(errors) == 200
+    assert sum(abn in i.message for i in errors) == 60
+    notes = fv.annotations(abn_results, 10)
+    assert len(notes) == 10
+    assert not any(abn in n for n in notes)
+    # Ten different messages, each annotated once.
+    messages = [fv.normalise(n.split("::", 2)[2].split(": ", 1)[1]) for n in notes]
+    assert len(set(messages)) == 10
+
+
+def test_a_new_rare_error_is_annotated_despite_a_flood(abn_results):
+    flood = abn_results + [fv.FileResult("new.json", [fv.Issue("error", "Brand new problem", line=3)])]
+    notes = fv.annotations(flood, 10)
+    assert notes[0].startswith("::warning file=new.json,line=3,")
+
+
+def test_annotations_one_per_message_and_file_before_repeats():
+    a = fv.FileResult("a.json", [fv.Issue("error", "common")] * 5 + [fv.Issue("error", "rare")])
+    b = fv.FileResult("b.json", [fv.Issue("error", "common")] * 5)
+    c = fv.FileResult("c.json", [fv.Issue("error", "common")])
+    notes = fv.annotations([a, b, c], 10)
+    # common: at most once per file (3), rare: once; nothing more to show.
+    assert len(notes) == 4
+    assert notes[0].endswith("::rare")
+    assert sorted(n.split(",")[0] for n in notes if n.endswith("::common")) == [
+        "::warning file=a.json", "::warning file=b.json", "::warning file=c.json"
+    ]
+    # With room for two, the second goes to the other message, not a repeat.
+    assert [n.rsplit("::", 1)[1] for n in fv.annotations([a, b, c], 2)] == ["rare", "common"]
+
+
+def test_summary_counts_distinct_messages(abn_results):
+    groups = [fv.GroupReport(fv.Group("au-erequesting", ["hl7.fhir.au.ereq#1.0.1"], []), abn_results)]
+    text = fv.render_summary("FHIR validation", groups, [], annotated=10, advisory=True)
+    assert "**200** error(s) (**27** distinct message(s))" in text
+    assert "Annotations show 10 of 200 errors" in text
+    assert "least frequent messages first" in text
