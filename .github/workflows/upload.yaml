@@ -1,46 +1,133 @@
 name: Upload
 
+# Manually PUTs the AU Core test data set to the AU Core reference server
+# with TestDataClient from aehrc/au-fhir-test-data-utils.
+
 on:
-  workflow_dispatch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upload-au-core
+  cancel-in-progress: false
+
+env:
+  DATA_DIR: au-fhir-test-data-set/au-core
+  FHIR_SERVER: https://fhir.hl7.org.au/aucore/fhir/DEFAULT
+  TEST_DATA_CLIENT_VERSION: v0.0.8
+  TEST_DATA_CLIENT_SHA256: 1df725320733861386cd464a5ce2f381443d12a3080d821114d2f932a9969905
 
 jobs:
   upload:
+    name: Upload AU Core test data
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install deps
-      uses: ./.github/deps
-    - name: Validate
-      uses: ./.github/validate
-    - shell: bash
-      run: |
-        cd /tmp &&\
-        wget https://github.com/hl7au/au-fhir-test-data-utils/releases/latest/download/TestDataClient-linux-x64.zip &&\
-        unzip TestDataClient-linux-x64.zip &&\
-        chmod +x TestDataClient-linux-x64-binaries/TestDataClient
-    - shell: bash
-      env:
-        AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
-      run: |
-        declare resources=(
-          "Patient"
-          "HealthcareService"
-          "Organization"
-          "Location"
-          "Practitioner"
-          "PractitionerRole"
-          "RelatedPerson"
-          "Encounter"
-          "AllergyIntolerance"
-          "Condition"
-          "Immunization"
-          "Observation"
-          "Procedure"
-          "Medication"
-          "MedicationRequest") &&\
-        for resource in "${resources[@]}"
-        do
-        /tmp/TestDataClient-linux-x64-binaries/TestDataClient $resource generated/  https://fhir.hl7.org.au/aucore/fhir/DEFAULT Basic $AUTH_SECRET
-        done
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
+      - name: Download TestDataClient
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl -fsSL -o TestDataClient-linux-x64.zip \
+            "https://github.com/aehrc/au-fhir-test-data-utils/releases/download/${TEST_DATA_CLIENT_VERSION}/TestDataClient-linux-x64.zip"
+          echo "${TEST_DATA_CLIENT_SHA256}  TestDataClient-linux-x64.zip" | sha256sum --check --strict
+          unzip -q TestDataClient-linux-x64.zip
+          chmod +x TestDataClient-linux-x64-binaries/TestDataClient
+          echo "TEST_DATA_CLIENT=$RUNNER_TEMP/TestDataClient-linux-x64-binaries/TestDataClient" >> "$GITHUB_ENV"
+
+      - name: Upload resources
+        shell: bash
+        env:
+          AUTH_SECRET: ${{ secrets.AUTH_SECRET }}
+        run: |
+          set -uo pipefail
+
+          # Dependency order, derived from the references between the files
+          # in DATA_DIR: each type comes after the types it references, where
+          # the data allows it. TestDataClient takes one resource type per
+          # call and PUTs every "<Type>-*.json" directly in DATA_DIR (no
+          # subfolders). These are the types present in DATA_DIR that
+          # TestDataClient v0.0.8 supports.
+          order=(
+            Organization
+            Location
+            HealthcareService
+            Practitioner
+            PractitionerRole
+            Patient
+            RelatedPerson
+            Condition
+            Encounter
+            AllergyIntolerance
+            Immunization
+            Specimen
+            Procedure
+            Observation
+            Medication
+            MedicationStatement
+            MedicationRequest
+          )
+
+          # Report types present in the data that this workflow does not
+          # upload. Today these are the types TestDataClient v0.0.8 has no
+          # case for; a supported type missing from the order above would be
+          # reported here too.
+          present=$(for file in "$DATA_DIR"/*-*.json; do name=${file##*/}; echo "${name%%-*}"; done | sort -u)
+          for type in $present; do
+            if [[ " ${order[*]} " != *" $type "* ]]; then
+              echo "::warning::$type files in $DATA_DIR are not uploaded: $type is not in this workflow's upload order"
+            fi
+          done
+
+          # Some types reference each other (Patient and RelatedPerson,
+          # Encounter and Condition) or themselves (Location, Observation), so
+          # no type order satisfies them all. Types with failures are re-run,
+          # in order, until a pass makes no progress. PUT is idempotent, so a
+          # re-run leaves already uploaded resources unchanged. Retries cannot
+          # break a cycle between individual resources: the hennessy Patients
+          # link to RelatedPersons that point back at them, so on a server that
+          # enforces referential integrity they upload only if one side is
+          # already there.
+          pending=("${order[@]}")
+          previous_failures=-1
+          for pass in 1 2 3; do
+            failed_types=()
+            failures=0
+            for type in "${pending[@]}"; do
+              echo "::group::Pass $pass: $type"
+              log="$RUNNER_TEMP/upload-$type.log"
+              "$TEST_DATA_CLIENT" "$type" "$DATA_DIR" "$FHIR_SERVER" Basic "$AUTH_SECRET" 2>&1 | tee "$log"
+              status=$?
+              echo "::endgroup::"
+              # TestDataClient exits 0 even when PUTs fail; its last line is
+              # "Total resources: N, created: N, updated: N, failed: N".
+              count=$(grep -oE 'failed: [0-9]+$' "$log" | tail -n 1 | grep -oE '[0-9]+' || true)
+              if [[ $status -ne 0 || -z "$count" ]]; then
+                count=1
+              fi
+              if (( count > 0 )); then
+                failed_types+=("$type")
+                failures=$(( failures + count ))
+                echo "Pass $pass: $type had $count failure(s)"
+              fi
+            done
+            if (( failures == 0 )); then
+              echo "All resources uploaded"
+              exit 0
+            fi
+            if (( previous_failures >= 0 && failures >= previous_failures )); then
+              break
+            fi
+            previous_failures=$failures
+            pending=("${failed_types[@]}")
+          done
+
+          echo "::error::Upload failures remain for: ${failed_types[*]} (see the last pass in the log)"
+          exit 1
