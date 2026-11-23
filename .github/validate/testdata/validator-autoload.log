@@ -1,0 +1,64 @@
+FHIR Validation tool Version 7.0.6 (Git# 86bf796ddc97). Built 2026-11-13T23:28:34.381Z (9 days old)
+  Java:   17.0.20.1 from /opt/homebrew/Cellar/openjdk@17/17.0.20.1/libexec/openjdk.jdk/Contents/Home on aarch64 (64bit). 8192MB available
+  Paths:  Current = <scrubbed>, Package Cache = <scrubbed>
+  Params: au-fhir-test-data-set/au-erequesting/probe/Bundle-mutated-noprofile.json au-fhir-test-data-set/au-erequesting/probe/Bundle-mutated.json "au-fhir-test-data-set/au-erequesting/probe/Patient with space.json" au-fhir-test-data-set/au-erequesting/probe/Patient-ps-profile.json au-fhir-test-data-set/au-erequesting/probe/Patient-unknown-profile.json au-fhir-test-data-set/au-erequesting/probe/Patient-version-pinned.json au-fhir-test-data-set/au-erequesting/probe/broken.json au-fhir-test-data-set/au-erequesting/probe/notfhir.json -version 4.0.1 -tx https://tx.dev.hl7.org.au/fhir -sct au -jurisdiction au -ig hl7.fhir.au.ereq#1.0.1 -level warnings -output <scrubbed>
+  Locale: Australia/AU
+  Jurisdiction: Australia
+Loading
+  Loading FHIR v4.0.1 from hl7.fhir.r4.core#4.0.1
+  Load hl7.terminology.r4#6.2.0 - 4288 resources (00:09.816)
+  Load hl7.fhir.uv.extensions.r4#5.2.0 - 759 resources (00:02.044)
+  Loaded FHIR - 8265 resources (00:00.000)
+  Terminology Cache at <scrubbed>
+  Terminology server https://tx.dev.hl7.org.au/fhir - Version Connected to Terminology Server at https://tx.dev.hl7.org.au/fhir (00:00.863)
+  Load hl7.terminology#7.5.0 - 4190 resources (00:01.177)
+  Load hl7.terminology.r5#7.5.0 - 4190 resources (00:00.553)
+  Load hl7.fhir.uv.extensions#5.4.0 - 885 resources (00:00.520)
+  Load hl7.terminology.r4#7.1.0 - 4072 resources (00:00.570)
+  Load hl7.fhir.uv.extensions.r4#5.3.0 - 885 resources (00:05.128)
+  Load hl7.terminology.r4#7.3.0 - 4146 resources (00:00.260)
+  Load hl7.terminology.r4#7.0.1 - 4066 resources (00:00.782)
+  Load hl7.fhir.au.base#6.0.0 - 152 resources (00:00.001)
+  Load hl7.terminology.r5#5.3.0 - 4202 resources (00:01.344)
+  Load hl7.fhir.uv.extensions#5.1.0-snapshot1 - 1379 resources (00:00.059)
+  Load hl7.fhir.uv.extensions.r4#1.0.0 - 1329 resources (00:00.901)
+  Load hl7.terminology#5.5.0 - 4225 resources (00:00.093)
+  Load hl7.fhir.uv.smart-app-launch#2.2.0 - 12 resources (00:00.001)
+  Load hl7.fhir.uv.smart-app-launch#2.0.0 - 1 resources (00:00.014)
+  Load hl7.fhir.uv.ipa#1.1.0 - 16 resources (00:00.000)
+  Load hl7.fhir.au.core#2.0.0 - 31 resources (00:00.000)
+  Load hl7.terminology.r4#7.2.0 - 4135 resources (00:00.127)
+  Load hl7.fhir.uv.ips#2.0.1 - 71 resources (00:00.007)
+  Load hl7.fhir.au.ereq#1.0.1 - 33 resources (00:00.001)
+  Package Summary: [hl7.fhir.r4.core#4.0.1, hl7.fhir.xver-extensions#0.1.0, hl7.terminology.r4#6.2.0, hl7.fhir.uv.extensions.r4#5.2.0, hl7.terminology#7.5.0, hl7.terminology.r5#7.5.0, hl7.fhir.uv.extensions#5.4.0, hl7.terminology.r4#7.1.0, hl7.fhir.uv.extensions.r4#5.3.0, hl7.terminology.r4#7.3.0, hl7.terminology.r4#7.0.1, hl7.fhir.au.base#6.0.0, hl7.terminology.r5#5.3.0, hl7.fhir.uv.extensions#5.1.0-snapshot1, hl7.fhir.uv.extensions.r4#1.0.0, hl7.terminology#5.5.0, hl7.fhir.uv.smart-app-launch#2.2.0, hl7.fhir.uv.smart-app-launch#2.0.0, hl7.fhir.uv.ipa#1.1.0, hl7.fhir.au.core#2.0.0, hl7.terminology.r4#7.2.0, hl7.fhir.uv.ips#2.0.1, hl7.fhir.au.ereq#1.0.1]
+  Get set... 
+  ...go! (00:03.823)
+Cached new session. Cache size = 1
+Sources to validate: au-fhir-test-data-set/au-erequesting/probe/Bundle-mutated-noprofile.jsonau-fhir-test-data-set/au-erequesting/probe/Bundle-mutated.jsonau-fhir-test-data-set/au-erequesting/probe/Patient with space.jsonau-fhir-test-data-set/au-erequesting/probe/Patient-ps-profile.jsonau-fhir-test-data-set/au-erequesting/probe/Patient-unknown-profile.jsonau-fhir-test-data-set/au-erequesting/probe/Patient-version-pinned.jsonau-fhir-test-data-set/au-erequesting/probe/broken.jsonau-fhir-test-data-set/au-erequesting/probe/notfhir.json
+Validating
+  Validate au-fhir-test-data-set/au-erequesting/probe/Bundle-mutated-noprofile.json
+ 00:03.373
+  Validate au-fhir-test-data-set/au-erequesting/probe/Bundle-mutated.json
+ 00:00.966
+  Validate au-fhir-test-data-set/au-erequesting/probe/Patient with space.json
+ 00:00.029
+  Validate au-fhir-test-data-set/au-erequesting/probe/Patient-ps-profile.json
+  Load hl7.fhir.au.ps#1.0.0 - 18 resources (00:00.289)
+ 00:00.372
+  Validate au-fhir-test-data-set/au-erequesting/probe/Patient-unknown-profile.json
+XHTML content could not be parsed from https://example.org/fhir
+org.hl7.fhir.exceptions.FHIRFormatError: unexpected non-end of element null::script  at line 1 column 549
+
+ 00:00.352
+  Validate au-fhir-test-data-set/au-erequesting/probe/Patient-version-pinned.json
+ 00:00.445
+  Validate au-fhir-test-data-set/au-erequesting/probe/broken.json
+Internal error in location for message: 'Error @1, 1: Path cannot be empty', loc = 'null', err = 'Error parsing JSON: Error parsing JSON source: One or more parenthesis were not closed: [{] at Line 2 (path=[/x])'
+ 00:00.011
+  Validate au-fhir-test-data-set/au-erequesting/probe/notfhir.json
+Internal error in location for message: 'Error @1, 2: Found $ expecting a valid token name', loc = '$', err = 'Unable to find resourceType property'
+ 00:00.011
+Done. Times: Loading: 00:28.180, validation: 00:05.852 (#8). Memory = 1Gb
+
+HTML Summary in <scrubbed>
+Done. Times: Loading: 00:28.180, validation: 00:05.852 (#8). Max Memory = 8Gb

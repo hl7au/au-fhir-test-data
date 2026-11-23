@@ -1,44 +1,130 @@
-name: Validate generated files
-inputs:
-  path:
-    description: "Path to validate"
-    default: 'generated'
-  ig:
-    description: "Implementation guide used to validate"
-    default: 'hl7.fhir.au.core#2.0.0-ballot'
-  tx:
-    description: "Terminology server"
-    default: "https://tx.dev.hl7.org.au/fhir"
-  title:
-    description: ""
+name: Validate FHIR test data
+description: >
+  Validate FHIR JSON files under au-fhir-test-data-set with the HL7 FHIR
+  validator, using the implementation guides mapped per folder in
+  .github/validate/igs.json. Writes a job summary, warning annotations
+  and an HTML report artifact. Findings do not fail the step unless
+  fail-on-errors is true; infrastructure failures always do.
 
+inputs:
+  paths:
+    description: >
+      Newline-separated files, folders or globs relative to the repo root.
+      Only *.json files under au-fhir-test-data-set are validated; missing
+      paths are skipped. Ignored when paths-file is set.
+    default: au-fhir-test-data-set
+  paths-file:
+    description: >
+      Path to a file listing the files or folders to validate, one per
+      line or NUL-separated. Entries are taken literally (no globs), and
+      the list can be any length. Use this for generated lists such as a
+      pull request's changed files.
+    default: ""
+  ig:
+    description: >
+      Optional space-separated validator -ig packages (id#version) applied
+      to every folder instead of the igs.json mapping. Leave empty to use
+      the mapping.
+    default: ""
+  tx:
+    description: Terminology server
+    default: https://tx.dev.hl7.org.au/fhir
+  title:
+    description: Heading for the job summary and name of the report artifact
+    default: FHIR validation
+  fail-on-errors:
+    description: Fail the step when the validator reports errors
+    default: "false"
 
 runs:
-  using: 'composite'
+  using: composite
   steps:
-    # - name: Don't validate quarantine files
-    #   shell: bash
-    #   run: |
-    #     mkdir ${{ runner.temp }}/quarantine &&\
-    #     mv -v `grep -v '^#' ./.github/validate/validator_quarantine | grep ${{ inputs.path }}` ${{ runner.temp }}/quarantine
-      # continue-on-error: true
-    - shell: bash
-      run: wget https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
-    - name: Run validator
+    - name: Set up Java
+      uses: actions/setup-java@v6
+      with:
+        distribution: temurin
+        java-version: "25"
+
+    - name: Set up Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: "3.15"
+
+    - name: Pin validator version
+      id: validator
       shell: bash
       run: |
-        java -jar validator_cli.jar ${{ inputs.path }} \
-             -version 4.0.1 -tx ${{ inputs.tx }} \
-             -ig ${{ inputs.ig }} -sct au \
-             -level errors -jurisdiction au \
-             -html-output g_validation.html -output g_validation.xml
-    - id: validation-result
-      name: Archive validation result
-      uses: actions/upload-artifact@v4
+        # Pinned release of hapifhir/org.hl7.fhir.core. Bump the version and
+        # the checksum together; the checksum is the release asset digest
+        # (gh api repos/hapifhir/org.hl7.fhir.core/releases/tags/<v>).
+        {
+          echo "version=7.0.6"
+          echo "sha256=2686590539f0b3ba7683149b25d78249f6886c04e2c326e884c5049d8947df89"
+          echo "dir=$RUNNER_TEMP/fhir-validator"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Restore validator jar
+      id: jar-cache
+      uses: actions/cache@v6
       with:
-        name: "${{ inputs.title}} validation result"
-        path: g_validation.html
-    # - name: Restore skipped files
-    #   shell: bash
-    #   run: mv -v ${{ runner.temp }}/quarantine/* ${{ inputs.path }}
-    #   continue-on-error: true
+        path: ${{ steps.validator.outputs.dir }}
+        key: fhir-validator-${{ steps.validator.outputs.version }}
+
+    - name: Download validator jar
+      if: steps.jar-cache.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        VALIDATOR_VERSION: ${{ steps.validator.outputs.version }}
+        VALIDATOR_SHA256: ${{ steps.validator.outputs.sha256 }}
+        JAR_DIR: ${{ steps.validator.outputs.dir }}
+      run: |
+        mkdir -p "$JAR_DIR"
+        curl -fsSL --retry 3 -o "$JAR_DIR/validator_cli.jar" \
+          "https://github.com/hapifhir/org.hl7.fhir.core/releases/download/${VALIDATOR_VERSION}/validator_cli.jar"
+        echo "${VALIDATOR_SHA256}  $JAR_DIR/validator_cli.jar" | sha256sum -c -
+
+    - name: Restore FHIR package cache
+      uses: actions/cache@v6
+      with:
+        path: ~/.fhir/packages
+        # Packages are pinned, so the mapping file fully determines the cache.
+        # A cache saved on the default branch (the workflow's push run) can
+        # be restored by every pull request; one saved by a pull request is
+        # visible only to that pull request.
+        key: fhir-packages-${{ hashFiles('.github/validate/igs.json') }}
+        restore-keys: fhir-packages-
+
+    - name: Run validator
+      shell: bash
+      env:
+        PATHS: ${{ inputs.paths }}
+        PATHS_FILE: ${{ inputs.paths-file }}
+        IG: ${{ inputs.ig }}
+        TX: ${{ inputs.tx }}
+        TITLE: ${{ inputs.title }}
+        FAIL_ON_ERRORS: ${{ inputs.fail-on-errors }}
+        JAR: ${{ steps.validator.outputs.dir }}/validator_cli.jar
+        OUT_DIR: ${{ runner.temp }}/fhir-validation-output
+      run: |
+        args=()
+        if [ -n "$PATHS_FILE" ]; then
+          args+=(--paths-from "$PATHS_FILE")
+        else
+          args+=(--paths-env PATHS)
+        fi
+        if [ "$FAIL_ON_ERRORS" = "true" ]; then args+=(--fail-on-errors); fi
+        python3 "$GITHUB_ACTION_PATH/fhir_validation.py" \
+          --jar "$JAR" \
+          --tx "$TX" \
+          --ig "$IG" \
+          --title "$TITLE" \
+          --out-dir "$OUT_DIR" \
+          "${args[@]}"
+
+    - name: Upload validation report
+      if: always()
+      uses: actions/upload-artifact@v7
+      with:
+        name: ${{ inputs.title }} report
+        path: ${{ runner.temp }}/fhir-validation-output
+        if-no-files-found: ignore

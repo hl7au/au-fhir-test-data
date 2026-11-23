@@ -1,0 +1,11 @@
+# Files the FHIR validation workflow validates when the check's own files
+# change (and on pushes to master), so the whole pipeline runs: Java, the
+# validator download and checksum, package loading for every folder's IGs
+# and the report. One stable file per folder in igs.json that has data;
+# a test keeps this list in step with igs.json.
+#
+# One repo-relative path per line, taken literally; "#" starts a comment.
+au-fhir-test-data-set/au-core/Patient-mackay-elliott.json
+au-fhir-test-data-set/au-erequesting/Patient-belger-remedios.json
+au-fhir-test-data-set/au-patient-summary/Bundle-aups-patient-story.json
+au-fhir-test-data-set/connected-care/alex-story/Patient-thompson-alex.json

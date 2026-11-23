@@ -1,0 +1,125 @@
+name: FHIR validation
+
+on:
+  pull_request:
+    paths:
+      - "au-fhir-test-data-set/**"
+      - ".github/validate/**"
+      - ".github/workflows/fhir-validation.yaml"
+  # Runs the smoke set on the default branch, which also saves the
+  # validator and package caches there; caches saved by a pull request
+  # are scoped to that pull request, while every pull request can restore
+  # the default branch's.
+  push:
+    branches:
+      - master
+    paths:
+      - "au-fhir-test-data-set/**"
+      - ".github/validate/**"
+      - ".github/workflows/fhir-validation.yaml"
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "Folder under au-fhir-test-data-set to validate"
+        type: choice
+        default: all
+        options:
+          - all
+          - au-core
+          - au-erequesting
+          - au-patient-summary
+          - connected-care
+          - au-base
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fhir-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # Referenced by the contributor docs; keep this name stable.
+    name: FHIR validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          # The PR merge commit and its first parent (the base) are enough
+          # to list the files the PR adds or modifies.
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 1 }}
+          persist-credentials: false
+
+      - name: Set up Python
+        if: github.event_name != 'workflow_dispatch'
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.15'
+
+      - name: Test the report parser
+        if: github.event_name != 'workflow_dispatch'
+        working-directory: .github/validate
+        run: |
+          pip install pytest==9.2.0
+          python -m pytest -q -p no:cacheprovider
+
+      - name: Select files
+        id: select
+        env:
+          EVENT: ${{ github.event_name }}
+          FOLDER: ${{ inputs.folder }}
+        run: |
+          # NUL-separated list of paths, read literally by the script, so
+          # any file name works and the list can be any length.
+          list="$RUNNER_TEMP/fhir-validation-paths"
+          : > "$list"
+          smoke=""
+          if [ "$EVENT" = "pull_request" ]; then
+            # Files the PR adds or modifies under the data set (a rename counts
+            # as an add); deletions are excluded.
+            git diff --name-only -z --no-renames --diff-filter=AM HEAD^1 HEAD -- \
+              au-fhir-test-data-set | { grep -z '\.json$' || true; } > "$list"
+            # A change to the check itself has to exercise the whole pipeline
+            # even when no data changed.
+            if ! git diff --quiet HEAD^1 HEAD -- .github/validate .github/workflows/fhir-validation.yaml; then
+              smoke="This pull request changes the FHIR validation check itself"
+            fi
+          elif [ "$EVENT" = "push" ]; then
+            smoke="This run is on the default branch"
+          elif [ -z "$FOLDER" ] || [ "$FOLDER" = "all" ]; then
+            printf '%s\0' "au-fhir-test-data-set" > "$list"
+          else
+            printf '%s\0' "au-fhir-test-data-set/$FOLDER" > "$list"
+          fi
+          if [ -n "$smoke" ]; then
+            sed -e 's/#.*//' -e 's/[[:space:]]*$//' -e '/^$/d' .github/validate/smoke_set \
+              | tr '\n' '\0' >> "$list"
+          fi
+          count=$(tr -cd '\0' < "$list" | wc -c | tr -d ' ')
+          {
+            echo "count=$count"
+            echo "list=$list"
+          } >> "$GITHUB_OUTPUT"
+          if [ -n "$smoke" ]; then
+            {
+              echo "$smoke, so the smoke set in \`.github/validate/smoke_set\` (one file per mapped folder) is validated to exercise the whole pipeline."
+              echo
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$count" = "0" ]; then
+            {
+              echo "## FHIR validation"
+              echo
+              echo "No FHIR JSON files under au-fhir-test-data-set were added or modified."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Validate
+        if: steps.select.outputs.count != '0'
+        uses: ./.github/validate
+        with:
+          paths-file: ${{ steps.select.outputs.list }}
+          title: FHIR validation
