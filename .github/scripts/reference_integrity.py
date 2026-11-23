@@ -24,8 +24,13 @@ Resolution rules:
   because a consumer of the document cannot resolve it.
 - "Type/id" (with any "/_history/..." suffix ignored) resolves against the
   resourceType/id of every top-level file in the repository.
-- Absolute and conditional references are reported, because nothing in the
-  repository can resolve them.
+- In a transaction Bundle (type "transaction"), a conditional reference
+  ("Type?params") is accepted: FHIR R4 http.html "Conditional References"
+  allows them "in a transaction (and only in a transaction)", and the server
+  resolves them by search when it processes the Bundle, so the test data
+  cannot be checked against them.
+- Absolute references, and conditional references outside a transaction
+  Bundle, are reported, because nothing in the repository can resolve them.
 
 Two files that share a resourceType/id are also reported, because the one
 uploaded last overwrites the other on a server, unless the resourceType/id
@@ -55,6 +60,10 @@ RELATIVE_REFERENCE = re.compile(
     r"^(?P<type>[A-Z][A-Za-z]+)/(?P<id>[A-Za-z0-9\-.]{1,64})(/_history/[A-Za-z0-9\-.]{1,64})?$"
 )
 BUNDLE_LOCAL_REFERENCE = re.compile(r"^urn:(uuid|oid):")
+# Conditional reference shape from http://hl7.org/fhir/R4/http.html#trules:
+# a search URI relative to the server base that "always starts with a
+# resource type".
+CONDITIONAL_REFERENCE = re.compile(r"^[A-Z][A-Za-z]+\?\S+$")
 
 # Dot directories (.git, .github, .claude) hold tooling and fixtures, not test data.
 SKIPPED_DIRS = {"node_modules"}
@@ -72,6 +81,7 @@ class BundleContext:
     full_urls: frozenset
     keys: frozenset
     document: bool
+    transaction: bool = False
 
 
 def load_list(path):
@@ -206,6 +216,7 @@ class Checker:
                 full_urls=frozenset(e["fullUrl"] for e in entries if "fullUrl" in e),
                 keys=frozenset(resource_key(r) for r in inner),
                 document=resource.get("type") == "document",
+                transaction=resource.get("type") == "transaction",
             )
 
         required = set()
@@ -247,7 +258,9 @@ class Checker:
                 return "warning", "not in the document Bundle, so a consumer of the document cannot resolve it."
             return None
         if "?" in reference:
-            return "error", "conditional references cannot be resolved against the test data."
+            if bundle is not None and bundle.transaction and CONDITIONAL_REFERENCE.match(reference):
+                return None  # Resolved by the server when it processes the transaction.
+            return "error", "conditional references are only allowed in a transaction Bundle, and cannot be resolved against the test data."
         return "error", "not a relative Type/id reference, so it cannot be resolved against the test data."
 
 

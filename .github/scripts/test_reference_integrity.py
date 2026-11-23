@@ -225,11 +225,43 @@ def test_urn_uuid_outside_bundle(repo):
 
 @pytest.mark.parametrize("reference, message", [
     ("https://example.org/fhir/Patient/p1", "not a relative Type/id reference, so it cannot be resolved against the test data."),
-    ("Patient?identifier=123", "conditional references cannot be resolved against the test data."),
+    ("Patient?identifier=123", "conditional references are only allowed in a transaction Bundle, and cannot be resolved against the test data."),
 ])
 def test_unresolvable_reference_shapes(repo, reference, message):
     repo("Condition-c1.json", {"resourceType": "Condition", "id": "c1", "subject": {"reference": reference}})
     assert problems(repo.root) == [("Condition-c1.json", f"Reference '{reference}': {message}")]
+
+
+def transaction_bundle(reference, type="transaction"):
+    return {"resourceType": "Bundle", "id": "t1", "type": type, "entry": [
+        {"fullUrl": "urn:uuid:aaaa", "resource": {
+            "resourceType": "ServiceRequest", "id": "sr", "subject": {"reference": reference},
+        }, "request": {"method": "POST", "url": "ServiceRequest"}},
+    ]}
+
+
+def test_transaction_bundle_accepts_conditional_references(repo):
+    repo("Bundle-t1.json", transaction_bundle("Patient?identifier=http://ns.electronichealth.net.au/id/hi/ihi/1.0|8003608000000570"))
+    assert problems(repo.root) == []
+
+
+@pytest.mark.parametrize("bundle_type", ["batch", "collection", "document", "searchset"])
+def test_conditional_references_outside_a_transaction_are_errors(repo, bundle_type):
+    repo("Bundle-t1.json", transaction_bundle("Patient?identifier=123", type=bundle_type))
+    assert [p.severity for p in Checker(repo.root).run()] == ["error"]
+
+
+@pytest.mark.parametrize("reference", ["?identifier=123", "patient?identifier=123", "Patient?"])
+def test_transaction_bundle_rejects_malformed_conditional_references(repo, reference):
+    repo("Bundle-t1.json", transaction_bundle(reference))
+    assert [p.severity for p in Checker(repo.root).run()] == ["error"]
+
+
+def test_transaction_bundle_still_checks_other_references(repo):
+    repo("Bundle-t1.json", transaction_bundle("Patient/missing"))
+    assert problems(repo.root) == [
+        ("Bundle-t1.json", "Reference 'Patient/missing': not found in any resource."),
+    ]
 
 
 def test_duplicate_resource_ids_across_folders(repo):

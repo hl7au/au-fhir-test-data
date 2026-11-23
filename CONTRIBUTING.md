@@ -48,7 +48,7 @@ Open the PR against `master`, fill in the PR template, link the issue (`Fixes #1
 
 These checks run on every PR:
 
-- **`Reference integrity`** (blocking): every literal reference must resolve to a resource in the repository. A `resourceType/id` defined in more than one file fails, unless it is listed in `.github/scripts/reference_integrity_allowed_duplicates` with a comment giving the reason. A document Bundle must contain every resource its Composition references; other references that leave a document Bundle are reported as warnings.
+- **`Reference integrity`** (blocking): every literal reference must resolve to a resource in the repository. The exception is a conditional reference such as `Patient?identifier=...` inside a transaction Bundle, which the server resolves when it processes the Bundle. A `resourceType/id` defined in more than one file fails, unless it is listed in `.github/scripts/reference_integrity_allowed_duplicates` with a comment giving the reason. A document Bundle must contain every resource its Composition references; other references that leave a document Bundle are reported as warnings.
 - **`Lint`** (some rules blocking, some warnings): each file name must match `<resourceType>-<id>.json`, and contact details (phone numbers, email addresses) must be obviously synthetic, using the reserved fictional phone ranges and example domains described in [Synthetic Data Properties](docs/README.md#synthetic-data-properties).
 - **`FHIR validation`** (advisory for now, does not block): the changed files are validated with the HL7 FHIR Validator against the IG for their folder. Results are in the job summary and as annotations on the changed files. Please fix what it reports where you can, or say in the PR why a finding is expected.
 
