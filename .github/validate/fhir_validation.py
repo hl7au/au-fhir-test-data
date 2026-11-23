@@ -108,18 +108,21 @@ def is_quarantined(rel_path: str, quarantine: list[tuple[str, str]]) -> str | No
 # File selection
 
 
-def expand_targets(targets: list[str], repo_root: Path) -> list[str]:
+def expand_targets(targets: list[str], repo_root: Path, literal: bool = False) -> list[str]:
     """Expand files, folders and globs into sorted repo-relative JSON paths.
 
     Paths that do not exist (for example a file deleted in a PR) are
-    skipped. Only files under au-fhir-test-data-set are kept.
+    skipped. Only files under au-fhir-test-data-set are kept. With
+    literal=True no target is treated as a glob, so a file name that
+    contains "[", "?" or "*" is matched as written.
     """
     found: set[str] = set()
     for target in targets:
-        target = target.strip()
+        if not literal:
+            target = target.strip()
         if not target:
             continue
-        if any(ch in target for ch in "*?["):
+        if not literal and any(ch in target for ch in "*?["):
             candidates = [p for p in repo_root.glob(target) if p.is_file()]
         else:
             path = repo_root / target
@@ -453,7 +456,7 @@ def render_summary(
         for url in sorted(unresolved, key=lambda u: (-len(unresolved[u]), u)):
             out.append(f"| `{_cell(url, 200)}` | {len(unresolved[url])} |")
 
-    error_issues =[i for r in all_results for i in r.issues if i.severity in ("fatal", "error")]
+    error_issues = [i for r in all_results for i in r.issues if i.severity in ("fatal", "error")]
     if error_issues:
         out.append("")
         out.append("### Most frequent errors")
@@ -498,15 +501,28 @@ def render_summary(
 # Entry point
 
 
-def read_targets(args: argparse.Namespace) -> list[str]:
-    targets = list(args.paths)
+def read_targets(args: argparse.Namespace) -> tuple[list[str], list[str]]:
+    """Return (patterns, literal paths).
+
+    Command-line and --paths-env targets may be globs. --paths-from holds
+    a list of paths (one per line, or NUL-separated) taken literally, so
+    a long list of changed files avoids the environment size limit and a
+    file name with glob characters still matches.
+    """
+    patterns = list(args.paths)
     if args.paths_env and os.environ.get(args.paths_env):
-        targets += os.environ[args.paths_env].splitlines()
+        patterns += os.environ[args.paths_env].splitlines()
+    literals: list[str] = []
     if args.paths_from:
-        raw = Path(args.paths_from).read_bytes().decode("utf-8")
-        sep = "\0" if "\0" in raw else "\n"
-        targets += [t for t in raw.split(sep) if t.strip()]
-    return targets
+        try:
+            raw = Path(args.paths_from).read_bytes().decode("utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            raise ConfigError(f"cannot read --paths-from {args.paths_from}: {exc}") from exc
+        if "\0" in raw:
+            literals = [t for t in raw.split("\0") if t]
+        else:
+            literals = [t.rstrip("\r") for t in raw.split("\n") if t.strip()]
+    return patterns, literals
 
 
 def write_summary(text: str, summary_path: str | None) -> None:
@@ -521,7 +537,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("paths", nargs="*", help="files, folders or globs relative to the repo root")
     parser.add_argument("--paths-env", help="environment variable holding newline-separated targets")
-    parser.add_argument("--paths-from", help="file of NUL- or newline-separated targets")
+    parser.add_argument("--paths-from", help="file of NUL- or newline-separated paths, taken literally (no globs)")
     parser.add_argument("--jar", required=True, type=Path, help="path to validator_cli.jar")
     parser.add_argument("--tx", default="https://tx.dev.hl7.org.au/fhir")
     parser.add_argument("--ig", default="", help="space-separated -ig override for every folder")
@@ -540,7 +556,10 @@ def main(argv: list[str] | None = None) -> int:
         quarantine = load_quarantine(args.quarantine)
         if not args.jar.is_file():
             raise ConfigError(f"validator jar not found: {args.jar}")
-        files = expand_targets(read_targets(args), args.repo_root)
+        patterns, literals = read_targets(args)
+        files = sorted(
+            set(expand_targets(patterns, args.repo_root)) | set(expand_targets(literals, args.repo_root, literal=True))
+        )
     except ConfigError as exc:
         print(f"::error title=FHIR validation setup::{escape_data(str(exc))}")
         return 2

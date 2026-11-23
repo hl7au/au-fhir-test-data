@@ -11,8 +11,15 @@ inputs:
     description: >
       Newline-separated files, folders or globs relative to the repo root.
       Only *.json files under au-fhir-test-data-set are validated; missing
-      paths are skipped.
+      paths are skipped. Ignored when paths-file is set.
     default: au-fhir-test-data-set
+  paths-file:
+    description: >
+      Path to a file listing the files or folders to validate, one per
+      line or NUL-separated. Entries are taken literally (no globs), and
+      the list can be any length. Use this for generated lists such as a
+      pull request's changed files.
+    default: ""
   ig:
     description: >
       Optional space-separated validator -ig packages (id#version) applied
@@ -88,6 +95,7 @@ runs:
       shell: bash
       env:
         PATHS: ${{ inputs.paths }}
+        PATHS_FILE: ${{ inputs.paths-file }}
         IG: ${{ inputs.ig }}
         TX: ${{ inputs.tx }}
         TITLE: ${{ inputs.title }}
@@ -96,9 +104,13 @@ runs:
         OUT_DIR: ${{ runner.temp }}/fhir-validation-output
       run: |
         args=()
+        if [ -n "$PATHS_FILE" ]; then
+          args+=(--paths-from "$PATHS_FILE")
+        else
+          args+=(--paths-env PATHS)
+        fi
         if [ "$FAIL_ON_ERRORS" = "true" ]; then args+=(--fail-on-errors); fi
         python3 "$GITHUB_ACTION_PATH/fhir_validation.py" \
-          --paths-env PATHS \
           --jar "$JAR" \
           --tx "$TX" \
           --ig "$IG" \

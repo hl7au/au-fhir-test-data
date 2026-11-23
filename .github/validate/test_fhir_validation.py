@@ -1,6 +1,8 @@
 """Tests for fhir_validation.py. Run from this folder: python -m pytest -q"""
 
+import argparse
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -287,7 +289,7 @@ def _stub_jar(tmp_path, body):
 
 def _run_main(monkeypatch, tmp_path, repo, body, *extra):
     bin_dir, jar = _stub_jar(tmp_path, body)
-    monkeypatch.setenv("PATH", f"{bin_dir}:{__import__('os').environ['PATH']}")
+    monkeypatch.setenv("PATH", f"{bin_dir}:{os.environ['PATH']}")
     summary = tmp_path / "summary.md"
     code = fv.main(
         [
@@ -351,3 +353,57 @@ def test_main_nothing_to_validate(monkeypatch, tmp_path, repo):
     code = fv.main(["au-fhir-test-data-set/absent", "--jar", str(jar), "--repo-root", str(repo), "--summary", str(summary)])
     assert code == 0
     assert "No FHIR JSON files to validate" in summary.read_text()
+
+
+# ---------------------------------------------------------------------------
+# Literal path lists (--paths-from)
+
+
+@pytest.fixture
+def odd_names(repo):
+    names = ["Patient-[1].json", "Patient-?.json", "Patient-*.json", "Patient with space.json"]
+    for name in names:
+        (repo / "au-fhir-test-data-set/au-core" / name).write_text('{"resourceType": "Patient"}')
+    return [f"au-fhir-test-data-set/au-core/{n}" for n in names]
+
+
+def test_literal_paths_keep_glob_characters(repo, odd_names):
+    assert fv.expand_targets(odd_names, repo, literal=True) == sorted(odd_names)
+    # As a glob, "[1]" is a character class, so the file is not matched.
+    assert "au-fhir-test-data-set/au-core/Patient-[1].json" not in fv.expand_targets([odd_names[0]], repo)
+
+
+def test_literal_paths_still_expand_folders(repo):
+    assert fv.expand_targets(["au-fhir-test-data-set/au-core"], repo, literal=True) == [
+        "au-fhir-test-data-set/au-core/Patient-a.json",
+        "au-fhir-test-data-set/au-core/Patient-b.json",
+    ]
+
+
+@pytest.mark.parametrize("sep", ["\0", "\n"])
+def test_paths_from_file_is_literal(tmp_path, repo, odd_names, sep):
+    listing = tmp_path / "paths"
+    listing.write_text(sep.join(odd_names + ["au-fhir-test-data-set/au-core/Deleted.json"]) + sep)
+    args = argparse.Namespace(paths=[], paths_env=None, paths_from=str(listing))
+    patterns, literals = fv.read_targets(args)
+    assert patterns == []
+    assert fv.expand_targets(literals, repo, literal=True) == sorted(odd_names)
+
+
+def test_main_reads_a_large_path_list_from_file(monkeypatch, tmp_path, repo, odd_names, capsys):
+    # Over 128 KiB, the most one environment variable can hold on Linux.
+    padding = [f"au-fhir-test-data-set/au-core/deleted-{n:05d}.json" for n in range(4000)]
+    listing = tmp_path / "paths"
+    listing.write_text("".join(p + "\0" for p in padding + odd_names))
+    assert listing.stat().st_size > 128 * 1024
+    bin_dir, jar = _stub_jar(tmp_path, WRITE_ONE_ERROR)
+    monkeypatch.setenv("PATH", f"{bin_dir}:{os.environ['PATH']}")
+    summary = tmp_path / "summary.md"
+    code = fv.main(
+        ["--paths-from", str(listing), "--jar", str(jar), "--repo-root", str(repo),
+         "--quarantine", str(tmp_path / "none"), "--out-dir", str(tmp_path / "out"), "--summary", str(summary)]
+    )
+    assert code == 0
+    assert "Validated **4** file(s)" in summary.read_text()
+    assert "Patient-%5B1%5D" not in capsys.readouterr().out  # paths are passed through unescaped
+    assert "Patient-[1].json" in (tmp_path / "out" / "au-core.json").read_text()

@@ -61,23 +61,24 @@ jobs:
           EVENT: ${{ github.event_name }}
           FOLDER: ${{ inputs.folder }}
         run: |
+          # NUL-separated list of paths, read literally by the script, so
+          # any file name works and the list can be any length.
           list="$RUNNER_TEMP/fhir-validation-paths"
+          : > "$list"
           if [ "$EVENT" = "pull_request" ]; then
             # Files the PR adds or modifies under the data set (a rename counts
             # as an add); deletions are excluded.
             git diff --name-only -z --no-renames --diff-filter=AM HEAD^1 HEAD -- \
-              au-fhir-test-data-set | tr '\0' '\n' | { grep '\.json$' || true; } > "$list"
+              au-fhir-test-data-set | { grep -z '\.json$' || true; } > "$list"
           elif [ -z "$FOLDER" ] || [ "$FOLDER" = "all" ]; then
-            echo "au-fhir-test-data-set" > "$list"
+            printf '%s\0' "au-fhir-test-data-set" > "$list"
           else
-            echo "au-fhir-test-data-set/$FOLDER" > "$list"
+            printf '%s\0' "au-fhir-test-data-set/$FOLDER" > "$list"
           fi
-          count=$(grep -c . "$list" || true)
-          echo "count=$count" >> "$GITHUB_OUTPUT"
+          count=$(tr -cd '\0' < "$list" | wc -c | tr -d ' ')
           {
-            echo "paths<<EOF_PATHS_$GITHUB_RUN_ID"
-            cat "$list"
-            echo "EOF_PATHS_$GITHUB_RUN_ID"
+            echo "count=$count"
+            echo "list=$list"
           } >> "$GITHUB_OUTPUT"
           if [ "$count" = "0" ]; then
             {
@@ -91,5 +92,5 @@ jobs:
         if: steps.select.outputs.count != '0'
         uses: ./.github/validate
         with:
-          paths: ${{ steps.select.outputs.paths }}
+          paths-file: ${{ steps.select.outputs.list }}
           title: FHIR validation
