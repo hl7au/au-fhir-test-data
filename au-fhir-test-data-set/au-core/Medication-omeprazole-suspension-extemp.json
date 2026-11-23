@@ -1,0 +1,77 @@
+{
+  "resourceType": "Medication",
+  "id": "omeprazole-suspension-extemp",
+  "meta": {
+    "profile": [
+      "http://hl7.org.au/fhir/core/StructureDefinition/au-core-medication"
+    ]
+  },
+  "code": {
+    "text": "omeprazole 2mg/mL oral suspension, 100mL (extemporaneous)"
+  },
+  "form": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385024007",
+        "display": "Oral suspension"
+      }
+    ]
+  },
+  "ingredient": [
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "75861000036107",
+            "display": "Omeprazole 20 mg enteric capsule"
+          }
+        ]
+      },
+      "isActive": true,
+      "strength": {
+        "numerator": {
+          "value": 2,
+          "unit": "mg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg"
+        },
+        "denominator": {
+          "value": 1,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "69930011000036101",
+            "display": "Sodium bicarbonate 8.4% (8.4 g/100 mL) injection, vial"
+          }
+        ]
+      },
+      "strength": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-Medication.ingredient.strength",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/CodeSystem/medication-ingredientstrength",
+                  "code": "qs",
+                  "display": "QS"
+                }
+              ],
+              "text": "q.s. to 100 mL"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
