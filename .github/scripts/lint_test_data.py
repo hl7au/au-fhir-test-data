@@ -29,12 +29,15 @@ normalised number or email domain) match an entry in the exceptions file are
 ignored. Problems are printed, written to the GitHub step summary, and
 emitted as workflow commands when running in Actions.
 
-With --changed-files (a file listing one path per line, relative to the
-current directory, as git diff --name-only prints from the repository root),
-workflow commands are emitted only for errors and for problems in the listed
-files, and the step summary leads with the problems in those files. This keeps
-a pull request's annotations about the files it touches, since GitHub shows
-only the first few annotations per step. Errors anywhere still fail the run.
+With --base-ref (on a pull request, HEAD^1 of its test merge commit), the
+JSON files that differ between that commit and the working tree are also
+linted as they were at the base, and a problem is treated as introduced unless
+the same rule, file and message was already reported there. Workflow commands
+are emitted only for errors and introduced problems, and the step summary
+leads with the introduced problems. This keeps a pull request's annotations
+about its own change, since GitHub shows only the first few annotations per
+step and many files have long-standing warnings. Errors anywhere still fail
+the run.
 """
 
 import argparse
@@ -42,10 +45,12 @@ import fnmatch
 import json
 import os
 import re
+import subprocess
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from email.utils import parseaddr
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 DEFAULT_EXCEPTIONS = Path(__file__).with_name("lint_test_data_exceptions")
 
@@ -262,9 +267,18 @@ def needs_id(resource):
 def check_file(path, root):
     rel_path = path.relative_to(root).as_posix()
     try:
-        text = path.read_bytes().decode("utf-8")  # Not read_text, which hides CRLF.
+        data = path.read_bytes()
+    except OSError as exc:
+        return [Problem(rel_path, "parse", f"Cannot parse file: {exc}", rel_path)]
+    return check_data(rel_path, path.name, data)
+
+
+def check_data(rel_path, file_name, data):
+    """Check one file's bytes, reporting problems against rel_path."""
+    try:
+        text = data.decode("utf-8")  # Not universal newlines, which would hide CRLF.
         resource = json.loads(text)
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         return [Problem(rel_path, "parse", f"Cannot parse file: {exc}", rel_path)]
     if not isinstance(resource, dict) or "resourceType" not in resource:
         return []  # Not a FHIR resource.
@@ -274,7 +288,7 @@ def check_file(path, root):
     if not isinstance(resource_id, str) or not resource_id:
         if needs_id(resource):
             problems.append(Problem(rel_path, "resource-id", "Resource has no id.", rel_path))
-    elif path.name != f"{resource_type}-{resource_id}.json":
+    elif file_name != f"{resource_type}-{resource_id}.json":
         problems.append(Problem(
             rel_path, "file-name",
             f"File name does not match the resource; expected '{resource_type}-{resource_id}.json'.", rel_path,
@@ -284,11 +298,7 @@ def check_file(path, root):
     return problems
 
 
-def lint(root, exceptions=()):
-    root = Path(root)
-    problems = []
-    for path in iter_json_files(root):
-        problems += check_file(path, root)
+def filter_and_sort(problems, exceptions):
     return sorted(
         (p for p in problems if not any(
             p.rule == rule and fnmatch.fnmatchcase(p.subject, pattern) for rule, pattern in exceptions
@@ -297,15 +307,74 @@ def lint(root, exceptions=()):
     )
 
 
-def load_changed_files(path):
-    """Return the normalised paths listed one per line in path."""
-    lines = Path(path).read_text(encoding="utf-8").splitlines()
-    return {Path(os.path.normpath(line.strip())).as_posix() for line in lines if line.strip()}
+def lint(root, exceptions=()):
+    root = Path(root)
+    problems = []
+    for path in iter_json_files(root):
+        problems += check_file(path, root)
+    return filter_and_sort(problems, exceptions)
 
 
-def is_changed(problem, root, changed_files):
-    """Return whether problem is in one of changed_files (paths relative to the current directory)."""
-    return Path(os.path.relpath(Path(root) / problem.path)).as_posix() in changed_files
+def git(cwd, *args):
+    """Run git in cwd and return its stdout bytes; exit with git's message if it fails."""
+    result = subprocess.run(["git", "-C", str(cwd), *args], capture_output=True)
+    if result.returncode:
+        message = result.stderr.decode("utf-8", "replace").strip()
+        raise SystemExit(f"git {' '.join(args)} failed: {message}")
+    return result.stdout
+
+
+def changed_json_files(root, base_ref):
+    """Map each JSON file under root (relative path) that differs from base_ref to its path there.
+
+    The working tree is compared with base_ref. The base path is relative to the
+    repository root, and differs from the current one for a rename. Added files
+    map to None.
+    """
+    root = Path(root).resolve()
+    top = Path(git(root, "rev-parse", "--show-toplevel").decode("utf-8").strip()).resolve()
+    fields = git(top, "diff", "--name-status", "-z", "-M", "--diff-filter=AMR", base_ref, "--").decode("utf-8")
+    fields = fields.split("\0")
+    changed, i = {}, 0
+    while i < len(fields) and fields[i]:
+        status = fields[i]
+        if status.startswith("R"):
+            old, new, i = fields[i + 1], fields[i + 2], i + 3
+        else:
+            new, i = fields[i + 1], i + 2
+            old = None if status == "A" else new
+        try:
+            rel_path = (top / new).relative_to(root).as_posix()
+        except ValueError:
+            continue  # Outside the scanned root.
+        if rel_path.endswith(".json"):
+            changed[rel_path] = old
+    return top, changed
+
+
+def introduced_problems(root, base_ref, problems, exceptions=()):
+    """Return the problems in files changed since base_ref that the base versions did not have.
+
+    A problem is matched on its rule, file and message, counting duplicates, so
+    a second copy of an existing problem in the same file counts as introduced.
+    """
+    top, changed = changed_json_files(root, base_ref)
+    base = []
+    for rel_path, old in changed.items():
+        if old is not None:
+            data = git(top, "show", f"{base_ref}:{old}")
+            base += check_data(rel_path, PurePosixPath(old).name, data)
+    existing = Counter((p.rule, p.path, p.message) for p in filter_and_sort(base, exceptions))
+    introduced = []
+    for problem in problems:
+        key = (problem.rule, problem.path, problem.message)
+        if problem.path not in changed:
+            continue
+        if existing[key]:
+            existing[key] -= 1
+        else:
+            introduced.append(problem)
+    return introduced
 
 
 def escape_data(value):
@@ -327,8 +396,8 @@ def problem_table(problems):
     ]
 
 
-def write_step_summary(problems, changed_problems=None):
-    """Append the summary; changed_problems, if given, are those in the files a pull request changed."""
+def write_step_summary(problems, introduced=None):
+    """Append the summary; introduced, if given, are the problems a pull request introduces."""
     summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
     if not summary_path:
         return
@@ -342,14 +411,14 @@ def write_step_summary(problems, changed_problems=None):
         lines += ["| Severity | Rule | Problems |", "|---|---|---|"]
         lines += [f"| {severity} | {rule} | {count} |" for (severity, rule), count in sorted(counts.items())]
         lines.append("")
-        if changed_problems is None:
+        if introduced is None:
             lines += problem_table(problems)
         else:
-            lines += ["### Problems in the files changed by this pull request", ""]
-            if changed_problems:
-                lines += problem_table(changed_problems)
+            lines += ["### Problems introduced by this pull request", ""]
+            if introduced:
+                lines += problem_table(introduced)
             else:
-                lines.append("No problems in the files changed by this pull request.")
+                lines.append("This pull request introduces no problems.")
             lines += [
                 "", f"<details><summary>All {len(problems)} problems in the repository</summary>", "",
                 *problem_table(problems), "", "</details>",
@@ -363,32 +432,33 @@ def main(argv=None):
     parser.add_argument("root", nargs="?", default=".", help="directory to scan (default: current directory)")
     parser.add_argument("--exceptions", default=DEFAULT_EXCEPTIONS, help="file listing problems to ignore")
     parser.add_argument(
-        "--changed-files",
-        help="file listing the paths a pull request changed, one per line; annotate only errors and "
-        "problems in those files",
+        "--base-ref",
+        help="git commit a pull request is based on (HEAD^1 of its test merge commit); annotate only "
+        "errors and the problems introduced since that commit",
     )
     args = parser.parse_args(argv)
 
-    problems = lint(args.root, parse_exceptions(load_list(args.exceptions)))
-    changed_problems = None
-    if args.changed_files is not None:
-        changed_files = load_changed_files(args.changed_files)
-        changed_problems = [p for p in problems if is_changed(p, args.root, changed_files)]
-    annotated = set(problems if changed_problems is None else changed_problems)
-    annotated.update(p for p in problems if p.severity == ERROR)
+    exceptions = parse_exceptions(load_list(args.exceptions))
+    problems = lint(args.root, exceptions)
+    introduced = None
+    if args.base_ref is not None:
+        introduced = introduced_problems(args.root, args.base_ref, problems, exceptions)
+    # By identity: a file can repeat a problem, and only the new copy is introduced.
+    annotated = {id(p) for p in (problems if introduced is None else introduced)}
+    annotated.update(id(p) for p in problems if p.severity == ERROR)
     in_actions = os.environ.get("GITHUB_ACTIONS") == "true"
     for problem in problems:
         print(f"{problem.path}: {problem.severity}: [{problem.rule}] {problem.message}")
-        if in_actions and problem in annotated:
+        if in_actions and id(problem) in annotated:
             print(workflow_command(problem, args.root))
-    write_step_summary(problems, changed_problems)
+    write_step_summary(problems, introduced)
 
     errors = sum(p.severity == ERROR for p in problems)
     warnings = len(problems) - errors
     if problems:
         print(f"\n{errors} error(s), {warnings} warning(s).", file=sys.stderr)
-        if changed_problems is not None:
-            print(f"{len(changed_problems)} problem(s) in the changed files.", file=sys.stderr)
+        if introduced is not None:
+            print(f"{len(introduced)} problem(s) introduced since {args.base_ref}.", file=sys.stderr)
     else:
         print("No problems found.")
     return 1 if errors else 0
