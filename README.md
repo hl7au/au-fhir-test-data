@@ -14,10 +14,10 @@ All FHIR JSON lives under [`au-fhir-test-data-set/`](au-fhir-test-data-set/). Ea
 | `au-core` | AU Core | Sparked |
 | `au-patient-summary` | AU Patient Summary | Sparked |
 | `au-erequesting` | AU eRequesting | Michael Osborne |
-| `connected-care` | AU Core, AU Patient Summary and AU eRequesting, per story | Connectathon track leads |
-| `au-base` | AU Base | Not yet assigned (folder is empty) |
+| `connected-care` | AU Core, AU Patient Summary and AU eRequesting, per story | Connectathon track lead (Heath Frankel) |
+| `au-base` | AU Base | Sparked and Brett Esler (HL7 AU) |
 
-Services Australia derived data (such as Medicare, IHI and HPI identifiers) and its CSV exports are owned by Heath Frankel. Other projects may add and manage their own starter test data in their own folder.
+Services Australia derived data (such as Medicare, IHI and HPI identifiers) comes from a source spreadsheet owned by Heath Frankel. Other projects may add and manage their own starter test data in their own folder.
 
 ## Reporting a problem or asking for data
 

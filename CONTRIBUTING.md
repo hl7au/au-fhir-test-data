@@ -6,21 +6,21 @@ Thanks for helping improve the test data. This page describes how a change gets 
 
 | Area | Folder | Owner (GitHub login) | Approval needed before merge |
 | --- | --- | --- | --- |
+| AU Base | `au-fhir-test-data-set/au-base` | Sparked: Danielle Tavares-Rixon (`dt-r`), Dusica Bojicic (`dbojicic`); HL7 AU: Brett Esler (`brettesler-ext`) | Any one of them |
 | AU Core | `au-fhir-test-data-set/au-core` | Sparked: Danielle Tavares-Rixon (`dt-r`), Dusica Bojicic (`dbojicic`) | Danielle Tavares-Rixon or Dusica Bojicic |
 | AU Patient Summary | `au-fhir-test-data-set/au-patient-summary` | Sparked: Danielle Tavares-Rixon (`dt-r`), Dusica Bojicic (`dbojicic`) | Danielle Tavares-Rixon or Dusica Bojicic |
 | AU Encounter Record (future) | `au-fhir-test-data-set/au-encounter-record` | Sparked: Danielle Tavares-Rixon (`dt-r`), Dusica Bojicic (`dbojicic`) | Danielle Tavares-Rixon or Dusica Bojicic |
 | AU eRequesting | `au-fhir-test-data-set/au-erequesting` | Michael Osborne (`mjosborne1`); second reviewer to be confirmed | Michael Osborne, or the second reviewer (to be confirmed) when Michael is the author |
-| Connected care | `au-fhir-test-data-set/connected-care` | Connectathon track leads, currently Heath Frankel (`heathfrankel`) and Brett Esler (`brettesler-ext`, HL7 AU) | A track lead |
-| Services Australia data | Services Australia derived data, and its CSV exports in `testdata-csv/` (being added in [#245](https://github.com/hl7au/au-fhir-test-data/pull/245)) | Heath Frankel (`heathfrankel`) | Heath Frankel |
+| Connected care | `au-fhir-test-data-set/connected-care` | Connectathon track lead, currently Heath Frankel (`heathfrankel`) | Heath Frankel |
 | Tooling and CI | `.github/` (checks, workflows, templates); triage and merging | Kyle Pettigrew (`KyleOps`) | Kyle Pettigrew |
 
-Anyone may review any PR; the table lists whose approval is required. An author cannot approve their own PR.
+Anyone may review any PR; the table lists whose approval is required. An author cannot approve their own PR. [`.github/CODEOWNERS`](.github/CODEOWNERS) mirrors this table, so GitHub requests a review from the right owners automatically; change both together.
 
 Other projects may add and manage their own starter test data in their own folder under `au-fhir-test-data-set/`. Open an issue first so the folder and its owner can be added to this table.
 
 ### Services Australia data
 
-Services Australia derived data (for example IHI, HPI-I, HPI-O, Medicare, DVA and prescriber numbers) is maintained in a formula-based source spreadsheet that stays in the HL7 AU SharePoint IMT library. Its CSV exports are committed to `testdata-csv/` so that changes can be reviewed as text in a PR. The generated FHIR JSON in this repository is what consumers use.
+Services Australia derived data (for example IHI, HPI-I, HPI-O, Medicare, DVA and prescriber numbers) is maintained in a formula-based source spreadsheet in the HL7 AU SharePoint IMT library, owned by Heath Frankel (`heathfrankel`). Only the generated FHIR JSON is kept in this repository. If one of these values needs to change, raise an issue so the spreadsheet is corrected as well and the next regeneration does not bring the old value back.
 
 ## 1. Raise an issue
 
