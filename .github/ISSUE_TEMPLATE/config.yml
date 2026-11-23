@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: HL7 AU FHIR Test Data project
+    url: https://confluence.hl7.org/spaces/HAFWG/pages/273942754
+    about: The project page on HL7 Confluence.

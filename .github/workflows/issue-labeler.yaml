@@ -1,0 +1,91 @@
+name: Issue labeler
+
+# Labels issues created from the issue forms in .github/ISSUE_TEMPLATE.
+# On open: adds needs-triage, plus the area label for the form's Area
+# dropdown (or area: tooling for the Tooling or CI form).
+# On edit: if the Area answer changed, swaps the old area label for the
+# new one. Labels added by hand during triage are left alone.
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label issue from form answers
+        uses: actions/github-script@v9
+        with:
+          script: |
+            // Area dropdown answer (lower case) to label.
+            const AREA_LABELS = {
+              'au core': 'area: au-core',
+              'au patient summary': 'area: au-patient-summary',
+              'au erequesting': 'area: au-erequesting',
+              'connected care': 'area: connected-care',
+              'services australia data': 'area: services-australia',
+            };
+            const TOOLING_LABEL = 'area: tooling';
+            const TRIAGE_LABEL = 'needs-triage';
+
+            // Issue forms render each answer as "### <label>" followed by
+            // the value; an empty optional answer is "_No response_".
+            function formAnswer(body, heading) {
+              if (!body) return null;
+              const lines = body.split(/\r?\n/);
+              const want = `### ${heading}`.toLowerCase();
+              const start = lines.findIndex((l) => l.trim().toLowerCase() === want);
+              if (start === -1) return null;
+              for (const line of lines.slice(start + 1)) {
+                const value = line.trim();
+                if (value.startsWith('### ')) return null;
+                if (value) return value === '_No response_' ? null : value;
+              }
+              return null;
+            }
+
+            function areaLabel(body) {
+              if (formAnswer(body, 'Check or tool')) return TOOLING_LABEL;
+              const area = formAnswer(body, 'Area');
+              return area ? AREA_LABELS[area.toLowerCase()] ?? null : null;
+            }
+
+            const { action, issue, changes } = context.payload;
+            const wanted = areaLabel(issue.body);
+            const current = new Set(issue.labels.map((l) => l.name));
+            const add = [];
+
+            if (action === 'opened') {
+              add.push(TRIAGE_LABEL);
+              if (wanted) add.push(wanted);
+            } else if (action === 'edited') {
+              // Title-only edits carry no body change.
+              if (!changes?.body) return;
+              const previous = areaLabel(changes.body.from);
+              if (previous === wanted) return;
+              if (previous && current.has(previous)) {
+                await github.rest.issues.removeLabel({
+                  ...context.repo,
+                  issue_number: issue.number,
+                  name: previous,
+                });
+                core.info(`Removed ${previous}`);
+              }
+              if (wanted) add.push(wanted);
+            }
+
+            const labels = add.filter((l) => !current.has(l));
+            if (labels.length === 0) {
+              core.info('No labels to add');
+              return;
+            }
+            await github.rest.issues.addLabels({
+              ...context.repo,
+              issue_number: issue.number,
+              labels,
+            });
+            core.info(`Added ${labels.join(', ')}`);
