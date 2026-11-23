@@ -2,10 +2,12 @@
 """Run the HL7 FHIR validator over test data and report the results.
 
 Selects FHIR JSON files under au-fhir-test-data-set, drops quarantined
-ones, groups the rest by top-level folder, validates each group against
-the implementation guides mapped to that folder in igs.json, and turns
-the validator's OperationOutcome output into a GitHub job summary and
-workflow-command annotations.
+ones, reports files the validator cannot load (empty, not JSON, no
+resourceType) as findings without passing them to it, groups the rest by
+top-level folder, validates each group against the implementation guides
+mapped to that folder in igs.json, and turns the validator's
+OperationOutcome output into a GitHub job summary and workflow-command
+annotations.
 
 Exit codes:
   0  validation ran (findings are reported, not fatal, unless
@@ -13,6 +15,8 @@ Exit codes:
   1  validation ran, found errors, and --fail-on-errors is set
   2  infrastructure failure: bad configuration, the validator did not
      start, a package could not be loaded, or no output was written
+     (after one retry without the file the validator failed on, when its
+     log names one)
 
 Standard library only, so it runs on a bare GitHub runner.
 """
@@ -48,6 +52,8 @@ DEFAULT_MAX_ANNOTATIONS = 10
 MAX_SUMMARY_ROWS = 300
 TOP_MESSAGES_PER_FILE = 3
 TOP_MESSAGES_OVERALL = 10
+PRESCREEN_MESSAGE_ID = "FHIR_VALIDATION_UNLOADABLE_FILE"
+VALIDATOR_FAILED_MESSAGE_ID = "FHIR_VALIDATION_VALIDATOR_FAILED"
 
 
 class ConfigError(Exception):
@@ -300,6 +306,92 @@ def parse_output(data: dict, repo_root: Path) -> list[FileResult]:
 
 
 # ---------------------------------------------------------------------------
+# Files the validator cannot load
+
+
+def prescreen(rel_path: str, repo_root: Path) -> Issue | None:
+    """Return an error for a file the validator cannot load, else None.
+
+    The validator aborts the whole run, discarding every other result,
+    when one source file is empty or unreadable, so such files are
+    reported here and left out of the validator call.
+    """
+    path = repo_root / rel_path
+    try:
+        raw = path.read_bytes()
+    except OSError as exc:
+        return Issue("error", f"File cannot be read: {exc.strerror or exc}", message_id=PRESCREEN_MESSAGE_ID)
+    if not raw.strip():
+        return Issue("error", "File is empty, so it is not a FHIR resource", line=1, message_id=PRESCREEN_MESSAGE_ID)
+    try:
+        text = raw.decode("utf-8-sig")
+    except UnicodeDecodeError as exc:
+        return Issue("error", f"File is not valid UTF-8 ({exc.reason} at byte {exc.start})", message_id=PRESCREEN_MESSAGE_ID)
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError as exc:
+        return Issue(
+            "error", f"File is not valid JSON: {exc.msg}", line=exc.lineno, col=exc.colno, message_id=PRESCREEN_MESSAGE_ID
+        )
+    if not isinstance(data, dict):
+        return Issue(
+            "error", "File is JSON but not a JSON object, so it is not a FHIR resource", line=1, message_id=PRESCREEN_MESSAGE_ID
+        )
+    rtype = data.get("resourceType")
+    if not isinstance(rtype, str) or not rtype.strip():
+        return Issue(
+            "error", "File has no resourceType property, so it is not a FHIR resource", line=1, message_id=PRESCREEN_MESSAGE_ID
+        )
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Reading the validator log
+
+LOG_VALIDATING = re.compile(r"^Validating\s*$")
+LOG_VALIDATE_FILE = re.compile(r"^\s+Validate (.+?)\s*$")
+LOG_FAILED_FILE = (
+    re.compile(r"Unable to find/resolve/read (.+?)\s*$"),
+    re.compile(r"^Loader: (.+?) is empty\s*$"),
+)
+
+
+def failed_file(log_text: str, candidates: list[str]) -> str | None:
+    """The submitted file the validator was processing when it failed.
+
+    Uses the file named in a loader error if there is one, otherwise the
+    last "Validate <file>" line after validation started. Returns None
+    when the log names no submitted file, for example when the failure
+    happened while loading packages.
+    """
+    submitted = set(candidates)
+    lines = log_text.splitlines()
+    for line in reversed(lines):
+        for pattern in LOG_FAILED_FILE:
+            match = pattern.search(line)
+            if match and match.group(1) in submitted:
+                return match.group(1)
+    validating = False
+    last = None
+    for line in lines:
+        if not validating:
+            validating = bool(LOG_VALIDATING.match(line))
+            continue
+        match = LOG_VALIDATE_FILE.match(line)
+        if match and match.group(1) in submitted:
+            last = match.group(1)
+    return last
+
+
+def failure_reason(log_text: str) -> str:
+    """The first exception line in the log, for a per-file finding."""
+    for line in log_text.splitlines():
+        if re.match(r"\S+(Exception|Error): ", line):
+            return line.strip()
+    return "see the validator log in the report artifact"
+
+
+# ---------------------------------------------------------------------------
 # Reporting
 
 
@@ -501,6 +593,70 @@ def render_summary(
 # Entry point
 
 
+def validate_group(args: argparse.Namespace, group: Group, fhir_version: str, report: GroupReport) -> int | None:
+    """Validate one folder's files into report; return an exit code on failure.
+
+    The validator exits non-zero when it finds errors, so the exit code
+    alone does not separate findings from a crash; missing or unreadable
+    output does. If the validator fails and its log names the file it was
+    processing, that file is reported as a finding and the run is
+    repeated once without it, so one bad file does not discard the
+    results for the rest of the folder.
+    """
+    files = list(group.files)
+    for attempt in (1, 2):
+        suffix = "" if attempt == 1 else "-retry"
+        json_out = (args.out_dir / f"{group.slug}.json").resolve()
+        html_out = (args.out_dir / f"{group.slug}.html").resolve()
+        log_out = (args.out_dir / f"{group.slug}{suffix}.log").resolve()
+        json_out.unlink(missing_ok=True)
+        run = Group(group.folder, group.igs, files)
+        cmd = build_command(args.jar.resolve(), run, fhir_version, args.tx, json_out, html_out)
+        code = run_validator(cmd, log_out, args.repo_root)
+        log_text = log_out.read_text(encoding="utf-8", errors="replace") if log_out.exists() else ""
+        try:
+            data = json.loads(json_out.read_text(encoding="utf-8"))
+            results = parse_output(data, args.repo_root)
+        except (OSError, json.JSONDecodeError, ValidatorError) as exc:
+            culprit = failed_file(log_text, files)
+            if attempt == 1 and culprit is not None and len(files) > 1:
+                reason = failure_reason(log_text)
+                print(
+                    f"::notice title=FHIR validation::{group.slug}: the validator failed on {culprit} "
+                    f"({reason}); retrying the folder without it"
+                )
+                report.results.append(
+                    FileResult(
+                        culprit,
+                        [Issue("error", f"The validator failed on this file: {reason}", message_id=VALIDATOR_FAILED_MESSAGE_ID)],
+                    )
+                )
+                files = [f for f in files if f != culprit]
+                continue
+            tail = log_tail(log_out)
+            where = f" while processing `{culprit}`" if culprit else ""
+            print(
+                f"::error title=FHIR validator failed ({group.slug})::"
+                + escape_data(
+                    f"exit code {code}{where.replace('`', '')}, no usable output ({exc}). Last log lines:\n{tail}"
+                )
+            )
+            write_summary(
+                f"## {args.title}\n\nThe validator failed for `{group.folder or DATA_ROOT}` "
+                f"(exit code {code}){where}. Last log lines:\n\n```\n{tail}\n```\n",
+                args.summary,
+            )
+            return 2
+        if len(results) != len(files):
+            print(
+                f"::notice title=FHIR validation::{group.slug}: {len(files)} file(s) submitted, "
+                f"{len(results)} result(s) returned"
+            )
+        report.results.extend(results)
+        return None
+    return None
+
+
 def read_targets(args: argparse.Namespace) -> tuple[list[str], list[str]]:
     """Return (patterns, literal paths).
 
@@ -587,36 +743,21 @@ def main(argv: list[str] | None = None) -> int:
     args.out_dir.mkdir(parents=True, exist_ok=True)
     reports: list[GroupReport] = []
     for group in groups:
-        json_out = (args.out_dir / f"{group.slug}.json").resolve()
-        html_out = (args.out_dir / f"{group.slug}.html").resolve()
-        log_out = (args.out_dir / f"{group.slug}.log").resolve()
-        json_out.unlink(missing_ok=True)
-        cmd = build_command(args.jar.resolve(), group, fhir_version, args.tx, json_out, html_out)
-        code = run_validator(cmd, log_out, args.repo_root)
-        # The validator exits non-zero when it finds errors, so the exit
-        # code alone does not separate findings from a crash; missing or
-        # unreadable output does.
-        try:
-            data = json.loads(json_out.read_text(encoding="utf-8"))
-            results = parse_output(data, args.repo_root)
-        except (OSError, json.JSONDecodeError, ValidatorError) as exc:
-            tail = log_tail(log_out)
-            print(
-                f"::error title=FHIR validator failed ({group.slug})::"
-                + escape_data(f"exit code {code}, no usable output ({exc}). Last log lines:\n{tail}")
-            )
-            write_summary(
-                f"## {args.title}\n\nThe validator failed for `{group.folder or DATA_ROOT}` "
-                f"(exit code {code}). Last log lines:\n\n```\n{tail}\n```\n",
-                args.summary,
-            )
-            return 2
-        if len(results) != len(group.files):
-            print(
-                f"::notice title=FHIR validation::{group.slug}: {len(group.files)} file(s) submitted, "
-                f"{len(results)} result(s) returned"
-            )
-        reports.append(GroupReport(group, results))
+        report = GroupReport(group, [])
+        reports.append(report)
+        loadable = []
+        for rel in group.files:
+            problem = prescreen(rel, args.repo_root)
+            if problem is None:
+                loadable.append(rel)
+            else:
+                report.results.append(FileResult(rel, [problem]))
+        group.files = loadable
+        if not group.files:
+            continue
+        outcome = validate_group(args, group, fhir_version, report)
+        if outcome is not None:
+            return outcome
 
     all_results = [r for rep in reports for r in rep.results]
     notes = annotations(all_results, args.max_annotations)

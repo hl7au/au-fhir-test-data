@@ -11,6 +11,9 @@ import fhir_validation as fv
 
 HERE = Path(__file__).resolve().parent
 SAMPLE = HERE / "testdata" / "validator-output.json"
+# Validator log (machine paths scrubbed) of a run that aborted on an
+# empty file.
+FAILED_LOG = HERE / "testdata" / "validator-failed-empty-file.log"
 
 
 # ---------------------------------------------------------------------------
@@ -87,7 +90,7 @@ def repo(tmp_path):
     ]:
         path = root / rel
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text("{}")
+        path.write_text('{"resourceType": "Patient"}')
     return root
 
 
@@ -407,3 +410,117 @@ def test_main_reads_a_large_path_list_from_file(monkeypatch, tmp_path, repo, odd
     assert "Validated **4** file(s)" in summary.read_text()
     assert "Patient-%5B1%5D" not in capsys.readouterr().out  # paths are passed through unescaped
     assert "Patient-[1].json" in (tmp_path / "out" / "au-core.json").read_text()
+
+
+# ---------------------------------------------------------------------------
+# Files the validator cannot load
+
+
+@pytest.mark.parametrize(
+    ("content", "expected", "line"),
+    [
+        (b"", "File is empty", 1),
+        (b"  \n", "File is empty", 1),
+        (b'{\n  "resourceType": "Patient",\n', "not valid JSON", 3),
+        (b"[1, 2]", "not a JSON object", 1),
+        (b'{"id": "x"}', "no resourceType", 1),
+        (b'{"resourceType": ""}', "no resourceType", 1),
+        (b"\xff\xfe{}", "not valid UTF-8", None),
+    ],
+)
+def test_prescreen_reports_unloadable_files(tmp_path, content, expected, line):
+    (tmp_path / "f.json").write_bytes(content)
+    issue = fv.prescreen("f.json", tmp_path)
+    assert issue is not None and issue.severity == "error"
+    assert expected in issue.message
+    assert issue.line == line
+    assert issue.message_id == fv.PRESCREEN_MESSAGE_ID
+
+
+@pytest.mark.parametrize("content", [b'{"resourceType": "Patient"}', b'\xef\xbb\xbf{"resourceType": "Bundle"}'])
+def test_prescreen_accepts_resources(tmp_path, content):
+    (tmp_path / "f.json").write_bytes(content)
+    assert fv.prescreen("f.json", tmp_path) is None
+
+
+def test_main_reports_unloadable_files_and_validates_the_rest(monkeypatch, tmp_path, repo, capsys):
+    core = repo / "au-fhir-test-data-set/au-core"
+    (core / "empty.json").write_text("")
+    (core / "broken.json").write_text('{"resourceType": ')
+    # This stub aborts, like the real validator, if it is given the empty file.
+    body = "if any(a.endswith('empty.json') for a in args): sys.exit(1)\n" + WRITE_ONE_ERROR
+    code, summary = _run_main(monkeypatch, tmp_path, repo, body)
+    assert code == 0
+    out = capsys.readouterr().out
+    assert "empty.json" not in (tmp_path / "out" / "au-core.json").read_text()
+    assert "file=au-fhir-test-data-set/au-core/empty.json,line=1," in out
+    assert "File is empty" in out and "File is not valid JSON" in out
+    assert "Validated **4** file(s): **4** error(s)" in summary
+    assert "| `au-core` | `hl7.fhir.au.core#3.0.0-ballot1`, `hl7.fhir.au.ereq#1.0.1` | 4 | 4 |" in summary
+
+
+def test_main_skips_the_validator_when_no_file_is_loadable(monkeypatch, tmp_path, repo):
+    for name in ("Patient-a.json", "Patient-b.json"):
+        (repo / "au-fhir-test-data-set/au-core" / name).write_text("")
+    code, summary = _run_main(monkeypatch, tmp_path, repo, "sys.exit(99)\n")
+    assert code == 0
+    assert "**2** error(s)" in summary
+
+
+# ---------------------------------------------------------------------------
+# Validator failures
+
+
+def test_failed_file_from_captured_log():
+    log = FAILED_LOG.read_text()
+    files = [
+        "au-fhir-test-data-set/au-erequesting/probe/broken.json",
+        "au-fhir-test-data-set/au-erequesting/probe/empty.json",
+    ]
+    assert fv.failed_file(log, files) == "au-fhir-test-data-set/au-erequesting/probe/empty.json"
+    assert fv.failure_reason(log).startswith("org.hl7.fhir.exceptions.FHIRException: Unable to find/resolve/read")
+
+
+def test_failed_file_uses_last_validate_line():
+    log = "Loading\n  Load a#1 - 3 resources\nValidating\n  Validate x.json\n 00:01\n  Validate y.json\nboom\n"
+    assert fv.failed_file(log, ["x.json", "y.json"]) == "y.json"
+
+
+def test_failed_file_is_none_when_failure_is_before_validation():
+    log = "Loading\nUnable to find package hl7.fhir.au.core#9.9.9\n"
+    assert fv.failed_file(log, ["x.json"]) is None
+
+
+CRASH_ON_PATIENT_B = """
+files = [a for a in args[2:] if a.endswith(".json") and "-output" not in a]
+print("Validating")
+for f in files:
+    print("  Validate " + f)
+    if f.endswith("Patient-b.json"):
+        print("java.lang.NullPointerException: boom")
+        sys.exit(1)
+""" + WRITE_ONE_ERROR
+
+
+def test_main_retries_once_without_the_file_the_validator_failed_on(monkeypatch, tmp_path, repo, capsys):
+    code, summary = _run_main(monkeypatch, tmp_path, repo, CRASH_ON_PATIENT_B)
+    assert code == 0
+    out = capsys.readouterr().out
+    assert "retrying the folder without it" in out
+    assert "Validated **2** file(s)" in summary
+    assert "The validator failed on this file: java.lang.NullPointerException: boom" in summary
+    assert (tmp_path / "out" / "au-core-retry.log").exists()
+
+
+def test_main_second_failure_is_infrastructure_failure_naming_the_file(monkeypatch, tmp_path, repo, capsys):
+    body = """
+print("Validating")
+for f in [a for a in args[2:] if a.endswith(".json") and "-output" not in a]:
+    print("  Validate " + f)
+    print("java.lang.OutOfMemoryError: heap")
+    sys.exit(1)
+"""
+    code, summary = _run_main(monkeypatch, tmp_path, repo, body)
+    assert code == 2
+    assert "while processing `au-fhir-test-data-set/au-core/Patient-b.json`" in summary
+    assert "::error title=FHIR validator failed" in capsys.readouterr().out
